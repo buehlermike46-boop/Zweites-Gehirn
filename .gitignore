@@ -1,0 +1,16 @@
+# Eigenes Repo, nicht verschachtelt tracken
+jarvis-voice-assistant/
+
+# Obsidian Workspace-/Cache-Zustand, kein Inhalt
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# App-interner Zustand (Claude Code / Claudian), keine Vault-Inhalte
+.claude/
+.claudian/
+.agents/
+
+# OS-Muell
+.DS_Store
+Thumbs.db

@@ -1,0 +1,287 @@
+:root {
+  --bg: #050a0f;
+  --bg-panel: #0a141c;
+  --cyan: #4ee7ff;
+  --cyan-dim: #1a5c6e;
+  --cyan-glow: rgba(78, 231, 255, 0.55);
+  --amber: #ffb454;
+  --text: #d8f4fb;
+  --text-dim: #6f9aa8;
+  --danger: #ff5470;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, #0b1a22 0%, var(--bg) 65%);
+  color: var(--text);
+  font-family: 'Segoe UI', 'Consolas', monospace;
+  overflow-x: hidden;
+}
+
+.scanlines {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.015) 0px,
+    rgba(255,255,255,0.015) 1px,
+    transparent 2px,
+    transparent 3px
+  );
+  z-index: 999;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  border-bottom: 1px solid var(--cyan-dim);
+  letter-spacing: 2px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cyan);
+  text-shadow: 0 0 12px var(--cyan-glow);
+}
+
+.brand-sub {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+.clock {
+  font-size: 16px;
+  color: var(--text-dim);
+  letter-spacing: 3px;
+}
+
+.stage {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.core-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.core {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--cyan-dim);
+  box-shadow: 0 0 24px rgba(78, 231, 255, 0.08) inset;
+}
+
+.ring-outer { width: 220px; height: 220px; animation: spin 18s linear infinite; border-style: dashed; }
+.ring-mid   { width: 165px; height: 165px; animation: spin-rev 12s linear infinite; }
+.ring-inner { width: 110px; height: 110px; border-color: var(--cyan); box-shadow: 0 0 30px var(--cyan-glow); }
+
+.core-center {
+  position: relative;
+  z-index: 2;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(78,231,255,0.25), rgba(78,231,255,0.02));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.core-status {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+/* State modifiers, toggled via JS on #core */
+.core.listening .ring-inner { border-color: var(--amber); box-shadow: 0 0 40px rgba(255,180,84,0.6); }
+.core.listening .core-status { color: var(--amber); }
+.core.speaking .ring-inner { animation: pulse 0.6s ease-in-out infinite; }
+.core.thinking .ring-mid { animation-duration: 3s; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes spin-rev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.status-line {
+  color: var(--text-dim);
+  font-size: 14px;
+  letter-spacing: 1px;
+  min-height: 20px;
+  text-align: center;
+}
+
+.panel {
+  width: 100%;
+  background: var(--bg-panel);
+  border: 1px solid var(--cyan-dim);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 8px 14px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  border-bottom: 1px solid var(--cyan-dim);
+  text-transform: uppercase;
+}
+
+.transcript-panel { min-height: 160px; }
+
+.transcript {
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.entry.system { color: var(--text-dim); font-style: italic; }
+.entry.user { color: var(--amber); }
+.entry.jarvis { color: var(--cyan); }
+.entry.user::before { content: "MIKE  ›  "; opacity: 0.6; }
+.entry.jarvis::before { content: "JARVIS  ›  "; opacity: 0.6; }
+
+.controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: 1px solid var(--cyan);
+  background: transparent;
+  color: var(--cyan);
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn:hover { background: var(--cyan); color: #05141a; }
+.btn-primary { width: 100%; max-width: 320px; }
+.btn-secondary { border-color: var(--text-dim); color: var(--text-dim); }
+.btn-secondary:hover { background: var(--text-dim); color: #05141a; }
+
+.text-form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.text-form input {
+  flex: 1;
+  background: var(--bg-panel);
+  border: 1px solid var(--cyan-dim);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.text-form input:focus { outline: none; border-color: var(--cyan); }
+
+.vault-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.vault-status {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.vault-status.connected {
+  color: var(--cyan);
+}
+
+.settings-panel .settings-grid {
+  padding: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.settings-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.settings-grid input[type="text"],
+.settings-grid select {
+  background: #08121a;
+  border: 1px solid var(--cyan-dim);
+  color: var(--text);
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.checkbox-label {
+  grid-column: span 2;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+.footer-note {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 11px;
+  padding: 18px 10px 30px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .settings-grid { grid-template-columns: 1fr; }
+  .checkbox-label { grid-column: span 1; }
+}

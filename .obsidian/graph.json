@@ -1,0 +1,79 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:\"00 Kontext\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 15961000
+      }
+    },
+    {
+      "query": "path:\"01 Inbox\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 15442092
+      }
+    },
+    {
+      "query": "path:\"02 Projekte\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16429959
+      }
+    },
+    {
+      "query": "path:\"03 Bereiche\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 16376495
+      }
+    },
+    {
+      "query": "path:\"04 Ressourcen\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 10937249
+      }
+    },
+    {
+      "query": "path:\"05 Daily Notes\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 9757397
+      }
+    },
+    {
+      "query": "path:\"06 Archiv\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 7653356
+      }
+    },
+    {
+      "query": "path:\"07 Anhänge\"  ",
+      "color": {
+        "a": 1,
+        "rgb": 8892665
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": -2,
+  "nodeSizeMultiplier": 1.05322926829268,
+  "lineSizeMultiplier": 0.471921951219512,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.321336386050356,
+  "close": false
+}

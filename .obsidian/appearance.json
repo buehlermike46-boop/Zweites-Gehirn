@@ -1,0 +1,11 @@
+{
+  "theme": "obsidian",
+  "accentColor": "#5028af",
+  "interfaceFontFamily": "Bodoni 72 Oldstyle,Bodoni 72 Smallcaps",
+  "textFontFamily": "Bodoni 72 Oldstyle",
+  "monospaceFontFamily": "Bodoni 72 Oldstyle",
+  "cssTheme": "AnuPpuccin",
+  "enabledCssSnippets": [
+    "jarvis-theme"
+  ]
+}

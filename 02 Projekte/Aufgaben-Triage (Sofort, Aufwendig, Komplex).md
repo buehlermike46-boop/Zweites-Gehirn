@@ -1,0 +1,116 @@
+---
+tags: [projekt, uebersicht, steuerung]
+status: aktiv
+date: 2026-09-10
+---
+
+# Aufgaben-Triage (Sofort, Aufwendig, Komplex)
+
+Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand sortiert. Grundlage sind alle offenen Checkboxen in [[Brain Dump]], [[Jarvis Hand - Agenten Ausbau]], [[Inner Circle Kanal-Content]], [[KI-Automatisierung IB-Business]], [[IB-Projekt (Limitless & PU Prime)]], [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]], [[Ausgaben und Rechnungen Tracking]] und [[2026-09-09]]. Doppelte Einträge sind zusammengefasst.
+
+**Einteilung**
+- **Sofort**: unter 30 Minuten, in einem Rutsch erledigbar
+- **Aufwendig**: mehrere Stunden bis ein ganzer Tag
+- **Komplex**: mehrere Tage bis Wochen, braucht eigene Planung
+
+**Zahlen:** 21 sofort, 14 aufwendig, 12 komplex. Gesamt 47 offene Punkte.
+
+**Stand 10.09.2026, unterwegs abgearbeitet:** Staffelsatz geklärt (nicht rückwirkend, Rechnung im MasterPlan korrigiert), Kanalbeschreibung gesetzt, Reaktionen und Diskussionschat geprüft, Instagram-Bio ergänzt. Kanalbild wartet auf Mike in der App, Bildfreigabe wartet auf ihn zuhause.
+
+---
+
+## 1. Sofort (21)
+
+### Telegram-Kanal Inner Circle
+- [x] Kanalbeschreibung gesetzt (10.09.2026)
+- [ ] Kanalbild setzen: Übergangsbild liegt fertig unter `Lim/Content/Assets/ic-kanalbild-limitless.png`, Mike setzt es in der Telegram-App (Browser lässt den Upload nicht zu)
+- [x] Reaktionen: standen bereits auf "Alle" (geprüft 10.09.2026)
+- [x] Kein Diskussionschat verknüpft (geprüft 10.09.2026)
+- [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Rest: klickbares Website-Feld, geht nur in der Instagram-App
+- [ ] Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Mike sieht sie sich zuhause am Rechner an, dann Bescheid geben
+- [x] Referral-Link steht in der /start-Nachricht (geprüft 10.09.2026, worldoflimitless.com/?ref=2A5CC2B8)
+- [ ] Make.com-Szenario dauerhaft aktivieren — Mike muss es selbst tun, im Browser ist Make nicht eingeloggt: Szenario öffnen, Scheduling-Schalter auf ON, "Immediately as data arrives" stehen lassen
+- [x] Bot-Strecke faktisch bestätigt: /start am 08. und 09.09.2026 ausgelöst, Onboarding-Nachricht inklusive Link kam an. Ungetestet bleibt nur der Weg über den Start-Button im Kanal
+
+### Jarvis Technik
+- [ ] `python scripts/broker_login.py` einmal selbst ausführen (PU Prime IB, Limitless, GMX, in einem separaten Browserfenster)
+- [ ] Ersten echten Bridge-Lauf danach prüfen: stehen in `Broker-Dashboards.md` und `GMX Mails.md` plausible Zahlen mit `status: ok`
+- [ ] WhatsApp einmal end-to-end testen: Nachricht rein, Entwurf erscheint, freigeben, Versand kommt an
+- [ ] `whatsapp`-Knoten in `frontend/main.js` von `plannedNode` auf `liveNode` umstellen, direkt nach dem Test
+- [x] Entschieden (10.09.2026): Instagram und Facebook bleiben erstmal auf Zuruf, keine automatische Bridge, Meta Graph API zurückgestellt
+- [ ] In ein paar Tagen: prüfen, ob WhatsApp Warnungen an der Geräteverknüpfung zeigt
+- [ ] In ein paar Tagen: prüfen, ob Telegram Warnungen am persönlichen Account zeigt
+
+### Anfragen, die nur du stellen kannst
+- [x] Staffelsatz geklärt (10.09.2026): gilt nur oberhalb der Schwelle, nichts rückwirkend. MasterPlan und IB-Projekt neu gerechnet
+- [ ] Limitless-Support fragen, ob es eine API oder einen Webhook für den Prospect Tracker gibt — am 10.09.2026 zurückgestellt
+- [x] Pflegedienst-Kennzahlen von Mike geliefert (10.09.2026): 6 Kunden, ca. 1.500 EUR Umsatz, kein Überschuss, keine Mitarbeiter, Süchteln/Viersen, Kunden aus dem Bekanntenkreis. Eingetragen in [[Pflegedienst]]. Offen bleibt die freie Kapazität
+
+### Kleinkram
+- [x] Schichtplan eingepflegt (10.09.2026): steht komplett im Google Kalender ab 14.09., als Notiz [[Zwei-Wochen-Takt]] in den Vault übernommen
+- [x] Rechnungsfotos: Google Drive, Ordner `Rechnungen/Eingang`, Scan per Drive-App (entschieden 10.09.2026). Ordner anlegen und Drive für Desktop prüfen steht noch aus
+
+---
+
+## 2. Aufwendig (14)
+
+### Content und Akquise
+- [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende)
+- [ ] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen"
+- [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage)
+- [ ] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert
+- [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte
+
+### Zahlen und Struktur
+- [ ] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe. Die zentrale Steuergröße des IB-Projekts
+- [ ] Liste der wiederkehrenden Fixkosten anlegen (Bezeichnung, Betrag, Abbuchungstag, Rhythmus)
+- [ ] Liste der Business-Kosten anlegen (Broker, ATAS, Tools, Abos)
+- [ ] Klären, womit die Buchhaltung läuft, falls schon etwas existiert
+- [x] Tagesstruktur steht bereits im Kalender und ist jetzt im Vault dokumentiert: [[Zwei-Wochen-Takt]]. Rund 12 Stunden Business pro Woche, in der Spätwoche vormittags, in der Frühwoche abends
+
+### Technik
+- [ ] Gmail-Zugang für `task_agent.py`: eigenes Google-Cloud-Projekt plus OAuth-Zustimmung
+- [ ] GMX per IMAP anbinden, damit Mails wirklich alle 10 Minuten automatisch laufen
+- [ ] Nachrichten-Dashboard automatisch nach jedem Bridge-Lauf aktualisieren statt nur auf Zuruf
+- [ ] Trade_Journal.xlsx und die übrigen ChatGPT-Dokumente herunterladen und in 07 Anhänge ablegen, danach den restlichen ChatGPT-Verlauf sichten
+
+---
+
+## 3. Komplex (12)
+
+### IB-Business
+- [ ] Website bauen (aus [[KI-Automatisierung IB-Business]], seit Projektstart offen)
+- [ ] Regelmäßig Content im Kanal posten, damit neue Abonnenten Substanz sehen. Läuft dauerhaft, braucht echtes Material von dir
+- [ ] 12 Posts veröffentlichen, 3 pro Woche, Ziel aus den nächsten 30 Tagen des [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]]
+- [ ] Zugangs-Gate für die Gruppe: Beitritt erst nach Konto-Erstellung, technisch noch ungelöst
+- [ ] Referenzprojekt bauen: Webseite oder Chatbot für den [[Pflegedienst]], kostenlos, dafür mit Ergebnis-Nachweis als Portfolio-Stück
+- [ ] Sprachauswahl Deutsch und Englisch im Bot-Onboarding nachrüsten
+
+### Jarvis
+- [ ] Meta Graph API als sauberer Weg für Instagram- und Facebook-Nachrichten (eigenes Projekt, App-Registrierung, Freigabeprozess). Nur falls die Bridge wirklich gewollt ist
+- [ ] Facebook-Anbindung, wurde bisher gar nicht erreicht, weil Instagram im Skript zuerst kommt
+- [ ] Jarvis-Interface ausbauen: Sternenfeld-Optik, dritter Hauptast Stimme, Übersicht über Nachrichten, Kundenstamm, Verdienste und Termine
+- [ ] Vault-Wachstum weitertreiben bis zur angepeilten Dichte, siehe [[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]]
+- [ ] Monitoring-System als eigene App: Umsatz täglich, wöchentlich, monatlich, Kundengewinnung, Trefferquote, CRV, Fortschritt Richtung 50.000 EUR
+- [ ] Rechnungs-Automatik Stufe 2 und 3: Auslese-Agent, Prüf-Agent, Finanz-Dashboard, laut Plan ab Monat 4
+
+---
+
+## 4. Was ich dir empfehle
+
+Du hast laut [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] rund 10 bis 15 Stunden pro Woche und die Regel maximal ein bis zwei aktive Baustellen. Die 21 Sofort-Aufgaben sind zusammen etwa drei bis vier Stunden. Wenn du die diese Woche wegräumst, verschwindet der größte Teil der Liste, ohne dass du an einem einzigen komplexen Thema arbeiten musst.
+
+**Reihenfolge, die ich vorschlagen würde**
+1. Kanal fertig machen (Beschreibung, Bild, Reaktionen, Bio-Link). Deine Instagram-Captions verweisen schon auf den Kanal, der Traffic läuft aktuell ins Leere.
+2. Bot-Strecke einmal selbst durchklicken und Make.com dauerhaft aktivieren.
+3. Die drei Anfragen rausschicken (Broker-Staffel, Limitless-API, Pflegedienst-Zahlen). Da wartest du danach nur noch auf Antwort.
+4. `broker_login.py` ausführen, dann füttert sich das Dashboard selbst.
+5. Erst danach an ein aufwendiges Thema, sinnvollerweise das Lot-Tracking, weil daran deine ganze Steuerung hängt.
+
+Die komplexen Punkte bleiben bewusst liegen, bis der Schichtplan am 14.09. steht und die Tagesstruktur hängt.
+
+## 5. Nebenbei aufgefallen
+
+Erledigt am 10.09.2026: In [[Sport]], [[Laufplan-Fortschritt]] und [[Trainingsplan-Fortschritt]] zeigten sieben Wikilinks ins Leere. Sie zeigen jetzt auf [[Calisthenics Plan]] und [[Laufplan Halbmarathon November 2026]]. Die fehlende Notiz [[Zwei-Wochen-Takt]] wurde am selben Tag aus dem Kalender aufgebaut, die Links dorthin funktionieren wieder.
+
+Verknüpft: [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] · [[Jarvis Hand - Agenten Ausbau]] · [[Inner Circle Kanal-Content]] · [[Brain Dump]]
