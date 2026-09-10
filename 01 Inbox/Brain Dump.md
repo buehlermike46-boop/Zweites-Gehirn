@@ -24,7 +24,7 @@ Wichtige Business-/Finanz-/Trading-Inhalte aus dem ChatGPT-Verlauf gesichtet und
 ## Offen aus dem MasterPlan, "Nächste 30 Tage" (Stand 09.09.2026)
 Aus [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]], noch nirgends terminiert:
 
-- [ ] Beim Broker klären, ob der höhere Staffelsatz rückwirkend auf alle Lots des Monats gilt oder nur oberhalb der Schwelle
+- [x] Beim Broker klären, ob der höhere Staffelsatz rückwirkend auf alle Lots des Monats gilt oder nur oberhalb der Schwelle — geklärt: gilt nicht rückwirkend, siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] (10.09.2026)
 - [ ] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe
 - [ ] Liste mit 20 Namen aus dem echten Umfeld, die Trading interessiert, zusammenstellen und persönlich anschreiben (keine Massentexte)
 - [ ] Referenzprojekt bauen: eine Webseite oder ein Chatbot für den [[Pflegedienst]], kostenlos, dafür mit Ergebnis-Nachweis als Portfolio-Stück
