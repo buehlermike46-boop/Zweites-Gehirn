@@ -26,15 +26,23 @@ CFD/Forex-Trading gehört bei Meta zu den **komplett verbotenen Kategorien für 
 - Keine Inhalte aus der RG Trading Academy verwenden (Verschwiegenheitserklärung)
 - Marketing-Zahlen (Winrate, Mitgliederzahlen etc.) immer als "laut Anbieter" kennzeichnen
 
-## Automatisierungsgrad & Workflow (finale Version, Update 09.09.2026 abends)
-Nochmal korrigiert (überholt damit die "volle Automatisierung ohne Freigabe"-Notiz von weiter oben am selben Tag — das war ein Zwischenstand, DIESE Version gilt): Der laufende Prozess ist:
+## Automatisierungsgrad & Workflow (aktueller Stand, Update 10.09.2026)
 
-1. **Ich plane laufend genug Content** (Themen aus `00 Kontext/Angebot.md`, Bild/Video über Higgsfield)
-2. **Freigabe-Schritt**: Content wird Mike gezeigt, er bestätigt bevor irgendwas live geht (genau wie beim ersten Post am 09.09.2026)
-3. **Posten auf Instagram UND Facebook** (bisher lief nur Instagram — Facebook-Ziel noch zu klären, siehe offene Punkte)
+**Klarstellung 10.09.2026:** Diese Datei und [[Posting-Warteschlange]] widersprachen sich bis eben beim Thema Freigabe (beide behaupteten am 09.09. die "finale Version" zu sein). Mit Mike geklärt beim Aufbau des `content-manager`/`content-executor`-Agentenpaars: **zweiphasig.**
+
+- **Phase 1, jetzt aktiv:** Jeder Post läuft erst als Entwurf in [[Posting-Warteschlange]] mit Status `bereit (wartet auf Freigabe)`. Nichts geht live, bevor Mike den Status auf `freigegeben` setzt. So lernt er den Stil/die Qualität kennen, bevor er die Kontrolle abgibt.
+- **Phase 2, nach Mikes ausdrücklichem Okay:** Sobald Mike sagt, der Stil sitzt, schaltet er in [[Posting-Warteschlange]] auf automatisch um (siehe dort, Abschnitt "Freigabe-Phase"). Ab dann postet der `content-executor` ohne Einzelfreigabe.
+
+Der Prozess selbst bleibt wie hier beschrieben:
+
+1. **Der `content-manager` plant wöchentlich genug Content** (Themen aus `00 Kontext/Angebot.md`, eigene Performance-Zahlen, öffentliche Trend-/Ads-Recherche nur zur Inspiration, siehe unten)
+2. **Freigabe-Schritt** gemäß aktiver Phase (siehe oben)
+3. **Posten auf Instagram** über den `content-executor` (Facebook-Ziel noch offen, siehe offene Punkte)
 4. **Danach laufend tracken**: Beiträge, Storys, Reels (Performance-Daten über Windsor.ai, siehe [[Performance-Log]])
-5. **Ich entscheide selbst, was gut/schlecht läuft** — schlecht laufender Content wird entfernt/nicht wiederholt, gut laufender wird als Vorlage für Verbesserungen genutzt
+5. **Der `content-manager` entscheidet wöchentlich, was gut/schlecht läuft** — schlecht laufender Content wird entfernt/nicht wiederholt, gut laufender wird als Vorlage für Verbesserungen genutzt
 6. **Ziel**: Reichweite und Klicks maximieren, um Kunden zu gewinnen — kontinuierliche Verbesserung, nicht nur einmalig posten und fertig
+
+**Wichtig, geklärt 10.09.2026:** "Was läuft gerade gut" recherchieren heißt öffentliche Ads-Bibliotheken/Trendberichte für Inspiration ansehen (WebSearch), NICHT selbst bezahlte Kampagnen schalten. Siehe Meta-Compliance-Risiko unten, das gilt unverändert und uneingeschränkt.
 
 Das ist die verbindliche Arbeitsweise ab jetzt, nicht nur für diese Session.
 

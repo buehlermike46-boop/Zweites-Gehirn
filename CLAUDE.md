@@ -54,6 +54,15 @@ Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/Aufgaben-Manage
 
 Manuell auslösbar über `/aufgaben-check`.
 
+### Content-Agent (Instagram, Limitless-Account)
+Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/Marketing & Kundenakquise/Posting-Warteschlange.md`:
+- `content-manager` (`.claude/agents/content-manager.md`) – plant wöchentlich. Liest Business-Kontext, Performance-Log, bestehende Recherche, kontrolliert die letzte Posting-Runde und schreibt neue Post-Vorschläge in die Queue. Recherchiert bei Bedarf öffentliche Ads/Trends nur zur Inspiration, schaltet nie selbst bezahlte Werbung (Meta verbietet das für CFD/Forex komplett, Account-Risiko).
+- `content-executor` (`.claude/agents/content-executor.md`) – erstellt fällige Posts über den Jarvis/Higgsfield-Connector und postet sie über Windsor.ai auf Instagram (`mike_bueh`). Läuft auch unbeaufsichtigt per Scheduled Cloud Routine. Pflegt danach das Performance-Log.
+
+**Freigabe-Phase steht oben in `Posting-Warteschlange.md`, zweistufig:** Phase 1 "Freigabe nötig" (aktuell aktiv, seit 10.09.2026) heißt: der Executor postet nur Einträge mit Status `freigegeben`, alles andere bereitet er nur vor. Phase 2 "automatisch" heißt: der Executor postet neue Einträge ohne Einzelfreigabe. Nur Mike schaltet zwischen den Phasen um, keiner der beiden Agenten tut das selbst.
+
+Manuell auslösbar über `/content-check`. Bei Session-Start zusätzlich kurz prüfen, ob in Phase 1 Posts mit Status `bereit (wartet auf Freigabe)` auf Mikes Ja/Nein warten, und proaktiv zeigen.
+
 ### Bei Session-Ende
 Wenn der Nutzer die Session beendet oder du merkst dass ein natürliches Ende erreicht ist, biete an:
 1. Einen Daily Note Eintrag in 05 Daily Notes/ zu erstellen mit einer Zusammenfassung des Tages
