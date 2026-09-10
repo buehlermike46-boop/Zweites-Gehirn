@@ -60,6 +60,25 @@ Diese Woche fällt in eine **Spätschicht-Woche** (siehe [[Zwei-Wochen-Takt]]), 
 
 **Renneinteilung:** die ersten 5 km bewusst zu langsam. Fast jeder erste Halbmarathon geht auf Kilometer 16 bis 19 kaputt, weil Kilometer 1 bis 5 zu schnell waren.
 
+## Im Kalender hinterlegt (Stand 10.09.2026)
+
+Die Wettkampfwoche und der Renntag sind im Google Kalender bereits umgestellt:
+
+| Wann | Termin |
+|---|---|
+| Mo 16.11., 07:00 | 5 km locker statt Calisthenics A |
+| Di 17.11., 07:00 | 4 km mit 3x2 min Zieltempo, letzte Einheit |
+| Mi 18.11. | frei, höchstens Mobility |
+| Do 19.11. | frei oder 20 min lockeres Gehen |
+| Fr 20.11., 07:00 | kein Training, stattdessen Renntag vorbereiten |
+| Sa 21.11., 10:30 | Frühstück, letzte leichte Mahlzeit bis 11:15 |
+| Sa 21.11., 12:00 | Anreise und Startunterlagen |
+| Sa 21.11., 13:30 | Einlaufen und Warmmachen |
+| **Sa 21.11., 14:00 bis 16:30** | **Halbmarathon, Baldeneysee Essen** |
+| Sa 28.11., 08:00 | lockere Regeneration statt langem Lauf |
+
+Der alte Renntag am 29.11. ist damit vom Kalender verschwunden. Offen: die offizielle Startzeit und der genaue Startpunkt am See, sobald die Unterlagen da sind.
+
 ## Wenn etwas dazwischenkommt
 
 - **1 Woche verpasst:** dort weitermachen, wo du aufgehört hast. Nicht aufholen.

@@ -15,7 +15,9 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 
 **Zahlen:** 21 sofort, 14 aufwendig, 12 komplex. Gesamt 47 offene Punkte.
 
-**Stand 10.09.2026, unterwegs abgearbeitet:** Staffelsatz geklärt (nicht rückwirkend, Rechnung im MasterPlan korrigiert), Kanalbeschreibung gesetzt, Reaktionen und Diskussionschat geprüft, Instagram-Bio ergänzt. Kanalbild wartet auf Mike in der App, Bildfreigabe wartet auf ihn zuhause.
+**Tagesprotokoll dazu:** [[2026-09-10]]
+
+**Stand 10.09.2026, unterwegs abgearbeitet:** Staffelsatz geklärt (nicht rückwirkend, Rechnung im MasterPlan korrigiert), Kanalbeschreibung gesetzt, Reaktionen und Diskussionschat geprüft, Instagram-Bio ergänzt. Schichtplan und Tagesstruktur aus dem Kalender als [[Zwei-Wochen-Takt]] dokumentiert, Halbmarathon-Termin auf den 21.11.2026 korrigiert (Vault und Kalender). Kanalbild wartet auf Mike in der App, Bildfreigabe wartet auf ihn zuhause.
 
 ---
 
@@ -33,9 +35,9 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 - [x] Bot-Strecke faktisch bestätigt: /start am 08. und 09.09.2026 ausgelöst, Onboarding-Nachricht inklusive Link kam an. Ungetestet bleibt nur der Weg über den Start-Button im Kanal
 
 ### Jarvis Technik
-- [ ] `python scripts/broker_login.py` einmal selbst ausführen (PU Prime IB, Limitless, GMX, in einem separaten Browserfenster)
-- [ ] Ersten echten Bridge-Lauf danach prüfen: stehen in `Broker-Dashboards.md` und `GMX Mails.md` plausible Zahlen mit `status: ok`
-- [ ] WhatsApp einmal end-to-end testen: Nachricht rein, Entwurf erscheint, freigeben, Versand kommt an
+- [x] `broker_login.py` ausgeführt (10.09.2026), jetzt nur noch Limitless und GMX. PU Prime ist aus der Brücke raus
+- [x] Bridge-Lauf geprüft: PU Prime wird sauber übersprungen, Limitless liefert Werte. GMX scheitert weiter am SSO-Redirect und ist zurückgestellt
+- [ ] WhatsApp end-to-end testen: Bridge ist nach neuem QR-Login (10.09.2026) wieder funktionsfähig, es fehlt eine echte eingehende Nachricht von einer anderen Person. Eigene Nachrichten überspringt die Bridge per Design
 - [ ] `whatsapp`-Knoten in `frontend/main.js` von `plannedNode` auf `liveNode` umstellen, direkt nach dem Test
 - [x] Entschieden (10.09.2026): Instagram und Facebook bleiben erstmal auf Zuruf, keine automatische Bridge, Meta Graph API zurückgestellt
 - [ ] In ein paar Tagen: prüfen, ob WhatsApp Warnungen an der Geräteverknüpfung zeigt

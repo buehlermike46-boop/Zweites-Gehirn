@@ -45,6 +45,15 @@ Wenn der Nutzer fragt "Was ist gerade aktuell?", "Wo war ich stehen geblieben?" 
 ### Bei Wochen-/Tagesplanung
 Wenn ein Wochenplan oder eine Daily Note mit Aufgaben erstellt wird: kurz gegen den [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] prüfen, in welche Stufe das fällt und ob es der aktuellen Stufe dient. Aufgaben, die zu keiner Stufe passen, offen ansprechen statt stillschweigend mit aufzunehmen. Offene Punkte aus dem Plan (z.B. "Nächste 30 Tage"), die noch nirgends als Aufgabe stehen, immer direkt als Todo in 01 Inbox/Brain Dump.md eintragen, nicht nur verbal erwähnen.
 
+### Aufgaben-Kontrolle & autonome Ausführung
+Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/Aufgaben-Management/Tagesplan.md`:
+- `aufgaben-manager` (`.claude/agents/aufgaben-manager.md`) – plant und kontrolliert. Liest MasterPlan, Aufgaben-Triage, Daily Notes, Inbox, kontrolliert die letzte 24h-Runde (nur mit Beleg abhaken, sonst nachfragen) und schreibt einen neuen `## Vorschlag für [Datum]` in `Tagesplan.md`.
+- `aufgaben-executor` (`.claude/agents/aufgaben-executor.md`) – arbeitet ausschließlich den `## Bestätigt für [Datum]`-Abschnitt ab (Recherche, Texte, Entwürfe, Vault-Pflege). Läuft auch unbeaufsichtigt per Scheduled Cloud Routine. Führt NIE etwas nach außen aus (Senden, Posten, neue Logins, Käufe, Formulare mit persönlichen Daten, Löschen) – bereitet das nur vor und legt es in den `## Freigabe-Stau` von `Tagesplan.md`.
+
+**Bestätigungs-Schleife (wichtig für jede Session):** Prüfe bei Session-Start zusätzlich `Tagesplan.md` auf einen unbestätigten `## Vorschlag`-Abschnitt und auf offene Punkte im `## Freigabe-Stau`. Zeig beides Mike proaktiv, ohne dass er danach fragen muss. Bestätigt er den Vorschlag, verschiebst du die Punkte von "Vorschlag" nach "Bestätigt für [Datum]" (Edit, nicht neu schreiben) – erst dann darf der Executor sie abarbeiten. Freigabe-Stau-Punkte einzeln oder gesammelt mit ihm durchgehen, je nach dem was er entschieden hat, und danach als erledigt/abgelehnt markieren statt löschen.
+
+Manuell auslösbar über `/aufgaben-check`.
+
 ### Bei Session-Ende
 Wenn der Nutzer die Session beendet oder du merkst dass ein natürliches Ende erreicht ist, biete an:
 1. Einen Daily Note Eintrag in 05 Daily Notes/ zu erstellen mit einer Zusammenfassung des Tages

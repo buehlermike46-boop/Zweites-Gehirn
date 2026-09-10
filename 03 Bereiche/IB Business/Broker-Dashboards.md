@@ -8,9 +8,14 @@ Automatischer Snapshot aus dem offiziellen PU Prime IB-Portal und dem Limitless 
 
 **Kopfwerte (automatisch geschrieben, nicht von Hand editieren):**
 
+puprime_commission: 0.00
+puprime_balance: 0.00
+puprime_new_clients: 0
+puprime_ftd_clients: 0
+puprime_opened_accounts: 0
 limitless_total_referred: 0
 limitless_approved: 0
 limitless_pending: 0
 limitless_this_month: 0
-letzter_abruf: 2026-09-10 15:19
+letzter_abruf: 2026-09-10 17:30
 status: teilweise: PU Prime nicht lesbar; GMX nicht lesbar

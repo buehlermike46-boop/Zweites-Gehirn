@@ -7,10 +7,21 @@ jarvis-voice-assistant/
 .obsidian/cache
 
 # App-interner Zustand (Claude Code / Claudian), keine Vault-Inhalte
-.claude/
+# Ausnahme: agents/ und commands/ sind versionierte Vault-Konfiguration
+# (z.B. der aufgaben-manager-Subagent), keine App-Laufzeit-Daten.
+.claude/*
+!.claude/agents/
+!.claude/commands/
 .claudian/
 .agents/
 
 # OS-Muell
 .DS_Store
 Thumbs.db
+
+# Vertraulich/privat, nie in ein (auch privates) Remote-Repo pushen:
+# RG Trading Academy Kursinhalte unterliegen einer Verschwiegenheitserklärung.
+04 Ressourcen/Trading-Learnings/
+# Archivierte private Chats mit echten Dritten (Familie, Freunde) und
+# eigene Kontodaten – nichts davon gehört in ein Cloud-Repo.
+04 Ressourcen/Persönliches Datenarchiv/

@@ -83,7 +83,15 @@ Mike ist über Claude in Chrome in seinem echten Chrome bei WhatsApp Web eingelo
 **Noch offen, bevor der Baustein wirklich läuft:**
 - [x] Mike führt `python scripts/whatsapp_userbot_login.py` selbst aus (braucht sein Handy zum QR-Scannen) — erledigt (Marker-Datei `whatsapp_login_done` vorhanden)
 - [x] Baseline-Lauf abwarten (erster Zyklus verarbeitet keine alten Nachrichten, setzt nur Zeitstempel je Chat) — 08.09.2026 10:03 gesetzt, danach läuft der 10-Minuten-Poll fehlerfrei
-- [ ] Einmal end-to-end testen: echte Nachricht rein → Entwurf erscheint in [[03 Bereiche/Jarvis Voice Assistant/WhatsApp Nachrichten]] → freigeben → Versand kommt wirklich an
+**Update 10.09.2026, Bridge repariert:** Die WhatsApp-Bruecke lag seit dem 09.09. abends still. Zwei Ursachen, beide im Log belegt:
+1. Am 09.09. mittags war das Profil noch eingeloggt, aber jeder Chat-Klick lief in `Locator.click: Timeout 30000ms exceeded` (14 von 14 Chats uebersprungen).
+2. Ab 09.09. 19:59 dann durchgehend `#pane-side nicht gefunden`, das Profil war aus WhatsApp Web ausgeloggt.
+
+Nach einem neuen QR-Login (`python scripts/whatsapp_userbot_login.py`, 10.09.2026) laeuft der Poll wieder fehlerfrei: keine Timeouts, keine Fehlerzeilen, die Chatliste wird sauber abgearbeitet.
+
+**Wichtig fuer den Test:** Eine Nachricht an sich selbst taugt nicht als Test. `poll_incoming()` ueberspringt alle `message-out`-Bubbles, im Chat "Nachricht an mich selbst" ist ausnahmslos alles message-out. Der Test braucht eine echte eingehende Nachricht von einer anderen Person in einem 1:1-Chat.
+
+- [ ] Einmal end-to-end testen: echte Nachricht von einer anderen Person rein → Entwurf erscheint in [[03 Bereiche/Jarvis Voice Assistant/WhatsApp Nachrichten]] → freigeben → Versand kommt wirklich an
 - [ ] `whatsapp`-Knoten in `frontend/main.js` manuell von `plannedNode` auf `liveNode` umstellen, sobald obiges bestätigt ist
 - [ ] Nach ein paar Tagen Betrieb prüfen, ob WhatsApp irgendwelche Warnungen/Einschränkungen an der Geräteverknüpfung zeigt
 
@@ -189,9 +197,20 @@ Auf Mikes ausdrücklichen Wunsch ("wirklich automatisch alle 10 Min, das Dashboa
 Chrome eingeloggt bestätigt — das dedizierte Bridge-Profil braucht aber weiterhin einen
 EIGENEN, separaten Login (siehe Klarstellung unten).
 
+**Update 10.09.2026: PU Prime aus der Brücke genommen.** Live geprüft: `ibportal.puprime.com` leitet auf `myaccount.puprime.com` um und zeigt dort einen Cloudflare-Bot-Check. Der läuft nur in Mikes normalem Chrome durch, im dedizierten Playwright-Profil nicht, und Bot-Erkennung wird bewusst nicht umgangen. Die Brücke hätte den Status damit dauerhaft auf "teilweise: PU Prime nicht lesbar" gehalten.
+
+Umgesetzt:
+- `broker_bridge.py`: neue Konstante `PUPRIME_ENABLED = False` ganz oben, der PU-Prime-Leseblock wird übersprungen und erzeugt keinen Fehlereintrag mehr. Auf `True` setzen, falls PU Prime den Check irgendwann fallen lässt
+- `broker_bridge.py`: schreibt die Notiz nicht mehr komplett neu, sondern übernimmt alles ab der ersten `## `-Überschrift unverändert. Damit überlebt der manuelle PU-Prime-Abschnitt in [[Broker-Dashboards]] jeden Bridge-Lauf
+- `broker_login.py`: nur noch 2 Schritte (Limitless, GMX), der PU-Prime-Schritt entfällt mit Erklärtext
+- **Wichtig:** Beides greift erst, wenn der laufende `task_agent.py`-Prozess die Skripte neu einliest. Im Zweifel den Task Watcher einmal neu starten
+
+PU-Prime-Zahlen kommen ab jetzt auf Zuruf über Claude in Chrome. Erster manueller Abruf am 10.09.2026: Total Commission 0,00 USD, Available Balance 0,00 USD, New/FTD Clients und Opened Accounts jeweils 0, in "Recently Opened Accounts" nur Mikes eigenes Konto. Limitless am selben Tag: 0 Referrals. Es gibt also bisher keinen einzigen geworbenen Kunden.
+
 **Noch offen, bevor es wirklich live läuft:**
 - [ ] Mike führt `python scripts/broker_login.py` einmal selbst aus (jetzt 3 Schritte: PU Prime IB-Dashboard, Limitless, GMX — alle in einem eigenen, separaten Browser-Fenster, NICHT dasselbe wie in Chrome eingeloggt zu sein)
-- [ ] Ersten echten Bridge-Lauf danach prüfen: liest `Broker-Dashboards.md`/`GMX Mails.md` wirklich plausible Zahlen (`status: ok`), oder Fehler (Regex-Muster treffen nicht, siehe CLAUDE.md-Hinweis zum Debuggen)
+- [x] Login am 10.09.2026 erneut durchgefuehrt (jetzt nur noch Limitless und GMX). Limitless liefert Werte, PU Prime ist deaktiviert.
+- [ ] **GMX bleibt offen, zurueckgestellt (Mike, 10.09.2026: "kann etwas dauern").** Stand nach dem Login: Die Startseite wird als eingeloggt erkannt, aber nach dem Klick auf "Zum Postfach" findet die Bruecke die Ungelesen-Zahl nicht. Das ist der bekannte SSO-Redirect: `auth.gmx.net` erkennt die Session im headless-Profil nicht, im sichtbaren Fenster schon. Kein Regex-Problem, sondern Session-Handling zwischen den GMX-Subdomains. GMX-Mails laufen bis auf Weiteres auf Zuruf.
 
 **Weiterhin offen, jeweils Mikes eigene Entscheidung, damit ALLE genannten Kanäle wirklich automatisch laufen:**
 - [ ] **Gmail für `task_agent.py` selbst:** bräuchte ein neues Google-Cloud-Projekt + OAuth-Zustimmung durch Mike (die Session hat schon einen Connector, aber `task_agent.py` läuft unbeaufsichtigt und hat den nicht).
