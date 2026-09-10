@@ -63,6 +63,13 @@ Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/Marketing & Kun
 
 Manuell auslösbar über `/content-check`. Bei Session-Start zusätzlich kurz prüfen, ob in Phase 1 Posts mit Status `bereit (wartet auf Freigabe)` auf Mikes Ja/Nein warten, und proaktiv zeigen.
 
+### Professor (Qualitätsmanagement für die Agenten-Struktur)
+`professor` (`.claude/agents/professor.md`) – prüft regelmäßig alle laufenden Agenten (aufgaben-manager/-executor, content-manager/-executor, sich selbst eingeschlossen) auf Reibung und Ineffizienz, sucht über die Skill-/Plugin-/Connector-Suche passende Bausteine für echte Lücken (installiert nichts selbst, kann er technisch nicht) und schreibt einen Bericht nach `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md`. Legt neue Agenten-Entwürfe höchstens als Datei an, aktiviert/scheduled nie selbst eine Routine.
+
+**Bewusste Ausnahme, seit 10.09.2026:** Der `professor` existiert, obwohl der [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] eigentlich max. 1-2 aktive Baustellen vorsieht und der `content-manager`/`content-executor` zu dem Zeitpunkt noch nicht einmal live lief. Mike hat sich dafür bewusst entschieden. Der `professor` bewertet diesen Zustand in seiner ersten Runde selbst, siehe `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md`.
+
+Manuell auslösbar über `/professor-check`.
+
 ### Bei Session-Ende
 Wenn der Nutzer die Session beendet oder du merkst dass ein natürliches Ende erreicht ist, biete an:
 1. Einen Daily Note Eintrag in 05 Daily Notes/ zu erstellen mit einer Zusammenfassung des Tages
