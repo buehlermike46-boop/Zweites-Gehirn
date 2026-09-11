@@ -24,9 +24,9 @@ Gemeinsame Zustandsdatei zwischen dem [[aufgaben-manager]] (plant, kontrolliert)
 ### Sofort
 - [ ] Kanalbild in Telegram setzen — Datei liegt bereit unter `Lim/Content/Assets/ic-kanalbild-limitless.png`
 - [ ] Instagram-Bio: Link zusätzlich ins Website-Feld eintragen, geht nur in der App
-- [ ] Make.com-Szenario dauerhaft aktivieren, Scheduling-Schalter auf ON
+- [x] Make.com-Szenario dauerhaft aktivieren, Scheduling-Schalter auf ON — 11.09.2026 per Live-Check bestätigt: Szenario "Integration Telegram Bot" (ID 7240246, Team "My Team") steht laut `mcp__Make__scenarios_list` auf `isActive: true`, `isPaused: false`. War also schon an, nicht mehr offen. Ein expliziter `scenarios_activate`-Aufruf zur Bestätigung wurde vom Berechtigungs-Klassifizierer dieser Session blockiert (siehe Log unten) — Zustand ist aber über die Leseabfrage zweifelsfrei belegt
 - [ ] Die vier neuen Kanalbilder aus `Lim/Content/Telegram/` gegenchecken und freigeben
-- [ ] Google-Drive-Ordner `Rechnungen/Eingang` anlegen
+- [x] Google-Drive-Ordner `Rechnungen/Eingang` anlegen — 11.09.2026 erledigt, nachdem Mike den Drive-Connector neu verbunden hat. Ordner-ID `15-E4HmcG5dR4j4LXzgxmv-BIs6q5hdfk` unter `Rechnungen` (ID `1AiM2ZiNWTGllVUd6EFe1ParzjIDHWFFd`)
 - [ ] WhatsApp end-to-end testen: jemanden bitten zu schreiben, danach Entwurf prüfen/freigeben, Versand kontrollieren
 
 ### Aufwendig
@@ -42,11 +42,14 @@ Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten)
 ### Aus der Session vom 11.09.2026 (Kontrolle der offenen Tagesplan-Punkte)
 - **Kanalbild in Telegram setzen** — kein Telegram-Connector vorhanden (Registry durchsucht, nichts gefunden). Bleibt Handarbeit, bis es einen Weg nach Telegram gibt.
 - **Instagram-Bio: Link ins Website-Feld** — laut `mcp__Windsor_ai__list_actions` deckt der Instagram-Connector nur "Bild-Post erstellen" und "Kommentieren" ab, keine Profil-/Bio-Felder. Das ist eine Plattformgrenze (Meta erlaubt das generell nur in der App), kein Connector wird das lösen.
-- **Make.com-Szenario aktivieren** — noch nicht möglich, aber es gibt einen passenden Connector in der MCP-Registry ("Make", u.a. mit `scenarios_activate`/`scenarios_deactivate`/`scenarios_run`), der noch nicht verbunden ist. Sobald Mike ihn unter claude.ai → Einstellungen → Connectors verbindet und der aufgaben-executor-Routine unter "Zugang" freigibt, kann das automatisiert werden — dann trägt eine Session die konkreten Tool-Namen in `aufgaben-executor.md` nach.
+- ~~Make.com-Szenario aktivieren~~ — erledigt, siehe "Bestätigt für 2026-09-11" oben. Mike hat den Make-Connector verbunden, Szenario war/ist bereits aktiv.
 - **Die 4 neuen Kanalbilder aus `Lim/Content/Telegram/` gegenchecken** — liegen lokal auf Mikes Desktop, außerhalb des Git-Vaults, für Cloud-Sessions nicht erreichbar. Laut [[Inner Circle Kanal-Content]] ohnehin als "Mike schaut sich das zuhause an" vorgemerkt.
-- **Google-Drive-Ordner `Rechnungen/Eingang` anlegen** — Connector ist verbunden, scheitert aber bei jedem Aufruf (Suche und Ordner-Erstellung getestet) mit "insufficient scope". Mike muss Google Drive unter claude.ai → Einstellungen → Connectors trennen und neu verbinden, dabei die volle Berechtigungsanfrage bestätigen (nicht nur eingeschränkten Zugriff), und danach der aufgaben-executor-Routine unter "Zugang" Google Drive geben (analog zum Vorgehen bei Jarvis/Windsor.ai/Canva für den Content-Executor).
+- ~~Google-Drive-Ordner `Rechnungen/Eingang` anlegen~~ — erledigt, siehe "Bestätigt für 2026-09-11" oben. Mike hat Google Drive neu verbunden, Scope-Fehler ist weg.
 - **WhatsApp end-to-end testen** — kein WhatsApp-Business-Connector in der Registry gefunden. Setzt außerdem eine echte eingehende Nachricht von einer dritten Person voraus, kein reines Zugriffsproblem.
 - **Posts 1-6 für Woche 1 im Kanal terminieren** — Texte sind längst copy-paste-fertig in [[Inner Circle Kanal-Content]], das reine Terminieren ("Sendebutton halten → Zeitplan") ist eine Telegram-App-Funktion, nicht Teil der Bot-API, damit auch mit einem künftigen Telegram-Connector nicht 1:1 nachbildbar (ein Bot könnte höchstens selbst zur richtigen Zeit senden).
+
+### Wichtiger Fund, 11.09.2026: Autonomie-Policy reicht allein nicht
+Beim Versuch, `mcp__Make__scenarios_activate` als Bestätigung aufzurufen, kam kein Fehler vom Connector, sondern eine Blockade der Session selbst: *"Permission for this action was denied by the Claude Code auto mode classifier."* Das ist eine technische Schutzschicht der Claude-Code-Plattform, unabhängig von dem, was in `CLAUDE.md`/`aufgaben-executor.md` steht. Heißt konkret: **die "volle Autonomie", die wir heute dokumentiert haben, ist nur die halbe Miete.** Damit der `aufgaben-executor` bei seinem geplanten Cloud-Lauf wirklich ohne Rückfrage handeln kann (Szenario aktivieren, E-Mail senden etc.), muss zusätzlich der **Permission-Mode der Routine selbst** entsprechend freizügig eingestellt sein (z.B. "bypassPermissions"/"auto" statt Standard). Das ist eine Einstellung auf der Routine selbst unter claude.ai/code/routines, nicht etwas, das eine Datei-Änderung hier lösen kann — Mike muss das dort selbst prüfen/setzen.
 
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
@@ -56,6 +59,12 @@ Kein bestätigter Plan für heute, nichts unternommen. Der Abschnitt "## Bestät
 
 ### 2026-09-11, Nachmittag, Hauptsession (kein Executor-Lauf, aber protokollrelevant)
 Mike wollte die 7 offenen "Bestätigt für 2026-09-11"-Punkte abschließen. Kontrolle ergab: keiner der 7 Punkte war mit den damaligen Werkzeugen ausführbar (Telegram/Make.com/WhatsApp: kein Connector; Instagram-Bio: Plattformgrenze; Google Drive: verbunden, aber "insufficient scope"). Mike hat daraufhin entschieden: **volle Autonomie für den `aufgaben-executor` ab sofort** – keine Freigabepflicht mehr für Senden/Posten/Login/Kauf/Löschen, nur noch Log-Pflicht. Umgesetzt: `CLAUDE.md`, `aufgaben-executor.md`, `aufgaben-manager.md`, `aufgaben-check.md` und dieser Abschnitt (vormals "Freigabe-Stau", jetzt "Technisch blockiert") entsprechend angepasst. Executor hat jetzt zusätzlich Google Drive/Gmail/Google Calendar im Werkzeugkasten (Tool-Namen in `aufgaben-executor.md`) – **Mike muss dafür noch die Routine "aufgaben-executor" unter claude.ai/code/routines → Zugang für diese drei Connectoren freischalten, sonst laufen die Tools bei einem Cloud-Lauf ins Leere.** Google Drive zusätzlich neu verbinden nötig (Scope-Fehler), Make.com-Connector existiert in der Registry, ist aber noch nicht verbunden. Details siehe "Technisch blockiert" oben. Nichts von den 7 ursprünglichen Punkten wurde dadurch bereits erledigt, nur die Blockade-Ursache jeweils sauber dokumentiert.
+
+### 2026-09-11, später Nachmittag, Hauptsession: Google Drive und Make live nachgezogen
+Mike hat Google Drive neu verbunden und den Make-Connector (mit begrenztem Scope: Szenarien Sicht/Ändern/Laufen, Verbindungen Sicht, Datenspeicher Sicht/Ändern) frisch autorisiert. Direkt getestet:
+- **Google Drive:** `search_files` und `create_file` liefen fehlerfrei. Ordner `Rechnungen` (ID `1AiM2ZiNWTGllVUd6EFe1ParzjIDHWFFd`) und darin `Eingang` (ID `15-E4HmcG5dR4j4LXzgxmv-BIs6q5hdfk`) angelegt. Punkt oben abgehakt.
+- **Make:** `environment_get` → Team "My Team" (ID 2658088). `scenarios_list` findet das Szenario "Integration Telegram Bot" (ID 7240246): `isActive: true`, `isPaused: false`, 48 Executions bisher. War also schon aktiv, Punkt oben abgehakt.
+- **Wichtiger Fund:** Der Versuch, das zur Bestätigung trotzdem per `scenarios_activate` explizit zu setzen, wurde von Claude Codes eigenem Berechtigungs-Klassifizierer blockiert ("Permission for this action was denied by the Claude Code auto mode classifier"), unabhängig von der heute dokumentierten Autonomie-Policy. Siehe eigener Abschnitt oben unter "Technisch blockiert" – das ist ein Punkt, den nur Mike über die Routine-Einstellungen selbst lösen kann (Permission-Mode der Routine), keine Datei-Änderung.
 
 ## Vorschlag für 2026-09-11
 *(Vom aufgaben-manager erzeugt, wartet auf Mikes Bestätigung per Push-Nachricht)*
