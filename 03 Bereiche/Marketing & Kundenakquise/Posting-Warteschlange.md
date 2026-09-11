@@ -43,9 +43,10 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 ## Queue
 
 ### 1. Freitag, 11.09.2026, 19:20 Uhr
-- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Status:** Asset erstellt, Posten fehlgeschlagen (11.09.2026, 08:32 UTC) — siehe Executor-Log unten
 - **Format:** Reel
-- **Asset:** `Lim/Content/Videos/11-ein-oekosystem-vier-werkzeuge-0-kosten.mp4`
+- **Asset (alt, unerreichbar):** `Lim/Content/Videos/11-ein-oekosystem-vier-werkzeuge-0-kosten.mp4`
+- **Asset (neu, über Jarvis erstellt, fertig zum Posten):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260911_083137_cfa0dc68-0cf1-448c-8052-497e223fc589.mp4 (9:16, 15s, ~97,5 Credits)
 - **Caption:** "Ein Ökosystem, vier Werkzeuge, 0€ Kosten. Signalgruppen, Academy, Hands-Free Trading, PrimeVerse-Tools, alles kostenlos. Schreib mir 'START', ich zeig dir wie's geht."
 - **Hashtags:** #trading #forex #tradingeducation #limitless #finanziellefreiheit
 
@@ -131,3 +132,13 @@ Die drei oben gelisteten Queue-Einträge referenzieren noch die alten lokalen Pf
 ## Archiv: alter, verworfener Ansatz (Stand 08.09.2026, nicht mehr verfolgt)
 
 Ein `/schedule`-Cloud-Agent lief isoliert ohne Zugriff auf Vault/lokale Dateien, brauchte öffentliche JPEG-URLs (unsere Karten waren PNG). Lösungsversuch war ein separates öffentliches GitHub-Repo (`buhlermike307-del/limitless-content`) für Post-Assets — der zugehörige Google-Account wurde von Google als Bot geflaggt und gesperrt (siehe [[Marketing & Kundenakquise]], "Offene technische Punkte"), das Repo ist tot. Nicht mehr weiterverfolgen, siehe Architektur oben stattdessen.
+
+## Executor-Log
+*(Append-only Protokoll jedes content-executor-Laufs, mit Zeitstempel. Angelegt beim ersten echten Lauf.)*
+
+### 2026-09-11, 08:29-08:33 UTC, erster echter Lauf (von Mike manuell über "Jetzt ausführen" angestoßen)
+Phase 1 aktiv. Post Nr. 1 (heute, 19:20 Uhr) war fällig und stand auf `freigegeben`. Der hinterlegte Asset-Pfad (`Lim/Content/Videos/...`) war wie erwartet unerreichbar (lokal bei Mike, nicht im Git-Vault) — daher neues Asset über Jarvis erstellt: 15s, 9:16-Reel, faceless/Info-Grafik-Stil passend zur Caption, 97,5 Credits (Guthaben danach: 720,5 von 818, `plus`-Plan). Video fertig unter der oben hinterlegten URL.
+
+**Posten fehlgeschlagen:** `mcp__Windsor_ai__execute_action` (instagram, `create_video_post`, Account `mike_bueh`) lehnte ab mit: "Write actions are disabled for the Windsor user buehlermike46@gmail.com. The setting is per team member and that user can turn it on under Settings > API Access". Das ist ein eigener Schalter bei Windsor.ai, unabhängig von den Connector-Rechten der Routine — die waren richtig gesetzt, das Konto selbst blockt Schreibzugriffe pauschal. Nichts wurde gepostet, kein Fehlerzustand auf Instagram-Seite. Post-Status oben entsprechend gesetzt, Video-URL für den nächsten Versuch aufgehoben, damit die Credits nicht doppelt ausgegeben werden.
+
+**Für Mike offen:** Unter https://onboard.windsor.ai/app/settings/account → Settings → API Access → "Enable write actions for Claude, ChatGPT & API" aktivieren. Danach reicht ein erneuter `/content-check`-Lauf oder das nächste automatische Zeitfenster, das bereits fertige Video muss nicht neu erstellt werden.
