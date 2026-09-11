@@ -34,5 +34,7 @@ Das war der Ausschlussgrund. Geprüft direkt in der offiziellen Doku (nicht nur 
 ## Entscheidung (07.09.2026)
 - Hermes NICHT an Telegram/Vault/Account anbinden.
 - Eigenes System (`telegram_bridge.py` / `telegram_userbot_bridge.py`, mit bestätigt funktionierender Freigabe-Pflicht) bleibt der Weg für Nachrichten-Automatisierung.
-- Hermes könnte trotzdem nützlich sein als **separates, manuell aufgerufenes Werkzeug** für Aufgaben ohne Nachrichten-Bezug (Recherche, PDF/Office-Arbeit, Code-Review) — unabhängig von Jarvis/der Bridge, kein Zugriff auf echte Daten/Accounts. Noch nicht weiter verfolgt, offen für später falls Bedarf.
-- Installiert unter `C:\Users\buehl\AppData\Local\hermes\` (eigener Anthropic-Test-Key, Docker-Sandbox, Blank-Slate-Konfiguration — nichts an echten Vault/Account angebunden).
+- ~~Hermes könnte trotzdem nützlich sein als separates, manuell aufgerufenes Werkzeug für Aufgaben ohne Nachrichten-Bezug~~ — nie weiter genutzt.
+- ~~Installiert unter `C:\Users\buehl\AppData\Local\hermes\`~~
+
+**Update 11.09.2026: komplett deinstalliert.** Der Ordner `C:\Users\buehl\AppData\Local\hermes\` hat sich als Ursache für ein hartnäckiges Verbindungsproblem herausgestellt: Hermes hatte dort eine eigene, mittlerweile kaputte Kopie von `@anthropic-ai/claude-code` liegen, deren Pfad im PATH vor der echten, frisch installierten Claude-Code-CLI kam, dadurch scheiterte jeder `claude`-Aufruf im `jarvis-voice-assistant`-Ordner (Ursprungsauslöser: die geplante Erweiterung des Wissensgraph-Interfaces um die fünf Cloud-Agenten, siehe [[Jarvis Hand - Agenten Ausbau]] Baustein 9). Da Hermes ohnehin nie weiter genutzt wurde, komplett gelöscht (`Remove-Item -Recurse -Force`) statt nur repariert. `claude` läuft jetzt sauber über `AppData\Roaming\npm`. Diese Notiz bleibt als Referenz/Lessons-Learned stehen, ist aber nicht mehr aktiv relevant.
