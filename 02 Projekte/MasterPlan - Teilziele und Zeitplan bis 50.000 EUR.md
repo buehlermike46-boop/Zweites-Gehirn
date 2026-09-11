@@ -159,6 +159,11 @@ Deine Zielgröße ist Lifetime-Volumen, nicht Monatsvolumen. Praktisch heißt da
 2. **Automatisieren vor Validieren.** Erst wenn ein Prozess manuell Geld bringt, lohnt es sich, ihn zu automatisieren.
 3. **Trading als Einkommen einplanen.** Siehe oben. Nicht machen.
 
+> [!warning] Bewusste Ausnahme von Punkt 1, 10.09.2026
+> An einem Abend drei Agenten-Baustellen parallel angefangen: `content-manager`/`content-executor` (noch nicht live, Connectoren fehlen) und danach `professor` (Qualitätsmanagement für die Agenten-Struktur, siehe [[Qualitätsbericht]]), obwohl Punkt 1 hier genau davor warnt und Abschnitt 6 explizit sagt "erst einen Agenten zuverlässig laufen lassen, dann den nächsten". Mike hat sich dafür bewusst entschieden, nicht aus Versehen. Der `professor` bewertet diesen Zustand in seiner ersten eigenen Runde selbst.
+>
+> **Update 11.09.2026:** `aufgaben-manager`/`aufgaben-executor` liefen am 11.09. nachweislich erfolgreich (der Professor hatte hier zunächst einen Fehlalarm, siehe [[Qualitätsbericht]]). `content-manager`/`content-executor` sind seit heute ebenfalls live: Connectoren nachgetragen, erster kompletter Zyklus (planen → Asset erstellen → posten) real durchgelaufen, erster automatischer Post veröffentlicht (Media-ID 17901731430581191). Real verbleibende Baustellen damit zwei, nicht drei: das laufende Content-System selbst (frisch, noch nicht über mehrere Runden bewährt) und `professor` (empfiehlt sich selbst aktuell nur manuell laufen zu lassen).
+
 ## 9. Nächste 30 Tage
 
 Operative Wochenplanung läuft über [[Wochenplan 10.09.-16.09.2026]] und die Folgewochen. Diese Liste ist die Klammer darüber.

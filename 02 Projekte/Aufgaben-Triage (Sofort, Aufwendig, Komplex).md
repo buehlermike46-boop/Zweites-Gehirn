@@ -19,6 +19,8 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 
 **Stand 10.09.2026, unterwegs abgearbeitet:** Staffelsatz geklärt (nicht rückwirkend, Rechnung im MasterPlan korrigiert), Kanalbeschreibung gesetzt, Reaktionen und Diskussionschat geprüft, Instagram-Bio ergänzt. Schichtplan und Tagesstruktur aus dem Kalender als [[Zwei-Wochen-Takt]] dokumentiert, Halbmarathon-Termin auf den 21.11.2026 korrigiert (Vault und Kalender). Kanalbild wartet auf Mike in der App, Bildfreigabe wartet auf ihn zuhause.
 
+**Kontrolle 11.09.2026 ([[aufgaben-manager]], erster Planungslauf über [[Tagesplan]]):** Kein Beleg zu prüfen, weil noch keine Executor-Runde gelaufen ist ("Bestätigt"-Abschnitt und Log in [[Tagesplan]] waren leer). Diese Liste war bereits aktuell und deckt alle offenen Punkte aus dem MasterPlan ("Nächste 30 Tage") und der Inbox ab, deshalb keine inhaltliche Änderung — nur der neue Vorschlag in [[Tagesplan]] ergänzt.
+
 ---
 
 ## 1. Sofort (21)

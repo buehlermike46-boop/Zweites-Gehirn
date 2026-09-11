@@ -277,6 +277,16 @@ Mike wollte prüfen ob das fertige Open-Source-Framework [[Hermes Agent (Nous Re
 
 **Fazit:** Bei unserem eigenen System (3a/3b) bleiben, das hat die Freigabe-Pflicht bereits bestätigt eingebaut. Hermes bleibt installiert als mögliches separates Werkzeug für nachrichtenfreie Aufgaben (Recherche, PDF/Office, Code-Review) — noch nicht weiter genutzt.
 
+## Exkurs: OpenClaw angefragt (10.09.2026)
+
+Mike wollte OpenClaw (offenes, populäres Agenten-Framework, früher Clawdbot/Moltbot) einsetzen und ihm dafür pauschal alle Zugänge geben (Gmail, Kalender, Drive, GitHub, Jarvis, Windsor.ai), parallel unsere eigenen Routinen pausiert, siehe [[2026-09-10]].
+
+Eingeordnet: OpenClaw läuft lokal bei Mike, nicht über die interaktive Claude-Code-Session, hat vollen Shell-/Browser-/Mail-Zugriff und einen offenen Community-Skill-Marktplatz (Drittanbieter-Code, ungeprüft). China hat es Behörden und Staatsbetrieben im März 2026 aus Sicherheitsgründen verboten. Die hier angebundenen Konten (Gmail, Kalender, Drive, GitHub, Jarvis, Windsor.ai) hängen am claude.ai-Konto und lassen sich nicht an ein separates externes Programm weiterreichen.
+
+Gleiche Lehre wie beim Hermes-Test oben: einem fertigen externen Agenten fehlt meist der Freigabe-Mechanismus für ausgehende Aktionen, den unser eigenes System bewusst eingebaut hat. Bevor Zugänge freigegeben werden, sollte pro Kanal einzeln entschieden werden (erst lesend, keine Mail-/Kauf-/Finanzaktionen ungeprüft), nicht alles auf einmal.
+
+**Nächste Session:** Thema mit Mike weiter, unter anderem ein Content-Agent als konkretes Beispiel für den nächsten Baustein (knüpft an Abschnitt 5/6 oben an). Prüfen was OpenClaw beim Setup an Berechtigungen abfragt, dann gezielt einzelne Zugänge freigeben statt pauschal.
+
 
 ## Offener Punkt (09.09.2026): Zentrales Nachrichten-Dashboard + GMX gewünscht
 
