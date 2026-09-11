@@ -43,7 +43,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 ## Queue
 
 ### 1. Freitag, 11.09.2026, 19:20 Uhr
-- **Status:** Asset erstellt, Posten fehlgeschlagen (11.09.2026, 08:32 UTC) — siehe Executor-Log unten
+- **Status:** gepostet (11.09.2026, nach Freischaltung der Windsor-Write-Actions durch Mike). Media-ID 17901731430581191
 - **Format:** Reel
 - **Asset (alt, unerreichbar):** `Lim/Content/Videos/11-ein-oekosystem-vier-werkzeuge-0-kosten.mp4`
 - **Asset (neu, über Jarvis erstellt, fertig zum Posten):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260911_083137_cfa0dc68-0cf1-448c-8052-497e223fc589.mp4 (9:16, 15s, ~97,5 Credits)
@@ -142,3 +142,6 @@ Phase 1 aktiv. Post Nr. 1 (heute, 19:20 Uhr) war fällig und stand auf `freigege
 **Posten fehlgeschlagen:** `mcp__Windsor_ai__execute_action` (instagram, `create_video_post`, Account `mike_bueh`) lehnte ab mit: "Write actions are disabled for the Windsor user buehlermike46@gmail.com. The setting is per team member and that user can turn it on under Settings > API Access". Das ist ein eigener Schalter bei Windsor.ai, unabhängig von den Connector-Rechten der Routine — die waren richtig gesetzt, das Konto selbst blockt Schreibzugriffe pauschal. Nichts wurde gepostet, kein Fehlerzustand auf Instagram-Seite. Post-Status oben entsprechend gesetzt, Video-URL für den nächsten Versuch aufgehoben, damit die Credits nicht doppelt ausgegeben werden.
 
 **Für Mike offen:** Unter https://onboard.windsor.ai/app/settings/account → Settings → API Access → "Enable write actions for Claude, ChatGPT & API" aktivieren. Danach reicht ein erneuter `/content-check`-Lauf oder das nächste automatische Zeitfenster, das bereits fertige Video muss nicht neu erstellt werden.
+
+### 2026-09-11, ca. 08:45 UTC, Nachtrag: erster echter Post ist live
+Mike hat die Windsor-Write-Actions freigeschaltet. Gleiches Video erneut über `execute_action` gepostet, diesmal erfolgreich: **Media-ID 17901731430581191**, veröffentlicht als Reel auf `mike_bueh`. Keine erneute Jarvis-Generierung nötig, keine zusätzlichen Credits verbraucht. Post-Status oben aktualisiert, [[Performance-Log]] um den neuen Eintrag ergänzt. Das ist der erste vollautomatisch (Asset-Erstellung + Posting) über das neue Agentenpaar veröffentlichte Post.
