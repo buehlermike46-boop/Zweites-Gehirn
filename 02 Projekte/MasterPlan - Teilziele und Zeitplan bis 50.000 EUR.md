@@ -169,12 +169,8 @@ Deine Zielgröße ist Lifetime-Volumen, nicht Monatsvolumen. Praktisch heißt da
 Operative Wochenplanung läuft über [[Wochenplan 10.09.-16.09.2026]] und die Folgewochen. Diese Liste ist die Klammer darüber.
 
 - [x] Beim Broker geklärt: der höhere Satz gilt nur oberhalb der Schwelle, nichts rückwirkend (bestätigt von Mike, 10.09.2026)
-- [ ] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe
+- Lot-Tracking aufsetzen, Liste 20 Namen + anschreiben, Referenzprojekt Pflegedienst, 12 Posts veröffentlicht — alle vier laufen operativ über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken (diese Liste ist die strategische Klammer, nicht der Arbeitsplan)
 - [ ] Bot-Strecke einmal selbst komplett durchlaufen: Start-Button, privater Chat, Broker-Link, Bestätigung
-- [ ] Liste mit 20 Namen aus dem echten Umfeld, die Trading interessiert
-- [ ] Diese 20 persönlich anschreiben, keine Massentexte
-- [ ] Referenzprojekt bauen: eine Webseite oder ein Chatbot für den [[Pflegedienst]], kostenlos, dafür mit Ergebnis-Nachweis als Portfolio-Stück
-- [ ] 12 Posts veröffentlicht (3 pro Woche)
 
 **Erfolgskriterium nach 30 Tagen:** Kanal und Bot laufen end to end, 12 Posts raus, 20 Kontakte angesprochen, 3 bis 5 geworbene Accounts, Gesamt-Lots zum ersten Mal überhaupt gemessen. Vier von fünf reichen für einen guten Monat.
 

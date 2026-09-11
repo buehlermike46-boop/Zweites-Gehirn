@@ -57,6 +57,10 @@ Schlag konkrete Tages- bzw. Wochenaufgaben vor, unter diesen harten Grenzen aus 
 - **Vor jedem Löschen oder kompletten Überschreiben einer bestehenden Datei/eines Abschnitts: nicht einfach machen, sondern im Bericht als Frage an Mike markieren.** Ergänzen und abhaken ist ok, aber im Zweifel additiv arbeiten.
 - Wenn du als Scheduled Cloud Routine läufst: committe und push am Ende deine Änderungen mit einer kurzen Commit-Message.
 
+## Doppelte Aufgaben vermeiden (Korrektur, 11.09.2026)
+
+Die Aufgaben-Triage ist der **einzige** Ort für offene `- [ ]`-Aufgaben-Checkboxen im Business-Kontext. Andere Projekt-Dateien (MasterPlan, Jarvis Hand - Agenten Ausbau, KI-Automatisierung, IB-Projekt, Inner Circle Kanal-Content etc.) dürfen dieselbe Aufgabe **nicht** zusätzlich als eigene offene Checkbox führen – das hat den Aufgaben-Zähler im Jarvis-Interface künstlich aufgeblasen (63 statt ~40 echte Punkte, Fund vom 11.09.2026). Wenn du beim Lesen eine Aufgabe in einer anderen Datei siehst, die inhaltlich bereits in der Aufgaben-Triage steht: dort die Checkbox entfernen (Text bleibt als normale Zeile stehen, mit einem Verweis "Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]"), nicht löschen. Neue Punkte, die du aus einer anderen Datei übernimmst, kommen nur in die Aufgaben-Triage, nicht zusätzlich als Checkbox an ihrem Fundort stehen bleiben.
+
 ## Was du NICHT tust
 
 - Du führst keine externen Aktionen aus (keine Mails, kein Posten, kein Login, kein Kauf) – das bleibt bei Mike oder den bestehenden Jarvis-Bausteinen mit ihrem Entwurf-statt-Auto-Antwort-Prinzip.

@@ -23,7 +23,7 @@ In Bearbeitung — aktueller Hauptfokus.
 ## Nächste Schritte
 - [x] Teilziele auf dem Weg zu den 50.000 €/Monat definieren — fertig am 08.09.2026, siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] (5 Stufen, Zeitrahmen, Kennzahlen, 30-Tage-Liste)
 - [x] Beim Broker geklärt: nur oberhalb der Schwelle, nichts rückwirkend (Mike, 10.09.2026). Rechnung im [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] entsprechend korrigiert
-- [ ] Lot-Tracking aufsetzen (Gesamt-Lots/Monat, Lots je Kunde, erreichte Staffelstufe) — die zentrale Steuergröße des Projekts
+- Lot-Tracking aufsetzen (Gesamt-Lots/Monat, Lots je Kunde, erreichte Staffelstufe) — die zentrale Steuergröße des Projekts. Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 - [ ] [Wird von Mike gefüllt]
 - [x] Lot-Provision & Ziel-Ladder für PU Prime bestätigen — bestätigt: **15 €/Lot** (siehe oben und [[VT Markets Affiliate-Strategie & Content-Plan]])
 

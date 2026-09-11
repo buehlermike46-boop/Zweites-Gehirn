@@ -25,7 +25,7 @@ Stand: Kanal existiert seit 04.09.2026, angeheftete Willkommensnachricht mit Sta
 - [x] **Reaktionen aktivieren** — geprüft am 10.09.2026, stand bereits auf "Alle Reaktionen" (max. 11 pro Beitrag)
 - [x] **Kein Diskussionschat verknüpft** — geprüft am 10.09.2026, Gruppe bleibt getrennt
 - [x] **Einladungslink** in der Instagram-Bio — am 10.09.2026 als Textzeile ergänzt ("Kostenloser Einstieg ins Trading 👇 t.me/JointoInnerCircle"). Offen: das klickbare Website-Feld, das lässt Instagram nur in der App bearbeiten
-- [ ] ~~**Transparenz-Post** einmalig anheften (siehe Post 0)~~ entfällt: Post 0 wurde am 09.09.2026 gestrichen (keine Offenlegung der Vergütung in Kundeninhalten, siehe [[2026-09-09]])
+- [x] ~~**Transparenz-Post** einmalig anheften (siehe Post 0)~~ entfällt: Post 0 wurde am 09.09.2026 gestrichen (keine Offenlegung der Vergütung in Kundeninhalten, siehe [[2026-09-09]])
 
 ### Textvorschlag Kanalbeschreibung
 
@@ -580,11 +580,11 @@ Nicht perfekt, wer eröffnet, ohne zu klicken, bekommt trotzdem eine Nachricht. 
 ## 8. Nächste Schritte
 
 - [x] Kanalbeschreibung gesetzt (10.09.2026), Bild noch offen, Datei liegt bereit
-- [ ] Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — vorgemerkt am 10.09.2026, Mike sieht sie sich zuhause am Rechner an
-- [ ] Posts 1–6 für Woche 1 terminieren (60 Min. am Wochenende)
+- Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
+- Posts 1–6 für Woche 1 terminieren — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 - [x] Instagram-Bio auf den Kanal umgebaut (10.09.2026), klickbares Website-Feld fehlt noch
-- [ ] Neue Willkommensnachricht im Bot eintragen + Button "Konto eröffnen" (Abschnitt 7)
-- [ ] Drei Follow-ups einrichten (24 h / 3 Tage / 7 Tage)
+- Neue Willkommensnachricht im Bot + Button "Konto eröffnen" — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
+- Drei Follow-ups einrichten (24 h / 3 Tage / 7 Tage) — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 - [x] Bonus-Werbung abgeklärt, bestätigt am 09.09.2026
 
 Verknüpft: [[IB-Projekt (Limitless & PU Prime)]] · [[KI-Automatisierung IB-Business]] · [[Marketing & Kundenakquise]] · [[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]]

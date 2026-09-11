@@ -16,8 +16,8 @@ In Bearbeitung
 - [x] Telegram-Gruppe erstellen — erledigt 04.09.2026, siehe Setup-Schritte unten
 - [x] Telegram-Bot für vollautomatische Nachrichten erstellen — erledigt, Szenario gebaut und laut Mike getestet (siehe unten)
 - [x] Nachrichten-Texte für den Bot erstellen — finaler Text seit 04.09.2026 hinterlegt (siehe unten)
-- [ ] Website bauen
-- [ ] Klären ob Limitless eine API/Webhook für den Prospect Tracker anbietet (bei Limitless-Support erfragen), sonst Alternative planen (z.B. eigene Datenbank/Airtable, die der Telegram-Bot befüllt, plus regelmäßiger CSV-Export/Abgleich mit dem Prospect Tracker) — Dashboard selbst angeschaut (siehe Notizen unten), Support aber noch nicht kontaktiert, daher weiterhin offen
+- Website bauen — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
+- [ ] Klären ob Limitless eine API/Webhook für den Prospect Tracker anbietet (bei Limitless-Support erfragen), sonst Alternative planen (z.B. eigene Datenbank/Airtable, die der Telegram-Bot befüllt, plus regelmäßiger CSV-Export/Abgleich mit dem Prospect Tracker) — Dashboard selbst angeschaut (siehe Notizen unten), Support aber noch nicht kontaktiert, daher weiterhin offen. Ausführlichste Fassung dieser Aufgabe, [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] verweist hierher zurück statt eigenen Text zu führen
 
 ## Telegram-Bot Setup — Ablauf & Fortschritt
 
@@ -34,7 +34,7 @@ Ziel: Neues Mitglied kommt in die Telegram-Gruppe → Bot postet eine Nachricht 
 - [x] Zusatz: Alte "Start Now"-Nachricht wird automatisch gelöscht, bevor die neue gepostet wird, damit der Gruppenchat nicht mit Willkommensnachrichten vollläuft (Data Store speichert die letzte Message-ID pro Gruppe) — getestet, funktioniert (04.09.2026)
 - [x] Szenario testen: kompletten Ablauf einmal durchklicken (Start Now → privater Chat → Onboarding-Nachricht kommt an) — laut Mike getestet (Stand 09.09.2026)
 - [x] Platzhaltertexte durch finale Nachrichten-Texte ersetzen — finaler Text seit 04.09.2026 hinterlegt (siehe oben)
-- [ ] Szenario dauerhaft aktivieren ("Immediately as data arrives" ist aktuell zu Testzwecken an)
+- Szenario dauerhaft aktivieren ("Immediately as data arrives" ist aktuell zu Testzwecken an) — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 
 **Die bestehende Telegram-Gruppe "Limitless" bleibt erhalten** (Entscheidung 04.09.2026): Neue Mitglieder sehen dort keine ältere Chat-Historie, was für reine Content-Distribution ungünstig ist — die Gruppe ist aber für späteren Live-Austausch/Community-Chat weiterhin nützlich und wird nicht abgeschaltet. Die Automatisierung (Willkommensnachricht mit Start-Button beim Beitritt) läuft dort unverändert weiter.
 
@@ -49,7 +49,7 @@ Ziel: Neues Mitglied kommt in die Telegram-Gruppe → Bot postet eine Nachricht 
 - [x] Bot (@LimitlessPuBot) als Administrator hinzugefügt (von Mike selbst erledigt, da die Admin-Suche im Telegram-Web-Client Bots nicht zuverlässig fand)
 - [x] Finale Willkommensnachricht gepostet und angepinnt — inkl. **echtem Inline-Button "🚀 Start Now"** (über ein manuelles Make.com-Modul mit Reply-Markup/JSON gepostet, Chat-ID per Public-Username `@JointoInnerCircle` angesprochen), genau wie bei Freedom Circle. Text: "🚀 Willkommen im Inner Circle! Hier zeig ich dir echte Einblicke ins Trading, Ergebnisse und alles, was du für den Einstieg brauchst – komplett kostenlos. 👉 Klick auf Start, dann zeig ich dir in 3 Schritten, wie du dabei bist." (04.09.2026)
 - [x] Bot-Onboarding-Nachricht (privater Chat nach /start) erweitert und final im Make.com-Szenario hinterlegt (04.09.2026) — Aufbau angelehnt an Moritz' "Freedom Circle Start Bot" (dort selbst nachgeschaut), aber bewusst kompakter gehalten: Ökosystem-Erklärung (PU Prime = Broker, LIMITLESS = Community & Education, PrimeVerse = Trading-Tools), Einzahlungsempfehlung (min. 300 USD, VIP ab 1.000 USD) inkl. Bonus-Staffel (300→600 / 500→1.000 / 1.000→2.000 USD Guthaben), persönlicher Referral-Link (worldoflimitless.com/?ref=2A5CC2B8). Aktuell nur auf Deutsch — eine spätere Sprachauswahl Deutsch/Englisch wäre technisch nachrüstbar (offener Punkt)
-- [ ] Regelmäßig Content im Kanal posten (Signale, Updates, Live-Sessions-Ankündigungen etc.), damit neue Abonnenten beim Beitritt direkt Substanz sehen — braucht echtes Material von Mike (Screenshots/Ergebnisse), wird bewusst nicht erfunden/simuliert
+- Regelmäßig Content im Kanal posten (Signale, Updates, Live-Sessions-Ankündigungen etc.), damit neue Abonnenten beim Beitritt direkt Substanz sehen — braucht echtes Material von Mike (Screenshots/Ergebnisse), wird bewusst nicht erfunden/simuliert. Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 
 **Verhältnis Gruppe ↔ Kanal (Rollen final geklärt, 04.09.2026):**
 - **Kanal "Inner Circle"** = Akquise/Top of Funnel. Öffentlich, für neue/kalte Kontakte. Zeigt Content wie "Gewinne"/Erfolge (ähnlich Moritz' "Freedom Circle") und Ausschnitte, damit Interessenten sehen, was sie erwartet, und dann über den Start-Link ein Konto erstellen.

@@ -91,9 +91,9 @@ Nach einem neuen QR-Login (`python scripts/whatsapp_userbot_login.py`, 10.09.202
 
 **Wichtig fuer den Test:** Eine Nachricht an sich selbst taugt nicht als Test. `poll_incoming()` ueberspringt alle `message-out`-Bubbles, im Chat "Nachricht an mich selbst" ist ausnahmslos alles message-out. Der Test braucht eine echte eingehende Nachricht von einer anderen Person in einem 1:1-Chat.
 
-- [ ] Einmal end-to-end testen: echte Nachricht von einer anderen Person rein → Entwurf erscheint in [[03 Bereiche/Jarvis Voice Assistant/WhatsApp Nachrichten]] → freigeben → Versand kommt wirklich an
-- [ ] `whatsapp`-Knoten in `frontend/main.js` manuell von `plannedNode` auf `liveNode` umstellen, sobald obiges bestätigt ist
-- [ ] Nach ein paar Tagen Betrieb prüfen, ob WhatsApp irgendwelche Warnungen/Einschränkungen an der Geräteverknüpfung zeigt
+- Einmal end-to-end testen: echte Nachricht von einer anderen Person rein → Entwurf erscheint in [[03 Bereiche/Jarvis Voice Assistant/WhatsApp Nachrichten]] → freigeben → Versand kommt wirklich an. Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
+- `whatsapp`-Knoten in `frontend/main.js` von `reachableNode` auf `liveNode` umstellen, sobald obiges bestätigt ist — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
+- Nach ein paar Tagen Betrieb prüfen, ob WhatsApp irgendwelche Warnungen/Einschränkungen an der Geräteverknüpfung zeigt — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 
 **Update 08.09.2026 (Cockpit-Ausbau):** Beim Fertigstellen des Interfaces/Monitorings fiel
 auf, dass der laufende Server-Prozess veraltet war (`/whatsapp/status` gab 404 zurück,
@@ -210,10 +210,10 @@ PU-Prime-Zahlen kommen ab jetzt auf Zuruf über Claude in Chrome. Erster manuell
 **Noch offen, bevor es wirklich live läuft:**
 - [ ] Mike führt `python scripts/broker_login.py` einmal selbst aus (jetzt 3 Schritte: PU Prime IB-Dashboard, Limitless, GMX — alle in einem eigenen, separaten Browser-Fenster, NICHT dasselbe wie in Chrome eingeloggt zu sein)
 - [x] Login am 10.09.2026 erneut durchgefuehrt (jetzt nur noch Limitless und GMX). Limitless liefert Werte, PU Prime ist deaktiviert.
-- [ ] **GMX bleibt offen, zurueckgestellt (Mike, 10.09.2026: "kann etwas dauern").** Stand nach dem Login: Die Startseite wird als eingeloggt erkannt, aber nach dem Klick auf "Zum Postfach" findet die Bruecke die Ungelesen-Zahl nicht. Das ist der bekannte SSO-Redirect: `auth.gmx.net` erkennt die Session im headless-Profil nicht, im sichtbaren Fenster schon. Kein Regex-Problem, sondern Session-Handling zwischen den GMX-Subdomains. GMX-Mails laufen bis auf Weiteres auf Zuruf.
+**GMX bleibt offen, zurueckgestellt (Mike, 10.09.2026: "kann etwas dauern").** Stand nach dem Login: Die Startseite wird als eingeloggt erkannt, aber nach dem Klick auf "Zum Postfach" findet die Bruecke die Ungelesen-Zahl nicht. Das ist der bekannte SSO-Redirect: `auth.gmx.net` erkennt die Session im headless-Profil nicht, im sichtbaren Fenster schon. Kein Regex-Problem, sondern Session-Handling zwischen den GMX-Subdomains. GMX-Mails laufen bis auf Weiteres auf Zuruf. Die eigentliche Aufgabe (GMX per IMAP anbinden) läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nur Status-Notiz.
 
 **Weiterhin offen, jeweils Mikes eigene Entscheidung, damit ALLE genannten Kanäle wirklich automatisch laufen:**
-- [ ] **Gmail für `task_agent.py` selbst:** bräuchte ein neues Google-Cloud-Projekt + OAuth-Zustimmung durch Mike (die Session hat schon einen Connector, aber `task_agent.py` läuft unbeaufsichtigt und hat den nicht).
+- **Gmail für `task_agent.py` selbst:** bräuchte ein neues Google-Cloud-Projekt + OAuth-Zustimmung durch Mike (die Session hat schon einen Connector, aber `task_agent.py` läuft unbeaufsichtigt und hat den nicht). Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 
 ### 8. Instagram/Facebook — Content-Reichweite ✅ live, Nachrichten-Bridge ⛔ blockiert (09.09.2026)
 
@@ -263,7 +263,7 @@ Jede neue Anbindung (Mail-Zugriff automatisieren, Instagram/Telegram-Zugangsdate
 - [x] Baseline gesetzt (erster Lauf ohne alte Nachrichten zu verarbeiten)
 - [x] Test: echte Nachricht von Janina bekommen, Entwurf erschien in [[03 Bereiche/Jarvis Voice Assistant/Telegram Persönlich]] wie erwartet
 - [x] Entwurf freigegeben, Antwort kam wirklich über den eigenen Account bei Janina an
-- [ ] Nach ein paar Tagen Betrieb: prüfen ob Telegram irgendwelche Warnungen/Einschränkungen am Account zeigt
+- Nach ein paar Tagen Betrieb: prüfen ob Telegram irgendwelche Warnungen/Einschränkungen am Account zeigt — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 
 ## Telegram-Bridge: 07.-08.09.2026 pausiert, seit 08.09.2026 wieder aktiv
 

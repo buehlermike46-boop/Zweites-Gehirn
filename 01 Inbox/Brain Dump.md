@@ -18,7 +18,7 @@ Wichtige Business-/Finanz-/Trading-Inhalte aus dem ChatGPT-Verlauf gesichtet und
 - [x] VT Markets vs. PU Prime geklärt: VT Markets existiert nicht mehr, aktuell läuft alles über PU Prime (siehe [[IB-Projekt (Limitless & PU Prime)]])
 - [ ] Neuer Bereich [[Pflegedienst]] angelegt — Kunden-/Umsatzzahlen dazu fehlen noch, siehe offene Fragen dort
 - [x] Lot-Provision/Ziel-Ladder für PU Prime bestätigen — bestätigt: 15 €/Lot, siehe [[IB-Projekt (Limitless & PU Prime)]] und [[VT Markets Affiliate-Strategie & Content-Plan]]
-- [ ] Trade_Journal.xlsx (von ChatGPT erstellt, siehe [[Trading-Journal Struktur (1R = 200€)]]) und ggf. weitere ChatGPT-Dokumente (RG_Trading_Masterclass_Tag1, Trading_Mentoring_Tag1_Footprint_Lernblatt, Trading_Checklist_Futures.xlsx) noch aus ChatGPT herunterladen und in 07 Anhänge/ ablegen, falls gewünscht
+- Trade_Journal.xlsx (von ChatGPT erstellt, siehe [[Trading-Journal Struktur (1R = 200€)]]) und ggf. weitere ChatGPT-Dokumente (RG_Trading_Masterclass_Tag1, Trading_Mentoring_Tag1_Footprint_Lernblatt, Trading_Checklist_Futures.xlsx) noch aus ChatGPT herunterladen und in 07 Anhänge/ ablegen, falls gewünscht. Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 - [ ] Falls gewünscht: weiter im ChatGPT-Verlauf zurückgehen (auch außerhalb Trading gibt es noch mehr Business-Themen wie Bewerbungsmail, die noch nicht gesichtet wurden)
 
 ## Offen aus dem MasterPlan, "Nächste 30 Tage" (Stand 09.09.2026)
