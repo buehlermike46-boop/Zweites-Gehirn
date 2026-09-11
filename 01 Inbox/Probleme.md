@@ -14,4 +14,4 @@ nicht jedes Problem braucht gleich ein eigenes Projekt. Jarvis liest diese Notiz
 | Datum | Bereich | Problem | Status |
 |---|---|---|---|
 | <2026-09-09> | <Beispiel> | <Kurze Beschreibung> | offen |
-| 2026-09-11 | Jarvis Voice Assistant | Frontend (localhost:8340, Wissensgraph) zeigt "Verbindung verloren...", Backend-Server vermutlich abgestürzt oder nicht erreichbar. Ursache noch unklar, jarvis.log prüfen. | offen |
+| 2026-09-11 | Jarvis Voice Assistant | Frontend (localhost:8340) zeigte "Verbindung verloren...". Ursache gefunden: kein Server-Absturz, sondern das separate Anthropic-API-Konto (console.anthropic.com, genutzt von server.py/task_agent.py für Claude Haiku/Sonnet) hat kein Guthaben mehr ("credit balance too low"). Fix: dort Guthaben aufladen. | offen (wartet auf Aufladen) |
