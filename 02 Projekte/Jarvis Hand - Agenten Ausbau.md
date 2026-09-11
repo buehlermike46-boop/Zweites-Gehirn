@@ -288,7 +288,20 @@ Gleiche Lehre wie beim Hermes-Test oben: einem fertigen externen Agenten fehlt m
 **Nächste Session:** Thema mit Mike weiter, unter anderem ein Content-Agent als konkretes Beispiel für den nächsten Baustein (knüpft an Abschnitt 5/6 oben an). Prüfen was OpenClaw beim Setup an Berechtigungen abfragt, dann gezielt einzelne Zugänge freigeben statt pauschal.
 
 
-### 9. Zweites-Gehirn Cloud-Agenten im Graph sichtbar machen (neu, 11.09.2026)
+### 9. Zweites-Gehirn Cloud-Agenten im Graph sichtbar machen ✅ fertig (11.09.2026)
+
+**Update 11.09.2026 (abends):** Umgesetzt, exakt wie unten vorgeschlagen — eigener Ast
+`AGENTEN` neben `GEHIRN`/`HAND`/`STIMME`, `/agenten/status`-Endpoint in `server.py` liest
+`Tagesplan.md`/`Posting-Warteschlange.md`/`Qualitätsbericht.md`, `frontend/main.js` pollt
+alle 30s, `professor` bewusst als `reachableNode` statt `liveNode` (real, aber nur manuell).
+**Kleine Verzögerung dabei:** Die Umsetzung war technisch schon fertig, lag aber nur
+unversioniert auf Mikes Rechner — `jarvis-voice-assistant` hatte bis dahin gar kein eigenes
+GitHub-Repo, deshalb neues privates Repo `buehlermike46-boop/jarvis-voice-assistant`
+angelegt (Fork-Basis: `Julian-Ivanov/jarvis-voice-assistant` als `upstream`-Remote erhalten)
+und der komplette lokale Stand dorthin gesichert, inklusive aller bis dahin nur lokal
+existierenden Bausteine (Telegram/WhatsApp/Broker-Bridges, Cockpit-Endpoints). Damit ist
+`jarvis-voice-assistant` jetzt auch von einer Claude-Code-Session aus direkt bearbeitbar,
+nicht mehr nur über eine lokale Session bei Mike.
 
 **Auftrag von Mike:** Im Wissensgraph-Interface sollen die echten Cloud-Agenten aus dem
 `Zweites-Gehirn`-Repo auftauchen, nicht nur die lokalen HAND-Bausteine (Mail, Instagram,
