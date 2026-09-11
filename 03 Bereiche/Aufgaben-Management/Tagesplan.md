@@ -32,18 +32,30 @@ Gemeinsame Zustandsdatei zwischen dem [[aufgaben-manager]] (plant, kontrolliert)
 ### Aufwendig
 - [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren, ca. 60 Minuten
 
-**Hinweis:** Einige dieser Punkte (Kanalbild setzen, Make.com aktivieren, Bilder freigeben, Instagram-Bio in der App) kann nur Mike selbst ausführen, weil sie App-/Browser-Login brauchen, die der Executor nicht hat. Der Executor bereitet an, was er kann (z.B. Post-Texte/Termine vorschlagen), und trägt den Rest in den Freigabe-Stau bzw. lässt ihn offen für Mike, statt ihn als erledigt zu markieren.
+**Hinweis (aktualisiert 11.09.2026):** Einige dieser Punkte (Kanalbild setzen, Make.com aktivieren, Bilder freigeben, Instagram-Bio in der App) kann aktuell nur Mike selbst ausführen, nicht weil eine Freigabe fehlt, sondern weil es dafür schlicht kein Werkzeug/keinen Connector gibt bzw. eine Plattformgrenze besteht (siehe "Technisch blockiert" unten für die Details je Punkt, Stand der Session vom 11.09.2026). Der Executor bereitet an, was er kann, und trägt den Rest weiterhin unter "Technisch blockiert" ein statt ihn als erledigt zu markieren.
 
 Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten) ist mit "Bestätigt" noch nicht beantwortet — bleibt offen bis zur nächsten Rückmeldung.
 
-## Freigabe-Stau
-*(Fertig vorbereitete, aber freigabepflichtige Punkte – Senden, Posten, neue Logins, Käufe, Formulare mit persönlichen Daten, Löschen. Mike gibt hier beim täglichen Check-in gesammelt frei oder ab.)*
+## Technisch blockiert
+*(Seit 11.09.2026 keine Freigabe-Warteschlange mehr – Mike hat entschieden, dass der Executor jede Aktion, für die er ein Werkzeug hat, direkt ausführt, auch Senden/Posten/Login/Kauf/Löschen. Hier landet nur noch, wofür schlicht kein Werkzeug existiert oder ein Connector fehlerhaft/unzureichend berechtigt ist. Mike richtet hier Zugriff/Connector ein, dann kann der Executor beim nächsten Lauf ranmüssen.)*
+
+### Aus der Session vom 11.09.2026 (Kontrolle der offenen Tagesplan-Punkte)
+- **Kanalbild in Telegram setzen** — kein Telegram-Connector vorhanden (Registry durchsucht, nichts gefunden). Bleibt Handarbeit, bis es einen Weg nach Telegram gibt.
+- **Instagram-Bio: Link ins Website-Feld** — laut `mcp__Windsor_ai__list_actions` deckt der Instagram-Connector nur "Bild-Post erstellen" und "Kommentieren" ab, keine Profil-/Bio-Felder. Das ist eine Plattformgrenze (Meta erlaubt das generell nur in der App), kein Connector wird das lösen.
+- **Make.com-Szenario aktivieren** — noch nicht möglich, aber es gibt einen passenden Connector in der MCP-Registry ("Make", u.a. mit `scenarios_activate`/`scenarios_deactivate`/`scenarios_run`), der noch nicht verbunden ist. Sobald Mike ihn unter claude.ai → Einstellungen → Connectors verbindet und der aufgaben-executor-Routine unter "Zugang" freigibt, kann das automatisiert werden — dann trägt eine Session die konkreten Tool-Namen in `aufgaben-executor.md` nach.
+- **Die 4 neuen Kanalbilder aus `Lim/Content/Telegram/` gegenchecken** — liegen lokal auf Mikes Desktop, außerhalb des Git-Vaults, für Cloud-Sessions nicht erreichbar. Laut [[Inner Circle Kanal-Content]] ohnehin als "Mike schaut sich das zuhause an" vorgemerkt.
+- **Google-Drive-Ordner `Rechnungen/Eingang` anlegen** — Connector ist verbunden, scheitert aber bei jedem Aufruf (Suche und Ordner-Erstellung getestet) mit "insufficient scope". Mike muss Google Drive unter claude.ai → Einstellungen → Connectors trennen und neu verbinden, dabei die volle Berechtigungsanfrage bestätigen (nicht nur eingeschränkten Zugriff), und danach der aufgaben-executor-Routine unter "Zugang" Google Drive geben (analog zum Vorgehen bei Jarvis/Windsor.ai/Canva für den Content-Executor).
+- **WhatsApp end-to-end testen** — kein WhatsApp-Business-Connector in der Registry gefunden. Setzt außerdem eine echte eingehende Nachricht von einer dritten Person voraus, kein reines Zugriffsproblem.
+- **Posts 1-6 für Woche 1 im Kanal terminieren** — Texte sind längst copy-paste-fertig in [[Inner Circle Kanal-Content]], das reine Terminieren ("Sendebutton halten → Zeitplan") ist eine Telegram-App-Funktion, nicht Teil der Bot-API, damit auch mit einem künftigen Telegram-Connector nicht 1:1 nachbildbar (ein Bot könnte höchstens selbst zur richtigen Zeit senden).
 
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
 ### 2026-09-11, Executor-Lauf
 Kein bestätigter Plan für heute, nichts unternommen. Der Abschnitt "## Bestätigt für [Datum]" ist noch das leere Template, und der "## Vorschlag für 2026-09-11" vom aufgaben-manager wartet noch auf Mikes Bestätigung per Push-Nachricht. Ohne Bestätigung wird laut Vorgabe keine eigene Freigabe erfunden — auch kein automatisches Nachziehen aus der Aufgaben-Triage, weil das erst greift, wenn die bestätigte Liste leer abgearbeitet ist, nicht wenn sie nie befüllt wurde.
+
+### 2026-09-11, Nachmittag, Hauptsession (kein Executor-Lauf, aber protokollrelevant)
+Mike wollte die 7 offenen "Bestätigt für 2026-09-11"-Punkte abschließen. Kontrolle ergab: keiner der 7 Punkte war mit den damaligen Werkzeugen ausführbar (Telegram/Make.com/WhatsApp: kein Connector; Instagram-Bio: Plattformgrenze; Google Drive: verbunden, aber "insufficient scope"). Mike hat daraufhin entschieden: **volle Autonomie für den `aufgaben-executor` ab sofort** – keine Freigabepflicht mehr für Senden/Posten/Login/Kauf/Löschen, nur noch Log-Pflicht. Umgesetzt: `CLAUDE.md`, `aufgaben-executor.md`, `aufgaben-manager.md`, `aufgaben-check.md` und dieser Abschnitt (vormals "Freigabe-Stau", jetzt "Technisch blockiert") entsprechend angepasst. Executor hat jetzt zusätzlich Google Drive/Gmail/Google Calendar im Werkzeugkasten (Tool-Namen in `aufgaben-executor.md`) – **Mike muss dafür noch die Routine "aufgaben-executor" unter claude.ai/code/routines → Zugang für diese drei Connectoren freischalten, sonst laufen die Tools bei einem Cloud-Lauf ins Leere.** Google Drive zusätzlich neu verbinden nötig (Scope-Fehler), Make.com-Connector existiert in der Registry, ist aber noch nicht verbunden. Details siehe "Technisch blockiert" oben. Nichts von den 7 ursprünglichen Punkten wurde dadurch bereits erledigt, nur die Blockade-Ursache jeweils sauber dokumentiert.
 
 ## Vorschlag für 2026-09-11
 *(Vom aufgaben-manager erzeugt, wartet auf Mikes Bestätigung per Push-Nachricht)*

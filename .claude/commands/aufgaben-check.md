@@ -9,7 +9,7 @@ Fass sein Ergebnis danach für Mike zusammen:
 - was offen/unklar geblieben ist und wo du eine Antwort von ihm brauchst
 - die konkrete Empfehlung für heute/diese Woche (steht jetzt als "Vorschlag" in `03 Bereiche/Aufgaben-Management/Tagesplan.md`)
 - was zurückgestellt wurde, weil es zu keiner aktiven MasterPlan-Stufe passt
-- was aktuell im Freigabe-Stau liegt und auf sein Ja/Nein wartet
+- was aktuell unter "Technisch blockiert" liegt (fehlendes Werkzeug/Connector, seit 11.09.2026 keine Freigabe-Frage mehr)
 
 Wenn Mike den Vorschlag bestätigt: verschieb die Punkte in `Tagesplan.md` von "Vorschlag" nach "Bestätigt für [Datum]" – erst dann darf der `aufgaben-executor` sie abarbeiten.
 
