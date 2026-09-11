@@ -36,6 +36,8 @@ Mike Bühler, 28 Jahre alt, gelernter Elektroniker für Betriebstechnik und Elek
 
 ## Session-Routinen
 
+**Wichtig vor jedem manuellen Subagenten-Aufruf (`/aufgaben-check`, `/content-check`, `/professor-check`):** Die Scheduled Cloud Routines pushen direkt nach `master`. Diese Subagenten selbst haben kein Bash/Git-Tool und lesen nur den lokal ausgecheckten Branch der aufrufenden Session – der kann hinter `master` zurückliegen (z.B. wenn diese Session auf einem eigenen Arbeits-/PR-Branch läuft). Deshalb: aufrufende Session macht IMMER erst `git fetch origin master && git merge origin/master`, bevor einer der drei Subagenten gestartet wird, sonst arbeitet er auf veraltetem Stand (siehe [[Qualitätsbericht]], Fehlalarm vom 11.09.2026).
+
 ### Bei Session-Start
 1. Prüfe 01 Inbox/ auf neue Notizen, zeige was drin liegt, und biete an die Einträge in die passenden Ordner einzusortieren
 
