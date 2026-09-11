@@ -43,28 +43,28 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 ## Queue
 
 ### 1. Freitag, 11.09.2026, 19:20 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel
 - **Asset:** `Lim/Content/Videos/11-ein-oekosystem-vier-werkzeuge-0-kosten.mp4`
 - **Caption:** "Ein Ökosystem, vier Werkzeuge, 0€ Kosten. Signalgruppen, Academy, Hands-Free Trading, PrimeVerse-Tools, alles kostenlos. Schreib mir 'START', ich zeig dir wie's geht."
 - **Hashtags:** #trading #forex #tradingeducation #limitless #finanziellefreiheit
 
 ### 2. Montag, 14.09.2026, 18:50 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Carousel (4 Bilder)
 - **Assets:** `Lim/Content/Bilder/26-drei-saeulenein-oekosystem.png`, `27-mehr-als-tradingtraverse.png`, `28-nicht-nur-chartsauch-du-selbst.png`, `30-warum-limitlessund-primeversezusammenarb.png`
 - **Caption:** "PrimeVerse ist mehr als Trading-Tools. Drei Säulen: Technologie, Bildung, Lifestyle, inklusive Reise-Vorteilen und einem Ansatz, der auch Mindset und Fitness einschließt. Alles Teil des kostenlosen Limitless-Zugangs. Schreib mir 'START' für mehr Infos."
 - **Hashtags:** #trading #primeverse #limitless #tradingcommunity
 
 ### 3. Dienstag, 15.09.2026, 19:45 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel
 - **Asset:** `Lim/Content/Videos/08-24-bis-zur-pruefung.mp4`
 - **Caption:** "Von der Bewerbung bis zur Freischaltung: laut Limitless im Schnitt 24 Stunden. Kein wochenlanges Warten. Schreib mir 'START', ich schick dir den Link."
 - **Hashtags:** #trading #limitless #forextrading #tradingtipps
 
 ### 4. Mittwoch, 16.09.2026, 19:00 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel (faceless, Text-Overlay/Screen-Recording-Stil, kein KI-Avatar als Mike)
 - **Thema/Hook:** Copy Trading ehrlich erklärt. Kontrast-Hook: "Copy Trading heißt nicht Knopf drücken und fertig. Was in den Signalgruppen wirklich passiert, in 30 Sekunden."
 - **Fakt/Nutzwert (Angebot.md):** Premium-Signalgruppen, in denen professionelle Trader ihre Trades zum Kopieren einstellen, komplett kostenfrei Teil vom Limitless-Ökosystem.
@@ -73,7 +73,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #copytrading #trading #tradingsignale #limitless #tradingeducation
 
 ### 5. Donnerstag, 17.09.2026, 19:15 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Carousel (4-5 Bilder)
 - **Thema/Hook:** Myth-Busting "vollautomatisiert = Geld im Schlaf?". Hook: "Vollautomatisiert heißt nicht: kein Risiko. Was Hands-Free Trading wirklich bedeutet."
 - **Fakt/Nutzwert (Angebot.md):** vollautomatisierte Trading-Bot-Systeme, laut Anbieter 24/5 von Vollzeit-Tradern verwaltet, Teil des kostenfreien Limitless-Zugangs.
@@ -82,7 +82,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #tradingbot #automatisiertestrading #limitless #tradingeducation #finanziellefreiheit
 
 ### 6. Freitag, 18.09.2026, 19:30 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel
 - **Thema/Hook:** PrimeVerse Market-Scanner (Syphon AI & Zonar). Hook mit konkreter Zahl: "40+ Währungspaare, ein KI-Scanner. Was ein Market-Scanner-Tool wirklich zeigt."
 - **Fakt/Nutzwert (Angebot.md):** KI-Marktscanner für institutionelle Orderflow-Muster über 40+ Währungspaare, laut Anbieter Teil von PrimeVerse, kostenfrei über den Limitless-Zugang.
@@ -91,7 +91,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #marketscanner #ki #limitless #primeverse #tradingtools
 
 ### 7. Samstag, 19.09.2026, 19:00 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Story (Umfrage/Interaktion)
 - **Thema/Hook:** Story-Umfrage zur Zielgruppen-Klärung, analog zum Q&A-Format aus der Recherche. Frage: "Was ist für dich am Trading-Ökosystem am unklarsten?" mit Antwortoptionen "Signale", "Bots", "Wie ich starte", "Kosten".
 - **Fakt/Nutzwert:** direkte Verbindung zu den Themen aus `Angebot.md` (Signalgruppen, Bots, Live-Sessions, kostenfrei), sammelt Feedback statt neue Behauptung aufzustellen.
@@ -100,7 +100,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #limitless
 
 ### 8. Sonntag, 20.09.2026, 18:50 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel
 - **Thema/Hook:** Live-Sessions & Academy, Lernen statt nur Kopieren, Mike als Person in den Vordergrund (siehe Branding-Update 09.09.2026). Geständnis-Hook: "Ich hab am Anfang nur Signale kopiert, ohne zu verstehen warum. Das war mein größter Anfängerfehler."
 - **Fakt/Nutzwert (ICP.md/Angebot.md):** Live-Sessions zum eigenständigen Lernen, langfristiges Ziel ist, den Finanzmarkt selbst zu verstehen statt dauerhaft nur zu kopieren.
