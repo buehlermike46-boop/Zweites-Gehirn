@@ -288,6 +288,49 @@ Gleiche Lehre wie beim Hermes-Test oben: einem fertigen externen Agenten fehlt m
 **Nächste Session:** Thema mit Mike weiter, unter anderem ein Content-Agent als konkretes Beispiel für den nächsten Baustein (knüpft an Abschnitt 5/6 oben an). Prüfen was OpenClaw beim Setup an Berechtigungen abfragt, dann gezielt einzelne Zugänge freigeben statt pauschal.
 
 
+### 9. Zweites-Gehirn Cloud-Agenten im Graph sichtbar machen (neu, 11.09.2026)
+
+**Auftrag von Mike:** Im Wissensgraph-Interface sollen die echten Cloud-Agenten aus dem
+`Zweites-Gehirn`-Repo auftauchen, nicht nur die lokalen HAND-Bausteine (Mail, Instagram,
+Telegram, WhatsApp etc.). Die fünf Agenten laufen als Scheduled Cloud Routines über
+claude.ai/code direkt auf dem Vault, komplett unabhängig von `jarvis-voice-assistant`
+selbst:
+
+- **`aufgaben-manager`** (`.claude/agents/aufgaben-manager.md`) — plant/kontrolliert die
+  24h-Aufgabenliste, schreibt Vorschläge in [[Tagesplan]]
+- **`aufgaben-executor`** (`.claude/agents/aufgaben-executor.md`) — arbeitet den
+  bestätigten Tagesplan ab, protokolliert im selben [[Tagesplan]]
+- **`content-manager`** (`.claude/agents/content-manager.md`) — plant wöchentlich
+  Instagram-Content, schreibt Vorschläge in [[Posting-Warteschlange]]
+- **`content-executor`** (`.claude/agents/content-executor.md`) — erstellt/postet fällige
+  Posts, protokolliert im "Executor-Log" derselben Datei
+- **`professor`** (`.claude/agents/professor.md`) — Qualitätsrunde über alle Agenten,
+  schreibt nach [[Qualitätsbericht]] (Mike hat sich am 10.09. bewusst für dieses fünfte,
+  eigentlich überzählige Agenten-Paar entschieden, siehe `CLAUDE.md`; empfiehlt sich
+  selbst bislang nur manuell laufen zu lassen)
+
+**Status aller fünf:** live und bereits mindestens einmal echt durchgelaufen (Stand
+11.09.2026), siehe [[2026-09-11]]. Sollten im Graph also nicht gedimmt/gestrichelt
+("geplant") erscheinen wie die noch unfertigen HAND-Bausteine, sondern als aktiv, mit
+Ausnahme des `professor` (der laut eigener Empfehlung aktuell nur manuell läuft, nicht
+automatisiert).
+
+**Technischer Vorschlag (von der lokalen Session zu prüfen/umzusetzen):**
+- Eigener neuer Ast im Graph, z.B. `AGENTEN` oder `CLOUD` neben `GEHIRN`/`HAND`/`STIMME`
+  (diese Agenten sind weder Jarvis' eigenes Wissen noch seine eigene Hand, sondern ein
+  drittes, externes System das denselben Vault pflegt) — Layout-Entscheidung liegt bei
+  Mike/der lokalen Session
+- Je Agent ein Knoten, Status live aus den oben verlinkten Koordinationsdateien lesbar
+  (`Tagesplan.md`/`Posting-Warteschlange.md`/`Qualitätsbericht.md` haben jeweils ein
+  Log mit Zeitstempel des letzten Laufs) — `server.py` hat über `[ACTION:VAULT]` bereits
+  Vault-Lesezugriff, dieselbe Mechanik sollte für einen neuen Status-Endpoint
+  wiederverwendbar sein, ähnlich wie die bestehenden `/tasks/status`/`/cockpit/status`
+- Klick auf einen Agenten-Knoten könnte z.B. den letzten Log-Eintrag aus der jeweiligen
+  Datei vorlesen/anzeigen, analog zum bestehenden Bridge-Knoten-Muster
+
+**Nicht Teil dieses Bausteins:** keine neue Fähigkeit, nur Sichtbarkeit/Monitoring im
+Interface. Die Agenten selbst bleiben unverändert im `Zweites-Gehirn`-Repo.
+
 ## Offener Punkt (09.09.2026): Zentrales Nachrichten-Dashboard + GMX gewünscht
 
 Mike hat ein automatisiertes Monitoring-System für WhatsApp, Gmail, GMX, Telegram und
