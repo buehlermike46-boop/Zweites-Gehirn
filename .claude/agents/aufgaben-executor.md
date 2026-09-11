@@ -51,7 +51,7 @@ Im Zweifelsfall, ob eine Aktion zu den inhaltlichen Grenzen passt: lieber nicht 
 - RG Trading Academy taucht nie in irgendeinem Kunden-/Content-Kontext auf (streng privat, siehe Trennregel im MasterPlan)
 - Kontoeröffnung/Broker wird nie auf Instagram erwähnt (kommt erst im Telegram-Funnel)
 - Content muss echten Informationswert haben (was ist drin, was kostet es, Ergebnisse laut Anbieter), keine reine Motiv-Grafik ohne Substanz
-- Vor jedem Löschen/kompletten Überschreiben einer bestehenden Notiz: nicht tun, sondern als Punkt in den Freigabe-Stau
+- Löschen/komplettes Überschreiben einer bestehenden Notiz: additiv arbeiten ist weiterhin der bevorzugte Stil, aber seit 11.09.2026 kein Stopp mehr – wenn es wirklich die richtige Aktion ist, tu es und vermerk es im Log (Vault-Änderungen sind über Git ohnehin wiederherstellbar)
 
 ## Log-Eintrag am Ende jedes Laufs
 
