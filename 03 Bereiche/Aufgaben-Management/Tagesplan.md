@@ -18,6 +18,24 @@ Gemeinsame Zustandsdatei zwischen dem [[aufgaben-manager]] (plant, kontrolliert)
 ## Bestätigt für [Datum]
 *(Erst befüllt, nachdem Mike den Vorschlag oben bestätigt hat – der Executor darf NUR aus diesem Abschnitt arbeiten)*
 
+## Bestätigt für 2026-09-11
+*(Mike hat den Vorschlag vom 11.09.2026 per Chat bestätigt ("Bestätigt"). Der Executor arbeitet ab hier. Stufe 0, Fundament, siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]].)*
+
+### Sofort
+- [ ] Kanalbild in Telegram setzen — Datei liegt bereit unter `Lim/Content/Assets/ic-kanalbild-limitless.png`
+- [ ] Instagram-Bio: Link zusätzlich ins Website-Feld eintragen, geht nur in der App
+- [ ] Make.com-Szenario dauerhaft aktivieren, Scheduling-Schalter auf ON
+- [ ] Die vier neuen Kanalbilder aus `Lim/Content/Telegram/` gegenchecken und freigeben
+- [ ] Google-Drive-Ordner `Rechnungen/Eingang` anlegen
+- [ ] WhatsApp end-to-end testen: jemanden bitten zu schreiben, danach Entwurf prüfen/freigeben, Versand kontrollieren
+
+### Aufwendig
+- [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren, ca. 60 Minuten
+
+**Hinweis:** Einige dieser Punkte (Kanalbild setzen, Make.com aktivieren, Bilder freigeben, Instagram-Bio in der App) kann nur Mike selbst ausführen, weil sie App-/Browser-Login brauchen, die der Executor nicht hat. Der Executor bereitet an, was er kann (z.B. Post-Texte/Termine vorschlagen), und trägt den Rest in den Freigabe-Stau bzw. lässt ihn offen für Mike, statt ihn als erledigt zu markieren.
+
+Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten) ist mit "Bestätigt" noch nicht beantwortet — bleibt offen bis zur nächsten Rückmeldung.
+
 ## Freigabe-Stau
 *(Fertig vorbereitete, aber freigabepflichtige Punkte – Senden, Posten, neue Logins, Käufe, Formulare mit persönlichen Daten, Löschen. Mike gibt hier beim täglichen Check-in gesammelt frei oder ab.)*
 
