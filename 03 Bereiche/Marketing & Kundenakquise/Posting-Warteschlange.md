@@ -145,3 +145,6 @@ Phase 1 aktiv. Post Nr. 1 (heute, 19:20 Uhr) war fällig und stand auf `freigege
 
 ### 2026-09-11, ca. 08:45 UTC, Nachtrag: erster echter Post ist live
 Mike hat die Windsor-Write-Actions freigeschaltet. Gleiches Video erneut über `execute_action` gepostet, diesmal erfolgreich: **Media-ID 17901731430581191**, veröffentlicht als Reel auf `mike_bueh`. Keine erneute Jarvis-Generierung nötig, keine zusätzlichen Credits verbraucht. Post-Status oben aktualisiert, [[Performance-Log]] um den neuen Eintrag ergänzt. Das ist der erste vollautomatisch (Asset-Erstellung + Posting) über das neue Agentenpaar veröffentlichte Post.
+
+### 2026-09-11, 16:35 UTC, planmäßiger täglicher Lauf
+Nichts fällig. Nächster Queue-Eintrag ist Nr. 2 (Montag, 14.09., 18:50 Uhr), liegt außerhalb des Heute-plus-24h-Fensters. Post Nr. 1 von heute Vormittag (Media-ID 17901731430581191) ist erst ca. 8h alt, für eine Auswertung braucht es laut Vorgabe mindestens 24-48h — noch keine Zahlen nachgetragen. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme.
