@@ -36,6 +36,8 @@ Mike Bühler, 28 Jahre alt, gelernter Elektroniker für Betriebstechnik und Elek
 
 ## Session-Routinen
 
+**Wichtig vor jedem manuellen Subagenten-Aufruf (`/aufgaben-check`, `/content-check`, `/professor-check`):** Die Scheduled Cloud Routines pushen direkt nach `master`. Diese Subagenten selbst haben kein Bash/Git-Tool und lesen nur den lokal ausgecheckten Branch der aufrufenden Session – der kann hinter `master` zurückliegen (z.B. wenn diese Session auf einem eigenen Arbeits-/PR-Branch läuft). Deshalb: aufrufende Session macht IMMER erst `git fetch origin master && git merge origin/master`, bevor einer der drei Subagenten gestartet wird, sonst arbeitet er auf veraltetem Stand (siehe [[Qualitätsbericht]], Fehlalarm vom 11.09.2026).
+
 ### Bei Session-Start
 1. Prüfe 01 Inbox/ auf neue Notizen, zeige was drin liegt, und biete an die Einträge in die passenden Ordner einzusortieren
 
@@ -62,6 +64,13 @@ Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/Marketing & Kun
 **Freigabe-Phase steht oben in `Posting-Warteschlange.md`, zweistufig:** Phase 1 "Freigabe nötig" (aktuell aktiv, seit 10.09.2026) heißt: der Executor postet nur Einträge mit Status `freigegeben`, alles andere bereitet er nur vor. Phase 2 "automatisch" heißt: der Executor postet neue Einträge ohne Einzelfreigabe. Nur Mike schaltet zwischen den Phasen um, keiner der beiden Agenten tut das selbst.
 
 Manuell auslösbar über `/content-check`. Bei Session-Start zusätzlich kurz prüfen, ob in Phase 1 Posts mit Status `bereit (wartet auf Freigabe)` auf Mikes Ja/Nein warten, und proaktiv zeigen.
+
+### Professor (Qualitätsmanagement für die Agenten-Struktur)
+`professor` (`.claude/agents/professor.md`) – prüft regelmäßig alle laufenden Agenten (aufgaben-manager/-executor, content-manager/-executor, sich selbst eingeschlossen) auf Reibung und Ineffizienz, sucht über die Skill-/Plugin-/Connector-Suche passende Bausteine für echte Lücken (installiert nichts selbst, kann er technisch nicht) und schreibt einen Bericht nach `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md`. Legt neue Agenten-Entwürfe höchstens als Datei an, aktiviert/scheduled nie selbst eine Routine.
+
+**Bewusste Ausnahme, seit 10.09.2026:** Der `professor` existiert, obwohl der [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] eigentlich max. 1-2 aktive Baustellen vorsieht und der `content-manager`/`content-executor` zu dem Zeitpunkt noch nicht einmal live lief. Mike hat sich dafür bewusst entschieden. Der `professor` bewertet diesen Zustand in seiner ersten Runde selbst, siehe `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md`.
+
+Manuell auslösbar über `/professor-check`.
 
 ### Bei Session-Ende
 Wenn der Nutzer die Session beendet oder du merkst dass ein natürliches Ende erreicht ist, biete an:

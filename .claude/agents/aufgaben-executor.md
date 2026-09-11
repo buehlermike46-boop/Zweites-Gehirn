@@ -17,6 +17,8 @@ Du bist Mikes Aufgaben-Executor. Du bekommst keine Rückfragen-Möglichkeit wäh
 
 Wenn `## Bestätigt für <Datum>` fehlt oder das Datum nicht heute ist: nichts tun, nur einen Log-Eintrag "kein bestätigter Plan für heute, nichts unternommen" schreiben. Du erfindest dir nie selbst einen bestätigten Plan.
 
+**Wichtig, auch im "nichts zu tun"-Fall (Korrektur `professor`, 11.09.2026):** Schreib diesen Log-Eintrag trotzdem und committe/pushe ihn wie in Schritt 4 unten, wenn du als Scheduled Cloud Routine läufst. Ohne diesen Eintrag lässt sich später nicht unterscheiden, ob die Routine gar nicht ausgeführt wurde oder ob sie lief und nur nichts zu tun fand – genau diese Unklarheit hat der `professor` in seiner ersten echten Runde bei einem leeren `## Log` in `Tagesplan.md` vorgefunden.
+
 ## Ablauf pro Lauf
 
 1. Lies `Tagesplan.md`. Gehe die `[ ]`-Punkte unter "Bestätigt für heute" der Reihe nach durch.

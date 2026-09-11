@@ -69,3 +69,20 @@ Reels statt nur als Carousel weiterverwenden (erster Test: Freitag-Reel, siehe C
 - [38 Instagram Reel Hooks for Finance & Money Creators (CreatorHouse)](https://creatorhouse.app/blog/instagram-reel-hooks-money-finance-2026)
 - [15 Hooks for Finance Reels (ReelsBuilder)](https://reelsbuilder.ai/blog/15-hooks-for-finance-reels-ready-to-use)
 - [6 Instagram Finance Reels Ideas (Contentworks)](https://contentworks.agency/6-instagram-finance-reels-ideas-to-try-this-year/)
+
+## Update 11.09.2026 (content-manager, erste Live-Runde)
+
+Eigene Daten reichten noch nicht (nur ein Post live, siehe [[Performance-Log]]), deshalb ergänzend recherchiert. Rein zur Hook-/Format-Inspiration für organische Posts, keine Kampagnen-Bewertung, siehe Guardrails in [[Marketing & Kundenakquise]].
+
+- **Konkrete Zahl in den ersten 3 Sekunden zahlt sich aus:** Finance-Ads mit einer konkreten Zahl direkt am Anfang erzielen laut Branchendaten eine 31% höhere Hook-Rate als der Finance-Durchschnitt. Deckt sich mit der bestehenden Empfehlung oben ("Konkrete Zahlen statt vage Versprechen").
+- **Kontrast-/Geständnis-Hooks schlagen "Bold Claim":** Confessional-Stil, direkte Ansprache und Kontrast-Hooks (z. B. "Mein Bank zieht dir was ab, wir nicht"-Struktur) performen laut Recherche besser als reißerische Behauptungen. Stärkt die bestehende Hook-Formel-Empfehlung, ändert nichts an ihr.
+- **Bildungs-Framing schlägt Verkaufs-Framing:** "Lern wie X funktioniert" performt in der Recherche durchgängig besser als "Verdien Geld mit X" — bei Klicks UND bei Compliance-Prüfungen. Bestätigt Mikes bestehenden Ansatz (Instagram bleibt informativ, kein Konto-CTA) als inhaltlich richtig, nicht nur als Compliance-Notlösung.
+- **Community-Signal als Trust-Baustein:** "Tritt X+ Leuten bei" senkt laut Recherche die Einstiegshürde. Für uns nur mit echten, als "laut Anbieter" gekennzeichneten Zahlen nutzbar (siehe Guardrails) — der eigene Telegram-Kanal hat aktuell nur eine Handvoll Abonnenten, eine erfundene/übertriebene Zahl wäre nicht nur unehrlich, sondern auch schnell auffliegend.
+- **Posting-Zeit:** Aggregierte 2026-Studien (Sprout Social, Hootsuite) sehen Finance-Content-Engagement tendenziell nachmittags (ca. 15-19 Uhr), Dienstag bis Donnerstag schlägt Wochenende. Das bestehende Fenster 18:45-20:00 Uhr liegt am oberen Rand davon, der Grund dahinter (nach Feierabend, siehe [[Posting-Warteschlange]]) bleibt trotzdem stichhaltig. Kein akuter Änderungsbedarf, aber sobald mehr eigene Post-Daten da sind, lohnt sich ein einfacher A/B-Test Richtung früherer Nachmittags-Slots an Wochentagen, statt das Fenster nur nach Gefühl beizubehalten.
+
+### Quellen (Update 11.09.2026)
+- [Best Financial Ads 2026: Creative Breakdowns for Media Buyers (adlibrary.com)](https://adlibrary.com/posts/best-financial-ads-2026)
+- [8 Best Facebook Ad Hook Examples for 2026 (gethookd.ai)](https://www.gethookd.ai/learn/8-best-facebook-ad-hook-examples-for-2026/)
+- [How to run ads for forex & prop firms 2026 (tradingfellows.com)](https://tradingfellows.com/how-to-run-ads-for-forex/)
+- [Best Times to Post on Instagram in 2026 (Sprout Social)](https://sproutsocial.com/insights/best-times-to-post-on-instagram/)
+- [The best time to post on Instagram, 2026 data (Hootsuite)](https://blog.hootsuite.com/best-time-to-post-on-instagram/)

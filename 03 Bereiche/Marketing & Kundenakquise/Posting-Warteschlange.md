@@ -43,25 +43,70 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 ## Queue
 
 ### 1. Freitag, 11.09.2026, 19:20 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel
 - **Asset:** `Lim/Content/Videos/11-ein-oekosystem-vier-werkzeuge-0-kosten.mp4`
 - **Caption:** "Ein Ökosystem, vier Werkzeuge, 0€ Kosten. Signalgruppen, Academy, Hands-Free Trading, PrimeVerse-Tools, alles kostenlos. Schreib mir 'START', ich zeig dir wie's geht."
 - **Hashtags:** #trading #forex #tradingeducation #limitless #finanziellefreiheit
 
 ### 2. Montag, 14.09.2026, 18:50 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Carousel (4 Bilder)
 - **Assets:** `Lim/Content/Bilder/26-drei-saeulenein-oekosystem.png`, `27-mehr-als-tradingtraverse.png`, `28-nicht-nur-chartsauch-du-selbst.png`, `30-warum-limitlessund-primeversezusammenarb.png`
 - **Caption:** "PrimeVerse ist mehr als Trading-Tools. Drei Säulen: Technologie, Bildung, Lifestyle, inklusive Reise-Vorteilen und einem Ansatz, der auch Mindset und Fitness einschließt. Alles Teil des kostenlosen Limitless-Zugangs. Schreib mir 'START' für mehr Infos."
 - **Hashtags:** #trading #primeverse #limitless #tradingcommunity
 
 ### 3. Dienstag, 15.09.2026, 19:45 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel
 - **Asset:** `Lim/Content/Videos/08-24-bis-zur-pruefung.mp4`
 - **Caption:** "Von der Bewerbung bis zur Freischaltung: laut Limitless im Schnitt 24 Stunden. Kein wochenlanges Warten. Schreib mir 'START', ich schick dir den Link."
 - **Hashtags:** #trading #limitless #forextrading #tradingtipps
+
+### 4. Mittwoch, 16.09.2026, 19:00 Uhr
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Format:** Reel (faceless, Text-Overlay/Screen-Recording-Stil, kein KI-Avatar als Mike)
+- **Thema/Hook:** Copy Trading ehrlich erklärt. Kontrast-Hook: "Copy Trading heißt nicht Knopf drücken und fertig. Was in den Signalgruppen wirklich passiert, in 30 Sekunden."
+- **Fakt/Nutzwert (Angebot.md):** Premium-Signalgruppen, in denen professionelle Trader ihre Trades zum Kopieren einstellen, komplett kostenfrei Teil vom Limitless-Ökosystem.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: kurzes Erklär-Reel mit Text-Overlays, das den Ablauf "Signal kommt rein → Trade wird sichtbar → du entscheidest, ob du mitgehst" zeigt. Keine Gesichter, keine Gewinn-Screenshots mit konkreten Euro-Beträgen, neutrale Chart-/App-Optik im bestehenden Limitless-Look.
+- **Caption:** "Copy Trading heißt nicht: Knopf drücken, Geld kommt von allein. In den Signalgruppen von Limitless stellen erfahrene Trader ihre eigenen Trades zum Nachvollziehen ein, du siehst Einstieg, Stop und Ziel und entscheidest selbst, ob und wie du mitgehst. Kostenfrei, ohne Abo. Mehr dazu und wie du reinkommst, zeig ich dir in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung, Trading ist mit Risiko verbunden."
+- **Hashtags:** #copytrading #trading #tradingsignale #limitless #tradingeducation
+
+### 5. Donnerstag, 17.09.2026, 19:15 Uhr
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Format:** Carousel (4-5 Bilder)
+- **Thema/Hook:** Myth-Busting "vollautomatisiert = Geld im Schlaf?". Hook: "Vollautomatisiert heißt nicht: kein Risiko. Was Hands-Free Trading wirklich bedeutet."
+- **Fakt/Nutzwert (Angebot.md):** vollautomatisierte Trading-Bot-Systeme, laut Anbieter 24/5 von Vollzeit-Tradern verwaltet, Teil des kostenfreien Limitless-Zugangs.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: 4-5 Info-Grafik-Slides im bestehenden Limitless-Look (wie die Grafik vom 09.09.). Slide 1 Hook/Mythos, Slide 2 was Hands-Free wirklich ist, Slide 3 was es NICHT ist (keine Gewinngarantie, Risiko bleibt beim Nutzer), Slide 4 für wen es Sinn ergibt, Slide 5 CTA zum Kanal.
+- **Caption:** "Vollautomatisiert heißt nicht automatisch sicher. Die Hands-Free-Bots bei Limitless werden laut Anbieter rund um die Uhr von Vollzeit-Tradern verwaltet, das Risiko liegt aber trotzdem bei dir und deinem Konto. Kein System garantiert Gewinne. Was so ein Bot wirklich macht und für wen sich das eignet, zeig ich dir Schritt für Schritt in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung, keine Gewinngarantie."
+- **Hashtags:** #tradingbot #automatisiertestrading #limitless #tradingeducation #finanziellefreiheit
+
+### 6. Freitag, 18.09.2026, 19:30 Uhr
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Format:** Reel
+- **Thema/Hook:** PrimeVerse Market-Scanner (Syphon AI & Zonar). Hook mit konkreter Zahl: "40+ Währungspaare, ein KI-Scanner. Was ein Market-Scanner-Tool wirklich zeigt."
+- **Fakt/Nutzwert (Angebot.md):** KI-Marktscanner für institutionelle Orderflow-Muster über 40+ Währungspaare, laut Anbieter Teil von PrimeVerse, kostenfrei über den Limitless-Zugang.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: Screen-Recording-artiges Reel mit neutral gestalteter, eigener Dashboard-Optik (kein echtes proprietäres UI kopieren), Text-Overlays erklären in 3 Schritten, was ein Market-Scanner macht.
+- **Caption:** "Ein Market-Scanner beobachtet laut Anbieter über 40 Währungspaare gleichzeitig und sucht nach Mustern, für die ein Mensch den ganzen Tag vorm Chart sitzen müsste. Genau das ist eines der Tools, die im PrimeVerse-Teil von Limitless kostenlos mit dabei sind, sobald dein Zugang steht. Ersetzt kein eigenes Marktverständnis, spart dir aber Zeit beim Beobachten. Wie du rankommst, zeig ich dir in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
+- **Hashtags:** #trading #marketscanner #ki #limitless #primeverse #tradingtools
+
+### 7. Samstag, 19.09.2026, 19:00 Uhr
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Format:** Story (Umfrage/Interaktion)
+- **Thema/Hook:** Story-Umfrage zur Zielgruppen-Klärung, analog zum Q&A-Format aus der Recherche. Frage: "Was ist für dich am Trading-Ökosystem am unklarsten?" mit Antwortoptionen "Signale", "Bots", "Wie ich starte", "Kosten".
+- **Fakt/Nutzwert:** direkte Verbindung zu den Themen aus `Angebot.md` (Signalgruppen, Bots, Live-Sessions, kostenfrei), sammelt Feedback statt neue Behauptung aufzustellen.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: einfache Story-Grafik mit Platzhalter für Umfrage-Sticker (Frage + vier Antwortoptionen), im bestehenden Look.
+- **Caption/Text:** "Bevor's nächste Woche weitergeht: was ist für dich am unklarsten? 👇" plus Umfrage-Sticker mit den vier Optionen. Kein CTA zum Konto, optional Link-Sticker "Mehr Infos: t.me/JointoInnerCircle".
+- **Hashtags:** #trading #limitless
+
+### 8. Sonntag, 20.09.2026, 18:50 Uhr
+- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Format:** Reel
+- **Thema/Hook:** Live-Sessions & Academy, Lernen statt nur Kopieren, Mike als Person in den Vordergrund (siehe Branding-Update 09.09.2026). Geständnis-Hook: "Ich hab am Anfang nur Signale kopiert, ohne zu verstehen warum. Das war mein größter Anfängerfehler."
+- **Fakt/Nutzwert (ICP.md/Angebot.md):** Live-Sessions zum eigenständigen Lernen, langfristiges Ziel ist, den Finanzmarkt selbst zu verstehen statt dauerhaft nur zu kopieren.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: Reel im Geständnis-/Text-Overlay-Stil (kein KI-Avatar als Mike, siehe Guardrail in `content-executor.md`), reines Text-Overlay-Reel statt Talking-Head.
+- **Caption:** "Mike zeigt dir, warum er anfangs nur Signale kopiert hat, ohne zu verstehen, warum die eigentlich funktionieren. Genau deshalb gibt's bei Limitless neben den Signalgruppen auch Live-Sessions und die Academy, kostenfrei mit dabei. Ziel ist nicht, dass du für immer kopierst, sondern dass du den Markt irgendwann selbst einschätzen kannst. Mehr dazu in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
+- **Hashtags:** #trading #tradingacademy #limitless #tradinglernen #finanziellefreiheit
 
 ## Wartet auf dich (Personal-Account, nicht Teil der Automatisierung)
 - Mi 09.09. 19:30 — Reel "Meine erste Trading-Woche..." — Skript fertig in [[Content-Plan - Woche 07.09.-13.09.2026]]

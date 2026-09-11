@@ -63,4 +63,6 @@ Für all das: nichts tun, im Log klar vermerken was fehlt/ansteht, damit es beim
 
 ## Log-Eintrag am Ende jedes Laufs
 
-Kurzer Absatz, mit Zeitstempel, direkt als Commit-Message und optional als Ergänzung in `Posting-Warteschlange.md`: was wurde erstellt/gepostet, was wurde wegen fehlender Freigabe übersprungen, was wegen fehlender Credits, was ist sonst offen für Mike.
+**Bei jedem Lauf, auch wenn nichts postbar/erstellbar war** (z. B. Phase 1 ohne freigegebene Einträge, fehlende Connector-Rechte, keine fälligen Posts): schreib einen kurzen Absatz mit Zeitstempel unter einen Abschnitt `## Executor-Log` in `Posting-Warteschlange.md` (append-only, leg ihn beim ersten Mal an, falls er fehlt) – was wurde erstellt/gepostet, was wurde wegen fehlender Freigabe übersprungen, was wegen fehlender Credits, was ist sonst offen für Mike. Das ist zusätzlich zur Commit-Message, nicht Ersatz dafür.
+
+**Korrektur `professor`, 11.09.2026:** Dieser Log-Eintrag war bisher "optional" formuliert und es gab keinen dedizierten Abschnitt dafür (anders als `## Log` in `Tagesplan.md` beim `aufgaben-executor`). Deshalb ließ sich in der ersten Qualitätsrunde nicht unterscheiden, ob die Scheduled Routine seit dem Bau am 10.09.2026 überhaupt schon gelaufen ist oder nur nichts zu tun fand (Queue zeigte keine Statusänderung, Performance-Log keinen neuen Eintrag). Jetzt verpflichtend, damit jeder Lauf einen Beleg hinterlässt.
