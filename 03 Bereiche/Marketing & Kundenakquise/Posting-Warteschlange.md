@@ -148,3 +148,6 @@ Mike hat die Windsor-Write-Actions freigeschaltet. Gleiches Video erneut über `
 
 ### 2026-09-11, 16:35 UTC, planmäßiger täglicher Lauf
 Nichts fällig. Nächster Queue-Eintrag ist Nr. 2 (Montag, 14.09., 18:50 Uhr), liegt außerhalb des Heute-plus-24h-Fensters. Post Nr. 1 von heute Vormittag (Media-ID 17901731430581191) ist erst ca. 8h alt, für eine Auswertung braucht es laut Vorgabe mindestens 24-48h — noch keine Zahlen nachgetragen. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme.
+
+### 2026-09-12, 16:35 UTC, planmäßiger täglicher Lauf
+Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09.). Post Nr. 1 (Media-ID 17901731430581191) ist jetzt ~32h alt, Rohzahlen über `mcp__Windsor_ai__get_data` nachgetragen: 19 Reichweite, 41 Views, 0 Likes/Kommentare/Saves/Shares. Ins [[Performance-Log]] eingetragen, keine Bewertung (macht `content-manager` sonntags). Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme.
