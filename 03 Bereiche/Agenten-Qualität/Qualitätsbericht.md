@@ -101,3 +101,66 @@ Alle additiv, nichts gelöscht:
 - `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md` – dieser Abschnitt
 
 Nicht angefasst, bewusst: `Tagesplan.md`, `Posting-Warteschlange.md`, `Performance-Log.md`, `Aufgaben-Triage.md` – operative Dateien der anderen Agenten, nicht mein Bereich.
+
+## Bericht vom 12.09.2026
+
+**Kontext dieser Runde, anders als sonst:** Kein regulärer `/professor-check`, sondern ein von Mike im Chat bestätigter Sonderauftrag: langfristige Content-Automatisierung über mehrere Plattformen (Instagram+Facebook zusammenlegen, Telegram jetzt, später LinkedIn und YouTube). Die aufrufende Session hatte den aktuellen Windsor.ai-Connector-Stand bereits selbst recherchiert (ich habe kein Windsor.ai-Write-Tool) und mir direkt mitgegeben – das übernehme ich unten ungeprüft als Faktenbasis, weil es aus einer echten `get_connectors`/`list_actions`-Abfrage stammt, nicht aus meiner eigenen Vermutung. Mein eigener Beitrag: Skill-/Plugin-Recherche für die Lücken, Einordnung gegen den MasterPlan, phasierter Vorschlag. **Technische Einschränkung dieser Runde:** `SearchMcpRegistry`, `SuggestConnectors`, `SuggestSkills` und `SuggestPluginInstall` waren in diesem Lauf alle deaktiviert (Tool-Fehler "disabled for this session"), obwohl sie laut meiner eigenen `tools:`-Zeile vorhanden sein sollten. Ich konnte deshalb nur `SearchSkills`/`SearchPlugins` nutzen und keine bestätigbare Karte für Mike erzeugen – das unten gefundene Ergebnis ist deshalb nur als Text vermerkt, nicht als Suggest-Karte ausgespielt. Das sollte in einem künftigen Lauf (oder direkt in der Hauptsession) nachgeholt werden, sobald die Tools wieder verfügbar sind.
+
+### 1. Kurz-Update Bestandsaufnahme/Qualität seit dem 11.09.2026
+
+Kein vollständiger Neu-Durchlauf aller fünf Phasen diese Runde (der Auftrag war bewusst eng gefasst, siehe oben), aber beim Lesen von `Tagesplan.md` und `Posting-Warteschlange.md` als Nebenbefund mitgenommen:
+
+- **`aufgaben-manager`/`aufgaben-executor`:** sehr aktiv seit dem letzten Bericht, mit Beleg – mehrere Vorschlag/Bestätigt/Log-Zyklen am 12.09., inklusive der Chat-Entscheidungen "volle Ausführungs-Autonomie", "Werkzeug-Selbstbeschaffung" und "Leerlauf-Verkettung". Kein neuer Fehlbefund. Auffällig: an einem einzigen Tag (12.09.) sind dem Executor drei grundlegend neue Befugnisse gegeben worden (voll autonom nach außen wirken, sich selbst Tools eintragen, den Manager selbst nachziehen lassen) – das ist für sich genommen schon viel Veränderung auf einmal, nicht falsch, aber ein Punkt, den ich im nächsten regulären `/professor-check` explizit nachhalten sollte (lief das seitdem sauber, oder wurden Grenzen überdehnt).
+- **`content-manager`/`content-executor`:** läuft, mit Beleg – erster echter Post live (Media-ID 17901731430581191, 11.09.), sieben weitere Queue-Einträge für die kommende Woche freigegeben, Executor-Log wird gepflegt. Kein Routing-Fehler gefunden: die Telegram-Kanal-Punkte in `Tagesplan.md` sind explizit als "nicht Instagram/content-manager-Gebiet" markiert (Log-Eintrag 12.09., Domain-Check durchgeführt) – korrekt, weil der `content-executor` gar keinen Telegram-Connector hat. Keine Verschiebung nötig diese Runde.
+- **Kleine Korrekturen an Agenten-Dateien:** keine. Der Auftrag dieser Runde war ausdrücklich Recherche + Bericht, keine Tool-Listen von `content-manager`/`content-executor` ändern – daran halte ich mich, auch wenn unten ein technischer Bezug zu ihrer künftigen Tool-Liste steht.
+- **Offen, unverändert seit dem 11.09.:** Punkt 5 aus `Tagesplan.md` `## Technisch blockiert` (Google-Drive-Ordner) bleibt ungelöst – auch in dieser Session standen nur die vier MCP-Server github/Gmail/Jarvis/Windsor-ai zur Verfügung, kein Google-Drive-Server, also weiterhin kein verifizierbarer Tool-Name. Nicht geraten, wie beim letzten Mal auch.
+
+### 2. Mikes Auftrag: Content-Automatisierung über mehrere Plattformen
+
+**Mikes Vision, wörtlich:** "Ich brauche für immer mehr Anbieter nachher eine Automatisierung was das Thema angeht, Instagram und Facebook können wir zusammenlegen, Telegram brauch ich jetzt auch schon, später soll noch LinkedIn und auch YouTube dazu kommen."
+
+**Technischer Ist-Stand (Windsor.ai, von der aufrufenden Session heute per `get_connectors`/`list_actions` geprüft):**
+
+| Plattform | Windsor.ai-Status | Organisches Posten möglich? |
+|---|---|---|
+| Instagram | verbunden (`mike_bueh`) | **Ja** – einzige Plattform mit echtem Write-Support (Bild-Post, Kommentar) |
+| Facebook | verbunden, aber als **Meta-Ads-Connector** (Account "Mike Bühler") | Nein – nur Kampagnen/Ad-Sets/Budget, "Post boosten" (=bezahlt). `facebook_organic` existiert als eigener Connector-Typ, ist nicht verbunden, und hätte laut Windsor-Doku selbst nach Verbindung keine Write-Actions (nur Analytics) |
+| LinkedIn | `linkedin` (Ads) und `linkedin_organic` existieren, beide nicht verbunden | Nein – `linkedin` (Ads) hat nur Kampagnen-Write-Actions, `linkedin_organic` laut Doku ohnehin ohne Write-Actions |
+| YouTube | Connector existiert, nicht verbunden | Nein – laut Doku kein Write-Connector, nur potenziell lesend |
+| Telegram | **existiert überhaupt nicht** in Windsor.ais Connector-Liste | Nein, kein Weg über Windsor.ai |
+
+**Kurzfassung:** Windsor.ai kann heute ausschließlich Instagram organisch bespielen. Für alles, was Mike zusätzlich will (Facebook organisch, Telegram, später LinkedIn/YouTube), ist Windsor.ai der falsche Baustein – das ist keine Konfigurationsfrage, sondern eine echte Werkzeug-Lücke.
+
+**Recherche-Ergebnis (`SearchPlugins`, da `SearchMcpRegistry` in diesem Lauf deaktiviert war):**
+
+Gefunden: **Postiz** (Plugin-ID `plugin_019XQ3kYMHjpnY1RcxCZttGb`, im Katalog als "Social media automation CLI for scheduling posts, managing integrations, uploading media, and tracking analytics across 28+ platforms including X, LinkedIn, Reddit, YouTube, TikTok, Instagram, and more" gelistet, noch nicht aktiviert). Per Web-Recherche zur Einordnung nachgeprüft (Quelle: [github.com/gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app), das zugrundeliegende Open-Source-Projekt): Postiz deckt laut eigener Doku über 30 Netzwerke ab, **explizit inklusive Telegram, Facebook, LinkedIn (persönlich und Seiten) und YouTube**, zusätzlich zu Instagram. Das trifft Mikes komplette Wunschliste in einem einzigen Werkzeug, statt vier separate Connectoren zu suchen.
+
+**Wichtige Einschränkungen, ehrlich benannt, nicht schöngeredet:**
+- Ich konnte **keine** `SuggestPluginInstall`-Karte erzeugen (Tool deaktiviert in dieser Session, siehe oben) – Mike muss das Plugin selbst im Katalog finden/bestätigen, oder ein späterer Lauf mit funktionierenden Suggest-Tools holt das nach.
+- Postiz ist kein reiner Ein-Klick-Connector wie Windsor.ai, sondern ein eigenständiges Scheduling-Tool (selbst gehostet oder über einen eigenen Cloud-Account), das für jede Plattform einzeln verbunden werden muss (Telegram-Bot-Token, Facebook-Seiten-OAuth, LinkedIn-OAuth, YouTube-OAuth). Das ist mehr Einrichtungsaufwand als ein bestehender Connector zu aktivieren, aber immer noch deutlich weniger, als für jede Plattform eine eigene Lösung zu bauen.
+- Ob Postiz auch die Telegram-Spezialfunktion "Kanalbild setzen" (`setChatPhoto`) abdeckt, die aktuell unter `## Technisch blockiert` in `Tagesplan.md` steht, ist aus der Plugin-Beschreibung nicht ersichtlich (das Tool ist in erster Linie ein Scheduler für Beiträge/Nachrichten, keine volle Kanal-Verwaltung). Das müsste bei Interesse konkret geprüft werden – für das eigentliche Bedürfnis "Nachrichten/Content zeitversetzt posten" passt es aber.
+- Ich habe **nichts installiert, aktiviert oder verbunden** – das bleibt technisch unmöglich für mich und ist ohnehin Mikes Entscheidung.
+
+**Zusatzfrage von Mike beantwortet – gilt für LinkedIn dieselbe Werbe-Sperre wie bei Meta?** Nein, nicht identisch. Meta verbietet CFD/Forex-Werbung komplett (siehe `Marketing & Kundenakquise.md`). LinkedIn stuft Finanzprodukte laut eigener Ads Policy als "restricted", nicht als komplett verboten ein: erlaubt, aber mit Pflicht-Disclaimern, ohne Gewinnversprechen, teils mit Lizenz-/Regionalauflagen ([linkedin.com/legal/ads-policy](https://www.linkedin.com/legal/ads-policy)). Für den aktuellen Plan ändert das nichts (Mike macht ohnehin keine bezahlte Werbung, siehe MasterPlan Stufe 3: Werbung erst ab 15.000 EUR-Stufe) – relevant nur als Randnotiz für später.
+
+### 3. Phasierter Vorschlag (Empfehlung, keine Umsetzung)
+
+**Phase A, jetzt, keine neue Baustelle:** Instagram bleibt exakt wie es ist – über Windsor.ai/`content-executor`. Daran ändert dieser Vorschlag nichts.
+
+**Phase B, sobald eine echte Verbindung steht (nicht vorher):** Content-Planung für Facebook/LinkedIn/YouTube schon vorbereiten (Themen/Formate in einer neuen Sektion denken), aber **nicht jetzt schon anfangen** – siehe Baustellen-Einschätzung unten. Sobald ein Connector/Skill wirklich verbunden ist, kann `content-manager` sofort in seine bestehende Struktur erweitert werden (neue Spalte/Abschnitt in `Posting-Warteschlange.md` je Plattform), das ist kein Architektur-Umbau, nur mehr Zeilen.
+
+**Phase C, braucht zuerst einen technischen Baustein:** Telegram-Content-Posting (Postiz oder gleichwertig), Facebook organisch (selbes Tool), später LinkedIn, zuletzt YouTube (Video-Format am aufwendigsten, andere Seitenverhältnisse als die bestehenden 9:16-Reels).
+
+**Explizite Prüfung gegen MasterPlan Abschnitt 8 ("max. 1-2 aktive Baustellen"), ehrlich, nicht wohlwollend:**
+
+Aktueller Baustellen-Stand heute (siehe Abschnitt 1): `aufgaben-Paar` (gerade erst mit drei neuen, weitreichenden Befugnissen ausgestattet, noch keine Woche bewährt unter den neuen Regeln), `content-Paar` (Instagram-only, ein einziger echter Post alt, ebenfalls unter einer Woche produktiv), `professor` (ich selbst). Das sind bereits zwei bis drei laufende Baustellen, je nachdem wie man zählt – **eine vierte Baustelle "Multi-Plattform-Content-Ausbau" jetzt zusätzlich aktiv zu starten, würde die Regel klar reißen.**
+
+**Meine ehrliche Einschätzung, auch wenn sie Mikes "brauch ich jetzt auch schon" bei Telegram widerspricht:** Jetzt ist nicht der richtige Zeitpunkt, alle vier neuen Plattformen gleichzeitig anzugehen – das wäre exakt der Fehler aus MasterPlan Abschnitt 6 ("ein Hauptagent, der drei kaputte Subagenten koordiniert, ist langsamer als du allein"), nur auf Connector-Ebene übertragen. Wenn Mike Telegram trotzdem vorziehen will, wäre mein Vorschlag: **es ersetzt etwas, statt obendrauf zu kommen** – z. B. erst die noch offenen Stufe-0-Punkte aus `Tagesplan.md` (Kanalbild, Make.com-Aktivierung, Posts terminieren) wirklich abschließen, dann Postiz/Telegram als die **eine** nächste aktive Baustelle nach dem `content-Paar` behandeln, nicht parallel zu allem anderen. Facebook/LinkedIn/YouTube bleiben in diesem Fall bewusst Notiz im Vault (wie MasterPlan Abschnitt 8 es vorsieht), nicht Aufgabe der nächsten Wochen – auch wenn die Vision alle vier nennt, die Reihenfolge entscheidet.
+
+**Kein neuer Agenten-Entwurf:** Diese Erweiterung braucht keinen zusätzlichen Agenten, sondern (a) einen neuen Connector/ein neues Tool und (b) eine Erweiterung von `content-manager`/`content-executor` um weitere Plattform-Abschnitte – das ist eine spätere, überschaubare Prompt-Ergänzung an den bestehenden zwei Dateien, kein fünftes/sechstes Agentenpaar. Deshalb kein Entwurf angelegt.
+
+### 4. Geänderte Dateien dieser Runde
+
+- `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md` – dieser Abschnitt
+
+Nicht angefasst, bewusst: `.claude/agents/content-manager.md`, `.claude/agents/content-executor.md` (Auftrag war Recherche + Vorschlag, keine Tool-/Scope-Änderung), `Tagesplan.md`, `Posting-Warteschlange.md` (kein Fehlrouting gefunden, siehe Abschnitt 1).
