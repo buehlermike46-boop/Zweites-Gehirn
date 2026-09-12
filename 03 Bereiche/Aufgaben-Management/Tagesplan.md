@@ -53,6 +53,40 @@ Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten)
 6. **WhatsApp end-to-end testen.** Hängt laut eigener Aufgabenbeschreibung von einer echten eingehenden Nachricht einer anderen Person ab – ich habe kein Werkzeug, um jemanden zu bitten zu schreiben (kein Mail-/Messaging-Tool in meiner Liste), und die WhatsApp-Bridge selbst läuft in `jarvis-voice-assistant/scripts/whatsapp_bridge.py`, einem separaten, unbeaufsichtigten Prozess (`task_agent.py`, rohe Anthropic-API), auf den ich als Claude-Code-Subagent keinen Zugriff habe. Braucht Mike selbst (Person bitten zu schreiben, danach Entwurf/Versand prüfen).
 7. **Posts 1 bis 6 für Woche 1 im Kanal terminieren.** Texte und Bildzuordnung sind in [[Inner Circle Kanal-Content]] bereits vollständig fertig (copy-paste-fertig). Das eigentliche Terminieren läuft laut derselben Notiz über "Sendebutton gedrückt halten → Zeitplan" direkt in der Telegram-App – eine reine Client-UI-Funktion ohne Bot-API-Äquivalent, kein Connector dafür vorhanden. Braucht Mike selbst, ca. 60-90 Minuten laut eigener Schätzung.
 
+## Vorschlag für 2026-09-12 (zweiter Vorschlag, nach Leerlauf-Signal)
+*(Vom aufgaben-manager erzeugt direkt im Anschluss an den Executor-Lauf von heute Nachmittag, siehe LEERLAUF-Eintrag im Log unten. Wartet auf Mikes Bestätigung.)*
+
+**Kontrolle vorab:** Alle sieben Punkte aus dem `## Bestätigt für 2026-09-12`-Abschnitt hat der Executor nachvollziehbar mit technischem Grund als blockiert dokumentiert (siehe `## Technisch blockiert` und der Log-Eintrag von heute Nachmittag) — kein Fall von "vielleicht doch erledigt", also keine Häkchen gesetzt, alle sieben bleiben offen. Der automatisch nachgezogene Punkt Lot-Tracking ist dagegen mit Beleg erledigt ([[Lot-Tracking]] existiert, in der Triage abgehakt).
+
+**Wichtige Erkenntnis dieser Runde:** Fast alle verbleibenden Stufe-0-Punkte (Sofort und Aufwendig) sind für den Executor strukturell nicht lösbar, nicht weil ihm ein einzelnes Werkzeug fehlt, sondern weil der letzte Schritt grundsätzlich einen App-/Browser-Login von dir braucht (Telegram, Instagram, Make.com), dein persönliches Wissen/deine Kontakte braucht (20-Namen-Liste, Fixkosten-Zahlen) oder in einem anderen Repo liegt, auf das der Executor keinen Zugriff hat (`jarvis-voice-assistant` für GMX/Gmail/Dashboard). Das nochmal unverändert zu bestätigen würde nur denselben Block-Zyklus wiederholen. Ich schlage deshalb eine andere Aufteilung vor als sonst:
+
+### Direkt bei dir — nicht mehr über den Executor-Kreislauf laufen lassen
+Empfehlung: diese Punkte selbst abhaken, sobald erledigt (Häkchen direkt in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]), statt sie hier nochmal zu bestätigen — der Executor kann den letzten Schritt so oder so nicht ausführen.
+- Kanalbild in Telegram setzen (Datei liegt bereit, `Lim/Content/Assets/ic-kanalbild-limitless.png`)
+- Instagram-Bio: Link ins Website-Feld (nur in der App)
+- Make.com-Szenario dauerhaft aktivieren — **und wenn du eh eingeloggt bist:** gleich die neue Willkommensnachricht + die drei Follow-ups eintragen, alle Texte stehen fertig in [[Inner Circle Kanal-Content]] Abschnitt 7 (spart einen zweiten Login später)
+- Die vier neuen Kanalbilder aus `Lim/Content/Telegram/` gegenchecken und freigeben
+- WhatsApp end-to-end testen (du musst jemanden bitten zu schreiben, das kann keine Automatisierung anstoßen)
+- Posts 1-6 für Woche 1 im Kanal terminieren (Texte + Bildzuordnung fertig in [[Inner Circle Kanal-Content]])
+
+Alle sechs zahlen auf Stufe 0 ein (Kanal-Feinschliff, Content-Rhythmus, Bot-Automatik), siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]].
+
+### Aufwendig — der eigentliche Hebel gerade
+- **20-Namen-Liste aus dem echten Umfeld zusammenstellen und persönlich anschreiben** (Stufe 0, "Weiter, wenn": 10 geworbene Accounts, davon 5 aktiv). Kann nur du machen, kein Executor-Punkt. Jetzt wo Lot-Tracking steht und der Kanal inhaltlich startklar ist, ist das laut MasterPlan Abschnitt 4 der tatsächliche Engpass ("Der Engpass ist Kundengewinnung, nicht die Rechnung") — würde ich diese Woche vor die restlichen App-Klicks stellen, wenn die Zeit knapp wird.
+
+### Komplex — weiterhin bewusst zurückgestellt
+Unverändert zur letzten Runde: Website, Zugangs-Gate, Pflegedienst-Referenzprojekt, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. Bleibt liegen, bis Kanal/Bot-Strecke und die ersten echten Kunden stehen (MasterPlan Punkt 8: max. 1-2 aktive Baustellen, Automatisieren vor Validieren).
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Keine neuen Punkte. Domain-Check durchgeführt: nichts in dieser Runde gehört ins Gebiet von `content-manager` (Instagram/Posting-Warteschlange) — die Telegram-Kanal-Punkte oben sind bewusst hier, nicht dort, weil der Kanal über `aufgaben-executor`/Triage läuft und `content-executor` keinen Telegram-Connector hat (siehe auch Executor-Log von heute Nachmittag).
+
+### Für den Executor tatsächlich offen
+Aktuell kein neuer Punkt, den der Executor eigenständig bis zum Ende ausführen kann. Falls du den Abschnitt "Direkt bei dir" trotzdem hier bestätigst: der Executor wird sie beim nächsten Lauf voraussichtlich wieder unter `## Technisch blockiert` einsortieren, das wäre erwartbar und kein neuer Fehler, nur kein Fortschritt. Meine Empfehlung bleibt, sie direkt in der Triage abzuhaken statt über diesen Kreislauf zu bestätigen.
+
+### Offene Fragen an Mike
+- Bist du einverstanden, dass App-/Browser-Login-Punkte künftig nicht mehr über "Vorschlag → Bestätigt → Executor" laufen, sondern du sie direkt in der Triage abhakst? Würde unnötige Blockier-Zyklen sparen.
+- Für heute existiert noch keine Daily Note [[2026-09-12]] — soll ich eine anlegen, oder machst/lässt du das offen bis der Tag was zu berichten hat?
+
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 

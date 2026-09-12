@@ -1,7 +1,7 @@
 ---
 tags: [projekt, uebersicht, steuerung]
 status: aktiv
-date: 2026-09-10
+date: 2026-09-12
 ---
 
 # Aufgaben-Triage (Sofort, Aufwendig, Komplex)
@@ -22,6 +22,8 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 **Kontrolle 11.09.2026 ([[aufgaben-manager]], erster Planungslauf über [[Tagesplan]]):** Kein Beleg zu prüfen, weil noch keine Executor-Runde gelaufen ist ("Bestätigt"-Abschnitt und Log in [[Tagesplan]] waren leer). Diese Liste war bereits aktuell und deckt alle offenen Punkte aus dem MasterPlan ("Nächste 30 Tage") und der Inbox ab, deshalb keine inhaltliche Änderung — nur der neue Vorschlag in [[Tagesplan]] ergänzt.
 
 **Kontrolle 12.09.2026 ([[aufgaben-manager]]):** Mike hat den Vorschlag vom 11.09. bestätigt, aber laut [[Tagesplan]] und der Daily Note [[2026-09-11]] ist der Tag komplett in Agenten-Infrastruktur-Arbeit gegangen (Content-Agent live, Professor, Jarvis-Voice-Assistant-Reparatur) — die sieben bestätigten Tagesaufgaben (Kanalbild, Insta-Bio, Make.com, Kanalbilder freigeben, Drive-Ordner, WhatsApp-Test, Posts terminieren) blieben laut eigenem Vermerk in der Daily Note unangetastet liegen, kein Häkchen gesetzt. Diese Liste bleibt daher inhaltlich unverändert (weiterhin 47 offene Punkte), keine neuen Inbox-Punkte seit dem 10.09. gefunden. Die sieben Punkte wandern unverändert in den neuen Vorschlag für 2026-09-12 in [[Tagesplan]].
+
+**Kontrolle 12.09.2026, zweiter Lauf ([[aufgaben-manager]], ausgelöst durch Leerlauf-Signal des Executors):** Der `aufgaben-executor` hat die sieben bestätigten Punkte durchgearbeitet und alle sieben mit nachvollziehbarem technischem Grund als blockiert dokumentiert (siehe [[Tagesplan]], Abschnitt "Technisch blockiert" und Log-Eintrag "2026-09-12, Executor-Lauf, nachmittags") — kein Beleg für "erledigt", deshalb hier weiterhin keine Häkchen gesetzt, Punkte bleiben offen. Automatisch nachgezogen und wirklich erledigt: **Lot-Tracking** (siehe Häkchen unten, [[Lot-Tracking]] angelegt). Dabei aufgefallen: Die Aufwendig-Punkte "Neue Willkommensnachricht im Bot eintragen" und "Drei Follow-ups im Bot einrichten" sind inhaltlich bereits komplett vorbereitet — fertige Texte stehen in [[Inner Circle Kanal-Content]] Abschnitt 7. Es fehlt nur noch der reine Eintrage-Schritt in Make.com, der am selben Login-Problem hängt wie "Make.com-Szenario dauerhaft aktivieren" weiter unten — sinnvollerweise alle drei Make.com-Schritte in einem Rutsch erledigen, sobald Mike eingeloggt ist. Keine neuen Inbox-Punkte gefunden. Auffällig: nahezu alle verbleibenden Sofort- und Aufwendig-Punkte hängen entweder an einem App-/Browser-Login (Telegram, Instagram, Make.com), an Mikes persönlichem Wissen/Kontakten (20-Namen-Liste, Fixkosten-Zahlen) oder an einem Repo, auf das der Executor keinen Zugriff hat (`jarvis-voice-assistant` für GMX/Gmail/Dashboard) — der Executor hat damit faktisch keinen weiteren eigenständig ausführbaren Stufe-0-Punkt mehr offen, bis Mike selbst etwas davon abräumt oder neue Fakten liefert. Siehe [[Tagesplan]], neuer Vorschlag, für die Einordnung.
 
 ---
 
@@ -62,8 +64,8 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 
 ### Content und Akquise
 - [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende)
-- [ ] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen"
-- [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage)
+- [ ] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — Text bereits fertig in [[Inner Circle Kanal-Content]] Abschnitt 7, nur der Make.com-Eintrage-Schritt fehlt (gleiches Login-Problem wie Make.com-Szenario aktivieren, siehe unten)
+- [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte ebenfalls fertig in [[Inner Circle Kanal-Content]] Abschnitt 7
 - [ ] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert
 - [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte
 
