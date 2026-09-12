@@ -21,6 +21,8 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 
 **Kontrolle 11.09.2026 ([[aufgaben-manager]], erster Planungslauf über [[Tagesplan]]):** Kein Beleg zu prüfen, weil noch keine Executor-Runde gelaufen ist ("Bestätigt"-Abschnitt und Log in [[Tagesplan]] waren leer). Diese Liste war bereits aktuell und deckt alle offenen Punkte aus dem MasterPlan ("Nächste 30 Tage") und der Inbox ab, deshalb keine inhaltliche Änderung — nur der neue Vorschlag in [[Tagesplan]] ergänzt.
 
+**Kontrolle 12.09.2026 ([[aufgaben-manager]]):** Mike hat den Vorschlag vom 11.09. bestätigt, aber laut [[Tagesplan]] und der Daily Note [[2026-09-11]] ist der Tag komplett in Agenten-Infrastruktur-Arbeit gegangen (Content-Agent live, Professor, Jarvis-Voice-Assistant-Reparatur) — die sieben bestätigten Tagesaufgaben (Kanalbild, Insta-Bio, Make.com, Kanalbilder freigeben, Drive-Ordner, WhatsApp-Test, Posts terminieren) blieben laut eigenem Vermerk in der Daily Note unangetastet liegen, kein Häkchen gesetzt. Diese Liste bleibt daher inhaltlich unverändert (weiterhin 47 offene Punkte), keine neuen Inbox-Punkte seit dem 10.09. gefunden. Die sieben Punkte wandern unverändert in den neuen Vorschlag für 2026-09-12 in [[Tagesplan]].
+
 ---
 
 ## 1. Sofort (21)
