@@ -44,10 +44,12 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 - Make.com-Szenario aktivieren: war laut API schon aktiv. **Zähler −1.**
 - Neue Willkommensnachricht + Button "Konto eröffnen": mit Mikes Ja live umgesetzt (siehe oben). **Zähler −1.**
 - Drei Follow-ups: nicht umgesetzt, echter Blocker (Make-Speicherquote + fehlender verifizierbarer Datastore-Auslese-Baustein), bleibt offen, jetzt mit anderer, genauerer Begründung.
-- Limitless-Support-Anfrage: noch offen, Mike wurde nach der genauen Fragestellung und dem Versandweg gefragt (keine bekannte Support-Mailadresse im Postfach gefunden).
+- Limitless-Support-Anfrage: **erledigt 12.09.2026**, Mike hat selbst geschrieben (ohne Umweg über Gmail-Connector dieser Session). **Zähler −1.**
 - Telegram-Warnungscheck, Kanalbild, Instagram-Bio-Feld, 4 Kanalbilder freigeben, WhatsApp-Test, Posts terminieren, restliche 4 Namen, persönlich anschreiben: unverändert, wirklich nur Mike möglich.
 
 **Neuer Mike-only-Zähler-Stand: 10** (13 minus die drei oben erledigten Punkte). Der Deckel liegt weiterhin bei 20, davon sind wir also weiter entfernt als vorher, im positiven Sinn.
+
+**Nachtrag, selber Tag:** Mike hat die Limitless-Support-Anfrage selbst geschrieben (ohne Mail-Entwurf dieser Session). **Zähler jetzt 9.**
 
 ---
 
@@ -75,7 +77,7 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 ### Anfragen, die nur du stellen kannst
 - [x] Staffelsatz geklärt (10.09.2026): gilt nur oberhalb der Schwelle, nichts rückwirkend. MasterPlan und IB-Projekt neu gerechnet
-- [ ] Limitless-Support fragen, ob es eine API oder einen Webhook für den Prospect Tracker gibt — am 10.09.2026 zurückgestellt
+- [x] Limitless-Support fragen, ob es eine API oder einen Webhook für den Prospect Tracker gibt — **erledigt 12.09.2026, Mike hat selbst geschrieben**
 - [x] Pflegedienst-Kennzahlen von Mike geliefert (10.09.2026): 6 Kunden, ca. 1.500 EUR Umsatz, kein Überschuss, keine Mitarbeiter, Süchteln/Viersen, Kunden aus dem Bekanntenkreis. Eingetragen in [[Pflegedienst]]. Offen bleibt die freie Kapazität
 
 ### Kleinkram
