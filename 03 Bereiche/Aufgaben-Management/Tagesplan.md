@@ -117,6 +117,12 @@ Mike hat nach seiner Push-Benachrichtigung ("13 Aufgaben nur von dir") in dieser
 
 **Mike-only-Zähler:** von 13 auf **10** (drei der vier Deckel-Runde-1-Punkte plus die zwei aus dem vierten Lauf, siehe Details in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], sechster Kontrolllauf).
 
+**Fortsetzung, selbe Session, Nachmittag — Punkt 4 (Option a) geprüft, geht technisch nicht wie gedacht:**
+- `mcp__Make__data-stores_update` auf den bestehenden Store "Welcome Message IDs" (ID 179851) mit `maxSizeMB: 0.5` versucht — Fehler "Minimum value is 1". 1 MB ist offenbar sowohl die Mindestgröße pro Store als auch das gesamte Speicherkontingent des Make-Teams, Verkleinern schafft also keinen Platz für einen zweiten Store.
+- Testweise geprüft, ob sich der bestehende Store einfach um neue Felder erweitern lässt (`started_at`, `bin_dabei` zusätzlich zu `message_id`), mit einem Test-Key `test_probe_delete_me` der sofort danach wieder gelöscht wurde (`data-store-records_delete`). Ergebnis: das Schreiben nimmt zusätzliche Felder klaglos an, aber `data-store-records_list` liefert danach nur noch `message_id` zurück — die Struktur hinter dem Store lässt keine Felder außerhalb ihres definierten Schemas zu, das aus dieser Session heraus nicht erweiterbar ist (kein Data-Structure-Tool verfügbar).
+- Mike gefragt, ob er das vom Handy aus erledigen kann. Antwort: Datenstruktur-Felder ergänzen (Datastores → Data structures, reine Formular-Ansicht) sollte vom Handy aus gehen, das Drag-&-Drop-Modul in den Szenario-Editor ziehen eher nicht.
+- **Ergebnis:** Mike macht heute Abend am PC beides zusammen — Datenstruktur um die neuen Felder erweitern UND testweise ein Data-Store-Auslese-Modul in den Szenario-Editor ziehen, damit diese Session den echten Modulnamen abliest. Danach kann Punkt 4 (drei Follow-ups) fertig gebaut werden. Bis dahin bleibt der Punkt unter "Technisch blockiert" stehen, keine Änderung am Mike-only-Zähler durch diesen Zwischenstand.
+
 ### 2026-09-12, aufgaben-manager-Lauf ("Deckel-Runde 2", Fortsetzung der Stapel-Freigabe)
 Auftrag: vor dem Aufgeben gründlich prüfen, ob wirklich noch etwas Echtes für Stufe 0 übrig ist. Zwei Schritte, keiner hat einen neuen Punkt ergeben.
 
