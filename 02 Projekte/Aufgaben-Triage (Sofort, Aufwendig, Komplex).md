@@ -53,6 +53,8 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 **Nachtrag 2, selber Tag:** Instagram-Bio-Website-Feld erledigt, Mike hat den Link selbst in der App eingetragen. **Zähler jetzt 8.**
 
+**Nachtrag 3, selber Tag:** Kontaktliste vervollständigt, Mike hat die letzten 4 Namen geliefert (Martin, Luisa, Lukas, Fabian), Liste steht bei 20/20. Das persönliche Anschreiben selbst bleibt ein eigener, weiterhin offener Punkt. **Zähler jetzt 7.**
+
 ---
 
 ## 1. Sofort (21)
@@ -94,7 +96,7 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 - [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (reine Telegram-App-UI-Funktion ohne Bot-API-Äquivalent, siehe [[Tagesplan]])
 - [x] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — **erledigt 12.09.2026** über den Make.com-Connector dieser interaktiven Session direkt im Blueprint der `/start`-Route eingetragen (neuer Text aus [[Inner Circle Kanal-Content]] Abschnitt 7, Link `?ref=2A5CC2B8` eingesetzt, Inline-Button "🏦 Konto eröffnen"), per erneutem Abruf verifiziert, Szenario läuft weiter aktiv
 - [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7. **Stand 12.09.2026:** hängt an einem echten Blocker, nicht mehr an fehlendem Connector: das Make-Team-Konto hat nur 1 MB Data-Store-Speicher insgesamt, komplett von "Welcome Message IDs" belegt (`data-stores_create` → "Not enough space in storage"). Für die Lese-Logik der Follow-ups fehlt außerdem ein verifizierter Datastore-Auslese-Baustein, den diese Session nicht raten wollte (kein `app-modules_list`-Äquivalent verfügbar). Siehe [[Tagesplan]] für Details und die zwei Optionen an Mike
-- [ ] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert — Tracking in [[Kontaktliste - 20 Namen aus dem Umfeld]], Stand 12.09.2026: 16/20 (Marina, Atin, Julia, Yilmaz, Mika, Jerome, Max, Eno, Jens, Tahsin, Sven, Lars, Dome, Manuel, Ronja, Maltesa Westerwald). Noch 4 Namen offen
+- [x] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert — **erledigt 12.09.2026, 20/20 komplett** (letzte 4: Martin, Luisa, Lukas, Fabian), Tracking in [[Kontaktliste - 20 Namen aus dem Umfeld]]
 - [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte — Tracking und Status je Person in [[Kontaktliste - 20 Namen aus dem Umfeld]]. Ist Mikes eigene Aufgabe, kein Executor-Punkt: jede Nachricht persönlich, von Mike selbst verfasst oder freigegeben
 
 ### Zahlen und Struktur

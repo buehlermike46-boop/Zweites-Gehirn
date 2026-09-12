@@ -28,4 +28,7 @@ Aus [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]], noch nirgends termin
 - [x] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe — steht jetzt als aktiver Punkt in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] (Aufwendig), nicht doppelt geführt
 - [x] Liste mit 20 Namen aus dem echten Umfeld, die Trading interessiert, zusammenstellen und persönlich anschreiben (keine Massentexte) — steht jetzt in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] (Aufwendig), nicht doppelt geführt
 - [x] Referenzprojekt bauen: eine Webseite oder ein Chatbot für den [[Pflegedienst]], kostenlos, dafür mit Ergebnis-Nachweis als Portfolio-Stück — steht jetzt in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] (Komplex), nicht doppelt geführt
+
+## Später zu klären (12.09.2026)
+- [ ] Breiteren Zugriff für die interaktive Claude-Session einrichten ("überall drauf zugreifen können", Mikes Wunsch im Chat). Konkreter Auslöser: die 4 neuen Kanalbilder aus `Lim/Content/Telegram/` liegen auf Mikes eigenem Rechner, weder im Git-Vault noch in Google Drive erreichbar (geprüft 12.09.2026). Noch nicht spezifiziert, was genau eingerichtet werden soll (z.B. `Lim/Content/` per Google Drive for Desktop synchen, Ordner in den Vault übernehmen, oder etwas anderes) — mit Mike klären, sobald er wieder am PC ist.
 </content>

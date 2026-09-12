@@ -125,6 +125,12 @@ Mike hat nach seiner Push-Benachrichtigung ("13 Aufgaben nur von dir") in dieser
 
 **Nachtrag, selber Tag:** Mike hat die Limitless-Support-Anfrage (API/Webhook Prospect Tracker) selbst geschrieben, ohne Umweg über den Gmail-Connector dieser Session. Als erledigt markiert (Bestätigt-Checkliste oben, Technisch-blockiert-Punkt 1 unter "Deckel-Runde 1", Triage). **Mike-only-Zähler: 10 → 9.**
 
+**Nachtrag 2, selber Tag:** Instagram-Bio-Website-Feld erledigt, Mike hat den Link selbst in der App eingetragen. Technisch-blockiert-Punkt 2 unter "vormittags" und Triage entsprechend markiert. **Zähler: 9 → 8.**
+
+**Nachtrag 3, selber Tag:** Mike hat die letzten 4 Namen für die Kontaktliste geliefert (Martin, Luisa, Lukas, Fabian) — [[Kontaktliste - 20 Namen aus dem Umfeld]] jetzt 20/20 komplett, Triage-Zeile abgehakt. Das persönliche Anschreiben selbst bleibt offen. **Zähler: 8 → 7.**
+
+Punkt "4 Kanalbilder zeigen/freigeben" bleibt vertagt, Mike ist gerade nicht am PC — dabei aufgefallen und in [[Brain Dump]] festgehalten: die Bilder liegen auf Mikes eigenem Rechner, weder im Git-Vault noch (geprüft) in Google Drive erreichbar. Mike möchte perspektivisch dafür sorgen, dass diese interaktive Session breiter zugreifen kann — Details noch offen, mit ihm klären sobald er am PC ist.
+
 ### 2026-09-12, aufgaben-manager-Lauf ("Deckel-Runde 2", Fortsetzung der Stapel-Freigabe)
 Auftrag: vor dem Aufgeben gründlich prüfen, ob wirklich noch etwas Echtes für Stufe 0 übrig ist. Zwei Schritte, keiner hat einen neuen Punkt ergeben.
 
