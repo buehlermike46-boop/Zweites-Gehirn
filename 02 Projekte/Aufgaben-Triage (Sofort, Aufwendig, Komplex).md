@@ -51,6 +51,8 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 **Nachtrag, selber Tag:** Mike hat die Limitless-Support-Anfrage selbst geschrieben (ohne Mail-Entwurf dieser Session). **Zähler jetzt 9.**
 
+**Nachtrag 2, selber Tag:** Instagram-Bio-Website-Feld erledigt, Mike hat den Link selbst in der App eingetragen. **Zähler jetzt 8.**
+
 ---
 
 ## 1. Sofort (21)
@@ -60,7 +62,7 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 - [ ] Kanalbild setzen: Übergangsbild liegt fertig unter `Lim/Content/Assets/ic-kanalbild-limitless.png`, Mike setzt es in der Telegram-App (Browser lässt den Upload nicht zu) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (Executor kann App-/Browser-Login strukturell nicht ausführen, siehe [[Tagesplan]])
 - [x] Reaktionen: standen bereits auf "Alle" (geprüft 10.09.2026)
 - [x] Kein Diskussionschat verknüpft (geprüft 10.09.2026)
-- [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Rest: klickbares Website-Feld, geht nur in der Instagram-App — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (App-only, kein Connector, siehe [[Tagesplan]])
+- [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Website-Feld (klickbarer Link) **erledigt 12.09.2026**, Mike hat es selbst in der App eingetragen
 - [ ] Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Mike sieht sie sich zuhause am Rechner an, dann Bescheid geben — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (Datei liegt außerhalb des Git-Vaults, Freigabe ist ohnehin Mikes eigene Beurteilung, siehe [[Tagesplan]])
 - [x] Referral-Link steht in der /start-Nachricht (geprüft 10.09.2026, worldoflimitless.com/?ref=2A5CC2B8)
 - [x] Make.com-Szenario dauerhaft aktivieren — **korrigiert 12.09.2026:** war die ganze Zeit schon aktiv. Diese interaktive Session hat einen eigenen Make.com-Connector (anders als der `aufgaben-executor`) und per API geprüft: `isActive: true`, Scheduling "immediately", 48 Ausführungen bisher. Der alte Blockier-Grund "kein Make.com-Connector vorhanden" galt nur für den Executor, nicht für diese Session
