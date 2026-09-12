@@ -68,7 +68,7 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 - [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte
 
 ### Zahlen und Struktur
-- [ ] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe. Die zentrale Steuergröße des IB-Projekts
+- [x] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe. Die zentrale Steuergröße des IB-Projekts — Struktur am 12.09.2026 vom `aufgaben-executor` angelegt: [[Lot-Tracking]] (Staffel-Tabelle, Kopfwerte, Kunden-Tabelle, aktuell 0 Lots/0 Kunden). Automatisch aus [[Tagesplan]] nachgezogen, da alle Bestätigt-Punkte des Tages technisch blockiert waren und dies laut MasterPlan explizit zu Stufe 0 gehört
 - [ ] Liste der wiederkehrenden Fixkosten anlegen (Bezeichnung, Betrag, Abbuchungstag, Rhythmus)
 - [ ] Liste der Business-Kosten anlegen (Broker, ATAS, Tools, Abos)
 - [ ] Klären, womit die Buchhaltung läuft, falls schon etwas existiert
