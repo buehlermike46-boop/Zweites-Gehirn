@@ -25,25 +25,27 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 
 **Kontrolle 12.09.2026, zweiter Lauf ([[aufgaben-manager]], ausgelöst durch Leerlauf-Signal des Executors):** Der `aufgaben-executor` hat die sieben bestätigten Punkte durchgearbeitet und alle sieben mit nachvollziehbarem technischem Grund als blockiert dokumentiert (siehe [[Tagesplan]], Abschnitt "Technisch blockiert" und Log-Eintrag "2026-09-12, Executor-Lauf, nachmittags") — kein Beleg für "erledigt", deshalb hier weiterhin keine Häkchen gesetzt, Punkte bleiben offen. Automatisch nachgezogen und wirklich erledigt: **Lot-Tracking** (siehe Häkchen unten, [[Lot-Tracking]] angelegt). Dabei aufgefallen: Die Aufwendig-Punkte "Neue Willkommensnachricht im Bot eintragen" und "Drei Follow-ups im Bot einrichten" sind inhaltlich bereits komplett vorbereitet — fertige Texte stehen in [[Inner Circle Kanal-Content]] Abschnitt 7. Es fehlt nur noch der reine Eintrage-Schritt in Make.com, der am selben Login-Problem hängt wie "Make.com-Szenario dauerhaft aktivieren" weiter unten — sinnvollerweise alle drei Make.com-Schritte in einem Rutsch erledigen, sobald Mike eingeloggt ist. Keine neuen Inbox-Punkte gefunden. Auffällig: nahezu alle verbleibenden Sofort- und Aufwendig-Punkte hängen entweder an einem App-/Browser-Login (Telegram, Instagram, Make.com), an Mikes persönlichem Wissen/Kontakten (20-Namen-Liste, Fixkosten-Zahlen) oder an einem Repo, auf das der Executor keinen Zugriff hat (`jarvis-voice-assistant` für GMX/Gmail/Dashboard) — der Executor hat damit faktisch keinen weiteren eigenständig ausführbaren Stufe-0-Punkt mehr offen, bis Mike selbst etwas davon abräumt oder neue Fakten liefert. Siehe [[Tagesplan]], neuer Vorschlag, für die Einordnung.
 
+**Kontrolle 12.09.2026, dritter Lauf ([[aufgaben-manager]], nach Mikes Bestätigung "Der Manager soll es bitte umsetzen" zum zweiten Vorschlag vom selben Tag):** Zwei Umsetzungen. (1) Mike hat 16 der 20 Namen für die Kontaktliste geliefert (Marina, Atin, Julia, Yilmaz, Mika, Jerome, Max, Eno, Jens, Tahsin, Sven, Lars, Dome, Manuel, Ronja, Maltesa Westerwald) — neue Tracking-Notiz [[Kontaktliste - 20 Namen aus dem Umfeld]] angelegt, keine Beziehungsdetails erfunden, die Zeilen unten in der Liste entsprechend verlinkt. Noch 4 Namen offen. (2) App-/Browser-Login-Punkte (Kanalbild setzen, Instagram-Bio-Feld, Make.com aktivieren, Kanalbilder freigeben, WhatsApp-Test, Posts terminieren) laufen ab jetzt nicht mehr über den Tagesplan-Bestätigt-Kreislauf — Mike hakt sie direkt hier ab, sobald erledigt (Vermerk bei jeder betroffenen Zeile ergänzt). Kein neuer Bestätigt-Abschnitt für den Executor nötig, da aktuell kein Punkt existiert, den er eigenständig bis zum Ende ausführen kann (das persönliche Anschreiben ist explizit Mikes eigene Aufgabe, siehe [[Kontaktliste - 20 Namen aus dem Umfeld]]).
+
 ---
 
 ## 1. Sofort (21)
 
 ### Telegram-Kanal Inner Circle
 - [x] Kanalbeschreibung gesetzt (10.09.2026)
-- [ ] Kanalbild setzen: Übergangsbild liegt fertig unter `Lim/Content/Assets/ic-kanalbild-limitless.png`, Mike setzt es in der Telegram-App (Browser lässt den Upload nicht zu)
+- [ ] Kanalbild setzen: Übergangsbild liegt fertig unter `Lim/Content/Assets/ic-kanalbild-limitless.png`, Mike setzt es in der Telegram-App (Browser lässt den Upload nicht zu) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (Executor kann App-/Browser-Login strukturell nicht ausführen, siehe [[Tagesplan]])
 - [x] Reaktionen: standen bereits auf "Alle" (geprüft 10.09.2026)
 - [x] Kein Diskussionschat verknüpft (geprüft 10.09.2026)
-- [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Rest: klickbares Website-Feld, geht nur in der Instagram-App
-- [ ] Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Mike sieht sie sich zuhause am Rechner an, dann Bescheid geben
+- [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Rest: klickbares Website-Feld, geht nur in der Instagram-App — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (App-only, kein Connector, siehe [[Tagesplan]])
+- [ ] Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Mike sieht sie sich zuhause am Rechner an, dann Bescheid geben — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (Datei liegt außerhalb des Git-Vaults, Freigabe ist ohnehin Mikes eigene Beurteilung, siehe [[Tagesplan]])
 - [x] Referral-Link steht in der /start-Nachricht (geprüft 10.09.2026, worldoflimitless.com/?ref=2A5CC2B8)
-- [ ] Make.com-Szenario dauerhaft aktivieren — Mike muss es selbst tun, im Browser ist Make nicht eingeloggt: Szenario öffnen, Scheduling-Schalter auf ON, "Immediately as data arrives" stehen lassen
+- [ ] Make.com-Szenario dauerhaft aktivieren — Mike muss es selbst tun, im Browser ist Make nicht eingeloggt: Szenario öffnen, Scheduling-Schalter auf ON, "Immediately as data arrives" stehen lassen — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (kein Make.com-Connector vorhanden, siehe [[Tagesplan]]). Wenn eh eingeloggt: gleich Willkommensnachricht + drei Follow-ups mit eintragen (Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7)
 - [x] Bot-Strecke faktisch bestätigt: /start am 08. und 09.09.2026 ausgelöst, Onboarding-Nachricht inklusive Link kam an. Ungetestet bleibt nur der Weg über den Start-Button im Kanal
 
 ### Jarvis Technik
 - [x] `broker_login.py` ausgeführt (10.09.2026), jetzt nur noch Limitless und GMX. PU Prime ist aus der Brücke raus
 - [x] Bridge-Lauf geprüft: PU Prime wird sauber übersprungen, Limitless liefert Werte. GMX scheitert weiter am SSO-Redirect und ist zurückgestellt
-- [ ] WhatsApp end-to-end testen: Bridge ist nach neuem QR-Login (10.09.2026) wieder funktionsfähig, es fehlt eine echte eingehende Nachricht von einer anderen Person. Eigene Nachrichten überspringt die Bridge per Design
+- [ ] WhatsApp end-to-end testen: Bridge ist nach neuem QR-Login (10.09.2026) wieder funktionsfähig, es fehlt eine echte eingehende Nachricht von einer anderen Person. Eigene Nachrichten überspringt die Bridge per Design — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (kein Messaging-Tool, um das anzustoßen, siehe [[Tagesplan]])
 - [ ] `whatsapp`-Knoten in `frontend/main.js` von `plannedNode` auf `liveNode` umstellen, direkt nach dem Test
 - [x] Entschieden (10.09.2026): Instagram und Facebook bleiben erstmal auf Zuruf, keine automatische Bridge, Meta Graph API zurückgestellt
 - [ ] In ein paar Tagen: prüfen, ob WhatsApp Warnungen an der Geräteverknüpfung zeigt
@@ -63,11 +65,11 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 ## 2. Aufwendig (14)
 
 ### Content und Akquise
-- [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende)
+- [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (reine Telegram-App-UI-Funktion ohne Bot-API-Äquivalent, siehe [[Tagesplan]])
 - [ ] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — Text bereits fertig in [[Inner Circle Kanal-Content]] Abschnitt 7, nur der Make.com-Eintrage-Schritt fehlt (gleiches Login-Problem wie Make.com-Szenario aktivieren, siehe unten)
 - [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte ebenfalls fertig in [[Inner Circle Kanal-Content]] Abschnitt 7
-- [ ] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert
-- [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte
+- [ ] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert — Tracking in [[Kontaktliste - 20 Namen aus dem Umfeld]], Stand 12.09.2026: 16/20 (Marina, Atin, Julia, Yilmaz, Mika, Jerome, Max, Eno, Jens, Tahsin, Sven, Lars, Dome, Manuel, Ronja, Maltesa Westerwald). Noch 4 Namen offen
+- [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte — Tracking und Status je Person in [[Kontaktliste - 20 Namen aus dem Umfeld]]. Ist Mikes eigene Aufgabe, kein Executor-Punkt: jede Nachricht persönlich, von Mike selbst verfasst oder freigegeben
 
 ### Zahlen und Struktur
 - [x] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe. Die zentrale Steuergröße des IB-Projekts — Struktur am 12.09.2026 vom `aufgaben-executor` angelegt: [[Lot-Tracking]] (Staffel-Tabelle, Kopfwerte, Kunden-Tabelle, aktuell 0 Lots/0 Kunden). Automatisch aus [[Tagesplan]] nachgezogen, da alle Bestätigt-Punkte des Tages technisch blockiert waren und dies laut MasterPlan explizit zu Stufe 0 gehört

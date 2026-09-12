@@ -87,6 +87,13 @@ Aktuell kein neuer Punkt, den der Executor eigenständig bis zum Ende ausführen
 - Bist du einverstanden, dass App-/Browser-Login-Punkte künftig nicht mehr über "Vorschlag → Bestätigt → Executor" laufen, sondern du sie direkt in der Triage abhakst? Würde unnötige Blockier-Zyklen sparen.
 - Für heute existiert noch keine Daily Note [[2026-09-12]] — soll ich eine anlegen, oder machst/lässt du das offen bis der Tag was zu berichten hat?
 
+### Umsetzung (12.09.2026, nach Bestätigung "Der Manager soll es bitte umsetzen")
+Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
+- Neue Tracking-Notiz [[Kontaktliste - 20 Namen aus dem Umfeld]] angelegt für die 16 gelieferten Namen (Marina, Atin, Julia, Yilmaz, Mika, Jerome, Max, Eno, Jens, Tahsin, Sven, Lars, Dome, Manuel, Ronja, Maltesa Westerwald), Status-Spalte pro Person, keine erfundenen Beziehungsdetails, 4 Namen als offen vermerkt. In [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] beide betroffenen Zeilen (Liste zusammenstellen / persönlich anschreiben) darauf verlinkt und Fortschritt (16/20) eingetragen.
+- In der Triage bei den sechs App-Login-Punkten (Kanalbild setzen, Instagram-Bio-Feld, Make.com aktivieren, Kanalbilder freigeben, WhatsApp-Test, Posts terminieren) je einen Vermerk ergänzt: laufen ab jetzt nicht mehr über den Bestätigt-Kreislauf, Mike hakt selbst ab.
+- Keine Daily Note für heute angelegt (zweite Frage), bleibt offen bis der Tag was zu berichten hat.
+- Kein neuer `## Bestätigt`-Abschnitt für den Executor: aktuell kein Punkt in der Triage, den er eigenständig bis zum Ende ausführen kann. Das Anschreiben ist explizit Mikes eigene Aufgabe. Die aufrufende Session entscheidet, falls sie einen anderen Punkt für passend hält.
+
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
