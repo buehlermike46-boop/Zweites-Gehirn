@@ -37,10 +37,17 @@ Gemeinsame Zustandsdatei zwischen dem [[aufgaben-manager]] (plant, kontrolliert)
 Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten) ist mit "Bestätigt" noch nicht beantwortet — bleibt offen bis zur nächsten Rückmeldung.
 
 ## Freigabe-Stau
-*(Fertig vorbereitete, aber freigabepflichtige Punkte – Senden, Posten, neue Logins, Käufe, Formulare mit persönlichen Daten, Löschen. Mike gibt hier beim täglichen Check-in gesammelt frei oder ab.)*
+**Seit 12.09.2026 retired, keine neuen Einträge mehr** (siehe Log-Eintrag unten und `.claude/agents/aufgaben-executor.md`, Abschnitt "Volle Ausführungs-Autonomie"). Alte/alte Einträge stehen unten nur noch als Historie, falls welche vorhanden sind – nicht mehr anfassen außer auf Mikes Anweisung.
+*(Ursprünglicher Zweck bis 11.09.2026: fertig vorbereitete, aber freigabepflichtige Punkte – Senden, Posten, neue Logins, Käufe, Formulare mit persönlichen Daten, Löschen. Mike gab hier beim täglichen Check-in gesammelt frei oder ab.)*
+
+## Technisch blockiert
+*(Neu seit 12.09.2026, ersetzt den Freigabe-Stau für den aufgaben-executor. Punkte, für die kein Werkzeug/Connector existiert oder ein Connector fehlerhaft/unzureichend berechtigt ist – kein Freigabe-Wartestand, sondern eine technische Lücke, die Mike selbst schließen muss.)*
 
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
+
+### 2026-09-12, Chat-Entscheidung: volle Ausführungs-Autonomie für aufgaben-executor
+Mike hat im Chat bestätigt (nach expliziter Rückfrage, weil dieselbe Behauptung vorher fälschlich in einem Scheduled-Task-Prompt aufgetaucht war, siehe Eintrag unten): der aufgaben-executor führt bestätigte Tagesplan-Punkte ab sofort vollständig aus, inklusive der bisher freigabepflichtigen Kategorien (Senden, Posten, neue Logins, Käufe/Abos, Formulare mit persönlichen Daten, endgültiges Löschen). Mikes Bestätigung des Tagesplans selbst (Vorschlag → Bestätigt) ist die einzige nötige Freigabe, keine zusätzliche Einzelfreigabe pro Aktion mehr. Das hebt für den aufgaben-executor gezielt die bisherige Grundsatzentscheidung aus `02 Projekte/Jarvis Hand - Agenten Ausbau.md` (08.09.2026, "Entwurf-statt-Auto-Antwort-Prinzip") auf – die gilt weiterhin unverändert für alle anderen Agenten (content-executor, Telegram/WhatsApp-Bridges), dort wurde nichts geändert. `.claude/agents/aufgaben-executor.md` und `CLAUDE.md` wurden entsprechend aktualisiert, `## Freigabe-Stau` oben ist retired, neue Fälle laufen über `## Technisch blockiert`. Praktischer Hinweis: der aufgaben-executor hat aktuell noch keine Mail-/Messaging-/Posting-/Kauf-Werkzeuge in seiner Tool-Liste, die Autonomie greift also erst wirklich, wenn diese Werkzeuge ergänzt werden.
 
 ### 2026-09-12, Executor-Lauf (Scheduled Cloud Routine)
 Kein bestätigter Plan für heute, nichts unternommen. Es existiert nur ein "## Vorschlag für 2026-09-12" vom aufgaben-manager, aber kein "## Bestätigt für 2026-09-12"-Abschnitt — Mike hat noch nicht bestätigt. Laut fester Vorgabe (siehe `.claude/agents/aufgaben-executor.md`) wird ohne Bestätigung nichts erfunden, auch kein automatisches Nachziehen aus der Aufgaben-Triage, weil das erst greift wenn eine bestätigte Liste leer abgearbeitet wurde, nicht wenn nie eine existierte.
