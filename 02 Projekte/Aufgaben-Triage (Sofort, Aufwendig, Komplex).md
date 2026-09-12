@@ -37,7 +37,17 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 - **WhatsApp-Warnungs-Check** ("in ein paar Tagen prüfen, ob WhatsApp Warnungen an der Geräteverknüpfung zeigt"): anders als der bereits in Deckel-Runde 1 aufgenommene Telegram-Warnungs-Check schützt dieser nicht die Infrastruktur, über die der Inner-Circle-Kanal läuft (das ist Telegram, nicht WhatsApp) — WhatsApp ist laut Stufe-0-Bedingungen kein Bestandteil der Kanal-/Bot-Strecke. Bleibt zurückgestellt, kein Stufe-0-Bezug.
 - **Trade_Journal.xlsx herunterladen**: MasterPlan hält ausdrücklich fest, "Eigenes Trading ist bewusst kein Einkommensposten" (Abschnitt 2) — das Trading-Journal gehört zum privaten Trading, nicht zum IB-Business, das Stufe 0 tatsächlich meint. Zusätzlich technisch ohnehin nicht ausführbar (kein ChatGPT-Connector in der Executor-Tool-Liste). Bleibt zurückgestellt, kein Stufe-0-Bezug.
 
-Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus der Neubewertung der sechs Ausschlüsse. Der Mike-only-Zähler steht damit unverändert bei **13** (9 aus dem vierten Lauf plus die vier aus Deckel-Runde 1, die der Executor inzwischen nachvollziehbar als technisch blockiert dokumentiert hat — Limitless-Support-Anfrage, Telegram-Warnungscheck, Willkommensnachricht, drei Follow-ups). Ohne neue Fakten von Mike (weitere Namen für die Kontaktliste, erledigte Login-Punkte, neue Ideen) kann dieser Zähler aktuell nicht weiter Richtung 20 wachsen — das ist ein valides, kein künstlich verlängertes Ergebnis. Details und Begründung auch in [[Tagesplan]], Log-Eintrag vom selben Datum.
+Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus der Neubewertung der sechs Ausschlüsse. Der Mike-only-Zähler stand damit zunächst unverändert bei 13 (9 aus dem vierten Lauf plus die vier aus Deckel-Runde 1: Limitless-Support-Anfrage, Telegram-Warnungscheck, Willkommensnachricht, drei Follow-ups). Details und Begründung auch in [[Tagesplan]], Log-Eintrag vom selben Datum.
+
+**Kontrolle 12.09.2026, sechster Lauf (interaktive Chat-Session, kein Subagent):** Mike hat direkt in dieser Session nachgefragt, was von den 13 sich noch bearbeiten lässt. Diese Session hat, anders als `aufgaben-executor` und `aufgaben-manager`, eigene Connectoren für Google Drive, Gmail und Make.com (das ist genau das in `jarvis-voice-assistant` dokumentierte `reachableNode`-Prinzip, nur für den Vault-Agenten statt für Jarvis). Ergebnis nach Live-Check:
+- Google-Drive-Ordner `Rechnungen/Eingang`: existierte schon (siehe oben). **Zähler −1.**
+- Make.com-Szenario aktivieren: war laut API schon aktiv. **Zähler −1.**
+- Neue Willkommensnachricht + Button "Konto eröffnen": mit Mikes Ja live umgesetzt (siehe oben). **Zähler −1.**
+- Drei Follow-ups: nicht umgesetzt, echter Blocker (Make-Speicherquote + fehlender verifizierbarer Datastore-Auslese-Baustein), bleibt offen, jetzt mit anderer, genauerer Begründung.
+- Limitless-Support-Anfrage: noch offen, Mike wurde nach der genauen Fragestellung und dem Versandweg gefragt (keine bekannte Support-Mailadresse im Postfach gefunden).
+- Telegram-Warnungscheck, Kanalbild, Instagram-Bio-Feld, 4 Kanalbilder freigeben, WhatsApp-Test, Posts terminieren, restliche 4 Namen, persönlich anschreiben: unverändert, wirklich nur Mike möglich.
+
+**Neuer Mike-only-Zähler-Stand: 10** (13 minus die drei oben erledigten Punkte). Der Deckel liegt weiterhin bei 20, davon sind wir also weiter entfernt als vorher, im positiven Sinn.
 
 ---
 
@@ -51,7 +61,7 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 - [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Rest: klickbares Website-Feld, geht nur in der Instagram-App — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (App-only, kein Connector, siehe [[Tagesplan]])
 - [ ] Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Mike sieht sie sich zuhause am Rechner an, dann Bescheid geben — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (Datei liegt außerhalb des Git-Vaults, Freigabe ist ohnehin Mikes eigene Beurteilung, siehe [[Tagesplan]])
 - [x] Referral-Link steht in der /start-Nachricht (geprüft 10.09.2026, worldoflimitless.com/?ref=2A5CC2B8)
-- [ ] Make.com-Szenario dauerhaft aktivieren — Mike muss es selbst tun, im Browser ist Make nicht eingeloggt: Szenario öffnen, Scheduling-Schalter auf ON, "Immediately as data arrives" stehen lassen — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (kein Make.com-Connector vorhanden, siehe [[Tagesplan]]). Wenn eh eingeloggt: gleich Willkommensnachricht + drei Follow-ups mit eintragen (Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7)
+- [x] Make.com-Szenario dauerhaft aktivieren — **korrigiert 12.09.2026:** war die ganze Zeit schon aktiv. Diese interaktive Session hat einen eigenen Make.com-Connector (anders als der `aufgaben-executor`) und per API geprüft: `isActive: true`, Scheduling "immediately", 48 Ausführungen bisher. Der alte Blockier-Grund "kein Make.com-Connector vorhanden" galt nur für den Executor, nicht für diese Session
 - [x] Bot-Strecke faktisch bestätigt: /start am 08. und 09.09.2026 ausgelöst, Onboarding-Nachricht inklusive Link kam an. Ungetestet bleibt nur der Weg über den Start-Button im Kanal
 
 ### Jarvis Technik
@@ -70,7 +80,7 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 ### Kleinkram
 - [x] Schichtplan eingepflegt (10.09.2026): steht komplett im Google Kalender ab 14.09., als Notiz [[Zwei-Wochen-Takt]] in den Vault übernommen
-- [x] Rechnungsfotos: Google Drive, Ordner `Rechnungen/Eingang`, Scan per Drive-App (entschieden 10.09.2026). Ordner anlegen und Drive für Desktop prüfen steht noch aus
+- [x] Rechnungsfotos: Google Drive, Ordner `Rechnungen/Eingang`, Scan per Drive-App (entschieden 10.09.2026). Ordner-Anlage **korrigiert 12.09.2026:** existiert bereits (angelegt 11.09.2026, per Google-Drive-Connector dieser Session verifiziert). Drive für Desktop prüfen steht noch aus
 
 ---
 
@@ -78,8 +88,8 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 ### Content und Akquise
 - [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (reine Telegram-App-UI-Funktion ohne Bot-API-Äquivalent, siehe [[Tagesplan]])
-- [ ] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — Text bereits fertig in [[Inner Circle Kanal-Content]] Abschnitt 7, nur der Make.com-Eintrage-Schritt fehlt (gleiches Login-Problem wie Make.com-Szenario aktivieren, siehe unten)
-- [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte ebenfalls fertig in [[Inner Circle Kanal-Content]] Abschnitt 7
+- [x] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — **erledigt 12.09.2026** über den Make.com-Connector dieser interaktiven Session direkt im Blueprint der `/start`-Route eingetragen (neuer Text aus [[Inner Circle Kanal-Content]] Abschnitt 7, Link `?ref=2A5CC2B8` eingesetzt, Inline-Button "🏦 Konto eröffnen"), per erneutem Abruf verifiziert, Szenario läuft weiter aktiv
+- [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7. **Stand 12.09.2026:** hängt an einem echten Blocker, nicht mehr an fehlendem Connector: das Make-Team-Konto hat nur 1 MB Data-Store-Speicher insgesamt, komplett von "Welcome Message IDs" belegt (`data-stores_create` → "Not enough space in storage"). Für die Lese-Logik der Follow-ups fehlt außerdem ein verifizierter Datastore-Auslese-Baustein, den diese Session nicht raten wollte (kein `app-modules_list`-Äquivalent verfügbar). Siehe [[Tagesplan]] für Details und die zwei Optionen an Mike
 - [ ] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert — Tracking in [[Kontaktliste - 20 Namen aus dem Umfeld]], Stand 12.09.2026: 16/20 (Marina, Atin, Julia, Yilmaz, Mika, Jerome, Max, Eno, Jens, Tahsin, Sven, Lars, Dome, Manuel, Ronja, Maltesa Westerwald). Noch 4 Namen offen
 - [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte — Tracking und Status je Person in [[Kontaktliste - 20 Namen aus dem Umfeld]]. Ist Mikes eigene Aufgabe, kein Executor-Punkt: jede Nachricht persönlich, von Mike selbst verfasst oder freigegeben
 
