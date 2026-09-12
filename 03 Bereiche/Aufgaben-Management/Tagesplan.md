@@ -104,6 +104,21 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-12, aufgaben-manager-Lauf ("Deckel-Runde 2", Fortsetzung der Stapel-Freigabe)
+Auftrag: vor dem Aufgeben gründlich prüfen, ob wirklich noch etwas Echtes für Stufe 0 übrig ist. Zwei Schritte, keiner hat einen neuen Punkt ergeben.
+
+**1. Inbox neu gelesen:** [[Brain Dump]] und [[Jarvis Aufgaben]] komplett durchgesehen. Brain Dump enthält nur bereits abgehakte Zeilen oder Zeilen, die schon explizit auf die Triage verweisen ("Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]"). Jarvis Aufgaben ist ein reines Log, jeder Eintrag steht auf `status: erledigt` oder `status: fehler` — kein einziger offener (`status: offen`) Punkt vorhanden. Kein neuer Fund.
+
+**2. Die sechs bisher ausgeschlossenen Triage-Punkte einzeln neu bewertet**, keine pauschale Übernahme:
+- Fixkosten-Liste und Business-Kosten-Liste: Stufe 0 (siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]], Abschnitt 3) definiert die Bedingungen ausschließlich über Kanal/Bot, Content-Rhythmus und Lot-Tracking. Kostenübersichten sind an keiner Stelle Teil davon oder der "Nächsten 30 Tage". Kein Stufe-0-Bezug, bleibt zurückgestellt.
+- Buchhaltungs-Frage: gleiche Begründung wie oben, kein Stufe-0-Bezug, bleibt zurückgestellt.
+- WhatsApp-Warnungs-Check ("in ein paar Tagen prüfen, ob WhatsApp Warnungen an der Geräteverknüpfung zeigt"): im Unterschied zum bereits in Deckel-Runde 1 aufgenommenen Telegram-Warnungscheck schützt dieser nicht die Kanal-Infrastruktur (die läuft über Telegram, nicht WhatsApp) — WhatsApp ist in keiner Stufe-0-Bedingung genannt. Kein Stufe-0-Bezug, bleibt zurückgestellt.
+- Trade_Journal.xlsx herunterladen: MasterPlan Abschnitt 2 hält ausdrücklich fest, dass eigenes Trading bewusst kein Einkommensposten ist — das Journal gehört zum privaten Trading, nicht zum IB-Business, um das es in Stufe 0 geht. Zusätzlich ohnehin technisch nicht ausführbar (kein ChatGPT-Connector in der Executor-Tool-Liste). Kein Stufe-0-Bezug, bleibt zurückgestellt.
+
+**Ergebnis, ehrlich benannt statt künstlich aufgefüllt:** Kein einziger neuer, Stufe-0-passender Punkt gefunden — weder aus der Inbox noch aus der Neubewertung der sechs Ausschlüsse. Es wurde bewusst nichts aus Komplex nachgeschoben (das Pflegedienst-Referenzprojekt bleibt laut MasterPlan Punkt 8 zurückgestellt, solange Stufe 0 selbst noch nicht steht) und nichts erfunden. Deshalb entsteht in dieser Runde **kein** neuer `## Bestätigt für 2026-09-12 (Deckel-Runde 2)`-Abschnitt.
+
+**Zähler-Stand:** Der Mike-only-Zähler steht unverändert bei **13** (die 9 aus dem vierten Triage-Lauf plus die vier aus Deckel-Runde 1 — Limitless-Support-Anfrage, Telegram-Warnungscheck, Willkommensnachricht, drei Follow-ups —, die der Executor in seinem Lauf am selben Tag bereits nachvollziehbar als technisch blockiert dokumentiert hat). Ohne neue Fakten von Mike selbst (weitere Namen für die Kontaktliste, erledigte Login-/App-Punkte, neue Ideen für Stufe 0) kann dieser Zähler aktuell nicht weiter Richtung 20 wachsen. Das ist ein valides Ergebnis dieser Kontrollrunde, keine Lücke, die noch gefüllt werden müsste. Details auch in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], Kontrolle "fünfter Lauf".
+
 ### 2026-09-12, Executor-Lauf (Deckel-Runde 1)
 Alle vier Punkte aus `## Bestätigt für 2026-09-12 (Deckel-Runde 1)` durchgegangen, in der vorgegebenen Reihenfolge (Sofort zuerst, dann Aufwendig).
 
