@@ -620,7 +620,7 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 
 | Post | Datum/Zeit (Plan) | Status |
 |---|---|---|
-| 1 Warum es diesen Kanal gibt | Mo 14.09., 17:00 | offen |
+| 1 Warum es diesen Kanal gibt | Mo 14.09., 17:00 | gepostet (13.09.2026, auf Mikes Wunsch vorgezogen) |
 | 2 Warum Gold | Di 15.09., 17:00 | offen |
 | 3 Der Fehler, der 90% killt | Mi 16.09., 17:00 | offen |
 | 4 Umfrage | Do 17.09., 17:00 | offen |
@@ -637,6 +637,11 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 
 ### Executor-Log
 *(Append-only Protokoll jedes content-executor-Laufs für Telegram, mit Zeitstempel. Wird beim ersten Lauf angelegt.)*
+
+### 2026-09-13, ca. 13:37 UTC, erster echter Post (auf Mikes Wunsch im Chat sofort ausgelöst, nicht über die Scheduled Routine)
+Mike hat direkt im Chat "poste jetzt einen echten Post in meinen Kanal" verlangt. Post 1 ("Warum es diesen Kanal gibt") aus dem 14-Tage-Plan war der nächste fällige, thematisch passt er als Kanal-Opener am besten. Der hinterlegte Asset-Pfad (`Bilder/Fertig/01-warum-tradest-dueigentlich-noch-alleine.png`) war wie erwartet unerreichbar (lokal bei Mike, nicht im Git-Vault) — daher ein neues, passendes Bild über Jarvis erstellt (dunkles Navy/Gold, Silhouette auf Weg zum Chart-Horizont, kein Logo/Text, quadratisch), URL: `https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260913_133722_0469941a-2cae-49d1-bc47-67536f56619c.png`.
+
+Gepostet über das Werkzeug "Telegram Kanal: Post Versand" (Szenario-ID 7391673, `media_type: photo`) an `@JointoInnerCircle`. **Erfolgreich, Execution-Status SUCCESS.** Message-ID kam über diese Route nicht strukturiert zurück (Szenario hat kein Output-Interface definiert) — bei Bedarf später in Telegram nachschauen oder Output-Interface ergänzen. Post-Status oben aktualisiert. Keine Freigabe- oder Credit-Probleme (718,5 Credits vor der Generierung, Plus-Plan).
 
 ---
 
