@@ -603,11 +603,19 @@ Nicht perfekt, wer eröffnet, ohne zu klicken, bekommt trotzdem eine Nachricht. 
 
 `content-executor` hat jetzt das Werkzeug `mcp__Make__scenarios_run` bekommen und ruft für Text-Posts gezielt Tool-ID `7390879` auf (siehe Agent-Datei). **Reiner Text-Versand in den Kanal ist damit ab sofort tatsächlich automatisch möglich.**
 
-**Bild-/Video-Versand: weiterhin offen, jetzt aber präziser eingegrenzt.** Mehrere Versuche mit dem Modul "Send a Photo" (`telegram:SendPhoto`, Felder `photo`, `fileType`+`photo`, verschachteltes `photo.url`) scheiterten alle am selben Telegram-Fehler: *"[400] Bad Request: there is no photo in the request"* – das Modul erreicht Telegram nachweislich, aber das Bild kommt nicht mit an, das exakte Feld dafür ließ sich ohne Doku nicht erraten. Die Make-Doku nennt dafür eigentlich ein separates Modul "Send media by URL or ID" (unterstützt explizit Foto/Video per HTTP-URL), aber dessen technischer Modul-Name (`app:ModuleName`) ist nirgends öffentlich dokumentiert und ließ sich nicht verifizieren – der Make-Verbindung dieser Session fehlt weiterhin der Scope `apps:read` für das Prüfwerkzeug, das den echten Feldnamen liefern würde.
+**Bild-/Video-Versand: weiterhin offen – Update 13.09.2026, dritter Durchgang, jetzt mit begründetem Verdacht auf einen echten Make-Bug statt nur fehlender Doku.**
 
-**Damit der Bild-/Video-Versand fertig wird, reicht einer der beiden Wege:**
-1. Mike gibt der Make-Verbindung dieser Session den Scope `apps:read`, dann kann eine Session den exakten Feldnamen abfragen und in wenigen Minuten fertig bauen.
-2. Mike öffnet einmal kurz in der Make-Oberfläche ein neues Szenario, fügt das Telegram-Bot-Modul "Send a Photo" oder "Send media by URL or ID" hinzu und schickt einen Screenshot der Feldnamen (oder tippt sie ab) – dauert ca. 1 Minute, dann baut eine Session den Rest fertig.
+Mike hat live mitgeholfen und das Modul "Send a Photo" direkt in der Make-Oberfläche konfiguriert (Screenshots), das lieferte wertvolle echte Infos:
+- Der Auswahl-Schalter heißt **"Senden per"**, Werte sichtbar u. a. `send_byurl` (HTTP-URL) statt "Daten"/"Datei-ID".
+- Im URL-Modus erscheint ein Pflichtfeld **"URL"** mit Hilfetext "Übergeben Sie eine URL, um ein Foto aus dem Internet abzurufen".
+
+Damit über die Make-API mehrere Kombinationen getestet (`sendBy`+`url`, `sendBy`+`photo`, jeweils mit den exakten Labels aus dem Screenshot) – alle scheiterten am selben Telegram-Fehler *"there is no photo in the request"*.
+
+**Wichtigster neuer Befund:** Genau dasselbe Problem trat danach **auch direkt in Mikes eigener Make-Oberfläche auf**, dreimal in Folge, sowohl im neuen "Mit Maia bauen"-Assistenten als auch im normalen Szenario-Editor: Chat-ID und URL waren sichtbar ausgefüllt, trotzdem meldete Make beim Speichern durchgehend "Chat-ID: leer", "URL: leer", plus zwei Phantom-Pflichtfelder "Dateiname"/"Daten", die im HTTP-URL-Modus gar nicht mehr existieren dürften. Identischer Fehler über drei unabhängige Versuche (Reload, Neuaufbau, anderer Editor-Kontext) spricht stark für einen **echten Bug in diesem Make-Modul/dieser Formular-Validierung**, nicht für einen falschen Feldnamen unsererseits. Es wurde nichts gespeichert, der produktive Bot (`Integration Telegram Bot`, ID 7240246) läuft nachweislich unverändert weiter (per API gegengeprüft).
+
+**Damit bewusst geparkt statt weiter blind zu raten. Zwei Wege für einen neuen Anlauf:**
+1. Scope `apps:read` für die Make-Verbindung dieser Session, dann lässt sich das Modul-Schema sauber maschinell abfragen statt über UI-Versuche.
+2. Einfach in ein paar Tagen nochmal in der Make-UI probieren, falls es ein temporärer Plattform-Bug war (Make selbst updated sowas öfter mal unangekündigt) – dann reicht ein einziger erfolgreicher Speichervorgang, danach kann eine Session die echte Konfiguration direkt auslesen.
 
 **Praktische Konsequenz:** Da alle 12 bereits geplanten Posts im 14-Tage-Plan oben ein Bild/Video enthalten, kann `content-executor` aktuell noch **keinen** davon vollautomatisch posten – er bereitet sie fertig vor (Status `fertig (Posten technisch offen)`), postet aber erst, sobald Bild/Video ebenfalls steht. Ein reiner Text-Post (z. B. eine spontane Ankündigung ohne Bild) könnte ab sofort schon automatisch raus.
 
