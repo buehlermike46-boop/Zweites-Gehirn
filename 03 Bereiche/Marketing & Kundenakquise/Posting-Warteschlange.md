@@ -24,7 +24,11 @@ Stil/die Qualität für gut befunden hat, trägt er hier ein: `Freigabe-Phase: a
 trackt aber weiterhin jeden Post im [[Performance-Log]]. Zurückschalten auf Phase 1 geht
 jederzeit, einfach den Status hier wieder auf "Freigabe nötig" setzen.
 
-**Freigabe-Phase: Freigabe nötig (Phase 1, seit 10.09.2026)**
+**Update 13.09.2026 (Mike per Chat):** Content-Stil/Qualität für gut befunden, Umschalten auf Phase 2 wie oben beschrieben.
+
+**Freigabe-Phase: automatisch (Phase 2, seit 13.09.2026)**
+
+Ab jetzt postet der `content-executor` neue, fällige Posts mit Status `bereit (wartet auf Freigabe)` ohne dass Mike jeden einzeln freigibt, trackt aber weiterhin jeden Post im [[Performance-Log]]. Zurückschalten auf Phase 1 geht jederzeit, siehe oben.
 
 Operative Liste für die Auto-Posting-Automatisierung (siehe
 [[Content-Plan - Woche 07.09.-13.09.2026]] für den Gesamt-Wochenplan inkl. Personal-Account).
