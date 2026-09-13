@@ -24,7 +24,11 @@ Stil/die Qualität für gut befunden hat, trägt er hier ein: `Freigabe-Phase: a
 trackt aber weiterhin jeden Post im [[Performance-Log]]. Zurückschalten auf Phase 1 geht
 jederzeit, einfach den Status hier wieder auf "Freigabe nötig" setzen.
 
-**Freigabe-Phase: Freigabe nötig (Phase 1, seit 10.09.2026)**
+**Update 13.09.2026 (Mike per Chat):** Content-Stil/Qualität für gut befunden, Umschalten auf Phase 2 wie oben beschrieben.
+
+**Freigabe-Phase: automatisch (Phase 2, seit 13.09.2026)**
+
+Ab jetzt postet der `content-executor` neue, fällige Posts mit Status `bereit (wartet auf Freigabe)` ohne dass Mike jeden einzeln freigibt, trackt aber weiterhin jeden Post im [[Performance-Log]]. Zurückschalten auf Phase 1 geht jederzeit, siehe oben.
 
 Operative Liste für die Auto-Posting-Automatisierung (siehe
 [[Content-Plan - Woche 07.09.-13.09.2026]] für den Gesamt-Wochenplan inkl. Personal-Account).
@@ -114,6 +118,8 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - Do 10.09. — Story-Umfrage "Was würdest du einen Trading-Coach fragen?"
 - Sa 12.09. 19:30 — Post "Tag X – von Gehalt zu finanzieller Freiheit" — braucht echte Zahlen
 - So 13.09. 19:30 — Reel "Ich bin Elektromeister..." — Skript fertig
+
+**Update 13.09.2026 (Mike per Chat):** Sobald Mike echte Fotos von sich zur Verfügung stellt, dürfen `content-manager`/`content-executor` diese für Personal-Account-Content mitverwenden — dann läuft auch dieser Teil über die Automatisierung statt komplett manuell. Bezahlte Werbung bleibt davon unberührt, weiterhin strikt tabu. Sobald Fotos da sind: an einen festen Ort legen (z.B. `07 Anhänge/Mike Fotos/`) und hier bzw. im [[Bilder-Datenspeicher]] eintragen, damit der Executor sie findet.
 
 ## Wie freigeben
 Solange Phase 1 aktiv ist: Status-Zeile hier von `bereit` auf `freigegeben` ändern (oder Mike sagt es Claude), dann postet der `content-executor` zur angegebenen Uhrzeit über den bestehenden Windsor.ai-Instagram-Connector. Ohne Freigabe passiert nichts.

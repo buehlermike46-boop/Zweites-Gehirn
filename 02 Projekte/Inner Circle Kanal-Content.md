@@ -584,12 +584,70 @@ Nicht perfekt, wer eröffnet, ohne zu klicken, bekommt trotzdem eine Nachricht. 
 - [x] Kanalbeschreibung gesetzt (10.09.2026)
 - [x] Kanalbild gesetzt — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Bilder aus `Lim/Content/Telegram/` gegengecheckt und freigegeben — laut Mike im Chat am 13.09.2026 erledigt
-- [ ] Posts 1–6 für Woche 1 terminieren — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken. Content jetzt vollständig fertig (Post 6 am 13.09.2026 komplettiert, siehe Abschnitt 3), nichts blockiert das Terminieren mehr inhaltlich
+- [x] ~~Posts 1–6 für Woche 1 terminieren~~ — **überholt seit 13.09.2026:** manuelles Terminieren in der Telegram-App entfällt, der Kanal-Versand läuft jetzt automatisch über `content-executor` (siehe Abschnitt 9). Post 1 bereits live gepostet
 - [x] Instagram-Bio auf den Kanal umgebaut (10.09.2026), klickbares Website-Feld fehlt noch (Instagram, nicht Telegram — separat offen)
 - [x] Neue Willkommensnachricht im Bot + Button "Konto eröffnen" eingetragen — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Drei Follow-ups eingerichtet (24 h / 3 Tage / 7 Tage) — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Bonus-Werbung abgeklärt, bestätigt am 09.09.2026
 
-**Stand 13.09.2026:** Telegram-Technik (Kanalbild, Kanalbilder freigegeben, Make.com-Szenario aktiv, Willkommensnachricht, Follow-ups) laut Mike vollständig fertig. Einziger offener Punkt ist das Terminieren der sechs Posts für Woche 1 in der Telegram-App selbst — Inhalt dafür ist jetzt komplett (auch Post 6 fertig ausformuliert).
+**Stand 13.09.2026:** Telegram-Technik (Kanalbild, Kanalbilder freigegeben, Make.com-Szenario aktiv, Willkommensnachricht, Follow-ups) laut Mike vollständig fertig. Das manuelle "Posts 1-6 terminieren" oben ist überholt, siehe Abschnitt 9: der Kanal-Versand läuft seit 13.09.2026 automatisch über `content-executor`, kein manuelles Terminieren in der Telegram-App mehr nötig.
 
-Verknüpft: [[IB-Projekt (Limitless & PU Prime)]] · [[KI-Automatisierung IB-Business]] · [[Marketing & Kundenakquise]] · [[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]]
+---
+
+## 9. Automatisierung: content-manager/-executor (ab 13.09.2026)
+
+**Entscheidung (Mike per Chat, 13.09.2026):** Der Telegram-Kanal wird nicht durch ein eigenes Agentenpaar automatisiert, sondern durch die bestehenden `content-manager`/`content-executor` (bisher nur Instagram) als zweite Plattform. Grund: [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] Punkt 8 warnt vor zu vielen parallelen Baustellen, Abschnitt 6 davor, einen neuen Agenten zu bauen, bevor der vorige (das Instagram-Content-System, erst seit 11.09.2026 live) sich bewährt hat. Diese Datei übernimmt für Telegram die Rolle, die [[Posting-Warteschlange]] für Instagram hat.
+
+**Freigabe-Phase: komplett automatisch, keine Einzelfreigabe** (Mikes Entscheidung 13.09.2026 – bewusst anders als der Instagram-Start in Phase 1). `content-executor` postet fällige, fertige Posts also ohne dass Mike jeden einzeln bestätigt. Umstellen auf "Freigabe nötig" geht jederzeit, einfach diese Zeile ändern.
+
+**Echte Kundenergebnisse:** wie im Rest des Vaults nie erfinden/simulieren (siehe auch Notiz in [[KI-Automatisierung IB-Business]]). `content-manager` prüft `07 Anhänge/` auf reales Material, das Mike bereitstellt, und baut es ein, sobald es da ist. Bis dahin ausschließlich Ökosystem-/Bildungscontent wie im 14-Tage-Plan oben.
+
+### Technischer Stand des Kanal-Versands (Update 13.09.2026, vierter Durchgang: fertig)
+
+**Text, Foto UND Video: fertig gebaut und live getestet, alle drei funktionieren.**
+
+Der Weg dahin, kurz zusammengefasst: Ein erstes Text-only-Tool lief schon früh (Modul "Send a Text Message or Reply"). Für Bilder/Videos schlug "Send a Photo" trotz mehrerer Versuche (auch direkt in Mikes Make-Oberfläche, mit Screenshots) immer wieder fehl ("there is no photo in the request"/Phantom-Pflichtfelder) – am Ende lag das schlicht daran, dass das eigentlich passende Modul ein anderes ist. Mike hat der Make-Verbindung dieser Session den Scope **`apps:read`** erteilt (Connector-Neuautorisierung, alle Rechte inkl. "Szenario-Apps" angehakt), damit ließ sich das echte Modul-Schema maschinell abfragen statt zu raten:
+
+- Richtiges Modul für Bild/Video: **`telegram:ForwardAttachment`** (UI-Name "Send Media by URL or ID", nicht "Send a Photo"!)
+- Pflichtfelder: `chatId`, `attachmentType` (Enum: Document/Photo/Audio/Video/VideoNote/Voice/Sticker), `sendType` (Enum: `send_byurl`/`send_byid`)
+- Bei `sendType: send_byurl` zusätzlich Pflichtfeld **`fileId`** (trotz des irreführenden Namens: hier kommt die HTTP-URL rein, nicht die Telegram-Datei-ID)
+- Optional: `caption`
+
+**Umgesetzt als ein einziges, vereinheitlichtes Werkzeug** (Mikes Make-Plan erlaubt nur 2 aktive Szenarien gleichzeitig, daher kein separates Tool pro Medientyp): Szenario **"Telegram Kanal: Post Versand"** (ID `7391673`, Team "My Team", ersetzt das alte reine Text-Tool `7390879`, das dafür gelöscht wurde). Nimmt vier Parameter entgegen: `chatId`, `media_type` (`text`/`photo`/`video`), `text` (Nachricht bzw. Caption), `media_url` (nur bei photo/video). Intern ein Router, der je nach `media_type` zu `telegram:SendReplyMessage` (text) oder `telegram:ForwardAttachment` mit passendem `attachmentType` (photo/video) verzweigt.
+
+**Alle drei Zweige echt getestet** (private Testnachrichten an Mike, Chat-ID `6233075726`, Status jeweils Erfolg ohne Fehler): Text ✅, Foto (`https://telegram.org/img/t_logo.png`) ✅, Video (echte Asset-URL aus der Instagram-Queue) ✅. Für den echten Kanal gilt dieselbe Chat-ID-Logik wie beim Text-Tool: `chatId: @JointoInnerCircle` (öffentliche Kanäle, Bot ist dort Admin) – nicht extra am echten Kanal getestet, um dort keine Testnachricht zu hinterlassen, aber Mechanismus und Chat-ID-Format sind unabhängig bestätigt.
+
+`content-executor` ruft für **jeden** Telegram-Post (Text, Foto, Video) `mcp__Make__scenarios_run` mit Szenario-ID `7391673` auf (siehe Agent-Datei). **Der komplette Kanal-Versand läuft damit ab sofort automatisch, kein offener technischer Punkt mehr.**
+
+Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die ganze Zeit unberührt und lief unverändert weiter (mehrfach per API gegengeprüft).
+
+### Post-Status
+
+| Post | Datum/Zeit (Plan) | Status |
+|---|---|---|
+| 1 Warum es diesen Kanal gibt | Mo 14.09., 17:00 | gepostet (13.09.2026, auf Mikes Wunsch vorgezogen) |
+| 2 Warum Gold | Di 15.09., 17:00 | offen |
+| 3 Der Fehler, der 90% killt | Mi 16.09., 17:00 | offen |
+| 4 Umfrage | Do 17.09., 17:00 | offen |
+| 5 Was du zum Start brauchst | Fr 18.09., 17:00 | offen |
+| 6 Wochenausblick | So 20.09., 17:00 | offen |
+| 7 Wie ich das neben Schicht/Kindern mache | Mo 21.09., 11:00 | offen |
+| 8 Lot, Spread, Kommission | Di 22.09., 11:00 | offen |
+| 9 Warum ich jeden Trade aufschreibe | Mi 23.09., 11:00 | offen |
+| 10 Die Tools | Do 24.09., 11:00 | offen |
+| 11 In 3 Schritten dabei | Fr 25.09., 11:00 | offen |
+| 12 Q&A | So 27.09., 11:00 | offen |
+
+`content-executor` postet jeden fälligen Post direkt (Text, Foto und Video sind technisch alle möglich) und setzt den Status danach auf `gepostet ([Datum, Uhrzeit])`, inkl. Message-ID/Link. `content-manager` hängt hier neue Wochen im gleichen Tabellenformat an, sobald Woche 2 abgearbeitet ist.
+
+### Executor-Log
+*(Append-only Protokoll jedes content-executor-Laufs für Telegram, mit Zeitstempel. Wird beim ersten Lauf angelegt.)*
+
+### 2026-09-13, ca. 13:37 UTC, erster echter Post (auf Mikes Wunsch im Chat sofort ausgelöst, nicht über die Scheduled Routine)
+Mike hat direkt im Chat "poste jetzt einen echten Post in meinen Kanal" verlangt. Post 1 ("Warum es diesen Kanal gibt") aus dem 14-Tage-Plan war der nächste fällige, thematisch passt er als Kanal-Opener am besten. Der hinterlegte Asset-Pfad (`Bilder/Fertig/01-warum-tradest-dueigentlich-noch-alleine.png`) war wie erwartet unerreichbar (lokal bei Mike, nicht im Git-Vault) — daher ein neues, passendes Bild über Jarvis erstellt (dunkles Navy/Gold, Silhouette auf Weg zum Chart-Horizont, kein Logo/Text, quadratisch), URL: `https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260913_133722_0469941a-2cae-49d1-bc47-67536f56619c.png`.
+
+Gepostet über das Werkzeug "Telegram Kanal: Post Versand" (Szenario-ID 7391673, `media_type: photo`) an `@JointoInnerCircle`. **Erfolgreich, Execution-Status SUCCESS.** Message-ID kam über diese Route nicht strukturiert zurück (Szenario hat kein Output-Interface definiert) — bei Bedarf später in Telegram nachschauen oder Output-Interface ergänzen. Post-Status oben aktualisiert. Keine Freigabe- oder Credit-Probleme (718,5 Credits vor der Generierung, Plus-Plan).
+
+---
+
+Verknüpft: [[IB-Projekt (Limitless & PU Prime)]] · [[KI-Automatisierung IB-Business]] · [[Marketing & Kundenakquise]] · [[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]] · [[Posting-Warteschlange]]
