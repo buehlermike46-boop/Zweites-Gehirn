@@ -251,18 +251,18 @@ Werbung. Keine Anlageberatung.
 
 Worauf ich diese Woche schaue:
 
-🗓 [Termin 1, z. B. US-Inflationsdaten Mittwoch]
-🗓 [Termin 2, z. B. Fed-Statement Donnerstag]
+🗓 Donnerstag, 24.09.: wöchentliche Jobless Claims (US-Arbeitslosenanträge)
+🗓 Freitag, 25.09.: Auftragseingänge langlebiger Güter (Durable Goods) und das finale Michigan-Verbrauchervertrauen
 
-An solchen Tagen bewegt sich Gold oft heftig und unberechenbar. Für Einsteiger heißt das meistens: Finger weg oder deutlich kleiner unterwegs sein.
+Ruhigere Woche als die letzte, keine Fed-Sitzung, keine Inflationsdaten. Trotzdem: an Tagen mit US-Daten kann Gold kurz ausschlagen, auch wenn's auf den ersten Blick nach einer Randnotiz aussieht.
 
-Mein Plan: [1 Satz, was du machst, nicht wie]
+Mein Plan: Ich handle wie gewohnt in meinem festen Zeitfenster, nur rund um die Datenveröffentlichungen etwas vorsichtiger mit der Positionsgröße.
 
 Kein Signal, keine Empfehlung. Nur, worauf ich achte.
 ```
 
-> [!note] Recherche-Baustein
-> Termine bekommst du in 2 Minuten aus einem Wirtschaftskalender (Forex Factory, Investing.com), Filter: USD, hohe Relevanz. Wenn du willst, baue ich dir das später als automatischen Wochen-Input in dein Vault ([[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]]).
+> [!note] Fertiggestellt am 13.09.2026
+> Termine für die Woche 21.–27.09. recherchiert (FOMC-Sitzung war bereits 15.–16.09., also in Woche 1, nicht mehr relevant für diesen Post). Kurz vor dem Posten am 20.09. lohnt sich ein 2-Minuten-Check auf Forex Factory oder Investing.com, ob kurzfristig noch ein Fed-Speaker oder eine Datenrevision dazugekommen ist, sonst ist der Post copy-paste-fertig.
 
 ---
 
@@ -579,12 +579,15 @@ Nicht perfekt, wer eröffnet, ohne zu klicken, bekommt trotzdem eine Nachricht. 
 
 ## 8. Nächste Schritte
 
-- [x] Kanalbeschreibung gesetzt (10.09.2026), Bild noch offen, Datei liegt bereit
-- Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
-- Posts 1–6 für Woche 1 terminieren — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
-- [x] Instagram-Bio auf den Kanal umgebaut (10.09.2026), klickbares Website-Feld fehlt noch
-- Neue Willkommensnachricht im Bot + Button "Konto eröffnen" — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
-- Drei Follow-ups einrichten (24 h / 3 Tage / 7 Tage) — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
+- [x] Kanalbeschreibung gesetzt (10.09.2026)
+- [x] Kanalbild gesetzt — laut Mike im Chat am 13.09.2026 erledigt
+- [x] Bilder aus `Lim/Content/Telegram/` gegengecheckt und freigegeben — laut Mike im Chat am 13.09.2026 erledigt
+- [ ] Posts 1–6 für Woche 1 terminieren — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken. Content jetzt vollständig fertig (Post 6 am 13.09.2026 komplettiert, siehe Abschnitt 3), nichts blockiert das Terminieren mehr inhaltlich
+- [x] Instagram-Bio auf den Kanal umgebaut (10.09.2026), klickbares Website-Feld fehlt noch (Instagram, nicht Telegram — separat offen)
+- [x] Neue Willkommensnachricht im Bot + Button "Konto eröffnen" eingetragen — laut Mike im Chat am 13.09.2026 erledigt
+- [x] Drei Follow-ups eingerichtet (24 h / 3 Tage / 7 Tage) — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Bonus-Werbung abgeklärt, bestätigt am 09.09.2026
+
+**Stand 13.09.2026:** Telegram-Technik (Kanalbild, Kanalbilder freigegeben, Make.com-Szenario aktiv, Willkommensnachricht, Follow-ups) laut Mike vollständig fertig. Einziger offener Punkt ist das Terminieren der sechs Posts für Woche 1 in der Telegram-App selbst — Inhalt dafür ist jetzt komplett (auch Post 6 fertig ausformuliert).
 
 Verknüpft: [[IB-Projekt (Limitless & PU Prime)]] · [[KI-Automatisierung IB-Business]] · [[Marketing & Kundenakquise]] · [[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]]

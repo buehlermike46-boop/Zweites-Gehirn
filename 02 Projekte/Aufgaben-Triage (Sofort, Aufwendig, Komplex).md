@@ -41,19 +41,23 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 **Kontrolle 13.09.2026 ([[aufgaben-manager]], turnusmäßiger Planungslauf, Scheduled Cloud Routine):** Kein neuer Beleg zu prüfen — die letzte Bestätigt-Liste (Deckel-Runde 1, vier Punkte) war bereits am 12.09. vom Executor als technisch blockiert dokumentiert und in dieser Kontrolle abgehandelt. [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen: keine neuen offenen Punkte. [[Kontaktliste - 20 Namen aus dem Umfeld]] weiterhin bei 16/20, kein Name als angeschrieben markiert. Die sechs App-Login-Punkte hier unten weiterhin unmarkiert (kein Mike-Häkchen seit 12.09.). Keine inhaltliche Änderung an dieser Datei nötig, Zahlen im Kopf bleiben unverändert. Mike-only-Zähler unverändert bei **13/20**. Neuer Vorschlag für den 13.09. steht in [[Tagesplan]] — empfiehlt als größten Hebel die 4 fehlenden Kontaktnamen plus erste persönliche Anschreiben, weil laut MasterPlan Abschnitt 4 Kundengewinnung (aktuell 0 Accounts im [[Lot-Tracking]]) der eigentliche Engpass ist, nicht Technik.
 
+**Kontrolle 13.09.2026, zweiter Lauf (Chat mit Mike, interaktive Session):** Mike hat im Chat bestätigt, dass die Telegram-Technik komplett steht: Kanalbild gesetzt, die vier Kanalbilder aus `Lim/Content/Telegram/` freigegeben, Make.com-Szenario dauerhaft aktiviert inklusive neuer Willkommensnachricht und der drei Follow-ups. Fünf der sechs App-Login-Punkte oben entsprechend abgehakt (Beleg: Mikes direkte Aussage im Chat, konsistent mit der Vault-Regel, Bestätigungen aus dem direkten Gespräch mit Mike als gültigen Beleg zu behandeln). Weiterhin offen und explizit NICHT von seiner Aussage gedeckt, weil er ausdrücklich nur "Telegram" meinte: Instagram-Bio-Feld (Instagram, nicht Telegram) und WhatsApp-Test (WhatsApp, nicht Telegram). Zusätzlich: Post 6 (Wochenausblick) in [[Inner Circle Kanal-Content]] war der letzte inhaltliche Platzhalter im gesamten 12-Post-Plan — heute mit recherchierten echten Terminen für die Woche 21.–27.09. fertiggestellt (FOMC-Sitzung 15.–16.09. liegt bereits in Woche 1 und war damit nicht mehr relevant für diesen Post). Damit ist der Content für alle 12 Posts jetzt vollständig copy-paste-fertig, keine Platzhalter mehr offen.
+
+**Neuer Mike-only-Zähler-Stand: 8** (13 minus die 5 heute bestätigten: Kanalbild, vier Kanalbilder freigeben, Make.com aktivieren, Willkommensnachricht, Follow-ups — letztere drei zählten als ein gemeinsamer Login-Vorgang, siehe [[Tagesplan]]). Verbleibend: Instagram-Bio-Feld, WhatsApp-Test, Posts 1-6 terminieren, Limitless-Support-Anfrage, Telegram-Warnungscheck, Google-Drive-Ordner, 20-Namen-Liste vervollständigen, persönlich anschreiben. Einziger noch offener Punkt an der Kanal-Strecke selbst: Posts 1-6 im Kanal terminieren — rein die App-Aktion, inhaltlich nichts mehr zu tun. Details siehe [[Tagesplan]], neuer Log-Eintrag vom selben Datum.
+
 ---
 
 ## 1. Sofort (21)
 
 ### Telegram-Kanal Inner Circle
 - [x] Kanalbeschreibung gesetzt (10.09.2026)
-- [ ] Kanalbild setzen: Übergangsbild liegt fertig unter `Lim/Content/Assets/ic-kanalbild-limitless.png`, Mike setzt es in der Telegram-App (Browser lässt den Upload nicht zu) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (Executor kann App-/Browser-Login strukturell nicht ausführen, siehe [[Tagesplan]])
+- [x] Kanalbild gesetzt — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Reaktionen: standen bereits auf "Alle" (geprüft 10.09.2026)
 - [x] Kein Diskussionschat verknüpft (geprüft 10.09.2026)
-- [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Rest: klickbares Website-Feld, geht nur in der Instagram-App — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (App-only, kein Connector, siehe [[Tagesplan]])
-- [ ] Bilder aus `Lim/Content/Telegram/` gegenchecken und freigeben — Mike sieht sie sich zuhause am Rechner an, dann Bescheid geben — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (Datei liegt außerhalb des Git-Vaults, Freigabe ist ohnehin Mikes eigene Beurteilung, siehe [[Tagesplan]])
+- [x] Instagram-Bio um den Kanal-Link ergänzt (10.09.2026). Rest: klickbares Website-Feld, geht nur in der Instagram-App — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (App-only, kein Connector, siehe [[Tagesplan]]) — Instagram, nicht Telegram, weiterhin offen
+- [x] Bilder aus `Lim/Content/Telegram/` gegengecheckt und freigegeben — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Referral-Link steht in der /start-Nachricht (geprüft 10.09.2026, worldoflimitless.com/?ref=2A5CC2B8)
-- [ ] Make.com-Szenario dauerhaft aktivieren — Mike muss es selbst tun, im Browser ist Make nicht eingeloggt: Szenario öffnen, Scheduling-Schalter auf ON, "Immediately as data arrives" stehen lassen — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (kein Make.com-Connector vorhanden, siehe [[Tagesplan]]). Wenn eh eingeloggt: gleich Willkommensnachricht + drei Follow-ups mit eintragen (Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7)
+- [x] Make.com-Szenario dauerhaft aktiviert inklusive neuer Willkommensnachricht und der drei Follow-ups — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Bot-Strecke faktisch bestätigt: /start am 08. und 09.09.2026 ausgelöst, Onboarding-Nachricht inklusive Link kam an. Ungetestet bleibt nur der Weg über den Start-Button im Kanal
 
 ### Jarvis Technik
@@ -79,9 +83,9 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 ## 2. Aufwendig (14)
 
 ### Content und Akquise
-- [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (reine Telegram-App-UI-Funktion ohne Bot-API-Äquivalent, siehe [[Tagesplan]])
-- [ ] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — Text bereits fertig in [[Inner Circle Kanal-Content]] Abschnitt 7, nur der Make.com-Eintrage-Schritt fehlt (gleiches Login-Problem wie Make.com-Szenario aktivieren, siehe unten)
-- [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte ebenfalls fertig in [[Inner Circle Kanal-Content]] Abschnitt 7
+- [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (reine Telegram-App-UI-Funktion ohne Bot-API-Äquivalent, siehe [[Tagesplan]]). Inhaltlich seit 13.09.2026 nichts mehr offen: alle sechs Posts inkl. Post 6 fertig ausformuliert in [[Inner Circle Kanal-Content]]
+- [x] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — laut Mike im Chat am 13.09.2026 erledigt
+- [x] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — laut Mike im Chat am 13.09.2026 erledigt
 - [ ] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert — Tracking in [[Kontaktliste - 20 Namen aus dem Umfeld]], Stand 12.09.2026: 16/20 (Marina, Atin, Julia, Yilmaz, Mika, Jerome, Max, Eno, Jens, Tahsin, Sven, Lars, Dome, Manuel, Ronja, Maltesa Westerwald). Noch 4 Namen offen
 - [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte — Tracking und Status je Person in [[Kontaktliste - 20 Namen aus dem Umfeld]]. Ist Mikes eigene Aufgabe, kein Executor-Punkt: jede Nachricht persönlich, von Mike selbst verfasst oder freigegeben
 
