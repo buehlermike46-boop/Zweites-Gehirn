@@ -57,14 +57,16 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 ### 2. Montag, 14.09.2026, 18:50 Uhr
 - **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Carousel (4 Bilder)
-- **Assets:** `Lim/Content/Bilder/26-drei-saeulenein-oekosystem.png`, `27-mehr-als-tradingtraverse.png`, `28-nicht-nur-chartsauch-du-selbst.png`, `30-warum-limitlessund-primeversezusammenarb.png`
+- **Assets (alt, unerreichbar — Korrektur `content-manager` 13.09.2026):** ~~`Lim/Content/Bilder/26-drei-saeulenein-oekosystem.png`, `27-mehr-als-tradingtraverse.png`, `28-nicht-nur-chartsauch-du-selbst.png`, `30-warum-limitlessund-primeversezusammenarb.png`~~ liegen lokal bei Mike außerhalb des Git-Vaults, für den `content-executor` als Cloud-Routine nicht erreichbar (gleiches Muster wie beim Post vom 11.09., siehe [[Performance-Log]]).
+- **Ersatz-Generation-Brief (frisch über Jarvis zu erstellen):** 4 Info-Grafik-Slides im bestehenden Limitless-Look (wie die Grafik vom 09.09.). Slide 1 Hook "Drei Säulen, ein Ökosystem", Slide 2 Technologie (Signale, Marktanalyse-Tools, Trading-Journal), Slide 3 Bildung (Academy, Live-Coaching), Slide 4 Lifestyle (Reise-Vorteile, Mindset/Fitness-Ansatz) + CTA. Keine Gesichter, keine Euro-Beträge, keine erfundenen Zahlen.
 - **Caption:** "PrimeVerse ist mehr als Trading-Tools. Drei Säulen: Technologie, Bildung, Lifestyle, inklusive Reise-Vorteilen und einem Ansatz, der auch Mindset und Fitness einschließt. Alles Teil des kostenlosen Limitless-Zugangs. Schreib mir 'START' für mehr Infos."
 - **Hashtags:** #trading #primeverse #limitless #tradingcommunity
 
 ### 3. Dienstag, 15.09.2026, 19:45 Uhr
 - **Status:** freigegeben (11.09.2026, Mike per Chat)
 - **Format:** Reel
-- **Asset:** `Lim/Content/Videos/08-24-bis-zur-pruefung.mp4`
+- **Asset (alt, unerreichbar — Korrektur `content-manager` 13.09.2026):** ~~`Lim/Content/Videos/08-24-bis-zur-pruefung.mp4`~~ liegt lokal bei Mike außerhalb des Git-Vaults, für den `content-executor` nicht erreichbar.
+- **Ersatz-Generation-Brief (frisch über Jarvis zu erstellen):** 15s faceless Reel, Text-Overlay/Timeline-Optik, zeigt die drei Schritte "Bewerbung → Prüfung (laut Anbieter ca. 24h) → Freischaltung" als einfache Kette/Fortschrittsbalken. Kein Gesicht, keine Kontostände, keine Gewinn-Darstellung.
 - **Caption:** "Von der Bewerbung bis zur Freischaltung: laut Limitless im Schnitt 24 Stunden. Kein wochenlanges Warten. Schreib mir 'START', ich schick dir den Link."
 - **Hashtags:** #trading #limitless #forextrading #tradingtipps
 
@@ -112,6 +114,51 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: Reel im Geständnis-/Text-Overlay-Stil (kein KI-Avatar als Mike, siehe Guardrail in `content-executor.md`), reines Text-Overlay-Reel statt Talking-Head.
 - **Caption:** "Mike zeigt dir, warum er anfangs nur Signale kopiert hat, ohne zu verstehen, warum die eigentlich funktionieren. Genau deshalb gibt's bei Limitless neben den Signalgruppen auch Live-Sessions und die Academy, kostenfrei mit dabei. Ziel ist nicht, dass du für immer kopierst, sondern dass du den Markt irgendwann selbst einschätzen kannst. Mehr dazu in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
 - **Hashtags:** #trading #tradingacademy #limitless #tradinglernen #finanziellefreiheit
+
+### 9. Montag, 21.09.2026, 18:50 Uhr
+- **Status:** bereit (wartet auf Freigabe)
+- **Format:** Carousel (4-5 Bilder)
+- **Thema/Hook:** PrimeVerse Oracle Tracker (Analytics-Dashboard). Hook: "Die meisten wissen nicht, WARUM sie einen Trade verlieren. Ein Analytics-Dashboard schon."
+- **Fakt/Nutzwert (Angebot.md):** Oracle Tracker, laut Anbieter Analytics-Dashboard im PrimeVerse-Teil von Limitless, erkennt psychologische Fehlermuster automatisch und verfolgt Equity-Kurve und Konsistenz. Kostenfrei Teil des Limitless-Zugangs.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: 4-5 Info-Grafik-Slides im bestehenden Limitless-Look. Slide 1 Hook, Slide 2 was der Tracker zeigt (Equity-Kurve, abstrahierte Dashboard-Optik, kein echtes UI kopieren), Slide 3 erkennt Fehlermuster (z.B. nach Verlust größer nachlegen), Slide 4 wieso das hilft (sehen statt raten), Slide 5 CTA.
+- **Caption:** "Die meisten Trader schauen nur auf den Kontostand, nicht darauf WARUM ein Trade schiefgeht. Der Oracle Tracker im PrimeVerse-Teil von Limitless verfolgt laut Anbieter deine Equity-Kurve und erkennt automatisch psychologische Fehlermuster, zum Beispiel wenn du nach einem Verlust größer nachlegst. Ersetzt keine eigene Reflexion, zeigt dir aber schwarz auf weiß, was du sonst übersiehst. Kostenfrei Teil vom Limitless-Zugang. Mehr dazu in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
+- **Hashtags:** #trading #tradingpsychologie #primeverse #limitless #tradingtools
+
+### 10. Dienstag, 22.09.2026, 19:20 Uhr
+- **Status:** bereit (wartet auf Freigabe)
+- **Format:** Reel (faceless, Text-Overlay)
+- **Thema/Hook:** Myth-Busting/Trust-Post. Hook: "Kostenlos klingt erstmal nach Haken. Der ehrliche Haken hier."
+- **Fakt/Nutzwert (Angebot.md):** Limitless positioniert sich laut Anbieter als kostenloses Trading-Ökosystem ohne Abo-Gebühren/versteckte Kosten, finanziert über die Kooperation mit dem Broker statt über ein Produkt an den Nutzer.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: kurzes Text-Overlay-Reel (kein Gesicht), das den Trust-Einwand "warum ist das kostenlos" direkt adressiert, neutrale Chart-/App-Optik im bestehenden Look.
+- **Caption:** "Kostenlos klingt erstmal nach Haken. Der ehrliche Haken hier: das Ökosystem finanziert sich über die Zusammenarbeit mit dem Broker, nicht über ein Abo von dir. Kein Kurs zu kaufen, keine versteckten Gebühren für Signale, Bots oder Academy. Der eigentliche Haken ist ein anderer: du brauchst trotzdem Zeit und Geduld, kostenlos heißt nicht automatisch schnell. Wie das Ganze aufgebaut ist, zeig ich dir Schritt für Schritt in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
+- **Hashtags:** #trading #limitless #finanziellebildung #tradingeducation
+
+### 11. Mittwoch, 23.09.2026, 19:00 Uhr
+- **Status:** bereit (wartet auf Freigabe)
+- **Format:** Reel (faceless, Chart-/Zahlen-Overlay)
+- **Thema/Hook:** Risikomanagement-Rechnung. Hook: "Minus 50 % auf dem Konto heißt: du brauchst plus 100 %, um wieder bei null zu sein."
+- **Fakt/Nutzwert (Angebot.md/ICP.md):** Allgemeine Risikomanagement-Mathematik, die genau die Zielgruppen-Unsicherheit adressiert ("wissen nicht, was sie sinnvoll mit Geld anfangen sollen"). Solche Grundlagen sind Teil der kostenfreien Limitless Academy, bevor überhaupt ein Trade läuft.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: einfaches Zahlen-/Text-Overlay-Reel, das die Rechnung -50%/+100% vs. -20%/+25% visuell gegenüberstellt. Kein Gesicht, keine Kontostände mit konkreten Euro-Beträgen.
+- **Caption:** "Minus 50 % auf dem Konto heißt nicht minus 50 % zum Ausgleich, sondern plus 100 %, um wieder bei null zu sein. Minus 20 % dagegen nur plus 25 %. Der Unterschied zwischen zwei Prozentpunkten Risiko pro Trade entscheidet oft darüber, ob ein Konto übersteht oder nicht. Genau solche Grundlagen sind Teil der kostenfreien Limitless Academy, bevor überhaupt ein Trade läuft. Mehr dazu in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung, keine Gewinngarantie."
+- **Hashtags:** #risikomanagement #trading #tradingeducation #limitless
+
+### 12. Donnerstag, 24.09.2026, 19:10 Uhr
+- **Status:** bereit (wartet auf Freigabe)
+- **Format:** Story (Umfrage/Interaktion)
+- **Thema/Hook:** Follow-up-Umfrage zur Themenwahl, analog zum Format vom 19.09. Frage: "Welches Thema soll ich als Nächstes genauer erklären?" mit Antwortoptionen "Signale", "Bots", "Market Scanner", "Risikomanagement".
+- **Fakt/Nutzwert:** direkte Verbindung zu den Themen aus `Angebot.md`, sammelt Feedback statt neue Behauptung aufzustellen.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: einfache Story-Grafik mit Platzhalter für Umfrage-Sticker (Frage + vier Antwortoptionen), im bestehenden Look.
+- **Caption/Text:** "Welches Thema soll ich als Nächstes genauer erklären? 👇" plus Umfrage-Sticker mit den vier Optionen. Kein CTA zum Konto, optional Link-Sticker "Mehr Infos: t.me/JointoInnerCircle".
+- **Hashtags:** #trading #limitless
+
+### 13. Freitag, 25.09.2026, 19:35 Uhr
+- **Status:** bereit (wartet auf Freigabe)
+- **Format:** Carousel (4 Bilder)
+- **Thema/Hook:** Community-Zahlen "laut Anbieter". Hook: "Laut Anbieter 8.119 aktive Mitglieder in 40+ Ländern, was heißt das für dich als Einsteiger?"
+- **Fakt/Nutzwert (Angebot.md):** PrimeVerse laut Website aktuell 8.119 aktive Mitglieder in 40+ Ländern (Marketing-Angabe, nicht unabhängig geprüft, muss als "laut Anbieter" gekennzeichnet sein).
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: 4 Info-Grafik-Slides. Slide 1 Hook mit Zahl, Slide 2 Einordnung ("laut Anbieter", keine unabhängig geprüfte Zahl), Slide 3 was das für Einsteiger praktisch heißt (Austausch, nicht allein, Live-Coaching), Slide 4 CTA.
+- **Caption:** "Laut Anbieter zählt PrimeVerse aktuell 8.119 aktive Mitglieder in über 40 Ländern (Marketingangabe, nicht unabhängig geprüft, aber ein Hinweis auf eine aktive Community). Für dich als Einsteiger heißt das vor allem: du bist nicht allein mit deinen Anfängerfragen, es gibt Austausch, Live-Coaching und Leute, die dieselben Anfängerfehler schon hinter sich haben. Mehr über das ganze Ökosystem in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
+- **Hashtags:** #trading #tradingcommunity #primeverse #limitless
 
 ## Wartet auf dich (Personal-Account, nicht Teil der Automatisierung)
 - Mi 09.09. 19:30 — Reel "Meine erste Trading-Woche..." — Skript fertig in [[Content-Plan - Woche 07.09.-13.09.2026]]
