@@ -45,6 +45,8 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 **Neuer Mike-only-Zähler-Stand: 8** (13 minus die 5 heute bestätigten: Kanalbild, vier Kanalbilder freigeben, Make.com aktivieren, Willkommensnachricht, Follow-ups — letztere drei zählten als ein gemeinsamer Login-Vorgang, siehe [[Tagesplan]]). Verbleibend: Instagram-Bio-Feld, WhatsApp-Test, Posts 1-6 terminieren, Limitless-Support-Anfrage, Telegram-Warnungscheck, Google-Drive-Ordner, 20-Namen-Liste vervollständigen, persönlich anschreiben. Einziger noch offener Punkt an der Kanal-Strecke selbst: Posts 1-6 im Kanal terminieren — rein die App-Aktion, inhaltlich nichts mehr zu tun. Details siehe [[Tagesplan]], neuer Log-Eintrag vom selben Datum.
 
+**Kontrolle 13.09.2026, dritter Lauf (Chat mit Mike, gleiche Session):** Mike hat zusätzlich zwei neue Profilbilder angefragt (Kanal + Bot). Auf Nachfrage gewählt: gestaltetes Icon statt echtem Foto. Beide über Jarvis (`gpt_image_2_5`) generiert und Mike als Datei geschickt — Kanal: Ring-Emblem (drei goldene konzentrische Ringe, markenunabhängig), Bot: Chat-Bubble mit Spark, beide im bestehenden Gold/Navy-Look, 1:1, ohne Text. Zwei neue Sofort-Punkte oben ergänzt (Setzen ist wieder App-only: Telegram-App fürs Kanalbild, @BotFather `/setuserpic` fürs Bot-Bild). **Mike-only-Zähler damit auf 10** (8 + 2 neue App-Login-Punkte).
+
 ---
 
 ## 1. Sofort (21)
@@ -59,6 +61,8 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 - [x] Referral-Link steht in der /start-Nachricht (geprüft 10.09.2026, worldoflimitless.com/?ref=2A5CC2B8)
 - [x] Make.com-Szenario dauerhaft aktiviert inklusive neuer Willkommensnachricht und der drei Follow-ups — laut Mike im Chat am 13.09.2026 erledigt
 - [x] Bot-Strecke faktisch bestätigt: /start am 08. und 09.09.2026 ausgelöst, Onboarding-Nachricht inklusive Link kam an. Ungetestet bleibt nur der Weg über den Start-Button im Kanal
+- [ ] Neues Kanal-Profilbild setzen (13.09.2026 generiert, Ring-Emblem-Icon, Gold/Navy) — Datei an Mike geschickt, Upload in der Telegram-App nur von ihm möglich (App-only, kein Connector)
+- [ ] Profilbild für den Bot @LimitlessPuBot setzen (13.09.2026 generiert, Chat-Bubble-Icon, Gold/Navy) — via @BotFather → `/setuserpic`, Datei an Mike geschickt, nur er kann sich bei BotFather einloggen
 
 ### Jarvis Technik
 - [x] `broker_login.py` ausgeführt (10.09.2026), jetzt nur noch Limitless und GMX. PU Prime ist aus der Brücke raus

@@ -128,6 +128,19 @@ Bewusst NICHT als erledigt übernommen, weil Mikes Aussage sich wörtlich nur au
 
 Geänderte Dateien: [[Inner Circle Kanal-Content]] (Post 6 fertiggestellt, Abschnitt 8 aktualisiert), [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] (fünf Punkte abgehakt, Mike-only-Zähler auf 8 aktualisiert), diese Datei (Technisch-blockiert-Einträge als erledigt markiert, dieser Log-Eintrag).
 
+### 2026-09-13, Chat mit Mike, Fortsetzung (Profilbilder)
+Mike hat direkt im Anschluss zwei Profilbilder angefragt: eins für den Inner-Circle-Kanal, eins für den Bot @LimitlessPuBot. Rückfrage gestellt (echtes Foto vs. gestaltetes Icon) — Mike hat sich für ein gestaltetes Icon im bestehenden Gold/Navy-Look entschieden, kein Foto nötig.
+
+Über `mcp__Jarvis__generate_image_batch` (Modell `gpt_image_2_5`, 1:1, kein Text im Bild) zwei Motive erzeugt:
+- **Kanal:** Ring-Emblem, drei goldene konzentrische Ringe auf dunklem Navy-Grund, markenunabhängig (passend zur bestehenden Entscheidung, dass der Kanal nicht auf Limitless-Branding läuft)
+- **Bot:** Chat-Bubble mit Spark/Blitz-Symbol, gleicher Gold/Navy-Look, als Assistenten-Icon abgegrenzt vom Kanal-Motiv
+
+Beide Bilder generiert, im Widget gezeigt und zusätzlich als PNG-Dateien direkt an Mike geschickt (`SendUserFile`). Nicht ins Git-Repo übernommen, gleiche Begründung wie bei den bestehenden Content-Bildern in [[Bilder-Datenspeicher]]: Bild-Assets laufen außerhalb des Git-Vaults, hier wird nur die Beschreibung/der Stand dokumentiert.
+
+Zwei neue Sofort-Punkte in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] ergänzt: Kanal-Profilbild setzen (Telegram-App) und Bot-Profilbild setzen (@BotFather → `/setuserpic`) — beides wieder reine App-Login-Aktionen ohne Connector-Äquivalent, kann nur Mike selbst. Mike-only-Zähler entsprechend von 8 auf **10** erhöht.
+
+Geänderte Dateien: [[Inner Circle Kanal-Content]] (Abschnitt 1, neue Profilbild-Einträge), [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] (zwei neue Sofort-Punkte, Zähler-Update), diese Datei (dieser Log-Eintrag).
+
 ### 2026-09-13, 06:37 UTC, Executor-Lauf (Scheduled Cloud Routine)
 Kein bestätigter Plan für heute, nichts unternommen. Es existiert nur ein `## Vorschlag für 2026-09-13` vom `aufgaben-manager` (turnusmäßiger Planungslauf, kein neuer Deckel-Nachschub), aber kein `## Bestätigt für 2026-09-13`-Abschnitt — per Grep über die gesamte Datei bestätigt, kein solcher Abschnitt vorhanden. Mike hat den Vorschlag noch nicht bestätigt. Laut fester Vorgabe (`.claude/agents/aufgaben-executor.md`) wird ohne Bestätigung nichts erfunden, auch kein automatisches Nachziehen aus der Aufgaben-Triage, weil das erst greift, wenn eine bestätigte Liste leer abgearbeitet wurde, nicht wenn nie eine existierte.
 

@@ -21,7 +21,9 @@ Stand: Kanal existiert seit 04.09.2026, angeheftete Willkommensnachricht mit Sta
 ### Was noch fehlt
 
 - [x] **Kanalbeschreibung** füllen — gesetzt am 10.09.2026 (Textvorschlag unten, wortgleich übernommen)
-- [ ] **Kanalbild**: Übergangsbild fertig (Limitless-Wortmarke auf dunklem Grund, `Lim/Content/Assets/ic-kanalbild-limitless.png`), muss von Mike in der App gesetzt werden. Später gegen ein Portrait tauschen
+- [x] **Kanalbild**: Übergangsbild (Limitless-Wortmarke auf dunklem Grund) laut Mike im Chat am 13.09.2026 gesetzt
+- [ ] **Neues Profilbild (13.09.2026 generiert):** Ring-Emblem-Icon (drei goldene konzentrische Ringe auf dunklem Navy-Grund, markenunabhängig, kein Text) über Jarvis (`gpt_image_2_5`) erzeugt und Mike als Datei geschickt — Ersatz fürs Übergangsbild, muss von Mike in der App gesetzt werden
+- [ ] **Profilbild für den Bot @LimitlessPuBot (13.09.2026 generiert):** Chat-Bubble-mit-Spark-Icon im gleichen Gold/Navy-Look, kein Text — über Jarvis erzeugt und Mike als Datei geschickt. Setzt Mike selbst über @BotFather → Bot auswählen → `/setuserpic` → Bild hochladen
 - [x] **Reaktionen aktivieren** — geprüft am 10.09.2026, stand bereits auf "Alle Reaktionen" (max. 11 pro Beitrag)
 - [x] **Kein Diskussionschat verknüpft** — geprüft am 10.09.2026, Gruppe bleibt getrennt
 - [x] **Einladungslink** in der Instagram-Bio — am 10.09.2026 als Textzeile ergänzt ("Kostenloser Einstieg ins Trading 👇 t.me/JointoInnerCircle"). Offen: das klickbare Website-Feld, das lässt Instagram nur in der App bearbeiten
