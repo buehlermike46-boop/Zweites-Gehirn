@@ -12,10 +12,10 @@ Stufe 0 im [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] ein ("Weiter, 
 geworbene Accounts, davon 5 aktiv) — laut MasterPlan Abschnitt 4 aktuell der eigentliche
 Engpass ("Der Engpass ist Kundengewinnung, nicht die Rechnung").
 
-**Stand 12.09.2026: 16 von 20 Namen geliefert.** Es fehlen noch 4 Namen bis zur vollen
-Liste. Die Namen unten stammen direkt von Mike (Chat, 12.09.2026) — ich habe keine
-Beziehungsdetails (wie kennt er die Person, welcher Kontext) erfunden oder ergänzt. Diese
-Felder bleiben leer, bis Mike sie selbst befüllt.
+**Stand 12.09.2026: 20 von 20 Namen geliefert, Liste voll.** Die Namen unten stammen direkt
+von Mike (Chat, 12.09.2026) — ich habe keine Beziehungsdetails (wie kennt er die Person,
+welcher Kontext) erfunden oder ergänzt. Diese Felder bleiben leer, bis Mike sie selbst
+befüllt.
 
 **Wichtig zum Anschreiben (Vault-Regel "keine Massentexte"):** Das eigentliche Anschreiben
 ist explizit **Mikes eigene Aufgabe**, kein Agenten-Punkt. Jede Nachricht muss persönlich
@@ -44,14 +44,14 @@ Agent kann hier höchstens einen Textentwurf pro Person vorbereiten, wenn Mike d
 | 14 | Manuel | noch nicht angeschrieben | | | |
 | 15 | Ronja | noch nicht angeschrieben | | | |
 | 16 | Maltesa Westerwald | noch nicht angeschrieben | | | |
-| 17 | *(fehlt noch)* | — | | | |
-| 18 | *(fehlt noch)* | — | | | |
-| 19 | *(fehlt noch)* | — | | | |
-| 20 | *(fehlt noch)* | — | | | |
+| 17 | Martin | noch nicht angeschrieben | | | |
+| 18 | Luisa | noch nicht angeschrieben | | | |
+| 19 | Lukas | noch nicht angeschrieben | | | |
+| 20 | Fabian | noch nicht angeschrieben | | | |
 
 ## Offene Punkte
 
-- 4 weitere Namen von Mike sammeln, bis die Liste voll ist.
+- Liste ist voll (20/20), keine weiteren Namen nötig.
 - Sobald ein Name angeschrieben ist: Status auf "angeschrieben am [Datum]" setzen, Spalte
   "Wann angeschrieben" befüllen.
 - Reaktion nachtragen, sobald eine Antwort kommt (z.B. "interessiert", "kein Interesse",
