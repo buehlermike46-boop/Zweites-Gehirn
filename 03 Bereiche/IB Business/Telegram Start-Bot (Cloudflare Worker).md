@@ -36,14 +36,16 @@ Vollständige Original-Anleitung von Rob, hochgeladen von Mike am 13.09.2026: "L
 
 - [x] Sechs Konfigurationswerte + Telegram-ID geklärt und bestätigt (13.09.2026)
 - [x] Fertiger Code mit eingesetzten Werten erstellt: `limitless-start-bot-worker.js`
-- [ ] Schritt 3: Cloudflare-Konto, D1-Datenbank `limitless-leads`, Worker `limitless-start-bot` anlegen — **Mikes Aufgabe**, braucht Cloudflare-Login
-- [ ] Schritt 4: Code aus `limitless-start-bot-worker.js` einfügen und deployen — **Mikes Aufgabe**
-- [ ] Schritt 5: D1-Binding `DB`, plus vier Variablen setzen (`BOT_TOKEN` = Token vom bestehenden `@LimitlessPuBot`, `ROB_CHAT_ID` = `6233075726`, `HOOK_SECRET` und `ADMIN_TOKEN` selbst frei erfinden, Muster Wort-Wort-Jahr-Wort, min. 20 Zeichen) — **Mikes Aufgabe**, Bot-Token verlässt Telegram/Cloudflare nie in Richtung Chat
-- [ ] Schritt 6: `/setup?token=...` und `/sethook?token=...` einmal im Browser aufrufen — **Mikes Aufgabe**. Ab hier übernimmt der neue Worker den Webhook, das alte Make.com-Szenario bekommt keine Updates mehr (bewusste Ablösung, siehe oben)
+- [x] Schritt 3: Cloudflare-Konto, D1-Datenbank `limitless-leads`, Worker `limitless-start-bot` angelegt (13.09.2026)
+- [x] Schritt 4: Code eingefügt und deployed (13.09.2026). Stolperfalle live erlebt: der erste Deploy-Versuch über den Cloudflare-KI-Assistenten im Dashboard kam nicht wirklich auf Produktion an (Worker antwortete weiter mit dem Hello-World-Standardtext trotz 5 "deployter" Versionen) — erst der manuelle Deploy über "Code bearbeiten" → "Einsetzen" hat wirklich gegriffen
+- [x] Schritt 5: D1-Binding `DB` → `limitless-leads` gesetzt, alle vier Variablen eingetragen (`BOT_TOKEN` vom bestehenden `@LimitlessPuBot` über BotFather → `/mybots` → API Token geholt, `ROB_CHAT_ID` = `6233075726`, `HOOK_SECRET` und `ADMIN_TOKEN` von Mike frei erfunden) (13.09.2026)
+- [x] Schritt 6: `/setup` → "Tabellen angelegt.", `/sethook` → `"ok": true, "description": "Webhook was set"` (13.09.2026). Worker-Adresse: `limitless-start-bot.buehlermike46.workers.dev`. Ab jetzt übernimmt der neue Worker den Webhook, das alte Make.com-Szenario bekommt keine Updates mehr
 - [ ] Schritt 7: Alle Zweige einmal durchklicken (Hauptstrecke, US/AU, Bestandskunde+UID, Freitext, Mail-Seite)
 - [ ] Schritt 8: Neuen Kanal-Post mit Start-Button im Kanal "Inner Circle - Mike Bühler" absetzen und anpinnen, alten Post lösen
 
-**Nächster Schritt sobald Mike in Cloudflare eingeloggt ist:** Schritt 3 bis 6 zusammen durchgehen.
+**Sicherheitsnotiz 13.09.2026:** `ADMIN_TOKEN` ist einmal versehentlich sichtbar in einem Screenshot im Chat gelandet (stand in der Adresszeile). Kein akutes Risiko, da privater Chat, aber Mike für künftige Fälle darauf hingewiesen: Token-Werte nicht in Screenshots zeigen, da `ADMIN_TOKEN` auch die komplette Lead-Liste abrufen kann (`/export`).
+
+**Nächster Schritt:** Schritt 7, Bot in Telegram einmal komplett durchklicken.
 
 ## Stolperfallen (aus Robs Anleitung, gilt unverändert)
 
