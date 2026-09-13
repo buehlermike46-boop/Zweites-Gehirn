@@ -115,6 +115,8 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - Sa 12.09. 19:30 — Post "Tag X – von Gehalt zu finanzieller Freiheit" — braucht echte Zahlen
 - So 13.09. 19:30 — Reel "Ich bin Elektromeister..." — Skript fertig
 
+**Update 13.09.2026 (Mike per Chat):** Sobald Mike echte Fotos von sich zur Verfügung stellt, dürfen `content-manager`/`content-executor` diese für Personal-Account-Content mitverwenden — dann läuft auch dieser Teil über die Automatisierung statt komplett manuell. Bezahlte Werbung bleibt davon unberührt, weiterhin strikt tabu. Sobald Fotos da sind: an einen festen Ort legen (z.B. `07 Anhänge/Mike Fotos/`) und hier bzw. im [[Bilder-Datenspeicher]] eintragen, damit der Executor sie findet.
+
 ## Wie freigeben
 Solange Phase 1 aktiv ist: Status-Zeile hier von `bereit` auf `freigegeben` ändern (oder Mike sagt es Claude), dann postet der `content-executor` zur angegebenen Uhrzeit über den bestehenden Windsor.ai-Instagram-Connector. Ohne Freigabe passiert nichts.
 

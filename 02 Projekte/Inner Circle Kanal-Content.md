@@ -587,4 +587,53 @@ Nicht perfekt, wer eröffnet, ohne zu klicken, bekommt trotzdem eine Nachricht. 
 - Drei Follow-ups einrichten (24 h / 3 Tage / 7 Tage) — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 - [x] Bonus-Werbung abgeklärt, bestätigt am 09.09.2026
 
-Verknüpft: [[IB-Projekt (Limitless & PU Prime)]] · [[KI-Automatisierung IB-Business]] · [[Marketing & Kundenakquise]] · [[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]]
+---
+
+## 9. Automatisierung: content-manager/-executor (ab 13.09.2026)
+
+**Entscheidung (Mike per Chat, 13.09.2026):** Der Telegram-Kanal wird nicht durch ein eigenes Agentenpaar automatisiert, sondern durch die bestehenden `content-manager`/`content-executor` (bisher nur Instagram) als zweite Plattform. Grund: [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] Punkt 8 warnt vor zu vielen parallelen Baustellen, Abschnitt 6 davor, einen neuen Agenten zu bauen, bevor der vorige (das Instagram-Content-System, erst seit 11.09.2026 live) sich bewährt hat. Diese Datei übernimmt für Telegram die Rolle, die [[Posting-Warteschlange]] für Instagram hat.
+
+**Freigabe-Phase: komplett automatisch, keine Einzelfreigabe** (Mikes Entscheidung 13.09.2026 – bewusst anders als der Instagram-Start in Phase 1). `content-executor` postet fällige, fertige Posts also ohne dass Mike jeden einzeln bestätigt. Umstellen auf "Freigabe nötig" geht jederzeit, einfach diese Zeile ändern.
+
+**Echte Kundenergebnisse:** wie im Rest des Vaults nie erfinden/simulieren (siehe auch Notiz in [[KI-Automatisierung IB-Business]]). `content-manager` prüft `07 Anhänge/` auf reales Material, das Mike bereitstellt, und baut es ein, sobald es da ist. Bis dahin ausschließlich Ökosystem-/Bildungscontent wie im 14-Tage-Plan oben.
+
+### Technischer Stand des Kanal-Versands (Stand 13.09.2026)
+
+Recherchiert über die Make.com-API (Szenario `Integration Telegram Bot`, ID 7240246, Bot-Verbindung "Mike's Telegram Bot connection"):
+
+- **Kanal-Chat-ID bestätigt:** Da der Kanal öffentlich ist (`t.me/JointoInnerCircle`), ist die Chat-ID einfach `@JointoInnerCircle` (kein numerischer ID-Lookup nötig, laut Telegram/Make-Doku für öffentliche Kanäle).
+- **Text-Versand technisch sicher machbar:** Das Modul "Send a Text Message or Reply" (`telegram:SendReplyMessage`) ist im bestehenden Szenario bereits produktiv im Einsatz (Onboarding-Nachricht) und funktioniert nachweislich mit der vorhandenen Bot-Verbindung. Für einen reinen Text-Post in den Kanal reicht das.
+- **Bild-/Video-Versand technisch noch nicht verifiziert:** Es gibt laut Make-Dokumentation passende Module ("Send a Photo", "Send a Video"), aber die für einen automatischen Aufruf nötigen exakten Feldnamen ließen sich nicht verifizieren – der Make-API-Verbindung dieser Session fehlt der Scope `apps:read`, den das Prüfwerkzeug dafür braucht. Blind raten und live gegen den echten Kanal testen wollte ich nicht.
+- **Automatischer Trigger fehlt noch:** Aktuell sendet das Szenario nur auf eingehende Telegram-Updates (WatchUpdates), nicht auf Zuruf von außen. Damit `content-executor` einen fertigen Post wirklich verschicken kann, braucht es entweder eine kleine Erweiterung des bestehenden Szenarios (z. B. ein per API aufrufbarer Zweig) oder ein neues, einfaches Szenario dafür.
+
+**Offen, bevor der Kanal-Versand wirklich automatisch läuft (eine der beiden Optionen):**
+1. Mike gibt der Make-Verbindung dieser Session den Scope `apps:read` (oder erledigt den folgenden Schritt selbst), dann kann die Session die fehlenden Feldnamen verifizieren und das Szenario fertig bauen, inklusive einem sicheren Test bevor es an den echten Kanal geht.
+2. Mike baut einmal in der Make-Oberfläche (ähnlich wie das bestehende Bot-Szenario) einen kleinen Zweig: ein Modul, das per API/Webhook aufrufbar ist, dahinter ein Router (Text/Foto/Video) zu den passenden Telegram-Send-Modulen, Chat-ID `@JointoInnerCircle`. Danach trägt eine spätere Session das Werkzeug in die `content-executor`-Tool-Liste ein.
+
+**Bis dahin:** `content-executor` erstellt Assets und bereitet Telegram-Posts vollständig fertig vor (Status `fertig (Posten technisch offen)` in der Tabelle unten), postet aber nicht. Sobald einer der beiden Punkte oben erledigt ist, kurz Bescheid geben, dann übernimmt der Executor ab dem nächsten Lauf auch den Versand, ohne dass sonst etwas an diesem Setup geändert werden muss.
+
+### Post-Status
+
+| Post | Datum/Zeit (Plan) | Status |
+|---|---|---|
+| 1 Warum es diesen Kanal gibt | Mo 14.09., 17:00 | offen |
+| 2 Warum Gold | Di 15.09., 17:00 | offen |
+| 3 Der Fehler, der 90% killt | Mi 16.09., 17:00 | offen |
+| 4 Umfrage | Do 17.09., 17:00 | offen |
+| 5 Was du zum Start brauchst | Fr 18.09., 17:00 | offen |
+| 6 Wochenausblick | So 20.09., 17:00 | offen |
+| 7 Wie ich das neben Schicht/Kindern mache | Mo 21.09., 11:00 | offen |
+| 8 Lot, Spread, Kommission | Di 22.09., 11:00 | offen |
+| 9 Warum ich jeden Trade aufschreibe | Mi 23.09., 11:00 | offen |
+| 10 Die Tools | Do 24.09., 11:00 | offen |
+| 11 In 3 Schritten dabei | Fr 25.09., 11:00 | offen |
+| 12 Q&A | So 27.09., 11:00 | offen |
+
+`content-executor` aktualisiert den Status je Post auf `fertig (Posten technisch offen)` sobald Text+Asset vorbereitet sind, später auf `gepostet ([Datum, Uhrzeit])`. `content-manager` hängt hier neue Wochen im gleichen Tabellenformat an, sobald Woche 2 abgearbeitet ist.
+
+### Executor-Log
+*(Append-only Protokoll jedes content-executor-Laufs für Telegram, mit Zeitstempel. Wird beim ersten Lauf angelegt.)*
+
+---
+
+Verknüpft: [[IB-Projekt (Limitless & PU Prime)]] · [[KI-Automatisierung IB-Business]] · [[Marketing & Kundenakquise]] · [[Vision - Vault-Wachstum, Jarvis-Assistent & Monitoring]] · [[Posting-Warteschlange]]
