@@ -256,3 +256,39 @@ Keine neuen Punkte in diese Kategorie. Bereits in der Triage korrekt als Stufe-1
 - [ ] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte ebenfalls fertig in [[Inner Circle Kanal-Content]] Abschnitt 7 (Stufe 0: Onboarding-Strecke)
 
 **Erwartung, ehrlich benannt statt schöngeredet:** Alle vier Punkte hängen vermutlich am selben strukturellen Loch wie die bereits bekannten sieben Technisch-blockiert-Punkte (App-/Browser-Login für Telegram bzw. Make.com, kein Mail-/Messaging-Tool für eine externe Support-Anfrage in der Executor-Tool-Liste). Das ist hier ausdrücklich kein Fehler dieser Runde, sondern genau der Zweck der "Deckel-Runde": diese vier Punkte einmal ehrlich durch den Executor laufen lassen und, falls zutreffend, sauber mit Begründung unter `## Technisch blockiert` einsortieren, statt sie unbearbeitet und unbelegt in der Triage liegen zu lassen.
+
+## Vorschlag für 2026-09-13
+*(Vom aufgaben-manager erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine — keine neue Deckel-Nachschub-Runde. Wartet auf Mikes Bestätigung per Push-Nachricht.)*
+
+**Kontrolle vorab:** Letzter bestätigter Abschnitt ist `## Bestätigt für 2026-09-12 (Deckel-Runde 1)` (4 Punkte). Der Executor hat alle vier bereits im Lauf vom 12.09. nachvollziehbar mit technischem Grund als blockiert dokumentiert (siehe `## Technisch blockiert`, Abschnitt "Aus dem Lauf 2026-09-12 (Deckel-Runde 1, Bestätigt-Liste)", und [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]). Kein Beleg für "erledigt" bei einem der vier, deshalb keine neuen Häkchen. Zwischen dem 12.09. abends und heute (13.09.) ist dazu nichts Neues im Vault hinzugekommen.
+
+**Frisch geprüft für diesen Lauf:** [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen — keine neuen offenen Punkte (Brain Dump enthält nur bereits abgehakte oder auf die Triage verweisende Zeilen, Jarvis Aufgaben ausschließlich `status: erledigt`/`status: fehler`). [[Kontaktliste - 20 Namen aus dem Umfeld]] unverändert bei 16/20 Namen, kein Name als angeschrieben markiert. Die sechs App-Login-Punkte in der Triage sind weiterhin unmarkiert (kein Mike-Häkchen seit 12.09.). Damit bleibt der Mike-only-Zähler unverändert bei **13/20** — keine neuen Fakten, kein künstliches Auffüllen.
+
+**Ergebnis:** Kein neuer, für den `aufgaben-executor` eigenständig ausführbarer Stufe-0-Punkt gefunden. Das wurde am 12.09. in der Deckel-Runde 2 bereits erschöpfend geprüft (siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], "fünfter Lauf") — ohne neue Fakten von Mike ändert sich das nicht von selbst. Deshalb heute kein neuer `## Bestätigt`-Abschnitt.
+
+### Direkt bei dir — größter Hebel gerade (Stufe 0, "Weiter, wenn": 10 geworbene Accounts, davon 5 aktiv)
+Aktuell 0 Accounts im [[Lot-Tracking]]. Laut MasterPlan Abschnitt 4 ist Kundengewinnung der eigentliche Engpass, nicht die Technik.
+- 4 fehlende Namen für [[Kontaktliste - 20 Namen aus dem Umfeld]] ergänzen
+- Erste persönliche Anschreiben starten (keine Massentexte) — kann mit den vorhandenen 16 Namen schon losgehen, muss nicht auf die vollen 20 warten
+
+### Direkt bei dir — App-/Browser-Logins (unverändert, läuft seit 12.09. nicht mehr über den Bestätigt-Kreislauf)
+- Kanalbild in Telegram setzen
+- Instagram-Bio-Website-Feld
+- Make.com-Szenario aktivieren — dabei gleich Willkommensnachricht + drei Follow-ups mit eintragen, Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7
+- Vier Kanalbilder aus `Lim/Content/Telegram/` freigeben
+- WhatsApp end-to-end testen
+- Posts 1-6 im Kanal terminieren
+
+Sobald einer dieser Punkte erledigt ist: direkt in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] abhaken. Der Mike-only-Zähler sinkt dann unter 20, die nächste Runde legt automatisch aus der Triage nach.
+
+### Komplex — weiterhin bewusst zurückgestellt
+Unverändert: Website, Zugangs-Gate, Pflegedienst-Referenzprojekt, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. MasterPlan Punkt 8 (max. 1-2 aktive Baustellen, Automatisieren vor Validieren) — Stufe 0 (Kanal/Bot, echte Kunden) steht noch nicht.
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Keine neuen Punkte. Domain-Check durchgeführt: nichts in dieser Runde gehört ins Gebiet von `content-manager`/`content-executor`.
+
+### Für den Executor tatsächlich offen
+Kein neuer Punkt. Solange der Mike-only-Bestand nicht sinkt (App-Logins, Kontaktliste), hat der Executor strukturell nichts eigenständig Ausführbares für Stufe 0.
+
+### Offene Fragen an Mike
+Keine neuen. Weiterhin unbeantwortet aus den letzten Runden: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch Telegram übernehmen soll.
