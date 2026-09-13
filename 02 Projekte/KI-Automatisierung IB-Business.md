@@ -19,6 +19,9 @@ In Bearbeitung
 - Website bauen — Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 - [ ] Klären ob Limitless eine API/Webhook für den Prospect Tracker anbietet (bei Limitless-Support erfragen), sonst Alternative planen (z.B. eigene Datenbank/Airtable, die der Telegram-Bot befüllt, plus regelmäßiger CSV-Export/Abgleich mit dem Prospect Tracker) — Dashboard selbst angeschaut (siehe Notizen unten), Support aber noch nicht kontaktiert, daher weiterhin offen. Ausführlichste Fassung dieser Aufgabe, [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] verweist hierher zurück statt eigenen Text zu führen
 
+> [!info] Update 13.09.2026 — Umzug auf Cloudflare läuft
+> Der bisherige Make.com-Bot wird auf ein neues, deutlich funktionsreicheres Setup umgestellt (eigene Bauanleitung von Mikes Geschäftspartner Rob, kostenlos auf Cloudflare Workers, mit eigener Lead-Datenbank statt reinem Nachrichtenversand). Entscheidung von Mike: bestehenden `@LimitlessPuBot` umstellen statt neuen Bot parallel zu bauen — das Make.com-Szenario wird damit abgelöst. Konfiguration, Fortschritt und fertiger Code stehen in [[Telegram Start-Bot (Cloudflare Worker)]]. Die eigene Lead-Datenbank dort (D1) deckt einen Teil der offenen Frage direkt oben ab (Prospect Tracker/API), unabhängig davon ob Limitless eine eigene Schnittstelle anbietet.
+
 ## Telegram-Bot Setup — Ablauf & Fortschritt
 
 Ziel: Neues Mitglied kommt in die Telegram-Gruppe → Bot postet eine Nachricht mit "Start Now"-Button → Klick öffnet den privaten Chat mit dem Bot → Bot schickt automatisch die Onboarding-Nachricht (Platzhaltertext fürs Erste, wird später durch den finalen Text ersetzt).
