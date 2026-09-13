@@ -38,6 +38,19 @@ Mike Bühler, 28 Jahre alt, gelernter Elektroniker für Betriebstechnik und Elek
 
 **Wichtig vor jedem manuellen Subagenten-Aufruf (`/aufgaben-check`, `/content-check`, `/professor-check`):** Die Scheduled Cloud Routines pushen direkt nach `master`. Diese Subagenten selbst haben kein Bash/Git-Tool und lesen nur den lokal ausgecheckten Branch der aufrufenden Session – der kann hinter `master` zurückliegen (z.B. wenn diese Session auf einem eigenen Arbeits-/PR-Branch läuft). Deshalb: aufrufende Session macht IMMER erst `git fetch origin master && git merge origin/master`, bevor einer der drei Subagenten gestartet wird, sonst arbeitet er auf veraltetem Stand (siehe [[Qualitätsbericht]], Fehlalarm vom 11.09.2026).
 
+### Git-Workflow für interaktive Sessions (seit 13.09.2026, Mikes Wunsch: Vault soll immer aktuell sein)
+
+Jede interaktive Session (egal ob claude.ai/code-Web-Session, Cowork-Session oder eigener Arbeits-/Task-Branch) bekommt oft einen eigenen Git-Branch statt direkt auf `master` zu arbeiten. Das ist an sich in Ordnung, aber **Änderungen, die nur auf so einem Branch liegen bleiben, sind für alle anderen (Scheduled Routines, andere Sessions, Mike selbst über den Vault) unsichtbar** – der Vault-Stand läuft dann unbemerkt auseinander.
+
+**Deshalb, am Ende jeder interaktiven Session mit Vault-Änderungen (bzw. sofort nach jedem Commit, wenn die Session länger läuft):**
+1. `git fetch origin master && git merge origin/master` (Konflikte lösen, siehe unten)
+2. `git push origin HEAD:master` – direkt, kein PR-Zwischenschritt nötig, außer Mike bittet für diese eine Session ausdrücklich um Review vor dem Merge
+3. Falls Push/Merge technisch nicht möglich ist (kein Bash/Git-Tool in dieser Session, z.B. bei den Subagenten): am Ende der Antwort explizit sagen, dass die Änderungen unstaged/auf einem Branch liegen und jemand mit Git-Zugriff sie nach `master` bringen muss – nicht stillschweigend offen lassen.
+
+**Bei Konflikten:** nie eine Seite blind bevorzugen. Meistens sind es zwei echte, unabhängige Fortschritte (z.B. zwei Chat-Sessions haben am selben Tag unterschiedliche Punkte abgehakt) – beide Fakten kombinieren statt einer überschreibt den anderen. Bei Log-/Verlaufs-Abschnitten (append-only) beide Einträge behalten, in der richtigen zeitlichen Reihenfolge.
+
+**Vorfall, der zu dieser Regel führte (13.09.2026):** Fünf verschiedene interaktive Sessions arbeiteten am 12./13.09. an echten Fortschritten (Kontaktliste komplett, App-Login-Punkte erledigt, Telegram-Kanal-Versand automatisiert, erster echter Kanal-Post, Profilbilder, Cloudflare-Fix), aber keine hat ihre Änderungen nach `master` gepusht. Eine Statusabfrage zeigte dadurch tagelang veraltete Zahlen (Mike-only-Zähler 13 statt real 5). Erst eine gezielte Sync-Runde hat alle Branches gefunden und zusammengeführt, siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] und [[Tagesplan]]. **Ergänzender Sicherheitsnetz-Hinweis:** Diese Regel verhindert das Problem nur für Sessions, die sie befolgen (sie steht ja erst seit heute hier) – bei Zweifel am aktuellen Stand schadet ein kurzer `git branch -r`-Check auf verwaiste `claude/*`-Branches nicht, die weiter vorne als `master` liegen.
+
 ### Bei Session-Start
 1. Prüfe 01 Inbox/ auf neue Notizen, zeige was drin liegt, und biete an die Einträge in die passenden Ordner einzusortieren
 

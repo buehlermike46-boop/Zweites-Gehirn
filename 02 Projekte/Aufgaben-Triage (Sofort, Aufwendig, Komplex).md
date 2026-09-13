@@ -13,9 +13,19 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 - **Aufwendig**: mehrere Stunden bis ein ganzer Tag
 - **Komplex**: mehrere Tage bis Wochen, braucht eigene Planung
 
-**Zahlen:** 21 sofort, 14 aufwendig, 12 komplex. Gesamt 47 offene Punkte.
+**Zahlen:** 21 sofort, 14 aufwendig, 12 komplex. Gesamt 47 offene Punkte (Stand bei Anlage 10.09.2026, unten laufend abgehakt statt neu gezählt).
 
 **Tagesprotokoll dazu:** [[2026-09-10]]
+
+> [!success] Vault-Sync 13.09.2026: mehrere liegengebliebene Session-Branches gemerged
+> Mehrere interaktive Sessions hatten am 12./13.09. echte Fortschritte gemacht, aber auf eigenen Branches, die nie nach `master` gemerged wurden (siehe `CLAUDE.md`, neuer Abschnitt "Git-Workflow für interaktive Sessions"). Bei der Sync-Runde zusammengeführt. **Echter Mike-only-Zähler nach dem Zusammenführen: 5**, nicht 13, 9 oder 7 wie in älteren Einzel-Einträgen unten:
+> 1. WhatsApp end-to-end testen
+> 2. Die 20 Leute persönlich anschreiben (Liste selbst ist komplett, 20/20)
+> 3. Telegram-Warnungen am Account prüfen
+> 4. Kanal-Profilbild in Telegram setzen (13.09. generiert)
+> 5. Bot-Profilbild bei @BotFather setzen (13.09. generiert)
+>
+> Erledigt und aus dem Zähler raus: Kanalbild setzen, Instagram-Bio-Feld, Make.com aktivieren (inkl. Willkommensnachricht + 3 Follow-ups), 4 Kanalbilder freigeben, Google-Drive-Ordner, 20-Namen-Liste, Limitless-Support-Anfrage. "Posts 1-6 terminieren" ist obsolet: der Telegram-Kanal-Versand läuft seit 13.09.2026 automatisch über `content-executor` (siehe [[Inner Circle Kanal-Content]] Abschnitt 9), kein manuelles Terminieren mehr nötig — Post 1 ist bereits live.
 
 **Stand 10.09.2026, unterwegs abgearbeitet:** Staffelsatz geklärt (nicht rückwirkend, Rechnung im MasterPlan korrigiert), Kanalbeschreibung gesetzt, Reaktionen und Diskussionschat geprüft, Instagram-Bio ergänzt. Schichtplan und Tagesstruktur aus dem Kalender als [[Zwei-Wochen-Takt]] dokumentiert, Halbmarathon-Termin auf den 21.11.2026 korrigiert (Vault und Kalender). Kanalbild wartet auf Mike in der App, Bildfreigabe wartet auf ihn zuhause.
 
