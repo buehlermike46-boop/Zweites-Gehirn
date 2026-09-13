@@ -18,14 +18,12 @@ Alle offenen Aufgaben aus dem Vault, gesammelt am 10.09.2026 und nach Aufwand so
 **Tagesprotokoll dazu:** [[2026-09-10]]
 
 > [!success] Vault-Sync 13.09.2026: mehrere liegengebliebene Session-Branches gemerged
-> Mehrere interaktive Sessions hatten am 12./13.09. echte Fortschritte gemacht, aber auf eigenen Branches, die nie nach `master` gemerged wurden (siehe `CLAUDE.md`, neuer Abschnitt "Git-Workflow für interaktive Sessions"). Bei der Sync-Runde zusammengeführt. **Echter Mike-only-Zähler nach dem Zusammenführen: 5**, nicht 13, 9 oder 7 wie in älteren Einzel-Einträgen unten:
+> Mehrere interaktive Sessions hatten am 12./13.09. echte Fortschritte gemacht, aber auf eigenen Branches, die nie nach `master` gemerged wurden (siehe `CLAUDE.md`, neuer Abschnitt "Git-Workflow für interaktive Sessions"). Bei der Sync-Runde zusammengeführt. **Mike-only-Zähler nach dem Zusammenführen: 3** (Update 13.09.2026 abends: Punkt 4 und 5, die beiden Profilbilder, laut Mike im Chat erledigt):
 > 1. WhatsApp end-to-end testen
 > 2. Die 20 Leute persönlich anschreiben (Liste selbst ist komplett, 20/20)
 > 3. Telegram-Warnungen am Account prüfen
-> 4. Kanal-Profilbild in Telegram setzen (13.09. generiert)
-> 5. Bot-Profilbild bei @BotFather setzen (13.09. generiert)
 >
-> Erledigt und aus dem Zähler raus: Kanalbild setzen, Instagram-Bio-Feld, Make.com aktivieren (inkl. Willkommensnachricht + 3 Follow-ups), 4 Kanalbilder freigeben, Google-Drive-Ordner, 20-Namen-Liste, Limitless-Support-Anfrage. "Posts 1-6 terminieren" ist obsolet: der Telegram-Kanal-Versand läuft seit 13.09.2026 automatisch über `content-executor` (siehe [[Inner Circle Kanal-Content]] Abschnitt 9), kein manuelles Terminieren mehr nötig — Post 1 ist bereits live.
+> Erledigt und aus dem Zähler raus: Kanalbild setzen, Instagram-Bio-Feld, Make.com aktivieren (inkl. Willkommensnachricht + 3 Follow-ups), 4 Kanalbilder freigeben, Google-Drive-Ordner, 20-Namen-Liste, Limitless-Support-Anfrage, Kanal-Profilbild setzen, Bot-Profilbild setzen. "Posts 1-6 terminieren" ist obsolet: der Telegram-Kanal-Versand läuft seit 13.09.2026 automatisch über `content-executor` (siehe [[Inner Circle Kanal-Content]] Abschnitt 9), kein manuelles Terminieren mehr nötig — Post 1 ist bereits live.
 
 **Stand 10.09.2026, unterwegs abgearbeitet:** Staffelsatz geklärt (nicht rückwirkend, Rechnung im MasterPlan korrigiert), Kanalbeschreibung gesetzt, Reaktionen und Diskussionschat geprüft, Instagram-Bio ergänzt. Schichtplan und Tagesstruktur aus dem Kalender als [[Zwei-Wochen-Takt]] dokumentiert, Halbmarathon-Termin auf den 21.11.2026 korrigiert (Vault und Kalender). Kanalbild wartet auf Mike in der App, Bildfreigabe wartet auf ihn zuhause.
 
@@ -87,8 +85,8 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 - [x] Referral-Link steht in der /start-Nachricht (geprüft 10.09.2026, worldoflimitless.com/?ref=2A5CC2B8)
 - [x] Make.com-Szenario dauerhaft aktivieren inklusive neuer Willkommensnachricht und der drei Follow-ups — **korrigiert 12.09.2026:** war die ganze Zeit schon aktiv, per Make.com-Connector einer interaktiven Session verifiziert (`isActive: true`, Scheduling "immediately"); Willkommensnachricht direkt im selben Lauf mit eingetragen. Die drei Follow-ups hingen zunächst an einem Data-Store-Speicherlimit (siehe [[Tagesplan]]) — **erledigt 13.09.2026**, Mike hat die Datenstruktur-Erweiterung selbst am PC gemacht, laut Mike im Chat bestätigt
 - [x] Bot-Strecke faktisch bestätigt: /start am 08. und 09.09.2026 ausgelöst, Onboarding-Nachricht inklusive Link kam an. Ungetestet bleibt nur der Weg über den Start-Button im Kanal
-- [ ] Neues Kanal-Profilbild setzen (13.09.2026 generiert, Ring-Emblem-Icon, Gold/Navy) — Datei an Mike geschickt, Upload in der Telegram-App nur von ihm möglich (App-only, kein Connector)
-- [ ] Profilbild für den Bot @LimitlessPuBot setzen (13.09.2026 generiert, Chat-Bubble-Icon, Gold/Navy) — via @BotFather → `/setuserpic`, Datei an Mike geschickt, nur er kann sich bei BotFather einloggen
+- [x] Neues Kanal-Profilbild setzen (13.09.2026 generiert, Ring-Emblem-Icon, Gold/Navy) — **erledigt 13.09.2026, laut Mike im Chat**
+- [x] Profilbild für den Bot @LimitlessPuBot setzen (13.09.2026 generiert, Chat-Bubble-Icon, Gold/Navy) — **erledigt 13.09.2026, laut Mike im Chat**
 
 ### Jarvis Technik
 - [x] `broker_login.py` ausgeführt (10.09.2026), jetzt nur noch Limitless und GMX. PU Prime ist aus der Brücke raus
