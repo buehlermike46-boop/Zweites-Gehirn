@@ -157,3 +157,6 @@ Nichts fällig. Nächster Queue-Eintrag ist Nr. 2 (Montag, 14.09., 18:50 Uhr), l
 
 ### 2026-09-12, 16:35 UTC, planmäßiger täglicher Lauf
 Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09.). Post Nr. 1 (Media-ID 17901731430581191) ist jetzt ~32h alt, Rohzahlen über `mcp__Windsor_ai__get_data` nachgetragen: 19 Reichweite, 41 Views, 0 Likes/Kommentare/Saves/Shares. Ins [[Performance-Log]] eingetragen, keine Bewertung (macht `content-manager` sonntags). Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme.
+
+### 2026-09-13, 16:36 UTC, planmäßiger täglicher Lauf
+Zur Kenntnis genommen: Freigabe-Phase wurde heute von Mike auf **Phase 2 (automatisch)** umgestellt, siehe Abschnitt oben. Nichts fällig zum Posten in diesem Lauf (Eintrag Nr. 2, Montag 14.09. 18:50 Uhr, liegt mit ca. 26h noch knapp außerhalb des 24h-Fensters, ist bereits `freigegeben` und wird morgen fällig). Post Nr. 1 bereits ausgewertet (12.09.), noch keine neuen Rohzahlen fällig. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme. Content-Manager läuft heute 17:00 UTC turnusmäßig selbst (Sonntag), keine Überschneidung mit diesem Lauf.
