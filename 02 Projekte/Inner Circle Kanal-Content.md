@@ -597,27 +597,24 @@ Nicht perfekt, wer eröffnet, ohne zu klicken, bekommt trotzdem eine Nachricht. 
 
 **Echte Kundenergebnisse:** wie im Rest des Vaults nie erfinden/simulieren (siehe auch Notiz in [[KI-Automatisierung IB-Business]]). `content-manager` prüft `07 Anhänge/` auf reales Material, das Mike bereitstellt, und baut es ein, sobald es da ist. Bis dahin ausschließlich Ökosystem-/Bildungscontent wie im 14-Tage-Plan oben.
 
-### Technischer Stand des Kanal-Versands (Update 13.09.2026, zweiter Durchgang)
+### Technischer Stand des Kanal-Versands (Update 13.09.2026, vierter Durchgang: fertig)
 
-**Text-Versand: fertig gebaut UND live getestet, funktioniert.** Über die Make.com-API ein eigenes "Tool" angelegt (Make-Konzept für eine einzelne, per API aufrufbare Aktion, ähnlich einem Custom-Aktion-Baustein): **"Telegram Kanal: Text-Post"** (Tool/Szenario-ID `7390879`, Team "My Team"), nutzt dieselbe Bot-Verbindung wie das bestehende Bot-Szenario und das Modul "Send a Text Message or Reply". Nimmt `chatId` und `text` als Parameter entgegen. Echt getestet: eine Testnachricht kam nachweislich als private Bot-Nachricht bei Mike an (Chat-ID `6233075726`). Für den Kanal selbst gilt laut Make-eigener Doku dasselbe Modul mit `chatId: @JointoInnerCircle` (öffentliche Kanäle werden so adressiert, Bot ist dort bereits Admin) – nicht extra am echten Kanal getestet, um dort keine sichtbare Testnachricht zu hinterlassen, aber Mechanismus und Chat-ID-Format sind beide unabhängig voneinander bestätigt.
+**Text, Foto UND Video: fertig gebaut und live getestet, alle drei funktionieren.**
 
-`content-executor` hat jetzt das Werkzeug `mcp__Make__scenarios_run` bekommen und ruft für Text-Posts gezielt Tool-ID `7390879` auf (siehe Agent-Datei). **Reiner Text-Versand in den Kanal ist damit ab sofort tatsächlich automatisch möglich.**
+Der Weg dahin, kurz zusammengefasst: Ein erstes Text-only-Tool lief schon früh (Modul "Send a Text Message or Reply"). Für Bilder/Videos schlug "Send a Photo" trotz mehrerer Versuche (auch direkt in Mikes Make-Oberfläche, mit Screenshots) immer wieder fehl ("there is no photo in the request"/Phantom-Pflichtfelder) – am Ende lag das schlicht daran, dass das eigentlich passende Modul ein anderes ist. Mike hat der Make-Verbindung dieser Session den Scope **`apps:read`** erteilt (Connector-Neuautorisierung, alle Rechte inkl. "Szenario-Apps" angehakt), damit ließ sich das echte Modul-Schema maschinell abfragen statt zu raten:
 
-**Bild-/Video-Versand: weiterhin offen – Update 13.09.2026, dritter Durchgang, jetzt mit begründetem Verdacht auf einen echten Make-Bug statt nur fehlender Doku.**
+- Richtiges Modul für Bild/Video: **`telegram:ForwardAttachment`** (UI-Name "Send Media by URL or ID", nicht "Send a Photo"!)
+- Pflichtfelder: `chatId`, `attachmentType` (Enum: Document/Photo/Audio/Video/VideoNote/Voice/Sticker), `sendType` (Enum: `send_byurl`/`send_byid`)
+- Bei `sendType: send_byurl` zusätzlich Pflichtfeld **`fileId`** (trotz des irreführenden Namens: hier kommt die HTTP-URL rein, nicht die Telegram-Datei-ID)
+- Optional: `caption`
 
-Mike hat live mitgeholfen und das Modul "Send a Photo" direkt in der Make-Oberfläche konfiguriert (Screenshots), das lieferte wertvolle echte Infos:
-- Der Auswahl-Schalter heißt **"Senden per"**, Werte sichtbar u. a. `send_byurl` (HTTP-URL) statt "Daten"/"Datei-ID".
-- Im URL-Modus erscheint ein Pflichtfeld **"URL"** mit Hilfetext "Übergeben Sie eine URL, um ein Foto aus dem Internet abzurufen".
+**Umgesetzt als ein einziges, vereinheitlichtes Werkzeug** (Mikes Make-Plan erlaubt nur 2 aktive Szenarien gleichzeitig, daher kein separates Tool pro Medientyp): Szenario **"Telegram Kanal: Post Versand"** (ID `7391673`, Team "My Team", ersetzt das alte reine Text-Tool `7390879`, das dafür gelöscht wurde). Nimmt vier Parameter entgegen: `chatId`, `media_type` (`text`/`photo`/`video`), `text` (Nachricht bzw. Caption), `media_url` (nur bei photo/video). Intern ein Router, der je nach `media_type` zu `telegram:SendReplyMessage` (text) oder `telegram:ForwardAttachment` mit passendem `attachmentType` (photo/video) verzweigt.
 
-Damit über die Make-API mehrere Kombinationen getestet (`sendBy`+`url`, `sendBy`+`photo`, jeweils mit den exakten Labels aus dem Screenshot) – alle scheiterten am selben Telegram-Fehler *"there is no photo in the request"*.
+**Alle drei Zweige echt getestet** (private Testnachrichten an Mike, Chat-ID `6233075726`, Status jeweils Erfolg ohne Fehler): Text ✅, Foto (`https://telegram.org/img/t_logo.png`) ✅, Video (echte Asset-URL aus der Instagram-Queue) ✅. Für den echten Kanal gilt dieselbe Chat-ID-Logik wie beim Text-Tool: `chatId: @JointoInnerCircle` (öffentliche Kanäle, Bot ist dort Admin) – nicht extra am echten Kanal getestet, um dort keine Testnachricht zu hinterlassen, aber Mechanismus und Chat-ID-Format sind unabhängig bestätigt.
 
-**Wichtigster neuer Befund:** Genau dasselbe Problem trat danach **auch direkt in Mikes eigener Make-Oberfläche auf**, dreimal in Folge, sowohl im neuen "Mit Maia bauen"-Assistenten als auch im normalen Szenario-Editor: Chat-ID und URL waren sichtbar ausgefüllt, trotzdem meldete Make beim Speichern durchgehend "Chat-ID: leer", "URL: leer", plus zwei Phantom-Pflichtfelder "Dateiname"/"Daten", die im HTTP-URL-Modus gar nicht mehr existieren dürften. Identischer Fehler über drei unabhängige Versuche (Reload, Neuaufbau, anderer Editor-Kontext) spricht stark für einen **echten Bug in diesem Make-Modul/dieser Formular-Validierung**, nicht für einen falschen Feldnamen unsererseits. Es wurde nichts gespeichert, der produktive Bot (`Integration Telegram Bot`, ID 7240246) läuft nachweislich unverändert weiter (per API gegengeprüft).
+`content-executor` ruft für **jeden** Telegram-Post (Text, Foto, Video) `mcp__Make__scenarios_run` mit Szenario-ID `7391673` auf (siehe Agent-Datei). **Der komplette Kanal-Versand läuft damit ab sofort automatisch, kein offener technischer Punkt mehr.**
 
-**Damit bewusst geparkt statt weiter blind zu raten. Zwei Wege für einen neuen Anlauf:**
-1. Scope `apps:read` für die Make-Verbindung dieser Session, dann lässt sich das Modul-Schema sauber maschinell abfragen statt über UI-Versuche.
-2. Einfach in ein paar Tagen nochmal in der Make-UI probieren, falls es ein temporärer Plattform-Bug war (Make selbst updated sowas öfter mal unangekündigt) – dann reicht ein einziger erfolgreicher Speichervorgang, danach kann eine Session die echte Konfiguration direkt auslesen.
-
-**Praktische Konsequenz:** Da alle 12 bereits geplanten Posts im 14-Tage-Plan oben ein Bild/Video enthalten, kann `content-executor` aktuell noch **keinen** davon vollautomatisch posten – er bereitet sie fertig vor (Status `fertig (Posten technisch offen)`), postet aber erst, sobald Bild/Video ebenfalls steht. Ein reiner Text-Post (z. B. eine spontane Ankündigung ohne Bild) könnte ab sofort schon automatisch raus.
+Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die ganze Zeit unberührt und lief unverändert weiter (mehrfach per API gegengeprüft).
 
 ### Post-Status
 
@@ -636,7 +633,7 @@ Damit über die Make-API mehrere Kombinationen getestet (`sendBy`+`url`, `sendBy
 | 11 In 3 Schritten dabei | Fr 25.09., 11:00 | offen |
 | 12 Q&A | So 27.09., 11:00 | offen |
 
-`content-executor` aktualisiert den Status je Post auf `fertig (Posten technisch offen)` sobald Text+Asset vorbereitet sind, später auf `gepostet ([Datum, Uhrzeit])`. `content-manager` hängt hier neue Wochen im gleichen Tabellenformat an, sobald Woche 2 abgearbeitet ist.
+`content-executor` postet jeden fälligen Post direkt (Text, Foto und Video sind technisch alle möglich) und setzt den Status danach auf `gepostet ([Datum, Uhrzeit])`, inkl. Message-ID/Link. `content-manager` hängt hier neue Wochen im gleichen Tabellenformat an, sobald Woche 2 abgearbeitet ist.
 
 ### Executor-Log
 *(Append-only Protokoll jedes content-executor-Laufs für Telegram, mit Zeitstempel. Wird beim ersten Lauf angelegt.)*
