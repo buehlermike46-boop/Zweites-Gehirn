@@ -55,10 +55,10 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #forex #tradingeducation #limitless #finanziellefreiheit
 
 ### 2. Montag, 14.09.2026, 18:50 Uhr
-- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Status:** gepostet (14.09.2026, 16:37 UTC, Phase 2 automatisch). Media-ID 17886630126617086
 - **Format:** Carousel (4 Bilder)
-- **Assets (alt, unerreichbar — Korrektur `content-manager` 13.09.2026):** ~~`Lim/Content/Bilder/26-drei-saeulenein-oekosystem.png`, `27-mehr-als-tradingtraverse.png`, `28-nicht-nur-chartsauch-du-selbst.png`, `30-warum-limitlessund-primeversezusammenarb.png`~~ liegen lokal bei Mike außerhalb des Git-Vaults, für den `content-executor` als Cloud-Routine nicht erreichbar (gleiches Muster wie beim Post vom 11.09., siehe [[Performance-Log]]).
-- **Ersatz-Generation-Brief (frisch über Jarvis zu erstellen):** 4 Info-Grafik-Slides im bestehenden Limitless-Look (wie die Grafik vom 09.09.). Slide 1 Hook "Drei Säulen, ein Ökosystem", Slide 2 Technologie (Signale, Marktanalyse-Tools, Trading-Journal), Slide 3 Bildung (Academy, Live-Coaching), Slide 4 Lifestyle (Reise-Vorteile, Mindset/Fitness-Ansatz) + CTA. Keine Gesichter, keine Euro-Beträge, keine erfundenen Zahlen.
+- **Assets (alt, unerreichbar):** ~~`Lim/Content/Bilder/26-drei-saeulenein-oekosystem.png`, `27-mehr-als-tradingtraverse.png`, `28-nicht-nur-chartsauch-du-selbst.png`, `30-warum-limitlessund-primeversezusammenarb.png`~~ lokal bei Mike, für Cloud-Executor unerreichbar.
+- **Assets (neu, über Jarvis `nano_banana_2` erstellt, gepostet):** 4 Slides "Drei Säulen"/"Technologie"/"Bildung"/"Lifestyle", 4:5, als PNG direkt akzeptiert (kein JPEG-Problem trotz Windsor-Doku).
 - **Caption:** "PrimeVerse ist mehr als Trading-Tools. Drei Säulen: Technologie, Bildung, Lifestyle, inklusive Reise-Vorteilen und einem Ansatz, der auch Mindset und Fitness einschließt. Alles Teil des kostenlosen Limitless-Zugangs. Schreib mir 'START' für mehr Infos."
 - **Hashtags:** #trading #primeverse #limitless #tradingcommunity
 
@@ -207,3 +207,6 @@ Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09
 
 ### 2026-09-13, 16:36 UTC, planmäßiger täglicher Lauf
 Zur Kenntnis genommen: Freigabe-Phase wurde heute von Mike auf **Phase 2 (automatisch)** umgestellt, siehe Abschnitt oben. Nichts fällig zum Posten in diesem Lauf (Eintrag Nr. 2, Montag 14.09. 18:50 Uhr, liegt mit ca. 26h noch knapp außerhalb des 24h-Fensters, ist bereits `freigegeben` und wird morgen fällig). Post Nr. 1 bereits ausgewertet (12.09.), noch keine neuen Rohzahlen fällig. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme. Content-Manager läuft heute 17:00 UTC turnusmäßig selbst (Sonntag), keine Überschneidung mit diesem Lauf.
+
+### 2026-09-14, 16:36-16:38 UTC, planmäßiger täglicher Lauf — zweiter echter Post live
+Post Nr. 2 (heute, 18:50 Uhr) war fällig, Status `freigegeben`. Hinterlegte Assets (4 lokale PNGs bei Mike) wie von `content-manager` am 13.09. vermerkt unerreichbar, daher den hinterlegten Ersatz-Generation-Brief umgesetzt: 4 Carousel-Slides ("Drei Säulen"/"Technologie"/"Bildung"/"Lifestyle") über Jarvis `nano_banana_2` erstellt, 4:5 (Guthaben vor der Generierung: 715,5 Credits, `plus`-Plan). Carousel über `mcp__Windsor_ai__execute_action` (instagram, `create_carousel_post`) gepostet: **Media-ID 17886630126617086**. Nebenbefund: die Windsor-Doku verlangt JPEG, die vier PNGs wurden trotzdem anstandslos akzeptiert — für künftige Läufe keine Konvertierung nötig, aber im Hinterkopf behalten falls doch mal ein Format abgelehnt wird. Ins [[Performance-Log]] eingetragen (frisch, Auswertung folgt). Phase 2 aktiv, keine Einzelfreigabe nötig gewesen (Status war ohnehin schon `freigegeben`). Nichts übersprungen, keine Credit-/Freigabeprobleme.
