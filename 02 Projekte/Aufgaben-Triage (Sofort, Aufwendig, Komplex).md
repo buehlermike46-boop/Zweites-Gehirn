@@ -75,6 +75,13 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 **Kontrolle 14.09.2026, zweiter Lauf ([[aufgaben-manager]], nach Leerlauf-Signal des Executors, 18:09 UTC):** Mike hat den `## Vorschlag für 2026-09-14`-Abschnitt bestätigt, der Executor hat alle drei Punkte (persönliche Anschreiben starten, WhatsApp-Test, Telegram-Warnungscheck) erwartungsgemäß mit unveränderter Begründung als technisch blockiert dokumentiert (siehe [[Tagesplan]], Log-Eintrag "2026-09-14, 18:09 UTC") — kein Beleg für "erledigt", keine Häkchen. Anschließend erneut geprüft, ob seit dem Vormittag etwas Neues dazugekommen ist: [[Kontaktliste - 20 Namen aus dem Umfeld]] unverändert 20/20 Namen, weiterhin 0 von 20 angeschrieben; [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen, keine neuen Punkte; keine neue Daily Note seit [[2026-09-12]]; [[Posting-Warteschlange]] zeigt weiterhin nur Content-Domain-Einträge, kein Fehlrouting. Ergebnis ehrlich benannt statt künstlich aufgefüllt: **nichts Neues seit heute Vormittag**, Mike-only-Zähler bleibt bei **3**. Kein neuer Bestätigt-Abschnitt für den Executor möglich (dieselben drei Punkte sind strukturell nicht von ihm lösbar), deshalb in [[Tagesplan]] nur ein neuer `## Vorschlag`-Abschnitt mit denselben drei Punkten, damit Mike nicht auf eine Antwort warten muss, die es nicht gibt.
 
+**Kontrolle 14.09.2026, dritter Lauf (Chat mit Mike, interaktive Session):** Mike hat auf den zweiten Vorschlag reagiert: "Nimm die Sachen raus, hab ich alle erledigt. WhatsApp testen wir wann anders." Gelesen als: die drei Punkte raus aus dem Bestätigt-Kreislauf (wie zuvor selbst vorgeschlagen), davon zwei laut seiner direkten Aussage erledigt (persönliche Anschreiben, Telegram-Warnungscheck), WhatsApp-Test explizit auf unbestimmt vertagt statt erledigt. Umgesetzt:
+- Persönliche Anschreiben (20 Kontakte): oben unter "Aufwendig" abgehakt, Kontaktliste entsprechend generisch aktualisiert (keine Einzel-Reaktionen erfragt/erfunden)
+- Telegram-Warnungscheck: oben abgehakt
+- WhatsApp-Test: bleibt offen, aber unverändert außerhalb des Bestätigt-Kreislaufs (war das ohnehin schon seit 12.09.2026), Vermerk "wird zu späterem Zeitpunkt nachgeholt" ergänzt
+
+**Neuer Mike-only-Zähler-Stand: 1** (3 minus die zwei heute erledigten Punkte). Einzig verbleibend: WhatsApp-Test, ohne Termin. In [[Tagesplan]] den offenen `## Vorschlag für 2026-09-14 (zweiter Vorschlag)` entsprechend aufgelöst — kein neuer Bestätigt-Abschnitt nötig, da für den Executor aktuell kein eigenständig ausführbarer Punkt übrig ist.
+
 ---
 
 ## 1. Sofort (21)
@@ -95,11 +102,11 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 ### Jarvis Technik
 - [x] `broker_login.py` ausgeführt (10.09.2026), jetzt nur noch Limitless und GMX. PU Prime ist aus der Brücke raus
 - [x] Bridge-Lauf geprüft: PU Prime wird sauber übersprungen, Limitless liefert Werte. GMX scheitert weiter am SSO-Redirect und ist zurückgestellt
-- [ ] WhatsApp end-to-end testen: Bridge ist nach neuem QR-Login (10.09.2026) wieder funktionsfähig, es fehlt eine echte eingehende Nachricht von einer anderen Person. Eigene Nachrichten überspringt die Bridge per Design — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (kein Messaging-Tool, um das anzustoßen, siehe [[Tagesplan]])
+- [ ] WhatsApp end-to-end testen: Bridge ist nach neuem QR-Login (10.09.2026) wieder funktionsfähig, es fehlt eine echte eingehende Nachricht von einer anderen Person. Eigene Nachrichten überspringt die Bridge per Design — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (kein Messaging-Tool, um das anzustoßen, siehe [[Tagesplan]]). **14.09.2026, laut Mike im Chat:** wird zu einem späteren Zeitpunkt nachgeholt ("testen wir wann anders") — bewusst nicht terminiert, bleibt außerhalb des Bestätigt-Kreislaufs
 - [ ] `whatsapp`-Knoten in `frontend/main.js` von `plannedNode` auf `liveNode` umstellen, direkt nach dem Test
 - [x] Entschieden (10.09.2026): Instagram und Facebook bleiben erstmal auf Zuruf, keine automatische Bridge, Meta Graph API zurückgestellt
 - [ ] In ein paar Tagen: prüfen, ob WhatsApp Warnungen an der Geräteverknüpfung zeigt
-- [ ] In ein paar Tagen: prüfen, ob Telegram Warnungen am persönlichen Account zeigt
+- [x] In ein paar Tagen: prüfen, ob Telegram Warnungen am persönlichen Account zeigt — **erledigt 14.09.2026, laut Mike im Chat**
 
 ### Anfragen, die nur du stellen kannst
 - [x] Staffelsatz geklärt (10.09.2026): gilt nur oberhalb der Schwelle, nichts rückwirkend. MasterPlan und IB-Projekt neu gerechnet
@@ -119,7 +126,7 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 - [x] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — **erledigt 12.09.2026** über den Make.com-Connector dieser interaktiven Session direkt im Blueprint der `/start`-Route eingetragen (neuer Text aus [[Inner Circle Kanal-Content]] Abschnitt 7, Link `?ref=2A5CC2B8` eingesetzt, Inline-Button "🏦 Konto eröffnen"), per erneutem Abruf verifiziert, am 13.09.2026 von Mike im Chat nochmal bestätigt
 - [x] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7. Hing zunächst an einem Data-Store-Speicherlimit (Make-Team-Konto, siehe [[Tagesplan]] für Details) — **erledigt 13.09.2026**, Mike hat die Datenstruktur-Erweiterung und das Eintragen selbst am PC gemacht
 - [x] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert — **erledigt 12.09.2026, 20/20 komplett** (letzte 4: Martin, Luisa, Lukas, Fabian), Tracking in [[Kontaktliste - 20 Namen aus dem Umfeld]]
-- [ ] Diese 20 Leute persönlich anschreiben, keine Massentexte — Tracking und Status je Person in [[Kontaktliste - 20 Namen aus dem Umfeld]]. Ist Mikes eigene Aufgabe, kein Executor-Punkt: jede Nachricht persönlich, von Mike selbst verfasst oder freigegeben
+- [x] Diese 20 Leute persönlich anschreiben, keine Massentexte — Tracking und Status je Person in [[Kontaktliste - 20 Namen aus dem Umfeld]]. Ist Mikes eigene Aufgabe, kein Executor-Punkt: jede Nachricht persönlich, von Mike selbst verfasst oder freigegeben. **Erledigt 14.09.2026, laut Mike im Chat** ("hab ich alle erledigt") — Einzel-Reaktionen pro Person nicht erfragt, Tracking-Tabelle entsprechend generisch aktualisiert, siehe [[Kontaktliste - 20 Namen aus dem Umfeld]]
 
 ### Zahlen und Struktur
 - [x] Lot-Tracking aufsetzen: Gesamt-Lots pro Monat, Lots je Kunde, erreichte Staffelstufe. Die zentrale Steuergröße des IB-Projekts — Struktur am 12.09.2026 vom `aufgaben-executor` angelegt: [[Lot-Tracking]] (Staffel-Tabelle, Kopfwerte, Kunden-Tabelle, aktuell 0 Lots/0 Kunden). Automatisch aus [[Tagesplan]] nachgezogen, da alle Bestätigt-Punkte des Tages technisch blockiert waren und dies laut MasterPlan explizit zu Stufe 0 gehört

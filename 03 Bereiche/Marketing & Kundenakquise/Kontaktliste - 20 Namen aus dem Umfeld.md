@@ -17,6 +17,11 @@ von Mike (Chat, 12.09.2026) — ich habe keine Beziehungsdetails (wie kennt er d
 welcher Kontext) erfunden oder ergänzt. Diese Felder bleiben leer, bis Mike sie selbst
 befüllt.
 
+**Update 14.09.2026, laut Mike im Chat:** Alle 20 Kontakte sind angeschrieben ("hab ich alle
+erledigt"). Status unten entsprechend auf "angeschrieben (14.09.2026)" gesetzt. Keine
+Einzel-Reaktionen abgefragt — Spalte "Reaktion" bleibt leer, bis Mike sie pro Person
+nachträgt.
+
 **Wichtig zum Anschreiben (Vault-Regel "keine Massentexte"):** Das eigentliche Anschreiben
 ist explizit **Mikes eigene Aufgabe**, kein Agenten-Punkt. Jede Nachricht muss persönlich
 auf die jeweilige Person zugeschnitten sein — von Mike selbst verfasst oder zumindest
@@ -28,34 +33,33 @@ Agent kann hier höchstens einen Textentwurf pro Person vorbereiten, wenn Mike d
 
 | # | Name | Status | Wie kennt Mike die Person | Wann angeschrieben | Reaktion |
 |---|---|---|---|---|---|
-| 1 | Marina | noch nicht angeschrieben | | | |
-| 2 | Atin | noch nicht angeschrieben | | | |
-| 3 | Julia | noch nicht angeschrieben | | | |
-| 4 | Yilmaz | noch nicht angeschrieben | | | |
-| 5 | Mika | noch nicht angeschrieben | | | |
-| 6 | Jerome | noch nicht angeschrieben | | | |
-| 7 | Max | noch nicht angeschrieben | | | |
-| 8 | Eno | noch nicht angeschrieben | | | |
-| 9 | Jens | noch nicht angeschrieben | | | |
-| 10 | Tahsin | noch nicht angeschrieben | | | |
-| 11 | Sven | noch nicht angeschrieben | | | |
-| 12 | Lars | noch nicht angeschrieben | | | |
-| 13 | Dome | noch nicht angeschrieben | | | |
-| 14 | Manuel | noch nicht angeschrieben | | | |
-| 15 | Ronja | noch nicht angeschrieben | | | |
-| 16 | Maltesa Westerwald | noch nicht angeschrieben | | | |
-| 17 | Martin | noch nicht angeschrieben | | | |
-| 18 | Luisa | noch nicht angeschrieben | | | |
-| 19 | Lukas | noch nicht angeschrieben | | | |
-| 20 | Fabian | noch nicht angeschrieben | | | |
+| 1 | Marina | angeschrieben | | 14.09.2026 | |
+| 2 | Atin | angeschrieben | | 14.09.2026 | |
+| 3 | Julia | angeschrieben | | 14.09.2026 | |
+| 4 | Yilmaz | angeschrieben | | 14.09.2026 | |
+| 5 | Mika | angeschrieben | | 14.09.2026 | |
+| 6 | Jerome | angeschrieben | | 14.09.2026 | |
+| 7 | Max | angeschrieben | | 14.09.2026 | |
+| 8 | Eno | angeschrieben | | 14.09.2026 | |
+| 9 | Jens | angeschrieben | | 14.09.2026 | |
+| 10 | Tahsin | angeschrieben | | 14.09.2026 | |
+| 11 | Sven | angeschrieben | | 14.09.2026 | |
+| 12 | Lars | angeschrieben | | 14.09.2026 | |
+| 13 | Dome | angeschrieben | | 14.09.2026 | |
+| 14 | Manuel | angeschrieben | | 14.09.2026 | |
+| 15 | Ronja | angeschrieben | | 14.09.2026 | |
+| 16 | Maltesa Westerwald | angeschrieben | | 14.09.2026 | |
+| 17 | Martin | angeschrieben | | 14.09.2026 | |
+| 18 | Luisa | angeschrieben | | 14.09.2026 | |
+| 19 | Lukas | angeschrieben | | 14.09.2026 | |
+| 20 | Fabian | angeschrieben | | 14.09.2026 | |
 
 ## Offene Punkte
 
 - Liste ist voll (20/20), keine weiteren Namen nötig.
-- Sobald ein Name angeschrieben ist: Status auf "angeschrieben am [Datum]" setzen, Spalte
-  "Wann angeschrieben" befüllen.
-- Reaktion nachtragen, sobald eine Antwort kommt (z.B. "interessiert", "kein Interesse",
-  "später nochmal", "Konto eröffnet").
+- Alle 20 sind laut Mike (14.09.2026) angeschrieben. Reaktion nachtragen, sobald eine Antwort
+  kommt (z.B. "interessiert", "kein Interesse", "später nochmal", "Konto eröffnet") —
+  aktuell pro Person noch offen.
 - Sobald jemand ein Konto über den Referral-Link eröffnet: Übertrag nach [[Kunden]] und
   [[Lot-Tracking]].
 
