@@ -450,3 +450,37 @@ Kein neuer Punkt. Alle drei verbleibenden Mike-only-Punkte sind laut eigener Auf
 
 ### Offene Fragen an Mike
 Keine neuen. Weiterhin unbeantwortet aus den letzten Runden: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch Telegram übernehmen soll.
+
+## Vorschlag für 2026-09-14 (zweiter Vorschlag, nach Leerlauf-Signal)
+*(Vom aufgaben-manager erzeugt direkt im Anschluss an den Executor-Lauf von heute Abend, 18:09 UTC, siehe LEERLAUF-Eintrag im Log. Wartet auf Mikes Bestätigung per Push-Nachricht.)*
+
+**Kontrolle vorab:** Der `## Bestätigt für 2026-09-14`-Abschnitt (3 Punkte: persönliche Anschreiben starten, Telegram-Warnungscheck, WhatsApp-Test) wurde vom Executor vollständig durchlaufen und mit unveränderter, nachvollziehbarer Begründung erneut als technisch blockiert dokumentiert (kein neues Werkzeug, kein neuer Fakt). Kein Beleg für "erledigt" bei einem der drei, deshalb keine Häkchen.
+
+**Ehrlicher Check, ob seit dem Vorschlag von heute Vormittag etwas Neues dazugekommen ist:** Nein.
+- [[Kontaktliste - 20 Namen aus dem Umfeld]]: unverändert 20/20 Namen, weiterhin 0 von 20 als "angeschrieben" markiert.
+- [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]: Mike-only-Zähler unverändert bei **3** (WhatsApp-Test, persönlich anschreiben, Telegram-Warnungscheck).
+- [[Brain Dump]] und [[Jarvis Aufgaben]]: erneut komplett gelesen, keine neuen offenen Punkte.
+- Keine neue Daily Note seit [[2026-09-12]] — kein zusätzlicher Beleg aus einer Daily Note für heute.
+- Domain-Check: [[Posting-Warteschlange]] zeigt seit der letzten Kontrolle nur Content-Domain-Einträge (u.a. Post Nr. 2 der Automatisierung am 14.09. um 16:37 UTC live gegangen) — kein Fehlrouting zwischen `Tagesplan.md` und `Posting-Warteschlange.md` gefunden.
+
+**Ergebnis:** Ich fülle hier nichts künstlich auf. Es gibt seit heute Vormittag keinen neuen, für den Executor lösbaren Stufe-0-Punkt und keinen neuen Mike-only-Punkt — die Lage ist exakt dieselbe wie im ersten Vorschlag von heute. Ich lege dieselben drei Punkte trotzdem erneut vor, damit du sie nicht aus dem Log heraussuchen musst und weißt, dass du hier nicht auf eine Antwort wartest, die noch kommt — der Ball liegt schlicht bei dir.
+
+### Direkt bei dir — größter Hebel weiterhin (Stufe 0, "Weiter, wenn": 10 geworbene Accounts, davon 5 aktiv)
+Aktuell weiterhin 0 Accounts im [[Lot-Tracking]] und 0 von 20 Kontakten angeschrieben. Laut MasterPlan Abschnitt 4 ist Kundengewinnung der eigentliche Engpass, nicht die Technik.
+- Die ersten persönlichen Anschreiben aus [[Kontaktliste - 20 Namen aus dem Umfeld]] starten (keine Massentexte, jede Nachricht einzeln) — mit Abstand der wichtigste der drei Punkte, weil er direkt neue Kunden bringen kann
+- WhatsApp end-to-end testen (jemanden bitten zu schreiben, danach Entwurf prüfen/freigeben)
+- Telegram-Warnungen am persönlichen Account prüfen (reine Sicht-Kontrolle in der App)
+
+Sobald einer dieser drei erledigt ist: direkt in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] abhaken. Der Mike-only-Zähler sinkt dann unter 3, die nächste Planungsrunde legt aus der Triage nach, falls neue Stufe-0-Punkte auftauchen.
+
+### Komplex — weiterhin bewusst zurückgestellt
+Unverändert: Website, Zugangs-Gate, Pflegedienst-Referenzprojekt, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. MasterPlan Punkt 8 (max. 1-2 aktive Baustellen, Automatisieren vor Validieren) — Stufe 0 (echte Kunden) steht noch nicht.
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Keine neuen Punkte.
+
+### Für den Executor tatsächlich offen
+Kein neuer Punkt. Alle drei verbleibenden Mike-only-Punkte sind strukturell nicht durch den Executor lösbar (siehe Begründung oben und in `## Technisch blockiert`).
+
+### Offene Fragen an Mike
+Keine neuen aus der Sache selbst. Weiterhin unbeantwortet aus den letzten Runden: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch Telegram übernehmen soll. Zusätzlich, aus diesem Lauf: soll für heute noch eine Daily Note [[2026-09-14]] angelegt werden (es gibt bisher keine seit dem 12.09.), oder lohnt sich das erst, sobald einer der drei Mike-only-Punkte oben erledigt ist?
