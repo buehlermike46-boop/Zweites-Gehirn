@@ -31,5 +31,24 @@ Umgerechnet sind das rund 250 EUR Umsatz je Kunde und Monat. Das Ziel von 1.000 
 ## Ziel (Stand aus dem Chat)
 Zusätzlicher monatlicher Überschuss von ca. 1.000 €, möglich über: mehr Kunden, bessere Auslastung, bessere Leistungen, Kooperationen, Google/Instagram/Facebook, Empfehlungen.
 
+## Entscheidung 14.09.2026: wird angegangen
+Mike hat im Chat entschieden, den Pflegedienst jetzt als drittes Standbein anzuknüpfen, weil
+das IB-Marketing-System aktuell weitgehend automatisch läuft und dadurch Kapazität frei ist,
+die vorher gefehlt hat (siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]], "möglicher
+Sprung: Marketing-System auf den Pflegedienst übertragen"). Es gibt laut Mike bereits eine
+Website für den Pflegedienst — URL/Details noch nicht erfasst, mit Mike nachtragen.
+
+**Termin geplant:** Mittwoch, 16.09.2026, 14:30-16:30 Uhr, Mike ist vor Ort bei seiner Mutter
+(Kalendereintrag "👵 Seniorendienst (Pflegedienst Mama) – Planung" angelegt). Besprechen: freie
+Kapazität für neue Kunden, ob es schon ein Google-Unternehmensprofil gibt, bestehende Website
+sichten, Instagram/Facebook-Auftritt analog zum IB-Business aufbauen.
+
+**Terminkonflikt, bei der Anlage aufgefallen:** Der Slot 14:30-16:30 überschneidet sich mit
+zwei bestehenden festen Blöcken aus dem Kalender — Schichtende "🏭 Frühschicht" bis 14:45 und
+"📈 Trading aktiv (RG Trading)" 15:15-16:15 (plus die ersten 15 Min. von "📝 Trading-Journal +
+Analyse" bis 16:30). Termin trotzdem wie gewünscht angelegt, Hinweis steht auch in der
+Termin-Beschreibung selbst — Mike entscheidet, ob er den Trading-Block diesen Mittwoch ausfallen
+lässt oder verschiebt.
+
 ## Referenzen
 - Siehe auch [[VT Markets Affiliate-Strategie & Content-Plan]] (gleicher Chat, dort primär zum Trading/Affiliate-Teil)
