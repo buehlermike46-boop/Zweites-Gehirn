@@ -371,3 +371,37 @@ Kein neuer Punkt. Solange der Mike-only-Bestand nicht sinkt (App-Logins, Kontakt
 
 ### Offene Fragen an Mike
 Keine neuen. Weiterhin unbeantwortet aus den letzten Runden: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch Telegram übernehmen soll.
+
+## Vorschlag für 2026-09-14
+*(Vom aufgaben-manager erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine — keine neue Deckel-Nachschub-Runde, da diese Runde nicht explizit dafür ausgelöst wurde. Wartet auf Mikes Bestätigung per Push-Nachricht.)*
+
+**Kontrolle vorab:** Letzter bestätigter Abschnitt bleibt `## Bestätigt für 2026-09-12 (Deckel-Runde 1)` (4 Punkte) — seitdem ist kein neuer Bestätigt-Abschnitt entstanden. Alle vier Punkte hat der Executor am 12.09. nachvollziehbar mit technischem Grund als blockiert dokumentiert; drei davon (Willkommensnachricht, drei Follow-ups, Limitless-Support-Anfrage) hat Mike laut seiner Chat-Aussage vom 13.09.2026 zwischenzeitlich selbst erledigt (siehe Log "2026-09-13, Chat mit Mike" und die Technisch-blockiert-Historie oben — dort entsprechend durchgestrichen/erledigt markiert). Nur Punkt 2 (Telegram-Warnungscheck) bleibt ohne neuen Beleg offen, kein Häkchen.
+
+**Frisch geprüft für diesen Lauf** (`git fetch origin master && git merge origin/master` zuerst durchgeführt, Stand danach Commit `28f9ecf`):
+- [[Kontaktliste - 20 Namen aus dem Umfeld]]: unverändert 20/20 Namen, aber weiterhin 0 von 20 als "angeschrieben" markiert — kein Fortschritt seit Listenanlage am 12.09.
+- [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]: Mike-only-Zähler unverändert bei **3** (WhatsApp-Test, persönlich anschreiben, Telegram-Warnungscheck) — die beiden Profilbild-Punkte sind laut Mike bereits am 13.09.2026 abends erledigt und dort abgehakt.
+- [[Brain Dump]] und [[Jarvis Aufgaben]]: erneut komplett gelesen, keine neuen offenen Punkte (Brain Dump nur bereits abgehakte oder auf die Triage verweisende Zeilen, Jarvis Aufgaben ausschließlich `status: erledigt`/`status: fehler`).
+- Keine neue Daily Note seit [[2026-09-12]] angelegt — kein zusätzlicher Beleg aus einer Daily Note für heute verfügbar.
+- Domain-Check: `content-manager`/`content-executor` liefen seit der letzten Kontrolle zweimal (13.09., wöchentlicher Planungslauf und planmäßiger Executor-Lauf, siehe [[Posting-Warteschlange]]) — beides bleibt klar im Content-Gebiet, kein Fehlrouting zwischen den beiden Systemen gefunden.
+
+**Ergebnis:** Kein neuer, für den `aufgaben-executor` eigenständig ausführbarer Stufe-0-Punkt. Damit bleibt es bei der bereits am 12.09. (Deckel-Runde 2) erschöpfend geprüften Lage: ohne neue Fakten von Mike (Fortschritt bei den Anschreiben, ein erledigter App-Login-Punkt) entsteht kein neuer `## Bestätigt`-Abschnitt.
+
+### Direkt bei dir — größter Hebel gerade (Stufe 0, "Weiter, wenn": 10 geworbene Accounts, davon 5 aktiv)
+Aktuell weiterhin 0 Accounts im [[Lot-Tracking]] und 0 von 20 Kontakten angeschrieben. Laut MasterPlan Abschnitt 4 ist Kundengewinnung der eigentliche Engpass, nicht die Technik — und das ist der einzige der drei verbleibenden Mike-only-Punkte, der direkt neue Kunden bringen kann.
+- Die ersten persönlichen Anschreiben aus [[Kontaktliste - 20 Namen aus dem Umfeld]] starten (keine Massentexte, jede Nachricht einzeln)
+- WhatsApp end-to-end testen (jemanden bitten zu schreiben, danach Entwurf prüfen/freigeben)
+- Telegram-Warnungen am persönlichen Account prüfen (reine Sicht-Kontrolle in der App)
+
+Sobald einer dieser drei erledigt ist: direkt in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] abhaken. Der Mike-only-Zähler sinkt dann unter 3, die nächste Planungsrunde legt aus der Triage nach, falls neue Stufe-0-Punkte auftauchen.
+
+### Komplex — weiterhin bewusst zurückgestellt
+Unverändert: Website, Zugangs-Gate, Pflegedienst-Referenzprojekt, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. MasterPlan Punkt 8 (max. 1-2 aktive Baustellen, Automatisieren vor Validieren) — Stufe 0 (echte Kunden) steht noch nicht.
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Keine neuen Punkte. Domain-Check durchgeführt: nichts in dieser Runde gehört ins Gebiet von `content-manager`/`content-executor`.
+
+### Für den Executor tatsächlich offen
+Kein neuer Punkt. Alle drei verbleibenden Mike-only-Punkte sind laut eigener Aufgabenbeschreibung strukturell nicht durch den Executor lösbar (persönliches Anschreiben ausdrücklich Mikes eigene Aufgabe, WhatsApp-Test braucht eine echte eingehende Nachricht von einer anderen Person, Telegram-Warnungscheck ist eine reine App-Ansicht ohne Bot-API-Äquivalent).
+
+### Offene Fragen an Mike
+Keine neuen. Weiterhin unbeantwortet aus den letzten Runden: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch Telegram übernehmen soll.
