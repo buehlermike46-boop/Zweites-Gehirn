@@ -381,8 +381,10 @@ Kein neuer Punkt. Solange der Mike-only-Bestand nicht sinkt (App-Logins, Kontakt
 ### Offene Fragen an Mike
 Keine neuen. Weiterhin unbeantwortet aus den letzten Runden: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch Telegram übernehmen soll.
 
-## Vorschlag für 2026-09-14
-*(Vom aufgaben-manager erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine — keine neue Deckel-Nachschub-Runde, da diese Runde nicht explizit dafür ausgelöst wurde. Wartet auf Mikes Bestätigung per Push-Nachricht.)*
+## Bestätigt für 2026-09-14
+*(Mike hat den Vorschlag vom 14.09.2026 per Chat bestätigt ("Bestätig"), 18:09 UTC. Der Executor arbeitet ab hier, mit voller Ausführungs-Autonomie (siehe `.claude/agents/aufgaben-executor.md`). Ursprünglich vom `aufgaben-manager` erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine — keine neue Deckel-Nachschub-Runde, da diese Runde nicht explizit dafür ausgelöst wurde.)*
+
+**Hinweis aus der Planungsrunde selbst, unverändert gültig:** Alle drei Punkte unten sind laut eigener Einordnung im Abschnitt "Für den Executor tatsächlich offen" (siehe Historie unten) strukturell nicht vom Executor lösbar — persönliches Anschreiben ist ausdrücklich Mikes eigene Aufgabe, der WhatsApp-Test braucht eine echte eingehende Nachricht von einer anderen Person, der Telegram-Warnungscheck ist eine reine App-Ansicht ohne Bot-API-Äquivalent. Erwartung: der Executor wird sie voraussichtlich wieder unter `## Technisch blockiert` einsortieren, das ist kein neuer Fehler.
 
 **Kontrolle vorab:** Letzter bestätigter Abschnitt bleibt `## Bestätigt für 2026-09-12 (Deckel-Runde 1)` (4 Punkte) — seitdem ist kein neuer Bestätigt-Abschnitt entstanden. Alle vier Punkte hat der Executor am 12.09. nachvollziehbar mit technischem Grund als blockiert dokumentiert; drei davon (Willkommensnachricht, drei Follow-ups, Limitless-Support-Anfrage) hat Mike laut seiner Chat-Aussage vom 13.09.2026 zwischenzeitlich selbst erledigt (siehe Log "2026-09-13, Chat mit Mike" und die Technisch-blockiert-Historie oben — dort entsprechend durchgestrichen/erledigt markiert). Nur Punkt 2 (Telegram-Warnungscheck) bleibt ohne neuen Beleg offen, kein Häkchen.
 
@@ -393,7 +395,7 @@ Keine neuen. Weiterhin unbeantwortet aus den letzten Runden: Start-Button-Weg im
 - Keine neue Daily Note seit [[2026-09-12]] angelegt — kein zusätzlicher Beleg aus einer Daily Note für heute verfügbar.
 - Domain-Check: `content-manager`/`content-executor` liefen seit der letzten Kontrolle zweimal (13.09., wöchentlicher Planungslauf und planmäßiger Executor-Lauf, siehe [[Posting-Warteschlange]]) — beides bleibt klar im Content-Gebiet, kein Fehlrouting zwischen den beiden Systemen gefunden.
 
-**Ergebnis:** Kein neuer, für den `aufgaben-executor` eigenständig ausführbarer Stufe-0-Punkt. Damit bleibt es bei der bereits am 12.09. (Deckel-Runde 2) erschöpfend geprüften Lage: ohne neue Fakten von Mike (Fortschritt bei den Anschreiben, ein erledigter App-Login-Punkt) entsteht kein neuer `## Bestätigt`-Abschnitt.
+**Ergebnis (Stand der ursprünglichen Planungsrunde, vor Mikes Bestätigung):** Kein neuer, für den `aufgaben-executor` eigenständig ausführbarer Stufe-0-Punkt. Damit blieb es bei der bereits am 12.09. (Deckel-Runde 2) erschöpfend geprüften Lage: ohne neue Fakten von Mike (Fortschritt bei den Anschreiben, ein erledigter App-Login-Punkt) wäre kein neuer `## Bestätigt`-Abschnitt entstanden. **Überholt 14.09.2026, 18:09 UTC:** Mike hat die drei Punkte trotzdem im Chat bestätigt (siehe Kopf dieses Abschnitts) — die Einordnung "strukturell nicht Executor-lösbar" bleibt inhaltlich unverändert gültig, nur die Bestätigung selbst ist neu.
 
 ### Direkt bei dir — größter Hebel gerade (Stufe 0, "Weiter, wenn": 10 geworbene Accounts, davon 5 aktiv)
 Aktuell weiterhin 0 Accounts im [[Lot-Tracking]] und 0 von 20 Kontakten angeschrieben. Laut MasterPlan Abschnitt 4 ist Kundengewinnung der eigentliche Engpass, nicht die Technik — und das ist der einzige der drei verbleibenden Mike-only-Punkte, der direkt neue Kunden bringen kann.
