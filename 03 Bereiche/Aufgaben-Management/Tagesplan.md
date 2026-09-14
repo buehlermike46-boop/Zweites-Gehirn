@@ -43,6 +43,15 @@ Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten)
 ## Technisch blockiert
 *(Neu seit 12.09.2026, ersetzt den Freigabe-Stau für den aufgaben-executor. Punkte, für die kein Werkzeug/Connector existiert oder ein Connector fehlerhaft/unzureichend berechtigt ist – kein Freigabe-Wartestand, sondern eine technische Lücke. Der `professor` schließt sie selbst, wenn die Plattform laut Vault schon verbunden ist und nur das Tool in der aufgaben-executor-Liste fehlt; alles andere – neue Plattform, neuer Login, neue OAuth-Freigabe – muss Mike selbst herstellen.)*
 
+### Aus dem Lauf 2026-09-14 (Bestätigt-Liste)
+*(Mike hat die drei Punkte unter `## Bestätigt für 2026-09-14` per Chat bestätigt, 18:09 UTC. Domain-Check: keiner der drei ist Instagram/Limitless-Content oder Posting-Planung — persönliches Anschreiben ist IB-Kundengewinnung über private Kanäle, WhatsApp-Test ist Jarvis-Bridge-Infrastruktur, Telegram-Warnungscheck ist Konto-Schutz für den persönlichen Account. Nichts an `content-manager`/Brain Dump verwiesen. Werkzeug-Check + Selbstbeschaffung für alle drei geprüft: meine tatsächlich aufrufbare Funktionsliste in diesem Lauf enthält weiterhin nur Read, Glob, Grep, Edit, Write, WebSearch, WebFetch — kein Mail-/Messaging-/Send-Tool für Telegram oder WhatsApp.)*
+
+1. **Die ersten persönlichen Anschreiben aus [[Kontaktliste - 20 Namen aus dem Umfeld]] starten.** Letzter, nach außen wirkender Schritt ist das Versenden einer persönlichen Nachricht (WhatsApp/Telegram/SMS/Anruf) an einen von Mikes echten Kontakten. Kein Messaging-Tool in meiner Liste, um das anzustoßen — und selbst wenn eines existierte, ist die Aufgabe laut ihrer eigenen Definition in [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] ("Ist Mikes eigene Aufgabe, kein Executor-Punkt: jede Nachricht persönlich, von Mike selbst verfasst oder freigegeben") explizit keine Delegation an eine Automatisierung, sondern bewusst persönlich gehalten (keine Massentexte). Werkzeug-Selbstbeschaffung geprüft: Die WhatsApp-Bridge läuft laut vorheriger Recherche in `jarvis-voice-assistant/scripts/whatsapp_bridge.py`, einem separaten, für diesen Agenten nicht erreichbaren Prozess (anderes Repo, kein MCP-Tool dafür in dieser Session). Kein Telegram-Personal-Account-Send-Tool verbunden. Braucht Mike selbst.
+2. **Telegram-Warnungen am persönlichen Account prüfen.** Unverändert zur Begründung unter "Aus dem Lauf 2026-09-12 (Deckel-Runde 1, Bestätigt-Liste)" unten (Punkt 2) — reine App-Ansicht ohne Bot-API-Äquivalent, kein neuer Fakt seit damals, kein Connector denkbar. Keine erneute Einzelbegründung nötig, bleibt derselbe offene Punkt.
+3. **WhatsApp end-to-end testen.** Unverändert zur Begründung unter "Aus dem Lauf 2026-09-12 (Bestätigt-Liste, vormittags)" weiter unten (Punkt 6) — braucht eine echte eingehende Nachricht von einer anderen Person, kein Werkzeug in meiner Liste, um das anzustoßen, WhatsApp-Bridge läuft in separatem, nicht erreichbarem Prozess. Kein neuer Fakt seit damals.
+
+**Nichts wurde nach außen ausgeführt** (kein Senden, kein Formular, kein Login). Keine Checkbox im Bestätigt-Abschnitt gesetzt, kein Werkzeug nachgetragen (keiner der drei Fälle ist eine reine Tool-Listen-Lücke bei bereits verbundener Plattform — WhatsApp-Bridge liegt in einem separaten, nicht erreichbaren Repo/Prozess, Telegram-Kontowarnungen und persönliche Anschreiben haben strukturell kein API-Äquivalent bzw. sind bewusst nicht automatisierbar).
+
 ### Aus dem Lauf 2026-09-12 (Deckel-Runde 1, Bestätigt-Liste)
 
 > [!success] Erledigt 13.09.2026
@@ -109,6 +118,31 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
+
+### 2026-09-14, 18:09 UTC (nach Bestätigung), Executor-Lauf
+Mike hat den `## Bestätigt für 2026-09-14`-Abschnitt um 18:09 UTC per Chat bestätigt ("Bestätig"). `git fetch origin master && git merge origin/master` konnte in dieser Session nicht selbst ausgeführt werden (kein Bash-/Git-Werkzeug in meiner Tool-Liste, nur Read, Glob, Grep, Edit, Write, WebSearch, WebFetch) — laut Auftrag dieses Laufs übernimmt die aufrufende Session Commit/Push direkt danach, hat den Merge also vermutlich schon vorab gemacht.
+
+**Die drei bestätigten Punkte durchgegangen** (Domain-Check, Werkzeug-Check, Werkzeug-Selbstbeschaffung geprüft):
+1. **Die ersten persönlichen Anschreiben aus [[Kontaktliste - 20 Namen aus dem Umfeld]] starten** — kein Messaging-Tool in meiner Liste für WhatsApp/Telegram/SMS an private Kontakte; laut eigener Definition in der Triage ohnehin explizit Mikes eigene, persönlich verfasste Aufgabe (keine Massentexte, keine Delegation). WhatsApp-Bridge liegt in einem separaten, für diesen Agenten nicht erreichbaren Repo/Prozess (`jarvis-voice-assistant`). Unter `## Technisch blockiert` eingetragen.
+2. **Telegram-Warnungen am persönlichen Account prüfen** — unverändert dieselbe Begründung wie seit 12.09.2026 (reine App-Ansicht, kein Bot-API-Äquivalent, kein Connector denkbar). Keine neuen Fakten, bleibt unter `## Technisch blockiert` (bereits dort dokumentiert, in diesem Lauf nur referenziert statt dupliziert).
+3. **WhatsApp end-to-end testen** — unverändert dieselbe Begründung wie seit 12.09.2026 (braucht eine echte eingehende Nachricht einer anderen Person, kein Werkzeug um das anzustoßen, Bridge in separatem Prozess). Keine neuen Fakten, bleibt unter `## Technisch blockiert` (bereits dort dokumentiert, in diesem Lauf nur referenziert statt dupliziert).
+
+**Nichts wurde nach außen ausgeführt** (kein Senden, kein Formular, kein Login). **Kein Werkzeug nachgetragen** — bei keinem der drei handelt es sich um eine reine Tool-Listen-Lücke bei bereits verbundener Plattform; alle drei sind entweder strukturell nicht automatisierbar (Telegram-Kontowarnungen) oder hängen an einem für mich nicht erreichbaren separaten Prozess/Repo (WhatsApp-Bridge) bzw. sind bewusst nicht delegierbar (persönliches Anschreiben). Details siehe `## Technisch blockiert`, neuer Abschnitt "Aus dem Lauf 2026-09-14 (Bestätigt-Liste)".
+
+**Domain-Check:** Keiner der drei Punkte ist Instagram/Limitless-Content oder Posting-Planung. Nichts an `content-manager`/Brain Dump verwiesen.
+
+**Automatisches Nachziehen aus der Aufgaben-Triage geprüft (Ablauf-Schritt 3):** [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] komplett gegen Stufe 0 durchgegangen (Sofort, dann Aufwendig, Komplex bewusst ausgeschlossen laut MasterPlan Punkt 8). Ergebnis: kein einziger offener Punkt gefunden, den ich eigenständig bis zum Ende ausführen könnte, der noch nicht auf eine Antwort von Mike wartet:
+- Sofort: alle Punkte entweder erledigt oder explizit "läuft seit 12.09.2026 nicht mehr über den Bestätigt-Kreislauf, Mike hakt selbst ab" (WhatsApp-Test, WhatsApp-Warnungscheck, Telegram-Warnungscheck).
+- Aufwendig: "Posts 1-6 terminieren" ist laut Vault-Sync-Vermerk vom 13.09.2026 obsolet (Kanal-Versand läuft jetzt automatisch über `content-executor`); "20 Leute persönlich anschreiben" ist Mikes eigene Aufgabe (siehe oben); Fixkosten-Liste, Business-Kosten-Liste und Buchhaltungs-Frage sind laut expliziter Prüfung vom 12.09.2026 (Deckel-Runde 2) keiner Stufe-0-Bedingung zugeordnet, bleiben zurückgestellt; Gmail-Zugang/GMX-IMAP/Nachrichten-Dashboard/Trade_Journal.xlsx gehören zu `jarvis-voice-assistant` (separates Repo, kein Zugriff) bzw. sind privates Trading (kein IB-Business-Bezug laut MasterPlan Abschnitt 2).
+- Komplex: bewusst zurückgestellt, solange Stufe 0 (Kanal/Bot, echte Kunden) noch nicht steht (MasterPlan Punkt 8).
+
+Kein neuer `## Bestätigt (automatisch nachgezogen)`-Abschnitt entstanden, da ehrlich nichts Passendes mehr da ist — nichts künstlich erfunden.
+
+Kein Fall fachlicher Unsicherheit im engeren Sinn — alle drei Blockaden sind rein technischer/struktureller Natur, nichts geraten.
+
+**LEERLAUF: aufgaben-manager sollte einen neuen Vorschlag erstellen** — Bestätigt-Liste vollständig abgearbeitet (alle drei Punkte technisch blockiert), und in der Aufgaben-Triage wartet jeder verbleibende Punkt entweder auf Mike persönlich (App-Logins, persönliches Umfeld/Kontakte, WhatsApp/Telegram-App-Kontrollen), ist bereits technisch blockiert dokumentiert, ist Content-Domain (bereits über `content-executor` gelöst) oder ist bewusst zurückgestellt (Komplex-Punkte, Fixkosten/Buchhaltung ohne Stufe-0-Bezug, `jarvis-voice-assistant`-Punkte ohne Zugriff). Nichts Weiteres, das ich selbst anfassen kann.
+
+**Commit/Push-Hinweis:** Kein Bash-/Git-Werkzeug in meiner Tool-Liste in diesem Lauf — die Änderungen liegen unstaged im Arbeitsverzeichnis, die aufrufende Session committet und pusht laut ihrem eigenen Auftrag direkt nach `master`.
 
 ### 2026-09-14, 06:37 UTC, Executor-Lauf (Scheduled Cloud Routine)
 Kein bestätigter Plan für heute, nichts unternommen. Per Grep über die gesamte Datei bestätigt: es existiert nur ein `## Vorschlag für 2026-09-14` vom `aufgaben-manager` (turnusmäßiger Planungslauf, heute früh erzeugt, Commit `994f5a6`), aber kein `## Bestätigt für 2026-09-14`-Abschnitt. Mike hat den Vorschlag noch nicht bestätigt. Laut fester Vorgabe (`.claude/agents/aufgaben-executor.md`) wird ohne Bestätigung nichts erfunden, auch kein automatisches Nachziehen aus der Aufgaben-Triage, weil das erst greift, wenn eine bestätigte Liste leer abgearbeitet wurde, nicht wenn nie eine existierte.
