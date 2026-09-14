@@ -37,7 +37,7 @@ Der Prozess selbst bleibt wie hier beschrieben:
 
 1. **Der `content-manager` plant wöchentlich genug Content** (Themen aus `00 Kontext/Angebot.md`, eigene Performance-Zahlen, öffentliche Trend-/Ads-Recherche nur zur Inspiration, siehe unten)
 2. **Freigabe-Schritt** gemäß aktiver Phase (siehe oben)
-3. **Posten auf Instagram** über den `content-executor` (Facebook-Ziel noch offen, siehe offene Punkte)
+3. **Posten auf Instagram** über den `content-executor`, seit 14.09.2026 mit Auftrag zum Facebook-Cross-Posting sobald technisch möglich (siehe "Offene technische Punkte" unten und [[Posting-Warteschlange]])
 4. **Danach laufend tracken**: Beiträge, Storys, Reels (Performance-Daten über Windsor.ai, siehe [[Performance-Log]])
 5. **Der `content-manager` entscheidet wöchentlich, was gut/schlecht läuft** — schlecht laufender Content wird entfernt/nicht wiederholt, gut laufender wird als Vorlage für Verbesserungen genutzt
 6. **Ziel**: Reichweite und Klicks maximieren, um Kunden zu gewinnen — kontinuierliche Verbesserung, nicht nur einmalig posten und fertig
@@ -56,6 +56,7 @@ Das ist die verbindliche Arbeitsweise ab jetzt, nicht nur für diese Session.
 - Quellen: [Contentworks](https://contentworks.agency/6-instagram-finance-reels-ideas-to-try-this-year/), [FlowShorts](https://flowshorts.app/instagram-reels-ideas/finance), [Hootsuite Instagram-Algorithmus 2026](https://blog.hootsuite.com/instagram-algorithm/), [Pay2.House Telegram-Funnels 2026](https://pay2.house/blogs/article/telegram-voronki-v-arbitrazhe-2026-kak-postroit-masshtabiruemuyu-sistemu-privlecheniya-i-ne-popast-pod-blokirovku?hl=en)
 
 ## Offene technische Punkte
+- **Facebook Cross-Posting (Auftrag Mike, 14.09.2026):** Alles, was auf Instagram gepostet wird, soll auch auf Facebook laufen. Geprüft: der verbundene Meta-Ads-Connector "facebook" deckt nur Kampagnen/Boosting ab (für uns ohnehin tabu, keine bezahlte Werbung). Der richtige Connector für organische Page-Posts ("facebook_organic") ist noch nicht verbunden — braucht einen neuen OAuth-Connect durch Mike. Auch danach nur Bild-/Text-Posts möglich (keine native Video-/Carousel-/Story-Action). Details und Übergangslösung in [[Posting-Warteschlange]], Abschnitt "Facebook Cross-Posting".
 - **GitHub-Repo `limitless-content` ist tot, Ursache gefunden (09.09.2026):** Der zugehörige Google-Account `buhlermike307@gmail.com` (Basis für den GitHub-Account `buhlermike307-del`) wurde von Google am 09.09.2026 deaktiviert — Begründung laut Google: "wurde offenbar mit mehreren anderen Konten erstellt... möglicherweise von einem Computerprogramm erstellt" (als Bot/Massen-Account geflaggt). Das erklärt die durchgängigen "Permission denied"-Fehler beim `git push`, unabhängig vom Token — der Account selbst ist gesperrt, kein Token-Scope-Problem. **Diesen Account/dieses Repo für künftige Automatisierung nicht mehr verwenden.** Für das JPEG-Hosting-Problem braucht es einen neuen Ansatz (z.B. Repo unter Mikes Hauptaccount, oder komplett andere Hosting-Lösung) — offener Punkt für später.
 - Scheduled Task für den wiederkehrenden Content-Zyklus noch nicht aufgesetzt
 - Erster Post läuft für heute manuell über die Instagram-App (09.09.2026), nicht über die API

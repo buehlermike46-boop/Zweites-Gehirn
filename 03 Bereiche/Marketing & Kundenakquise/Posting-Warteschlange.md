@@ -33,6 +33,17 @@ Ab jetzt postet der `content-executor` neue, fällige Posts mit Status `bereit (
 Operative Liste für die Auto-Posting-Automatisierung (siehe
 [[Content-Plan - Woche 07.09.-13.09.2026]] für den Gesamt-Wochenplan inkl. Personal-Account).
 
+## Facebook Cross-Posting (Auftrag 14.09.2026, Mike per Chat)
+
+**Auftrag:** "Poste ab sofort alles auch auf Facebook, das du auf Instagram postet, zusammen." Gilt für alle künftigen Posts dieser Warteschlange (Limitless-Account), nicht rückwirkend.
+
+**Technischer Stand, geprüft 14.09.2026 (`mcp__Windsor-ai__get_connectors`/`list_actions`):**
+- Der Meta-Ads-Connector "facebook" ist zwar verbunden (Account "Mike Bühler"), deckt aber nur Kampagnen/Anzeigen/Boosting ab — keine organischen Page-Posts. Für die CFD/Forex-Inhalte hier ist bezahlte Werbung ohnehin strikt tabu (Meta-Regel, Account-Risiko), dieser Connector kommt für Cross-Posting also nicht infrage.
+- Der richtige Connector wäre "facebook_organic" (organische Page-Posts) — **ist aktuell nicht verbunden**, kein Account hinterlegt. Braucht einen neuen OAuth-Connect, den nur Mike selbst herstellen kann (gleiches Prinzip wie bei jeder neuen Plattform, siehe `aufgaben-executor.md`).
+- **Zusätzliche Einschränkung, auch nach dem Connect:** "facebook_organic" unterstützt laut `list_actions` nur `create_photo_post` (einzelnes Bild + Caption) und `create_post` (Text/Link). Keine Aktion für Video/Reel, Carousel oder Story. Echtes 1:1-Cross-Posting ist also nur für Bild-Posts möglich — Reels und Carousels (der Großteil der aktuellen Warteschlange) können nicht in gleicher Form auf Facebook gepostet werden, bestenfalls als vereinfachter Text-Post mit Caption oder als Einzelbild (z. B. Slide 1 eines Carousels).
+
+**Status: technisch blockiert, an Mike.** Sobald die Facebook-Seite über Windsor.ai verbunden ist (neuer OAuth-Connect durch Mike), übernimmt `content-executor` ab dann automatisch: Bild-Posts/Carousels 1:1 (erstes Slide als Foto) auf Facebook mitposten, für Reels einen Text-Post mit Caption + Hinweis "Video im Instagram-Kanal" als Behelfslösung, bis ggf. ein Video-fähiger Connector dazukommt. `professor` bekommt diesen Punkt zur Kenntnis für seine nächste Runde (Connector-Lücke, Plattform neu).
+
 **Uhrzeiten bewusst leicht gestreut (08.09.2026 angepasst):** nicht mehr exakt 19:30 auf die
 Minute für jeden Post — wirkt sonst nach Bot und widerspricht der "authentische Journey"-
 Positionierung. Stattdessen Fenster 18:45–20:00 Uhr, pro Post leicht verschoben. Die
