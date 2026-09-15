@@ -1,7 +1,7 @@
 ---
 tags: [projekt, uebersicht, steuerung]
 status: aktiv
-date: 2026-09-12
+date: 2026-09-15
 ---
 
 # Aufgaben-Triage (Sofort, Aufwendig, Komplex)
@@ -82,6 +82,12 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 
 **Neuer Mike-only-Zähler-Stand: 1** (3 minus die zwei heute erledigten Punkte). Einzig verbleibend: WhatsApp-Test, ohne Termin. In [[Tagesplan]] den offenen `## Vorschlag für 2026-09-14 (zweiter Vorschlag)` entsprechend aufgelöst — kein neuer Bestätigt-Abschnitt nötig, da für den Executor aktuell kein eigenständig ausführbarer Punkt übrig ist.
 
+**Kontrolle 15.09.2026 ([[aufgaben-manager]], turnusmäßiger Planungslauf, Scheduled Cloud Routine):** Seit dem letzten Lauf (14.09.2026, Chat mit Mike) kein neuer Executor-Lauf und kein neuer Beleg zu prüfen — es existiert seitdem kein neuer `## Bestätigt`-Abschnitt in [[Tagesplan]], nur der bereits aufgelöste zweite Vorschlag vom 14.09. [[Kontaktliste - 20 Namen aus dem Umfeld]] unverändert: 20/20 angeschrieben, weiterhin 0 Reaktionen eingetragen (wartet auf Mikes eigene Rückmeldungen bzw. auf Antworten der Kontakte, kein Executor-Punkt). [[Lot-Tracking]] weiterhin bei 0 Accounts/0 Lots. [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen: keine neuen offenen Punkte (Jarvis Aufgaben weiterhin ausschließlich `status: erledigt`/`status: fehler`). Domain-Check: [[Posting-Warteschlange]] und [[Inner Circle Kanal-Content]] zeigen seit der letzten Kontrolle weiterhin nur Content-Domain-Einträge (Post Nr. 2 am 14.09. live gegangen, Post Nr. 3 für 15.09. bereits freigegeben, Telegram-Kanal-Versand läuft automatisiert über `content-executor`) — kein Fehlrouting gefunden.
+
+Kleine Aufräumung: Die Zeile "Posts 1-6 terminieren" unter Aufwendig war laut dem Vault-Sync-Vermerk oben in dieser Datei bereits seit 13.09.2026 als obsolet dokumentiert (Kanal-Versand läuft automatisch über `content-executor`, siehe [[Inner Circle Kanal-Content]] Abschnitt 9), aber die Checkbox selbst stand noch offen — unten nachgezogen, keine neue inhaltliche Entscheidung.
+
+**Mike-only-Zähler unverändert bei 1** (nur noch WhatsApp-Test, weiterhin ohne Termin, bewusst außerhalb des Bestätigt-Kreislaufs). Deckel-Nachschub-Prüfung: Zähler liegt weit unter dem Deckel von 20, aber es gibt ehrlich keinen neuen, für den Executor eigenständig ausführbaren Stufe-0-Punkt in dieser Triage — kein künstliches Auffüllen, kein neuer Bestätigt-Abschnitt in dieser Runde. Neuer Vorschlag für den 15.09. steht in [[Tagesplan]]: größter tatsächlicher Hebel bleibt bei Mike selbst (Reaktionen der 20 Kontakte einsammeln/nachfassen, sobald jemand antwortet, plus der weiterhin offene WhatsApp-Test).
+
 ---
 
 ## 1. Sofort (21)
@@ -122,7 +128,7 @@ Ergebnis: keine neuen Punkte für Stufe 0 gefunden, weder aus der Inbox noch aus
 ## 2. Aufwendig (14)
 
 ### Content und Akquise
-- [ ] Posts 1 bis 6 für Woche 1 im Kanal terminieren (ca. 60 Minuten am Wochenende) — **läuft seit 12.09.2026 nicht mehr über den Tagesplan-Bestätigt-Kreislauf, Mike hakt selbst ab, sobald erledigt** (reine Telegram-App-UI-Funktion ohne Bot-API-Äquivalent, siehe [[Tagesplan]]). Inhaltlich seit 13.09.2026 nichts mehr offen: alle sechs Posts inkl. Post 6 fertig ausformuliert in [[Inner Circle Kanal-Content]], nur das Terminieren selbst steht noch aus
+- [x] ~~Posts 1 bis 6 für Woche 1 im Kanal terminieren~~ — **obsolet seit 13.09.2026, nachgezogen 15.09.2026:** manuelles Terminieren in der Telegram-App entfällt, der Kanal-Versand läuft seit 13.09.2026 automatisch über `content-executor` (siehe [[Inner Circle Kanal-Content]] Abschnitt 9), Post 1 bereits live gepostet. War im Kopf dieser Datei (Vault-Sync-Vermerk) bereits als obsolet dokumentiert, nur die Checkbox selbst stand noch offen
 - [x] Neue Willkommensnachricht im Bot eintragen inklusive Button "Konto eröffnen" — **erledigt 12.09.2026** über den Make.com-Connector dieser interaktiven Session direkt im Blueprint der `/start`-Route eingetragen (neuer Text aus [[Inner Circle Kanal-Content]] Abschnitt 7, Link `?ref=2A5CC2B8` eingesetzt, Inline-Button "🏦 Konto eröffnen"), per erneutem Abruf verifiziert, am 13.09.2026 von Mike im Chat nochmal bestätigt
 - [x] Drei Follow-ups im Bot einrichten (24 Stunden, 3 Tage, 7 Tage) — Texte fertig in [[Inner Circle Kanal-Content]] Abschnitt 7. Hing zunächst an einem Data-Store-Speicherlimit (Make-Team-Konto, siehe [[Tagesplan]] für Details) — **erledigt 13.09.2026**, Mike hat die Datenstruktur-Erweiterung und das Eintragen selbst am PC gemacht
 - [x] Liste mit 20 Namen aus dem echten Umfeld zusammenstellen, die Trading interessiert — **erledigt 12.09.2026, 20/20 komplett** (letzte 4: Martin, Luisa, Lukas, Fabian), Tracking in [[Kontaktliste - 20 Namen aus dem Umfeld]]
