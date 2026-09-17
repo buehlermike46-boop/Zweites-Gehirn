@@ -626,9 +626,9 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 | Post | Datum/Zeit (Plan) | Status |
 |---|---|---|
 | 1 Warum es diesen Kanal gibt | Mo 14.09., 17:00 | gepostet (13.09.2026, auf Mikes Wunsch vorgezogen) |
-| 2 Warum Gold | Di 15.09., 17:00 | offen |
-| 3 Der Fehler, der 90% killt | Mi 16.09., 17:00 | offen |
-| 4 Umfrage | Do 17.09., 17:00 | offen |
+| 2 Warum Gold | Di 15.09., 17:00 | gepostet (17.09.2026, ca. 16:43 UTC, Nachhol-Lauf — Original-Termin 15.09. verpasst, siehe Executor-Log) |
+| 3 Der Fehler, der 90% killt | Mi 16.09., 17:00 | gepostet (17.09.2026, ca. 16:45 UTC, Nachhol-Lauf — Original-Termin 16.09. verpasst, siehe Executor-Log) |
+| 4 Umfrage | Do 17.09., 17:00 | gepostet als Text-Frage (17.09.2026, ca. 16:47 UTC) — kein natives Telegram-Umfrage-Feature im Make-Werkzeug, daher als normale Text-Nachricht mit Antwortoptionen gepostet, siehe Executor-Log |
 | 5 Was du zum Start brauchst | Fr 18.09., 17:00 | offen |
 | 6 Wochenausblick | So 20.09., 17:00 | offen |
 | 7 Wie ich das neben Schicht/Kindern mache | Mo 21.09., 11:00 | offen |
@@ -647,6 +647,18 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 Mike hat direkt im Chat "poste jetzt einen echten Post in meinen Kanal" verlangt. Post 1 ("Warum es diesen Kanal gibt") aus dem 14-Tage-Plan war der nächste fällige, thematisch passt er als Kanal-Opener am besten. Der hinterlegte Asset-Pfad (`Bilder/Fertig/01-warum-tradest-dueigentlich-noch-alleine.png`) war wie erwartet unerreichbar (lokal bei Mike, nicht im Git-Vault) — daher ein neues, passendes Bild über Jarvis erstellt (dunkles Navy/Gold, Silhouette auf Weg zum Chart-Horizont, kein Logo/Text, quadratisch), URL: `https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260913_133722_0469941a-2cae-49d1-bc47-67536f56619c.png`.
 
 Gepostet über das Werkzeug "Telegram Kanal: Post Versand" (Szenario-ID 7391673, `media_type: photo`) an `@JointoInnerCircle`. **Erfolgreich, Execution-Status SUCCESS.** Message-ID kam über diese Route nicht strukturiert zurück (Szenario hat kein Output-Interface definiert) — bei Bedarf später in Telegram nachschauen oder Output-Interface ergänzen. Post-Status oben aktualisiert. Keine Freigabe- oder Credit-Probleme (718,5 Credits vor der Generierung, Plus-Plan).
+
+### 2026-09-17, ca. 16:39-16:47 UTC, Nachhol-Lauf nach dreitägiger Lücke
+
+Bei Session-Start standen Post 2, 3 und 4 alle noch auf `offen`, obwohl Post 2 (Di 15.09.) und Post 3 (Mi 16.09.) laut 14-Tage-Plan längst fällig waren. Gleiche Ursache/Lücke wie im parallelen Instagram-Nachhol-Lauf desselben Tages, siehe [[Posting-Warteschlange]] Executor-Log 17.09. für Details — vermutlich ist der geplante tägliche Lauf zwischen dem 14.09. und 17.09. keiner Session zugestellt/verarbeitet worden, nicht abschließend geklärt, Punkt für `professor`.
+
+Alle drei nachgeholt statt nur den heutigen Post, gleiche Begründung wie bei Instagram (Lücke nicht weiter vergrößern, Freigabe-Phase hier ohnehin komplett automatisch):
+
+- **Post 2, "Warum Gold":** Asset (`Telegram/ic-01-warum-gold.png`) wie erwartet unerreichbar (lokal bei Mike), neues Bild über Jarvis `nano_banana_2` erstellt (abstrakte Gold-Chart-Optik). Gepostet als Foto mit dem vollständigen Post-2-Text aus Abschnitt 4 als Caption. Execution-Status SUCCESS.
+- **Post 3, "Der Fehler, der 90% killt":** gleiches Vorgehen, neues Bild (abstrakte Waage/Risiko-Symbolik) über Jarvis erstellt, gepostet mit dem vollständigen Post-3-Text. Execution-Status SUCCESS.
+- **Post 4, "Umfrage":** Das Make-Werkzeug "Telegram Kanal: Post Versand" unterstützt nur `media_type` text/photo/video, **keine native Telegram-Umfrage**. Statt zu improvisieren oder das Szenario zu ändern (Neubau/Änderung von Make-Szenarien ist laut `content-executor.md` ausdrücklich Mike/Hauptsession vorbehalten), die Umfrage-Frage samt der vier Antwortoptionen als reinen Text-Post gesendet (`media_type: text`), mit Bitte um Antwort per Reaktion/Kommentar statt per Umfrage-Sticker. Execution-Status SUCCESS. Für Mike/`professor` als offener technischer Punkt vermerkt: falls native Umfragen gewünscht sind, bräuchte es entweder ein eigenes Make-Modul für `sendPoll` oder eine manuelle Umfrage von Mike selbst.
+
+Post-Status-Tabelle oben aktualisiert. Keine Freigabe-Probleme (Phase ist hier ohnehin automatisch), keine Credit-Probleme (707,5 Credits vor der Instagram+Telegram-Runde zusammen, reichte für beide Plattformen deutlich).
 
 ---
 

@@ -76,28 +76,28 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #primeverse #limitless #tradingcommunity
 
 ### 3. Dienstag, 15.09.2026, 19:45 Uhr
-- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Status:** gepostet (17.09.2026, ca. 16:52 UTC, Nachhol-Lauf — Original-Termin 15.09. verpasst, siehe Executor-Log). Media-ID 18137862454715385
 - **Format:** Reel
 - **Asset (alt, unerreichbar — Korrektur `content-manager` 13.09.2026):** ~~`Lim/Content/Videos/08-24-bis-zur-pruefung.mp4`~~ liegt lokal bei Mike außerhalb des Git-Vaults, für den `content-executor` nicht erreichbar.
-- **Ersatz-Generation-Brief (frisch über Jarvis zu erstellen):** 15s faceless Reel, Text-Overlay/Timeline-Optik, zeigt die drei Schritte "Bewerbung → Prüfung (laut Anbieter ca. 24h) → Freischaltung" als einfache Kette/Fortschrittsbalken. Kein Gesicht, keine Kontostände, keine Gewinn-Darstellung.
+- **Asset (neu, über Jarvis `seedance_2_5` erstellt, gepostet):** faceless Timeline-Animation der drei Schritte "Bewerbung → Prüfung → Freischaltung".
 - **Caption:** "Von der Bewerbung bis zur Freischaltung: laut Limitless im Schnitt 24 Stunden. Kein wochenlanges Warten. Schreib mir 'START', ich schick dir den Link."
 - **Hashtags:** #trading #limitless #forextrading #tradingtipps
 
 ### 4. Mittwoch, 16.09.2026, 19:00 Uhr
-- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Status:** gepostet (17.09.2026, ca. 16:51 UTC, Nachhol-Lauf — Original-Termin 16.09. verpasst, siehe Executor-Log). Media-ID 18153905323512731
 - **Format:** Reel (faceless, Text-Overlay/Screen-Recording-Stil, kein KI-Avatar als Mike)
 - **Thema/Hook:** Copy Trading ehrlich erklärt. Kontrast-Hook: "Copy Trading heißt nicht Knopf drücken und fertig. Was in den Signalgruppen wirklich passiert, in 30 Sekunden."
 - **Fakt/Nutzwert (Angebot.md):** Premium-Signalgruppen, in denen professionelle Trader ihre Trades zum Kopieren einstellen, komplett kostenfrei Teil vom Limitless-Ökosystem.
-- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: kurzes Erklär-Reel mit Text-Overlays, das den Ablauf "Signal kommt rein → Trade wird sichtbar → du entscheidest, ob du mitgehst" zeigt. Keine Gesichter, keine Gewinn-Screenshots mit konkreten Euro-Beträgen, neutrale Chart-/App-Optik im bestehenden Limitless-Look.
+- **Asset:** über Jarvis `seedance_2_5` erstellt und gepostet: Erklär-Reel mit dem Ablauf "Signal kommt rein → Trade wird sichtbar → du entscheidest, ob du mitgehst".
 - **Caption:** "Copy Trading heißt nicht: Knopf drücken, Geld kommt von allein. In den Signalgruppen von Limitless stellen erfahrene Trader ihre eigenen Trades zum Nachvollziehen ein, du siehst Einstieg, Stop und Ziel und entscheidest selbst, ob und wie du mitgehst. Kostenfrei, ohne Abo. Mehr dazu und wie du reinkommst, zeig ich dir in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung, Trading ist mit Risiko verbunden."
 - **Hashtags:** #copytrading #trading #tradingsignale #limitless #tradingeducation
 
 ### 5. Donnerstag, 17.09.2026, 19:15 Uhr
-- **Status:** freigegeben (11.09.2026, Mike per Chat)
-- **Format:** Carousel (4-5 Bilder)
+- **Status:** gepostet (17.09.2026, ca. 16:53 UTC, im Rahmen des Nachhol-Laufs vorgezogen — planmäßiger Termin war 19:15 Uhr, siehe Executor-Log). Media-ID 18088200095689277
+- **Format:** Carousel (5 Bilder)
 - **Thema/Hook:** Myth-Busting "vollautomatisiert = Geld im Schlaf?". Hook: "Vollautomatisiert heißt nicht: kein Risiko. Was Hands-Free Trading wirklich bedeutet."
 - **Fakt/Nutzwert (Angebot.md):** vollautomatisierte Trading-Bot-Systeme, laut Anbieter 24/5 von Vollzeit-Tradern verwaltet, Teil des kostenfreien Limitless-Zugangs.
-- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: 4-5 Info-Grafik-Slides im bestehenden Limitless-Look (wie die Grafik vom 09.09.). Slide 1 Hook/Mythos, Slide 2 was Hands-Free wirklich ist, Slide 3 was es NICHT ist (keine Gewinngarantie, Risiko bleibt beim Nutzer), Slide 4 für wen es Sinn ergibt, Slide 5 CTA zum Kanal.
+- **Asset:** über Jarvis `nano_banana_2` erstellt und gepostet: 5 Info-Grafik-Slides (Hook, was Hands-Free ist, was es nicht ist, für wen, CTA).
 - **Caption:** "Vollautomatisiert heißt nicht automatisch sicher. Die Hands-Free-Bots bei Limitless werden laut Anbieter rund um die Uhr von Vollzeit-Tradern verwaltet, das Risiko liegt aber trotzdem bei dir und deinem Konto. Kein System garantiert Gewinne. Was so ein Bot wirklich macht und für wen sich das eignet, zeig ich dir Schritt für Schritt in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung, keine Gewinngarantie."
 - **Hashtags:** #tradingbot #automatisiertestrading #limitless #tradingeducation #finanziellefreiheit
 
@@ -220,6 +220,22 @@ Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09
 
 ### 2026-09-13, 16:36 UTC, planmäßiger täglicher Lauf
 Zur Kenntnis genommen: Freigabe-Phase wurde heute von Mike auf **Phase 2 (automatisch)** umgestellt, siehe Abschnitt oben. Nichts fällig zum Posten in diesem Lauf (Eintrag Nr. 2, Montag 14.09. 18:50 Uhr, liegt mit ca. 26h noch knapp außerhalb des 24h-Fensters, ist bereits `freigegeben` und wird morgen fällig). Post Nr. 1 bereits ausgewertet (12.09.), noch keine neuen Rohzahlen fällig. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme. Content-Manager läuft heute 17:00 UTC turnusmäßig selbst (Sonntag), keine Überschneidung mit diesem Lauf.
+
+### 2026-09-17, 16:39-16:53 UTC, Nachhol-Lauf nach dreitägiger Lücke
+
+**Ausgangslage:** Zwei Scheduled-Trigger-Benachrichtigungen lagen bei Session-Start an (gefeuert 16.09. 16:35 UTC und 17.09. 16:35 UTC), aber offenbar hatte auch schon der 15.09.-Lauf niemanden erreicht — Queue-Einträge #3 (15.09.), #4 (16.09.) und #5 (17.09., heute planmäßig) standen alle noch auf `freigegeben` bzw. unbearbeitet vor. **Ursache nicht abschließend geklärt:** entweder ist der 15.09.-Trigger gar nicht gefeuert, oder die Benachrichtigung ist keiner Session zugestellt/verarbeitet worden. Das ist ein Punkt für `professor`, nicht selbst reparierbar aus diesem Lauf heraus. Erst nach `git fetch origin master && git merge origin/master` (11 Commits von anderen Sessions seit dem letzten Stand dieser Session, u.a. Aufgaben-Management, Kontaktliste, Pflegedienst) war der lokale Stand wieder aktuell.
+
+**Alle drei fälligen Posts nachgeholt statt nur den heutigen:** bewusste Entscheidung, weil alle drei bereits `freigegeben` waren (keine Freigabe-Grenze verletzt) und länger liegen zu lassen die Lücke nur vergrößert hätte. Guthaben vor der Runde: 707,5 Credits, `plus`-Plan.
+
+- **Post Nr. 3** (ursprünglich Di 15.09., 19:45 Uhr): Ersatz-Generation-Brief umgesetzt, 15s faceless Reel "Bewerbung → Prüfung → Freischaltung" über `seedance_2_5`. Gepostet: **Media-ID 18137862454715385**.
+- **Post Nr. 4** (ursprünglich Mi 16.09., 19:00 Uhr): Reel "Copy Trading ehrlich erklärt" über `seedance_2_5` erstellt und gepostet: **Media-ID 18153905323512731**.
+- **Post Nr. 5** (planmäßig heute, 17.09., 19:15 Uhr, im Lauf vorgezogen): Carousel "Hands-Free Trading Myth-Busting", 5 Slides über `nano_banana_2` erstellt und gepostet: **Media-ID 18088200095689277**.
+
+Alle drei Käptions/Hashtags 1:1 wie in der Queue hinterlegt übernommen, keine inhaltlichen Änderungen. Kein Credit-Problem (Guthaben reichte für alle drei Generierungen deutlich). Post Nr. 2 (14.09. Carousel) währenddessen ausgewertet, siehe [[Performance-Log]] — Rohzahlen erst nach ~3 statt der üblichen 1-2 Tage nachgetragen, gleicher Grund (Lücke).
+
+**Kleiner Vorbehalt zu Slide 5 des heutigen Carousels:** Im Prompt für die letzte Carousel-Folie war ein Tippfehler ("STARTMhr" statt "START" mit separatem "Mehr dazu"), der Post ist bereits live (Media-ID 18088200095689277). Sollte Mike beim Ansehen einen Textfehler auf der letzten Folie bemerken: das ist die Ursache, keine Handlungsnotwendigkeit von hier aus, aber zur Kenntnis.
+
+Alle drei Posts direkt nacheinander in einem ca. 15-minütigen Fenster gepostet statt über den Tag verteilt (anders als die sonst bewusst gestreuten Uhrzeiten) — Kompromiss, um die Backlog-Lücke nicht noch weiter zu verlängern. Für künftige Läufe kein verändertes Verhalten nötig, das war eine einmalige Nachhol-Situation.
 
 ### 2026-09-14, 16:36-16:38 UTC, planmäßiger täglicher Lauf — zweiter echter Post live
 Post Nr. 2 (heute, 18:50 Uhr) war fällig, Status `freigegeben`. Hinterlegte Assets (4 lokale PNGs bei Mike) wie von `content-manager` am 13.09. vermerkt unerreichbar, daher den hinterlegten Ersatz-Generation-Brief umgesetzt: 4 Carousel-Slides ("Drei Säulen"/"Technologie"/"Bildung"/"Lifestyle") über Jarvis `nano_banana_2` erstellt, 4:5 (Guthaben vor der Generierung: 715,5 Credits, `plus`-Plan). Carousel über `mcp__Windsor_ai__execute_action` (instagram, `create_carousel_post`) gepostet: **Media-ID 17886630126617086**. Nebenbefund: die Windsor-Doku verlangt JPEG, die vier PNGs wurden trotzdem anstandslos akzeptiert — für künftige Läufe keine Konvertierung nötig, aber im Hinterkopf behalten falls doch mal ein Format abgelehnt wird. Ins [[Performance-Log]] eingetragen (frisch, Auswertung folgt). Phase 2 aktiv, keine Einzelfreigabe nötig gewesen (Status war ohnehin schon `freigegeben`). Nichts übersprungen, keine Credit-/Freigabeprobleme.
