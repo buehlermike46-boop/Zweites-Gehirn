@@ -16,7 +16,7 @@ Wirf hier alles rein was dir einfällt. Ideen, Links, Gedanken, To-Dos. Claude s
 Wichtige Business-/Finanz-/Trading-Inhalte aus dem ChatGPT-Verlauf gesichtet und einsortiert (bei weitem nicht der komplette Verlauf — der ist sehr lang und größtenteils Alltag/Familie/Trivia, das wurde bewusst nicht übernommen). Trading wurde auf Wunsch am 06.09. nochmal vertieft durchsucht (Suche nach "Trading" im ChatGPT-Verlauf) — siehe [[Trading-Learnings]] für die volle Liste.
 
 - [x] VT Markets vs. PU Prime geklärt: VT Markets existiert nicht mehr, aktuell läuft alles über PU Prime (siehe [[IB-Projekt (Limitless & PU Prime)]])
-- [ ] Neuer Bereich [[Pflegedienst]] angelegt — Kunden-/Umsatzzahlen dazu fehlen noch, siehe offene Fragen dort
+- [x] Neuer Bereich [[Pflegedienst]] angelegt — Kunden-/Umsatzzahlen inzwischen geliefert und dokumentiert (10.09.2026, siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] und [[Pflegedienst]]), diese Zeile war stale (nachgezogen 18.09.2026)
 - [x] Lot-Provision/Ziel-Ladder für PU Prime bestätigen — bestätigt: 15 €/Lot, siehe [[IB-Projekt (Limitless & PU Prime)]] und [[VT Markets Affiliate-Strategie & Content-Plan]]
 - Trade_Journal.xlsx (von ChatGPT erstellt, siehe [[Trading-Journal Struktur (1R = 200€)]]) und ggf. weitere ChatGPT-Dokumente (RG_Trading_Masterclass_Tag1, Trading_Mentoring_Tag1_Footprint_Lernblatt, Trading_Checklist_Futures.xlsx) noch aus ChatGPT herunterladen und in 07 Anhänge/ ablegen, falls gewünscht. Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
 - [ ] Falls gewünscht: weiter im ChatGPT-Verlauf zurückgehen (auch außerhalb Trading gibt es noch mehr Business-Themen wie Bewerbungsmail, die noch nicht gesichtet wurden)

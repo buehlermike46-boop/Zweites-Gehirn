@@ -1,7 +1,7 @@
 ---
 tags: [projekt, uebersicht, steuerung]
 status: aktiv
-date: 2026-09-15
+date: 2026-09-18
 ---
 
 # Aufgaben-Triage (Sofort, Aufwendig, Komplex)
@@ -89,6 +89,8 @@ Kleine Aufräumung: Die Zeile "Posts 1-6 terminieren" unter Aufwendig war laut d
 **Mike-only-Zähler unverändert bei 1** (nur noch WhatsApp-Test, weiterhin ohne Termin, bewusst außerhalb des Bestätigt-Kreislaufs). Deckel-Nachschub-Prüfung: Zähler liegt weit unter dem Deckel von 20, aber es gibt ehrlich keinen neuen, für den Executor eigenständig ausführbaren Stufe-0-Punkt in dieser Triage — kein künstliches Auffüllen, kein neuer Bestätigt-Abschnitt in dieser Runde. Neuer Vorschlag für den 15.09. steht in [[Tagesplan]]: größter tatsächlicher Hebel bleibt bei Mike selbst (Reaktionen der 20 Kontakte einsammeln/nachfassen, sobald jemand antwortet, plus der weiterhin offene WhatsApp-Test).
 
 **Kontrolle 17.09.2026 ([[aufgaben-manager]], turnusmäßiger Planungslauf, Scheduled Cloud Routine):** Seit dem letzten Lauf (15.09.2026) zwei Tage ohne Aktivität vergangen — per `git log --since="2026-09-15"` bestätigt: nur die beiden Commits vom 15.09. selbst (Vorschlag + ungenutzter Executor-Lauf mangels Bestätigung), seitdem nichts Neues. [[Kontaktliste - 20 Namen aus dem Umfeld]] unverändert: 20/20 angeschrieben (Stand 14.09.), weiterhin 0 Reaktionen eingetragen. [[Lot-Tracking]] weiterhin 0 Accounts/0 Lots. [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen: keine neuen offenen Punkte. Keine inhaltliche Änderung an dieser Datei nötig, keine neuen Häkchen (kein Beleg). **Mike-only-Zähler unverändert bei 1** (WhatsApp-Test, ohne Termin). Neuer Vorschlag für den 17.09. steht in [[Tagesplan]] — inhaltlich strukturell identisch zum 15.09., da sich in der Zwischenzeit nichts Neues ergeben hat; enthält zusätzlich die offene Frage an Mike, ob der 15.09.-Vorschlag zwischenzeitlich schon mündlich/anderswo bestätigt wurde, bevor ein weiterer Tag ungenutzt verstreicht.
+
+**Kontrolle 18.09.2026 ([[aufgaben-manager]], turnusmäßiger Planungslauf, Scheduled Cloud Routine):** Seit dem letzten Lauf (17.09.2026) ein weiterer Tag ohne erkennbare Aktivität vergangen — kein neuer `## Bestätigt`-Abschnitt und kein neuer Executor-Log-Eintrag in [[Tagesplan]] seit dem 15.09.2026 (Vorschläge vom 15. und 17.09. stehen beide weiterhin unbestätigt). [[Kontaktliste - 20 Namen aus dem Umfeld]] geprüft: unverändert 20/20 angeschrieben (Stand 14.09.), weiterhin 0 von 20 mit eingetragener Reaktion. [[Lot-Tracking]] geprüft: unverändert 0 Accounts, 0 Lots. [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen: keine neuen offenen Punkte (Jarvis Aufgaben weiterhin ausschließlich `status: erledigt`/`status: fehler`, Brain Dump nur bereits abgehakte/verwiesene Zeilen plus eine seit Tagen stale Zeile zu Pflegedienst-Zahlen, dort korrigiert weil der Fakt längst in dieser Triage steht). Keine inhaltliche Änderung an dieser Datei nötig, keine neuen Häkchen (kein Beleg). **Mike-only-Zähler unverändert bei 1** (WhatsApp-Test, weiterhin ohne Termin). Auffällig und im Bericht vermerkt: seit [[2026-09-12]] gibt es keine neue Daily Note mehr (6 Tage Lücke), und drei Vorschläge in Folge (15., 17., jetzt 18.09.) sind strukturell identisch, weil sich an den harten Fakten im Vault nichts geändert hat. Neuer Vorschlag für den 18.09. steht in [[Tagesplan]] — inhaltlich unverändert zum 17.09., zusätzlich mit der offenen Frage, ob die tägliche Routine in dieser Form sinnvoll bleibt, solange sich nichts an den zugrundeliegenden Fakten ändert.
 
 ---
 

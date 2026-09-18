@@ -598,3 +598,47 @@ Kein neuer Punkt. Kein neuer `## Bestätigt`-Abschnitt in dieser Runde.
 1. Der Vorschlag vom 15.09. (und dieser hier, strukturell identisch) steht seit zwei Tagen ohne Rückmeldung — falls du in der Zwischenzeit jemanden angeschrieben/eine Antwort bekommen hast oder den WhatsApp-Test gemacht hast, sag kurz Bescheid, dann trage ich es nach.
 2. Weiterhin unbeantwortet: Start-Button-Weg im Kanal, Entscheidung ob `content-manager`/`content-executor` künftig auch grundsätzlich für Telegram zuständig sein soll.
 3. Weiterhin offen: soll für die Zeit seit [[2026-09-12]] rückwirkend eine oder mehrere Daily Notes angelegt werden, oder reicht die Dokumentation hier und in der Triage?
+
+## Vorschlag für 2026-09-18
+*(Vom aufgaben-manager erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine. Wartet auf Mikes Bestätigung per Push-Nachricht.)*
+
+**Kontrolle vorab:** Letzter `## Bestätigt`-Abschnitt bleibt unverändert `## Bestätigt für 2026-09-14` (3 Punkte, bereits am 14.09.2026 abends vollständig aufgelöst). Seit dem letzten Planungslauf (`## Vorschlag für 2026-09-17`) ist weiterhin **kein neuer Executor-Lauf und keine neue Mike-Bestätigung** dazugekommen — die Vorschläge vom 15. und 17.09. stehen beide seit Tagen unbestätigt, kein neuer Log-Eintrag danach. Kein Beleg für irgendeine Erledigung seit der letzten Kontrolle, deshalb keine neuen Häkchen.
+
+**Frisch geprüft für diesen Lauf:**
+- [[Kontaktliste - 20 Namen aus dem Umfeld]]: unverändert 20/20 angeschrieben (Stand 14.09.), weiterhin 0 von 20 mit eingetragener Reaktion.
+- [[Lot-Tracking]]: unverändert 0 Accounts, 0 Lots, Kopfwerte für 2026-09 weiterhin auf 0.
+- [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]: Mike-only-Zähler unverändert bei **1** (nur WhatsApp-Test, weiterhin ohne Termin).
+- [[Brain Dump]] und [[Jarvis Aufgaben]]: erneut komplett gelesen, keine neuen offenen Punkte. Eine stale Zeile in Brain Dump (Pflegedienst-Zahlen, längst geliefert) beim Durchlesen korrigiert, keine neue inhaltliche Aufgabe daraus.
+- Keine neue Daily Note seit [[2026-09-12]] — jetzt 6 Tage Lücke.
+- Domain-Check: keine Prüfung des aktuellen Posting-Warteschlange-Stands in dieser Runde nötig, da diese Kontrolle sich auf Tagesplan-Domain beschränkt und seit der letzten Prüfung (17.09.) nichts hierherein verwiesen wurde.
+
+**Aktive Baustelle (Stufe 0, Fundament, siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]]):** "Weiter, wenn": 10 geworbene Accounts, davon 5 aktiv, 100-Lot-Schwelle einmal geknackt. Aktuell 0 Accounts gemessen, 0 von 20 Reaktionen eingetragen. Die Technik-Seite von Stufe 0 steht vollständig — laut MasterPlan Abschnitt 4 ist Kundengewinnung der Engpass, nicht Technik.
+
+### Ergebnis dieser Runde: kein neuer Bestätigt-fähiger Punkt
+Strukturell unverändert zu den Runden vom 13.-17.09.: kein neuer Punkt aus Inbox oder Triage, den der `aufgaben-executor` eigenständig bis zum Ende ausführen könnte. Ehrlich benannt statt künstlich aufgefüllt.
+
+### Direkt bei dir — der einzige tatsächliche Hebel gerade
+- **Reaktionen der 20 angeschriebenen Kontakte einsammeln/nachtragen** in [[Kontaktliste - 20 Namen aus dem Umfeld]], sobald jemand antwortet — direkter Weg zu den "10 geworbenen Accounts" aus der Stufe-0-Bedingung. Kein Agenten-Punkt, braucht deine echten Gespräche.
+- **WhatsApp end-to-end testen** — seit 14.09.2026 unbefristet auf "wann anders" vertagt, weiterhin offen, kein neuer Termin gesetzt.
+
+Sobald einer der beiden Punkte einen neuen Fakt liefert: direkt in der Triage vermerken, die nächste Runde zieht das automatisch nach.
+
+### Komplex — weiterhin bewusst zurückgestellt
+Unverändert: Website, Zugangs-Gate, Pflegedienst-Referenzprojekt, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. MasterPlan Punkt 8 (max. 1-2 aktive Baustellen, Automatisieren vor Validieren) — Stufe 0 mit echten Kunden steht noch nicht, solange 0 Accounts im [[Lot-Tracking]] stehen.
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Keine neuen Punkte. Fixkosten-/Business-Kosten-Listen und die Buchhaltungs-Frage bleiben unverändert ohne Stufe-0-Bezug. Gmail-/GMX-/Dashboard-Punkte und der `whatsapp`-Knoten in `jarvis-voice-assistant` bleiben außerhalb der Reichweite dieses Agentenpaars.
+
+### Domain-Check
+Keine Verschiebung nötig. Nichts in dieser Runde gehört ins Content-Gebiet (`content-manager`/`content-executor`/[[Posting-Warteschlange]]).
+
+### Aufgaben-Nachschub bis Deckel 20 — Zähler-Stand
+Mike-only-Zähler: **1 von 20** (nur WhatsApp-Test). Die Aufgaben-Triage ist für die aktive MasterPlan-Stufe weiterhin ehrlich erschöpft — kein Nachschub in dieser Runde, um den Deckel nicht künstlich zu füllen.
+
+### Für den Executor tatsächlich offen
+Kein neuer Punkt. Kein neuer `## Bestätigt`-Abschnitt in dieser Runde.
+
+### Offene Fragen an Mike
+1. **Neu, wichtiger als die letzten Male:** Dies ist jetzt der dritte Vorschlag in Folge (15., 17., 18.09.), der inhaltlich identisch ist, weil sich an den harten Fakten im Vault (Kontaktliste, Lot-Tracking) nichts geändert hat — und es gibt seit sechs Tagen keine neue Daily Note. Zwei Möglichkeiten: entweder ist seitdem tatsächlich nichts passiert (dann macht die tägliche Routine aktuell wenig Sinn, ein wöchentlicher Rhythmus würde reichen, bis sich wieder etwas bewegt), oder es ist etwas passiert, das nur noch nicht im Vault nachgetragen wurde (Kontakt-Reaktionen, WhatsApp-Test, sonstiges) — dann bitte kurz nachtragen, damit die nächste Runde darauf aufbauen kann. Beides ist okay, aber eine kurze Einordnung würde helfen.
+2. Weiterhin unbeantwortet: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch grundsätzlich für Telegram zuständig sein soll.
+3. Weiterhin offen: soll für die Zeit seit [[2026-09-12]] rückwirkend eine oder mehrere Daily Notes angelegt werden, oder reicht die Dokumentation in [[Tagesplan]]/[[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]?
