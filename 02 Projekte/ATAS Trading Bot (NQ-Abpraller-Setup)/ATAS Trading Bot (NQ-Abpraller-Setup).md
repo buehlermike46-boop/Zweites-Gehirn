@@ -52,8 +52,10 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 `RgTradingIndicators.dll` lag zunächst in `Dokumente\ATAS\Indicators` (falscher, veralteter Pfad) und tauchte deshalb nicht in ATAS' Indikatorenliste auf — kein Log-Eintrag, ATAS hat den Ordner nie gescannt. Echter Ordner ist `AppData\Roaming\ATAS\Indicators` (siehe oben). Nach Kopieren dorthin + vollständigem Neustart (Task-Manager: alle "Platform"-Prozesse beenden) taucht "RG Demand Index" jetzt im Indikator-Manager unter "All" auf. **Kompletter Weg Code → Build → Deploy → ATAS-Ladung damit erstmals nachgewiesen funktionsfähig.**
 
 ### Phase 2 — Footprint-/Orderflow-Bestätigung
-- Braucht Punkt 2 der offenen Fragen zuerst (Cluster-API)
+- Cluster-API bestätigt (19.09.2026, per IntelliSense gegen Mikes Installation gegengecheckt): `candle.Delta`, `candle.MaxDelta`, `candle.MinDelta`, `candle.GetAllPriceLevels()`, `candle.GetPriceVolumeInfo(price)`, `candle.MaxVolumePriceInfo` — direkt auf `IndicatorCandle`, keine Zusatz-API nötig
+- Erster Baustein `code/NqFootprintDelta.cs`: zeigt Delta/MaxDelta/MinDelta als Rohwerte an (noch kein Ja/Nein-Signal)
 - Ablehnungskerze/Delta-Logik in konkrete Zahlen-Schwellen übersetzen — **das kalibrieren wir an echten vergangenen Setups aus deinem Trading-Journal, nicht geraten**
+- POC-Rücktest noch offen: das ist der Session-POC aus dem bestehenden Volume-Profile-Indikator, nicht der POC einer einzelnen Kerze (`candle.MaxVolumePriceInfo` wäre nur die Kerze selbst) — eigener Baustein, noch zu klären ob Session-Profil selbst nachgebaut oder vom bestehenden Indikator mitgelesen wird
 
 ### Phase 3 — Order-Ausführung mit Risikomanagement
 - Umschalter Halbautomatisch (nur Alarm) / Vollautomatisch (Order direkt)
