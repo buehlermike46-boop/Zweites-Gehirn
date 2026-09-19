@@ -48,8 +48,8 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 - Tageskontext-Regeln (Vortageshoch/-tief Ablehnung/Annahme, Trendtag-Erkennung) — braucht Punkt 3 der offenen Fragen (Cross-Instrument), noch zu bauen
 - Offene technische Frage für später: ob eine neue Checklisten-Strategie die Werte der bereits vorhandenen Kurs-Indikatoren live auslesen kann, oder ob Demand Index/Supertrend intern nochmal nach der dokumentierten Formel berechnet werden müssen (robuster, unabhängig von fremdem Indikator-Code) — klärt sich, sobald wir an diesem Baustein arbeiten
 
-### Offener technischer Punkt aus Phase 0 — gelöst (19.09.2026)
-`RgTradingIndicators.dll` lag zunächst in `Dokumente\ATAS\Indicators` (falscher, veralteter Pfad) und tauchte deshalb nicht in ATAS' Indikatorenliste auf — kein Log-Eintrag, ATAS hat den Ordner nie gescannt. Echter Ordner ist `AppData\Roaming\ATAS\Indicators` (siehe oben). Nach Kopieren dorthin + vollständigem Neustart (Task-Manager: alle "Platform"-Prozesse beenden) sollte der Indikator jetzt auftauchen — Bestätigung steht noch aus.
+### Phase 0 — abgeschlossen und bestätigt (19.09.2026)
+`RgTradingIndicators.dll` lag zunächst in `Dokumente\ATAS\Indicators` (falscher, veralteter Pfad) und tauchte deshalb nicht in ATAS' Indikatorenliste auf — kein Log-Eintrag, ATAS hat den Ordner nie gescannt. Echter Ordner ist `AppData\Roaming\ATAS\Indicators` (siehe oben). Nach Kopieren dorthin + vollständigem Neustart (Task-Manager: alle "Platform"-Prozesse beenden) taucht "RG Demand Index" jetzt im Indikator-Manager unter "All" auf. **Kompletter Weg Code → Build → Deploy → ATAS-Ladung damit erstmals nachgewiesen funktionsfähig.**
 
 ### Phase 2 — Footprint-/Orderflow-Bestätigung
 - Braucht Punkt 2 der offenen Fragen zuerst (Cluster-API)
