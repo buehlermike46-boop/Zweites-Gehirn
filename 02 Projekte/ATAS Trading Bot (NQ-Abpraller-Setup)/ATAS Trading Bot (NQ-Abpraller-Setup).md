@@ -25,7 +25,7 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 - Referenzen aus dem lokalen ATAS-Installationsverzeichnis: `ATAS.Indicators.dll` (Analyse/Anzeige), `ATAS Strategies.dll` (zusätzlich Order-Ausführung), `Utils.Common.dll` (Logging)
 - Basisklassen: `Indicator` (Analyse) → `ChartStrategy` (erbt von `Indicator`, zusätzlich `OpenOrder`/`ModifyOrder`/`CancelOrder`, `Security`/`Portfolio`/`Connector`/`CurrentPosition`/`State`)
 - Lifecycle: `OnInitialize`, `OnCalculate(bar)` für jede Kerze/jeden Tick; bei Strategien zusätzlich `OnStarted`/`OnStopped`/`OnSuspended`/`CanProcess`
-- Deployment: Projekt bauen → erzeugte `.dll` nach `Dokumente\ATAS\Indicators` (bzw. entsprechendem Strategies-Ordner) kopieren → in ATAS im Indikator-/Strategie-Manager hinzufügen
+- Deployment: Projekt bauen → erzeugte `.dll` nach `C:\Users\<User>\AppData\Roaming\ATAS\Indicators` kopieren (**nicht** `Dokumente\ATAS\Indicators` — das war eine veraltete öffentliche Anleitung, am 19.09.2026 live widerlegt: kein Log-Eintrag, ATAS scannt den Ordner gar nicht. Der echte Ordner liegt unter AppData\Roaming, bestätigt weil dort auch der fertige "RG-Trading Academy Super Trend"-Indikator lag) → ATAS komplett neu starten (Task-Manager prüfen, alle "Platform"-Hintergrundprozesse beenden, sonst wird der Ordner nicht neu gescannt) → im Indikator-Manager unter "All" suchen
 
 ## Offene technische Fragen — brauchen Verifikation an deiner echten Installation
 1. **ATAS-Lizenzstufe:** Custom-Indikatoren laufen meist auf jeder Stufe, automatisierte Order-Ausführung (`ChartStrategy`) braucht vermutlich eine höhere Stufe. Handelsverbindung ist geklärt (19.09.2026, Mike): **Rithmic** — Apex läuft über Rithmic.
@@ -48,8 +48,8 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 - Tageskontext-Regeln (Vortageshoch/-tief Ablehnung/Annahme, Trendtag-Erkennung) — braucht Punkt 3 der offenen Fragen (Cross-Instrument), noch zu bauen
 - Offene technische Frage für später: ob eine neue Checklisten-Strategie die Werte der bereits vorhandenen Kurs-Indikatoren live auslesen kann, oder ob Demand Index/Supertrend intern nochmal nach der dokumentierten Formel berechnet werden müssen (robuster, unabhängig von fremdem Indikator-Code) — klärt sich, sobald wir an diesem Baustein arbeiten
 
-### Offener technischer Punkt aus Phase 0
-`RgTradingIndicators.dll` liegt korrekt in `Dokumente\ATAS\Indicators`, taucht aber nach dem Kopieren noch nicht in ATAS' Indikatorenliste auf — vermutlich Neustart von ATAS nötig (Indikator-Ordner wird nur beim Programmstart gescannt). Wichtig für spätere Phasen zu klären, weil die Order-Ausführungsschicht (Phase 3) denselben Lade-Weg braucht.
+### Offener technischer Punkt aus Phase 0 — gelöst (19.09.2026)
+`RgTradingIndicators.dll` lag zunächst in `Dokumente\ATAS\Indicators` (falscher, veralteter Pfad) und tauchte deshalb nicht in ATAS' Indikatorenliste auf — kein Log-Eintrag, ATAS hat den Ordner nie gescannt. Echter Ordner ist `AppData\Roaming\ATAS\Indicators` (siehe oben). Nach Kopieren dorthin + vollständigem Neustart (Task-Manager: alle "Platform"-Prozesse beenden) sollte der Indikator jetzt auftauchen — Bestätigung steht noch aus.
 
 ### Phase 2 — Footprint-/Orderflow-Bestätigung
 - Braucht Punkt 2 der offenen Fragen zuerst (Cluster-API)
