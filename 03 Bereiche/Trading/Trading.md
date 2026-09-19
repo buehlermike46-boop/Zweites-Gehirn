@@ -11,6 +11,7 @@ Laufende, stetige Verbesserung der eigenen Trading-Performance. Kein Enddatum �
 - Feste Tagesstruktur mit ca. 2 Stunden/Tag fürs Trading einplanen (hängt vom Schichtplan als Elektroniker ab)
 - NQ Abpraller-Setup als Haupt-Setup, siehe [[NQ Abpraller-Setup Checkliste]]
 - Apex-Trader-Funding-Konto(s): Auszahlungsplan siehe [[Apex Trader Funding - 50k Auszahlungsregeln]]
+- ATAS-Trading-Bot in Aufbau (bewusste Ausnahme zum MasterPlan, kein Umsatz-Standbein), siehe [[ATAS Trading Bot (NQ-Abpraller-Setup)]]
 
 ## Referenzen
 - Siehe auch 04 Ressourcen/Trading-Learnings für gesammelte Erkenntnisse und Fehler
