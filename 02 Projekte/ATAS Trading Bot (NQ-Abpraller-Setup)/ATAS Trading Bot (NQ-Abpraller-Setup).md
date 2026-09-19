@@ -28,7 +28,7 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 - Deployment: Projekt bauen → erzeugte `.dll` nach `Dokumente\ATAS\Indicators` (bzw. entsprechendem Strategies-Ordner) kopieren → in ATAS im Indikator-/Strategie-Manager hinzufügen
 
 ## Offene technische Fragen — brauchen Verifikation an deiner echten Installation
-1. **ATAS-Lizenzstufe:** Custom-Indikatoren laufen meist auf jeder Stufe, automatisierte Order-Ausführung (`ChartStrategy`) braucht vermutlich eine höhere Stufe plus eine Handelsverbindung, die ATAS tatsächlich Order senden lässt (z.B. Rithmic, Tradovate, CQG). Welche Verbindung nutzt du für dein Apex-Konto über ATAS?
+1. **ATAS-Lizenzstufe:** Custom-Indikatoren laufen meist auf jeder Stufe, automatisierte Order-Ausführung (`ChartStrategy`) braucht vermutlich eine höhere Stufe. Handelsverbindung ist geklärt (19.09.2026, Mike): **Rithmic** — Apex läuft über Rithmic.
 2. **Exakte Footprint-/Cluster-API** (Delta, MaxDelta, MinDelta, POC, Bid/Ask je Preisstufe je Kerze) — in der öffentlichen Doku nicht im Detail einsehbar. Sobald du Visual Studio mit den ATAS-Referenzen offen hast: IntelliSense auf `GetCandle(bar).` zeigt dir die verfügbaren Properties — schick mir die Liste (Screenshot oder Abschrift reicht), dann baue ich Phase 2 exakt darauf.
 3. **Cross-Instrument-Zugriff:** Die Tageskontext-Regeln laufen auf ES M15, während der Trade-Chart NQ ist. ATAS hat laut Doku "zusätzliche Datenquellen" für Indikatoren — genaue API muss ich noch verifizieren, sobald Punkt 2 geklärt ist.
 4. **Journal-Integration (später):** Läuft dieser Vault-Ordner auf demselben Windows-Rechner wie ATAS? Relevant, falls der Bot später automatisch in [[Trading-Ergebnisse]] schreiben soll — nicht Teil der ersten Phasen.
