@@ -40,11 +40,16 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 - Neues Projekt: "Class Library (.NET Standard)", Referenzen auf `ATAS.Indicators.dll` + `Utils.Common.dll` aus dem ATAS-Installationsordner setzen
 - Beigelegten Demand-Index-Indikator (`code/NqDemandIndex.cs`) bauen, DLL nach `Dokumente\ATAS\Indicators` kopieren, im NQ-Chart laden. **Ziel dieser Phase ist nicht der perfekte Indikator, sondern einmal den kompletten Weg Code → Build → Chart lebend zu sehen** — Fehler beim ersten Build sind erwartbar, siehe Hinweis im Code.
 
-### Phase 1 — Analyse-Indikator (read-only, kein Order-Code)
-- Demand Index nach Sibbet-Formel — Code liegt bereit
-- ATR/Supertrend: erst prüfen, ob deine bestehenden RG-Trading-Indikatoren schon in ATAS installiert sind — falls ja, nicht neu bauen, nur referenzieren
-- Location-Level-Erkennung (VAH/VAL/POC/Tageshoch-tief) — nächster Baustein
-- Tageskontext-Regeln (Vortageshoch/-tief Ablehnung/Annahme, Trendtag-Erkennung) — braucht Punkt 3 der offenen Fragen (Cross-Instrument)
+### Phase 1 — Analyse-Ebene (überarbeitet, 19.09.2026)
+**Großteils schon vorhanden.** Mike hat aus dem RG-Trading-Kurs bereits eine komplette Indikator-Ausstattung in ATAS installiert und auf den richtigen Charts (NQ/ES) eingeteilt: Demand Index, Super Trend ("RG-Trading Academy Super Trend"), Heiken Ashi, Heiken Ashi Smoothed, Account Info Display, Depth of Market, VWAP/TWAP. Der `NqDemandIndex.cs`-Testindikator aus Phase 0 war nur ein Toolchain-Test (Code → Visual Studio → ATAS laden), kein Ersatz dafür — nicht als eigenständiger Baustein weiterverfolgen.
+
+**Damit verschiebt sich der Fokus von Phase 1 direkt auf:**
+- Location-Level-Erkennung (VAH/VAL/POC/Tageshoch-tief) — noch zu bauen
+- Tageskontext-Regeln (Vortageshoch/-tief Ablehnung/Annahme, Trendtag-Erkennung) — braucht Punkt 3 der offenen Fragen (Cross-Instrument), noch zu bauen
+- Offene technische Frage für später: ob eine neue Checklisten-Strategie die Werte der bereits vorhandenen Kurs-Indikatoren live auslesen kann, oder ob Demand Index/Supertrend intern nochmal nach der dokumentierten Formel berechnet werden müssen (robuster, unabhängig von fremdem Indikator-Code) — klärt sich, sobald wir an diesem Baustein arbeiten
+
+### Offener technischer Punkt aus Phase 0
+`RgTradingIndicators.dll` liegt korrekt in `Dokumente\ATAS\Indicators`, taucht aber nach dem Kopieren noch nicht in ATAS' Indikatorenliste auf — vermutlich Neustart von ATAS nötig (Indikator-Ordner wird nur beim Programmstart gescannt). Wichtig für spätere Phasen zu klären, weil die Order-Ausführungsschicht (Phase 3) denselben Lade-Weg braucht.
 
 ### Phase 2 — Footprint-/Orderflow-Bestätigung
 - Braucht Punkt 2 der offenen Fragen zuerst (Cluster-API)
