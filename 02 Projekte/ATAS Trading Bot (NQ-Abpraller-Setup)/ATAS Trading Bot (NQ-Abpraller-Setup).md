@@ -29,6 +29,11 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 
 ## Offene technische Fragen — brauchen Verifikation an deiner echten Installation
 1. **ATAS-Lizenzstufe:** Custom-Indikatoren laufen meist auf jeder Stufe, automatisierte Order-Ausführung (`ChartStrategy`) braucht vermutlich eine höhere Stufe. Handelsverbindung ist geklärt (19.09.2026, Mike): **Rithmic** — Apex läuft über Rithmic.
+
+### Order-Klasse bestätigt (19.09.2026, per Objektkatalog gegen Mikes Installation)
+Die von der ATAS-Doku beschriebene `Order`-Klasse (Parameter von `ChartStrategy.OpenOrder`) ist **nicht** in `ATAS.Indicators.dll` oder `ATAS.Strategies.dll` enthalten, sondern in einer bis dahin nicht referenzierten dritten DLL: **`ATAS.DataFeedsCore.dll`** (liegt im selben ATAS-Platform-Ordner, jetzt als Referenz hinzugefügt). Vollständiger Klasse: `ATAS.DataFeedsCore.Order`, `public class`.
+
+Bestätigte Felder (per Objektkatalog): `Direction`, `Price`, `QuantityToFill`, `Security`, `SecurityId`, `Portfolio`, `State`, `Comment`, `OCOGroup` (vermutlich Mechanismus für verknüpfte Stop/Target-Orders), `Id`, `ExtId`, `AccountID`, `AutoCancel`, `Canceled`, `ExpiryDate`, `ExtendedOptions`, `IsAttached`, `IsInPosition`, `Latency`, `Parent`, `Route`, `RoutedAccountId`, `Time`, `TimeInForce`, plus `Clone()`/`ToString()`. Zugehörige Enums `ATAS.DataFeedsCore.OrderDirections` und `ATAS.DataFeedsCore.OrderTypes` existieren, genaue Werte werden gerade geprüft.
 2. **Exakte Footprint-/Cluster-API** (Delta, MaxDelta, MinDelta, POC, Bid/Ask je Preisstufe je Kerze) — in der öffentlichen Doku nicht im Detail einsehbar. Sobald du Visual Studio mit den ATAS-Referenzen offen hast: IntelliSense auf `GetCandle(bar).` zeigt dir die verfügbaren Properties — schick mir die Liste (Screenshot oder Abschrift reicht), dann baue ich Phase 2 exakt darauf.
 3. **Cross-Instrument-Zugriff:** Die Tageskontext-Regeln laufen auf ES M15, während der Trade-Chart NQ ist. ATAS hat laut Doku "zusätzliche Datenquellen" für Indikatoren — genaue API muss ich noch verifizieren, sobald Punkt 2 geklärt ist.
 4. **Journal-Integration (später):** Läuft dieser Vault-Ordner auf demselben Windows-Rechner wie ATAS? Relevant, falls der Bot später automatisch in [[Trading-Ergebnisse]] schreiben soll — nicht Teil der ersten Phasen.
