@@ -1,16 +1,16 @@
 ---
 tags: [projekt, youtube, content]
-status: pausiert
+status: aktiv
 date: 2026-09-20
 ---
 
 # YouTube Kinder-Kanäle (DE & EN)
 
 ## Ziel
-Zwei inhaltsgleiche YouTube-Kanäle für Kleinkinder aufbauen, einen auf Deutsch und einen auf Englisch, nach dem Erfolgsformat der größten Kinder-Kanäle. Nicht die Kanäle selbst kopieren, sondern das Format übernehmen: eigene Charaktere, eigene Marke, eigener Content.
+Zwei inhaltsgleiche YouTube-Kanäle für Kleinkinder aufbauen, einen auf Deutsch und einen auf Englisch, nach dem Erfolgsformat der größten Kinder-Kanäle. Nicht die Kanäle selbst kopieren, sondern das Format übernehmen: eigene Charaktere, eigene Marke, eigener Content. Ziel laut Mike (20.09.2026): fertigstellen und Reichweite/Klicks aufbauen.
 
 ## Einordnung gegen den MasterPlan
-**Offen ansprechen statt stillschweigend mit aufnehmen (CLAUDE.md-Regel):** Der [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] sieht bei 12 Stunden pro Woche maximal ein bis zwei aktive Baustellen vor (Punkt 8). Aktuell laufen bereits zwei: das IB-Business mit dem Content-System (Instagram/Telegram) und der `professor`. Ein YouTube-Kinder-Kanal-Projekt ist ein komplett neues, drittes Standbein ohne Bezug zum IB-Business. Deshalb Status hier bewusst `pausiert` statt `aktiv` — das Projekt steht recherchiert und geplant bereit, aber die Entscheidung ob und wann es losgeht (parallel, als Ersatz für etwas anderes, oder erst nach einer MasterPlan-Stufe) liegt bei Mike.
+**Bewusste Ausnahme, 20.09.2026:** Der [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] sieht bei 12 Stunden pro Woche maximal ein bis zwei aktive Baustellen vor (Punkt 8). Aktuell liefen bereits zwei: das IB-Business mit dem Content-System (Instagram/Telegram) und der `professor`. Mike hat dieses Projekt trotzdem ausdrücklich auf `aktiv` gestellt ("Aktiv stellen, wir sollen das Beenden und Klicks sammeln") — bewusste Entscheidung, nicht übersehen, gleiches Muster wie die Ausnahme vom 10.09.2026 in Punkt 8 des MasterPlans. Damit sind es real drei aktive Baustellen. Der `professor` bewertet das in seiner nächsten Runde wie gewohnt mit.
 
 ## Recherche: Die größten Kinder-Kanäle
 
@@ -58,13 +58,23 @@ Der `content-executor` nutzt für Instagram/Telegram bereits Jarvis für Bild-/V
 - **Realistische Dauer bis dahin:** bei 1 bis 2 Videos/Woche typischerweise 6 bis 18 Monate bis 1.000 Abonnenten, bei einem guten, konsequent bespielten Nischen-Format (Nursery Rhymes werden dauerhaft gesucht und wiederholt geschaut) eher am schnelleren Ende möglich.
 - **Das eigentliche Geld** kommt in dieser Nische nicht aus Werbe-RPM, sondern erst bei großem Volumen, aus Lizenzierung (Streaming-Plattformen), Merchandising und Markenkooperationen (Spielzeug/Edtech) — das ist ein Marathon, kein schneller Cashflow-Kanal.
 
-## Nächste Schritte (falls Mike grünes Licht gibt)
+## Referenz-Beispiel von Mike (20.09.2026)
+Mike hat als konkretes Beispiel für "sowas ist gut" verlinkt: ["Lerne schwimmen wie ein kleiner Fisch!" von HeyKids - Kinderlieder TV](https://www.youtube.com/watch?v=ZaD1RgBQBlc). HeyKids ist ein realer, aktiver deutscher Kinderlieder-Kanal (seit 2014, ~72 Mio. Views/Monat, +30.000 Abos/Monat zuletzt) mit klassischen und eigenen Kinderliedern/Bildungsliedern — bestätigt genau das oben empfohlene Format (animierte Nursery-Rhyme-/Bildungslieder statt Live-Action) und zeigt, dass der deutsche Markt für dieses Format aktuell noch wächst statt gesättigt zu sein. Szenen-Analyse des Beispielvideos läuft, wird bei Fertigstellung hier ergänzt.
 
-- [ ] Grundsatzentscheidung: dritte Baustelle parallel zulassen, etwas anderes dafür pausieren, oder Start auf nach einer MasterPlan-Stufe verschieben
-- [ ] Nischen-Feinschnitt: welche gemeinfreien Reime/Themen zuerst, Zielalter (0-2, 2-4), Videolänge
-- [ ] Eigenes Charakterdesign + Kanalbranding für DE und EN (identisch, nur Sprache unterschiedlich)
-- [ ] Ein Testvideo produzieren und Produktionszeit/-kosten pro Video real messen
+## Produktionsstand
+
+**Status 20.09.2026:** Auf Mikes Wunsch ("Aktiv stellen, wir sollen das Beenden und Klicks sammeln") direkt mit der Produktion gestartet, kein reines Recherche-Projekt mehr.
+
+- [x] Erster Charakterentwurf über Jarvis (`soul_cast`, Character-Sheet-Workflow) fertig: kleiner origineller Fuchs-Charakter, 3D-stylized (Pixar-artiger Look), passend zum empfohlenen Animations-Format. Bild an Mike geschickt (20.09.2026). Das Tool hat selbst den Arbeitsnamen "Pip Bramble" vergeben — **Achtung:** "Pip" ist im Kinder-Content-Bereich schon stark belegt (Pip Ahoy!, Pip and Posy, Pip and Poppy Show, Baby Pip), für den finalen Kanalnamen daher einen eigenständigeren Namen wählen statt "Pip" zu übernehmen
+- [ ] Charakter-Feedback von Mike einholen (Design okay? Anpassungen?), dann eigenständigen Namen für DE+EN festlegen
+- [ ] Kanalname + Branding DE/EN final festlegen
+- [ ] Erstes Lied auswählen (empfohlen: ein kurzer, komplett eigener Song statt Adaption eines klassischen Reims, damit DE- und EN-Video wirklich 1:1 identisch sind — Melodie/Bild gleich, nur Gesangsspur pro Sprache neu erzeugt)
+- [ ] Testvideo produzieren, Produktionszeit/-kosten pro Video real messen
+- [ ] YouTube-Kanäle selbst anlegen (DE + EN) — **technisch blockiert:** kein Connector/Tool in diesem Vault für YouTube-Kanalerstellung oder -Upload vorhanden. Das kann nur Mike selbst machen (Google-Konto, Kanal anlegen, Branding hochladen). Sobald die Kanäle existieren, prüfen ob es für den Video-Upload selbst einen Connector gibt oder ob das vorerst manuell bleibt
 - [ ] Erst danach über eine eigene Produktions-Pipeline (Agent ähnlich `content-executor`) nachdenken
+
+## Grundsatzentscheidung (offen)
+Nischen-Feinschnitt (Zielalter, Videolänge, Upload-Rhythmus) folgt nach dem ersten Charakter-Feedback von Mike, um nicht am falschen Design vorbeizuplanen.
 
 ## Quellen
 - [Most subscribed YouTube Kids channels – AIR Media-Tech](https://air.io/en/youtube-hacks/most-subscribed-youtube-kids-channels)

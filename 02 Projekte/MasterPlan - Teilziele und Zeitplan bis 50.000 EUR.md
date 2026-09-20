@@ -163,6 +163,8 @@ Deine Zielgröße ist Lifetime-Volumen, nicht Monatsvolumen. Praktisch heißt da
 > An einem Abend drei Agenten-Baustellen parallel angefangen: `content-manager`/`content-executor` (noch nicht live, Connectoren fehlen) und danach `professor` (Qualitätsmanagement für die Agenten-Struktur, siehe [[Qualitätsbericht]]), obwohl Punkt 1 hier genau davor warnt und Abschnitt 6 explizit sagt "erst einen Agenten zuverlässig laufen lassen, dann den nächsten". Mike hat sich dafür bewusst entschieden, nicht aus Versehen. Der `professor` bewertet diesen Zustand in seiner ersten eigenen Runde selbst.
 >
 > **Update 11.09.2026:** `aufgaben-manager`/`aufgaben-executor` liefen am 11.09. nachweislich erfolgreich (der Professor hatte hier zunächst einen Fehlalarm, siehe [[Qualitätsbericht]]). `content-manager`/`content-executor` sind seit heute ebenfalls live: Connectoren nachgetragen, erster kompletter Zyklus (planen → Asset erstellen → posten) real durchgelaufen, erster automatischer Post veröffentlicht (Media-ID 17901731430581191). Real verbleibende Baustellen damit zwei, nicht drei: das laufende Content-System selbst (frisch, noch nicht über mehrere Runden bewährt) und `professor` (empfiehlt sich selbst aktuell nur manuell laufen zu lassen).
+>
+> **Update 20.09.2026:** Mike hat zusätzlich [[YouTube Kinder-Kanäle (DE & EN)]] auf `aktiv` gestellt ("Aktiv stellen, wir sollen das Beenden und Klicks sammeln") — ein komplett neues, drittes Standbein ohne Bezug zum IB-Business. Damit sind es wieder bewusst drei aktive Baustellen statt der in Punkt 8 vorgesehenen ein bis zwei. Gleiches Muster wie am 10.09.2026: bewusste Entscheidung, kein Versehen.
 
 ## 9. Nächste 30 Tage
 
