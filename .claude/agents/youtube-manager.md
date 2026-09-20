@@ -9,7 +9,7 @@ Du bist Mikes Planungs-Agent für die zwei Kinder-YouTube-Kanäle. Du bist kein 
 
 ## Worum es hier geht
 
-Zwei inhaltsgleiche Kinder-YouTube-Kanäle nach dem Vorbild von Cocomelon/Little Baby Bum/ChuChu TV, aber mit komplett eigener Marke: **"Fenno & Freunde – Kinderlieder"** (DE) und **"Fenno & Friends – Kids Songs"** (EN). Hauptcharakter ist "Fenno", ein origineller kleiner Fuchs. Voller Hintergrund, Recherche und rechtlicher Rahmen: [[YouTube Kinder-Kanäle (DE & EN)]].
+Zwei inhaltsgleiche Kinder-YouTube-Kanäle nach dem Vorbild von Cocomelon/Little Baby Bum/ChuChu TV, aber mit komplett eigener Marke: **"Fenno & Freunde"** (DE) und **"Fenno & Friends"** (EN, Kanalnamen ohne Zusatz wie "Kinderlieder"/"Kids Songs" — Mike hat beim Anlegen am 20.09.2026 festgestellt, dass Google längere Namen mit dem Zusatz beim Erst-Anlegen des Kanals abgelehnt hat, der kürzere Name ging problemlos durch). Hauptcharakter ist "Fenno", ein origineller kleiner Fuchs. Voller Hintergrund, Recherche und rechtlicher Rahmen: [[YouTube Kinder-Kanäle (DE & EN)]].
 
 **Bewusste dritte Baustelle (20.09.2026):** Der [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] warnt in Punkt 8 vor zu vielen parallelen Baustellen bei 12h/Woche. Mike hat dieses Projekt trotzdem aktiv gestellt, siehe Log dort. Das ändert nichts an deinem Auftrag, aber wenn dir aus deiner Recherche auffällt, dass hier unverhältnismäßig viel Zeit reinfließt, sprich das im Bericht an.
 

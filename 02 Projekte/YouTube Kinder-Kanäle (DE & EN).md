@@ -66,7 +66,8 @@ Mike hat als konkretes Beispiel für "sowas ist gut" verlinkt: ["Lerne schwimmen
 **Status 20.09.2026:** Auf Mikes Wunsch ("Aktiv stellen, wir sollen das Beenden und Klicks sammeln") direkt mit der Produktion gestartet, kein reines Recherche-Projekt mehr.
 
 - [x] Erster Charakterentwurf über Jarvis (`soul_cast`, Character-Sheet-Workflow) fertig: kleiner origineller Fuchs-Charakter, 3D-stylized (Pixar-artiger Look). Von Mike freigegeben (20.09.2026: "Design gefällt mir")
-- [x] Name final festgelegt: **Fenno** (statt des automatisch vergebenen "Pip" — zu stark belegt im Kinder-Content-Bereich, siehe oben). Kanalname: "Fenno & Freunde – Kinderlieder" (DE) / "Fenno & Friends – Kids Songs" (EN)
+- [x] Name final festgelegt: **Fenno** (statt des automatisch vergebenen "Pip" — zu stark belegt im Kinder-Content-Bereich, siehe oben). Kanalname: "Fenno & Freunde" (DE) / "Fenno & Friends" (EN) — ursprünglich mit Zusatz "– Kinderlieder"/"– Kids Songs" geplant, aber Google hat den längeren Namen beim Kanal-Anlegen abgelehnt (siehe unten), daher kürzere Version ohne Zusatz
+- [x] DE-Kanal "Fenno & Freunde" real angelegt (20.09.2026), Name/Handle jetzt 14 Tage gesperrt (Google-Regel). EN-Kanal "Fenno & Friends" folgt mit gleichem Namensmuster
 - [x] Eigenes Agentenpaar aufgesetzt (Mikes Wunsch 20.09.2026: "dafür hab ich doch meine Agenten"): `youtube-manager`/`youtube-executor` (siehe `CLAUDE.md` Abschnitt "YouTube-Agent"), koordiniert über `03 Bereiche/YouTube Kinder-Kanäle/Video-Warteschlange.md`. Übernehmen ab jetzt Planung und Produktion, nicht mehr die Hauptsession direkt
 - [x] Produktions-Workflow identifiziert: Jarvis' `faceless-video`-Workflow (Typ "Kids", eigener Song-Modus) — liefert konsistenten Look, Gesangsstimme und eingebrannte Untertitel als fertiges Paket, genau das was für die Sing-along-Videos gebraucht wird
 - [ ] Erstes Lied/erste Episode auswählen und produzieren (Aufgabe des `youtube-manager`/`youtube-executor`-Paars ab jetzt, siehe Video-Warteschlange)
@@ -75,8 +76,8 @@ Mike hat als konkretes Beispiel für "sowas ist gut" verlinkt: ["Lerne schwimmen
 
 **Ergebnis:** Make.com hat ein natives YouTube-Modul (`Upload a Video`, `Set a Video Thumbnail`, `Update a Video Details`, u.a.) — ein automatisierter Upload ist also technisch möglich, genau wie beim bestehenden Telegram-Kanal-Versand (Make-Szenario 7391673). **Aber:** Die Verbindung braucht einen echten Google-Login mit Klick-Bestätigung im Browser (Googles OAuth-Pflicht für YouTube-Uploads) — das kann kein Agent/keine Session automatisiert für Mike erledigen. Geprüft: aktuell existiert weder eine YouTube-Verbindung in Make.com noch einer der beiden Kanäle selbst.
 
-**Einziger verbleibender manueller Schritt, den nur Mike machen kann (ca. 15-20 Minuten, einmalig):**
-1. Zwei YouTube-Kanäle anlegen: "Fenno & Freunde – Kinderlieder" (DE), "Fenno & Friends – Kids Songs" (EN)
+**Verbleibende manuelle Schritte, die nur Mike machen kann:**
+1. ~~Zwei YouTube-Kanäle anlegen~~ DE-Kanal "Fenno & Freunde" erledigt (20.09.2026, Name mit Zusatz "– Kinderlieder" wurde von Google beim Anlegen abgelehnt, kürzere Version ging durch). EN-Kanal "Fenno & Friends" noch offen
 2. In Make.com ein YouTube-Modul hinzufügen, "Create a connection" klicken, Google-Login durchklicken (einmal je Kanal/Google-Konto)
 3. Bescheid geben — danach wird daraus ein Upload-Szenario gebaut (analog zum Telegram-Szenario) und der `youtube-executor` kann ab dann selbstständig hochladen
 

@@ -12,14 +12,16 @@ status: aktiv
 
 **Hinweis:** Solange kein YouTube-Upload-Werkzeug existiert (siehe Kanal-Setup-Status unten), ist diese Phase ohnehin nur für die Vorbereitung relevant — es kann noch nichts live gehen, egal welcher Status hier steht.
 
-## Kanal-Setup-Status — technisch blockiert, braucht Mike
+## Kanal-Setup-Status — in Arbeit
 
-**Was fehlt (Stand 20.09.2026):** Es gibt weder die beiden YouTube-Kanäle selbst noch einen Upload-Connector. Geprüft: Make.com hat ein natives YouTube-Modul (`Upload a Video`, `Set a Video Thumbnail`, `Update a Video Details`, `Update a Channel Details`, u.a.) — technisch also machbar, aber die Verbindung braucht einen echten Google-Login mit Klick-Freigabe im Browser. Das kann keine Session/kein Agent automatisiert für Mike erledigen (Google verlangt den Login/die Zustimmung von einer echten Person).
+**Fortschritt (20.09.2026):** DE-Kanal **"Fenno & Freunde"** ist angelegt (Google hat den längeren Namen mit Zusatz "– Kinderlieder" beim Erst-Anlegen abgelehnt, "Fenno Test" als Testname ging durch, danach umbenannt zu "Fenno & Freunde" — Name/Handle jetzt für 14 Tage gesperrt, siehe Google-Regel). EN-Kanal **"Fenno & Friends"** noch anzulegen, gleiches Namensmuster ohne Zusatz verwenden. Es gibt noch keinen Upload-Connector. Geprüft: Make.com hat ein natives YouTube-Modul (`Upload a Video`, `Set a Video Thumbnail`, `Update a Video Details`, `Update a Channel Details`, u.a.) — technisch also machbar, aber die Verbindung braucht einen echten Google-Login mit Klick-Freigabe im Browser. Das kann keine Session/kein Agent automatisiert für Mike erledigen (Google verlangt den Login/die Zustimmung von einer echten Person).
 
-**Was Mike konkret tun muss (einmalig, ca. 15-20 Minuten):**
-1. Zwei YouTube-Kanäle anlegen (über ein Google-Konto, z. B. auf youtube.com → Konto-Symbol → "Kanal erstellen"): einen für "Fenno & Freunde – Kinderlieder" (DE), einen für "Fenno & Friends – Kids Songs" (EN). Können am selben Google-Konto hängen (Kanalwechsel in YouTube Studio) oder an zwei getrennten Konten.
-2. In Make.com (eu1.make.com, Team "My Team"): irgendein Szenario öffnen (oder ein neues anlegen), ein YouTube-Modul hinzufügen, **"Create a connection"** klicken, den Google-Login für Kanal 1 durchklicken und alle angefragten Rechte bestätigen. Gleiches nochmal für Kanal 2 (zweite Connection, falls zwei getrennte Google-Konten).
-3. Kurz Bescheid geben, sobald die Verbindung(en) stehen — dann baue ich (oder eine Session mit Make-Zugriff) daraus ein Szenario "YouTube: Video-Upload", analog zum bestehenden Telegram-Szenario (Make-Szenario-ID 7391673), und der `youtube-executor` kann ab dann automatisch hochladen.
+**Was Mike noch tun muss:**
+1. ~~DE-Kanal "Fenno & Freunde" anlegen~~ erledigt (20.09.2026)
+2. EN-Kanal "Fenno & Friends" anlegen (gleicher Weg: youtube.com → Konto-Symbol → "Kanal erstellen", Namen ohne Zusatz verwenden, Alias z.B. `@fennoandfriends`)
+3. Branding (Profilbild/Banner, siehe unten) und "Für Kinder"-Kennzeichnung für beide Kanäle in YouTube Studio setzen
+4. In Make.com (eu1.make.com, Team "My Team"): irgendein Szenario öffnen (oder ein neues anlegen), ein YouTube-Modul hinzufügen, **"Create a connection"** klicken, den Google-Login durchklicken und alle angefragten Rechte bestätigen (deckt beide Kanäle ab, wenn sie am selben Google-Konto hängen)
+5. Kurz Bescheid geben, sobald die Verbindung steht — dann baue ich daraus ein Szenario "YouTube: Video-Upload", analog zum bestehenden Telegram-Szenario (Make-Szenario-ID 7391673), und der `youtube-executor` kann ab dann automatisch hochladen.
 
 **Bis dahin:** `youtube-executor` produziert fertige Videos (Charakter, Song, Animation, Untertitel) über Jarvis und legt sie hier mit fertiger Video-URL ab, Status `fertig, wartet auf Kanal/Upload`. Nichts geht verloren, sobald der Connector steht, müssen die bereits fertigen Videos nicht neu erzeugt werden.
 

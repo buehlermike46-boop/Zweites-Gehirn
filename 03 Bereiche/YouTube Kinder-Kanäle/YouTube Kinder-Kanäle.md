@@ -15,7 +15,7 @@ Laufende Produktion für die zwei Kinder-YouTube-Kanäle (DE + EN), siehe [[YouT
 
 ## Charakter & Branding (festgelegt 20.09.2026)
 - **Charakter:** "Fenno", ein origineller kleiner Fuchs (3D-stylized/Pixar-artiger Look), erster Entwurf von Mike freigegeben. Kein Bezug zu einer bestehenden Marke/Figur.
-- **Kanalname:** "Fenno & Friends – Kids Songs" (EN) / "Fenno & Freunde – Kinderlieder" (DE). Gleiche Marke, gleiche Visuals, nur Sprache unterschiedlich.
+- **Kanalname:** "Fenno & Friends" (EN) / "Fenno & Freunde" (DE, real angelegt am 20.09.2026 — Google hat die längere Version mit Zusatz "Kinderlieder"/"Kids Songs" beim Erst-Anlegen abgelehnt, ohne Zusatz ging es problemlos durch). Gleiche Marke, gleiche Visuals, nur Sprache unterschiedlich.
 - Referenz-Charakterbild: siehe [[Video-Warteschlange]]
 
 ## Referenzen
