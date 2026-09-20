@@ -20,6 +20,9 @@ Recherche (19.09.2026) liefert widersprüchliche Quellen: ein Drittanbieter-Blog
 - **Testreihenfolge:** erst Replay/Demo in ATAS, Apex-Freigabe klärt Mike parallel, Live erst danach
 - **Code-Workflow:** Claude schreibt den C#-Code, Mike kompiliert/testet lokal in Visual Studio + ATAS, Feedback-Loop über diese Session
 
+## Wichtige Rahmenbedingung: ATAS läuft lokal, nicht in der Cloud
+ATAS ist eine Desktop-Anwendung, kein Server-/Cloud-Dienst. Eine gestartete Strategie läuft im ATAS-Prozess auf Mikes Rechner — schließt er ATAS oder geht der Rechner in Standby, stoppt der Bot mit. Kurze Internet-Aussetzer bei laufendem ATAS übersteht die Strategie (ATAS-eigene Meldung "bleibt aktiv"), ein Schließen der App nicht. Für echten Dauerbetrieb (Phase 4, vollautomatisch) muss der Rechner mit laufendem ATAS durchgehend an sein, solange gehandelt werden soll.
+
 ## Technischer Rahmen (ATAS)
 - Sprache: C#, .NET Standard Class Library
 - Referenzen aus dem lokalen ATAS-Installationsverzeichnis: `ATAS.Indicators.dll` (Analyse/Anzeige), `ATAS Strategies.dll` (zusätzlich Order-Ausführung), `Utils.Common.dll` (Logging)
@@ -71,8 +74,13 @@ Bestätigte Felder (per Objektkatalog): `Direction`, `Price`, `QuantityToFill`, 
 - Voraussetzung: Phase 1–3 im Replay/Demo stabil UND Apex-Bot-Regel offiziell geklärt (siehe Blocker oben)
 - Erst Demo-/Evaluation-Konto, das Funded-Konto erst nach echter Bewährung
 
+## Phase 3 — Status (20.09.2026)
+Erster echter Order-Test (`code/NqTestStrategy.cs`, noch ohne Stop-Loss, noch ohne Halb-/Vollautomatik-Umschalter) ist gebaut, deployed und auf dem NQ-Chart aktiviert — Konto bestätigt **DEMO331DE** (einziges aktuell verbundenes Konto, kein APEX/Rithmic-Risiko). Wartet auf die nächste Demand-Index-Nulllinien-Kreuzung nach oben, um einmalig eine Market-Buy-Order über 1 Kontrakt zu platzieren. Markt war am 20.09.2026 (Sonntag) noch nicht offen, Test steht für den nächsten Handelstag aus.
+
+**Zwischenfall während der Einrichtung (19./20.09.2026):** Nach vielen ATAS-Neustarts während der Entwicklung wurden alle Chart-Fenster grau/unbedienbar, während gleichzeitig die Rithmic-Verbindungen (APEX und ein zweites Konto) mit "Repository Connection Login Failed" fehlschlugen. Ursache nicht abschließend geklärt (DLL testweise entfernt UND Rechner neu gestartet, beides zusammen hat es behoben) — die eigene DLL kann als Auslöser nicht sicher ausgeschlossen werden, auch wenn die Rithmic-Login-Fehler eher wie ein separates, brokerseitiges Problem aussehen. Falls sich Chart-Probleme nach künftigen DLL-Updates wiederholen: DLL zuerst testweise aus beiden Ordnern entfernen, um es einzugrenzen.
+
 ## Nächster Schritt
-Code für Phase 0/1 (Demand-Index-Indikator) liegt in `code/NqDemandIndex.cs`. Du baust ihn lokal, meldest zurück was passiert (Build-Fehler, IntelliSense-Vorschläge für `GetCandle(bar).`) — daraus mache ich die nächsten Schritte konkret, statt weiter auf öffentlicher Doku zu raten.
+Sobald der Markt wieder offen ist: prüfen ob die Test-Order tatsächlich auslöst. Danach: Stop-Loss/Take-Profit ergänzen (OCOGroup/TriggerPrice, siehe Order-Felder oben) und den Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]
