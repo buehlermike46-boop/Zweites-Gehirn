@@ -36,7 +36,7 @@ Mike Bühler, 28 Jahre alt, gelernter Elektroniker für Betriebstechnik und Elek
 
 ## Session-Routinen
 
-**Wichtig vor jedem manuellen Subagenten-Aufruf (`/aufgaben-check`, `/content-check`, `/professor-check`):** Die Scheduled Cloud Routines pushen direkt nach `master`. Diese Subagenten selbst haben kein Bash/Git-Tool und lesen nur den lokal ausgecheckten Branch der aufrufenden Session – der kann hinter `master` zurückliegen (z.B. wenn diese Session auf einem eigenen Arbeits-/PR-Branch läuft). Deshalb: aufrufende Session macht IMMER erst `git fetch origin master && git merge origin/master`, bevor einer der drei Subagenten gestartet wird, sonst arbeitet er auf veraltetem Stand (siehe [[Qualitätsbericht]], Fehlalarm vom 11.09.2026).
+**Wichtig vor jedem manuellen Subagenten-Aufruf (`/aufgaben-check`, `/content-check`, `/professor-check`, `/youtube-check`):** Die Scheduled Cloud Routines pushen direkt nach `master`. Diese Subagenten selbst haben kein Bash/Git-Tool und lesen nur den lokal ausgecheckten Branch der aufrufenden Session – der kann hinter `master` zurückliegen (z.B. wenn diese Session auf einem eigenen Arbeits-/PR-Branch läuft). Deshalb: aufrufende Session macht IMMER erst `git fetch origin master && git merge origin/master`, bevor einer der drei Subagenten gestartet wird, sonst arbeitet er auf veraltetem Stand (siehe [[Qualitätsbericht]], Fehlalarm vom 11.09.2026).
 
 ### Git-Workflow für interaktive Sessions (seit 13.09.2026, Mikes Wunsch: Vault soll immer aktuell sein)
 
@@ -81,6 +81,19 @@ Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/Marketing & Kun
 **Freigabe-Phase steht oben in `Posting-Warteschlange.md`, zweistufig:** Phase 1 "Freigabe nötig" (aktuell aktiv, seit 10.09.2026) heißt: der Executor postet nur Einträge mit Status `freigegeben`, alles andere bereitet er nur vor. Phase 2 "automatisch" heißt: der Executor postet neue Einträge ohne Einzelfreigabe. Nur Mike schaltet zwischen den Phasen um, keiner der beiden Agenten tut das selbst.
 
 Manuell auslösbar über `/content-check`. Bei Session-Start zusätzlich kurz prüfen, ob in Phase 1 Posts mit Status `bereit (wartet auf Freigabe)` auf Mikes Ja/Nein warten, und proaktiv zeigen.
+
+### YouTube-Agent (Kinder-Kanäle DE & EN, seit 20.09.2026)
+Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/YouTube Kinder-Kanäle/Video-Warteschlange.md`, nach dem gleichen Muster wie der Content-Agent, aber komplett eigenes Thema (Kinder-Content, nichts mit dem IB-Business zu tun):
+- `youtube-manager` (`.claude/agents/youtube-manager.md`) – plant. Liest das Projekt [[YouTube Kinder-Kanäle (DE & EN)]] und den Bereich `03 Bereiche/YouTube Kinder-Kanäle/`, kontrolliert die letzte Produktionsrunde und schreibt neue Episoden-Vorschläge in die Video-Warteschlange.
+- `youtube-executor` (`.claude/agents/youtube-executor.md`) – produziert fällige Episoden (Charakter "Fenno", Song, Animation, Untertitel) über Jarvis (`faceless-video`-Workflow, Typ Kids), je eine identische Bild-Produktion mit zwei Audiospuren (DE/EN). Läuft auch unbeaufsichtigt per Scheduled Cloud Routine.
+
+**Bewusste dritte Baustelle (20.09.2026, Mikes Entscheidung):** Siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] Punkt 8, Update 20.09.2026 — komplett neues Standbein ohne Bezug zum IB-Business, trotzdem aktiv gestellt.
+
+**Kanal-Setup aktuell technisch blockiert:** Es gibt weder die zwei YouTube-Kanäle noch einen Upload-Connector. Make.com hat zwar ein natives YouTube-Modul, aber die Verbindung braucht einen echten Google-Login durch Mike (kein API-Workaround möglich) — siehe „Kanal-Setup-Status" in der Video-Warteschlange für die genaue Schritt-für-Schritt-Anleitung. Bis dahin produziert der `youtube-executor` fertige Videos und legt sie mit Status `fertig, wartet auf Kanal/Upload` ab, ohne etwas zu verlieren.
+
+**Freigabe-Phase** steht oben in `Video-Warteschlange.md`, gleiches Prinzip wie bei Instagram: Phase 1 „Freigabe nötig" ist der Start-Zustand für dieses neue, rechtlich sensible Content-Format (COPPA/„Made for Kids", IP-Abgrenzung zu bestehenden Kinder-Kanälen). Nur Mike schaltet auf Phase 2 um.
+
+Manuell auslösbar über `/youtube-check`.
 
 ### Professor (Qualitätsmanagement für die Agenten-Struktur)
 `professor` (`.claude/agents/professor.md`) – prüft regelmäßig alle laufenden Agenten (aufgaben-manager/-executor, content-manager/-executor, sich selbst eingeschlossen) auf Reibung und Ineffizienz, sucht über die Skill-/Plugin-/Connector-Suche passende Bausteine für echte Lücken (installiert nichts selbst, kann er technisch nicht) und schreibt einen Bericht nach `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md`. Legt neue Agenten-Entwürfe höchstens als Datei an, aktiviert/scheduled nie selbst eine Routine.

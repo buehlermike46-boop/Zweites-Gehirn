@@ -65,16 +65,25 @@ Mike hat als konkretes Beispiel für "sowas ist gut" verlinkt: ["Lerne schwimmen
 
 **Status 20.09.2026:** Auf Mikes Wunsch ("Aktiv stellen, wir sollen das Beenden und Klicks sammeln") direkt mit der Produktion gestartet, kein reines Recherche-Projekt mehr.
 
-- [x] Erster Charakterentwurf über Jarvis (`soul_cast`, Character-Sheet-Workflow) fertig: kleiner origineller Fuchs-Charakter, 3D-stylized (Pixar-artiger Look), passend zum empfohlenen Animations-Format. Bild an Mike geschickt (20.09.2026). Das Tool hat selbst den Arbeitsnamen "Pip Bramble" vergeben — **Achtung:** "Pip" ist im Kinder-Content-Bereich schon stark belegt (Pip Ahoy!, Pip and Posy, Pip and Poppy Show, Baby Pip), für den finalen Kanalnamen daher einen eigenständigeren Namen wählen statt "Pip" zu übernehmen
-- [ ] Charakter-Feedback von Mike einholen (Design okay? Anpassungen?), dann eigenständigen Namen für DE+EN festlegen
-- [ ] Kanalname + Branding DE/EN final festlegen
-- [ ] Erstes Lied auswählen (empfohlen: ein kurzer, komplett eigener Song statt Adaption eines klassischen Reims, damit DE- und EN-Video wirklich 1:1 identisch sind — Melodie/Bild gleich, nur Gesangsspur pro Sprache neu erzeugt)
-- [ ] Testvideo produzieren, Produktionszeit/-kosten pro Video real messen
-- [ ] YouTube-Kanäle selbst anlegen (DE + EN) — **technisch blockiert:** kein Connector/Tool in diesem Vault für YouTube-Kanalerstellung oder -Upload vorhanden. Das kann nur Mike selbst machen (Google-Konto, Kanal anlegen, Branding hochladen). Sobald die Kanäle existieren, prüfen ob es für den Video-Upload selbst einen Connector gibt oder ob das vorerst manuell bleibt
-- [ ] Erst danach über eine eigene Produktions-Pipeline (Agent ähnlich `content-executor`) nachdenken
+- [x] Erster Charakterentwurf über Jarvis (`soul_cast`, Character-Sheet-Workflow) fertig: kleiner origineller Fuchs-Charakter, 3D-stylized (Pixar-artiger Look). Von Mike freigegeben (20.09.2026: "Design gefällt mir")
+- [x] Name final festgelegt: **Fenno** (statt des automatisch vergebenen "Pip" — zu stark belegt im Kinder-Content-Bereich, siehe oben). Kanalname: "Fenno & Freunde – Kinderlieder" (DE) / "Fenno & Friends – Kids Songs" (EN)
+- [x] Eigenes Agentenpaar aufgesetzt (Mikes Wunsch 20.09.2026: "dafür hab ich doch meine Agenten"): `youtube-manager`/`youtube-executor` (siehe `CLAUDE.md` Abschnitt "YouTube-Agent"), koordiniert über `03 Bereiche/YouTube Kinder-Kanäle/Video-Warteschlange.md`. Übernehmen ab jetzt Planung und Produktion, nicht mehr die Hauptsession direkt
+- [x] Produktions-Workflow identifiziert: Jarvis' `faceless-video`-Workflow (Typ "Kids", eigener Song-Modus) — liefert konsistenten Look, Gesangsstimme und eingebrannte Untertitel als fertiges Paket, genau das was für die Sing-along-Videos gebraucht wird
+- [ ] Erstes Lied/erste Episode auswählen und produzieren (Aufgabe des `youtube-manager`/`youtube-executor`-Paars ab jetzt, siehe Video-Warteschlange)
 
-## Grundsatzentscheidung (offen)
-Nischen-Feinschnitt (Zielalter, Videolänge, Upload-Rhythmus) folgt nach dem ersten Charakter-Feedback von Mike, um nicht am falschen Design vorbeizuplanen.
+## Kanal-Setup: YouTube-Upload technisch geprüft (20.09.2026)
+
+**Ergebnis:** Make.com hat ein natives YouTube-Modul (`Upload a Video`, `Set a Video Thumbnail`, `Update a Video Details`, u.a.) — ein automatisierter Upload ist also technisch möglich, genau wie beim bestehenden Telegram-Kanal-Versand (Make-Szenario 7391673). **Aber:** Die Verbindung braucht einen echten Google-Login mit Klick-Bestätigung im Browser (Googles OAuth-Pflicht für YouTube-Uploads) — das kann kein Agent/keine Session automatisiert für Mike erledigen. Geprüft: aktuell existiert weder eine YouTube-Verbindung in Make.com noch einer der beiden Kanäle selbst.
+
+**Einziger verbleibender manueller Schritt, den nur Mike machen kann (ca. 15-20 Minuten, einmalig):**
+1. Zwei YouTube-Kanäle anlegen: "Fenno & Freunde – Kinderlieder" (DE), "Fenno & Friends – Kids Songs" (EN)
+2. In Make.com ein YouTube-Modul hinzufügen, "Create a connection" klicken, Google-Login durchklicken (einmal je Kanal/Google-Konto)
+3. Bescheid geben — danach wird daraus ein Upload-Szenario gebaut (analog zum Telegram-Szenario) und der `youtube-executor` kann ab dann selbstständig hochladen
+
+**Bis dahin:** volle Produktion läuft bereits automatisiert über `youtube-executor`, fertige Videos werden in der Video-Warteschlange mit Status `fertig, wartet auf Kanal/Upload` gesammelt. Genaue Schritt-für-Schritt-Anleitung liegt in `03 Bereiche/YouTube Kinder-Kanäle/Video-Warteschlange.md`.
+
+## Grundsatzentscheidung
+Erledigt (20.09.2026): Mike hat das Projekt trotz der Drei-Baustellen-Warnung aktiv gestellt, siehe Log im [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] Punkt 8. Operative Planung (Nischen-Feinschnitt, Zielalter, Upload-Rhythmus) läuft ab jetzt über den `youtube-manager`, nicht mehr hier.
 
 ## Quellen
 - [Most subscribed YouTube Kids channels – AIR Media-Tech](https://air.io/en/youtube-hacks/most-subscribed-youtube-kids-channels)
