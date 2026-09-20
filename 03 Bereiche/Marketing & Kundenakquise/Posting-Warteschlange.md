@@ -172,6 +172,24 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Caption:** "PrimeVerse zählt aktuell 8.119 aktive Mitglieder in über 40 Ländern. Für dich als Einsteiger heißt das vor allem: du bist nicht allein mit deinen Anfängerfragen, es gibt Austausch, Live-Coaching und Leute, die dieselben Anfängerfehler schon hinter sich haben. Mehr über das ganze Ökosystem in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
 - **Hashtags:** #trading #tradingcommunity #primeverse #limitless
 
+### 14. Samstag, 26.09.2026, 19:20 Uhr
+- **Status:** bereit (wartet auf Freigabe)
+- **Format:** Carousel (4 Bilder), erster Post nach der neuen Recherche-Erkenntnis vom 20.09. — bewusst DM-share-optimiert (Tag-a-Friend-Format), siehe [[Recherche - Was funktioniert auf Instagram (Trading-Content)]]
+- **Thema/Hook:** Anfängerfehler-Checkliste, explizit teilbar. Hook: "3 Anfängerfehler, die fast jeder am Anfang macht. Tag jemanden, der gerade erst anfängt."
+- **Fakt/Nutzwert (ICP.md/Angebot.md):** Klassische Einsteigerfehler (kein Risikomanagement, kein Trading-Journal, nach Verlust größer nachlegen) — direkt verbunden mit dem, was die kostenfreie Limitless Academy vermittelt, bevor überhaupt ein Trade läuft.
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: 4 Info-Grafik-Slides im bestehenden Limitless-Look. Slide 1 Hook, Slide 2 Fehler 1 (kein Risikomanagement), Slide 3 Fehler 2 (kein Journal) + Fehler 3 (nach Verlust nachlegen), Slide 4 CTA.
+- **Caption (mit explizitem Teilen-CTA, neu seit 20.09.):** "3 Anfängerfehler, die fast jeder am Anfang macht: kein Risikomanagement, kein Trading-Journal, nach einem Verlust größer nachlegen statt kleiner. Genau solche Grundlagen sind Teil der kostenfreien Limitless Academy, bevor überhaupt ein Trade läuft. Tag jemanden, der gerade erst mit Trading anfängt, das hier hätte ihm/ihr am Anfang geholfen. Mehr dazu in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
+- **Hashtags (spezifischer statt Standard-Set, siehe Recherche-Update 20.09.):** #tradingfehler #risikomanagement #tradingjournal #limitless
+
+### 15. Sonntag, 27.09.2026, 18:50 Uhr
+- **Format:** Reel (faceless, Text-Overlay)
+- **Status:** bereit (wartet auf Freigabe)
+- **Thema/Hook:** Signalgruppen im Detail (bisher nur am Rand im Copy-Trading-Post erwähnt, hier eigener Post). Hook: "Was du in einer Signalgruppe wirklich bekommst, in 20 Sekunden."
+- **Fakt/Nutzwert (Angebot.md):** Premium-Signalgruppen mit Einstieg, Stop und Ziel pro Trade, kostenfrei Teil des Limitless-Zugangs, Nutzer entscheidet selbst ob und wie er mitgeht (keine automatische Ausführung).
+- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: kurzes Text-Overlay-Reel, zeigt eine Signal-Nachricht mit den drei Bestandteilen (Einstieg/Stop/Ziel) als abstrakte, neutrale Chat-Bubble-Grafik, keine echten Zahlen/Beträge.
+- **Caption:** "Eine Signalgruppe schickt dir nicht einfach 'kaufen' oder 'verkaufen'. Du bekommst Einstieg, Stop und Ziel für einen Trade, und entscheidest selbst, ob und wie du mitgehst, nichts läuft automatisch. Genau das ist Teil der kostenfreien Signalgruppen im Limitless-Ökosystem. Mehr dazu in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung, Trading ist mit Risiko verbunden."
+- **Hashtags:** #tradingsignale #signalgruppe #limitless #tradingeducation
+
 ## Wartet auf dich (Personal-Account, nicht Teil der Automatisierung)
 - Mi 09.09. 19:30 — Reel "Meine erste Trading-Woche..." — Skript fertig in [[Content-Plan - Woche 07.09.-13.09.2026]]
 - Do 10.09. — Story-Umfrage "Was würdest du einen Trading-Coach fragen?"
