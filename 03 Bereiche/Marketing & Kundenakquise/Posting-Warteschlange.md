@@ -102,21 +102,20 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #tradingbot #automatisiertestrading #limitless #tradingeducation #finanziellefreiheit
 
 ### 6. Freitag, 18.09.2026, 19:30 Uhr
-- **Status:** freigegeben (11.09.2026, Mike per Chat)
+- **Status:** freigegeben, aber NICHT gepostet — Posting-Versuch am 19.09.2026 wurde vom System abgelehnt ("Denied by user"), siehe Executor-Log 19.09. für Details. Nicht erneut versucht (feste Regel: keinen abgelehnten Tool-Call wiederholen). Fertiges Video-Asset unten aufgehoben, damit bei einem erneuten Versuch nicht neu generiert werden muss.
 - **Format:** Reel
 - **Thema/Hook:** PrimeVerse Market-Scanner (Syphon AI & Zonar). Hook mit konkreter Zahl: "40+ Währungspaare, ein KI-Scanner. Was ein Market-Scanner-Tool wirklich zeigt."
 - **Fakt/Nutzwert (Angebot.md):** KI-Marktscanner für institutionelle Orderflow-Muster über 40+ Währungspaare, laut Anbieter Teil von PrimeVerse, kostenfrei über den Limitless-Zugang.
-- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: Screen-Recording-artiges Reel mit neutral gestalteter, eigener Dashboard-Optik (kein echtes proprietäres UI kopieren), Text-Overlays erklären in 3 Schritten, was ein Market-Scanner macht.
+- **Asset (über Jarvis `seedance_2_5` erstellt, bereit zum Posten, noch nicht live):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260919_164841_32315f5c-95e8-4f46-adca-c21bef8ab270.mp4 (erste Generierung des Vortages schlug mit Status `ip_detected` fehl — vermutlich Fehlalarm eines IP-/Marken-Ähnlichkeitsfilters auf den ursprünglichen "Dashboard-UI"-Prompt, zweite Generierung mit angepasstem, abstrakterem Prompt ohne Dashboard-Optik erfolgreich).
 - **Caption:** "Ein Market-Scanner beobachtet laut Anbieter über 40 Währungspaare gleichzeitig und sucht nach Mustern, für die ein Mensch den ganzen Tag vorm Chart sitzen müsste. Genau das ist eines der Tools, die im PrimeVerse-Teil von Limitless kostenlos mit dabei sind, sobald dein Zugang steht. Ersetzt kein eigenes Marktverständnis, spart dir aber Zeit beim Beobachten. Wie du rankommst, zeig ich dir in meinem Kanal: t.me/JointoInnerCircle. Hinweis: Bildungsinhalt, keine Anlageberatung."
 - **Hashtags:** #trading #marketscanner #ki #limitless #primeverse #tradingtools
 
 ### 7. Samstag, 19.09.2026, 19:00 Uhr
-- **Status:** freigegeben (11.09.2026, Mike per Chat)
-- **Format:** Story (Umfrage/Interaktion)
+- **Status:** gepostet (19.09.2026, ca. 16:50 UTC). Media-ID 18486595840110988
+- **Format:** Story
 - **Thema/Hook:** Story-Umfrage zur Zielgruppen-Klärung, analog zum Q&A-Format aus der Recherche. Frage: "Was ist für dich am Trading-Ökosystem am unklarsten?" mit Antwortoptionen "Signale", "Bots", "Wie ich starte", "Kosten".
 - **Fakt/Nutzwert:** direkte Verbindung zu den Themen aus `Angebot.md` (Signalgruppen, Bots, Live-Sessions, kostenfrei), sammelt Feedback statt neue Behauptung aufzustellen.
-- **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: einfache Story-Grafik mit Platzhalter für Umfrage-Sticker (Frage + vier Antwortoptionen), im bestehenden Look.
-- **Caption/Text:** "Bevor's nächste Woche weitergeht: was ist für dich am unklarsten? 👇" plus Umfrage-Sticker mit den vier Optionen. Kein CTA zum Konto, optional Link-Sticker "Mehr Infos: t.me/JointoInnerCircle".
+- **Umsetzung, abweichend vom ursprünglichen Plan:** Windsor.ai unterstützt für `create_story` keinen echten Umfrage-Sticker (nur `image_url`/`video_url`, keine Caption, kein interaktives Element). Frage + vier Antwortoptionen deshalb direkt als Text ins Bild gerendert (über Jarvis `nano_banana_2`) statt als klickbarer Sticker — sammelt damit kein strukturiertes Umfrage-Ergebnis, nur optische Wirkung. Für Mike/`professor` vermerkt.
 - **Hashtags:** #trading #limitless
 
 ### 8. Sonntag, 20.09.2026, 18:50 Uhr
@@ -220,6 +219,18 @@ Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09
 
 ### 2026-09-13, 16:36 UTC, planmäßiger täglicher Lauf
 Zur Kenntnis genommen: Freigabe-Phase wurde heute von Mike auf **Phase 2 (automatisch)** umgestellt, siehe Abschnitt oben. Nichts fällig zum Posten in diesem Lauf (Eintrag Nr. 2, Montag 14.09. 18:50 Uhr, liegt mit ca. 26h noch knapp außerhalb des 24h-Fensters, ist bereits `freigegeben` und wird morgen fällig). Post Nr. 1 bereits ausgewertet (12.09.), noch keine neuen Rohzahlen fällig. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme. Content-Manager läuft heute 17:00 UTC turnusmäßig selbst (Sonntag), keine Überschneidung mit diesem Lauf.
+
+### 2026-09-18/19, Lauf über zwei Kalendertage — ein abgelehnter Posting-Versuch
+
+**Ablauf, damit es nachvollziehbar bleibt:** Der Lauf begann als Reaktion auf die 18.09.-Benachrichtigung (Queue-Eintrag #6, Reel Market-Scanner, fällig 19:30 Uhr, bereits `freigegeben`). Die Session wurde mitten in der Bearbeitung unterbunden (Kontext-Kompression/Idle), bevor committet wurde — dadurch ging keine Arbeit verloren, aber der Lauf zog sich faktisch bis zum 19.09.-Trigger hin, wo er fortgesetzt wurde. Diese Notiz deckt beide Tage ab.
+
+**Post Nr. 6 (Market-Scanner-Reel):** Erste Jarvis-Generierung (`seedance_2_5`, Dashboard-artiger Prompt) schlug fehl mit Status `ip_detected` — vermutlich ein Fehlalarm eines IP-/Marken-Ähnlichkeitsfilters, ausgelöst durch die Beschreibung einer generischen "Dashboard-UI". Zweite Generierung mit abstrakterem, UI-freiem Prompt (Radar-Sweep-Metapher statt Dashboard) erfolgreich. **Beim anschließenden Post-Versuch über `mcp__Windsor_ai__execute_action` (`create_video_post`) wurde der Tool-Call vom System mit "Denied by user" abgelehnt.** Das ist ungewöhnlich für einen unbeaufsichtigten Routine-Lauf — laut Systemregel wird ein abgelehnter Tool-Call nicht identisch wiederholt. **Post Nr. 6 ist daher weiterhin NICHT live**, Status bleibt `freigegeben`, das fertige Video-Asset ist im Queue-Eintrag hinterlegt, damit bei einem künftigen Versuch (nächster Lauf oder durch Mike/eine andere Session) nicht neu generiert werden muss. Für Mike wichtig zu wissen: falls das eine bewusste Ablehnung war (z.B. weil der Reel-Inhalt nochmal geprüft werden sollte), bitte kurz Bescheid geben, sonst versucht der nächste reguläre Lauf es automatisch erneut.
+
+**Post Nr. 7 (Story-Umfrage, planmäßig 19.09.):** Erfolgreich gepostet, Media-ID 18486595840110988. Dabei eine technische Grenze entdeckt: `create_story` bei Windsor.ai/Instagram unterstützt keinen echten interaktiven Umfrage-Sticker, nur ein statisches Bild. Frage + vier Antwortoptionen deshalb direkt ins Bild gerendert statt als klickbares Element — sammelt kein strukturiertes Feedback wie ursprünglich in der Queue geplant, nur die optische Wirkung. An `professor` zur Kenntnis: falls Mike echte Story-Umfragen will, bräuchte es entweder eine andere Windsor-Aktion (aktuell laut `list_actions` nicht vorhanden) oder manuelles Posten durch Mike selbst für Story-Umfragen.
+
+Performance-Zahlen für die drei 17.09.-Posts (#3, #4, #5, jetzt ~48h alt) nachgetragen, siehe [[Performance-Log]] — auffällig niedrigere Reichweite als bei früheren Posts, möglicherweise durch die Häufung von drei Posts in 15 Minuten am 17.09., aber nicht belastbar bei dieser Datenmenge.
+
+Guthaben-Stand: 707,5 Credits vor diesem Lauf, 500,5 nach der fehlgeschlagenen+erfolgreichen Video-Generierung für Post 6 (zwei Video-Generierungen verbraucht, eine davon durch den `ip_detected`-Fehlschlag "verloren", ohne dass ein Post daraus wurde — an Mike/`professor` als Credit-Verlust durch den Filter-Fehlalarm vermerkt, kein Fehlverhalten dieser Session).
 
 ### 2026-09-17, 16:39-16:53 UTC, Nachhol-Lauf nach dreitägiger Lücke
 

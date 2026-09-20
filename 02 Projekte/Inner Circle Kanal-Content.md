@@ -629,7 +629,7 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 | 2 Warum Gold | Di 15.09., 17:00 | gepostet (17.09.2026, ca. 16:43 UTC, Nachhol-Lauf — Original-Termin 15.09. verpasst, siehe Executor-Log) |
 | 3 Der Fehler, der 90% killt | Mi 16.09., 17:00 | gepostet (17.09.2026, ca. 16:45 UTC, Nachhol-Lauf — Original-Termin 16.09. verpasst, siehe Executor-Log) |
 | 4 Umfrage | Do 17.09., 17:00 | gepostet als Text-Frage (17.09.2026, ca. 16:47 UTC) — kein natives Telegram-Umfrage-Feature im Make-Werkzeug, daher als normale Text-Nachricht mit Antwortoptionen gepostet, siehe Executor-Log |
-| 5 Was du zum Start brauchst | Fr 18.09., 17:00 | offen |
+| 5 Was du zum Start brauchst | Fr 18.09., 17:00 | gepostet (19.09.2026, ca. 16:49 UTC, Nachhol — Original-Termin 18.09. verpasst, siehe Executor-Log) |
 | 6 Wochenausblick | So 20.09., 17:00 | offen |
 | 7 Wie ich das neben Schicht/Kindern mache | Mo 21.09., 11:00 | offen |
 | 8 Lot, Spread, Kommission | Di 22.09., 11:00 | offen |
@@ -647,6 +647,10 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 Mike hat direkt im Chat "poste jetzt einen echten Post in meinen Kanal" verlangt. Post 1 ("Warum es diesen Kanal gibt") aus dem 14-Tage-Plan war der nächste fällige, thematisch passt er als Kanal-Opener am besten. Der hinterlegte Asset-Pfad (`Bilder/Fertig/01-warum-tradest-dueigentlich-noch-alleine.png`) war wie erwartet unerreichbar (lokal bei Mike, nicht im Git-Vault) — daher ein neues, passendes Bild über Jarvis erstellt (dunkles Navy/Gold, Silhouette auf Weg zum Chart-Horizont, kein Logo/Text, quadratisch), URL: `https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260913_133722_0469941a-2cae-49d1-bc47-67536f56619c.png`.
 
 Gepostet über das Werkzeug "Telegram Kanal: Post Versand" (Szenario-ID 7391673, `media_type: photo`) an `@JointoInnerCircle`. **Erfolgreich, Execution-Status SUCCESS.** Message-ID kam über diese Route nicht strukturiert zurück (Szenario hat kein Output-Interface definiert) — bei Bedarf später in Telegram nachschauen oder Output-Interface ergänzen. Post-Status oben aktualisiert. Keine Freigabe- oder Credit-Probleme (718,5 Credits vor der Generierung, Plus-Plan).
+
+### 2026-09-19, ca. 16:49 UTC, Nachhol Post 5
+
+Post 5 ("Was du zum Start brauchst") war für Fr 18.09. 17:00 geplant, aber die Session wurde beim vorherigen Lauf mitten in der Bearbeitung unterbrochen (siehe [[Posting-Warteschlange]] Executor-Log 18./19.09. für Details) — dadurch blieb der bereits über Jarvis erstellte Bild-Asset ungenutzt liegen. Im Folgelauf (19.09.) direkt nachgeholt: gleicher Asset (kein erneutes Generieren nötig), gepostet mit dem vollständigen Post-5-Text inkl. Werbekennzeichnung und Risikohinweis aus Abschnitt 4. Execution-Status SUCCESS. Post-Status-Tabelle aktualisiert.
 
 ### 2026-09-17, ca. 16:39-16:47 UTC, Nachhol-Lauf nach dreitägiger Lücke
 
