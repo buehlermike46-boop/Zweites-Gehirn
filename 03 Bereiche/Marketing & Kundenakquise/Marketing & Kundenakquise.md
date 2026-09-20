@@ -24,7 +24,7 @@ CFD/Forex-Trading gehört bei Meta zu den **komplett verbotenen Kategorien für 
 - Content muss echte Angebots-Fakten enthalten, nicht nur hübsche Grafik — siehe `00 Kontext/Angebot.md`
 - **Funnel-Staging wichtig:** Instagram-Posts bleiben rein informativ (Ökosystem/Themen erklären), OHNE die Kontoeröffnung als Voraussetzung zu erwähnen. Der Account-Eröffnungs-/Broker-CTA gehört erst in den Telegram-Funnel (Kanal **t.me/JointoInnerCircle**, "Inner Circle - Mike Bühler"). Instagram-Captions verlinken stattdessen auf den Kanal.
 - Keine Inhalte aus der RG Trading Academy verwenden (Verschwiegenheitserklärung)
-- Marketing-Zahlen (Winrate, Mitgliederzahlen etc.) immer als "laut Anbieter" kennzeichnen
+- **Geändert 20.09.2026 (Mike per Chat):** Marketing-Zahlen (Winrate, Mitgliederzahlen etc.) NICHT mehr mit "laut Anbieter" kennzeichnen (kommt schlecht an), einfach als Fakt schreiben. Siehe [[Schreibstil]] für die vollständige Regel inkl. Vergütungs-Erwähnung.
 
 ## Automatisierungsgrad & Workflow (aktueller Stand, Update 10.09.2026)
 

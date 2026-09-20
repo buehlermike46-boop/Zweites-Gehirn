@@ -61,7 +61,8 @@ Optional: `mcp__Windsor_ai__get_data` auf dem Instagram-Connector (Account `mike
 - Instagram bleibt informativ (Ökosystem/Themen erklären), NIE Kontoeröffnung/Broker als CTA – das gehört nur in den Telegram-Funnel. CTA ist immer der Verweis auf `t.me/JointoInnerCircle`.
 - Im Telegram-Kanal: nie etwas aus `Trading` (RG Trading Academy) erwähnen, siehe Trennregel oben in `Inner Circle Kanal-Content.md` – dort gilt das noch strikter als auf Instagram, es geht ausschließlich um Limitless/PU Prime/PrimeVerse
 - RG Trading Academy taucht nie auf (streng privat, Verschwiegenheitserklärung)
-- Marketing-Zahlen (Winrate, Mitgliederzahlen) immer als "laut Anbieter" kennzeichnen
+- **Content-Regel (Mike per Chat, 20.09.2026):** Marketing-Zahlen (Winrate, Mitgliederzahlen) NICHT mit "laut Anbieter" oder ähnlichen Attributions-Floskeln kennzeichnen — kommt beim Leser schlecht an, wirkt unsicher/nach Haftungsausschluss. Zahlen stattdessen einfach als Fakt schreiben. Ersetzt die bis 19.09.2026 gültige gegenteilige Regel, siehe [[Schreibstil]].
+- **Content-Regel (Mike per Chat, 20.09.2026):** Nie erwähnen, dass der Broker (oder sonst wer) Mike bezahlt/finanziert — auch nicht vereinfacht oder indirekt ("davon lebt das Ganze", "der Broker bezahlt mich, nicht du"). Gleicher Grund: schlechter Eindruck. Ergänzt die bestehende Regel aus `Inner Circle Kanal-Content.md` Abschnitt 2 (Vergütungsmechanismus nie erklären) — jetzt gilt das auch für die stark vereinfachte Formulierung.
 - Keine Gewinn-Garantien, Risikohinweis wo es um Kontoeröffnung/Broker geht
 - Nie eine bezahlte Kampagne planen oder vorschlagen
 

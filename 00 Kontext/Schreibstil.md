@@ -19,6 +19,11 @@ Duzen.
 ## Vermeiden
 Gedankenstriche, generische KI-Formulierungen, unpassende Emojis (z.B. Smileys in Kunden-Nachrichten).
 
+## Content-Regeln für Marketing-Texte (Instagram/Telegram), seit 20.09.2026 (Mike per Chat)
+- **Nie "laut Anbieter" oder ähnliche Attributions-/Absicherungs-Floskeln** vor Marketing-Zahlen oder Anbieter-Aussagen setzen (z.B. Mitgliederzahlen, Winrate, "laut Website"). Kommt beim Leser schlecht an, wirkt unsicher/nach Disclaimer. Zahlen und Aussagen stattdessen einfach als Fakt schreiben. Ersetzt die bis dahin gültige gegenteilige Regel im `content-manager`.
+- **Nie erwähnen, dass der Broker (oder sonst wer) Mike bezahlt/finanziert** — weder direkt noch vereinfacht/indirekt ("davon lebt das Ganze", "der Broker bezahlt mich, nicht du", Erklärungen zum Vergütungsmechanismus). Gleicher Grund: schlechter Eindruck. Ergänzt die bereits bestehende Regel in `Inner Circle Kanal-Content.md` Abschnitt 2, dass der Vergütungsmechanismus grundsätzlich nie erklärt wird — jetzt ausdrücklich auch für die stark vereinfachte Formulierung.
+- Gilt für `content-manager` (beim Schreiben neuer Posts) und `content-executor` (beim Verwenden/Anpassen vorbereiteter Captions) gleichermaßen.
+
 ## Beobachtete Muster aus echten Chats (WhatsApp, Stand 08.09.2026)
 Kurz in ein paar eigene, echte Nachrichten reingeschaut, um den echten Ton einzufangen statt nur Vorgaben zu raten. Das hier ist der private/enge Ton (Familie, Partnerin):
 

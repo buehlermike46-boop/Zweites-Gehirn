@@ -56,7 +56,7 @@ Schichtarbeiter, Vater, Trader. Kein Guru.
 
 Zwei Bausteine, einmal festgelegt, dann nie wieder Thema:
 
-1. **Werbekennzeichnung**: Posts, die zum Konto führen, beginnen mit `Werbung`. Das ist reine Kennzeichnung, dass es sich um Werbung handelt. Wie deine Vergütung zustande kommt, steht nirgends und wird auch nicht erklärt (Entscheidung 09.09.2026).
+1. **Werbekennzeichnung**: Posts, die zum Konto führen, beginnen mit `Werbung`. Das ist reine Kennzeichnung, dass es sich um Werbung handelt. Wie deine Vergütung zustande kommt, steht nirgends und wird auch nicht erklärt (Entscheidung 09.09.2026). **Verschärft 20.09.2026 (Mike per Chat):** Auch die vereinfachte Formulierung "der Broker bezahlt mich, nicht du" (ohne den Mechanismus zu erklären) fällt darunter und ist ab sofort ebenfalls tabu — kommt beim Leser schlecht an. War in Post 5 und Post 10 (Abschnitt 4) drin, Post 10 wurde entsprechend korrigiert, Post 5 ist bereits live gepostet (19.09.2026) und lässt sich nicht mehr rückwirkend ändern, siehe Executor-Log 20.09.
 2. **Risikohinweis** unter jeden Post, der zum Konto führt.
 
 ### Standard-Fußzeile (Copy-Paste)
@@ -352,7 +352,7 @@ Trading Academy, regelmäßige Live-Trainings, Signal-Gruppen, Austausch mit Leu
 ⚙️ **PrimeVerse**, die Tools
 Signale, Marktanalysen, Trading-Journal. Aktivierst du kostenlos dazu, sobald dein LIMITLESS-Zugang steht.
 
-Kostet dich alles nichts extra. Bedingung ist nur, dass dein Konto über meinen Link läuft, davon lebt das Ganze.
+Kostet dich alles nichts extra. Bedingung ist nur, dass dein Konto über meinen Link läuft.
 
 👉 Start drücken, dann kommt die Anleitung.
 
