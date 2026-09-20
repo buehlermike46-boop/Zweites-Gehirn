@@ -180,7 +180,7 @@ Beim Durchsehen von `Posting-Warteschlange.md` fand sich der eigentliche Beweis 
 
 **Damit ist die Antwort auf Mikes Frage eindeutig:** Das System hat den Fehler nicht "nicht entdeckt" – es hat ihn einmal entdeckt und dann bewusst folgenlos gelassen, weil kein verbindlicher Schritt existierte, der aus dieser Entdeckung eine Konsequenz macht.
 
-**Offen, von hier aus nicht klärbar:** Ob das von Mike jetzt bemerkte Video exakt der 17.09.-Carousel-Fehler ist oder ein weiterer, bisher nicht geloggter Fall, konnte diese Session nicht prüfen – kein Browser-/Instagram-Zugriff von hier aus. An Mike: falls es ein anderer/neuerer Fehler ist, bitte kurz sagen welches Video/welcher Text, dann lässt sich klären ob ein Repost/Löschen sinnvoll ist (das bleibt Mikes Entscheidung, kein automatischer Schritt).
+**Update, geklärt per Rückfrage an Mike:** Es war ein weiterer, bisher nicht geloggter Fall, nicht der 17.09.-Carousel-Fehler. Betroffen war **Post Nr. 6 (Market-Scanner-Reel, Media-ID 18011708741973337)**, heute (20.09.2026) ca. 16:45 UTC automatisch gepostet, von Mike ca. 1h später selbst über die Instagram-App gelöscht, nachdem er den Rechtschreibfehler im Video-Text entdeckt hatte. Damit bestätigt sich der Befund oben nicht nur einmalig (17.09.) sondern ein zweites Mal in derselben Woche – der Text-Rendering-Fehler war also kein Einzelfall, sondern ein wiederkehrendes Muster ohne Gegenmaßnahme, genau das strukturelle Problem, das der Fix unten behebt. Details/Log-Eintrag in [[Posting-Warteschlange]], Queue-Eintrag #6 und Executor-Log-Abschnitt vom 20.09.2026 (20:40 Uhr). Kein automatischer Ersatz-Post erstellt, das ist bewusst Mikes Entscheidung, falls er das Thema nochmal bringen will.
 
 ### 2. Fix: Pflicht-Text-Check vor jedem Posten/Fertig-Markieren
 
