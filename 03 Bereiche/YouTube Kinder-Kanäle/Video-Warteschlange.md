@@ -29,6 +29,8 @@ status: aktiv
 - Charakterbild (Jarvis `soul_cast`, Split-Screen-Sheet): https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260920_164107_b3e1e5bb-b883-40e1-bec7-463d31e5547b.png
 - Für jede neue Generierung (Bild/Video) exakt dieses Aussehen referenzieren/beschreiben, damit der Charakter über alle Videos und beide Sprachversionen konsistent bleibt: kleiner Fuchs, oranges-rotes Fell mit weißem Bauch-/Brustfleck, weiße Schwanzspitze, große amber-braune Augen, himmelblaue Latzhose mit gelbem Sternchen-Patch, senffarbenes Halstuch, barfuß.
 - Kanalname/Branding: siehe [[YouTube Kinder-Kanäle]] Bereichs-Übersicht.
+- **Profilbild (für beide Kanäle, 20.09.2026 erstellt):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260920_171757_686bc402-7e8b-4afb-a962-27c1a249ffef.png
+- **Kanal-Banner (für beide Kanäle, 20.09.2026 erstellt, 1344×576, textfrei):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260920_171800_6927d5b3-3ed3-4706-b5f3-ef7a2b547e79.png
 
 ## Queue
 
