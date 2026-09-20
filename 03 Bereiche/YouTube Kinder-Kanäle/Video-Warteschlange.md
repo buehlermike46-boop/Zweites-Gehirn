@@ -32,7 +32,20 @@ status: aktiv
 
 ## Queue
 
-*(Noch leer — erster Eintrag folgt vom `youtube-manager` in der nächsten Planungsrunde: erstes Lied/Thema auswählen, siehe "Nächste Schritte" in [[YouTube Kinder-Kanäle (DE & EN)]].)*
+### Episode 1: "Kopf, Schulter, Knie und Zeh" / "Head, Shoulders, Knees and Toes"
+- **Status:** bereit zur Produktion
+- **Typ:** Kids-Song-Video (Jarvis `faceless-video`-Workflow, Typ Kids, Song-Modus)
+- **Warum dieses Lied als Erstes:** klassisches, gemeinfreies Bewegungslied, in DE und EN gleichermaßen etabliert (nicht neu übersetzt, sondern die jeweils seit Jahrzehnten gebräuchliche Fassung) — dadurch ist "1:1 identisches Video, nur andere Sprachspur" hier besonders sauber umsetzbar, ohne die "Format klonen, nicht Marke kopieren"-Frage überhaupt zu berühren (kein bestehender Kinder-Kanal hat daran ein Markenrecht). Einfache, robuste Wahl für den allerersten Produktionstest der neuen Pipeline.
+- **Zielalter:** 1-4 Jahre
+- **Länge:** ca. 2 Minuten (Lied 2x durchlaufen: einmal normal, einmal etwas schneller, wie im Original üblich)
+- **Ablauf/Szenen:**
+  1. Intro: Fenno winkt fröhlich in die Kamera in einer bunten, einfachen Wiesen-/Wohnzimmer-Szene, kurze Begrüßung ("Hallo, ich bin Fenno! Lass uns singen und tanzen!" / "Hi, I'm Fenno! Let's sing and dance!")
+  2. Hauptteil: Fenno führt die Bewegungen des Liedes vor (Kopf, Schultern, Knie, Zehen berühren, dann Augen, Ohren, Mund, Nase in der Zusatzstrophe), Kamera bleibt einfach frontal/mittig, damit Kleinkinder mitmachen können
+  3. Wiederholung schneller, wie im Original
+  4. Kurzer Abspann: Fenno winkt zum Abschied, freundliche Verabschiedung
+- **Charakter:** ausschließlich Fenno (siehe Charakter-Referenz oben), keine weiteren Figuren nötig für den ersten Test
+- **Guardrails-Check:** kein Bezug zu bestehenden Kanälen/Charakteren, ruhiges Tempo, keine Flacker-Effekte, keine Werbe-CTAs im Video
+- **Nächster Schritt:** `youtube-executor` produziert über den `faceless-video`-Workflow (Typ Kids, Song-Modus) je eine DE- und eine EN-Fassung, trägt Ergebnis hier ein
 
 ## Executor-Log
 *(Append-only Protokoll jedes `youtube-executor`-Laufs, mit Zeitstempel. Wird beim ersten Lauf angelegt.)*
