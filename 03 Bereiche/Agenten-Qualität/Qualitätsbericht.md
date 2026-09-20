@@ -164,3 +164,46 @@ Aktueller Baustellen-Stand heute (siehe Abschnitt 1): `aufgaben-Paar` (gerade er
 - `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md` – dieser Abschnitt
 
 Nicht angefasst, bewusst: `.claude/agents/content-manager.md`, `.claude/agents/content-executor.md` (Auftrag war Recherche + Vorschlag, keine Tool-/Scope-Änderung), `Tagesplan.md`, `Posting-Warteschlange.md` (kein Fehlrouting gefunden, siehe Abschnitt 1).
+
+## Bericht vom 20.09.2026 (Vorfall: Rechtschreibfehler in einem Instagram-Video, System überarbeitet – von Mike direkt im Chat ausgelöst, keine reguläre `professor`-Runde)
+
+**Auslöser:** Mike hat sich ein bereits gepostetes Instagram-Video nochmal angeschaut und Rechtschreibfehler darin gefunden. Seine Frage: warum hat das System das nicht selbst entdeckt, und er will die gesamte Agenten-Struktur überdacht und überarbeitet haben, inklusive der Möglichkeit, aus jedem neuen Chat heraus automatisch weiterzuarbeiten (Beispiel YouTube-Projekt: Recherche, Planung, Produktion bis Upload, alles ohne dass er jeden Schritt einzeln anstoßen muss).
+
+### 1. Root-Cause-Analyse
+
+Beim Durchsehen von `Posting-Warteschlange.md` fand sich der eigentliche Beweis bereits im eigenen Executor-Log: **Eintrag vom 17.09.2026** dokumentiert einen Tippfehler auf Slide 5 eines geposteten Carousels ("STARTMhr" statt "START"/"Mehr dazu" im Bild-Prompt) – und schließt mit "das ist die Ursache, keine Handlungsnotwendigkeit von hier aus, aber zur Kenntnis". Der Fehler wurde also intern erkannt und **bewusst nicht korrigiert**, weder das konkrete Asset noch der Prozess dahinter.
+
+**Strukturelle Ursache, nicht nur ein einzelnes Versehen:**
+1. `content-executor.md` hatte (bis heute) keinen einzigen Schritt, der den tatsächlich von Jarvis erzeugten Bild-/Video-Text vor dem Posten gegenliest. Der Ablauf war: Asset generieren → direkt posten. Ob der Prompt so gerendert wurde wie gemeint, wurde nie geprüft.
+2. Gleiches Muster, gleiches Risiko bei `youtube-executor.md` (eingebrannte Untertitel/Songtext, sogar in zwei Sprachfassungen gleichzeitig) – nur noch nicht in einem Vorfall sichtbar geworden, weil der Kanal-Upload technisch noch blockiert ist.
+3. `professor.md` prüft bisher ausschließlich Prozess-Fragen (läuft ein Agent, gibt es Fehlrouting, fehlt ein Tool) – nie die inhaltliche Qualität des tatsächlich erzeugten Outputs. Ein erkannter, aber nicht behobener Content-Fehler wie der vom 17.09. wäre auch einer regulären Qualitätsrunde nicht aufgefallen, weil dafür schlicht kein Prüfschritt vorgesehen war.
+
+**Damit ist die Antwort auf Mikes Frage eindeutig:** Das System hat den Fehler nicht "nicht entdeckt" – es hat ihn einmal entdeckt und dann bewusst folgenlos gelassen, weil kein verbindlicher Schritt existierte, der aus dieser Entdeckung eine Konsequenz macht.
+
+**Offen, von hier aus nicht klärbar:** Ob das von Mike jetzt bemerkte Video exakt der 17.09.-Carousel-Fehler ist oder ein weiterer, bisher nicht geloggter Fall, konnte diese Session nicht prüfen – kein Browser-/Instagram-Zugriff von hier aus. An Mike: falls es ein anderer/neuerer Fehler ist, bitte kurz sagen welches Video/welcher Text, dann lässt sich klären ob ein Repost/Löschen sinnvoll ist (das bleibt Mikes Entscheidung, kein automatischer Schritt).
+
+### 2. Fix: Pflicht-Text-Check vor jedem Posten/Fertig-Markieren
+
+- **`content-executor.md`:** neuer Abschnitt "Text-Check vor jedem Posten" – vor jedem Instagram-/Telegram-Post mit sichtbarem Text muss `show_generation_by_ids` das tatsächliche Ergebnis zeigen, jedes Wort wird gegen den Soll-Text geprüft, bei Abweichung wird neu erzeugt (max. 3 Versuche gesamt), nach 3 gescheiterten Versuchen wird NICHT gepostet. Ergebnis muss im Executor-Log stehen.
+- **`youtube-executor.md`:** gleiches Prinzip für eingebrannte Untertitel/Songtext, für DE und EN einzeln geprüft, vor jedem `fertig`/Upload.
+- **`professor.md`:** neuer Prüfpunkt "Content-Qualitäts-Check" – kontrolliert künftig, ob der Text-Check in den Executor-Logs tatsächlich dokumentiert ist, und behandelt einen erkannten-aber-nicht-behobenen Content-Fehler als Befund, der eine Prompt-Korrektur auslösen muss, nicht nur eine erneute Erwähnung.
+- **`CLAUDE.md`:** kurze Verweise auf den neuen Text-Check in den Content- und YouTube-Agent-Abschnitten ergänzt.
+
+### 3. Generalisierung: automatischer Anschub für alle Agentenpaare & neue Projekte
+
+Zweiter Teil von Mikes Auftrag: das System soll aus jedem Chat heraus möglichst selbstständig weiterlaufen, nicht nur bei Aufgaben. Umgesetzt in `CLAUDE.md`, neuer Abschnitt "Automatischer Anschub für alle Agentenpaare & neue Projekte":
+
+1. Die bisher nur bei `aufgaben-manager`/`aufgaben-executor` bestehende Leerlauf-Verkettung (Executor läuft leer → Manager legt sofort neu vor → Executor macht sofort weiter) gilt jetzt auch für Content und YouTube. Beide Executoren loggen jetzt ein `LEERLAUF:`-Signal, wenn ihre Warteschlange zur Neige geht (siehe Änderungen an `content-executor.md`/`youtube-executor.md` oben), jede aufrufende Session reagiert darauf im selben Lauf.
+2. Neu: startet Mike in einem neuen Chat ein neues Projekt, prüft die Session direkt den Baustellen-Stand gegen MasterPlan Punkt 8, entscheidet dann ob eine dauerhafte Pipeline (neues Agentenpaar nach bestehendem Muster) oder ein Einzelprojekt (direktes, selbstständiges Weiterarbeiten ohne neues Agentenpaar) angemessen ist, und treibt es im selben Lauf voran, bis entweder fertig oder ein echter Blocker erreicht ist – genau wie es aktuell beim YouTube-Projekt gehandhabt wird.
+
+**Bewusst nicht aufgehoben:** die bestehenden Freigabe-Grenzen (bezahlte Werbung, Credit-Käufe, endgültiges Löschen etc.) und der MasterPlan-Baustellen-Check selbst – der neue Automatismus macht Baustellen schneller sichtbar, überspringt die Prüfung aber nicht. Zukünftige `professor`-Runden sollten explizit mitprüfen, ob dieser neue Automatismus dazu führt, dass zu viele Pipelines gleichzeitig entstehen (Risiko: die 1-2-Baustellen-Regel wird durch die niedrigere Hürde zum Anlegen neuer Agentenpaare leichter gerissen als vorher).
+
+### 4. Geänderte Dateien dieser Runde
+
+- `.claude/agents/content-executor.md` – Text-Check-Pflicht (Instagram + Telegram), Leerlauf-Signal
+- `.claude/agents/youtube-executor.md` – Text-Check-Pflicht (DE+EN), Leerlauf-Signal, Schritte neu nummeriert
+- `.claude/agents/professor.md` – neuer Prüfpunkt "Content-Qualitäts-Check"
+- `CLAUDE.md` – Session-Start erweitert, neue Sektion "Automatischer Anschub für alle Agentenpaare & neue Projekte", kurze Verweise bei Content-/YouTube-Agent
+- `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md` – dieser Abschnitt
+
+Nicht angefasst, bewusst: `Posting-Warteschlange.md` (der 17.09.-Post bleibt live, Entscheidung über Repost/Löschen liegt bei Mike, siehe Abschnitt 1), `aufgaben-manager.md`/`aufgaben-executor.md` (deren Leerlauf-Verkettung war bereits korrekt, keine Änderung nötig), `content-manager.md`/`youtube-manager.md` (Planungsseite unverändert, der Fix betrifft die Ausführungsseite).

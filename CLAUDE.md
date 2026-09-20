@@ -53,6 +53,7 @@ Jede interaktive Session (egal ob claude.ai/code-Web-Session, Cowork-Session ode
 
 ### Bei Session-Start
 1. Prüfe 01 Inbox/ auf neue Notizen, zeige was drin liegt, und biete an die Einträge in die passenden Ordner einzusortieren
+2. Prüfe proaktiv, ohne dass Mike danach fragen muss, ob irgendein Agentenpaar (Aufgaben/Content/YouTube) gerade auf ihn wartet: ein unbestätigter `## Vorschlag` oder offene Punkte unter `## Technisch blockiert` in `Tagesplan.md`, Posts mit Status `bereit (wartet auf Freigabe)` in Phase 1 der `Posting-Warteschlange.md`, offene Einträge in `Video-Warteschlange.md`. Zeig das gesammelt in einer Übersicht, statt es zu verstreuen. Details zu jedem Agentenpaar siehe die jeweiligen Abschnitte unten, zum automatischen Weiterarbeiten siehe "Automatischer Anschub für alle Agentenpaare & neue Projekte" weiter unten.
 
 ### Kontext bei Bedarf
 Wenn der Nutzer fragt "Was ist gerade aktuell?", "Wo war ich stehen geblieben?" oder ähnliches: Lies die letzten 2-3 Daily Notes in 05 Daily Notes/ und die aktiven Projekt-Dateien in 02 Projekte/ um ein Briefing zu geben.
@@ -80,6 +81,8 @@ Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/Marketing & Kun
 
 **Freigabe-Phase steht oben in `Posting-Warteschlange.md`, zweistufig:** Phase 1 "Freigabe nötig" (aktuell aktiv, seit 10.09.2026) heißt: der Executor postet nur Einträge mit Status `freigegeben`, alles andere bereitet er nur vor. Phase 2 "automatisch" heißt: der Executor postet neue Einträge ohne Einzelfreigabe. Nur Mike schaltet zwischen den Phasen um, keiner der beiden Agenten tut das selbst.
 
+**Text-Check vor jedem Posten (seit 20.09.2026, nach einem echten Vorfall):** Am 17.09.2026 postete der `content-executor` ein Carousel mit einem Tippfehler auf einer Folie, der im Log erkannt, aber nicht korrigiert wurde ("kleiner Vorbehalt, keine Handlungsnotwendigkeit") – Mike hat es später selbst im Feed entdeckt. Seitdem prüft der `content-executor` vor jedem Posten zwingend den tatsächlich erzeugten Text im Bild/Video gegen die Caption, siehe `.claude/agents/content-executor.md` und `Qualitätsbericht.md`, Bericht vom 20.09.2026.
+
 Manuell auslösbar über `/content-check`. Bei Session-Start zusätzlich kurz prüfen, ob in Phase 1 Posts mit Status `bereit (wartet auf Freigabe)` auf Mikes Ja/Nein warten, und proaktiv zeigen.
 
 ### YouTube-Agent (Kinder-Kanäle DE & EN, seit 20.09.2026)
@@ -93,7 +96,28 @@ Zwei Subagenten arbeiten zusammen, abgestimmt über `03 Bereiche/YouTube Kinder-
 
 **Freigabe-Phase** steht oben in `Video-Warteschlange.md`, gleiches Prinzip wie bei Instagram: Phase 1 „Freigabe nötig" ist der Start-Zustand für dieses neue, rechtlich sensible Content-Format (COPPA/„Made for Kids", IP-Abgrenzung zu bestehenden Kinder-Kanälen). Nur Mike schaltet auf Phase 2 um.
 
-Manuell auslösbar über `/youtube-check`.
+**Text-Check vor jedem "fertig"/Upload (seit 20.09.2026):** Nach einem echten Vorfall bei Instagram (unentdeckter Tippfehler live gepostet, siehe Content-Agent-Abschnitt und `Qualitätsbericht.md`, Bericht vom 20.09.2026) prüft der `youtube-executor` jetzt vor jedem `fertig`/Upload zwingend die tatsächlich eingebrannten Untertitel/Songtexte in beiden Sprachfassungen gegen das Skript, siehe `.claude/agents/youtube-executor.md`.
+
+Manuell auslösbar über `/youtube-check`. Bei Session-Start zusätzlich kurz prüfen, ob Videos mit Status `fertig, wartet auf Kanal/Upload` oder (sobald Phase 1 aktiv ist) `bereit (wartet auf Freigabe)` auf Mikes Aufmerksamkeit warten, und proaktiv zeigen.
+
+### Automatischer Anschub für alle Agentenpaare & neue Projekte (seit 20.09.2026, Mikes Wunsch)
+
+**Hintergrund:** Bisher lief die Leerlauf-Verkettung (Executor läuft leer → Manager legt sofort neu vor → Executor macht sofort weiter, ohne auf die nächste Scheduled Routine zu warten, siehe "Leerlauf-Verkettung" oben) nur für `aufgaben-manager`/`aufgaben-executor`. Mike will das für sein gesamtes System: aus jedem Chat heraus, egal ob es um Aufgaben, Content, YouTube oder ein komplett neues Thema geht, soll möglichst alles von selbst weiterlaufen, ohne dass er jeden Schritt einzeln anstoßen muss.
+
+**1. Leerlauf-Verkettung gilt ab jetzt für alle drei Agentenpaare, nicht nur für Aufgaben:**
+- **Content:** Liegt die Summe aus noch offenen, nicht-geposteten Einträgen in der Instagram-Queue und der Telegram-Post-Status-Tabelle unter 3, loggt der `content-executor` `LEERLAUF: content-manager sollte neue Posts planen`. Jede Session, die das im Bericht/Log sieht, ruft im selben Lauf `content-manager` auf (Agent-Tool). Instagram bleibt dabei innerhalb seiner Freigabe-Phase: in Phase 1 gehen neue Vorschläge nicht automatisch live, sondern werden Mike wie bei Aufgaben per Push-Nachricht vorgelegt; in Phase 2 postet `content-executor` sie direkt im selben Lauf weiter, sobald sie geplant sind. Telegram lief ohnehin schon automatisch (Mikes Entscheidung 13.09.2026), daran ändert sich nichts, nur dass der Nachschub sofort statt erst beim nächsten Tages-Trigger passiert.
+- **YouTube:** Gibt es keinen offenen Queue-Eintrag ohne fertiges Video mehr, loggt der `youtube-executor` `LEERLAUF: youtube-manager sollte neue Episoden planen`. Gleiches Prinzip: `youtube-manager` sofort im selben Lauf aufrufen, neue Vorschläge landen in der Queue, `youtube-executor` produziert sie im selben Lauf weiter (Freigabe-Phase beachten wie bisher).
+- Wie bei Aufgaben: nach neuen Vorschlägen aus dem Leerlauf, die eine Freigabe brauchen (Phase 1 bei Content, oder falls YouTube auf Phase 1 steht), eine kurze **Push-Nachricht** an Mike mit Zusammenfassung und Bitte um Bestätigung.
+
+**2. Neues Projekt in einem neuen Chat: automatisch anschieben statt nur planen.** Sagt Mike in einer neuen Session "neues Projekt X" (oder das ergibt sich klar aus dem Gespräch), läuft nicht nur die normale Neue-Projekte-Notiz-Anlage (siehe Vault-Struktur oben), sondern direkt im selben Lauf:
+1. Projekt-Notiz unter `02 Projekte/` anlegen (wie gehabt).
+2. **Kurzer, ehrlicher Baustellen-Check gegen [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] Punkt 8** (max. 1-2 aktive Baustellen bei 12h/Woche): aktuell aktive Baustellen benennen, sagen ob ein weiteres Projekt die Regel reißt – wie beim YouTube-Projekt am 20.09.2026 entscheidet am Ende Mike, nicht diese Regel selbst blockierend. Kurz ansprechen reicht, nicht lange diskutieren, wenn Mike sich erkennbar schon entschieden hat.
+3. Einschätzen: braucht das Projekt eine dauerhafte, wiederkehrende Produktions-Pipeline (wie Content/YouTube – regelmäßig neue Inhalte, eigener Manager/Executor mit eigener Warteschlangen-Datei) oder ist es ein abgegrenztes Einzelprojekt (Recherche + Bau + ein paar konkrete Ergebnisse, dann fertig)?
+   - **Wiederkehrende Pipeline:** neues Agentenpaar nach dem bestehenden Muster anlegen (`.claude/agents/<name>-manager.md`/`<name>-executor.md`, eigene Warteschlangen-/Status-Datei unter `03 Bereiche/<Bereich>/`, Freigabe-Phase startet wie bei Content/YouTube bei Phase 1, außer Mike sagt ausdrücklich etwas anderes), neuen Abschnitt hier in CLAUDE.md unter Session-Routinen ergänzen (gleiches Format wie beim YouTube-Agent), und danach SOFORT den neuen Manager, dann den neuen Executor aufrufen (Agent-Tool) – nicht auf die nächste Scheduled Routine warten.
+   - **Einzelprojekt:** kein neues Agentenpaar nötig. Direkt in dieser Session (oder über das Agent-Tool an einen passenden bestehenden Agenten) weiterarbeiten: recherchieren, planen, bauen, nötige Web-Aktionen ausführen – Schritt für Schritt selbstständig weiter, ohne nach jedem einzelnen Schritt auf eine neue Nachricht von Mike zu warten, bis entweder das Projekt fertig ist oder ein echter Blocker erreicht ist (fehlendes Werkzeug/Connector, eine Entscheidung, die nur Mike treffen kann, oder eine Freigabe-Grenze wie bei jedem anderen Agenten).
+4. **Technische Blocker werden nie stillschweigend liegen gelassen**, egal welcher Fall: bei einer neuen Pipeline in die neue Warteschlangen-Datei unter "Technisch blockiert" eintragen (wie bei YouTube), bei einem Einzelprojekt direkt in der Projekt-Notiz und Mike gegenüber explizit benennen.
+
+**Grenzen, die dadurch NICHT aufgehoben werden:** Freigabepflichtige Aktionen bleiben freigabepflichtig (bezahlte Werbung, Credit-Käufe, neue Logins bei sensiblen Konten außerhalb der bereits erlaubten Executor-Autonomie, endgültiges Löschen) – "automatisch weiterlaufen" heißt selbstständig bis zur nächsten echten Grenze arbeiten, nicht jede Grenze selbst verschieben. Und: dieser Automatismus ersetzt nicht den Baustellen-Check aus Punkt 8 des MasterPlans, er macht ihn nur schneller sichtbar statt ihn zu verzögern – der `professor` behält im Blick, ob dadurch zu viele Pipelines gleichzeitig entstehen.
 
 ### Professor (Qualitätsmanagement für die Agenten-Struktur)
 `professor` (`.claude/agents/professor.md`) – prüft regelmäßig alle laufenden Agenten (aufgaben-manager/-executor, content-manager/-executor, sich selbst eingeschlossen) auf Reibung und Ineffizienz, sucht über die Skill-/Plugin-/Connector-Suche passende Bausteine für echte Lücken (installiert nichts selbst, kann er technisch nicht) und schreibt einen Bericht nach `03 Bereiche/Agenten-Qualität/Qualitätsbericht.md`. Legt neue Agenten-Entwürfe höchstens als Datei an, aktiviert/scheduled nie selbst eine Routine.
