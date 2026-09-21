@@ -13,6 +13,7 @@
 
 using System;
 using ATAS.DataFeedsCore;
+using ATAS.Indicators;
 using ATAS.Strategies.Chart;
 using OFT.Attributes;
 
@@ -51,7 +52,7 @@ namespace RgTrading.Indicators
             {
                 _crossTradingChecked = true;
                 var crossTradingContext = DataProvider.GetService<ICrossTradingIndicatorContext>();
-                LogInfo($"CrossTrading aktiv: {crossTradingContext.IsCrossTradingActive}, Name: {crossTradingContext.CurrentCrossTradingDisplayName}");
+                RaiseShowNotification($"CrossTrading aktiv: {crossTradingContext.IsCrossTradingActive}, Name: {crossTradingContext.CurrentCrossTradingDisplayName}", "CrossTrading-Test");
             }
 
             // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
