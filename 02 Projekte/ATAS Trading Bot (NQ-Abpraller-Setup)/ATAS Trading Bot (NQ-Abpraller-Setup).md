@@ -74,8 +74,10 @@ Bestätigte Felder (per Objektkatalog): `Direction`, `Price`, `QuantityToFill`, 
 - Voraussetzung: Phase 1–3 im Replay/Demo stabil UND Apex-Bot-Regel offiziell geklärt (siehe Blocker oben)
 - Erst Demo-/Evaluation-Konto, das Funded-Konto erst nach echter Bewährung
 
-## Phase 3 — Status (20.09.2026)
-Erster echter Order-Test (`code/NqTestStrategy.cs`, noch ohne Stop-Loss, noch ohne Halb-/Vollautomatik-Umschalter) ist gebaut, deployed und auf dem NQ-Chart aktiviert — Konto bestätigt **DEMO331DE** (einziges aktuell verbundenes Konto, kein APEX/Rithmic-Risiko). Wartet auf die nächste Demand-Index-Nulllinien-Kreuzung nach oben, um einmalig eine Market-Buy-Order über 1 Kontrakt zu platzieren. Markt war am 20.09.2026 (Sonntag) noch nicht offen, Test steht für den nächsten Handelstag aus.
+## Phase 3 — Status (21.09.2026, erster Live-Test erfolgreich)
+Erster echter Order-Test (`code/NqTestStrategy.cs`) hat ausgelöst: Demand-Index-Nulllinien-Kreuzung erkannt, Market-Buy-Order über 1 Kontrakt platziert und gefüllt, Konto **DEMO331DE**. Komplette Kette Signal → Order → Fill damit erstmals nachgewiesen funktionsfähig.
+
+**Wichtiger Fund:** Obwohl der Code selbst kein Stop-Loss/Take-Profit setzt, hat ATAS automatisch SL (-50 Ticks) und TP (+100 Ticks) an die Order gehängt — über Mikes eigene **"SL/TP Standardvorlage"** im Trading-Panel, die offenbar auf jede Order des Kontos greift, auch von der Strategie platzierte. 50:100 Ticks entspricht CRV 1:2, dem Minimum aus der Checkliste. Position wird dadurch vermutlich automatisch per Bracket-Order geschlossen, kein manuelles Eingreifen nötig. **Offene Frage:** ob wir uns dauerhaft auf diese feste Ticks-Vorlage verlassen oder wie geplant einen eigenen ATR-basierten, dynamischen Stop im Code bauen (siehe Phase 3 unten) — Mikes Entscheidung, sobald die Checkliste weiter steht.
 
 **Zwischenfall während der Einrichtung (19./20.09.2026):** Nach vielen ATAS-Neustarts während der Entwicklung wurden alle Chart-Fenster grau/unbedienbar, während gleichzeitig die Rithmic-Verbindungen (APEX und ein zweites Konto) mit "Repository Connection Login Failed" fehlschlugen. Ursache nicht abschließend geklärt (DLL testweise entfernt UND Rechner neu gestartet, beides zusammen hat es behoben) — die eigene DLL kann als Auslöser nicht sicher ausgeschlossen werden, auch wenn die Rithmic-Login-Fehler eher wie ein separates, brokerseitiges Problem aussehen. Falls sich Chart-Probleme nach künftigen DLL-Updates wiederholen: DLL zuerst testweise aus beiden Ordnern entfernen, um es einzugrenzen.
 
