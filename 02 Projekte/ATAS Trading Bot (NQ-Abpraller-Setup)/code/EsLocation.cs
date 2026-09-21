@@ -35,13 +35,12 @@
 // pro Tick, nicht nur beim Kerzenabschluss), wird eine Kerze erst dann einmalig ins Profil
 // aufgenommen, wenn die naechste Kerze zu laufen beginnt (also garantiert abgeschlossen ist).
 //
-// API-Stand: candle.GetAllPriceLevels() und candle.GetPriceVolumeInfo(price) sind laut
-// Projekt-Notiz (Phase 2, 19.09.2026) per IntelliSense gegen Mikes Installation bestaetigt, aber
-// noch nicht in echtem Code benutzt. Das genaue Feld fuer das Volumen auf PriceVolumeInfo (hier
-// als ".Volume" angenommen) ist NICHT einzeln bestaetigt - falls der Build hier einen Fehler
-// wirft: IntelliSense/Objektkatalog auf PriceVolumeInfo pruefen, welche Felder es wirklich gibt,
-// und mir die Liste schicken, dann passe ich das an (gleiches Vorgehen wie bei den bisherigen
-// API-Ueberraschungen in diesem Projekt).
+// API bestaetigt am 21.09.2026 per Objektkatalog gegen Mikes Installation: candle.GetAllPriceLevels()
+// gibt direkt eine Liste von ATAS.Indicators.PriceVolumeInfo-Objekten zurueck (Member: Ask, Between,
+// Bid, Price, Ticks, Time, Volume) - Preis UND Volumen stecken also schon in jedem Element, ein
+// zusaetzlicher candle.GetPriceVolumeInfo(price)-Aufruf ist unnoetig (erste Fassung hat das noch
+// falsch angenommen und dabei ein PriceVolumeInfo-Objekt als "price"-Argument uebergeben, daher der
+// Build-Fehler CS1503).
 
 using System.Collections.Generic;
 using ATAS.Indicators;
@@ -93,14 +92,12 @@ namespace RgTrading.Indicators
         {
             var candle = GetCandle(completedBar);
 
-            foreach (var price in candle.GetAllPriceLevels())
+            foreach (var level in candle.GetAllPriceLevels())
             {
-                var info = candle.GetPriceVolumeInfo(price);
-
-                if (_volumeByPrice.TryGetValue(price, out var existingVolume))
-                    _volumeByPrice[price] = existingVolume + info.Volume;
+                if (_volumeByPrice.TryGetValue(level.Price, out var existingVolume))
+                    _volumeByPrice[level.Price] = existingVolume + level.Volume;
                 else
-                    _volumeByPrice[price] = info.Volume;
+                    _volumeByPrice[level.Price] = level.Volume;
             }
         }
 
