@@ -8,39 +8,44 @@
 // Session erreicht sind). 70% ist der Branchenstandard fuer Value Area - Mike hat das nicht
 // einzeln bestaetigt, bei Bedarf leicht als Konstante anpassbar (siehe ValueAreaPercent unten).
 //
-// WICHTIG zum Instrument: POC/VAH/VAL werden in ES-Preisen berechnet, NICHT in NQ-Preisen (beide
-// Instrumente haben komplett unterschiedliche Preisniveaus, ein direkter Preisvergleich zwischen
-// ES-Level und NQ-Kurs waere sinnlos). Die Checkliste sieht das auch so vor: Punkt 3 (Location)
-// prueft, ob ES gerade an seiner eigenen Location reagiert, Punkt 4 (Setup) prueft separat, ob NQ
-// im selben Moment eine eigene Bestaetigung zeigt (Demand Index, Footprint) - beides zusammen
-// ergibt den Einstieg, nicht ein Preisvergleich zwischen den Instrumenten.
-//
-// Reaktion/Richtung (LocationState.Richtung): High toucht/ueberschreitet VAH, Kerze schliesst
-// aber wieder darunter -> Ablehnung an VAH -> bearish (Short). Spiegelbildlich fuer VAL -> bullish
-// (Long). Gleiche Ablehnungs-/Akzeptanz-Logik wie in EsTageskontext.cs (Regel 1), nur auf VAH/VAL
-// statt Vortageshoch/-tief angewendet. POC bewusst NICHT als Ablehnungs-Level behandelt - POC
-// wirkt eher wie ein Magnet/Pivot als wie Support/Resistance, und der POC-Ruecktest aus Checkliste
-// Punkt 4 (NQ-Footprint) ist ohnehin ein eigener, separater Baustein (siehe NqFootprintDelta.cs).
-// LocationState.Richtung wird bei JEDER abgeschlossenen Kerze neu gesetzt (auch auf Neutral
-// zurueckgesetzt, falls keine Reaktion vorliegt) - kein Tages-Flag wie TageskontextState.Richtung.
-//
-// Verarbeitet bewusst ALLE Kerzen (keine "nur letzte Kerze"-Bremse wie in NqTestStrategy.cs) -
-// dieser Indikator platziert keine Orders, sondern baut nur das Profil auf. Damit steht das
-// Session-Profil sofort beim Laden aus der Historie zur Verfuegung, statt erst nach einem neuen
-// Live-Sessionwechsel "warmzulaufen". Aus demselben Grund wurde derselbe historische
-// Verarbeitungs-Bremse (bar < CurrentBar - 1) heute auch aus EsTageskontext.cs entfernt, siehe
-// Kommentar dort und Projekt-Notiz.
-//
-// Um Live-Ticks der noch laufenden Kerze nicht mehrfach ins Profil zu zaehlen (OnCalculate feuert
-// pro Tick, nicht nur beim Kerzenabschluss), wird eine Kerze erst dann einmalig ins Profil
-// aufgenommen, wenn die naechste Kerze zu laufen beginnt (also garantiert abgeschlossen ist).
-//
 // API bestaetigt am 21.09.2026 per Objektkatalog gegen Mikes Installation: candle.GetAllPriceLevels()
 // gibt direkt eine Liste von ATAS.Indicators.PriceVolumeInfo-Objekten zurueck (Member: Ask, Between,
 // Bid, Price, Ticks, Time, Volume) - Preis UND Volumen stecken also schon in jedem Element, ein
-// zusaetzlicher candle.GetPriceVolumeInfo(price)-Aufruf ist unnoetig (erste Fassung hat das noch
-// falsch angenommen und dabei ein PriceVolumeInfo-Objekt als "price"-Argument uebergeben, daher der
-// Build-Fehler CS1503).
+// zusaetzlicher candle.GetPriceVolumeInfo(price)-Aufruf ist unnoetig.
+//
+// WICHTIG zum Instrument: alle Levels hier sind ES-Preise, NICHT NQ-Preise (siehe Projekt-Notiz).
+// Checkliste Punkt 3 (Location) prueft, ob ES gerade an seiner eigenen Location reagiert, Punkt 4
+// (Setup) prueft separat, ob NQ im selben Moment eine eigene Bestaetigung zeigt - beides zusammen
+// ergibt den Einstieg, nicht ein Preisvergleich zwischen den Instrumenten.
+//
+// ERWEITERT 21.09.2026 (Mikes Feedback nach dem ersten Live-Test: "nur VAH/VAL ist zu wenig, so
+// kriegen wir keinen Trade rein"): LocationState.Richtung wird nicht mehr nur gegen VAH/VAL
+// geprueft, sondern gegen eine ganze Liste an Checklisten-Punkt-3-Leveln:
+// - VAH, VAL, POC (POC vorher bewusst ausgeschlossen als "Magnet statt Support/Resistance" -
+//   das war meine eigene Vorsicht, nicht Mikes Wunsch; die Checkliste listet POC aber explizit als
+//   Location-Typ, deshalb jetzt mit drin. Der NQ-seitige POC-Ruecktest aus Checkliste Punkt 4
+//   (Footprint) bleibt trotzdem ein eigener, separater Baustein, siehe NqFootprintDelta.cs)
+// - Vortageshoch/-tief, Tageshoch/-tief (gleiche Ablehnungs-/Akzeptanz-Logik wie in
+//   EsTageskontext.cs, hier aber eigenstaendig nachgebaut statt von dort gelesen, damit
+//   EsLocation.cs unabhaengig bleibt und mit dem "nur abgeschlossene Kerzen"-Takt dieser Datei
+//   konsistent ist)
+// - Ober-/Unterkante Volumenberg ("Volumenbergkante"): siehe FindVolumeClusterEdges() unten -
+//   eigene, klar markierte Heuristik (kein Standardalgorithmus wie bei VAH/VAL), noch NICHT an
+//   echten Setups kalibriert, Schwellenwert VolumeClusterThreshold bei Bedarf anpassen
+// NICHT umgesetzt (bewusst, mangels belastbarer Definition statt geraten): Single Prints (braucht
+// TPO-/Zeit-Daten, die wir hier nicht haben) und Range High/Low (Begriff mehrdeutig - koennte
+// Globex-Range oder Session-Opening-Range meinen, noch mit Mike zu klaeren)
+//
+// Reaktion = Ablehnung/Akzeptanz-Muster wie in EsTageskontext.cs Regel 1: Kerze testet ein Level
+// von einer Seite an, schliesst aber wieder auf derselben Seite -> Ablehnung in die Gegenrichtung.
+// Zeigen mehrere Level gleichzeitig widerspruechliche Richtungen (sehr selten), bleibt es
+// sicherheitshalber Neutral statt zu raten.
+//
+// Verarbeitet bewusst ALLE Kerzen beim Laden aus der Historie (kein "nur letzte Kerze"-Bremse,
+// siehe Kommentar dazu in EsTageskontext.cs). Um Live-Ticks der noch laufenden Kerze nicht
+// mehrfach ins Profil zu zaehlen, wird eine Kerze erst dann einmalig verarbeitet, wenn die
+// naechste Kerze zu laufen beginnt (also garantiert abgeschlossen ist) - das gilt jetzt auch fuer
+// Tageshoch/-tief und die Reaktionspruefung, damit alles im selben Takt bleibt.
 
 using System.Collections.Generic;
 using ATAS.Indicators;
@@ -53,8 +58,19 @@ namespace RgTrading.Indicators
     {
         private const decimal ValueAreaPercent = 0.70m;
 
+        // Ein Preis-Level zaehlt zu einem "Volumenberg", wenn sein Volumen mindestens diesen
+        // Anteil des staerksten Levels (POC-Volumen) der Session erreicht. Eigene Heuristik, noch
+        // nicht an echten Setups kalibriert - bei zu vielen/zu wenigen Kanten anpassen.
+        private const decimal VolumeClusterThreshold = 0.40m;
+
         private readonly Dictionary<decimal, decimal> _volumeByPrice = new Dictionary<decimal, decimal>();
         private int _lastAddedBar = -1;
+
+        private decimal _previousDayHigh;
+        private decimal _previousDayLow;
+        private decimal _currentDayHigh;
+        private decimal _currentDayLow;
+        private bool _hasPreviousDay;
 
         public EsLocation() : base(true)
         {
@@ -66,6 +82,9 @@ namespace RgTrading.Indicators
             {
                 _volumeByPrice.Clear();
                 _lastAddedBar = -1;
+                _currentDayHigh = 0;
+                _currentDayLow = 0;
+                _hasPreviousDay = false;
             }
 
             if (IsNewSession(bar))
@@ -74,6 +93,17 @@ namespace RgTrading.Indicators
                 _lastAddedBar = bar - 1;
                 LocationState.HasProfile = false;
                 LocationState.Richtung = TagesRichtung.Neutral;
+
+                if (_currentDayHigh != 0)
+                {
+                    _previousDayHigh = _currentDayHigh;
+                    _previousDayLow = _currentDayLow;
+                    _hasPreviousDay = true;
+                }
+
+                var newSessionCandle = GetCandle(bar);
+                _currentDayHigh = newSessionCandle.High;
+                _currentDayLow = newSessionCandle.Low;
             }
 
             // Nur abgeschlossene Kerzen einrechnen, sonst wird die noch laufende Kerze bei jedem
@@ -82,6 +112,7 @@ namespace RgTrading.Indicators
             {
                 _lastAddedBar++;
                 AddCandleToProfile(_lastAddedBar);
+                UpdateDayHighLow(_lastAddedBar);
                 CheckReaction(_lastAddedBar);
             }
 
@@ -99,6 +130,16 @@ namespace RgTrading.Indicators
                 else
                     _volumeByPrice[level.Price] = level.Volume;
             }
+        }
+
+        private void UpdateDayHighLow(int completedBar)
+        {
+            var candle = GetCandle(completedBar);
+
+            if (candle.High > _currentDayHigh)
+                _currentDayHigh = candle.High;
+            if (candle.Low < _currentDayLow)
+                _currentDayLow = candle.Low;
         }
 
         private void RecalculateProfile()
@@ -153,9 +194,78 @@ namespace RgTrading.Indicators
             LocationState.HasProfile = true;
         }
 
+        // Ober-/Unterkante Volumenberg: findet zusammenhaengende Preisbereiche, deren Volumen
+        // ueber VolumeClusterThreshold des POC-Volumens liegt (ein "Volumenberg"), und gibt fuer
+        // jeden gefundenen Bereich Unter- und Oberkante zurueck. Ein Tag kann mehrere solcher
+        // Berge haben (z.B. zwei getrennte Balance-Bereiche) - VAH/VAL decken nur den einen
+        // Hauptbereich um den POC ab, das hier findet auch die anderen.
+        private List<decimal> FindVolumeClusterEdges()
+        {
+            var edges = new List<decimal>();
+
+            if (_volumeByPrice.Count == 0)
+                return edges;
+
+            var maxVolume = 0m;
+            foreach (var volume in _volumeByPrice.Values)
+                if (volume > maxVolume)
+                    maxVolume = volume;
+
+            var threshold = maxVolume * VolumeClusterThreshold;
+
+            var sortedPrices = new List<decimal>(_volumeByPrice.Keys);
+            sortedPrices.Sort();
+
+            var inCluster = false;
+            var clusterLow = 0m;
+
+            for (var i = 0; i < sortedPrices.Count; i++)
+            {
+                var isAboveThreshold = _volumeByPrice[sortedPrices[i]] >= threshold;
+
+                if (isAboveThreshold && !inCluster)
+                {
+                    inCluster = true;
+                    clusterLow = sortedPrices[i];
+                }
+                else if (!isAboveThreshold && inCluster)
+                {
+                    inCluster = false;
+                    edges.Add(clusterLow);
+                    edges.Add(sortedPrices[i - 1]);
+                }
+            }
+
+            if (inCluster)
+                edges.Add(clusterLow);
+
+            return edges;
+        }
+
+        private List<decimal> CollectLocationLevels()
+        {
+            var levels = new List<decimal> { LocationState.Vah, LocationState.Val, LocationState.Poc };
+
+            if (_hasPreviousDay)
+            {
+                levels.Add(_previousDayHigh);
+                levels.Add(_previousDayLow);
+            }
+
+            if (_currentDayHigh != 0)
+            {
+                levels.Add(_currentDayHigh);
+                levels.Add(_currentDayLow);
+            }
+
+            levels.AddRange(FindVolumeClusterEdges());
+
+            return levels;
+        }
+
         private void CheckReaction(int completedBar)
         {
-            // Ohne Profil (z.B. allererste Kerze der Session) noch keine VAH/VAL zum Pruefen
+            // Ohne Profil (z.B. allererste Kerze der Session) noch keine Level zum Pruefen
             if (!LocationState.HasProfile)
             {
                 LocationState.Richtung = TagesRichtung.Neutral;
@@ -163,21 +273,27 @@ namespace RgTrading.Indicators
             }
 
             var candle = GetCandle(completedBar);
+            var levels = CollectLocationLevels();
 
-            // VAH angetestet, aber Schluss wieder darunter -> Ablehnung an VAH -> bearish
-            if (candle.High > LocationState.Vah && candle.Close < LocationState.Vah)
+            var longFound = false;
+            var shortFound = false;
+
+            foreach (var level in levels)
             {
-                LocationState.Richtung = TagesRichtung.Short;
+                // Level von oben angetestet, aber Schluss wieder darunter -> Ablehnung -> bearish
+                if (candle.High > level && candle.Close < level)
+                    shortFound = true;
+                // Level von unten angetestet, aber Schluss wieder darueber -> Ablehnung -> bullish
+                else if (candle.Low < level && candle.Close > level)
+                    longFound = true;
             }
-            // VAL angetestet, aber Schluss wieder darueber -> Ablehnung an VAL -> bullish
-            else if (candle.Low < LocationState.Val && candle.Close > LocationState.Val)
-            {
+
+            if (longFound && !shortFound)
                 LocationState.Richtung = TagesRichtung.Long;
-            }
+            else if (shortFound && !longFound)
+                LocationState.Richtung = TagesRichtung.Short;
             else
-            {
                 LocationState.Richtung = TagesRichtung.Neutral;
-            }
         }
     }
 }

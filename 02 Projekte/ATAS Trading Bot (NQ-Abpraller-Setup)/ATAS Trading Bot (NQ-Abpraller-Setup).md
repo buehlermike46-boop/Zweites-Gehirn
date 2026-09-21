@@ -107,8 +107,25 @@ Mike korrigierte eine Annahme: Location (Checkliste Punkt 3) wird **nicht** auf 
 
 **Nebenbei behoben:** `EsTageskontext.cs` hatte noch die "nur letzte Kerze"-Bremse aus der Order-Strategie kopiert (`if (bar < CurrentBar - 1) return;`). Für einen reinen Zustands-Indikator ohne Order-Wirkung ist das falsch — dadurch hätte der Indikator beim Laden/Neustart von ATAS das Vortageshoch/-tief NICHT aus der Historie übernommen, sondern erst nach dem nächsten LIVEN Sessionwechsel, bis dahin wäre `TageskontextState.Richtung` immer Neutral geblieben (kein Trade möglich, obwohl sonst alles gepasst hätte). Entfernt — verarbeitet jetzt bewusst die volle Historie beim Laden, reagiert danach unverändert live weiter. Gleiches Muster (volle Historie verarbeiten) direkt so in `EsLocation.cs` übernommen.
 
+## Erster Live-Test des Dreifach-Gates: zu restriktiv (21.09.2026)
+Alle drei Charts liefen (Screenshots bestätigt: NQ-Strategie `[Started]`, ES-Tageskontext aktiv, ES-Location aktiv), aber Mikes Einschätzung nach kurzer Beobachtung: die Location-Prüfung nur gegen VAH/VAL ist "zu wenig" — auf seinem Chart reagiert der Preis erkennbar an ganz anderen Leveln (siehe sein Screenshot mit mehreren violetten Linien unterhalb des VAH). Sein Einwand: so bekommt der Bot praktisch nie einen vollständig bestätigten Trade rein.
+
+## Location UND Setup deutlich erweitert (21.09.2026)
+Zwei Erweiterungen auf Mikes konkretes Feedback:
+
+**1. `EsLocation.cs` prüft jetzt gegen eine ganze Liste von Checkliste-Punkt-3-Leveln statt nur VAH/VAL:**
+- VAH, VAL, POC (POC vorher bewusst ausgeschlossen als "Magnet statt Support/Resistance" — eigene Vorsicht, kein Mike-Wunsch; Checkliste listet POC aber explizit, jetzt mit drin)
+- Vortageshoch/-tief, Tageshoch/-tief (eigenständig in `EsLocation.cs` nachgebaut, nicht von `EsTageskontext.cs` gelesen, damit beide Dateien unabhängig und im selben "nur abgeschlossene Kerzen"-Takt bleiben)
+- **Neu: Ober-/Unterkante Volumenberg** (`FindVolumeClusterEdges()`) — findet zusammenhängende Preisbereiche mit Volumen ≥ 40% des POC-Volumens (eigene Heuristik, **noch nicht an echten Setups kalibriert**, Schwellenwert `VolumeClusterThreshold` bei Bedarf anpassen). Ein Tag kann mehrere solcher "Berge" haben, nicht nur den einen um den POC (den deckt VAH/VAL schon ab)
+- Bewusst NICHT umgesetzt, mangels belastbarer Definition statt geraten: Single Prints (bräuchte TPO-/Zeitdaten, haben wir nicht), Range High/Low (Begriff mehrdeutig, noch mit Mike zu klären)
+- Reagiert jetzt IRGENDEIN Level in die passende Richtung (Ablehnungsmuster wie bisher), wird das als Long/Short gewertet; widersprechen sich mehrere Level gleichzeitig, bleibt es sicherheitshalber Neutral
+
+**2. `NqTestStrategy.cs` bekommt eine vierte Bedingung: Abpraller am Heiken-Ashi-Smoothed.** Mike hat an echten NQ-Rücksetzern gezeigt (Screenshot mit mehreren violetten Markierungen), dass der beste Bestätigungspunkt ist, wenn die Kerze am bereits geladenen "Heiken Ashi Smoothed"-Indikator abprallt (Low/High testet die geglättete Linie an, Schluss bleibt auf der Trendseite). Formel (Sylvain Vervoort, öffentlich bekannt, Parameter 10/10 wie Mikes geladener Indikator) intern selbst nachgerechnet statt den Fremd-Indikator auszulesen — gleiches Prinzip wie beim Demand Index/ATR, hat sich als robuster erwiesen. **Wichtig:** das ist reine Mathematik, keine über den Objektkatalog verifizierbare API — einmal visuell gegenprüfen, ob unsere berechnete Linie zur sichtbaren Indikator-Linie passt.
+
+**Einstieg braucht jetzt VIER übereinstimmende Bedingungen:** Demand-Index-Kreuzung (Trigger) + Tageskontext-Richtung + Location-Richtung (erweitert) + Heiken-Ashi-Smoothed-Abpraller, alle in dieselbe Richtung. Damit ist Checkliste Punkt 1, 3 und ein zusätzliches, von Mike beobachtetes NQ-Bestätigungsmuster umgesetzt (Punkt 4 Setup/Footprint/Orderflow aus der ursprünglichen Checkliste bleibt trotzdem noch offen, siehe unten — der HA-Smoothed-Abpraller ergänzt das, ersetzt es nicht).
+
 ## Nächster Schritt
-Build/Deploy von `EsLocation.cs` + `LocationState.cs` + den Änderungen an `EsTageskontext.cs`/`NqTestStrategy.cs` bei Mike ausstehend — braucht jetzt **drei** gleichzeitig offene ATAS-Charts: NQ (Strategie), ES M15 o.ä. ("RG Tageskontext (ES)"), ES "0/2/3R US" Range-Chart ("RG Location (ES Range US)"); passt in Mikes Limit von bis zu 4 gleichzeitig offenen Charts. Danach weiter offen: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, Setup/Footprint/Orderflow-Bestätigung (Checkliste Punkt 4) einbeziehen, Footprint-Schwellen kalibrieren.
+Build/Deploy der aktualisierten `EsLocation.cs` + `NqTestStrategy.cs` bei Mike ausstehend, dann 24h-Testlauf wie besprochen. Weiter offen danach: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen an echten Setups kalibrieren, Single Prints/Range High-Low klären.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]

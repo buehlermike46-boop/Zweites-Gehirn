@@ -1,17 +1,33 @@
-// Phase 3 — Order-Platzierung mit ATR-basiertem Stop/Ziel, Tageskontext-Richtung UND Location.
-// Siehe Projekt-Notiz im übergeordneten Ordner. Läuft nur auf dem Demo-Konto
-// (DEMO331DE, bestätigt 20.09.2026).
+// Phase 3 — Order-Platzierung mit ATR-basiertem Stop/Ziel, Tageskontext-Richtung, Location UND
+// Heiken-Ashi-Smoothed-Abpraller. Siehe Projekt-Notiz im übergeordneten Ordner. Läuft nur auf dem
+// Demo-Konto (DEMO331DE, bestätigt 20.09.2026).
 //
-// Einstieg: Demand-Index-Nulllinien-Kreuzung (Signal), aber NUR wenn ZWEI ES-seitige Gates
-// zustimmen — [[NQ Abpraller-Setup Checkliste]] Punkt 1 (Tageskontext) UND Punkt 3 (Location):
-// 1. Tageskontext (siehe EsTageskontext.cs, läuft auf ES M15 o.ä.): Vortageshoch/-tief
-//    abgelehnt/akzeptiert, ergibt eine Richtung die für den ganzen Tag gilt.
-// 2. Location (siehe EsLocation.cs, läuft auf Mikes ES "0/2/3R US" Range-Chart, seit 21.09.2026):
-//    gerade jetzt eine Ablehnung an VAH/VAL erkannt, gilt nur für die zuletzt abgeschlossene
-//    ES-Kerze, kein Tages-Flag.
-// Kreuzung nach oben nur wenn BEIDE Gates "Long" sagen, Kreuzung nach unten nur wenn BEIDE
-// "Short" sagen. Stimmen Tageskontext und Location nicht überein (oder eines ist Neutral): kein
-// Trade — bewusst so, lieber kein Trade als einer ohne vollständige Richtungsbestätigung.
+// Einstieg braucht jetzt VIER übereinstimmende Bedingungen:
+// 1. Demand-Index-Nulllinien-Kreuzung (Signal/Trigger, wie bisher)
+// 2. Tageskontext-Richtung (siehe EsTageskontext.cs, läuft auf ES M15 o.ä.) — Checkliste Punkt 1
+// 3. Location-Richtung (siehe EsLocation.cs, läuft auf Mikes ES "0/2/3R US" Range-Chart) —
+//    Checkliste Punkt 3, seit 21.09.2026 erweitert um POC/Vortageshoch-tief/Tageshoch-tief/
+//    Volumenbergkanten, nicht mehr nur VAH/VAL
+// 4. NEU seit 21.09.2026 (Mikes Beobachtung an echten NQ-Abprallern): Kerze prallt am
+//    Heiken-Ashi-Smoothed ab — Low/High testet die geglättete Linie an, Schluss bleibt auf der
+//    Trendseite. Gleiches Ablehnungs-Muster wie bei Location, nur auf NQ statt ES angewendet.
+//
+// Kreuzung nach oben nur wenn ALLE VIER "Long" sagen, nach unten nur wenn ALLE VIER "Short"
+// sagen. Fehlt eine Bestätigung: kein Trade — bewusst so, lieber kein Trade als einer ohne
+// vollständige Bestätigung.
+//
+// Heiken-Ashi-Smoothed-Formel (Sylvain Vervoort, öffentlich bekannt, KEINE ATAS-eigene API,
+// deshalb selbst nachgerechnet statt den bereits geladenen "Heiken Ashi Smoothed"-Indikator
+// auszulesen — gleiches Prinzip wie beim Demand Index/ATR, hat sich als robuster erwiesen als
+// Cross-Indikator-Zugriff):
+//   1. Rohe OHLC erst mit EMA(Länge1) glätten
+//   2. Aus den geglätteten Werten normale Heiken-Ashi-Kerzen berechnen
+//   3. Deren Open/Close nochmal mit EMA(Länge2) glätten -> Ergebnis ist die geplottete Linie
+// Länge1 = Länge2 = 10, wie bei Mikes geladenem Indikator ("Heiken Ashi Smoothed (Bars, 10, 10,
+// True)"). WICHTIG: das ist eine öffentlich dokumentierte Formel, keine über den Objektkatalog
+// verifizierbare API (es gibt hier keine "richtige" API zu prüfen, nur Mathematik) — einmal
+// gegenprüfen, ob unsere berechnete Linie optisch zur geladenen Indikator-Linie auf dem Chart
+// passt, dann passt die Umsetzung.
 //
 // WICHTIG: EsTageskontext.cs UND EsLocation.cs müssen laufen (auf zwei separaten ES-Charts),
 // sonst bleiben TageskontextState.Richtung/LocationState.Richtung dauerhaft "Neutral" und diese
@@ -49,12 +65,25 @@ namespace RgTrading.Indicators
         private const decimal TargetMultiplier = 3m;    // Ziel = 3x ATR (CRV 1:2 zum Stop)
         private const decimal OrderQuantity = 1m;
 
+        // Heiken-Ashi-Smoothed-Parameter, wie bei Mikes geladenem Indikator
+        private const int HaSmoothPeriod1 = 10;
+        private const int HaSmoothPeriod2 = 10;
+
         private decimal _cumulative;
         private decimal _previousCumulative;
         private OrderDirections _entryDirection;
 
         private decimal _atrSum;
         private decimal? _atr;
+
+        private int _lastHaProcessedBar = -1;
+        private decimal? _emaOpen1;
+        private decimal? _emaHigh1;
+        private decimal? _emaLow1;
+        private decimal? _emaClose1;
+        private decimal? _haOpen;
+        private decimal? _haClose;
+        private decimal? _haSmoothedLine;
 
         public NqTestStrategy() : base(true)
         {
@@ -63,6 +92,7 @@ namespace RgTrading.Indicators
         protected override void OnCalculate(int bar, decimal value)
         {
             UpdateAtr(bar);
+            UpdateHeikenAshiSmoothed(bar);
 
             // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
             if (bar < CurrentBar - 1)
@@ -98,14 +128,18 @@ namespace RgTrading.Indicators
             if (!LocationState.HasProfile)
                 return;
 
+            var haBounce = CheckHaSmoothedBounce(bar);
+
             if (crossedUp && TageskontextState.Richtung == TagesRichtung.Long
-                && LocationState.Richtung == TagesRichtung.Long)
+                && LocationState.Richtung == TagesRichtung.Long
+                && haBounce == TagesRichtung.Long)
             {
                 _entryDirection = OrderDirections.Buy;
                 PlaceEntryOrder();
             }
             else if (crossedDown && TageskontextState.Richtung == TagesRichtung.Short
-                && LocationState.Richtung == TagesRichtung.Short)
+                && LocationState.Richtung == TagesRichtung.Short
+                && haBounce == TagesRichtung.Short)
             {
                 _entryDirection = OrderDirections.Sell;
                 PlaceEntryOrder();
@@ -154,6 +188,85 @@ namespace RgTrading.Indicators
 
             // Danach: gleitender ATR nach der Standard-Formel
             _atr = (_atr.Value * (AtrPeriod - 1) + trueRange) / AtrPeriod;
+        }
+
+        // Heiken-Ashi-Smoothed nach Vervoort: erst rohe OHLC glätten, daraus Heiken-Ashi bilden,
+        // dann deren Open/Close nochmal glätten. Verarbeitet bewusst nur ABGESCHLOSSENE Kerzen
+        // (wie EsLocation.cs) - OnCalculate feuert pro Tick, nicht nur beim Kerzenabschluss. Würde
+        // die rekursive EMA-Kette bei jedem Tick der noch laufenden Kerze erneut verschoben, würde
+        // die Linie nachträglich wandern statt stabil zu bleiben (mehrfache Anwendung derselben
+        // Kerze auf sich selbst). Die Linie spiegelt also den Stand nach der letzten
+        // abgeschlossenen Kerze, geprüft wird dagegen die aktuell laufende (siehe
+        // CheckHaSmoothedBounce) - exakt das gleiche Prinzip wie VAH/VAL/POC in EsLocation.cs.
+        private void UpdateHeikenAshiSmoothed(int bar)
+        {
+            if (bar == 0)
+            {
+                _lastHaProcessedBar = -1;
+                _emaOpen1 = null;
+                _emaHigh1 = null;
+                _emaLow1 = null;
+                _emaClose1 = null;
+                _haOpen = null;
+                _haClose = null;
+                _haSmoothedLine = null;
+            }
+
+            while (_lastHaProcessedBar < bar - 1)
+            {
+                _lastHaProcessedBar++;
+                AdvanceHeikenAshiSmoothed(_lastHaProcessedBar);
+            }
+        }
+
+        private void AdvanceHeikenAshiSmoothed(int completedBar)
+        {
+            var candle = GetCandle(completedBar);
+
+            _emaOpen1 = Ema(_emaOpen1, candle.Open, HaSmoothPeriod1);
+            _emaHigh1 = Ema(_emaHigh1, candle.High, HaSmoothPeriod1);
+            _emaLow1 = Ema(_emaLow1, candle.Low, HaSmoothPeriod1);
+            _emaClose1 = Ema(_emaClose1, candle.Close, HaSmoothPeriod1);
+
+            var haCloseRaw = (_emaOpen1.Value + _emaHigh1.Value + _emaLow1.Value + _emaClose1.Value) / 4m;
+            var haOpenRaw = _haOpen.HasValue && _haClose.HasValue
+                ? (_haOpen.Value + _haClose.Value) / 2m
+                : (_emaOpen1.Value + _emaClose1.Value) / 2m;
+
+            _haOpen = haOpenRaw;
+            _haClose = haCloseRaw;
+
+            // Geplottete Linie = geglätteter HA-Close (zweite EMA-Stufe)
+            _haSmoothedLine = Ema(_haSmoothedLine, _haClose.Value, HaSmoothPeriod2);
+        }
+
+        private decimal Ema(decimal? previousEma, decimal price, int period)
+        {
+            if (!previousEma.HasValue)
+                return price;
+
+            var multiplier = 2m / (period + 1);
+            return (price - previousEma.Value) * multiplier + previousEma.Value;
+        }
+
+        // Abpraller am Heiken-Ashi-Smoothed: Low testet die Linie an, Schluss bleibt darüber ->
+        // bullish. Spiegelbildlich für High/darunter -> bearish. Gleiches Ablehnungs-Muster wie
+        // in EsTageskontext.cs/EsLocation.cs, hier auf die NQ-Trendlinie angewendet.
+        private TagesRichtung CheckHaSmoothedBounce(int bar)
+        {
+            if (!_haSmoothedLine.HasValue)
+                return TagesRichtung.Neutral;
+
+            var candle = GetCandle(bar);
+            var line = _haSmoothedLine.Value;
+
+            if (candle.Low <= line && candle.Close > line)
+                return TagesRichtung.Long;
+
+            if (candle.High >= line && candle.Close < line)
+                return TagesRichtung.Short;
+
+            return TagesRichtung.Neutral;
         }
 
         protected override void OnNewMyTrade(MyTrade myTrade)
