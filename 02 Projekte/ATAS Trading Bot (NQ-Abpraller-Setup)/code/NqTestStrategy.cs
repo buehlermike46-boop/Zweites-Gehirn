@@ -1,15 +1,21 @@
-// Phase 3 — Order-Platzierung mit ATR-basiertem Stop/Ziel UND Tageskontext-Richtung.
+// Phase 3 — Order-Platzierung mit ATR-basiertem Stop/Ziel, Tageskontext-Richtung UND Location.
 // Siehe Projekt-Notiz im übergeordneten Ordner. Läuft nur auf dem Demo-Konto
 // (DEMO331DE, bestätigt 20.09.2026).
 //
-// Einstieg: Demand-Index-Nulllinien-Kreuzung (Signal), aber NUR wenn der Tageskontext vom
-// ES-Chart (siehe EsTageskontext.cs) zustimmt — Kreuzung nach oben nur bei Richtung "Long",
-// Kreuzung nach unten nur bei "Short". Das setzt [[NQ Abpraller-Setup Checkliste]] Regel 1 um
-// ("höchste Priorität: nur in Richtung der Ablehnung bzw. Annahme handeln").
+// Einstieg: Demand-Index-Nulllinien-Kreuzung (Signal), aber NUR wenn ZWEI ES-seitige Gates
+// zustimmen — [[NQ Abpraller-Setup Checkliste]] Punkt 1 (Tageskontext) UND Punkt 3 (Location):
+// 1. Tageskontext (siehe EsTageskontext.cs, läuft auf ES M15 o.ä.): Vortageshoch/-tief
+//    abgelehnt/akzeptiert, ergibt eine Richtung die für den ganzen Tag gilt.
+// 2. Location (siehe EsLocation.cs, läuft auf Mikes ES "0/2/3R US" Range-Chart, seit 21.09.2026):
+//    gerade jetzt eine Ablehnung an VAH/VAL erkannt, gilt nur für die zuletzt abgeschlossene
+//    ES-Kerze, kein Tages-Flag.
+// Kreuzung nach oben nur wenn BEIDE Gates "Long" sagen, Kreuzung nach unten nur wenn BEIDE
+// "Short" sagen. Stimmen Tageskontext und Location nicht überein (oder eines ist Neutral): kein
+// Trade — bewusst so, lieber kein Trade als einer ohne vollständige Richtungsbestätigung.
 //
-// WICHTIG: EsTageskontext.cs muss auf einem ES-Chart laufen, damit TageskontextState.Richtung
-// überhaupt etwas anderes als "Neutral" wird — sonst handelt diese Strategie nie (bewusst so,
-// lieber kein Trade als einer ohne Richtungsbestätigung).
+// WICHTIG: EsTageskontext.cs UND EsLocation.cs müssen laufen (auf zwei separaten ES-Charts),
+// sonst bleiben TageskontextState.Richtung/LocationState.Richtung dauerhaft "Neutral" und diese
+// Strategie handelt nie.
 //
 // Seit 21.09.2026 (Mikes Wunsch): kein "nur einmal für immer" mehr, sondern erneuter Einstieg
 // erlaubt sobald CurrentPosition wieder 0 ist (keine offene Position mehr) — Mike kann die
@@ -89,12 +95,17 @@ namespace RgTrading.Indicators
             if (!_atr.HasValue)
                 return;
 
-            if (crossedUp && TageskontextState.Richtung == TagesRichtung.Long)
+            if (!LocationState.HasProfile)
+                return;
+
+            if (crossedUp && TageskontextState.Richtung == TagesRichtung.Long
+                && LocationState.Richtung == TagesRichtung.Long)
             {
                 _entryDirection = OrderDirections.Buy;
                 PlaceEntryOrder();
             }
-            else if (crossedDown && TageskontextState.Richtung == TagesRichtung.Short)
+            else if (crossedDown && TageskontextState.Richtung == TagesRichtung.Short
+                && LocationState.Richtung == TagesRichtung.Short)
             {
                 _entryDirection = OrderDirections.Sell;
                 PlaceEntryOrder();

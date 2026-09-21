@@ -91,8 +91,24 @@ Erster echter Order-Test (`code/NqTestStrategy.cs`) hat ausgelöst: Demand-Index
 
 **Voraussetzung:** ES-Chart und NQ-Chart müssen gleichzeitig offen sein, "RG Tageskontext (ES)" muss zusätzlich zum NQ-Chart auf einem ES-Chart aktiv laufen.
 
+## Phase 1 — Location gelöst (21.09.2026, VAH/VAL/POC auf ES Range-US Chart)
+Mike korrigierte eine Annahme: Location (Checkliste Punkt 3) wird **nicht** auf einem NQ- oder zeitbasierten ES-Chart berechnet, sondern auf seinem echten ES-Chart-Typ, per Screenshot bestätigt: Range-Chart mit Einstellung **"0/2/3R US"** (Chart-Tab "ES 0/2/3R US Chart", siehe [[RangeUS Chart (Kontext für Setups)]]).
+
+**Neue Datei `code/EsLocation.cs`**, läuft auf genau diesem Chart:
+- Baut aus den Kerzen-Cluster-Daten (`candle.GetAllPriceLevels()` / `candle.GetPriceVolumeInfo(price)`, laut Phase 2 per IntelliSense bestätigt, aber bisher nicht in echtem Code benutzt — Feldname `.Volume` auf `PriceVolumeInfo` ist eine Annahme, noch nicht einzeln verifiziert, beim ersten Build prüfen) ein Session-Volume-Profil auf: Preis → kumuliertes Volumen
+- Daraus POC (meistes Volumen) und VAH/VAL nach der Standard-Value-Area-Methode (vom POC aus abwechselnd die Seite mit mehr Volumen dazunehmen, bis 70% des Gesamtvolumens erreicht sind). **70% ist der Branchenstandard, von mir angenommen, nicht einzeln von Mike bestätigt** — bei Bedarf leicht änderbar (`ValueAreaPercent`-Konstante)
+- Erkennt Ablehnung an VAH/VAL (High/Low toucht die Linie, Kerze schließt wieder auf der anderen Seite — gleiches Muster wie die Vortageshoch/-tief-Regel in `EsTageskontext.cs`), schreibt Ergebnis in `LocationState.Richtung`. Anders als `TageskontextState.Richtung` (gilt den ganzen Tag) ist das ein kurzer Impuls, der bei jeder abgeschlossenen Kerze neu gesetzt wird
+- POC selbst wird bewusst NICHT als Ablehnungs-Level behandelt (wirkt eher wie ein Pivot/Magnet als wie Support/Resistance) — der POC-Rücktest aus Checkliste Punkt 4 (NQ-Footprint-Setup) bleibt ein eigener, separater Baustein, siehe `NqFootprintDelta.cs`
+- **Wichtig zum Instrument:** POC/VAH/VAL sind ES-Preise, kein direkter Vergleich mit NQ-Kursen — Checkliste Punkt 3 (Location) prüft ES-Reaktion an der eigenen Location, Punkt 4 (Setup) prüft separat NQ-Bestätigung im selben Moment; erst beide zusammen ergeben den Einstieg
+
+**Neue Datei `code/LocationState.cs`** — gleicher "Briefkasten"-Mechanismus wie `TageskontextState.cs`.
+
+**`NqTestStrategy.cs` erweitert:** Einstieg jetzt an drei Bedingungen gebunden statt zwei — Demand-Index-Kreuzung (NQ) UND Tageskontext-Richtung (ES M15) UND Location-Richtung (ES Range-US), alle drei müssen in dieselbe Richtung zeigen. Damit ist Checkliste Punkt 1 UND Punkt 3 jetzt umgesetzt (Punkt 4 Setup/Footprint/Orderflow und Punkt 5 Trade-Management bleiben offen, siehe unten).
+
+**Nebenbei behoben:** `EsTageskontext.cs` hatte noch die "nur letzte Kerze"-Bremse aus der Order-Strategie kopiert (`if (bar < CurrentBar - 1) return;`). Für einen reinen Zustands-Indikator ohne Order-Wirkung ist das falsch — dadurch hätte der Indikator beim Laden/Neustart von ATAS das Vortageshoch/-tief NICHT aus der Historie übernommen, sondern erst nach dem nächsten LIVEN Sessionwechsel, bis dahin wäre `TageskontextState.Richtung` immer Neutral geblieben (kein Trade möglich, obwohl sonst alles gepasst hätte). Entfernt — verarbeitet jetzt bewusst die volle Historie beim Laden, reagiert danach unverändert live weiter. Gleiches Muster (volle Historie verarbeiten) direkt so in `EsLocation.cs` übernommen.
+
 ## Nächster Schritt
-Build/Deploy der drei Dateien bei Mike ausstehend. Danach: Stop-Loss/Take-Profit sind schon im Code (OCOGroup/TriggerPrice, funktioniert bidirektional), noch offen: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, Location-Level (VAH/VAL/POC) einbeziehen, Footprint-Schwellen kalibrieren.
+Build/Deploy von `EsLocation.cs` + `LocationState.cs` + den Änderungen an `EsTageskontext.cs`/`NqTestStrategy.cs` bei Mike ausstehend — braucht jetzt **drei** gleichzeitig offene ATAS-Charts: NQ (Strategie), ES M15 o.ä. ("RG Tageskontext (ES)"), ES "0/2/3R US" Range-Chart ("RG Location (ES Range US)"); passt in Mikes Limit von bis zu 4 gleichzeitig offenen Charts. Danach weiter offen: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, Setup/Footprint/Orderflow-Bestätigung (Checkliste Punkt 4) einbeziehen, Footprint-Schwellen kalibrieren.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]

@@ -10,6 +10,16 @@
 //
 // IsNewSession(bar) stammt aus der oeffentlichen ATAS-Doku (Indicator-Basisklasse), noch nicht
 // einzeln per Objektkatalog gegen diese Installation verifiziert - beim ersten Build pruefen.
+//
+// Verarbeitet bewusst ALLE Kerzen, auch beim Laden aus der Historie (Aenderung 21.09.2026,
+// vorher stand hier eine "nur letzte Kerze"-Bremse wie in NqTestStrategy.cs - die gehoert aber
+// nur in die Order-platzierende Strategie, nicht in einen reinen Zustands-Indikator ohne
+// Order-Wirkung). Mit der Bremse haette dieser Indikator beim Laden/Neustart von ATAS das
+// Vortageshoch/-tief NICHT aus der Historie uebernommen, sondern erst nach dem naechsten LIVEN
+// Sessionwechsel - bis dahin waere TageskontextState.Richtung immer Neutral geblieben und der Bot
+// haette trotz gueltiger Bedingungen nicht gehandelt. Ohne die Bremse baut sich der Zustand sofort
+// beim Laden korrekt aus der Historie auf, danach reagiert er wie bisher live weiter. Setzen
+// derselben statischen Werte mehrfach pro Kerze (bei jedem Tick) ist unschaedlich, da idempotent.
 
 using ATAS.Indicators;
 using OFT.Attributes;
@@ -31,9 +41,6 @@ namespace RgTrading.Indicators
 
         protected override void OnCalculate(int bar, decimal value)
         {
-            if (bar < CurrentBar - 1)
-                return;
-
             var candle = GetCandle(bar);
 
             if (IsNewSession(bar))
