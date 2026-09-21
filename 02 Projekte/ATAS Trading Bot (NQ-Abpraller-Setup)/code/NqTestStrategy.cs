@@ -1,19 +1,28 @@
-// Phase 3 — Order-Platzierung mit ATR-basiertem Stop/Ziel, siehe Projekt-Notiz im
-// übergeordneten Ordner. Läuft nur auf dem Demo-Konto (DEMO331DE, bestätigt 20.09.2026).
+// Phase 3 — Order-Platzierung mit ATR-basiertem Stop/Ziel UND Tageskontext-Richtung.
+// Siehe Projekt-Notiz im übergeordneten Ordner. Läuft nur auf dem Demo-Konto
+// (DEMO331DE, bestätigt 20.09.2026).
 //
-// Einstieg unverändert: Demand-Index-Nulllinien-Kreuzung nach oben → Market-Buy, einmalig.
-// Neu (21.09.2026): Stop-Loss (1,5x ATR) und Take-Profit (3x ATR, CRV 1:2) werden nach dem
-// tatsächlichen Fill automatisch nachgeschickt, verknüpft über OCOGroup (eine schließt die
-// andere automatisch). ATR-Formel nach [[RG-Trading Indikator - ATR (Average True Range)]].
+// Einstieg: Demand-Index-Nulllinien-Kreuzung (Signal), aber NUR wenn der Tageskontext vom
+// ES-Chart (siehe EsTageskontext.cs) zustimmt — Kreuzung nach oben nur bei Richtung "Long",
+// Kreuzung nach unten nur bei "Short". Das setzt [[NQ Abpraller-Setup Checkliste]] Regel 1 um
+// ("höchste Priorität: nur in Richtung der Ablehnung bzw. Annahme handeln").
 //
-// Order-Klasse (ATAS.DataFeedsCore.Order) und Enums (OrderDirections, OrderTypes) per
-// Objektkatalog gegen die echte ATAS-Installation bestätigt, 19.09.2026. MyTrade-Eigenschaften
-// und der Typ von OCOGroup sind hier noch NICHT verifiziert, nur aus Doku-Recherche angenommen —
-// beim ersten Build IntelliSense/Objektkatalog prüfen, falls Fehler auftreten.
+// WICHTIG: EsTageskontext.cs muss auf einem ES-Chart laufen, damit TageskontextState.Richtung
+// überhaupt etwas anderes als "Neutral" wird — sonst handelt diese Strategie nie (bewusst so,
+// lieber kein Trade als einer ohne Richtungsbestätigung).
+//
+// Stop-Loss (1,5x ATR) und Take-Profit (3x ATR, CRV 1:2) werden nach dem tatsächlichen Fill
+// automatisch nachgeschickt, verknüpft über OCOGroup. ATR-Formel nach
+// [[RG-Trading Indikator - ATR (Average True Range)]].
+//
+// Order-Klasse (ATAS.DataFeedsCore.Order), Enums (OrderDirections, OrderTypes) und
+// MyTrade.Price per Objektkatalog/Testbuild gegen die echte ATAS-Installation bestätigt,
+// 19.-21.09.2026. ICrossTradingIndicatorContext/ICandlesDataProvider funktionieren in dieser
+// ATAS-Version NICHT (Service nicht registriert bzw. Typ existiert nicht) — deshalb der Weg
+// über TageskontextState.cs statt eines direkten Cross-Instrument-Zugriffs.
 
 using System;
 using ATAS.DataFeedsCore;
-using ATAS.Indicators;
 using ATAS.Strategies.Chart;
 using OFT.Attributes;
 
@@ -31,14 +40,10 @@ namespace RgTrading.Indicators
         private decimal _cumulative;
         private decimal _previousCumulative;
         private bool _orderPlaced;
+        private OrderDirections _entryDirection;
 
         private decimal _atrSum;
         private decimal? _atr;
-
-        // Nur zum Testen: prueft einmalig, ob/wie "Cross Trading" (Zugriff auf ein zweites
-        // Instrument, z.B. ES waehrend die Strategie auf NQ laeuft) in dieser ATAS-Installation
-        // funktioniert. Schreibt das Ergebnis in die ATAS-Logdatei, kein Einfluss auf den Handel.
-        private bool _crossTradingChecked;
 
         public NqTestStrategy() : base(true)
         {
@@ -47,13 +52,6 @@ namespace RgTrading.Indicators
         protected override void OnCalculate(int bar, decimal value)
         {
             UpdateAtr(bar);
-
-            if (!_crossTradingChecked)
-            {
-                _crossTradingChecked = true;
-                var crossTradingContext = DataProvider.GetService<ICrossTradingIndicatorContext>();
-                RaiseShowNotification($"CrossTrading aktiv: {crossTradingContext.IsCrossTradingActive}, Name: {crossTradingContext.CurrentCrossTradingDisplayName}", "CrossTrading-Test");
-            }
 
             // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
             if (bar < CurrentBar - 1)
@@ -78,23 +76,38 @@ namespace RgTrading.Indicators
             _cumulative += volumeComponent;
 
             var crossedUp = _previousCumulative <= 0 && _cumulative > 0;
+            var crossedDown = _previousCumulative >= 0 && _cumulative < 0;
 
             // Ohne ATR-Wert (noch nicht genug Kerzen für 14 Perioden) kein Einstieg,
             // sonst könnten wir hinterher keinen Stop/Ziel berechnen
-            if (crossedUp && _atr.HasValue)
-            {
-                var order = new Order
-                {
-                    Portfolio = Portfolio,
-                    Security = Security,
-                    Direction = OrderDirections.Buy,
-                    Type = OrderTypes.Market,
-                    QuantityToFill = OrderQuantity
-                };
+            if (!_atr.HasValue)
+                return;
 
-                OpenOrder(order);
-                _orderPlaced = true;
+            if (crossedUp && TageskontextState.Richtung == TagesRichtung.Long)
+            {
+                _entryDirection = OrderDirections.Buy;
+                PlaceEntryOrder();
             }
+            else if (crossedDown && TageskontextState.Richtung == TagesRichtung.Short)
+            {
+                _entryDirection = OrderDirections.Sell;
+                PlaceEntryOrder();
+            }
+        }
+
+        private void PlaceEntryOrder()
+        {
+            var order = new Order
+            {
+                Portfolio = Portfolio,
+                Security = Security,
+                Direction = _entryDirection,
+                Type = OrderTypes.Market,
+                QuantityToFill = OrderQuantity
+            };
+
+            OpenOrder(order);
+            _orderPlaced = true;
         }
 
         private void UpdateAtr(int bar)
@@ -135,16 +148,24 @@ namespace RgTrading.Indicators
                 return;
 
             var entryPrice = myTrade.Price;
-            var stopPrice = ShrinkPrice(entryPrice - _atr.Value * StopMultiplier);
-            var targetPrice = ShrinkPrice(entryPrice + _atr.Value * TargetMultiplier);
+            var isLong = _entryDirection == OrderDirections.Buy;
 
+            var stopPrice = isLong
+                ? ShrinkPrice(entryPrice - _atr.Value * StopMultiplier)
+                : ShrinkPrice(entryPrice + _atr.Value * StopMultiplier);
+
+            var targetPrice = isLong
+                ? ShrinkPrice(entryPrice + _atr.Value * TargetMultiplier)
+                : ShrinkPrice(entryPrice - _atr.Value * TargetMultiplier);
+
+            var exitDirection = isLong ? OrderDirections.Sell : OrderDirections.Buy;
             var ocoGroup = Guid.NewGuid().ToString();
 
             var stopLoss = new Order
             {
                 Portfolio = Portfolio,
                 Security = Security,
-                Direction = OrderDirections.Sell,
+                Direction = exitDirection,
                 Type = OrderTypes.Stop,
                 TriggerPrice = stopPrice,
                 QuantityToFill = OrderQuantity,
@@ -155,7 +176,7 @@ namespace RgTrading.Indicators
             {
                 Portfolio = Portfolio,
                 Security = Security,
-                Direction = OrderDirections.Sell,
+                Direction = exitDirection,
                 Type = OrderTypes.Limit,
                 Price = targetPrice,
                 QuantityToFill = OrderQuantity,

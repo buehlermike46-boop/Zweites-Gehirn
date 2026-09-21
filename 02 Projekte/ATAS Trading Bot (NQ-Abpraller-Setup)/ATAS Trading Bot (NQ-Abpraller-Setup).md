@@ -81,8 +81,18 @@ Erster echter Order-Test (`code/NqTestStrategy.cs`) hat ausgelöst: Demand-Index
 
 **Zwischenfall während der Einrichtung (19./20.09.2026):** Nach vielen ATAS-Neustarts während der Entwicklung wurden alle Chart-Fenster grau/unbedienbar, während gleichzeitig die Rithmic-Verbindungen (APEX und ein zweites Konto) mit "Repository Connection Login Failed" fehlschlugen. Ursache nicht abschließend geklärt (DLL testweise entfernt UND Rechner neu gestartet, beides zusammen hat es behoben) — die eigene DLL kann als Auslöser nicht sicher ausgeschlossen werden, auch wenn die Rithmic-Login-Fehler eher wie ein separates, brokerseitiges Problem aussehen. Falls sich Chart-Probleme nach künftigen DLL-Updates wiederholen: DLL zuerst testweise aus beiden Ordnern entfernen, um es einzugrenzen.
 
+## Phase 1 — Tageskontext gelöst (21.09.2026, ohne Cross-Instrument-API)
+`ICrossTradingIndicatorContext` (Service nicht registriert, Laufzeitfehler bestätigt per ATAS-Logs-Panel) und `ICandlesDataProvider` (Typ existiert nicht in dieser ATAS-Version 8.0.14.399, per Objektkatalog bestätigt) funktionieren beide nicht — die öffentliche ATAS-Doku beschreibt eine andere SDK-Version. Nebenfund: ATAS' eigenes "Cross Trading"-Feature ist vermutlich etwas anderes (Handelsvorlagen-Synchronisierung zwischen korrelierten Rohstoff-Gruppen wie S&P 500/Crude Oil/Bitcoin/Ether, nicht Kerzendaten eines zweiten Instruments lesen).
+
+**Lösung:** Da ATAS als ein Prozess läuft, wenn ES- und NQ-Chart gleichzeitig offen sind, reicht ein statisches Feld als "Briefkasten" zwischen zwei separaten Indikatoren — kein Cross-Instrument-API nötig. Drei Dateien:
+- `code/TageskontextState.cs` — gemeinsamer statischer Speicher (`TagesRichtung`-Enum: Neutral/Long/Short)
+- `code/EsTageskontext.cs` — läuft auf dem ES-Chart, erkennt Vortageshoch/-tief-Ablehnung/Akzeptanz (Checkliste Regel 1, höchste Priorität), schreibt Richtung in den State
+- `code/NqTestStrategy.cs` — liest die Richtung, handelt jetzt **bidirektional** (Long UND Short), aber nur wenn Demand-Index-Signal UND Tageskontext-Richtung übereinstimmen
+
+**Voraussetzung:** ES-Chart und NQ-Chart müssen gleichzeitig offen sein, "RG Tageskontext (ES)" muss zusätzlich zum NQ-Chart auf einem ES-Chart aktiv laufen.
+
 ## Nächster Schritt
-Sobald der Markt wieder offen ist: prüfen ob die Test-Order tatsächlich auslöst. Danach: Stop-Loss/Take-Profit ergänzen (OCOGroup/TriggerPrice, siehe Order-Felder oben) und den Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen.
+Build/Deploy der drei Dateien bei Mike ausstehend. Danach: Stop-Loss/Take-Profit sind schon im Code (OCOGroup/TriggerPrice, funktioniert bidirektional), noch offen: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, Location-Level (VAH/VAL/POC) einbeziehen, Footprint-Schwellen kalibrieren.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]
