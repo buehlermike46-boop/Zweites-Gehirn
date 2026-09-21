@@ -34,6 +34,11 @@ namespace RgTrading.Indicators
         private decimal _atrSum;
         private decimal? _atr;
 
+        // Nur zum Testen: prueft einmalig, ob/wie "Cross Trading" (Zugriff auf ein zweites
+        // Instrument, z.B. ES waehrend die Strategie auf NQ laeuft) in dieser ATAS-Installation
+        // funktioniert. Schreibt das Ergebnis in die ATAS-Logdatei, kein Einfluss auf den Handel.
+        private bool _crossTradingChecked;
+
         public NqTestStrategy() : base(true)
         {
         }
@@ -41,6 +46,13 @@ namespace RgTrading.Indicators
         protected override void OnCalculate(int bar, decimal value)
         {
             UpdateAtr(bar);
+
+            if (!_crossTradingChecked)
+            {
+                _crossTradingChecked = true;
+                var crossTradingContext = DataProvider.GetService<ICrossTradingIndicatorContext>();
+                LogInfo($"CrossTrading aktiv: {crossTradingContext.IsCrossTradingActive}, Name: {crossTradingContext.CurrentCrossTradingDisplayName}");
+            }
 
             // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
             if (bar < CurrentBar - 1)
