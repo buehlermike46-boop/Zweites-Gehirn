@@ -11,9 +11,15 @@
 // überhaupt etwas anderes als "Neutral" wird — sonst handelt diese Strategie nie (bewusst so,
 // lieber kein Trade als einer ohne Richtungsbestätigung).
 //
+// Seit 21.09.2026 (Mikes Wunsch): kein "nur einmal für immer" mehr, sondern erneuter Einstieg
+// erlaubt sobald CurrentPosition wieder 0 ist (keine offene Position mehr) — Mike kann die
+// Strategie außerdem jederzeit selbst über "IsActivated" stoppen.
+//
 // Stop-Loss (1,5x ATR) und Take-Profit (3x ATR, CRV 1:2) werden nach dem tatsächlichen Fill
 // automatisch nachgeschickt, verknüpft über OCOGroup. ATR-Formel nach
-// [[RG-Trading Indikator - ATR (Average True Range)]].
+// [[RG-Trading Indikator - ATR (Average True Range)]]. OnNewMyTrade unterscheidet jetzt
+// Eröffnungs- von Schluss-Trades (per CurrentPosition), damit beim Schließen einer Position
+// (Stop/Ziel gegriffen) nicht versehentlich ein neues Bracket gesetzt wird.
 //
 // Order-Klasse (ATAS.DataFeedsCore.Order), Enums (OrderDirections, OrderTypes) und
 // MyTrade.Price per Objektkatalog/Testbuild gegen die echte ATAS-Installation bestätigt,
@@ -39,7 +45,6 @@ namespace RgTrading.Indicators
 
         private decimal _cumulative;
         private decimal _previousCumulative;
-        private bool _orderPlaced;
         private OrderDirections _entryDirection;
 
         private decimal _atrSum;
@@ -57,7 +62,8 @@ namespace RgTrading.Indicators
             if (bar < CurrentBar - 1)
                 return;
 
-            if (_orderPlaced)
+            // Schon eine offene Position -> kein neuer Einstieg, wartet bis sie flach ist
+            if (CurrentPosition != 0)
                 return;
 
             if (bar == 0)
@@ -107,7 +113,6 @@ namespace RgTrading.Indicators
             };
 
             OpenOrder(order);
-            _orderPlaced = true;
         }
 
         private void UpdateAtr(int bar)
@@ -145,6 +150,11 @@ namespace RgTrading.Indicators
             base.OnNewMyTrade(myTrade);
 
             if (!_atr.HasValue)
+                return;
+
+            // Dieser Trade hat die Position geschlossen (Stop/Ziel gegriffen oder manuell
+            // geschlossen) -> kein neues Bracket setzen, nur bei Eroeffnung/Vergroesserung
+            if (CurrentPosition == 0)
                 return;
 
             var entryPrice = myTrade.Price;
