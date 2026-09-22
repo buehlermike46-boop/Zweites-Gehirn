@@ -195,8 +195,21 @@ Mikes Test: selbst die komplett leere `NqHelloWorldStrategy` (keine Order-Logik,
 
 **Das ist kein Code-Problem mehr.** Nächster Schritt liegt bei Mike/ATAS-seitig: Rithmic/APEX-Verbindung (Konto DEMO331DE) wirklich aktiv prüfen (nicht nur Statuspunkt-Farbe, sondern z.B. ob echte DOM-Preise für NQ reinkommen oder eine manuelle Order gefüllt würde), ggf. Verbindung trennen und neu aufbauen. Falls das nichts bringt: ATAS-Support kontaktieren, da reproduzierbar per Minimal-Test nachgewiesen.
 
+## Verbindungs- und Lizenz-Theorien ebenfalls widerlegt (22.09.2026, Abend)
+Beide folgenden Vermutungen durchgeprüft und widerlegt:
+- **Konto-/Broker-Verbindung:** Mike hat gar kein Apex-Konto — die Rithmic-Fehler im Logs-Panel sind irrelevantes Grundrauschen eines nie genutzten Verbindungsprofils. Der Verbindungen-Dialog zeigt "ATAS Sim" (worüber DEMO331DE tatsächlich läuft) klar als "Verbunden".
+- **Lizenz/Testphase:** kein Hinweis auf abgelaufene Berechtigung für Handelsstrategien gefunden, und die Strategie hatte am 21.09. bereits eigenständig einen echten Trade platziert.
+
+Zusätzlich identifiziert: die Checkbox ganz links in der Handelsstrategien-Zeile ist ein echter Start/Stop-Schalter (Status wechselte sauber "Aktiv" → "Gestoppt", Play-Symbol erschien) — sauberer Stop+Neustart darüber ausprobiert, brachte aber ebenfalls keine Änderung. `NqHelloWorldStrategy`-Zähler bleibt weiterhin bei 0.
+
+**Ehrlicher Stand:** Die Ursache, warum `ChartStrategy.OnCalculate` auf Mikes Installation nicht mehr aufgerufen wird, bleibt offen. Alle naheliegenden Erklärungen (Konto-Verbindung, Lizenz, Start/Stop-Zustand) sind der Reihe nach durchgeprüft und widerlegt worden — kein Ratespiel mehr übrig, das sich von hier aus per Chat sinnvoll weiterverfolgen lässt. Mike hat die Session nach einem sehr langen Debugging-Tag beendet.
+
 ## Nächster Schritt
-Mike prüft/repariert die Rithmic/APEX-Kontoverbindung (kein Code-Thema mehr). Sobald `ChartStrategy.OnCalculate` nachweislich wieder läuft (z.B. `NqHelloWorldStrategy`-Zähler zählt hoch): zurück zu `NqTestStrategy.cs` und die eigentliche Diagnose (Setup-Stufe, Demand Index etc.) fortsetzen — der ganze bisherige Code sollte dann direkt funktionieren, keine weiteren Änderungen nötig. Rest wie gehabt (sobald das grundlegende Problem geklärt ist): Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
+Mögliche Ansätze für die nächste Session, noch nicht ausprobiert:
+- ATAS-Support direkt kontaktieren, jetzt mit einem sauberen, reproduzierbaren Minimal-Beispiel (`NqHelloWorldStrategy.cs` — zeigt dass selbst eine komplett leere ChartStrategy ohne jede Auftragslogik nicht ausgeführt wird, während jeder Indicator einwandfrei läuft)
+- ATAS komplett deinstallieren und neu installieren, statt nur die DLL auszutauschen (falls es ein tiefer sitzendes Installationsproblem ist)
+- Sobald `ChartStrategy.OnCalculate` nachweislich wieder läuft: zurück zu `NqTestStrategy.cs`, der gesamte Code von heute (zwei Bugfixes, komplette Sequenz-Logik-Überarbeitung, fünf Diagnose-Anzeigen) sollte dann direkt funktionieren, keine weiteren Code-Änderungen nötig
+- Rest wie gehabt (sobald das grundlegende Problem geklärt ist): Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]
