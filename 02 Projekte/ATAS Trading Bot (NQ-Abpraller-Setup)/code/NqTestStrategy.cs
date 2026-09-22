@@ -1,34 +1,50 @@
 // Phase 3 — Order-Platzierung mit ATR-basiertem Stop/Ziel, Tageskontext-Richtung, Location UND
-// Heiken-Ashi-Smoothed-Abpraller. Siehe Projekt-Notiz im übergeordneten Ordner. Läuft nur auf dem
-// Demo-Konto (DEMO331DE, bestätigt 20.09.2026).
+// Heiken-Ashi-Smoothed-Rücksetzer. Siehe Projekt-Notiz im übergeordneten Ordner. Läuft nur auf
+// dem Demo-Konto (DEMO331DE, bestätigt 20.09.2026).
 //
-// Einstieg braucht jetzt VIER übereinstimmende Bedingungen:
-// 1. Demand-Index-Nulllinien-Kreuzung (Signal/Trigger, wie bisher)
-// 2. Tageskontext-Richtung (siehe EsTageskontext.cs, läuft auf ES M15 o.ä.) — Checkliste Punkt 1
-// 3. Location-Richtung (siehe EsLocation.cs, läuft auf Mikes ES "0/2/3R US" Range-Chart) —
-//    Checkliste Punkt 3, seit 21.09.2026 erweitert um POC/Vortageshoch-tief/Tageshoch-tief/
-//    Volumenbergkanten, nicht mehr nur VAH/VAL
-// 4. NEU seit 21.09.2026 (Mikes Beobachtung an echten NQ-Abprallern): Kerze prallt am
-//    Heiken-Ashi-Smoothed ab — Low/High testet die geglättete Linie an, Schluss bleibt auf der
-//    Trendseite. Gleiches Ablehnungs-Muster wie bei Location, nur auf NQ statt ES angewendet.
+// EINSTIEGSLOGIK NEU 22.09.2026 (Mikes Klarstellung per Sprachnachricht, nachdem am 22.09. trotz
+// aktiver Strategie kein einziger Trade ausgelöst hatte). Vorher: alle vier Bedingungen mussten
+// auf DERSELBEN NQ-Kerze gleichzeitig zutreffen — strukturell fast unmöglich, weil
+// LocationState.Richtung (ES-Chart) nur eine Kerze lang galt, während der NQ-Rücksetzer auf
+// einem komplett unabhängigen Takt läuft. Jetzt eine echte SEQUENZ, keine Gleichzeitigkeits-
+// Prüfung mehr:
 //
-// Kreuzung nach oben nur wenn ALLE VIER "Long" sagen, nach unten nur wenn ALLE VIER "Short"
-// sagen. Fehlt eine Bestätigung: kein Trade — bewusst so, lieber kein Trade als einer ohne
-// vollständige Bestätigung.
+// 1. Tageskontext (siehe EsTageskontext.cs) gibt die Richtung vor — gilt für den ganzen Tag,
+//    hat laut Mike praktisch immer einen Wert (Long oder Short, kein "dazwischen").
+// 2. Location (siehe EsLocation.cs) ist eine Preis-ZONE. Verlässt der Preis diese Zone in
+//    Kontext-Richtung (z.B. Kontext Long, Preis kommt von oben in die Zone, verlässt sie wieder
+//    nach oben), wird LocationState.Richtung "scharf" (armed) — und bleibt das jetzt, bis sie
+//    verbraucht/überschrieben/per Sessionwechsel zurückgesetzt wird (siehe LocationState.cs).
+//    Das ersetzt die alte "nur eine Kerze gültig"-Regel, die der eigentliche Grund für die
+//    ausbleibenden Trades war.
+// 3. Erst WÄHREND Location scharf ist: NQ wird auf einen Rücksetzer zum Heiken-Ashi-Smoothed
+//    geprüft (CheckHaProximity) — muss die Linie laut Mike nicht exakt berühren, leichtes
+//    Überschießen ist auch ok (ATR-basierte Toleranz, siehe HaProximityAtrFraction).
+// 4. Danach WARTEN wir 1-2 weitere NQ-Kerzen auf eine Bestätigungskerze, die in Kontext-Richtung
+//    schließt (Mike: "damit der Einstieg möglichst gut ist"). Kommt keine innerhalb des Fensters,
+//    verfällt das Setup wieder (_pendingDeadlineBar).
+// 5. Erst AN der Bestätigungskerze zählt der Demand Index — NIE als eigener Auslöser (Mikes
+//    Worte: "nie der Auslöser für ein Trade"), sondern als reines Vorzeichen-Filter: er muss zu
+//    diesem Zeitpunkt auf der Kontext-Seite der Nulllinie stehen (deckt beide von Mike
+//    beschriebenen Fälle ab: frisch aus einem Extrem durch die Nulllinie gekreuzt, ODER die
+//    ganze Zeit schon auf der richtigen Seite gewesen und nur kurz zur Nulllinie zurückgekommen).
+//    "Große Order-Interesse" als Stärke-/Magnitude-Kriterium wurde bewusst NICHT versucht zu
+//    formalisieren (bräuchte einen kalibrierten Schwellenwert, den Mike nicht genannt hat) —
+//    reines Vorzeichen ist die konservative, unkalibrierte Vereinfachung, bei Bedarf später
+//    verschärfen.
+// Stimmen alle fünf Schritte, erst dann Order. Genau wie vorher: lieber kein Trade als einer
+// ohne vollständige Bestätigung — nur ist die Zeitfenster-Logik jetzt realistisch statt
+// strukturell fast unerreichbar.
 //
 // Heiken-Ashi-Smoothed-Formel (Sylvain Vervoort, öffentlich bekannt, KEINE ATAS-eigene API,
 // deshalb selbst nachgerechnet statt den bereits geladenen "Heiken Ashi Smoothed"-Indikator
-// auszulesen — gleiches Prinzip wie beim Demand Index/ATR, hat sich als robuster erwiesen als
-// Cross-Indikator-Zugriff):
+// auszulesen):
 //   1. Rohe OHLC erst mit EMA(Länge1) glätten
 //   2. Aus den geglätteten Werten normale Heiken-Ashi-Kerzen berechnen
 //   3. Deren Open/Close nochmal mit EMA(Länge2) glätten -> Ergebnis ist die geplottete Linie
 // Länge1 = Länge2 = 10, wie bei Mikes geladenem Indikator ("Heiken Ashi Smoothed (Bars, 10, 10,
-// True)"). WICHTIG: das ist eine öffentlich dokumentierte Formel, keine über den Objektkatalog
-// verifizierbare API (es gibt hier keine "richtige" API zu prüfen, nur Mathematik) — einmal
-// gegenprüfen, ob unsere berechnete Linie optisch zur geladenen Indikator-Linie auf dem Chart
-// passt, dann passt die Umsetzung. Seit 22.09.2026 als eigener Plot sichtbar (siehe unten), damit
-// dieser Abgleich jetzt tatsächlich am Chart gemacht werden kann statt nur geplant zu sein.
+// True)"). Seit 22.09.2026 als eigener Plot sichtbar (siehe unten) für den optischen Abgleich
+// mit der geladenen Indikator-Linie.
 //
 // WICHTIG: EsTageskontext.cs UND EsLocation.cs müssen laufen (auf zwei separaten ES-Charts),
 // sonst bleiben TageskontextState.Richtung/LocationState.Richtung dauerhaft "Neutral" und diese
@@ -40,47 +56,41 @@
 //
 // Stop-Loss (1,5x ATR) und Take-Profit (3x ATR, CRV 1:2) werden nach dem tatsächlichen Fill
 // automatisch nachgeschickt, verknüpft über OCOGroup. ATR-Formel nach
-// [[RG-Trading Indikator - ATR (Average True Range)]]. OnNewMyTrade unterscheidet jetzt
+// [[RG-Trading Indikator - ATR (Average True Range)]]. OnNewMyTrade unterscheidet
 // Eröffnungs- von Schluss-Trades (per CurrentPosition), damit beim Schließen einer Position
 // (Stop/Ziel gegriffen) nicht versehentlich ein neues Bracket gesetzt wird.
 //
 // Order-Klasse (ATAS.DataFeedsCore.Order), Enums (OrderDirections, OrderTypes) und
 // MyTrade.Price per Objektkatalog/Testbuild gegen die echte ATAS-Installation bestätigt,
-// 19.-21.09.2026. ICrossTradingIndicatorContext/ICandlesDataProvider funktionieren in dieser
-// ATAS-Version NICHT (Service nicht registriert bzw. Typ existiert nicht) — deshalb der Weg
-// über TageskontextState.cs statt eines direkten Cross-Instrument-Zugriffs.
+// 19.-21.09.2026.
 //
-// ZWEI BUGS BEHOBEN 22.09.2026 (Grund für "kein Trade ausgelöst" am ersten vollen Handelstag mit
-// allen vier Bedingungen, Mikes Meldung samt Screenshot: Strategie "Aktiv", aber Position/Preis/
-// Offene/Geschlossen alle 0):
+// ZWEI BUGS BEHOBEN 22.09.2026 (Grund, warum der Strategie-Zustand vor der obigen Neufassung
+// ohnehin schon von der echten Marktlage abgedriftet war — Mikes Meldung samt Screenshot:
+// Strategie "Aktiv", aber Position/Preis/Offene/Geschlossen alle 0):
 //   a) Der Demand-Index-Kumulativwert (_cumulative) wurde erst berechnet, NACHDEM die
 //      "nur aktuelle Kerze"-Bremse (`if (bar < CurrentBar - 1) return;`) schon gegriffen hatte —
 //      anders als in NqDemandIndex.cs (dem Original-Indikator, der bewusst die volle Historie ab
 //      bar 0 verarbeitet) startete der Kumulativwert hier also nicht aus der echten Historie,
-//      sondern bei jedem Neustart der Strategie künstlich bei 0. Jede erste "Kreuzung" danach war
-//      dadurch ein Artefakt des Start-Zeitpunkts, kein echtes Kreuzen der Nulllinie.
-//   b) Weil OnCalculate pro Tick feuert (nicht nur pro abgeschlossener Kerze, siehe Kommentar in
-//      UpdateHeikenAshiSmoothed) und die Kumulativ-Berechnung KEINE "nur einmal pro Kerze"-Bremse
-//      hatte (anders als UpdateHeikenAshiSmoothed/EsLocation.cs mit ihrem _lastHaProcessedBar/
-//      _lastAddedBar-Muster), wurde bei jedem Preis-Tick der noch laufenden Kerze der
-//      Volumen-Anteil dieser Kerze ERNEUT aufaddiert statt einmalig — der interne Kumulativwert
-//      lief dadurch mit jedem Tick weiter weg von der tatsächlich im Chart sichtbaren
-//      Demand-Index-Linie. Gleicher Fehler steckte in UpdateAtr (jetzt AdvanceAtr) und hat den
-//      ATR (damit Stop/Ziel-Abstand) auf dieselbe Art verfälscht.
-//   Fix: ATR und Demand-Index-Kumulativ laufen jetzt über denselben "nur einmal pro abgeschlossener
-//   Kerze"-Mechanismus wie UpdateHeikenAshiSmoothed (_lastConfirmedBar), verarbeiten dabei bewusst
-//   die volle Historie beim Laden (wie NqDemandIndex.cs). Die eigentliche Kreuzungsprüfung bleibt
-//   bewusst tick-reaktiv (reagiert sofort, nicht erst beim Kerzenabschluss) — dafür wird der
-//   Live-Wert der aktuell laufenden Kerze pro Tick frisch aus dem bestätigten Vorwert plus dem
-//   aktuellen Tick-Stand neu berechnet statt draufaddiert.
+//      sondern bei jedem Neustart der Strategie künstlich bei 0.
+//   b) Weil OnCalculate pro Tick feuert (nicht nur pro abgeschlossener Kerze) und die
+//      Kumulativ-Berechnung KEINE "nur einmal pro Kerze"-Bremse hatte, wurde bei jedem Preis-Tick
+//      der noch laufenden Kerze ihr Volumen-Anteil ERNEUT aufaddiert statt einmalig. Gleicher
+//      Fehler steckte in UpdateAtr (jetzt AdvanceAtr) und hat den ATR (damit Stop/Ziel-Abstand)
+//      auf dieselbe Art verfälscht.
+//   Fix: ATR und Demand-Index-Kumulativ laufen jetzt über denselben "nur einmal pro
+//   abgeschlossener Kerze"-Mechanismus wie UpdateHeikenAshiSmoothed (_lastConfirmedBar),
+//   verarbeiten dabei bewusst die volle Historie beim Laden (wie NqDemandIndex.cs). Die
+//   Live-Auswertung (Rücksetzer-/Bestätigungs-/Vorzeichen-Prüfung) bleibt bewusst tick-reaktiv —
+//   dafür wird der Live-Wert der aktuell laufenden Kerze pro Tick frisch aus dem bestätigten
+//   Vorwert plus dem aktuellen Tick-Stand neu berechnet statt draufaddiert.
 //
-// NEU 22.09.2026: zwei Diagnose-Plots (HA-Smoothed-Linie + "Bedingungen erfüllt 0-4"), damit sich
-// "warum hat es nicht ausgelöst" ab jetzt am NQ-Chart ablesen statt raten lässt (ergänzt die neuen
-// Richtungs-Plots in EsTageskontext.cs/EsLocation.cs vom selben Tag). DataSeries auf einer
-// ChartStrategy (statt einem reinen Indicator wie NqDemandIndex.cs/NqFootprintDelta.cs, wo das
-// Muster schon bestätigt lief) ist NOCH NICHT einzeln gegen die echte Installation
-// verifiziert — sollte laut Projekt-Notiz funktionieren (ChartStrategy erbt von Indicator), beim
-// nächsten Build einmal prüfen ob die Plots im Chart erscheinen.
+// Drei Diagnose-Plots (22.09.2026), damit sich "warum kein Trade" ab jetzt am Chart ablesen statt
+// raten lässt: HA-Smoothed-Linie, interner Demand-Index-Kumulativwert (Abgleich mit der echten
+// "RG Demand Index"-Linie) und die aktuelle Setup-Stufe (0 = kein Setup, 1 = Rücksetzer erkannt/
+// wartet auf Bestätigungskerze, 2 = Bestätigungskerze da, Vorzeichen wird geprüft). DataSeries auf
+// einer ChartStrategy (statt einem reinen Indicator wie NqDemandIndex.cs/NqFootprintDelta.cs, wo
+// das Muster schon bestätigt lief) ist NOCH NICHT einzeln gegen die echte Installation
+// verifiziert — beim nächsten Build einmal prüfen ob die Plots im Chart erscheinen.
 
 using System;
 using ATAS.DataFeedsCore;
@@ -102,6 +112,16 @@ namespace RgTrading.Indicators
         // Heiken-Ashi-Smoothed-Parameter, wie bei Mikes geladenem Indikator
         private const int HaSmoothPeriod1 = 10;
         private const int HaSmoothPeriod2 = 10;
+
+        // Toleranz für "Rücksetzer zum Smoothed-Indikator, muss ihn nicht komplett berühren,
+        // kann sich mal leicht drüber gehen" (Mike, 22.09.2026) — als Bruchteil des aktuellen
+        // ATR, noch NICHT an echten Setups kalibriert (gleiches Prinzip wie
+        // VolumeClusterThreshold in EsLocation.cs), Konstante bei Bedarf anpassen.
+        private const decimal HaProximityAtrFraction = 0.25m;
+
+        // Nach einem erkannten Rücksetzer: wie viele weitere Kerzen wir auf die Bestätigungskerze
+        // warten ("auch gerne 2 Kerzen", Mike 22.09.2026).
+        private const int ConfirmationWindowBars = 2;
 
         // Demand-Index-Kumulativ, Stand nach der letzten ABGESCHLOSSENEN Kerze (siehe Bugfix-
         // Kommentar oben). Gleiche Formel wie NqDemandIndex.cs.
@@ -125,13 +145,24 @@ namespace RgTrading.Indicators
         private decimal? _haClose;
         private decimal? _haSmoothedLine;
 
+        // Pending-Setup-Zustand für die neue Sequenz (siehe Kommentar oben): Neutral = kein
+        // Setup unterwegs. Long/Short = Rücksetzer erkannt, wartet bis _pendingDeadlineBar auf
+        // eine Bestätigungskerze NACH der Rücksetzer-Kerze (_pendingStartBar) — wichtig, weil
+        // OnCalculate pro Tick feuert: ohne die Start-Bar-Prüfung könnte die Rücksetzer-Kerze
+        // selbst auf einem späteren Tick noch als ihre eigene Bestätigungskerze durchgehen.
+        private TagesRichtung _pendingDirection = TagesRichtung.Neutral;
+        private int _pendingStartBar = -1;
+        private int _pendingDeadlineBar = -1;
+
         private readonly ValueDataSeries _haSmoothedPlot = new ValueDataSeries("HA-Smoothed (intern)");
-        private readonly ValueDataSeries _bedingungenErfuellt = new ValueDataSeries("Bedingungen erfuellt (0-4)");
+        private readonly ValueDataSeries _demandIndexPlot = new ValueDataSeries("Demand Index (intern)");
+        private readonly ValueDataSeries _setupStage = new ValueDataSeries("Setup-Stufe (0/1/2)");
 
         public NqTestStrategy() : base(true)
         {
             DataSeries[0] = _haSmoothedPlot;
-            DataSeries.Add(_bedingungenErfuellt);
+            DataSeries.Add(_demandIndexPlot);
+            DataSeries.Add(_setupStage);
         }
 
         protected override void OnCalculate(int bar, decimal value)
@@ -155,55 +186,93 @@ namespace RgTrading.Indicators
             if (bar < CurrentBar - 1)
                 return;
 
-            // Schon eine offene Position -> kein neuer Einstieg, wartet bis sie flach ist
+            // Schon eine offene Position -> kein neues Setup aufbauen, wartet bis sie flach ist
             if (CurrentPosition != 0)
+            {
+                _pendingDirection = TagesRichtung.Neutral;
                 return;
+            }
 
             // Ohne ATR-Wert (noch nicht genug Kerzen für 14 Perioden) kein Einstieg,
-            // sonst könnten wir hinterher keinen Stop/Ziel berechnen
+            // sonst könnten wir hinterher keinen Stop/Ziel berechnen, und die Rücksetzer-Toleranz
+            // (ATR-basiert) wäre auch nicht berechenbar
             if (!_atr.HasValue)
                 return;
 
-            // Kreuzungsprüfung bleibt tick-reaktiv: Live-Wert der laufenden Kerze wird pro Tick
-            // frisch aus dem bestätigten Kumulativ (Stand vorherige Kerze) plus dem aktuellen
-            // Tick-Stand berechnet, nicht draufaddiert (das war Bug b) oben).
+            // Live-Wert der laufenden Kerze wird pro Tick frisch aus dem bestätigten Kumulativ
+            // (Stand vorherige Kerze) plus dem aktuellen Tick-Stand berechnet, nicht draufaddiert
+            // (das war Bug b) oben).
             var candle = GetCandle(bar);
             var openPrice = candle.Open == 0 ? 1 : candle.Open;
             var relativeChange = (candle.Close - candle.Open) / openPrice;
             var volumeComponent = candle.Volume * relativeChange;
             var liveCumulative = _cumulative + volumeComponent;
+            _demandIndexPlot[bar] = liveCumulative;
 
-            var crossedUp = _cumulative <= 0 && liveCumulative > 0;
-            var crossedDown = _cumulative >= 0 && liveCumulative < 0;
+            var stage = 0;
 
-            var haBounce = CheckHaSmoothedBounce(bar);
-
-            // Diagnose (22.09.2026): wie viele der vier Bedingungen sind gerade JE Richtung
-            // erfüllt — getrennt gezählt, weil z.B. Kreuzung-nach-oben + Location-Short nicht als
-            // "3 von 4" zählen darf. Zeigt am Chart auf einen Blick, welche Bedingung fehlt.
-            var longConditions = (crossedUp ? 1 : 0) + (TageskontextState.Richtung == TagesRichtung.Long ? 1 : 0)
-                + (LocationState.Richtung == TagesRichtung.Long ? 1 : 0) + (haBounce == TagesRichtung.Long ? 1 : 0);
-            var shortConditions = (crossedDown ? 1 : 0) + (TageskontextState.Richtung == TagesRichtung.Short ? 1 : 0)
-                + (LocationState.Richtung == TagesRichtung.Short ? 1 : 0) + (haBounce == TagesRichtung.Short ? 1 : 0);
-            _bedingungenErfuellt[bar] = Math.Max(longConditions, shortConditions);
-
-            if (!LocationState.HasProfile)
-                return;
-
-            if (crossedUp && TageskontextState.Richtung == TagesRichtung.Long
-                && LocationState.Richtung == TagesRichtung.Long
-                && haBounce == TagesRichtung.Long)
+            // Schritt 4+5: bereits ein Rücksetzer-Setup unterwegs -> auf Bestätigungskerze +
+            // Demand-Index-Vorzeichen prüfen (siehe Kommentar oben)
+            if (_pendingDirection != TagesRichtung.Neutral)
             {
-                _entryDirection = OrderDirections.Buy;
-                PlaceEntryOrder();
+                var stillValid = bar <= _pendingDeadlineBar
+                    && TageskontextState.Richtung == _pendingDirection
+                    && LocationState.Richtung == _pendingDirection;
+
+                if (!stillValid)
+                {
+                    _pendingDirection = TagesRichtung.Neutral;
+                }
+                else
+                {
+                    stage = 1;
+
+                    // Bestätigungskerze muss NACH der Rücksetzer-Kerze kommen, nicht dieselbe
+                    // sein (siehe Kommentar bei _pendingStartBar oben)
+                    if (bar > _pendingStartBar)
+                    {
+                        var confirms = _pendingDirection == TagesRichtung.Long
+                            ? candle.Close > candle.Open
+                            : candle.Close < candle.Open;
+
+                        if (confirms)
+                        {
+                            stage = 2;
+
+                            var demandIndexAgrees = _pendingDirection == TagesRichtung.Long
+                                ? liveCumulative > 0
+                                : liveCumulative < 0;
+
+                            if (demandIndexAgrees)
+                            {
+                                _entryDirection = _pendingDirection == TagesRichtung.Long ? OrderDirections.Buy : OrderDirections.Sell;
+                                PlaceEntryOrder();
+                            }
+
+                            _pendingDirection = TagesRichtung.Neutral;
+                        }
+                    }
+                }
             }
-            else if (crossedDown && TageskontextState.Richtung == TagesRichtung.Short
-                && LocationState.Richtung == TagesRichtung.Short
-                && haBounce == TagesRichtung.Short)
+
+            // Schritt 2+3: kein Setup unterwegs -> prüfen ob Location gerade scharf ist UND NQ
+            // jetzt einen Rücksetzer zum HA-Smoothed zeigt -> startet ein neues Bestätigungsfenster
+            if (_pendingDirection == TagesRichtung.Neutral)
             {
-                _entryDirection = OrderDirections.Sell;
-                PlaceEntryOrder();
+                var haProximity = CheckHaProximity(bar);
+
+                if (haProximity != TagesRichtung.Neutral
+                    && haProximity == TageskontextState.Richtung
+                    && haProximity == LocationState.Richtung)
+                {
+                    _pendingDirection = haProximity;
+                    _pendingStartBar = bar;
+                    _pendingDeadlineBar = bar + ConfirmationWindowBars;
+                    stage = 1;
+                }
             }
+
+            _setupStage[bar] = stage;
         }
 
         private void PlaceEntryOrder()
@@ -281,7 +350,7 @@ namespace RgTrading.Indicators
         // die Linie nachträglich wandern statt stabil zu bleiben (mehrfache Anwendung derselben
         // Kerze auf sich selbst). Die Linie spiegelt also den Stand nach der letzten
         // abgeschlossenen Kerze, geprüft wird dagegen die aktuell laufende (siehe
-        // CheckHaSmoothedBounce) - exakt das gleiche Prinzip wie VAH/VAL/POC in EsLocation.cs.
+        // CheckHaProximity) - exakt das gleiche Prinzip wie VAH/VAL/POC in EsLocation.cs.
         private void UpdateHeikenAshiSmoothed(int bar)
         {
             if (bar == 0)
@@ -333,21 +402,29 @@ namespace RgTrading.Indicators
             return (price - previousEma.Value) * multiplier + previousEma.Value;
         }
 
-        // Abpraller am Heiken-Ashi-Smoothed: Low testet die Linie an, Schluss bleibt darüber ->
-        // bullish. Spiegelbildlich für High/darunter -> bearish. Gleiches Ablehnungs-Muster wie
-        // in EsTageskontext.cs/EsLocation.cs, hier auf die NQ-Trendlinie angewendet.
-        private TagesRichtung CheckHaSmoothedBounce(int bar)
+        // Rücksetzer zum Heiken-Ashi-Smoothed (Schritt 3, siehe Kommentar oben): Kerze kommt aus
+        // Kontext-Richtung nah an die Linie heran, muss sie laut Mike nicht komplett berühren,
+        // leichtes Überschießen ist auch ok (ATR-basierte Toleranz). Liefert nur die Richtung des
+        // Rücksetzers selbst - ob er tatsächlich zu einem Setup wird, entscheidet der Aufrufer
+        // (muss zu Tageskontext + scharfer Location passen). Die eigentliche "Reaktion in die
+        // Zielrichtung" prüft NICHT diese Kerze, sondern die Bestätigungskerze danach (Schritt 4).
+        private TagesRichtung CheckHaProximity(int bar)
         {
-            if (!_haSmoothedLine.HasValue)
+            if (!_haSmoothedLine.HasValue || !_atr.HasValue)
                 return TagesRichtung.Neutral;
 
             var candle = GetCandle(bar);
             var line = _haSmoothedLine.Value;
+            var tolerance = _atr.Value * HaProximityAtrFraction;
 
-            if (candle.Low <= line && candle.Close > line)
+            // Rücksetzer von oben (Long-Kontext): Low kommt nah an die Linie heran oder leicht
+            // drunter durch
+            if (candle.Low <= line + tolerance)
                 return TagesRichtung.Long;
 
-            if (candle.High >= line && candle.Close < line)
+            // Rücksetzer von unten (Short-Kontext): High kommt nah an die Linie heran oder leicht
+            // drüber durch
+            if (candle.High >= line - tolerance)
                 return TagesRichtung.Short;
 
             return TagesRichtung.Neutral;

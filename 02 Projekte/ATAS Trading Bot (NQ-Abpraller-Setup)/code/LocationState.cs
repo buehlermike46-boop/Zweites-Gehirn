@@ -3,10 +3,14 @@
 // Indikatoren laufen im selben ATAS-Prozess, ein statisches Feld reicht als "Briefkasten", kein
 // Cross-Instrument-API noetig.
 //
-// Anders als TageskontextState.Richtung (gilt fuer den ganzen Tag) ist LocationState.Richtung
-// nur ein kurzer Impuls: wird bei jeder abgeschlossenen ES-Kerze neu gesetzt (Long/Short bei
-// erkannter Reaktion an VAH/VAL, sonst Neutral) - "Handel nur an einer A-Location" heisst JETZT
-// an der Location, nicht irgendwann heute.
+// UEBERARBEITET 22.09.2026 (Mikes Klarstellung, siehe Projekt-Notiz "Einstiegslogik neu..."):
+// LocationState.Richtung ist KEIN kurzer Impuls mehr, sondern ein "scharf"/"armed"-Zustand -
+// wird gesetzt, sobald der Preis eine Location-Zone in Kontext-Richtung verlaesst (siehe
+// EsLocation.cs CheckReaction), und bleibt dann bestehen (nicht schon auf der naechsten Kerze
+// zurueck auf Neutral), bis entweder ein NQ-Trade ihn verbraucht, eine neue (evtl.
+// gegenteilige) Reaktion ihn ueberschreibt, oder eine neue ES-Session ihn zuruecksetzt. Grund:
+// mit nur einer Kerze Gueltigkeit war das Zusammentreffen mit dem unabhaengig getakteten
+// NQ-Ruecksetzer praktisch nie gegeben (Mikes Beobachtung "kein Trade ausgeloest" am 22.09.).
 //
 // Voraussetzung: Der ES "0/2/3R US" Range-Chart muss gleichzeitig mit dem NQ-Chart offen sein.
 
