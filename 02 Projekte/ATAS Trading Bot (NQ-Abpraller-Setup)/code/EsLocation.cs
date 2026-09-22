@@ -46,6 +46,10 @@
 // mehrfach ins Profil zu zaehlen, wird eine Kerze erst dann einmalig verarbeitet, wenn die
 // naechste Kerze zu laufen beginnt (also garantiert abgeschlossen ist) - das gilt jetzt auch fuer
 // Tageshoch/-tief und die Reaktionspruefung, damit alles im selben Takt bleibt.
+//
+// NEU 22.09.2026: LocationState.Richtung wird zusaetzlich als Plot sichtbar gemacht (-1 Short/
+// 0 Neutral/1 Long), gleicher Grund und gleiches Muster wie in EsTageskontext.cs - war bisher
+// komplett unsichtbar am Chart.
 
 using System.Collections.Generic;
 using ATAS.Indicators;
@@ -63,6 +67,8 @@ namespace RgTrading.Indicators
         // nicht an echten Setups kalibriert - bei zu vielen/zu wenigen Kanten anpassen.
         private const decimal VolumeClusterThreshold = 0.40m;
 
+        private readonly ValueDataSeries _richtungPlot = new ValueDataSeries("Location-Richtung");
+
         private readonly Dictionary<decimal, decimal> _volumeByPrice = new Dictionary<decimal, decimal>();
         private int _lastAddedBar = -1;
 
@@ -74,6 +80,7 @@ namespace RgTrading.Indicators
 
         public EsLocation() : base(true)
         {
+            DataSeries[0] = _richtungPlot;
         }
 
         protected override void OnCalculate(int bar, decimal value)
@@ -269,6 +276,7 @@ namespace RgTrading.Indicators
             if (!LocationState.HasProfile)
             {
                 LocationState.Richtung = TagesRichtung.Neutral;
+                _richtungPlot[completedBar] = 0;
                 return;
             }
 
@@ -294,6 +302,10 @@ namespace RgTrading.Indicators
                 LocationState.Richtung = TagesRichtung.Short;
             else
                 LocationState.Richtung = TagesRichtung.Neutral;
+
+            _richtungPlot[completedBar] = LocationState.Richtung == TagesRichtung.Long ? 1
+                : LocationState.Richtung == TagesRichtung.Short ? -1
+                : 0;
         }
     }
 }

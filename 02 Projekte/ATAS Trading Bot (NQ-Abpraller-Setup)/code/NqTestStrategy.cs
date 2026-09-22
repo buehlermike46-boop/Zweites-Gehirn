@@ -27,7 +27,8 @@
 // True)"). WICHTIG: das ist eine öffentlich dokumentierte Formel, keine über den Objektkatalog
 // verifizierbare API (es gibt hier keine "richtige" API zu prüfen, nur Mathematik) — einmal
 // gegenprüfen, ob unsere berechnete Linie optisch zur geladenen Indikator-Linie auf dem Chart
-// passt, dann passt die Umsetzung.
+// passt, dann passt die Umsetzung. Seit 22.09.2026 als eigener Plot sichtbar (siehe unten), damit
+// dieser Abgleich jetzt tatsächlich am Chart gemacht werden kann statt nur geplant zu sein.
 //
 // WICHTIG: EsTageskontext.cs UND EsLocation.cs müssen laufen (auf zwei separaten ES-Charts),
 // sonst bleiben TageskontextState.Richtung/LocationState.Richtung dauerhaft "Neutral" und diese
@@ -48,9 +49,42 @@
 // 19.-21.09.2026. ICrossTradingIndicatorContext/ICandlesDataProvider funktionieren in dieser
 // ATAS-Version NICHT (Service nicht registriert bzw. Typ existiert nicht) — deshalb der Weg
 // über TageskontextState.cs statt eines direkten Cross-Instrument-Zugriffs.
+//
+// ZWEI BUGS BEHOBEN 22.09.2026 (Grund für "kein Trade ausgelöst" am ersten vollen Handelstag mit
+// allen vier Bedingungen, Mikes Meldung samt Screenshot: Strategie "Aktiv", aber Position/Preis/
+// Offene/Geschlossen alle 0):
+//   a) Der Demand-Index-Kumulativwert (_cumulative) wurde erst berechnet, NACHDEM die
+//      "nur aktuelle Kerze"-Bremse (`if (bar < CurrentBar - 1) return;`) schon gegriffen hatte —
+//      anders als in NqDemandIndex.cs (dem Original-Indikator, der bewusst die volle Historie ab
+//      bar 0 verarbeitet) startete der Kumulativwert hier also nicht aus der echten Historie,
+//      sondern bei jedem Neustart der Strategie künstlich bei 0. Jede erste "Kreuzung" danach war
+//      dadurch ein Artefakt des Start-Zeitpunkts, kein echtes Kreuzen der Nulllinie.
+//   b) Weil OnCalculate pro Tick feuert (nicht nur pro abgeschlossener Kerze, siehe Kommentar in
+//      UpdateHeikenAshiSmoothed) und die Kumulativ-Berechnung KEINE "nur einmal pro Kerze"-Bremse
+//      hatte (anders als UpdateHeikenAshiSmoothed/EsLocation.cs mit ihrem _lastHaProcessedBar/
+//      _lastAddedBar-Muster), wurde bei jedem Preis-Tick der noch laufenden Kerze der
+//      Volumen-Anteil dieser Kerze ERNEUT aufaddiert statt einmalig — der interne Kumulativwert
+//      lief dadurch mit jedem Tick weiter weg von der tatsächlich im Chart sichtbaren
+//      Demand-Index-Linie. Gleicher Fehler steckte in UpdateAtr (jetzt AdvanceAtr) und hat den
+//      ATR (damit Stop/Ziel-Abstand) auf dieselbe Art verfälscht.
+//   Fix: ATR und Demand-Index-Kumulativ laufen jetzt über denselben "nur einmal pro abgeschlossener
+//   Kerze"-Mechanismus wie UpdateHeikenAshiSmoothed (_lastConfirmedBar), verarbeiten dabei bewusst
+//   die volle Historie beim Laden (wie NqDemandIndex.cs). Die eigentliche Kreuzungsprüfung bleibt
+//   bewusst tick-reaktiv (reagiert sofort, nicht erst beim Kerzenabschluss) — dafür wird der
+//   Live-Wert der aktuell laufenden Kerze pro Tick frisch aus dem bestätigten Vorwert plus dem
+//   aktuellen Tick-Stand neu berechnet statt draufaddiert.
+//
+// NEU 22.09.2026: zwei Diagnose-Plots (HA-Smoothed-Linie + "Bedingungen erfüllt 0-4"), damit sich
+// "warum hat es nicht ausgelöst" ab jetzt am NQ-Chart ablesen statt raten lässt (ergänzt die neuen
+// Richtungs-Plots in EsTageskontext.cs/EsLocation.cs vom selben Tag). DataSeries auf einer
+// ChartStrategy (statt einem reinen Indicator wie NqDemandIndex.cs/NqFootprintDelta.cs, wo das
+// Muster schon bestätigt lief) ist NOCH NICHT einzeln gegen die echte Installation
+// verifiziert — sollte laut Projekt-Notiz funktionieren (ChartStrategy erbt von Indicator), beim
+// nächsten Build einmal prüfen ob die Plots im Chart erscheinen.
 
 using System;
 using ATAS.DataFeedsCore;
+using ATAS.Indicators;
 using ATAS.Strategies.Chart;
 using OFT.Attributes;
 
@@ -69,12 +103,18 @@ namespace RgTrading.Indicators
         private const int HaSmoothPeriod1 = 10;
         private const int HaSmoothPeriod2 = 10;
 
+        // Demand-Index-Kumulativ, Stand nach der letzten ABGESCHLOSSENEN Kerze (siehe Bugfix-
+        // Kommentar oben). Gleiche Formel wie NqDemandIndex.cs.
         private decimal _cumulative;
-        private decimal _previousCumulative;
         private OrderDirections _entryDirection;
 
         private decimal _atrSum;
         private decimal? _atr;
+
+        // Bar-Index bis zu dem ATR + Demand-Index-Kumulativ bereits verarbeitet sind — gleiches
+        // Muster wie _lastHaProcessedBar, verhindert Mehrfachverarbeitung derselben Kerze bei
+        // mehreren Ticks.
+        private int _lastConfirmedBar = -1;
 
         private int _lastHaProcessedBar = -1;
         private decimal? _emaOpen1;
@@ -85,14 +125,31 @@ namespace RgTrading.Indicators
         private decimal? _haClose;
         private decimal? _haSmoothedLine;
 
+        private readonly ValueDataSeries _haSmoothedPlot = new ValueDataSeries("HA-Smoothed (intern)");
+        private readonly ValueDataSeries _bedingungenErfuellt = new ValueDataSeries("Bedingungen erfuellt (0-4)");
+
         public NqTestStrategy() : base(true)
         {
+            DataSeries[0] = _haSmoothedPlot;
+            DataSeries.Add(_bedingungenErfuellt);
         }
 
         protected override void OnCalculate(int bar, decimal value)
         {
-            UpdateAtr(bar);
             UpdateHeikenAshiSmoothed(bar);
+
+            // ATR + Demand-Index-Kumulativ nur EINMAL pro abgeschlossener Kerze fortschreiben,
+            // nicht bei jedem Preis-Tick (Bugfix 22.09.2026, siehe Kommentar oben) — verarbeitet
+            // dabei bewusst die volle Historie beim Laden, exakt wie NqDemandIndex.cs.
+            while (_lastConfirmedBar < bar - 1)
+            {
+                _lastConfirmedBar++;
+                AdvanceAtr(_lastConfirmedBar);
+                AdvanceDemandIndex(_lastConfirmedBar);
+            }
+
+            if (_haSmoothedLine.HasValue)
+                _haSmoothedPlot[bar] = _haSmoothedLine.Value;
 
             // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
             if (bar < CurrentBar - 1)
@@ -102,33 +159,36 @@ namespace RgTrading.Indicators
             if (CurrentPosition != 0)
                 return;
 
-            if (bar == 0)
-            {
-                _cumulative = 0;
-                _previousCumulative = 0;
-                return;
-            }
-
-            var candle = GetCandle(bar);
-            var openPrice = candle.Open == 0 ? 1 : candle.Open;
-            var relativeChange = (candle.Close - candle.Open) / openPrice;
-            var volumeComponent = candle.Volume * relativeChange;
-
-            _previousCumulative = _cumulative;
-            _cumulative += volumeComponent;
-
-            var crossedUp = _previousCumulative <= 0 && _cumulative > 0;
-            var crossedDown = _previousCumulative >= 0 && _cumulative < 0;
-
             // Ohne ATR-Wert (noch nicht genug Kerzen für 14 Perioden) kein Einstieg,
             // sonst könnten wir hinterher keinen Stop/Ziel berechnen
             if (!_atr.HasValue)
                 return;
 
-            if (!LocationState.HasProfile)
-                return;
+            // Kreuzungsprüfung bleibt tick-reaktiv: Live-Wert der laufenden Kerze wird pro Tick
+            // frisch aus dem bestätigten Kumulativ (Stand vorherige Kerze) plus dem aktuellen
+            // Tick-Stand berechnet, nicht draufaddiert (das war Bug b) oben).
+            var candle = GetCandle(bar);
+            var openPrice = candle.Open == 0 ? 1 : candle.Open;
+            var relativeChange = (candle.Close - candle.Open) / openPrice;
+            var volumeComponent = candle.Volume * relativeChange;
+            var liveCumulative = _cumulative + volumeComponent;
+
+            var crossedUp = _cumulative <= 0 && liveCumulative > 0;
+            var crossedDown = _cumulative >= 0 && liveCumulative < 0;
 
             var haBounce = CheckHaSmoothedBounce(bar);
+
+            // Diagnose (22.09.2026): wie viele der vier Bedingungen sind gerade JE Richtung
+            // erfüllt — getrennt gezählt, weil z.B. Kreuzung-nach-oben + Location-Short nicht als
+            // "3 von 4" zählen darf. Zeigt am Chart auf einen Blick, welche Bedingung fehlt.
+            var longConditions = (crossedUp ? 1 : 0) + (TageskontextState.Richtung == TagesRichtung.Long ? 1 : 0)
+                + (LocationState.Richtung == TagesRichtung.Long ? 1 : 0) + (haBounce == TagesRichtung.Long ? 1 : 0);
+            var shortConditions = (crossedDown ? 1 : 0) + (TageskontextState.Richtung == TagesRichtung.Short ? 1 : 0)
+                + (LocationState.Richtung == TagesRichtung.Short ? 1 : 0) + (haBounce == TagesRichtung.Short ? 1 : 0);
+            _bedingungenErfuellt[bar] = Math.Max(longConditions, shortConditions);
+
+            if (!LocationState.HasProfile)
+                return;
 
             if (crossedUp && TageskontextState.Richtung == TagesRichtung.Long
                 && LocationState.Richtung == TagesRichtung.Long
@@ -160,17 +220,41 @@ namespace RgTrading.Indicators
             OpenOrder(order);
         }
 
-        private void UpdateAtr(int bar)
+        // Demand-Index-Kumulativ, identische Formel wie NqDemandIndex.cs — Stand nach der letzten
+        // abgeschlossenen Kerze. Bugfix 22.09.2026 (siehe Kommentar oben): verarbeitet jetzt
+        // bewusst die volle Historie ab bar 0 und wird nur einmal pro Kerze aufgerufen (aus der
+        // _lastConfirmedBar-Schleife), statt bei jedem Tick erneut draufzuaddieren.
+        private void AdvanceDemandIndex(int completedBar)
         {
-            if (bar == 0)
+            if (completedBar == 0)
+            {
+                _cumulative = 0;
+                return;
+            }
+
+            var candle = GetCandle(completedBar);
+            var openPrice = candle.Open == 0 ? 1 : candle.Open;
+            var relativeChange = (candle.Close - candle.Open) / openPrice;
+            var volumeComponent = candle.Volume * relativeChange;
+
+            _cumulative += volumeComponent;
+        }
+
+        // Bugfix 22.09.2026 (siehe Kommentar oben): wird jetzt nur noch einmal pro abgeschlossener
+        // Kerze aufgerufen (aus der _lastConfirmedBar-Schleife), nicht mehr bei jedem Tick — sonst
+        // wurde die EMA-Glättung bei jedem Tick der noch laufenden Kerze erneut auf sich selbst
+        // angewendet und der ATR lief mit der Zeit von der echten 14er-Formel weg.
+        private void AdvanceAtr(int completedBar)
+        {
+            if (completedBar == 0)
             {
                 _atrSum = 0;
                 _atr = null;
                 return;
             }
 
-            var candle = GetCandle(bar);
-            var previousCandle = GetCandle(bar - 1);
+            var candle = GetCandle(completedBar);
+            var previousCandle = GetCandle(completedBar - 1);
 
             var trueRange = Math.Max(candle.High - candle.Low,
                 Math.Max(Math.Abs(candle.High - previousCandle.Close), Math.Abs(candle.Low - previousCandle.Close)));
@@ -180,7 +264,7 @@ namespace RgTrading.Indicators
                 // Erste 14 Kerzen: einfacher Durchschnitt aufbauen
                 _atrSum += trueRange;
 
-                if (bar >= AtrPeriod)
+                if (completedBar >= AtrPeriod)
                     _atr = _atrSum / AtrPeriod;
 
                 return;
