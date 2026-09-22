@@ -43,8 +43,8 @@
 //   2. Aus den geglätteten Werten normale Heiken-Ashi-Kerzen berechnen
 //   3. Deren Open/Close nochmal mit EMA(Länge2) glätten -> Ergebnis ist die geplottete Linie
 // Länge1 = Länge2 = 10, wie bei Mikes geladenem Indikator ("Heiken Ashi Smoothed (Bars, 10, 10,
-// True)"). Seit 22.09.2026 als eigener Plot sichtbar (siehe unten) für den optischen Abgleich
-// mit der geladenen Indikator-Linie.
+// True)"). Seit 22.09.2026 über NqDiagnosticsState/NqDiagnostics.cs als eigener Plot sichtbar
+// (siehe unten) für den optischen Abgleich mit der geladenen Indikator-Linie.
 //
 // WICHTIG: EsTageskontext.cs UND EsLocation.cs müssen laufen (auf zwei separaten ES-Charts),
 // sonst bleiben TageskontextState.Richtung/LocationState.Richtung dauerhaft "Neutral" und diese
@@ -84,17 +84,20 @@
 //   dafür wird der Live-Wert der aktuell laufenden Kerze pro Tick frisch aus dem bestätigten
 //   Vorwert plus dem aktuellen Tick-Stand neu berechnet statt draufaddiert.
 //
-// Drei Diagnose-Plots (22.09.2026), damit sich "warum kein Trade" ab jetzt am Chart ablesen statt
+// Drei Diagnose-Werte (22.09.2026), damit sich "warum kein Trade" ab jetzt am Chart ablesen statt
 // raten lässt: HA-Smoothed-Linie, interner Demand-Index-Kumulativwert (Abgleich mit der echten
 // "RG Demand Index"-Linie) und die aktuelle Setup-Stufe (0 = kein Setup, 1 = Rücksetzer erkannt/
-// wartet auf Bestätigungskerze, 2 = Bestätigungskerze da, Vorzeichen wird geprüft). DataSeries auf
-// einer ChartStrategy (statt einem reinen Indicator wie NqDemandIndex.cs/NqFootprintDelta.cs, wo
-// das Muster schon bestätigt lief) ist NOCH NICHT einzeln gegen die echte Installation
-// verifiziert — beim nächsten Build einmal prüfen ob die Plots im Chart erscheinen.
+// wartet auf Bestätigungskerze, 2 = Bestätigungskerze da, Vorzeichen wird geprüft).
+//
+// BESTÄTIGT 22.09.2026 (Mikes Test): DataSeries auf einer ChartStrategy wird in dieser
+// ATAS-Version NICHT im Chart angezeigt — Build fehlerfrei, Strategie frisch neu hinzugefügt,
+// trotzdem kein einziger Plot sichtbar. Deshalb schreibt diese Strategie die drei Werte jetzt in
+// den Briefkasten `NqDiagnosticsState` (gleiches Muster wie TageskontextState/LocationState),
+// und ein SEPARATER reiner Indicator (`NqDiagnostics.cs`) liest ihn und zeichnet die Plots —
+// muss zusätzlich zur Strategie auf dem NQ-Chart hinzugefügt werden, siehe Kommentar dort.
 
 using System;
 using ATAS.DataFeedsCore;
-using ATAS.Indicators;
 using ATAS.Strategies.Chart;
 using OFT.Attributes;
 
@@ -154,15 +157,8 @@ namespace RgTrading.Indicators
         private int _pendingStartBar = -1;
         private int _pendingDeadlineBar = -1;
 
-        private readonly ValueDataSeries _haSmoothedPlot = new ValueDataSeries("HA-Smoothed (intern)");
-        private readonly ValueDataSeries _demandIndexPlot = new ValueDataSeries("Demand Index (intern)");
-        private readonly ValueDataSeries _setupStage = new ValueDataSeries("Setup-Stufe (0/1/2)");
-
         public NqTestStrategy() : base(true)
         {
-            DataSeries[0] = _haSmoothedPlot;
-            DataSeries.Add(_demandIndexPlot);
-            DataSeries.Add(_setupStage);
         }
 
         protected override void OnCalculate(int bar, decimal value)
@@ -180,7 +176,7 @@ namespace RgTrading.Indicators
             }
 
             if (_haSmoothedLine.HasValue)
-                _haSmoothedPlot[bar] = _haSmoothedLine.Value;
+                NqDiagnosticsState.HaSmoothedLine = _haSmoothedLine.Value;
 
             // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
             if (bar < CurrentBar - 1)
@@ -207,7 +203,7 @@ namespace RgTrading.Indicators
             var relativeChange = (candle.Close - candle.Open) / openPrice;
             var volumeComponent = candle.Volume * relativeChange;
             var liveCumulative = _cumulative + volumeComponent;
-            _demandIndexPlot[bar] = liveCumulative;
+            NqDiagnosticsState.DemandIndexLive = liveCumulative;
 
             var stage = 0;
 
@@ -272,7 +268,7 @@ namespace RgTrading.Indicators
                 }
             }
 
-            _setupStage[bar] = stage;
+            NqDiagnosticsState.SetupStage = stage;
         }
 
         private void PlaceEntryOrder()

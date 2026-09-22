@@ -149,8 +149,16 @@ Umgesetzt in `NqTestStrategy.cs` (neuer `_pendingDirection`/`_pendingDeadlineBar
 
 **Alle drei Codebugs vom Vormittag (Kumulativwert nicht aus Historie geseedet, Tick-Compounding bei Demand Index/ATR) bleiben unabhängig davon behoben** — die Sequenz-Logik baut direkt darauf auf.
 
+## Diagnose-Plots doch nicht sichtbar — DataSeries auf ChartStrategy rendert nicht (22.09.2026)
+Mike hat gebaut und getestet: Build fehlerfrei, Strategie komplett vom NQ-Chart entfernt und frisch neu hinzugefügt (nicht nur ATAS neu gestartet) — trotzdem keiner der drei Plots sichtbar, weder auf dem Chart noch in der Indikatorenliste. Das bestätigt den bereits vorher markierten unverifizierten Punkt: `DataSeries` auf einer `ChartStrategy` wird in dieser ATAS-Version offenbar grundsätzlich nicht gezeichnet, anders als bei einem reinen `Indicator` (wo es bei `NqDemandIndex.cs`, `NqFootprintDelta.cs`, `EsTageskontext.cs`, `EsLocation.cs` bestätigt funktioniert).
+
+**Fix:** Diagnose-Anzeige in eine separate Datei ausgelagert, gleiches "Briefkasten"-Prinzip wie bei `TageskontextState.cs`/`LocationState.cs`, nur in umgekehrter Richtung:
+- **`NqDiagnosticsState.cs`** (neu) — statischer Speicher für die drei Werte (HA-Smoothed-Linie, interner Demand Index, Setup-Stufe)
+- **`NqTestStrategy.cs`** schreibt jetzt in `NqDiagnosticsState` statt in eigene `ValueDataSeries` (die drei Felder + `DataSeries[0]`/`.Add()` im Konstruktor wieder entfernt)
+- **`NqDiagnostics.cs`** (neu) — ein separater, reiner `Indicator` (kein `ChartStrategy`), der nur `NqDiagnosticsState` ausliest und zeichnet. **Muss zusätzlich zur Strategie auf dem NQ-Chart hinzugefügt werden** — über den normalen Indikatoren-Button, genau wie "RG Demand Index" oder "RG Footprint Delta", nicht über die Handelsstrategien-Liste.
+
 ## Nächster Schritt
-Build/Deploy bei Mike ausstehend (macht er, sobald er wieder zu Hause ist). Dann Testlauf mit den drei Diagnose-Plots im Blick — Setup-Stufe sollte jetzt zeigen, wie weit die Sequenz jeweils kommt. Danach: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
+Mike baut `NqDiagnosticsState.cs` + `NqDiagnostics.cs` (neu) und die aktualisierte `NqTestStrategy.cs` mit rein, dann `NqDiagnostics` zusätzlich zur laufenden Strategie auf den NQ-Chart legen. Danach Testlauf mit den drei Plots im Blick — Setup-Stufe sollte jetzt zeigen, wie weit die Sequenz jeweils kommt. Danach: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]
