@@ -120,7 +120,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #limitless
 
 ### 8. Sonntag, 20.09.2026, 18:50 Uhr
-- **Status:** gepostet (20.09.2026, ca. 16:44 UTC). Media-ID 17987905185117145
+- **Status:** gepostet (20.09.2026, ca. 16:44 UTC, Auswertung nachgetragen 22.09.2026: 36 Reichweite/41 Views/**1 Save**, erste nicht-null Interaktion überhaupt). Media-ID 17987905185117145
 - **Format:** Reel
 - **Thema/Hook:** Live-Sessions & Academy, Lernen statt nur Kopieren, Mike als Person in den Vordergrund (siehe Branding-Update 09.09.2026). Geständnis-Hook: "Ich hab am Anfang nur Signale kopiert, ohne zu verstehen warum. Das war mein größter Anfängerfehler."
 - **Fakt/Nutzwert (ICP.md/Angebot.md):** Live-Sessions zum eigenständigen Lernen, langfristiges Ziel ist, den Finanzmarkt selbst zu verstehen statt dauerhaft nur zu kopieren.
@@ -129,8 +129,8 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #tradingacademy #limitless #tradinglernen #finanziellefreiheit
 
 ### 9. Montag, 21.09.2026, 18:50 Uhr
-- **Status:** bereit (wartet auf Freigabe)
-- **Format:** Carousel (4-5 Bilder)
+- **Status:** gepostet (21.09.2026, ca. 16:45 UTC). Media-ID 18117162343809287
+- **Format:** Carousel (5 Bilder)
 - **Thema/Hook:** PrimeVerse Oracle Tracker (Analytics-Dashboard). Hook: "Die meisten wissen nicht, WARUM sie einen Trade verlieren. Ein Analytics-Dashboard schon."
 - **Fakt/Nutzwert (Angebot.md):** Oracle Tracker, Analytics-Dashboard im PrimeVerse-Teil von Limitless, erkennt psychologische Fehlermuster automatisch und verfolgt Equity-Kurve und Konsistenz. Kostenfrei Teil des Limitless-Zugangs.
 - **Asset:** kein bestehendes Asset, über Jarvis frisch zu erstellen. Generation-Brief: 4-5 Info-Grafik-Slides im bestehenden Limitless-Look. Slide 1 Hook, Slide 2 was der Tracker zeigt (Equity-Kurve, abstrahierte Dashboard-Optik, kein echtes UI kopieren), Slide 3 erkennt Fehlermuster (z.B. nach Verlust größer nachlegen), Slide 4 wieso das hilft (sehen statt raten), Slide 5 CTA.
@@ -138,7 +138,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #tradingpsychologie #primeverse #limitless #tradingtools
 
 ### 10. Dienstag, 22.09.2026, 19:20 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** gepostet (22.09.2026, ca. 16:38 UTC, im zweiten Anlauf — erster Versuch scheiterte am Text-Check, siehe Executor-Log). Media-ID 18114374552084019
 - **Format:** Reel (faceless, Text-Overlay)
 - **Thema/Hook:** Myth-Busting/Trust-Post. Hook: "Kostenlos klingt erstmal nach Haken. Der ehrliche Haken hier." — **Fakt/Nutzwert und Caption 20.09.2026 überarbeitet** (siehe neue Regel unten "Content-Regel: nie 'laut Anbieter'/nie Vergütung erwähnen"): die ursprüngliche Fassung erklärte explizit, dass sich das Ökosystem über die Zusammenarbeit mit dem Broker finanziert — genau das darf laut Mike nie erwähnt werden, klingt schlecht. Hook bleibt (echter Trust-Einwand), Auflösung jetzt ohne Vergütungs-/Finanzierungserklärung.
 - **Fakt/Nutzwert (Angebot.md):** Limitless positioniert sich als kostenloses Trading-Ökosystem ohne Abo-Gebühren/versteckte Kosten für den Nutzer.
@@ -238,6 +238,20 @@ Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09
 
 ### 2026-09-13, 16:36 UTC, planmäßiger täglicher Lauf
 Zur Kenntnis genommen: Freigabe-Phase wurde heute von Mike auf **Phase 2 (automatisch)** umgestellt, siehe Abschnitt oben. Nichts fällig zum Posten in diesem Lauf (Eintrag Nr. 2, Montag 14.09. 18:50 Uhr, liegt mit ca. 26h noch knapp außerhalb des 24h-Fensters, ist bereits `freigegeben` und wird morgen fällig). Post Nr. 1 bereits ausgewertet (12.09.), noch keine neuen Rohzahlen fällig. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme. Content-Manager läuft heute 17:00 UTC turnusmäßig selbst (Sonntag), keine Überschneidung mit diesem Lauf.
+
+### 2026-09-21/22, planmäßige Läufe — Oracle-Tracker-Post, Text-Check fängt ersten echten Fehler ab
+
+**21.09.2026, ca. 16:42-16:45 UTC:** Post Nr. 9 (Oracle Tracker, planmäßig 18:50 Uhr) fällig. 5 Carousel-Slides über `nano_banana_2` erstellt, alle 5 einzeln heruntergeladen und Zeichen für Zeichen gegen den Generation-Brief geprüft (erster Lauf unter der neuen Text-Check-Pflicht) — keine Abweichung gefunden, gepostet: **Media-ID 18117162343809287**.
+
+**22.09.2026, ca. 08:30-08:38 UTC (Nachlauf desselben Kontextes) und 16:35 UTC (planmäßiger Trigger):** Rohzahlen für Post Nr. 8 (20.09., Live-Sessions/Academy) nachgetragen: 36 Reichweite/41 Views/**1 Save** — erste nicht-null Interaktion seit Start des Systems, siehe [[Performance-Log]]. Für Post Nr. 6 (Market-Scanner, 18.09./20.09. gepostet) lieferte `mcp__Windsor_ai__get_data` keine Zeile zurück (leeres Ergebnis trotz spezifischem Media-ID-Filter) — nicht weiter untersucht in diesem Lauf, beim nächsten Versuch erneut prüfen, evtl. Indexierungsverzögerung bei Windsor.ai.
+
+Post Nr. 10 (Trust-Post "kostenlos klingt nach Haken", planmäßig 19:20 Uhr) fällig. Video über `seedance_2_5` erstellt, Text-Check (Pflicht seit 20.09.) durchgeführt: **Erster Versuch gescheitert.** Da `show_generation_by_ids` bei Video nur die URL zurückgibt, kein Bild zum direkten Ansehen: `av`+`pillow` per `pip install` in der Sandbox nachinstalliert (kein `ffmpeg`/`ffprobe` vorhanden), Video heruntergeladen, 9 Frames über die Laufzeit extrahiert und einzeln angesehen. Ergebnis: alle drei Text-Overlays fehlerhaft gerendert — "HAGEN" statt "HAKEN", "KURZ" statt "KURS", "VERSCHEKTEN GEBÜKEN" statt "VERSTECKTEN GEBÜHREN". **Nicht gepostet**, wie in der Regel vorgesehen. Mike hat denselben Fehler zufällig zeitgleich im Chat gemeldet (Screenshot des exakt gleichen Frames) — konnte ihm bestätigen, dass der Post bereits gestoppt war, bevor er live ging.
+
+Zweiter Versuch mit kürzerem, einfacherem Prompt (weniger komplexe Wörter: "KEIN KURS"/"KEINE GEBÜHR"/"NUR ZEIT" statt der ursprünglichen langen Sätze) generiert, gleiche Frame-Extraktion durchgeführt: alle drei Overlays diesmal korrekt. Gepostet: **Media-ID 18114374552084019**. Zusätzlicher Credit-Verbrauch durch den Fehlversuch (eine verworfene Video-Generierung), aber kein Post mit sichtbarem Rechtschreibfehler live gegangen — genau der Zweck der neuen Regel.
+
+**Für professor/Vault-Pflege vermerkt:** Der Text-Check-Prozess für Video ist umständlicher als für Bilder (kein direkter Frame-Zugriff über die Jarvis-Tools, Workaround über lokale Paketinstallation nötig). Funktioniert, ist aber ein Stück brüchiger als der Bild-Check. Falls Jarvis künftig eine Thumbnail-/Frame-URL im `show_generation_by_ids`-Ergebnis für Videos mitliefert, würde das den Prozess deutlich robuster machen.
+
+**Credit-Warnung für Mike:** Guthaben nach diesem Lauf nur noch 66,38 Credits (`plus`-Plan). Reicht für maximal ein bis zwei weitere Bild-Posts, aber nicht mehr für eine volle Video-Generierung (~97,5 Credits pro Reel, bei Fehlversuchen wie heute entsprechend mehr). Die kommenden Queue-Einträge #11-15 enthalten mehrere Reels — ohne Aufstocken wird der `content-executor` diese demnächst als "übersprungen, Credits nicht ausreichend" loggen müssen statt zu posten.
 
 ### 2026-09-20, ca. 16:42-16:46 UTC, planmäßiger täglicher Lauf — beide offenen Posts jetzt live
 

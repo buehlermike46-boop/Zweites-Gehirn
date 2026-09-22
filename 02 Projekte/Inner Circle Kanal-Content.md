@@ -631,8 +631,8 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 | 4 Umfrage | Do 17.09., 17:00 | gepostet als Text-Frage (17.09.2026, ca. 16:47 UTC) — kein natives Telegram-Umfrage-Feature im Make-Werkzeug, daher als normale Text-Nachricht mit Antwortoptionen gepostet, siehe Executor-Log |
 | 5 Was du zum Start brauchst | Fr 18.09., 17:00 | gepostet (19.09.2026, ca. 16:49 UTC, Nachhol — Original-Termin 18.09. verpasst, siehe Executor-Log) |
 | 6 Wochenausblick | So 20.09., 17:00 | offen |
-| 7 Wie ich das neben Schicht/Kindern mache | Mo 21.09., 11:00 | offen |
-| 8 Lot, Spread, Kommission | Di 22.09., 11:00 | offen |
+| 7 Wie ich das neben Schicht/Kindern mache | Mo 21.09., 11:00 | gepostet (22.09.2026, ca. 08:32 UTC, Nachhol — Original-Termin 21.09. verpasst, siehe Executor-Log) |
+| 8 Lot, Spread, Kommission | Di 22.09., 11:00 | gepostet (22.09.2026, ca. 08:33 UTC) |
 | 9 Warum ich jeden Trade aufschreibe | Mi 23.09., 11:00 | offen |
 | 10 Die Tools | Do 24.09., 11:00 | offen |
 | 11 In 3 Schritten dabei | Fr 25.09., 11:00 | offen |
@@ -647,6 +647,14 @@ Der produktive Onboarding-Bot (`Integration Telegram Bot`, ID 7240246) war die g
 Mike hat direkt im Chat "poste jetzt einen echten Post in meinen Kanal" verlangt. Post 1 ("Warum es diesen Kanal gibt") aus dem 14-Tage-Plan war der nächste fällige, thematisch passt er als Kanal-Opener am besten. Der hinterlegte Asset-Pfad (`Bilder/Fertig/01-warum-tradest-dueigentlich-noch-alleine.png`) war wie erwartet unerreichbar (lokal bei Mike, nicht im Git-Vault) — daher ein neues, passendes Bild über Jarvis erstellt (dunkles Navy/Gold, Silhouette auf Weg zum Chart-Horizont, kein Logo/Text, quadratisch), URL: `https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260913_133722_0469941a-2cae-49d1-bc47-67536f56619c.png`.
 
 Gepostet über das Werkzeug "Telegram Kanal: Post Versand" (Szenario-ID 7391673, `media_type: photo`) an `@JointoInnerCircle`. **Erfolgreich, Execution-Status SUCCESS.** Message-ID kam über diese Route nicht strukturiert zurück (Szenario hat kein Output-Interface definiert) — bei Bedarf später in Telegram nachschauen oder Output-Interface ergänzen. Post-Status oben aktualisiert. Keine Freigabe- oder Credit-Probleme (718,5 Credits vor der Generierung, Plus-Plan).
+
+### 2026-09-22, ca. 08:32-08:33 UTC, Nachhol-Lauf Post 7 + planmäßig Post 8
+
+Post 7 ("Wie ich das neben Schicht und Kindern mache") war für Mo 21.09. 11:00 fällig, aber keine Session hat den Lauf an dem Tag verarbeitet (siehe paralleler Hinweis im Instagram-Executor-Log). Nachgeholt: Asset (`Bilder/Fertig/52-trading-braucht-keinen-vollzeitjob.png`) wie erwartet unerreichbar, neues abstraktes Bild über Jarvis `nano_banana_2` erstellt (kein Text im Bild, daher kein Text-Check nötig), gepostet mit vollständigem Post-7-Text. Execution-Status SUCCESS.
+
+Post 8 ("Lot, Spread, Kommission") planmäßig für heute (Di 22.09., 11:00) fällig, gleiches Vorgehen: neues Bild erstellt, gepostet mit vollständigem Post-8-Text. Execution-Status SUCCESS.
+
+Post-Status-Tabelle oben aktualisiert. Post 6 (Wochenausblick) weiterhin offen, siehe vorheriger Log-Eintrag (fehlendes WebSearch/WebFetch-Werkzeug für den Kalender-Check).
 
 ### 2026-09-20, ca. 16:47 UTC, planmäßiger Lauf — Post 6 übersprungen
 
