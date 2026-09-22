@@ -96,4 +96,24 @@ namespace RgTrading.Indicators
                 _atrPlot[bar] = NqDiagnosticsState.AtrValue.Value;
         }
     }
+
+    // NEU 22.09.2026: letzter, unumstoesslicher Test nach mehreren erfolglosen Diagnose-Runden -
+    // zeigt den Zaehler, den NqTestStrategy.OnCalculate als ALLERERSTE Zeile hochzaehlt, vor jeder
+    // anderen Berechnung. Bleibt dieser Plot bei 0, laeuft OnCalculate fuer die Strategie gar
+    // nicht erst - unabhaengig vom gesamten restlichen Code dieses Projekts.
+    [DisplayName("RG OnCalculate-Zaehler (Strategie)")]
+    public class NqDiagnosticsHitCount : Indicator
+    {
+        private readonly ValueDataSeries _hitCountPlot = new ValueDataSeries("OnCalculate-Zaehler");
+
+        public NqDiagnosticsHitCount() : base(true)
+        {
+            DataSeries[0] = _hitCountPlot;
+        }
+
+        protected override void OnCalculate(int bar, decimal value)
+        {
+            _hitCountPlot[bar] = NqDiagnosticsState.OnCalculateHitCount;
+        }
+    }
 }

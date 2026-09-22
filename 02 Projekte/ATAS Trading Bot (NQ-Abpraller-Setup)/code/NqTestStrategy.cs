@@ -174,6 +174,11 @@ namespace RgTrading.Indicators
 
         protected override void OnCalculate(int bar, decimal value)
         {
+            // Letzter, unumstoesslicher Test (22.09.2026, siehe Kommentar oben): allererste Zeile,
+            // vor jeder anderen Berechnung. Wenn "RG OnCalculate-Zaehler (Strategie)" bei 0
+            // bleibt, laeuft diese Methode fuer die Strategie gar nicht erst.
+            NqDiagnosticsState.OnCalculateHitCount++;
+
             UpdateHeikenAshiSmoothed(bar);
 
             // ATR + Demand-Index-Kumulativ nur EINMAL pro abgeschlossener Kerze fortschreiben,

@@ -20,5 +20,11 @@ namespace RgTrading.Indicators
         // ATR einfach auf dem letzten Wert stehen - nicht von "legitim 0, kein Setup" zu
         // unterscheiden. Hilft eingrenzen, ob die Strategie ueberhaupt so weit kommt.
         public static decimal? AtrValue;
+
+        // NEU 22.09.2026 (letzter, unumstoesslicher Test nach mehreren erfolglosen Diagnose-
+        // Runden): wird als ALLERERSTE Zeile in NqTestStrategy.OnCalculate hochgezaehlt, vor jeder
+        // anderen Berechnung/Bedingung. Bleibt dieser Zaehler bei 0, laeuft OnCalculate fuer diese
+        // Strategie gar nicht erst - unabhaengig vom gesamten restlichen Code.
+        public static long OnCalculateHitCount;
     }
 }
