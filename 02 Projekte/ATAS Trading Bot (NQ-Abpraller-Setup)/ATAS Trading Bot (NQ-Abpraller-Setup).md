@@ -157,8 +157,13 @@ Mike hat gebaut und getestet: Build fehlerfrei, Strategie komplett vom NQ-Chart 
 - **`NqTestStrategy.cs`** schreibt jetzt in `NqDiagnosticsState` statt in eigene `ValueDataSeries` (die drei Felder + `DataSeries[0]`/`.Add()` im Konstruktor wieder entfernt)
 - **`NqDiagnostics.cs`** (neu) — ein separater, reiner `Indicator` (kein `ChartStrategy`), der nur `NqDiagnosticsState` ausliest und zeichnet. **Muss zusätzlich zur Strategie auf dem NQ-Chart hinzugefügt werden** — über den normalen Indikatoren-Button, genau wie "RG Demand Index" oder "RG Footprint Delta", nicht über die Handelsstrategien-Liste.
 
+## Diagnose-Panel doch nur teilweise sichtbar — eine gemeinsame Skala für alle drei Werte (22.09.2026)
+`NqDiagnostics.cs` (ein Indicator, drei DataSeries) bekam zwar ein eigenes Panel, aber alle drei Werte teilten sich darin EINE Skala. `HA-Smoothed (intern)` liegt bei echten NQ-Preisen (~30.900), `Demand Index (intern)` bei ca. -100 bis 100, `Setup-Stufe` bei 0-2 — die große Zahl drückt die beiden kleinen komplett an den unteren Rand, praktisch unsichtbar (per Screenshot bestätigt: leeres Panel bis auf eine flache Linie).
+
+**Fix:** `NqDiagnostics.cs` in drei separate Indicator-Klassen aufgeteilt, jede mit genau einem Wert und eigener Skala: `NqDiagnosticsSetupStage` ("RG Setup-Stufe (0/1/2)", die wichtigste), `NqDiagnosticsDemandIndex` ("RG Demand Index (intern)"), `NqDiagnosticsHaSmoothed` ("RG HA-Smoothed (intern)"). Alle drei lesen weiterhin denselben `NqDiagnosticsState`-Briefkasten, keine Änderung an `NqTestStrategy.cs` nötig. Müssen einzeln zum NQ-Chart hinzugefügt werden.
+
 ## Nächster Schritt
-Mike baut `NqDiagnosticsState.cs` + `NqDiagnostics.cs` (neu) und die aktualisierte `NqTestStrategy.cs` mit rein, dann `NqDiagnostics` zusätzlich zur laufenden Strategie auf den NQ-Chart legen. Danach Testlauf mit den drei Plots im Blick — Setup-Stufe sollte jetzt zeigen, wie weit die Sequenz jeweils kommt. Danach: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
+Mike baut den aktualisierten `NqDiagnostics.cs` (jetzt drei Klassen) und fügt alle drei neu zum NQ-Chart hinzu (alte kombinierte Version ggf. erst entfernen). Danach Testlauf — Setup-Stufe sollte jetzt klar lesbar zeigen, wie weit die Sequenz jeweils kommt. Danach: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]
