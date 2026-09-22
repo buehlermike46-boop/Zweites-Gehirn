@@ -75,4 +75,25 @@ namespace RgTrading.Indicators
                 _haSmoothedPlot[bar] = NqDiagnosticsState.HaSmoothedLine.Value;
         }
     }
+
+    // NEU 22.09.2026: zeigt den ATR-Wert der Strategie selbst - entscheidend fuer die Diagnose,
+    // weil Demand Index/Setup-Stufe bisher erst NACH einem fertigen ATR ueberhaupt geschrieben
+    // wurden. Bleibt dieser Plot leer, hat die Strategie noch nie genug Kerzen fuer einen
+    // fertigen ATR verarbeitet (14 Perioden) - unabhaengig vom Rest der Logik.
+    [DisplayName("RG ATR-Wert (Strategie)")]
+    public class NqDiagnosticsAtr : Indicator
+    {
+        private readonly ValueDataSeries _atrPlot = new ValueDataSeries("ATR (Strategie)");
+
+        public NqDiagnosticsAtr() : base(true)
+        {
+            DataSeries[0] = _atrPlot;
+        }
+
+        protected override void OnCalculate(int bar, decimal value)
+        {
+            if (NqDiagnosticsState.AtrValue.HasValue)
+                _atrPlot[bar] = NqDiagnosticsState.AtrValue.Value;
+        }
+    }
 }

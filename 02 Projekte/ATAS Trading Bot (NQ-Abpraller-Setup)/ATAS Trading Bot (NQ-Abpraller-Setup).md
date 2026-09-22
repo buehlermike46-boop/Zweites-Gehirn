@@ -169,8 +169,15 @@ Nach dem letzten Build zeigten "RG Demand Index (intern)" und "RG Setup-Stufe" e
 
 **Wichtige Erkenntnis für Diagnose-Runden mit vielen schnellen Iterationen:** Bei "zeigt nichts an"/"war da, dann weg"-Symptomen zuerst das ATAS-Logs-Panel auf `Could not load assembly` prüfen, bevor an der eigentlichen Code-Logik weitergesucht wird — spart potenziell mehrere Debugging-Runden.
 
+## Reset half nicht — Demand Index/Setup-Stufe bleiben bei 0, systematisch ausgeschlossen (22.09.2026)
+Kompletter Rechner-Neustart brachte keine Besserung. Systematisch durchgeprüft und ausgeschlossen: Assembly-Ladefehler im Logs-Panel sind irrelevant (Mikes unabhängiges Kurs-Indikator `RG-Trading Acedemy Super Trend` läuft trotz identischer Fehlermeldung einwandfrei, und `RgTrading.Indicators.EsTageskontext`/`EsLocation` aus derselben DLL liefern nachweislich echte Daten). Strategie steht auf "Aktiv", wurde laut Mike bereits mehrfach komplett entfernt und neu hinzugefügt. Kein offenes Position/Order-Buch (`CurrentPosition != 0`-Sperre damit ausgeschlossen).
+
+**Verbleibender Verdacht:** `NqTestStrategy.OnCalculate` schrieb `DemandIndexLive`/`SetupStage` bisher erst NACH zwei Bedingungen (keine offene Position UND fertiger ATR, 14 Perioden) — blieb eine davon unerfüllt, wurde gar nichts geschrieben, von außen nicht unterscheidbar von "legitim 0". Da die offene-Position-Sperre ausgeschlossen ist, bleibt der ATR-Status als letzte unbestätigte Variable.
+
+**Fix/Diagnose (22.09.2026):** `NqDiagnosticsState` um `AtrValue` (nullable decimal) erweitert, vierter Anzeige-Indikator `NqDiagnosticsAtr` ("RG ATR-Wert (Strategie)") ergänzt. `NqTestStrategy.cs` schreibt `DemandIndexLive` und `AtrValue` jetzt UNBEDINGT, bevor die Positions-/ATR-Prüfungen überhaupt greifen — bei den beiden Sperren wird `SetupStage` jetzt explizit auf 0 gesetzt statt implizit stehen zu bleiben.
+
 ## Nächster Schritt
-Mike macht den Reset (DLL raus, Rechner neu starten, DLL wieder rein, ATAS frisch hoch), dann alle Indikatoren/die Strategie neu prüfen ob sie sauber laden (keine "Could not load assembly"-Einträge mehr im Logs-Panel). Erst danach weiter mit der eigentlichen Diagnose (Setup-Stufe live beobachten). Rest wie gehabt: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
+Mike baut die drei geänderten Dateien (`NqDiagnosticsState.cs`, `NqDiagnostics.cs`, `NqTestStrategy.cs`), fügt "RG ATR-Wert (Strategie)" zusätzlich zum NQ-Chart hinzu. Entscheidender Test: zeigt "RG Demand Index (intern)" jetzt endlich Bewegung (jetzt unbedingt geschrieben)? Und zeigt "RG ATR-Wert (Strategie)" überhaupt eine Zahl, oder bleibt der leer (= ATR wird nie fertig, nächster Ansatzpunkt wäre dann `AdvanceAtr`/die `_lastConfirmedBar`-Schleife selbst)? Rest wie gehabt: Halb-/Vollautomatik-Umschalter als echten UI-Parameter einbauen, restliches Setup/Footprint/Orderflow (Checkliste Punkt 4) einbeziehen, Footprint- und Volumenbergkanten-Schwellen sowie `HaProximityAtrFraction`/`ConfirmationWindowBars` an echten Setups kalibrieren, Single Prints/Range High-Low klären.
 
 ## Referenzen
 - [[NQ Abpraller-Setup Checkliste]]

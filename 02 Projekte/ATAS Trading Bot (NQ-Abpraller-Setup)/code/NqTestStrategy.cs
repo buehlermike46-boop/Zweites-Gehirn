@@ -84,17 +84,28 @@
 //   dafür wird der Live-Wert der aktuell laufenden Kerze pro Tick frisch aus dem bestätigten
 //   Vorwert plus dem aktuellen Tick-Stand neu berechnet statt draufaddiert.
 //
-// Drei Diagnose-Werte (22.09.2026), damit sich "warum kein Trade" ab jetzt am Chart ablesen statt
-// raten lässt: HA-Smoothed-Linie, interner Demand-Index-Kumulativwert (Abgleich mit der echten
-// "RG Demand Index"-Linie) und die aktuelle Setup-Stufe (0 = kein Setup, 1 = Rücksetzer erkannt/
-// wartet auf Bestätigungskerze, 2 = Bestätigungskerze da, Vorzeichen wird geprüft).
+// Vier Diagnose-Werte (22.09.2026, erweitert um den ATR-Wert selbst nach einer langen erfolglosen
+// Fehlersuche), damit sich "warum kein Trade" am Chart ablesen statt raten lässt: HA-Smoothed-
+// Linie, interner Demand-Index-Kumulativwert (Abgleich mit der echten "RG Demand Index"-Linie),
+// die aktuelle Setup-Stufe (0 = kein Setup, 1 = Rücksetzer erkannt/wartet auf Bestätigungskerze,
+// 2 = Bestätigungskerze da, Vorzeichen wird geprüft) und der ATR-Wert selbst.
 //
 // BESTÄTIGT 22.09.2026 (Mikes Test): DataSeries auf einer ChartStrategy wird in dieser
 // ATAS-Version NICHT im Chart angezeigt — Build fehlerfrei, Strategie frisch neu hinzugefügt,
-// trotzdem kein einziger Plot sichtbar. Deshalb schreibt diese Strategie die drei Werte jetzt in
+// trotzdem kein einziger Plot sichtbar. Deshalb schreibt diese Strategie die Werte jetzt in
 // den Briefkasten `NqDiagnosticsState` (gleiches Muster wie TageskontextState/LocationState),
-// und ein SEPARATER reiner Indicator (`NqDiagnostics.cs`) liest ihn und zeichnet die Plots —
-// muss zusätzlich zur Strategie auf dem NQ-Chart hinzugefügt werden, siehe Kommentar dort.
+// und SEPARATE reine Indicator-Klassen (`NqDiagnostics.cs`) lesen ihn und zeichnen die Plots —
+// müssen zusätzlich zur Strategie auf dem NQ-Chart hinzugefügt werden, siehe Kommentar dort.
+//
+// ERWEITERT 22.09.2026 (nach stundenlanger Fehlersuche ohne Ergebnis: Demand Index/Setup-Stufe
+// blieben trotz Strategie "Aktiv", frisch hinzugefügt, komplettem Rechner-Neustart und leerem
+// Positions-/Order-Buch bei 0 - selbst als die ES-seitigen Briefkästen TageskontextState/
+// LocationState nachweislich funktionierten): Demand Index + ATR-Status werden jetzt UNBEDINGT
+// geschrieben, bevor überhaupt geprüft wird ob eine Position offen ist oder der ATR fertig ist -
+// vorher blieben beide Werte bei diesen (nicht von außen unterscheidbaren) Fällen einfach auf
+// ihrem letzten Stand stehen. `NqDiagnosticsState.AtrValue` (neuer vierter Plot, "RG ATR-Wert
+// (Strategie)") zeigt jetzt direkt, ob/wann die Strategie überhaupt genug Kerzen für einen
+// fertigen ATR (14 Perioden) verarbeitet hat - unabhängig vom Rest der Logik.
 
 using System;
 using ATAS.DataFeedsCore;
@@ -178,23 +189,12 @@ namespace RgTrading.Indicators
             if (_haSmoothedLine.HasValue)
                 NqDiagnosticsState.HaSmoothedLine = _haSmoothedLine.Value;
 
-            // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
-            if (bar < CurrentBar - 1)
-                return;
-
-            // Schon eine offene Position -> kein neues Setup aufbauen, wartet bis sie flach ist
-            if (CurrentPosition != 0)
-            {
-                _pendingDirection = TagesRichtung.Neutral;
-                return;
-            }
-
-            // Ohne ATR-Wert (noch nicht genug Kerzen für 14 Perioden) kein Einstieg,
-            // sonst könnten wir hinterher keinen Stop/Ziel berechnen, und die Rücksetzer-Toleranz
-            // (ATR-basiert) wäre auch nicht berechenbar
-            if (!_atr.HasValue)
-                return;
-
+            // Diagnose (22.09.2026): ATR-Status und Live-Demand-Index werden jetzt IMMER
+            // geschrieben, auch bevor/falls die Handelslogik unten wegen offener Position oder
+            // fehlendem ATR gar nicht erst startet. Vorher blieben Demand Index/Setup-Stufe in
+            // dem Fall auf ihrem letzten (oder nie gesetzten) Wert stehen - von aussen nicht von
+            // "legitim 0, kein Setup" zu unterscheiden. NqDiagnosticsState.AtrValue zeigt jetzt
+            // explizit, ob der ATR ueberhaupt schon bereit ist (null = noch nicht genug Kerzen).
             // Live-Wert der laufenden Kerze wird pro Tick frisch aus dem bestätigten Kumulativ
             // (Stand vorherige Kerze) plus dem aktuellen Tick-Stand berechnet, nicht draufaddiert
             // (das war Bug b) oben).
@@ -203,7 +203,29 @@ namespace RgTrading.Indicators
             var relativeChange = (candle.Close - candle.Open) / openPrice;
             var volumeComponent = candle.Volume * relativeChange;
             var liveCumulative = _cumulative + volumeComponent;
+            NqDiagnosticsState.AtrValue = _atr;
             NqDiagnosticsState.DemandIndexLive = liveCumulative;
+
+            // Nicht auf historische Kerzen beim Laden reagieren, nur auf die aktuell laufende
+            if (bar < CurrentBar - 1)
+                return;
+
+            // Schon eine offene Position -> kein neues Setup aufbauen, wartet bis sie flach ist
+            if (CurrentPosition != 0)
+            {
+                _pendingDirection = TagesRichtung.Neutral;
+                NqDiagnosticsState.SetupStage = 0;
+                return;
+            }
+
+            // Ohne ATR-Wert (noch nicht genug Kerzen für 14 Perioden) kein Einstieg,
+            // sonst könnten wir hinterher keinen Stop/Ziel berechnen, und die Rücksetzer-Toleranz
+            // (ATR-basiert) wäre auch nicht berechenbar
+            if (!_atr.HasValue)
+            {
+                NqDiagnosticsState.SetupStage = 0;
+                return;
+            }
 
             var stage = 0;
 

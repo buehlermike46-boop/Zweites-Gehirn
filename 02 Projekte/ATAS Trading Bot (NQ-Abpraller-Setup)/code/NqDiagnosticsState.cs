@@ -14,5 +14,11 @@ namespace RgTrading.Indicators
         public static decimal? HaSmoothedLine;
         public static decimal DemandIndexLive;
         public static int SetupStage;
+
+        // NEU 22.09.2026: zeigt explizit, ob/wann der ATR in NqTestStrategy.cs ueberhaupt bereit
+        // ist (null = noch nicht genug Kerzen verarbeitet). Vorher blieb SetupStage bei fehlendem
+        // ATR einfach auf dem letzten Wert stehen - nicht von "legitim 0, kein Setup" zu
+        // unterscheiden. Hilft eingrenzen, ob die Strategie ueberhaupt so weit kommt.
+        public static decimal? AtrValue;
     }
 }
