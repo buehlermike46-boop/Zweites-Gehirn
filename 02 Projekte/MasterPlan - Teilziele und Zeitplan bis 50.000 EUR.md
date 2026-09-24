@@ -80,7 +80,7 @@ Ziel ist hier nicht Umsatz, sondern ein funktionierendes System.
 Die schwerste Stufe. Hier steigen die meisten aus, weil noch nichts spürbar zurückkommt.
 
 - 5 bis 9 aktive Kunden, rund 94 Lots pro Monat
-- Erstes Dienstleistungsprojekt verkauft (Webseite oder Chatbot, 1.500 bis 3.000 EUR). Das ist der schnellste Weg zu echtem Cash und finanziert Tools und Werbung.
+- Erstes Dienstleistungsprojekt verkauft (Webseite oder Chatbot, 1.500 bis 3.000 EUR). Das ist der schnellste Weg zu echtem Cash und finanziert Tools und Werbung. **Seit 24.09.2026** sucht und bewertet der `aufgaben-manager`/`aufgaben-executor` dafür aktiv laufend weitere passende Ideen, siehe [[Einnahmequellen-Recherche]] (Mikes Auftrag im Chat, Rahmen bleibt dieser Ziel-Mix, kein neues Standbein).
 - Erste Automatisierung: ein Agent, der Content-Ideen liefert und Posts vorbereitet
 
 **Weiter, wenn:** 3 Monate in Folge mindestens 1.000 EUR und die Kundenzahl wächst, statt zu stagnieren.

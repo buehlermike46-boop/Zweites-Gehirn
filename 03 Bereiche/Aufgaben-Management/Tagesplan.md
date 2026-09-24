@@ -40,6 +40,11 @@ Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten)
 **Seit 12.09.2026 retired, keine neuen Einträge mehr** (siehe Log-Eintrag unten und `.claude/agents/aufgaben-executor.md`, Abschnitt "Volle Ausführungs-Autonomie"). Alte/alte Einträge stehen unten nur noch als Historie, falls welche vorhanden sind – nicht mehr anfassen außer auf Mikes Anweisung.
 *(Ursprünglicher Zweck bis 11.09.2026: fertig vorbereitete, aber freigabepflichtige Punkte – Senden, Posten, neue Logins, Käufe, Formulare mit persönlichen Daten, Löschen. Mike gab hier beim täglichen Check-in gesammelt frei oder ab.)*
 
+## Freigabe nötig: Einnahmequellen
+*(Neu seit 24.09.2026, Mikes Entscheidung im Chat: Recherche/Bewertung/Entwürfe zu neuen digitalen Einnahmequellen laufen ohne Einzelfreigabe, siehe [[Einnahmequellen-Recherche]] und `.claude/agents/aufgaben-manager.md`/`aufgaben-executor.md`, Abschnitt "Einnahmequellen-Explorer"/"Ausnahme: Einnahmequellen-Recherche". Alles was danach nach außen geht – Kunde kontaktieren, Angebot verschicken, Domain/Tool kaufen, Registrierung – landet hier fertig vorbereitet und wartet auf Mikes Ja/Nein. Kein technisches Problem wie bei "Technisch blockiert" unten, sondern bewusste Entscheidungsgrenze.)*
+
+*(Noch keine Einträge – füllt sich, sobald der erste Einnahmequellen-Punkt einen nach außen wirkenden Schritt erreicht.)*
+
 ## Technisch blockiert
 *(Neu seit 12.09.2026, ersetzt den Freigabe-Stau für den aufgaben-executor. Punkte, für die kein Werkzeug/Connector existiert oder ein Connector fehlerhaft/unzureichend berechtigt ist – kein Freigabe-Wartestand, sondern eine technische Lücke. Der `professor` schließt sie selbst, wenn die Plattform laut Vault schon verbunden ist und nur das Tool in der aufgaben-executor-Liste fehlt; alles andere – neue Plattform, neuer Login, neue OAuth-Freigabe – muss Mike selbst herstellen.)*
 
