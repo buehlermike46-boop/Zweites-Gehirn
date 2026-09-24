@@ -101,5 +101,13 @@ Kein Google-Unternehmensprofil vorhanden. Ein kostenloses Profil (Öffnungszeite
 ### Freigabe-Weg für diese Entwürfe (Antwort 24.09.2026, Mike im Chat)
 Mike will die fertigen Texte zuerst selbst zur Durchsicht bekommen, **nicht direkt an seine Mutter**. Ablauf also: Entwürfe hier fertigstellen → Mike prüft im Chat/Vault → erst danach geht irgendwas an seine Mutter oder live auf die Website. Deckt sich mit dem bereits oben stehenden Hinweis ("brauchen Mikes Durchsicht und die Freigabe seiner Mutter"), jetzt mit der Reihenfolge bestätigt.
 
+## Update 24.09.2026, Abend: Entwürfe freigegeben, aber pausiert bis Sonntag
+
+Mike im Chat: **"Passt so aber schick das nicht raus, meine Mutter macht das bei Ions und zahlt 50 Euro im Monat. Das bekommen wir selber auch hin für weniger Geld. Lass uns das Thema Pflegedienst am Sonntag mit meiner Mutter zusammen weiter machen."**
+
+**Neuer Fakt:** Die bestehende Website läuft aktuell über **IONOS**, Kosten ca. **50 EUR/Monat**. Das ändert die Einordnung des Referenzprojekts spürbar — es geht nicht mehr nur um ein kostenloses Portfolio-Stück, sondern um eine echte Kostenersparnis für seine Mutter (Ablösung des IONOS-Abos durch eine selbst gebaute/gepflegte Lösung, z.B. über Jarvis' `website-builder-flow`). Passt jetzt noch direkter zu Einnahmequellen-Idee 2 (Website-Baukasten-Service), siehe [[Einnahmequellen-Recherche]] — konkretes Sparziel: günstiger als 50 EUR/Monat.
+
+**Status: pausiert bis Sonntag, 27.09.2026.** Die Text-Entwürfe oben sind inhaltlich freigegeben, gehen aber **an niemanden raus** — weder an die Mutter noch live auf die Seite. Mike bespricht das Thema am Sonntag gemeinsam mit ihr (Kapazität, IONOS-Ablösung, die Entwürfe). Bis dahin kein weiterer Agenten-Schritt zu diesem Thema, auch nicht unter der Einnahmequellen-Standing-Freigabe — das ist eine bewusste Pause, keine technische Blockade.
+
 ## Referenzen
 - Siehe auch [[VT Markets Affiliate-Strategie & Content-Plan]] (gleicher Chat, dort primär zum Trading/Affiliate-Teil)
