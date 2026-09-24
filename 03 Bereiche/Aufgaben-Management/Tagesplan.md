@@ -45,6 +45,10 @@ Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten)
 
 *(Noch keine Einträge – füllt sich, sobald der erste Einnahmequellen-Punkt einen nach außen wirkenden Schritt erreicht.)*
 
+## Technisch blockiert (Ergänzung 24.09.2026, interaktive Session)
+
+**Handwerker-Chatbot-Demo (Make-Szenario 7597709) kann nicht aktiviert werden: "Maximum number of active scenarios has been exceeded".** Das Make-Konto erlaubt laut Fehlermeldung nur eine begrenzte Zahl aktiver Szenarien gleichzeitig, beide bestehenden Plätze sind schon belegt (`Integration Telegram Bot` 7240246, `Telegram Kanal: Post Versand` 7391673 — beide live fürs IB-Business). Scenario, Webhook (3781888) und zwei Datenstrukturen sind fertig gebaut und inaktiv gespeichert, aber selbst ein einmaliger Testlauf ist ohne Aktivierung technisch nicht möglich (`scenarios_run` verlangt zwingend eine aktive Szenario). Kein Datenspeicher-Problem mehr (das ursprüngliche "Not enough space in storage" beim Data Store wurde umgangen, indem Terminanfragen stattdessen per Telegram-DM an Mike selbst gemeldet werden, kein neuer Data Store nötig). **Braucht Mikes Entscheidung:** Make-Plan upgraden (mehr aktive Szenarien), oder eines der zwei bestehenden Szenarien vorübergehend/dauerhaft deaktivieren, um Platz zu machen — beides eine Entscheidung mit echten Konsequenzen fürs laufende Business, nicht eigenmächtig getroffen.
+
 ## Technisch blockiert
 *(Neu seit 12.09.2026, ersetzt den Freigabe-Stau für den aufgaben-executor. Punkte, für die kein Werkzeug/Connector existiert oder ein Connector fehlerhaft/unzureichend berechtigt ist – kein Freigabe-Wartestand, sondern eine technische Lücke. Der `professor` schließt sie selbst, wenn die Plattform laut Vault schon verbunden ist und nur das Tool in der aufgaben-executor-Liste fehlt; alles andere – neue Plattform, neuer Login, neue OAuth-Freigabe – muss Mike selbst herstellen.)*
 
