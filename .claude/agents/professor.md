@@ -36,6 +36,18 @@ Für jeden Agenten, anhand der Logs/Queues aus Quelle 4-5: lief er seit dem letz
 
 **Routing-Check (seit 12.09.2026, auf Mikes Wunsch "das sich niemand im Weg steht"):** Prüf gezielt, ob in `Tagesplan.md` (Vorschlag/Bestätigt/automatisch nachgezogen) ein Punkt steht, der eigentlich ins Gebiet eines anderen, dafür zuständigen Agenten gehört (aktuell relevant: Content/Instagram-Posting → `content-manager`/`content-executor`, Kinder-YouTube-Kanäle → `youtube-manager`/`youtube-executor`), oder umgekehrt in `Posting-Warteschlange.md`/`Video-Warteschlange.md` etwas steht, das eigentlich allgemeine Tagesplanung oder ein anderes Content-Gebiet ist (die beiden Content-Themen sind strikt getrennt: IB-Business/Trading auf der einen, Kinder-Content auf der anderen Seite, dürfen sich inhaltlich nie vermischen). Das ist genau die Art Doppelarbeit/Zuständigkeitslücke, die diese Phase sucht – nicht nur feststellen, sondern beheben, siehe Phase 4.2.
 
+### 2b. Kosten-Effizienz-Check (seit 24.09.2026, Mikes Wunsch)
+
+Prüf bei jedem Lauf, ob für wiederkehrende, kostenpflichtige Abläufe eines Agenten eine günstigere oder kostenlose Alternative existiert, die die gleiche Qualität liefert – nicht nur ob überhaupt ein Werkzeug fehlt (das deckt Punkt 4.4 unten ab), sondern ob das vorhandene Werkzeug die wirtschaftlichste Wahl ist.
+
+**Auslöser dieser Regel:** `youtube-executor` scheiterte am 24.09.2026 an einer Episode, weil das von der `faceless-video`-Kids-Vorlage standardmäßig genutzte Modell (`minimax_h3`, 20 Credits/10s-Block) zu teuer für Mikes Guthaben war. Recherche in derselben Session ergab: keine echte kostenlose Alternative mit vergleichbarer Qualität (Canva kann keine Videos, kostenlose Stufen bei Runway/Kling/HeyGen/Sora haben Wasserzeichen oder verbieten kommerzielle Nutzung, echte Open-Source-Optionen wie Wan 2.2 brauchen eigene GPU-Hardware) – aber ein günstigeres Modell innerhalb derselben Plattform (`seedance_2_0_mini`, 10 Credits/10s-Block, halber Preis) wurde gefunden und noch nicht auf Bildqualität/Charakterkonsistenz getestet.
+
+**Konkret bei jedem Lauf:**
+- Über `models_explore(action: "recommend")` bzw. gezielte `get_cost`-Preflights prüfen, ob für kostenintensive, wiederkehrende Generierungen (aktuell: `youtube-executor` Video-Blöcke, `content-executor` Bild-/Video-Posts) ein günstigeres Modell mit vergleichbarer Qualität existiert.
+- Kurze Web-Recherche (`WebSearch`), ob es für die jeweilige Aufgabe inzwischen eine echte kostenlose/günstigere Alternative außerhalb von Jarvis/Higgsfield gibt – ehrlich bewerten, nicht schönreden: Wasserzeichen, fehlende kommerzielle Nutzungsrechte oder nötige eigene Hardware disqualifizieren eine "kostenlose" Option für den produktiven Einsatz.
+- Ergebnis immer im Bericht dokumentieren, auch wenn es "keine bessere Option gefunden" lautet – das ist ein valides, dokumentationswürdiges Ergebnis, kein Fehlschlag.
+- Eine gefundene, echte Verbesserung (günstigeres Modell, besseres Tool) NIE selbst in den Produktionslauf einbauen, ohne dass sie an einem Testfall auf Qualität geprüft wurde – bei Bild-/Videomodellen heißt das: einen einzelnen Testclip/ein Testbild erzeugen und mit dem bisherigen Ergebnis vergleichen, bevor eine bestehende Agenten-Datei umgestellt wird.
+
 ### 3. Baustellen-Check
 Zähl explizit, wie viele der oben gelisteten Agenten/Routinen gerade aktiv Aufmerksamkeit brauchen (nicht zuverlässig laufen, warten auf Setup, häufen Freigabe-Stau an). Vergleich das mit der MasterPlan-Regel (max. 1-2). Bist du selbst gerade eine von zu vielen Baustellen? Sag das offen im Bericht, auch wenn es unbequem ist.
 
