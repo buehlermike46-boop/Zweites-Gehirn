@@ -43,6 +43,7 @@ Operative Liste für die Auto-Posting-Automatisierung (siehe
 1. Daten 1:1 übernehmen, nichts erfinden/schönen/aufrunden. Bei Unklarheit (z.B. unleserlicher Screenshot-Ausschnitt) lieber nachfragen als raten.
 2. Saubere, gebrandete Story-Grafik über Jarvis erstellen (bestehender Limitless-Look), mit den echten Zahlen — **kein 1:1-Repost des rohen Screenshots** (siehe [[Bilder-Datenspeicher]], Screenshots sind keine Content-Bilder).
 3. **Pflicht-Disclaimer** muss auf jeder Trade-Story sichtbar sein (Text im Bild oder in der Caption, mindestens sinngemäß): *"Bildungsinhalt, keine Anlageberatung. Trading ist mit Risiko verbunden, vergangene Ergebnisse sind kein Indikator für zukünftige Ergebnisse, keine Gewinngarantie."*
+3b. **Keine Tages-/"Heute"-Angabe in der Summenzeile** (Korrektur 24.09.2026, siehe Eintrag unten): Mike schickt die Daten oft erst am Folgetag, "HEUTE" wäre dann sachlich falsch. Summenzeile stattdessen mit den Labels **TP** (Take Profit/Gewinn-Pips), **SL** (Stop Loss/Verlust-Pips) und **GESAMT** beschriften. Die Kopfzeile darf den Wochentag der Quelldaten nennen (z.B. "WEDNESDAY'S RESULTS"), solange er sich auf den tatsächlichen Tag der Rohdaten bezieht, nicht auf den Posting-Tag.
 4. **Korrekte Attribution:** Es sind Trades/Signale aus der Limitless-Signalgruppe (die Trader dort zum Kopieren einstellen, siehe [[Angebot]]), nicht automatisch Mikes eigene persönlich ausgeführten Trades — nie als "meine Trades" formulieren, außer Mike sagt ausdrücklich, dass er sie selbst mitgehandelt hat.
 5. **Keine Rosinenpickerei-Illusion:** Es wird gepostet was Mike an dem Tag schickt (i.d.R. der komplette Tagesüberblick der Gruppe inkl. eventueller Verluste, wie im Screenshot-Format "Today We Win .../Loss ..."), nicht nur ausgewählte Gewinner-Trades einzeln herausgepickt.
 6. Text-Check wie bei jedem anderen Asset (Pflicht seit 20.09.2026, siehe `content-executor.md`) vor dem Posten.
@@ -51,10 +52,23 @@ Operative Liste für die Auto-Posting-Automatisierung (siehe
 
 ### Einträge
 
-#### Mittwoch, 24.09.2026 (Wednesday's Results, von Mike per Chat geschickt)
-- **Quelle:** Screenshot "Limitless Signals ATM", Wednesday's Results
+#### Donnerstag, 24.09.2026 (Quelle: Screenshot "Wednesday's Results", von Mike per Chat geschickt)
+- **Quelle:** Screenshot "Limitless Signals ATM", Wednesday's Results (Daten vom Vortag, Mittwoch 23.09., am Donnerstag 24.09. von Mike geschickt)
 - **Rohdaten:** GOLD BUY 270+PIPS (R,T) ✅ · GOLD BUY 120+PIPS ✅ · GOLD BUY 110+PIPS ✅ · GOLD BUY 240+PIPS ✅ · GOLD BUY 200+PIPS ✅ — Today We Win 940+PIPS, Loss -00PIPS, Overall +940 PIPS
-- **Status:** an `content-executor` übergeben zur Erstellung + automatischem Posten (siehe Agent-Aufruf)
+
+**Versuch 1 — fehlerhaft, per Chat von Mike korrigiert:**
+- Asset (über Jarvis `nano_banana_2`/`nano_banana_flash` erstellt, 1,5 Credits): https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260924_165203_2f9fe382-19e8-40f4-b18a-83a7353a6f3b.png
+- Gepostet (24.09.2026, ca. 16:58 UTC), Media-ID 18003942359791775.
+- **Fehler (von Mike entdeckt, nicht vom Text-Check erfasst):** Die Grafik beschriftete die Summenzeile mit "HEUTE +940 PIPS" — sachlich falsch, da die Daten von Wednesday (Vortag) stammen, nicht von "heute" (Donnerstag). Der durchgeführte Text-Check hatte nur auf 1:1-Übereinstimmung mit den Rohdaten geprüft (die selbst schon "Today We Win" sagten), nicht auf Konsistenz zwischen Label und tatsächlichem Datum — Lücke für künftige Checks vermerkt.
+- **Löschen nicht möglich:** `mcp__Windsor_ai__list_actions` (instagram) bietet keine Lösch-Aktion für Posts/Stories (nur `delete_comment` für Kommentare). Die fehlerhafte Story bleibt bis zum automatischen 24h-Ablauf sichtbar, außer Mike löscht sie manuell in der App.
+
+**Versuch 2 — korrigiert (Mikes Vorgabe: keine Tagesangabe, stattdessen TP/SL-Trading-Begriffe):**
+- Asset (über Jarvis `gpt_image_2_5` erstellt): https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260924_165926_f8c657a1-e7f2-434f-a2aa-3f29c743e220.png — Summenzeile jetzt "TP +940 PIPS" / "SL -0 PIPS" / "GESAMT +940 PIPS", keine Tages-/Heute-Angabe mehr.
+- **Text-Check (Hauptsession, Bild heruntergeladen + visuell geprüft):** alle Zahlen korrekt (270/120/110/240/200/940/0/940), TP/SL/GESAMT-Labels korrekt statt Tagesangabe, Attribution korrekt ("Signale aus der Limitless-Signalgruppe"), Disclaimer vollständig lesbar. Bestanden.
+- **Status: gepostet (24.09.2026, ca. 17:00 UTC).** Media-ID 17889399369455235.
+- Beide Assets über `mcp__Windsor_ai__execute_action` (instagram, `create_story`, Account `mike_bueh`/17841459820754777) als PNG direkt akzeptiert, keine JPEG-Konvertierung nötig.
+
+**Für künftige Trade-Story-Einträge (Regel-Ergänzung):** Nie "HEUTE"/einen Wochentag in der Summenzeile verwenden, da Mike die Daten oft erst am Folgetag schickt. Stattdessen die Labels "TP" (Take Profit/Gewinn-Pips) und "SL" (Stop Loss/Verlust-Pips) verwenden, plus "GESAMT". Die Kopfzeile mit dem Wochentag der Quelldaten (z.B. "WEDNESDAY'S RESULTS") bleibt erlaubt, solange sie den tatsächlichen Tag der Rohdaten nennt, nicht den Posting-Tag.
 
 ## Facebook Cross-Posting (Auftrag 14.09.2026, Mike per Chat)
 
@@ -242,6 +256,38 @@ Ein `/schedule`-Cloud-Agent lief isoliert ohne Zugriff auf Vault/lokale Dateien,
 
 ## Executor-Log
 *(Append-only Protokoll jedes content-executor-Laufs, mit Zeitstempel. Angelegt beim ersten echten Lauf.)*
+
+### 2026-09-24, ca. 16:52 UTC, ad-hoc-Lauf: erste tägliche Trade-Story — nicht gepostet, Text-Check technisch blockiert
+
+**Auftrag:** Mike hat per Chat die Wednesday's-Results-Zahlen aus der Limitless-Signalgruppe geschickt ("Limitless Signals ATM"): GOLD BUY 270/120/110/240/200 PIPS (alle ✅), Tagessumme +940 PIPS, Verlust -0 PIPS, Gesamt +940 PIPS. Neuer Abschnitt "Tägliche Trade-Story" in dieser Datei beschreibt den Ablauf, Freigabe-Phase dafür ist **automatisch**.
+
+**Zwischendurch kam eine ausdrückliche Klarstellung des Koordinators/Mikes:** nicht den rohen Screenshot 1:1 posten, sondern eine gebrandete Grafik neu erstellen. Das war ohnehin schon der geplante Weg (siehe Ablauf-Regel im neuen Abschnitt), es wurde zu keinem Zeitpunkt der rohe Screenshot verwendet oder gepostet — nichts zurückzurollen.
+
+**Asset-Erstellung:** Rohdaten 1:1 übernommen (nichts erfunden/geglättet). Vor der Generierung `balance` geprüft: 63,38 Credits (`plus`-Plan) — reicht. Über Jarvis `nano_banana_2` (lief tatsächlich auf `nano_banana_flash`, 1,5 Credits) eine gebrandete 9:16-Story-Grafik im dunklen Fintech-Look erstellt: Header "LIMITLESS SIGNALS"/"WEDNESDAY'S RESULTS", 5 Trade-Zeilen, Tages-/Verlust-/Gesamt-Summe, Attributions-Zeile "Signale aus der Limitless-Signalgruppe" (bewusst nicht "meine Trades"), Disclaimer-Zeilen "Bildungsinhalt, keine Anlageberatung."/"Risiko besteht, keine Gewinngarantie." — alles direkt ins Bild gerendert, da `create_story` bei Windsor.ai keine Caption unterstützt (Disclaimer/Attribution müssen zwingend im Bild stehen).
+
+**Text-Check: nicht durchführbar, deshalb NICHT gepostet.** Diese Session hatte kein Werkzeug, um das tatsächlich erzeugte Bild anzusehen: kein Bash/sandbox_exec (mit dem frühere Läufe laut Log vom 22.09. z.B. Video-Frames extrahiert haben), keine WebFetch-Fähigkeit. `Read` wurde testweise direkt mit der Bild-URL (PNG und WebP-Thumbnail) aufgerufen, lieferte beide Male "File does not exist" — das Tool liest laut eigener Beschreibung ausschließlich das lokale Dateisystem, keine Remote-URLs, und es gab keinen Weg, die Datei vorher lokal zu speichern. Der Pflicht-Text-Check (seit 20.09.2026, nach dem "STARTMhr"/Market-Scanner-Vorfall) verlangt zwingend das tatsächliche Zeichen-für-Zeichen-Ansehen vor dem Posten, keine Ausnahme. Da geraten statt geprüft worden wäre, wurde bewusst **nicht gepostet** — genau der Fall "bei echter Unsicherheit: Post nicht erstellen/posten, im Log begründen, statt zu raten". Mehrfache Regenerierung hätte nichts gebracht, da das Problem nicht die Bildqualität war, sondern das fehlende Ansehen-Werkzeug in dieser konkreten Session — deshalb auch keine 3 Versuche verbraucht.
+
+**Für Mike/professor:** Die fertige Asset-URL liegt oben im Queue-Eintrag. Ein Lauf mit funktionierendem Bild-Ansehen (der reguläre `content-executor`-Agent mit Bash/sandbox_exec-Zugriff, wie er laut Log vom 22.09.2026 für die Video-Frame-Extraktion genutzt wurde) kann den Text-Check direkt an diesem Bild nachholen und dann sofort über `create_story` posten, ohne neu zu generieren — Freigabe-Phase ist bereits "automatisch", es fehlt nur der bestandene Check. Sollte sich zeigen, dass diese Tool-Lücke öfter auftritt (ad-hoc-Aufrufe ohne volle Agent-Tool-Ausstattung), wäre das ein Punkt für `professor`: sicherstellen, dass jede Instanz, die Bilder posten soll, auch ein Werkzeug zum Ansehen dieser Bilder hat.
+
+**Leerlauf-Check:** Offene, nicht-geposteten Instagram-Queue-Einträge: Nr. 11-15 (alle `bereit, wartet auf Freigabe`) plus der heutige Trade-Story-Eintrag (jetzt `übersprungen`) = 6 offen. Damit liegt allein der Instagram-Anteil bereits über der Schwelle von 3, unabhängig vom Telegram-Stand — keine `LEERLAUF`-Zeile nötig, Telegram-Tabelle wurde deshalb in diesem Lauf nicht extra geprüft (dieser Lauf war ausschließlich auf die Trade-Story fokussiert).
+
+**Facebook-Cross-Posting-Check:** `mcp__Windsor_ai__get_connectors` timeout-ete zweimal (60s) in diesem Lauf, kein Ergebnis zu "facebook_organic" erhalten. Kein neuer Stand gegenüber dem zuletzt dokumentierten "technisch blockiert" — nicht weiter verfolgt, da dieser Lauf ohnehin nur die eine Story betraf.
+
+**Guthaben nach diesem Lauf:** ca. 61,88 Credits (63,38 − 1,5 für die eine Bild-Generierung).
+
+### 2026-09-24, ca. 16:55-17:00 UTC, Fortsetzung durch die Hauptsession: Text-Check nachgeholt, gepostet, Fehler entdeckt und korrigiert
+
+**Text-Check nachgeholt:** Die Hauptsession hat Bash-Zugriff, hat das vom Subagenten hinterlegte Asset per `curl` heruntergeladen und mit `Read` visuell geprüft (siehe oben, Tool-Lücke des Subagenten). Alle Zahlen stimmten 1:1, Attribution korrekt, Disclaimer vollständig — Check bestanden. Über `mcp__Windsor_ai__execute_action` (`create_story`, `mike_bueh`) gepostet: **Media-ID 18003942359791775.**
+
+**Fehler von Mike entdeckt ("heute ist falsch"):** Die Grafik beschriftete die Summenzeile mit "HEUTE +940 PIPS" — sachlich falsch, da die Rohdaten von Wednesday (Vortag) stammten, nicht von "heute" (Donnerstag, 24.09.). Der durchgeführte Text-Check hatte nur 1:1-Übereinstimmung mit den Rohdaten geprüft, nicht die Konsistenz zwischen Label und tatsächlichem Kalendertag — das hat der Check bisher nicht abgedeckt.
+
+**Löschen geprüft, nicht möglich:** `mcp__Windsor_ai__list_actions` (instagram) bietet keine Lösch-Aktion für Posts/Stories, nur `delete_comment` für Kommentare. Die fehlerhafte Story bleibt daher bis zum automatischen 24h-Ablauf sichtbar oder muss von Mike manuell in der App gelöscht werden.
+
+**Korrektur (Mikes Vorgabe im Chat):** keine Tages-/"Heute"-Angabe mehr, stattdessen die Trading-Standardbegriffe **TP** (Take Profit) und **SL** (Stop Loss) für die Summenzeile. Neues Asset über Jarvis `gpt_image_2_5` erstellt (gleicher Look, Summenzeile jetzt "TP +940 PIPS"/"SL -0 PIPS"/"GESAMT +940 PIPS", keine Tagesangabe), Text-Check erneut durchgeführt (bestanden), gepostet: **Media-ID 17889399369455235.**
+
+**Neue Dauerregel ergänzt** (Abschnitt "Tägliche Trade-Story", Punkt 3b): nie "HEUTE"/Wochentag in der Summenzeile, stattdessen TP/SL/GESAMT, weil Mike die Daten oft erst am Folgetag schickt. Für künftige Text-Checks gilt jetzt zusätzlich: nicht nur Zahlen/Wörter 1:1 gegenprüfen, sondern auch ob ein Zeit-/Tagesbezug im Bild zum tatsächlichen Zustand passt.
+
+Queue-Eintrag und [[Performance-Log]] entsprechend mit beiden Versuchen aktualisiert. Kein Credit-Kauf, keine bezahlte Aktion, keine Freigabe-Grenze verletzt.
 
 ### 2026-09-11, 08:29-08:33 UTC, erster echter Lauf (von Mike manuell über "Jetzt ausführen" angestoßen)
 Phase 1 aktiv. Post Nr. 1 (heute, 19:20 Uhr) war fällig und stand auf `freigegeben`. Der hinterlegte Asset-Pfad (`Lim/Content/Videos/...`) war wie erwartet unerreichbar (lokal bei Mike, nicht im Git-Vault) — daher neues Asset über Jarvis erstellt: 15s, 9:16-Reel, faceless/Info-Grafik-Stil passend zur Caption, 97,5 Credits (Guthaben danach: 720,5 von 818, `plus`-Plan). Video fertig unter der oben hinterlegten URL.
