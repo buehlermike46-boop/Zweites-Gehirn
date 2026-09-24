@@ -40,6 +40,11 @@ Details siehe `.claude/agents/aufgaben-manager.md` (Abschnitt "Einnahmequellen-E
 
 *(jeder Recherche-Lauf mit Datum: was wurde geprüft, was kam neu dazu, was wurde verworfen und warum)*
 
+### 2026-09-24 (aufgaben-manager, erster Lauf nach Mikes Auftrag)
+Ideen-Pool war noch komplett leer (nur die Gerüst-Beispielzeile) — kein bereits bewerteter, unentschiedener Punkt zum Priorisieren vorhanden. Deshalb direkt per Standing-Freigabe einen Recherche-Auftrag in [[Tagesplan]] unter `## Bestätigt für 2026-09-24 (Einnahmequellen-Recherche, Standing-Freigabe)` eingetragen: 3-5 aktuell realistische digitale Einnahmequellen-Ideen (Dienstleistung/Produkt, passend zu Mikes Elektromeister-Profil und KI-Agenten-Zugriff) recherchieren und hier im Ideen-Pool eintragen. Noch keine eigene Recherche durchgeführt (dieser Agent hat kein WebSearch/WebFetch-Werkzeug in dieser Runde) — das übernimmt der `aufgaben-executor` im nächsten Lauf.
+
+Zusätzlich das bereits bekannte [[Pflegedienst]]-Referenzprojekt gegengeprüft: laut dortiger Notiz hat Mike am 14.09.2026 entschieden, das Thema als drittes Standbein anzugehen, mit einem für 16.09.2026 geplanten Termin bei seiner Mutter (freie Kapazität, Google-Unternehmensprofil, bestehende Website sichten). Ob dieser Termin stattgefunden hat, ist im Vault nicht dokumentiert, und Name/URL der bestehenden Website fehlen weiterhin — als offene Frage an Mike in [[Tagesplan]] übernommen, keine Vorarbeit mit erfundenen Fakten gestartet.
+
 ---
 
 Verknüpft: [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] · [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] · [[Tagesplan]] · [[Pflegedienst]]

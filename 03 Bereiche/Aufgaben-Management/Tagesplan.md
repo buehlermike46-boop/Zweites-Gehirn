@@ -127,6 +127,21 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-24, aufgaben-manager-Lauf (interaktive Chat-Session, nachmittags/abends — Einnahmequellen-Explorer-Auftrag)
+Regulärer Planungslauf, ausgelöst durch Mikes Chat-Auftrag "Einnahmequellen-Explorer" (siehe [[Einnahmequellen-Recherche]], neu seit heute, und `CLAUDE.md`/`.claude/agents/aufgaben-manager.md`). Alle sechs Quellen gelesen, inklusive der neuen Quelle 6.
+
+**Kontrolle:** Letzter Executor-Log-Eintrag (06:46 UTC, Commit `469593c`) bestätigt unverändert: kein `## Bestätigt`-Abschnitt seit `## Bestätigt für 2026-09-14` (vollständig aufgelöst), neun unbestätigte Vorschläge in Folge (15.-24.09.), kein künstlicher Nachschub nötig. Frisch geprüft: [[Kontaktliste - 20 Namen aus dem Umfeld]] unverändert 20/20 angeschrieben, 0/20 Reaktionen; [[Lot-Tracking]] unverändert 0 Accounts/0 Lots; [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen, keine neuen Punkte; keine neue Daily Note seit [[2026-09-21]]; Mike-only-Zähler unverändert 1/20. Kein Beleg für neue Erledigungen, keine neuen Häkchen in der Triage.
+
+**Umsetzung des Einnahmequellen-Auftrags:** Per Standing-Freigabe vom 24.09.2026 (keine Einzelbestätigung nötig, siehe [[Einnahmequellen-Recherche]] Abschnitt "Freigabe-Modell") direkt einen neuen Abschnitt `## Bestätigt für 2026-09-24 (Einnahmequellen-Recherche, Standing-Freigabe)` unten ergänzt: Auftrag an den Executor, 3-5 aktuell realistische digitale Einnahmequellen-Ideen (Dienstleistung/Produkt, passend zu Mikes Elektromeister-Profil und KI-Agenten-Zugriff) zu recherchieren und in [[Einnahmequellen-Recherche]] einzutragen. Ideen-Pool dort war noch leer (nur Beispielzeile) — kein bereits bewerteter, unentschiedener Punkt zum Priorisieren vorhanden, deshalb direkt der Recherche-Auftrag statt einer Bewertung.
+
+**Pflegedienst-Referenzprojekt gegengeprüft:** [[Pflegedienst]] zeigt eine Entscheidung vom 14.09.2026 ("wird angegangen", drittes Standbein, Termin mit Mikes Mutter für 16.09.2026 14:30-16:30 geplant), aber keine Daily Note dokumentiert, ob dieser Termin stattgefunden hat, und Name/URL der bestehenden Pflegedienst-Website sind laut derselben Notiz weiterhin "noch nicht erfasst". Deshalb kein Bestätigt-Punkt für konkrete Pflegedienst-Vorarbeit in dieser Runde (würde sonst Fakten erfinden müssen) — stattdessen als offene Frage an Mike in den neuen Vorschlag aufgenommen.
+
+**Neuer `## Vorschlag für 2026-09-24 (zweiter Vorschlag)` unten ergänzt** mit der Einordnung des Einnahmequellen-Auftrags, der unveränderten Stufe-0-Lage und den offenen Fragen (inkl. neu: Stand des Pflegedienst-Termins vom 16.09., fehlender Name/URL).
+
+Geänderte Dateien: `Tagesplan.md` (dieser Eintrag, neuer Bestätigt- und Vorschlag-Abschnitt), [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]] (neuer Kontroll-Log-Eintrag), [[Einnahmequellen-Recherche]] (Log-Eintrag zum erteilten Auftrag).
+
+**Commit/Push-Hinweis:** Kein Bash-/Git-Werkzeug in dieser Session verfügbar — die aufrufende Session committet und pusht die Änderungen.
+
 ### 2026-09-24, 06:46 UTC, Executor-Lauf (Scheduled Cloud Routine)
 Kein bestätigter Plan für heute, nichts unternommen. Per Grep über die gesamte Datei bestätigt: es existiert weder ein `## Bestätigt für 2026-09-24` noch ein nachträglich bestätigter `## Bestätigt für 2026-09-15/17/18/19/20/21/22/23`-Abschnitt — nur die neun unbestätigten `## Vorschlag für 2026-09-15`, `-17`, `-18`, `-19`, `-20`, `-21`, `-22`, `-23` und `-24` (letzterer aus dem heutigen Planungslauf, Commit `469593c`). Mike hat keinen der neun bestätigt. Laut fester Vorgabe (`.claude/agents/aufgaben-executor.md`) wird ohne Bestätigung nichts erfunden, auch kein automatisches Nachziehen aus der Aufgaben-Triage, weil das erst greift, wenn eine bestätigte Liste leer abgearbeitet wurde, nicht wenn nie eine existierte.
 
@@ -984,3 +999,46 @@ Kein neuer Punkt. Kein neuer `## Bestätigt`-Abschnitt in dieser Runde.
 3. Weiterhin unbeantwortet: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch grundsätzlich für Telegram zuständig sein soll.
 4. Weiterhin unbeantwortet: Ist [[ATAS Trading Bot (NQ-Abpraller-Setup)]] als bewusste, dauerhafte Ausnahme außerhalb dieses Aufgaben-Kreislaufs so gewollt, oder soll er künftig gegen die 10-15h/Woche-Grenze und "max. 1-2 aktive Baustellen" aus MasterPlan Punkt 8 mitgezählt werden? Reine Nachfrage, keine Handlungsempfehlung.
 5. Für heute existiert noch keine Daily Note [[2026-09-24]] — wird laut eigenem Vermerk nicht ungefragt angelegt.
+
+## Bestätigt für 2026-09-24 (Einnahmequellen-Recherche, Standing-Freigabe)
+*(Vom aufgaben-manager direkt eingetragen, keine Mike-Einzelbestätigung nötig — gedeckt durch Mikes Standing-Freigabe vom 24.09.2026 im Chat, siehe [[Einnahmequellen-Recherche]] Abschnitt "Freigabe-Modell" und `.claude/agents/aufgaben-manager.md`/`aufgaben-executor.md`, Abschnitt "Einnahmequellen-Explorer". Deckt ausschließlich Recherche/Bewertung/Entwurf ab, keinen nach außen wirkenden Schritt — der Executor arbeitet das im selben oder nächsten Lauf ab, unabhängig vom normalen Bestätigungs-Zyklus und unabhängig vom Deckel-20-Zähler.)*
+
+### Recherche
+- [ ] **3-5 aktuell realistische digitale Einnahmequellen-Ideen recherchieren und bewerten.** Passend zu Mikes Profil: gelernter Elektroniker für Betriebstechnik und Elektromeister, kein Entwickler-Hintergrund, aber voller Zugriff auf KI-Agenten (Jarvis: Bild-/Video-/Text-Generierung, Automatisierung über Make.com), 10-15h/Woche Zeitbudget neben Job und IB-Business. Ausschließlich innerhalb der beiden bestehenden MasterPlan-Standbeine (Abschnitt 2, kein neues Standbein): **Digitale Dienstleistungen** (Webseiten, Chatbots, Automatisierung — insbesondere für Handwerksbetriebe/lokale Dienstleister, wo Mikes Elektro-Fachwissen als Vertrauensvorteil zählt) und **Digitale Produkte** (Templates, Membership o.ä.). Für jede Idee: kurze Beschreibung, Kategorie (Dienstleistung/Produkt), grober Aufwand (Sofort/Aufwendig/Komplex-Logik wie in der Aufgaben-Triage), Einschätzung ob als Stufe-1-Erstprojekt (1.500-3.000 EUR, siehe MasterPlan) geeignet, und ob Mike es mit No-Code/KI-Tools selbst umsetzen könnte oder ein Baukasten/Partner nötig wäre. WebSearch für aktuelle Trends/Preise nutzen, keine erfundenen Zahlen. Ergebnis in [[Einnahmequellen-Recherche]], Abschnitt "Ideen-Pool" eintragen (Tabellenzeilen ausfüllen, Beispielzeile ersetzen) und einen Log-Eintrag mit Datum ergänzen, was geprüft/gefunden/verworfen wurde.
+
+**Ausdrücklich nicht Teil dieses Auftrags:** kein Kundenkontakt, kein Angebot verschicken, keine Domain/kein Tool/Abo kaufen, keine Registrierung irgendwo. Stößt die Recherche auf einen Punkt, der nach außen geht, gehört der unter `## Freigabe nötig: Einnahmequellen` oben, nicht direkt ausgeführt.
+
+## Vorschlag für 2026-09-24 (zweiter Vorschlag, nach Mikes Einnahmequellen-Explorer-Auftrag im Chat)
+*(Vom aufgaben-manager erzeugt, interaktive Chat-Session, nachmittags/abends. Betrifft nur die Stufe-0-Punkte unten — der Einnahmequellen-Recherche-Auftrag oben ist bereits per Standing-Freigabe bestätigt und braucht keine weitere Reaktion von dir.)*
+
+**Was neu ist seit dem ersten Vorschlag von heute früh:** Du hast im Chat den "Einnahmequellen-Explorer"-Auftrag erteilt — aktiv nach zusätzlichen digitalen Einnahmequellen suchen (Dienstleistungen/Produkte laut MasterPlan Abschnitt 2), nicht nur abwarten. Direkt umgesetzt: der erste Recherche-Auftrag steht oben unter `## Bestätigt für 2026-09-24 (Einnahmequellen-Recherche, Standing-Freigabe)`, keine Bestätigung nötig, der Executor arbeitet ihn im nächsten Lauf ab. Details/Rahmen stehen jetzt dauerhaft in [[Einnahmequellen-Recherche]].
+
+**Kontrolle:** Unverändert zum Vorschlag von heute früh — seit dem 23.09.2026-Log kein neuer Commit außer dem heutigen Executor-Log-Eintrag (06:46 UTC) und diesem Lauf. [[Kontaktliste - 20 Namen aus dem Umfeld]] weiterhin 20/20 angeschrieben, 0/20 Reaktionen. [[Lot-Tracking]] weiterhin 0 Accounts/0 Lots. [[Brain Dump]]/[[Jarvis Aufgaben]] erneut gelesen, keine neuen Punkte. Mike-only-Zähler unverändert 1/20 (WhatsApp-Test).
+
+### Direkt bei dir — unverändert der einzige tatsächliche Hebel bei Stufe 0
+- Reaktionen der 20 angeschriebenen Kontakte einsammeln/nachtragen in [[Kontaktliste - 20 Namen aus dem Umfeld]], sobald jemand antwortet
+- WhatsApp-Test, weiterhin ohne Termin
+
+### Neu: Einnahmequellen-Explorer
+- Recherche-Auftrag läuft automatisch (siehe Bestätigt oben), Ergebnis nächste Runde in [[Einnahmequellen-Recherche]].
+- **Empfehlung, sobald die ersten Ideen bewertet vorliegen:** das Pflegedienst-Referenzprojekt (siehe [[Pflegedienst]]) zuerst weiterverfolgen, weil (a) du es bereits am 14.09.2026 als drittes Standbein "wird angegangen" entschieden hast, (b) es explizit in Stufe 1 des MasterPlans als erster Schritt zu "Digitale Dienstleistungen" steht, und (c) es ein kostenloses Portfolio-Stück ohne Akquise-Risiko ist. Zwei Fakten fehlen dafür noch, siehe offene Fragen unten — ohne die würde jede Vorarbeit entweder zu allgemein bleiben oder Dinge über die bestehende Website erfinden müssen.
+
+### Komplex — regulärer Stufe-0-Kreislauf, weiterhin bewusst zurückgestellt
+Unverändert: Website, Zugangs-Gate, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. Das Pflegedienst-Referenzprojekt läuft ab jetzt separat über den Einnahmequellen-Explorer-Track (siehe oben und [[Einnahmequellen-Recherche]]), nicht mehr pauschal "zurückgestellt bis Stufe 0 mit echten Kunden steht" — das ist die bewusste Ausnahme, die Mikes Auftrag vom 24.09.2026 dafür vorsieht.
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Unverändert: Fixkosten-/Business-Kosten-Listen, Buchhaltungs-Frage, Gmail-/GMX-/Dashboard-Punkte, `whatsapp`-Knoten in `jarvis-voice-assistant`. Zur Kenntnis, kein Handlungsbedarf: [[ATAS Trading Bot (NQ-Abpraller-Setup)]] und [[YouTube Kinder-Kanäle (DE & EN)]] laufen als eigene, selbst deklarierte Ausnahmen.
+
+### Domain-Check
+Keine Verschiebung nötig. Nichts in dieser Runde gehört ins Content-Gebiet (`content-manager`/`content-executor`/[[Posting-Warteschlange]]) oder ins YouTube-Gebiet (`youtube-manager`/`youtube-executor`/[[Video-Warteschlange]]).
+
+### Aufgaben-Nachschub bis Deckel 20 — Zähler-Stand
+Mike-only-Zähler: **1 von 20** (nur WhatsApp-Test). Unverändert weit unter dem Deckel, kein Nachschub aus der regulären Triage in dieser Runde nötig (die ist für Stufe 0 weiterhin ehrlich erschöpft). Der Einnahmequellen-Auftrag oben zählt bewusst nicht in diesen Zähler, weil er über eine eigene, unabhängige Standing-Freigabe läuft, nicht über den Deckel-Mechanismus.
+
+### Offene Fragen an Mike
+1. **Wiederholt, jetzt zum zehnten Mal:** Bei den eigentlichen Stufe-0-Punkten (Kontaktliste-Reaktionen, WhatsApp-Test) hat sich seit dem 14.09. nichts geändert. Weiterhin die Bitte um kurze Einordnung: wöchentlicher statt täglicher Kontrollrhythmus, solange nichts Neues passiert, oder ist etwas passiert, das noch nicht im Vault nachgetragen wurde?
+2. **Weiterhin unbeantwortet:** Sollen Gewinne aus dem [[ATAS Trading Bot (NQ-Abpraller-Setup)]] künftig auf das 50.000-€-IB-Ziel angerechnet werden? Der MasterPlan sagt aktuell ausdrücklich das Gegenteil (Abschnitt 2). Wird nicht eigenmächtig umgerechnet.
+3. Weiterhin unbeantwortet: Start-Button-Weg im Kanal, Entscheidung ob `content-manager`/`content-executor` künftig auch für Telegram zuständig sein soll.
+4. Weiterhin unbeantwortet: Ist [[ATAS Trading Bot (NQ-Abpraller-Setup)]] als dauerhafte Ausnahme zu MasterPlan Punkt 8 so gewollt, oder soll er künftig mitgezählt werden?
+5. **Neu:** Ist der für den 16.09.2026 geplante Pflegedienst-Termin mit deiner Mutter (freie Kapazität, Google-Unternehmensprofil, bestehende Website sichten) schon gelaufen? Für die Vorarbeit am Referenzprojekt fehlen noch der Name des Pflegedienstes und die URL der bestehenden Website (laut [[Pflegedienst]] weiterhin "noch nicht erfasst") — ohne die kann höchstens ein allgemeiner Struktur-/Text-Entwurf vorbereitet werden, nichts Konkretes zur bestehenden Seite.
+6. Für heute existiert noch keine Daily Note [[2026-09-24]] — wird laut eigenem Vermerk nicht ungefragt angelegt.
