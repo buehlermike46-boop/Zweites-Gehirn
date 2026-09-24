@@ -43,7 +43,17 @@ Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten)
 ## Freigabe nötig: Einnahmequellen
 *(Neu seit 24.09.2026, Mikes Entscheidung im Chat: Recherche/Bewertung/Entwürfe zu neuen digitalen Einnahmequellen laufen ohne Einzelfreigabe, siehe [[Einnahmequellen-Recherche]] und `.claude/agents/aufgaben-manager.md`/`aufgaben-executor.md`, Abschnitt "Einnahmequellen-Explorer"/"Ausnahme: Einnahmequellen-Recherche". Alles was danach nach außen geht – Kunde kontaktieren, Angebot verschicken, Domain/Tool kaufen, Registrierung – landet hier fertig vorbereitet und wartet auf Mikes Ja/Nein. Kein technisches Problem wie bei "Technisch blockiert" unten, sondern bewusste Entscheidungsgrenze.)*
 
-*(Noch keine Einträge – füllt sich, sobald der erste Einnahmequellen-Punkt einen nach außen wirkenden Schritt erreicht.)*
+### Handwerker-Chatbot: 30 Kontakte recherchiert + Angebotstext fertig (24.09.2026, aufgaben-executor, direkter Chat-Auftrag)
+
+Auf direkten Auftrag von Mike im Chat ("Bereite alles vor und suche 30 potentielle Kunden für mich heraus und schreib ihnen ein Angebot das sie auch wirklich kaufen wollen"): 30 echte Elektro-Handwerksbetriebe im Raum Süchteln/Viersen/Willich/Tönisvorst/Nettetal/Kempen/Grefrath/Mönchengladbach recherchiert (öffentliche Quellen: `dashandwerk.de`/"E-Handwerke Niederrhein-Kreis Viersen" als offizielles Innungsverzeichnis, ergänzt um Firmenwebsites/Gelbe Seiten/Das Örtliche — keine privaten Daten gesammelt). Dazu ein EIN wiederverwendbarer, personalisierbarer Angebotstext entworfen (Langversion für E-Mail/Kontaktformular, Kurzversion als Telefon-Gesprächsleitfaden), Stil nach `00 Kontext/Schreibstil.md`/`Angebot.md`/`ICP.md`/`Über mich.md`: duzt, ehrlich als Demo/Pilotphase gekennzeichnet, keine erfundenen Referenzkunden/Erfolge, nutzt Mikes echten Vertrauensvorsprung als gelernter Elektroniker/Elektromeister, niedrigschwelliger nächster Schritt ("15 Minuten zeigen, unverbindlich").
+
+**Fertig zur Durchsicht in [[Handwerker-Chatbot Akquise]]. Nichts verschickt, kein Betrieb kontaktiert, kein Kontaktformular ausgefüllt — wartet auf Mikes Freigabe.**
+
+Offene Entscheidungen für Mike (Details siehe die neue Datei, Abschnitt "Offene Entscheidungen"):
+1. Grundsätzliches Ja/Nein zur Ansprache dieser 30 Betriebe.
+2. Telefon vs. E-Mail/Kontaktformular als Kanal — die neue Datei enthält dazu einen rechtlichen Hinweis zur B2B-Kaltakquise-Grauzone (UWG, keine eigene Rechtsberatung, nur Einordnung: Telefon gilt praktisch oft als unkomplizierterer Weg als E-Mail).
+3. Timing: Der Chatbot selbst ist technisch fertig, aber wegen des Make-Plan-Limits (siehe "Technisch blockiert" oben) nicht aktivierbar — aktuell gibt es nichts live vorführbares für die im Angebotstext versprochenen "15 Minuten zeigen". Erst Aktivierung klären und dann ansprechen, oder schon vorher mit Screenshots/Video ansprechen?
+4. Bei Ja: erst eine kleine Testgruppe (z. B. 5 von 30) ansprechen, um Text/Reaktion zu prüfen, oder gleich alle 30?
 
 ## Technisch blockiert (Ergänzung 24.09.2026, interaktive Session)
 
