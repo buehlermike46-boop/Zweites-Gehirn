@@ -13,6 +13,9 @@ Laufende Produktion für die zwei Kinder-YouTube-Kanäle (DE + EN), siehe [[YouT
 - Video-Produktion über das Agentenpaar `youtube-manager`/`youtube-executor`, siehe [[Video-Warteschlange]]
 - Kanal-Setup (Google-Konto, 2 YouTube-Kanäle, Make.com-YouTube-Connector) — technisch blockiert, siehe [[Video-Warteschlange]] Abschnitt "Kanal-Setup-Status"
 
+## Produktionsrhythmus (festgelegt 24.09.2026, Mikes Entscheidung)
+**Eine neue Episode pro Woche.** Passt zur bereits bestehenden Scheduled-Routine-Taktung (`youtube-manager` sonntags, `youtube-executor` montags, siehe `CLAUDE.md` Abschnitt "YouTube-Agent"). Kostenrahmen dafür (siehe [[Video-Warteschlange]] Executor-Log 24.09.2026): ~246 Credits/Episode mit dem Standard-Modell (`minimax_h3`), ~126 Credits/Episode falls das günstigere `seedance_2_0_mini` die Qualitätsprüfung besteht — jeweils für DE+EN zusammen, da die Bild-/Video-Blöcke zwischen beiden Sprachversionen wiederverwendet werden. Bei wöchentlicher Kadenz entspricht das grob 25-55€/Monat an Higgsfield-Credits. Mike hat sich für einen Credit-Nachkauf entschieden (Higgsfield-Kaufseite, 24.09.2026), Betrag/Zeitpunkt siehe Executor-Log.
+
 ## Charakter & Branding (festgelegt 20.09.2026)
 - **Charakter:** "Fenno", ein origineller kleiner Fuchs (3D-stylized/Pixar-artiger Look), erster Entwurf von Mike freigegeben. Kein Bezug zu einer bestehenden Marke/Figur.
 - **Kanalname:** "Fenno & Friends" (EN) / "Fenno & Freunde" (DE, real angelegt am 20.09.2026 — Google hat die längere Version mit Zusatz "Kinderlieder"/"Kids Songs" beim Erst-Anlegen abgelehnt, ohne Zusatz ging es problemlos durch). Gleiche Marke, gleiche Visuals, nur Sprache unterschiedlich.
