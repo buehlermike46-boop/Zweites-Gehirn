@@ -924,3 +924,49 @@ Kein neuer Punkt. Kein neuer `## Bestätigt`-Abschnitt in dieser Runde.
 3. Weiterhin unbeantwortet: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch grundsätzlich für Telegram zuständig sein soll.
 4. Weiterhin unbeantwortet: Ist [[ATAS Trading Bot (NQ-Abpraller-Setup)]] als bewusste, dauerhafte Ausnahme außerhalb dieses Aufgaben-Kreislaufs so gewollt, oder soll er künftig gegen die 10-15h/Woche-Grenze und "max. 1-2 aktive Baustellen" aus MasterPlan Punkt 8 mitgezählt werden? Reine Nachfrage, keine Handlungsempfehlung.
 5. Für heute existiert noch keine Daily Note [[2026-09-23]] — wird laut eigenem Vermerk nicht ungefragt angelegt.
+
+## Vorschlag für 2026-09-24
+*(Vom aufgaben-manager erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine. Wartet auf Mikes Bestätigung per Push-Nachricht.)*
+
+**Kontrolle vorab:** Letzter `## Bestätigt`-Abschnitt bleibt unverändert `## Bestätigt für 2026-09-14` (3 Punkte, am 14.09.2026 abends per Chat vollständig aufgelöst). Der Executor-Lauf vom 23.09.2026, 06:46 UTC (Commit `1b76100`), dokumentiert erneut "kein bestätigter Plan für heute, nichts unternommen" — per Grep über die gesamte Datei bestätigt, kein `## Bestätigt`-Abschnitt für 15./17./18./19./20./21./22./23.09. existiert, alle acht Vorschläge stehen weiterhin unbestätigt. Seit dem 23.09.2026 kein weiterer Commit außer diesem Executor-Log-Eintrag (per `git log --since` bestätigt) — kein neuer content-executor- oder youtube-executor-Lauf. Kein Beleg für irgendeine Erledigung seit der letzten Kontrolle, deshalb keine neuen Häkchen.
+
+**Frisch geprüft für diesen Lauf:**
+- [[Kontaktliste - 20 Namen aus dem Umfeld]]: unverändert 20/20 angeschrieben (Stand 14.09.), weiterhin 0 von 20 mit eingetragener Reaktion (per Direktlektüre bestätigt).
+- [[Lot-Tracking]]: unverändert 0 Accounts, 0 Lots, Kopfwerte für 2026-09 weiterhin auf 0 (per Direktlektüre bestätigt).
+- [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]]: Mike-only-Zähler unverändert bei **1** (nur WhatsApp-Test, weiterhin ohne Termin).
+- [[Brain Dump]] und [[Jarvis Aufgaben]]: erneut komplett gelesen, keine neuen offenen Punkte (Jarvis Aufgaben weiterhin ausschließlich `status: erledigt`/`status: fehler`, kein einziger `status: offen`; Brain Dump nur bereits abgehakte/verwiesene Zeilen plus die zwei bekannten, nicht Stufe-0-relevanten offenen Zeilen von 06./12.09. — "weiter im ChatGPT-Verlauf zurückgehen" und "breiterer Zugriff für die interaktive Session" —, beide unverändert kein Stufe-0-Bezug, bleiben unangefasst).
+- Keine neue Daily Note seit [[2026-09-21]] (dokumentiert ausschließlich Fortschritt am [[ATAS Trading Bot (NQ-Abpraller-Setup)]], siehe unten).
+- Domain-Check: keine neuen Commits seit der letzten Kontrolle außer dem eigenen Executor-Log-Eintrag — kein Fehlrouting zu prüfen.
+
+**Aktive Baustelle (Stufe 0, Fundament, siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]]):** "Weiter, wenn": 10 geworbene Accounts, davon 5 aktiv, 100-Lot-Schwelle einmal geknackt. Aktuell 0 Accounts gemessen, 0 von 20 Reaktionen eingetragen. Die Technik-Seite von Stufe 0 steht vollständig — laut MasterPlan Abschnitt 4 ist Kundengewinnung der Engpass, nicht Technik.
+
+### Ergebnis dieser Runde: kein neuer Bestätigt-fähiger Punkt
+Strukturell unverändert zu den Runden vom 13.-23.09.: kein neuer Punkt aus Inbox oder Triage, den der `aufgaben-executor` eigenständig bis zum Ende ausführen könnte. Ehrlich benannt statt künstlich aufgefüllt.
+
+### Direkt bei dir — der einzige tatsächliche Hebel gerade
+- **Reaktionen der 20 angeschriebenen Kontakte einsammeln/nachtragen** in [[Kontaktliste - 20 Namen aus dem Umfeld]], sobald jemand antwortet — direkter Weg zu den "10 geworbenen Accounts" aus der Stufe-0-Bedingung. Kein Agenten-Punkt, braucht deine echten Gespräche.
+- **WhatsApp end-to-end testen** — seit 14.09.2026 unbefristet auf "wann anders" vertagt, weiterhin offen, kein neuer Termin gesetzt.
+
+Sobald einer der beiden Punkte einen neuen Fakt liefert: direkt in der Triage vermerken, die nächste Runde zieht das automatisch nach.
+
+### Komplex — weiterhin bewusst zurückgestellt
+Unverändert: Website, Zugangs-Gate, Pflegedienst-Referenzprojekt, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. MasterPlan Punkt 8 (max. 1-2 aktive Baustellen, Automatisieren vor Validieren) — Stufe 0 mit echten Kunden steht noch nicht, solange 0 Accounts im [[Lot-Tracking]] stehen.
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Fixkosten-/Business-Kosten-Listen und die Buchhaltungs-Frage bleiben unverändert ohne Stufe-0-Bezug. Gmail-/GMX-/Dashboard-Punkte und der `whatsapp`-Knoten in `jarvis-voice-assistant` bleiben außerhalb der Reichweite dieses Agentenpaars. Unverändert zur Kenntnis (kein Handlungsbedarf): [[ATAS Trading Bot (NQ-Abpraller-Setup)]] und [[YouTube Kinder-Kanäle (DE & EN)]] laufen beide als eigene, selbst deklarierte Ausnahmen außerhalb dieses Kreislaufs.
+
+### Domain-Check
+Keine Verschiebung nötig. Nichts in dieser Runde gehört ins Content-Gebiet (`content-manager`/`content-executor`/[[Posting-Warteschlange]]) oder ins YouTube-Gebiet (`youtube-manager`/`youtube-executor`/[[Video-Warteschlange]]).
+
+### Aufgaben-Nachschub bis Deckel 20 — Zähler-Stand
+Mike-only-Zähler: **1 von 20** (nur WhatsApp-Test). Die Aufgaben-Triage ist für die aktive MasterPlan-Stufe weiterhin ehrlich erschöpft — kein Nachschub in dieser Runde, um den Deckel nicht künstlich zu füllen.
+
+### Für den Executor tatsächlich offen
+Kein neuer Punkt. Kein neuer `## Bestätigt`-Abschnitt in dieser Runde.
+
+### Offene Fragen an Mike
+1. **Wiederholt, jetzt zum neunten Mal:** Bei den eigentlichen Stufe-0-Punkten (Kontaktliste-Reaktionen, WhatsApp-Test) hat sich seit dem 14.09. nichts geändert — das ist der neunte strukturell identische Vorschlag in Folge dazu, jetzt über zwei Wochen. Weiterhin die Bitte um kurze Einordnung: (a) wöchentlicher statt täglicher Kontrollrhythmus für diese beiden Punkte, solange nichts Neues passiert, oder (b) es ist etwas passiert, das noch nicht im Vault nachgetragen wurde.
+2. **Weiterhin unbeantwortet, seit dem 22.09.-Vorschlag:** Sollen Gewinne aus dem [[ATAS Trading Bot (NQ-Abpraller-Setup)]] künftig auf das 50.000-€-IB-Ziel im [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] angerechnet werden? Aktuell sagt der Plan ausdrücklich das Gegenteil (Abschnitt 2). Ich rechne nichts eigenmächtig um, bitte einmal bewusst entscheiden.
+3. Weiterhin unbeantwortet: Start-Button-Weg im Kanal (seit 09./10.09.), Entscheidung ob `content-manager`/`content-executor` künftig auch grundsätzlich für Telegram zuständig sein soll.
+4. Weiterhin unbeantwortet: Ist [[ATAS Trading Bot (NQ-Abpraller-Setup)]] als bewusste, dauerhafte Ausnahme außerhalb dieses Aufgaben-Kreislaufs so gewollt, oder soll er künftig gegen die 10-15h/Woche-Grenze und "max. 1-2 aktive Baustellen" aus MasterPlan Punkt 8 mitgezählt werden? Reine Nachfrage, keine Handlungsempfehlung.
+5. Für heute existiert noch keine Daily Note [[2026-09-24]] — wird laut eigenem Vermerk nicht ungefragt angelegt.
