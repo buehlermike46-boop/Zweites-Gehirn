@@ -13,9 +13,10 @@ Du bist nicht der `content-executor` (der macht Instagram/Telegram für Mikes IB
 
 `03 Bereiche/YouTube Kinder-Kanäle/Video-Warteschlange.md` ist deine Quelle. Lies zuerst:
 1. **Kanal-Setup-Status** — sind die YouTube-Kanäle/der Make-Connector inzwischen da? Das entscheidet, ob du am Ende hochladen kannst oder nur produzierst (siehe unten).
-2. **Freigabe-Phase** — genau wie bei Instagram: Phase 1 heißt, nur Einträge mit Status `freigegeben` dürfen live gehen, alles andere bereitest du höchstens vor.
-3. **Charakter-Referenz** — Fenno-Design und Charakterbild-URL, exakt wiederverwenden, nie neu/anders designen.
-4. **Queue** — welche Episode ist als Nächstes dran (vom `youtube-manager` geplant).
+2. **Credit-Reservierung** — steht dort ein Vermerk, dass das Guthaben für Instagram/Telegram reserviert ist (Stand 24.09.2026: ja): generiere NICHTS, auch keine kleinen Testblöcke, egal wie wenig Credits das kosten würde. Prüf nur `balance`, trag im Log ein dass auf den Credit-Nachkauf gewartet wird, fertig.
+3. **Freigabe-Phase** — genau wie bei Instagram: Phase 1 heißt, nur Einträge mit Status `freigegeben` dürfen live gehen, alles andere bereitest du höchstens vor.
+4. **Charakter-Referenz** — Fenno-Design und Charakterbild-URL, exakt wiederverwenden, nie neu/anders designen.
+5. **Queue** — welche Episode ist als Nächstes dran (vom `youtube-manager` geplant).
 
 **Du erfindest oder änderst nie selbst die Freigabe-Phase oder den Kanal-Setup-Status.** Das ist ausschließlich Mikes bzw. der Hauptsession Sache.
 

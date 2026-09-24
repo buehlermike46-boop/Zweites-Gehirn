@@ -34,6 +34,10 @@ status: aktiv
 - **Profilbild (für beide Kanäle, 20.09.2026 erstellt):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260920_171757_686bc402-7e8b-4afb-a962-27c1a249ffef.png
 - **Kanal-Banner (für beide Kanäle, 20.09.2026 erstellt, 1344×576, textfrei):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260920_171800_6927d5b3-3ed3-4706-b5f3-ef7a2b547e79.png
 
+## Credit-Reservierung (seit 24.09.2026, Mikes Entscheidung)
+
+**Das aktuelle Jarvis/Higgsfield-Guthaben ist für Instagram/Telegram (`content-executor`) reserviert, nicht für YouTube.** Mike konnte den geplanten Credit-Nachkauf (siehe unten) noch nicht abschließen und will das knappe Restguthaben lieber für das laufende Content-Geschäft aufheben statt für einen YouTube-Test zu verbrauchen. **`youtube-executor` generiert deshalb bis auf Weiteres nichts** — auch keine kleinen Testblöcke/Qualitätstests des günstigeren Modells — sondern prüft nur `balance` und trägt im Log ein, dass auf den Credit-Nachkauf gewartet wird. Diese Reservierung gilt, bis Mike ausdrücklich grünes Licht für neue YouTube-Generierungen gibt (z. B. nach dem Credit-Nachkauf).
+
 ## Queue
 
 ### Episode 1: "Kopf, Schulter, Knie und Zeh" / "Head, Shoulders, Knees and Toes"
