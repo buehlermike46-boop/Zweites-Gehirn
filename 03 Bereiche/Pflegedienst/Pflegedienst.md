@@ -26,7 +26,7 @@ Umgerechnet sind das rund 250 EUR Umsatz je Kunde und Monat. Das Ziel von 1.000 
 ## Offene Fragen
 - Wie viele Kunden könnte sie zeitlich zusätzlich betreuen, bevor sie jemanden einstellen müsste?
 - Warum bleibt bei 1.500 EUR Umsatz nichts übrig, wo gehen die Kosten hin?
-- Gibt es schon ein Google-Unternehmensprofil für den Pflegedienst?
+- ~~Gibt es schon ein Google-Unternehmensprofil für den Pflegedienst?~~ **Beantwortet 24.09.2026: nein**, siehe unten
 
 ## Ziel (Stand aus dem Chat)
 Zusätzlicher monatlicher Überschuss von ca. 1.000 €, möglich über: mehr Kunden, bessere Auslastung, bessere Leistungen, Kooperationen, Google/Instagram/Facebook, Empfehlungen.
@@ -58,7 +58,48 @@ Kurz-Check per WebFetch (24.09.2026): 5 Seiten (Start, Leistungen, Kostenüberna
 
 **Einordnung fürs Referenzprojekt (siehe [[Einnahmequellen-Recherche]]):** Das ist kein "Website von null bauen"-Fall mehr, sondern eher ein **Optimierungs-/Ausbau-Projekt** — passt eher zu Idee 3 (Google-Unternehmensprofil) kombiniert mit gezielten Ergänzungen auf der bestehenden Seite (Bewertungen, Einsatzgebiet, Meta-Beschreibung) als zu einem kompletten Neubau (Idee 2). Konkreter Umfang noch offen, gehört in die nächste Aufgaben-Manager-Runde.
 
-Weiterhin offen aus dem ursprünglichen Termin-Vorhaben, nicht bestätigt: freie Kapazität für neue Kunden, ob es ein Google-Unternehmensprofil gibt (per WebFetch nicht prüfbar), Instagram/Facebook-Auftritt.
+Weiterhin offen aus dem ursprünglichen Termin-Vorhaben, nicht bestätigt: freie Kapazität für neue Kunden, Instagram/Facebook-Auftritt. Google-Unternehmensprofil-Frage seit 24.09.2026 beantwortet (nein, existiert nicht), siehe unten.
+
+## Optimierungs-Entwürfe (Referenzprojekt), Entwurf 24.09.2026
+
+**Wichtig:** Alles hier sind Text-/Struktur-**Entwürfe** für die bestehende Seite https://seniorendienst-klein.de/, keine fertigen, einsatzbereiten Texte. Vor jedem Live-Einsatz brauchen sie Mikes Durchsicht und die Freigabe seiner Mutter (Inhaberin) — sie kennt Praxisalltag, tatsächliche Kundenansprache und die rechtlichen Details (z.B. Pflegegeld-Beratung) besser, als diese Recherche das abbilden kann. Ausschließlich auf Basis bereits im Vault dokumentierter, echter Fakten (Zahlen-Tabelle oben, WebFetch-Kurzanalyse vom 24.09.2026) erstellt — keine erfundenen Preise, Kundenzahlen, Qualifikationen oder Bewertungen. Ton bewusst in formeller Sie-Ansprache gehalten, wie bei deutschen Pflegedienst-Websites für Angehörige/Senioren üblich (abweichend von Mikes eigenem Du-Marken-Ton, der laut [[Schreibstil]] nur fürs IB-Business gilt).
+
+### Textbaustein "Einsatzgebiet"
+> Wir sind für Sie in Süchteln, Viersen und der näheren Umgebung im Einsatz. Ihre Ansprechpartnerin kennt die Menschen und Wege vor Ort und ist kurzfristig bei Ihnen oder Ihren Angehörigen erreichbar.
+
+(Ließe sich um eine konkrete Umkreis-Angabe in km ergänzen, sobald diese Zahl bekannt ist — aktuell nicht dokumentiert, deshalb nicht erfunden.)
+
+### Meta-Beschreibung-Entwurf (Startseite, ca. 146 Zeichen)
+> Individuelle Pflegepläne, Unterstützung bei Pflegegeldanträgen und Alltagshilfen in Süchteln und Viersen. Persönlich, zuverlässig, aus einer Hand.
+
+Basiert ausschließlich auf den drei laut WebFetch-Analyse bestätigten Kernleistungen (individuelle Pflegepläne, Finanzberatung/Pflegegeldanträge, Alltagshilfen) und dem bekannten Einzugsgebiet.
+
+### Rahmen für eine "Erfahrungen unserer Kunden"-Sektion (keine erfundenen Einzelbewertungen)
+Überschrift-Vorschlag: "Was unsere Kunden sagen"
+
+Platzhalter-/Einleitungstext, solange noch keine echten Bewertungen vorliegen:
+> Wir sammeln hier gerade die Erfahrungen unserer Kunden. Wenn Sie mit uns zufrieden waren, freuen wir uns über eine kurze Bewertung.
+
+(Optional mit Link zum Google-Unternehmensprofil, sofern eines existiert — siehe offene Frage unten.)
+
+Alternative, falls die Sektion nicht leer wirken soll, bis erste Bewertungen da sind — ein unabhängig formulierter Vertrauens-Absatz ohne Zitate:
+> Seit [Jahr, noch zu ergänzen] sind wir für Familien in Süchteln und Viersen da, persönlich, verlässlich und mit echtem Interesse an den Menschen, die wir betreuen.
+
+(Platzhalter `[Jahr]` bewusst offen gelassen, kein Gründungsjahr im Vault dokumentiert.)
+
+Konkreter Aufforderungstext, den man bestehenden Kunden schicken könnte (z.B. per E-Mail oder persönlich, nicht als Website-Text selbst):
+> Wenn wir Ihnen in der letzten Zeit weiterhelfen konnten, würden wir uns sehr über eine kurze Rückmeldung freuen. Das hilft anderen Familien, uns zu finden.
+
+### Kostentransparenz-Absatz (verweist auf die bestehende "Kostenübernahme"-Seite, nennt keine eigenen Preise)
+> Die Kosten für unsere Leistungen richten sich nach Ihrer individuellen Pflegesituation und werden je nach Pflegegrad ganz oder teilweise von der Pflegekasse übernommen. Auf unserer Seite "Kostenübernahme" erklären wir, welche Leistungen infrage kommen und wie Sie einen Antrag stellen. Gerne besprechen wir das auch persönlich mit Ihnen.
+
+Nennt bewusst keine konkreten EUR-Beträge (die intern bekannten 6 Kunden/ca. 1.500 EUR Umsatz sind interne Zahlen, kein Werbetext-Material) und verweist stattdessen auf die bereits bestehende Kostenübernahme-Seite. Die allgemeine Aussage zur anteiligen Pflegekassen-Übernahme je Pflegegrad ist gängiges, öffentlich bekanntes Wissen zum deutschen Pflegeversicherungssystem, keine erfundene Angabe zu diesem konkreten Betrieb.
+
+### Google-Unternehmensprofil: existiert nicht (Antwort 24.09.2026, Mike im Chat)
+Kein Google-Unternehmensprofil vorhanden. Ein kostenloses Profil (Öffnungszeiten, Fotos, Sichtbarkeit in Google Maps, Sammelpunkt für Bewertungen wie oben skizziert) ist damit eine klare, naheliegende Ergänzung — deckt sich direkt mit Idee 3 "Google-Unternehmensprofil-Optimierung" aus [[Einnahmequellen-Recherche]]. Anlegen ist ein nach außen wirkender Schritt (neue Registrierung mit den Daten des Pflegedienstes) und bleibt freigabepflichtig, siehe unten.
+
+### Freigabe-Weg für diese Entwürfe (Antwort 24.09.2026, Mike im Chat)
+Mike will die fertigen Texte zuerst selbst zur Durchsicht bekommen, **nicht direkt an seine Mutter**. Ablauf also: Entwürfe hier fertigstellen → Mike prüft im Chat/Vault → erst danach geht irgendwas an seine Mutter oder live auf die Website. Deckt sich mit dem bereits oben stehenden Hinweis ("brauchen Mikes Durchsicht und die Freigabe seiner Mutter"), jetzt mit der Reihenfolge bestätigt.
 
 ## Referenzen
 - Siehe auch [[VT Markets Affiliate-Strategie & Content-Plan]] (gleicher Chat, dort primär zum Trading/Affiliate-Teil)

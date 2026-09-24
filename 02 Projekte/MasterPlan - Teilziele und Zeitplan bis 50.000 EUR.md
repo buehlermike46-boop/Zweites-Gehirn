@@ -155,7 +155,7 @@ Deine Zielgröße ist Lifetime-Volumen, nicht Monatsvolumen. Praktisch heißt da
 
 **Die eine Zahl, die alles steuert: Gesamt-Lots pro Monat.** Kundenzahl, Reichweite und Umsatz sind abgeleitete Größen.
 
-**Wöchentlich:** gehandelte Lots gesamt, geworbene Accounts, aktive Trader, durchschnittliche Lots je aktivem Kunden, Kanal-Abos, Posts veröffentlicht, Reichweite, Anfragen Dienstleistung, **Link-Klicks auf Bio-/Kanal-Link** (neu seit 24.09.2026 — aktuell 0 Sichtbarkeit, kein Tracking vorhanden, Mike hat das explizit als Lücke benannt: "wir brauchen auch mehr Link Klicks - aktuell noch keine, Auswertung und Verbesserung ist wichtig". Setup fehlt noch, siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]])
+**Wöchentlich:** gehandelte Lots gesamt, geworbene Accounts, aktive Trader, durchschnittliche Lots je aktivem Kunden, Kanal-Abos, Posts veröffentlicht, Reichweite, Anfragen Dienstleistung, **Link-Klicks auf Bio-/Kanal-Link** (neu seit 24.09.2026 — aktuell 0 Sichtbarkeit, kein Tracking vorhanden, Mike hat das explizit als Lücke benannt: "wir brauchen auch mehr Link Klicks - aktuell noch keine, Auswertung und Verbesserung ist wichtig". Konzept steht seit 24.09.2026 in [[Link-Klick-Tracking]] — Empfehlung dort: Telegrams eigenes Mehrfach-Einladungslink-Tracking plus das Windsor.ai-Feld `website_clicks_1d`, beides ohne neue Kosten, aber Mikes eigenes Setup nötig. Setup selbst noch offen, siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]])
 
 **Monatlich:** Umsatz je Standbein, erreichte Provisionsstufe, Kosten, Churn-Rate, Lifetime-Lots je Kunde, investierte Stunden, EUR pro Stunde
 
