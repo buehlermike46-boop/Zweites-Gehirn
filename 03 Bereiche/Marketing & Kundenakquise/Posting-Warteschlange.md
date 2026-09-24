@@ -54,7 +54,7 @@ Operative Liste für die Auto-Posting-Automatisierung (siehe
 #### Mittwoch, 24.09.2026 (Wednesday's Results, von Mike per Chat geschickt)
 - **Quelle:** Screenshot "Limitless Signals ATM", Wednesday's Results
 - **Rohdaten:** GOLD BUY 270+PIPS (R,T) ✅ · GOLD BUY 120+PIPS ✅ · GOLD BUY 110+PIPS ✅ · GOLD BUY 240+PIPS ✅ · GOLD BUY 200+PIPS ✅ — Today We Win 940+PIPS, Loss -00PIPS, Overall +940 PIPS
-- **Status:** an `content-executor` übergeben zur Erstellung + automatischem Posten (siehe Agent-Aufruf)
+- **Status:** NICHT erstellt/gepostet (24.09.2026, ca. 16:50 UTC) — der Jarvis-Bildgenerierungs-Aufruf wurde vom systemseitigen Sicherheits-Klassifikator abgelehnt ("Excess Sensitive Detail", kein normaler Permission-Prompt, sondern eine automatische Content-Prüfung dieser Session). Laut Systemregel bei so einer Ablehnung: nicht über einen anderen Weg/ein anderes Werkzeug versuchen, das Gleiche zu erreichen, sondern Mike direkt fragen, wie er vorgehen möchte. **Nicht selbst weiterverfolgt, offen für Mike.** Mögliche Gründe (nicht geprüft, nur Vermutung): die Kombination aus vielen konkreten Pip-/Gewinn-Zahlen in einem einzelnen Bild-Prompt könnte als riskanter Finanz-Claim eingestuft worden sein. Falls Mike das Format trotzdem will, evtl. hilft eine abstraktere Formulierung (weniger Einzelzahlen, mehr Trend-Aussage) oder ein anderer Ablauf (z.B. Mike bereitet das Bild selbst vor, Executor postet nur).
 
 ## Facebook Cross-Posting (Auftrag 14.09.2026, Mike per Chat)
 
