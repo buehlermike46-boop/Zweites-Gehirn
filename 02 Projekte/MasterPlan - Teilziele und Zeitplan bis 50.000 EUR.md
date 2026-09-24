@@ -54,11 +54,14 @@ Bei 40 bis 50 % Verbleibsquote nach sechs Monaten brauchst du für 132 gleichzei
 | IB-Commission (Inner Circle) | 60 % | 30.000 EUR | halbpassiv, skaliert über Reichweite |
 | Digitale Dienstleistungen (Webseiten, Chatbots, Automatisierung) | 25 % | 12.500 EUR | aktiv, hohe Marge, schnellster Cash |
 | Digitale Produkte (Membership, Templates) | 15 % | 7.500 EUR | passiv nach Aufbau |
-| Eigenes Trading (privat) | 0 % | | kein Umsatz-Standbein, Kapitalaufbau |
+| Eigenes Trading (privat + ATAS-Bot) | wird ab echten Ergebnissen mitgezählt | aktuell 0 EUR (noch keine realisierten Gewinne) | volatil, siehe Update 24.09.2026 unten |
 
 **Klumpenrisiko:** 60 % des Einkommens hängen an einem Broker-Vertrag und zusätzlich an einem einzigen Instrument. Wenn Gold in eine ruhige Seitwärtsphase geht, bricht das Volumen ein, ohne dass ein Kunde verloren geht. Deshalb bleiben die anderen 40 % im Plan.
 
-**Eigenes Trading ist bewusst kein Einkommensposten.** Trading-Gewinne sind volatil und dürfen nie die Miete zahlen müssen. Wer Trading als Einkommen einplant, tradet unter Druck und verliert.
+> [!warning] Update 24.09.2026: Trading zählt jetzt mit, Mikes ausdrückliche Entscheidung
+> Ursprüngliche Regel bis 24.09.2026, als Kontext stehen gelassen: **"Eigenes Trading ist bewusst kein Einkommensposten. Trading-Gewinne sind volatil und dürfen nie die Miete zahlen müssen. Wer Trading als Einkommen einplant, tradet unter Druck und verliert."** Diese Warnung bleibt inhaltlich richtig und gilt als Vorsicht weiter — nur die Konsequenz daraus hat sich geändert.
+>
+> Mike hat im Chat (24.09.2026, zur Frage aus [[Qualitätsbericht]]/Tagesplan, ob ATAS-Bot-Gewinne aufs 50.000-€-Ziel angerechnet werden) entschieden: **"rechne generell mit Traiding Gewinn aus eigen und bot. So lange null bis echte Ergebnisse kommen, dann mit echten Daten rechnen."** Damit zählt sowohl eigenes manuelles Trading (RG Trading, streng privat/nie im Kunden-Content, siehe Trennregel oben) als auch der [[ATAS Trading Bot (NQ-Abpraller-Setup)]] jetzt zum Ziel-Mix, aber nur mit tatsächlich realisierten Gewinnen — solange keine echten Ergebnisse vorliegen, wird mit 0 EUR gerechnet, keine Hochrechnung auf Basis von Backtests/Einzeltrades. Sobald reale Zahlen da sind, hier und im Ziel-Mix oben nachtragen statt zu schätzen.
 
 ## 3. Die Stufen
 
@@ -75,7 +78,10 @@ Ziel ist hier nicht Umsatz, sondern ein funktionierendes System.
 
 **Weiter, wenn:** 10 geworbene Accounts, davon 5 aktiv handelnd, und die 100-Lot-Schwelle mindestens einmal geknackt. Damit stehst du bei rund 1.600 EUR im Monat.
 
-### Stufe 1, Beweis, Monat 4 bis 7, Ziel 1.500 EUR
+> [!warning] Update 24.09.2026: Übergang zu Stufe 1 trotz unerfüllter Bedingung, Mikes ausdrückliche Entscheidung
+> Stand 24.09.2026: 0 geworbene Accounts, 0 Lots (siehe [[Lot-Tracking]]) — die "Weiter, wenn"-Bedingung oben ist **nicht** erfüllt. Mike hat im Chat trotzdem entschieden, zu Stufe 1 überzugehen: die technische Stufe-0-Strecke (Kanal, Bot, Content-Rhythmus, Lot-Tracking) steht komplett, die verbleibenden Stufe-0-Punkte waren reine Mike-only-Punkte ohne weiteren Agenten-Hebel (persönliche Anschreiben liefen ins Leere, kein Kunde daraus), und ein Verharren in Stufe 0 mangels erfüllter Bedingung hätte laut Mike nur zu weiterem Stillstand geführt. Wörtlich: *"Gehe sonst zu Stufe 1 über auch wenn noch keine Kunden bestehen, wir brauchen auch mehr Link Klicks - aktuell noch keine, Auswertung und Verbesserung ist wichtig. Sorg dafür das kein Stillstand mehr herrscht, sollte was sein müssen wir das halt noch klären."*
+>
+> Konsequenz: die Stufe-0-Bedingung bleibt hier stehen (nicht gelöscht, Kundengewinnung ist weiterhin der eigentliche Engpass laut Abschnitt 4), aber `aufgaben-manager`/`aufgaben-executor` planen ab jetzt gegen Stufe 1, nicht mehr gegen Stufe 0. Neu und ausdrücklich gewünscht: **Link-Klick-Tracking** auf Bio-/Kanal-Link fehlt komplett (0 Sichtbarkeit) und wird als eigene Kennzahl ergänzt, siehe Abschnitt 7.
 
 Die schwerste Stufe. Hier steigen die meisten aus, weil noch nichts spürbar zurückkommt.
 
@@ -149,7 +155,7 @@ Deine Zielgröße ist Lifetime-Volumen, nicht Monatsvolumen. Praktisch heißt da
 
 **Die eine Zahl, die alles steuert: Gesamt-Lots pro Monat.** Kundenzahl, Reichweite und Umsatz sind abgeleitete Größen.
 
-**Wöchentlich:** gehandelte Lots gesamt, geworbene Accounts, aktive Trader, durchschnittliche Lots je aktivem Kunden, Kanal-Abos, Posts veröffentlicht, Reichweite, Anfragen Dienstleistung
+**Wöchentlich:** gehandelte Lots gesamt, geworbene Accounts, aktive Trader, durchschnittliche Lots je aktivem Kunden, Kanal-Abos, Posts veröffentlicht, Reichweite, Anfragen Dienstleistung, **Link-Klicks auf Bio-/Kanal-Link** (neu seit 24.09.2026 — aktuell 0 Sichtbarkeit, kein Tracking vorhanden, Mike hat das explizit als Lücke benannt: "wir brauchen auch mehr Link Klicks - aktuell noch keine, Auswertung und Verbesserung ist wichtig". Setup fehlt noch, siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]])
 
 **Monatlich:** Umsatz je Standbein, erreichte Provisionsstufe, Kosten, Churn-Rate, Lifetime-Lots je Kunde, investierte Stunden, EUR pro Stunde
 
@@ -165,6 +171,8 @@ Deine Zielgröße ist Lifetime-Volumen, nicht Monatsvolumen. Praktisch heißt da
 > **Update 11.09.2026:** `aufgaben-manager`/`aufgaben-executor` liefen am 11.09. nachweislich erfolgreich (der Professor hatte hier zunächst einen Fehlalarm, siehe [[Qualitätsbericht]]). `content-manager`/`content-executor` sind seit heute ebenfalls live: Connectoren nachgetragen, erster kompletter Zyklus (planen → Asset erstellen → posten) real durchgelaufen, erster automatischer Post veröffentlicht (Media-ID 17901731430581191). Real verbleibende Baustellen damit zwei, nicht drei: das laufende Content-System selbst (frisch, noch nicht über mehrere Runden bewährt) und `professor` (empfiehlt sich selbst aktuell nur manuell laufen zu lassen).
 >
 > **Update 20.09.2026:** Mike hat zusätzlich [[YouTube Kinder-Kanäle (DE & EN)]] auf `aktiv` gestellt ("Aktiv stellen, wir sollen das Beenden und Klicks sammeln") — ein komplett neues, drittes Standbein ohne Bezug zum IB-Business. Damit sind es wieder bewusst drei aktive Baustellen statt der in Punkt 8 vorgesehenen ein bis zwei. Gleiches Muster wie am 10.09.2026: bewusste Entscheidung, kein Versehen.
+>
+> **Update 24.09.2026:** Zwei weitere bewusste Abweichungen von Mike im Chat bestätigt. (1) [[ATAS Trading Bot (NQ-Abpraller-Setup)]] bleibt dauerhafte, bewusste Ausnahme, kein Auslaufmodell ("Ja da werde ich immer wieder dran arbeiten") — zählt weiterhin nicht als eine der 1-2 Kern-Baustellen im Sinne dieser Regel, weil privates Trading-Werkzeug ohne Kundenkontakt, konkurriert laut ursprünglicher Einordnung nicht um dieselbe IB-Business-Zeit. (2) Trading-Gewinne (eigen + Bot) zählen ab jetzt trotzdem finanziell zum Ziel-Mix, siehe Update in Abschnitt 2 — das ändert die Baustellen-Zählung hier nicht, nur die Umsatz-Rechnung.
 
 ## 9. Nächste 30 Tage
 

@@ -50,5 +50,15 @@ Analyse" bis 16:30). Termin trotzdem wie gewünscht angelegt, Hinweis steht auch
 Termin-Beschreibung selbst — Mike entscheidet, ob er den Trading-Block diesen Mittwoch ausfallen
 lässt oder verschiebt.
 
+## Update 24.09.2026: Termin war, Website erfasst
+
+Mike hat im Chat bestätigt, der Termin am 16.09. hat stattgefunden. Bestehende Website: **https://seniorendienst-klein.de/**
+
+Kurz-Check per WebFetch (24.09.2026): 5 Seiten (Start, Leistungen, Kostenübernahme, Über uns, Kontakt), drei Kernleistungen (individuelle Pflegepläne, Finanzberatung/Pflegegeldanträge, Alltagshilfen), Kontakt per Telefon/E-Mail/Formular vorhanden, Design modern mit Bildern, Überschriften sauber strukturiert (H1-H3), Impressum/Datenschutz verlinkt. **Fehlt erkennbar:** keine Google-Bewertungen/Testimonials, keine Angaben zu Team-Qualifikationen, keine erkennbare mobile Optimierung, keine Leistungen mit Preisen, kein Einsatzgebiet explizit genannt, keine Meta-Beschreibung.
+
+**Einordnung fürs Referenzprojekt (siehe [[Einnahmequellen-Recherche]]):** Das ist kein "Website von null bauen"-Fall mehr, sondern eher ein **Optimierungs-/Ausbau-Projekt** — passt eher zu Idee 3 (Google-Unternehmensprofil) kombiniert mit gezielten Ergänzungen auf der bestehenden Seite (Bewertungen, Einsatzgebiet, Meta-Beschreibung) als zu einem kompletten Neubau (Idee 2). Konkreter Umfang noch offen, gehört in die nächste Aufgaben-Manager-Runde.
+
+Weiterhin offen aus dem ursprünglichen Termin-Vorhaben, nicht bestätigt: freie Kapazität für neue Kunden, ob es ein Google-Unternehmensprofil gibt (per WebFetch nicht prüfbar), Instagram/Facebook-Auftritt.
+
 ## Referenzen
 - Siehe auch [[VT Markets Affiliate-Strategie & Content-Plan]] (gleicher Chat, dort primär zum Trading/Affiliate-Teil)
