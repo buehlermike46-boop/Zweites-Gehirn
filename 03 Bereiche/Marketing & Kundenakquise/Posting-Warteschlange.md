@@ -33,6 +33,29 @@ Ab jetzt postet der `content-executor` neue, fällige Posts mit Status `bereit (
 Operative Liste für die Auto-Posting-Automatisierung (siehe
 [[Content-Plan - Woche 07.09.-13.09.2026]] für den Gesamt-Wochenplan inkl. Personal-Account).
 
+## Tägliche Trade-Story (Limitless-Signalgruppe, seit 24.09.2026)
+
+**Auftrag (Mike per Chat, 24.09.2026):** Mike schickt täglich eine Übersicht der Trades aus der Limitless-Signalgruppe ("Limitless Signals ATM"), daraus entsteht ein täglicher Instagram-**Story**-Post (verschwindet nach 24h). **Freigabe-Phase: automatisch** (Mikes ausdrückliche Entscheidung, analog zu Phase 2 der normalen Queue) — kein Warten auf `freigegeben`.
+
+**Wichtige technische Grenze:** Es gibt keinen Signalgruppen-Connector/keine API. Diese Automatisierung läuft NICHT von selbst über die tägliche Scheduled Cloud Routine — sie ist reaktiv: erst wenn Mike an dem Tag tatsächlich die Trades schickt (im Chat, egal welche Session), entsteht ein Post. Kommt an einem Tag keine Nachricht von Mike, gibt es an dem Tag auch keine Trade-Story, das ist kein Fehler.
+
+**Ablauf, sobald Mike die Trades schickt:**
+1. Daten 1:1 übernehmen, nichts erfinden/schönen/aufrunden. Bei Unklarheit (z.B. unleserlicher Screenshot-Ausschnitt) lieber nachfragen als raten.
+2. Saubere, gebrandete Story-Grafik über Jarvis erstellen (bestehender Limitless-Look), mit den echten Zahlen — **kein 1:1-Repost des rohen Screenshots** (siehe [[Bilder-Datenspeicher]], Screenshots sind keine Content-Bilder).
+3. **Pflicht-Disclaimer** muss auf jeder Trade-Story sichtbar sein (Text im Bild oder in der Caption, mindestens sinngemäß): *"Bildungsinhalt, keine Anlageberatung. Trading ist mit Risiko verbunden, vergangene Ergebnisse sind kein Indikator für zukünftige Ergebnisse, keine Gewinngarantie."*
+4. **Korrekte Attribution:** Es sind Trades/Signale aus der Limitless-Signalgruppe (die Trader dort zum Kopieren einstellen, siehe [[Angebot]]), nicht automatisch Mikes eigene persönlich ausgeführten Trades — nie als "meine Trades" formulieren, außer Mike sagt ausdrücklich, dass er sie selbst mitgehandelt hat.
+5. **Keine Rosinenpickerei-Illusion:** Es wird gepostet was Mike an dem Tag schickt (i.d.R. der komplette Tagesüberblick der Gruppe inkl. eventueller Verluste, wie im Screenshot-Format "Today We Win .../Loss ..."), nicht nur ausgewählte Gewinner-Trades einzeln herausgepickt.
+6. Text-Check wie bei jedem anderen Asset (Pflicht seit 20.09.2026, siehe `content-executor.md`) vor dem Posten.
+7. Posten über `mcp__Windsor_ai__execute_action` (`create_story`) auf `mike_bueh`, wie die restliche Queue. Nie bezahlt/geboostet.
+8. Queue-Eintrag hier unten anlegen (Datum, Rohdaten, Media-ID) + Zeile im [[Performance-Log]] + Executor-Log-Eintrag wie gewohnt.
+
+### Einträge
+
+#### Mittwoch, 24.09.2026 (Wednesday's Results, von Mike per Chat geschickt)
+- **Quelle:** Screenshot "Limitless Signals ATM", Wednesday's Results
+- **Rohdaten:** GOLD BUY 270+PIPS (R,T) ✅ · GOLD BUY 120+PIPS ✅ · GOLD BUY 110+PIPS ✅ · GOLD BUY 240+PIPS ✅ · GOLD BUY 200+PIPS ✅ — Today We Win 940+PIPS, Loss -00PIPS, Overall +940 PIPS
+- **Status:** an `content-executor` übergeben zur Erstellung + automatischem Posten (siehe Agent-Aufruf)
+
 ## Facebook Cross-Posting (Auftrag 14.09.2026, Mike per Chat)
 
 **Auftrag:** "Poste ab sofort alles auch auf Facebook, das du auf Instagram postet, zusammen." Gilt für alle künftigen Posts dieser Warteschlange (Limitless-Account), nicht rückwirkend.
