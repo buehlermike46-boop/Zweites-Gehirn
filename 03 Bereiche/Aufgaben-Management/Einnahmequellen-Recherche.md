@@ -31,7 +31,7 @@ Details siehe `.claude/agents/aufgaben-manager.md` (Abschnitt "Einnahmequellen-E
 | Idee | Kategorie (Dienstleistung/Produkt) | Passt zu Stufe | Aufwand grob | Bewertung | Status |
 |---|---|---|---|---|---|
 | **KI-Terminbuchungs-/FAQ-Chatbot für Handwerksbetriebe** (per Make.com + Jarvis, als Website-Widget oder WhatsApp-Bot) | Dienstleistung | Stufe 1, guter Kandidat fürs Erstprojekt (1.500-3.000 EUR) | Aufwendig — einmaliges Template bauen (ca. 1-2 Tage), danach pro Kunde wenige Stunden Anpassung | Mike kennt Make.com bereits aus dem eigenen Telegram-Bot, kein neues Werkzeug nötig. Marktpreise laut Recherche 3.000-5.000 EUR je Projekt (Prozessmeister) bzw. ab 1.490 EUR/Monat im Abo — deckt sich mit dem Stufe-1-Zielkorridor. Elektro-Handwerk als Zielgruppe passt zu seinem Vertrauensvorsprung im eigenen Netzwerk (siehe [[Kontaktliste - 20 Namen aus dem Umfeld]], [[Pflegedienst]]-Umfeld). **Update 24.09.2026:** Demo-Version gebaut (Webhook + KI-Intent-Erkennung + FAQ-Antwort per Make-AI-Tools + Terminanfrage-Meldung per Telegram-DM), technisch fertig aber nicht aktivierbar — Make-Konto erlaubt nur eine begrenzte Zahl aktiver Szenarien, beide Plätze belegt. Siehe [[Tagesplan]], "Technisch blockiert". | **Update 25.09.2026:** technisch fertig, aktiviert, live getestet (Make-Plan-Limit gelöst), inhaltlich auf echtes Elektrobetrieb-Profil umgestellt, live-Demo-Website gebaut (https://handwerker-chatbot.higgsfield.app). Auf Mikes Entscheidung mit Idee 3 zu einem Gesamtpaket (299 EUR) zusammengelegt, siehe Abschnitt "Idee 1 + 3 zusammengelegt" unten. | mit Idee 3 zum Gesamtpaket zusammengelegt (299 EUR), siehe unten |
-| **Website-Baukasten-Service für kleine Handwerks-/Dienstleistungsbetriebe** (No-Code, über Jarvis' `website-builder-flow`-Workflow) | Dienstleistung | Stufe 1 — direkter Treffer auf die im MasterPlan genannte Erstprojekt-Bedingung ("Webseite oder Chatbot, 1.500-3.000 EUR") | Komplex — Standard-Template einmal bauen, dann mehrere Tage Anpassung pro Kunde | Jarvis bietet laut eigener Tool-Dokumentation einen dedizierten Workflow für Websites, den Mike ohne Entwickler-Kenntnisse bedienen kann. **Update 24.09.2026:** Der Pflegedienst-Fall ist konkreter geworden als reines Portfolio-Stück — die bestehende Seite läuft aktuell über IONOS für ca. 50 EUR/Monat, Mike will das selbst günstiger ersetzen (siehe [[Pflegedienst]]). Erste Text-/Strukturentwürfe stehen und sind von Mike inhaltlich freigegeben, das Thema ist aber bewusst **pausiert bis Sonntag, 27.09.2026** (gemeinsame Besprechung mit seiner Mutter) — kein Agenten-Schritt bis dahin. | pausiert bis 27.09.2026, Entwürfe fertig und freigegeben, aber noch nichts verschickt |
+| **Website-Baukasten-Service für kleine Handwerks-/Dienstleistungsbetriebe** (No-Code, über Jarvis' `website-builder-flow`-Workflow) | Dienstleistung | Stufe 1 — direkter Treffer auf die im MasterPlan genannte Erstprojekt-Bedingung ("Webseite oder Chatbot, 1.500-3.000 EUR") | Komplex — Standard-Template einmal bauen, dann mehrere Tage Anpassung pro Kunde | Jarvis bietet laut eigener Tool-Dokumentation einen dedizierten Workflow für Websites, den Mike ohne Entwickler-Kenntnisse bedienen kann. **Update 24.09.2026:** Der Pflegedienst-Fall ist konkreter geworden als reines Portfolio-Stück — die bestehende Seite läuft aktuell über IONOS für ca. 50 EUR/Monat, Mike will das selbst günstiger ersetzen (siehe [[Pflegedienst]]). Erste Text-/Strukturentwürfe stehen und sind von Mike inhaltlich freigegeben, das Thema ist aber bewusst **pausiert bis Sonntag, 27.09.2026** (gemeinsame Besprechung mit seiner Mutter) — kein Agenten-Schritt bis dahin. | **Update 25.09.2026 (Mikes direkter Auftrag im Chat, "Websites bauen, als Synergie zu meinem Bot und Google-Optimierung"):** vom reinen Pflegedienst-Sonderfall gelöst und als eigenständiges, allgemeines Angebot ausgearbeitet — **"Website-Komplettpaket"**, siehe Abschnitt "Ausgearbeitete Angebote" unten. Der Pflegedienst-Teil (Sonntag-Pause) bleibt davon unberührt, ist nur noch ein möglicher Referenzfall unter vielen, kein Blocker mehr für das allgemeine Angebot. Live-Demo gebaut, siehe unten. |
 | **Google-Unternehmensprofil-Optimierung als Einstiegspaket für lokale Betriebe** (Ersteinrichtung, Fotos, Beschreibung, Bewertungsmanagement) | Dienstleistung | Kein eigenständiges Stufe-1-Projekt (Preis zu niedrig für 1.500-3.000 EUR), aber guter Türöffner vor größeren Aufträgen | Sofort bis Aufwendig — wenige Stunden pro Kunde | Sehr niedrige Einstiegshürde: das Profil selbst ist für den Kunden kostenlos, Agenturen verlangen laut Recherche ab ca. 299 EUR für die Optimierung. Technisch schon ein Werkzeug vorhanden — der bestehende Windsor.ai-Connector unterstützt laut eigener Doku bereits Schreibzugriff auf Google Business Profile (Posts/Reviews/Listing-Änderungen), sobald ein Kundenaccount verbunden ist. Guter Kombi-/Upsell-Baustein zu den beiden Ideen oben. **Update 25.09.2026:** Angebotspaket komplett ausgearbeitet (Leistungsumfang, Preis-Rahmen, Angebotstext), siehe Abschnitt "Ausgearbeitete Angebote" unten. | **Update 25.09.2026:** mit Idee 1 zum Gesamtpaket zusammengelegt (299 EUR), siehe Abschnitt "Idee 1 + 3 zusammengelegt" unten. | mit Idee 1 zum Gesamtpaket zusammengelegt (299 EUR), siehe unten |
 | **KI-Automatisierungspakete für Admin-Prozesse kleiner Betriebe** (Rechnungserfassung, Lead-Erfassung/-Routing, Terminerinnerungen via Make.com) | Dienstleistung | Stufe 1, mit Potenzial für ein wiederkehrendes Abo-Modell | Komplex — pro Kunde eigene Prozessanalyse nötig, mehrere Tage bis Wochen | Baut auf Mikes eigenem, bereits geplantem Rechnungs-Automatik-Vorhaben auf (siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], "Komplex", Stufe 2/3 im eigenen IB-Business) — dieselbe Technik ließe sich als Dienstleistung verkaufen. Marktpreise laut Recherche ab 1.490 EUR/Monat (Abo) oder ab 2.500 EUR (Einmalprojekt), für den Kunden teils über BAFA/"go-digital" bis zu 50 % förderfähig (Verkaufsargument). Höherer Aufwand pro Kunde als der Chatbot oben, deshalb eher zweiter Schritt nach dem ersten Projekt. | offen |
 | **Digitale Lern-/Prüfungsvorbereitungs-Templates für angehende Elektroniker** (PDF-Checklisten, Übungsblätter, kleines Bundle für die Gesellenprüfung) | Produkt | Kein Stufe-1-Ersatz (zu kleinteilig für 1.500-3.000 EUR), aber risikoarmer erster Test für die "Digitale Produkte"-Kategorie | Sofort bis Aufwendig — Content selbst erstellen, kein technisches Setup außer einfacher Verkaufsseite/Marktplatz-Listing | Nutzt zwei echte Vorerfahrungen: Elektromeister-Fachwissen plus frühere Tätigkeit als Dozent für technische/mathematische Fächer (siehe [[Über mich]]). Templates/Checklisten verkaufen sich laut Recherche aktuell gut (Einstiegspreise 9-29 EUR, Bundles bis ca. 197 EUR), spezifisch fürs Elektrohandwerk aber eine Nische ohne direkt gefundene Vergleichsangebote — Chance auf wenig Konkurrenz, aber auch unklare Nachfrage, deshalb eher kleiner Test als große Wette. Passiv nach Ersterstellung. | offen |
@@ -121,6 +121,65 @@ Stil nach `00 Kontext/Schreibstil.md` (duzen, locker aber professionell, keine G
 
 **Ausdrücklich nicht Teil dieser Ausarbeitung:** keine neue Zielkunden-Recherche (die bestehenden Listen aus [[Handwerker-Chatbot Akquise]] und [[GMB-Angebot Akquise]] gelten weiter), kein Betrieb mit diesem Text kontaktiert, nichts verschickt.
 
+### Idee 2: Website-Komplettpaket — Angebotspaket (ausgearbeitet 25.09.2026, Mikes direkter Auftrag im Chat)
+
+Entstanden aus Mikes Auftrag im Chat vom 25.09.2026: "Lass uns Websites bauen, als Synergie zu meinem Bot und Google-Optimierung möchte ich auch eigene Websites anbieten, lass uns das ganz planen und umsetzen." Löst den Website-Baukasten-Punkt aus dem Ideen-Pool oben vom reinen Pflegedienst-Sonderfall (weiterhin pausiert bis 27.09.2026, siehe [[Pflegedienst]]) und macht daraus ein eigenständiges, allgemeines Angebot.
+
+**Positionierung: das eigentliche Stufe-1-Projekt.** Das bestehende 299-EUR-Einstiegspaket (Idee 1+3, siehe oben) ist bewusst als günstiger Türöffner positioniert und trifft MasterPlan Stufe 1 damit nicht ("Erstes Dienstleistungsprojekt verkauft, Webseite oder Chatbot, 1.500 bis 3.000 EUR", siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]] Abschnitt 3). Das Website-Komplettpaket bündelt alle drei Bausteine, eigene Website, der bereits gebaute Chatbot, Google-Profil-Optimierung, zu einem höherpreisigen Angebot, das die Stufe-1-Bedingung tatsächlich erfüllen kann. Zielgruppe unverändert: kleine Handwerks-/Dienstleistungsbetriebe, primär Elektro-Handwerk wegen Mikes Vertrauensvorsprung, zusätzlich jetzt auch Betriebe ganz ohne eigene Website oder mit veralteter Website.
+
+#### Leistungsumfang
+
+- Eigene, mehrseitige Website (Startseite, Leistungen, Vertrauen/Bewertungen, Kontakt), mobil-optimiert, mit dem eigenen Branding des Betriebs, gebaut über Jarvis' `website-builder-flow`-Workflow
+- Der bereits bestehende KI-Chatbot (siehe [[Handwerker-Chatbot Akquise]]) direkt in die neue Website integriert, beantwortet Fragen und nimmt Terminanfragen auf
+- Google-Unternehmensprofil-Optimierung, identisch zum bereits ausgearbeiteten Baustein aus Idee 3 oben (Kategorie, Beschreibung, Öffnungszeiten, Fotos, Bewertungs-Vorlage)
+
+**Offene technische Frage, bewusst nicht als fertiges Feature verkauft:** ob die ausgelieferte Website auf einer eigenen Domain des Kunden oder auf einer higgsfield.app-Subdomain läuft, ist noch nicht geklärt (möglich wäre eine Custom-Domain-Anbindung über Cloudflare, aber nicht verifiziert). Muss vor dem ersten echten Verkauf geprüft werden, bevor das Angebot dazu etwas verspricht.
+
+#### Live-Beispiel gebaut (25.09.2026)
+
+Die bestehende Chatbot-Demo (https://handwerker-chatbot.higgsfield.app) zu einer vollwertigen Mehrseiten-Website ausgebaut: **Start, Leistungen, Bewertungen, Kontakt.** Zeigt jetzt konkret, wie das fertige Produkt für einen echten Kunden aussehen könnte, statt nur den Chatbot isoliert zu zeigen:
+- **Leistungen:** sechs Karten (Elektroinstallation, Photovoltaik, Wallbox-Installation, Smart Home, E-Check, Notdienst), passend zum bereits etablierten Musterbetrieb-Profil
+- **Bewertungen:** erklärt den Google-Optimierung-Baustein ehrlich als Platzhalter ("Hier stehen bald echte Kundenstimmen") statt erfundener Sternebewertungen zu zeigen — bewusst keine fingierten Testimonials, gleiche Begründung wie in [[GMB-Angebot Akquise]] (§5-UWG-Risiko bei gefälschten Bewertungen)
+- **Kontakt:** Telefon/E-Mail plus der eingebettete Chatbot direkt zum Ausprobieren
+- Chatbot bleibt auf der Startseite eingebettet und live funktionsfähig (derselbe Make-Webhook wie zuvor)
+- Gleiche Marke/Palette wie zuvor (Kobaltblau auf Bone, editorial, keine Higgsfield-Marke sichtbar), keine neuen Bild-Assets generiert, nur bestehende wiederverwendet
+- Alle vier Seiten live verifiziert (HTTP 200)
+
+**Technischer Nebenfund:** Die committete `routeTree.gen.ts` (TanStack Routers generierte Routentabelle) wurde beim ersten Deploy-Versuch nicht automatisch für die drei neuen Seiten aktualisiert (kein `bun`-Toolchain-Zugriff in der Build-Sandbox, um den Generator laufen zu lassen) und verursachte einen Typecheck-Fehler beim CI-Build. Manuell nach dem bestehenden generierten Muster ergänzt, danach baute der Deploy fehlerfrei durch.
+
+#### Preis-Rahmen (Marktrecherche 25.09.2026, WebSearch)
+
+- Freiberufler/Spezialisten: 500 bis 1.739 EUR, teils inklusive Texten und Google-Optimierung
+- Spezialisierte Agenturen für Handwerksbetriebe, laut Recherche der "wirtschaftliche Sweet Spot" für ca. 90% aller Handwerksbetriebe: 759 bis 2.500 EUR Festpreis
+- Große Agenturen für KMU: 1.500 bis 15.000 EUR
+- Laufende Kosten bei klassischen Anbietern zusätzlich: Hosting 5 bis 10 EUR/Monat, Wartungsvertrag ab ca. 30 EUR/Monat
+
+Empfehlung, angelehnt an den unteren bis mittleren Marktkorridor und bewusst innerhalb der MasterPlan-Stufe-1-Zielspanne: **1.490 bis 2.490 EUR, einmalig, je nach Umfang** (Standard-Website mit 4 Seiten am unteren Ende, mehr Individualisierung/Seiten am oberen Ende). Anders als beim 299-EUR-Einstiegspaket bewusst kein einheitlicher Festpreis, weil der Aufwand pro Website stärker variiert als bei der reinen GMB+Chatbot-Kombination. Kein Hosting-Abo für den Kunden nötig, solange die higgsfield.app-Infrastruktur genutzt wird (siehe offene technische Frage oben). Preis ist eine Empfehlung, keine Entscheidung, wartet auf Mikes Priorisierung.
+
+#### Cross-Sell-Logik zum bestehenden Einstiegspaket
+
+Kunden, die bereits das 299-EUR-Einstiegspaket (GMB + Chatbot) gekauft haben, bekommen die 299 EUR bei einem späteren Upgrade auf das Website-Komplettpaket angerechnet, echter Türöffner-Mechanismus statt zwei getrennter Verkäufe. Kunden ganz ohne bestehende Website können auch direkt mit dem Komplettpaket starten.
+
+#### Angebotstext (kurz, wiederverwendbar)
+
+Stil nach `00 Kontext/Schreibstil.md` (duzen, locker aber professionell, keine Gedankenstriche, keine erfundenen Referenzen/Erfolge).
+
+> Hallo Team von [Firmenname],
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf. Neben dem Chatbot und der Google-Optimierung baue ich jetzt auch komplette Websites für Handwerksbetriebe, alles aus einer Hand.
+>
+> Konkret heißt das: eine eigene, mehrseitige Website mit euren Leistungen, der KI-Chatbot direkt eingebaut, und euer Google-Profil optimiert, damit neue Kunden euch überhaupt erst finden. Wie das aussehen kann, zeig ich dir hier live an einem Beispiel: https://handwerker-chatbot.higgsfield.app
+>
+> Je nach Umfang liegt das bei 1.490 bis 2.490 EUR, einmalig, kein Abo. Wer schon das 299-EUR-Einstiegspaket hat, bekommt das beim Upgrade angerechnet.
+>
+> Magst du dir das unverbindlich anschauen? Meld dich gern zurück oder ruf mich an unter 0152 04553210.
+>
+> Viele Grüße
+> Mike Bühler
+> 0152 04553210 · buehlermike46@gmail.com
+
+**Ausdrücklich nicht Teil dieser Ausarbeitung:** keine neue Zielkunden-Recherche für dieses spezifische Paket (die bestehenden Listen aus [[Handwerker-Chatbot Akquise]]/[[GMB-Angebot Akquise]] gelten weiter), kein Betrieb mit diesem Text kontaktiert, nichts verschickt, kein Preis final entschieden.
+
 ## Entschieden / verworfen
 
 *(Ideen, die bewertet und abgeschlossen wurden, mit Begründung – nichts wird stillschweigend gelöscht, siehe Vault-Regel additiv arbeiten)*
@@ -128,6 +187,22 @@ Stil nach `00 Kontext/Schreibstil.md` (duzen, locker aber professionell, keine G
 ## Log
 
 *(jeder Recherche-Lauf mit Datum: was wurde geprüft, was kam neu dazu, was wurde verworfen und warum)*
+
+### 2026-09-25, interaktive Chat-Session (kein Subagent — Website-Komplettpaket geplant und Demo gebaut)
+
+Direkter Auftrag von Mike im Chat: "Lass uns Websites bauen, als Synergie zu meinem Bot und Google-Optimierung möchte ich auch eigene Websites anbieten, lass uns das ganz planen und umsetzen." Umgesetzt:
+
+1. **Marktrecherche** (WebSearch): Preise für professionelle Websites für Handwerksbetriebe/kleine Firmen in Deutschland 2026 geprüft (Freiberufler 500-1.739 EUR, spezialisierte Agenturen 759-2.500 EUR "Sweet Spot" für Handwerksbetriebe, große Agenturen 1.500-15.000 EUR).
+2. **Website-Baukasten-Idee (Ideen-Pool oben) vom Pflegedienst-Sonderfall gelöst** und als eigenständiges Angebot ausgearbeitet: neuer Abschnitt "Idee 2: Website-Komplettpaket" oben (Leistungsumfang, Preis-Empfehlung 1.490-2.490 EUR, Cross-Sell-Logik zum bestehenden 299-EUR-Paket, Angebotstext). Positionierung: das eigentliche Stufe-1-Projekt (1.500-3.000 EUR), im Unterschied zum bewusst günstigeren 299-EUR-Einstiegspaket.
+3. **Live-Demo tatsächlich gebaut:** die bestehende Chatbot-Demo-Website (https://handwerker-chatbot.higgsfield.app, Jarvis website_id `01f874f1-05bb-46f4-bc50-f470e4154701`) von einer Einzelseite zu einer vollwertigen Mehrseiten-Website ausgebaut (Start, Leistungen, Bewertungen, Kontakt), gleiche Marke/Palette wiederverwendet, Chatbot bleibt eingebettet und live funktionsfähig. Bewertungen-Seite bewusst ohne erfundene Sternebewertungen (Platzhalter-Text statt fingierter Testimonials, gleiche Begründung wie beim §5-UWG-Hinweis in [[GMB-Angebot Akquise]]). Alle vier Seiten nach Deploy live verifiziert (HTTP 200). Ein Build-Fehler (generierte Routentabelle war nach dem Hinzufügen neuer Seiten veraltet) manuell behoben, danach baute der Deploy fehlerfrei durch.
+
+**Ausdrücklich kein nach außen wirkender Schritt:** kein Betrieb kontaktiert, nichts verschickt, kein Preis final entschieden (Empfehlung, wartet auf Mikes Priorisierung). Die Demo-Website ist öffentlich erreichbar (wie schon zuvor beim reinen Chatbot, mit Mikes Zustimmung vom 25.09.2026 zum Higgsfield-Community-Listing), zeigt aber ausschließlich Platzhalter-Inhalte und ist als Projekt-Demo gekennzeichnet, keine reale Firma.
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Aufgaben-Management/Einnahmequellen-Recherche.md` (dieser Log-Eintrag, neuer Abschnitt "Idee 2: Website-Komplettpaket", Ideen-Pool-Status aktualisiert)
+- Externes Jarvis/Higgsfield-Website-Projekt (website_id `01f874f1-05bb-46f4-bc50-f470e4154701`) — kein Vault-Code, separat verwaltet, drei neue Seiten plus geteilte Nav-/Footer-Komponenten
 
 ### 2026-09-25, aufgaben-executor-Lauf (Scheduled Cloud Routine, `## Bestätigt für 2026-09-25 (Einnahmequellen-Explorer: GMB-Angebotspaket)`)
 Auftrag aus [[Tagesplan]] abgearbeitet: Idee 3 (Google-Unternehmensprofil-Optimierung) vom bloßen Ideen-Pool-Eintrag zu einem konkreten Angebotspaket ausgearbeitet, siehe neuer Abschnitt "Ausgearbeitete Angebote" oben. Per WebSearch die bereits vorhandene "ab 299 EUR"-Einschätzung vom 24.09.2026 mit drei zusätzlichen, konkreten Vergleichsangeboten unterlegt (545 EUR Ersteinrichtung, 379 EUR + Monatspaket, 399 EUR SEO/GEO-Paket) und daraus einen eigenen, bewusst darunterliegenden Türöffner-Preis von 249-349 EUR einmalig abgeleitet, weil Mikes Einstiegspaket weniger Leistung enthält als diese Vergleichsangebote (kein SEO-Unterbau, keine laufende Betreuung). Leistungsumfang (Kategorie, Beschreibung, Öffnungszeiten, Fotos-Bereich, Rahmen für Bewertungsmanagement) und ein kurzer, wiederverwendbarer Angebotstext nach `00 Kontext/Schreibstil.md` stehen fertig. Status der Idee 3 in der Ideen-Pool-Tabelle von "offen" auf "Angebotspaket entworfen, wartet auf Priorisierung/Freigabe zur Ansprache" geändert.

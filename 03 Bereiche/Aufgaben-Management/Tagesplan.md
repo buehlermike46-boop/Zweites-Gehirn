@@ -157,6 +157,23 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-25, interaktive Chat-Session, neunte Fortsetzung (kein Subagent — Website-Komplettpaket geplant und Live-Demo zur Mehrseiten-Website ausgebaut)
+
+Mikes direkter Auftrag im Chat (neue Session): "Lass uns Websites bauen, als Synergie zu meinem Bot und Google-Optimierung möchte ich auch eigene Websites anbieten, lass uns das ganz planen und umsetzen." Marktrecherche zu Website-Preisen für Handwerksbetriebe durchgeführt (WebSearch), daraus ein neues **Website-Komplettpaket** ausgearbeitet (eigene Website + der bestehende Chatbot integriert + GMB-Optimierung, Preis-Empfehlung 1.490-2.490 EUR einmalig), positioniert als das eigentliche MasterPlan-Stufe-1-Projekt (1.500-3.000 EUR), im Unterschied zum bewusst günstigeren 299-EUR-Einstiegspaket. Details, Leistungsumfang, Preis-Herleitung, Cross-Sell-Logik und Angebotstext in [[Einnahmequellen-Recherche]], Abschnitt "Idee 2: Website-Komplettpaket".
+
+Zusätzlich tatsächlich umgesetzt: die bestehende Chatbot-Demo-Website (https://handwerker-chatbot.higgsfield.app) von einer Einzelseite zu einer vollwertigen Mehrseiten-Website ausgebaut (Start, Leistungen, Bewertungen, Kontakt), damit es ein echtes Live-Beispiel für das neue Paket gibt, nicht nur einen Text-Entwurf. Gleiche Marke/Farben wiederverwendet, keine neuen Bild-Assets generiert. Bewertungen-Seite bewusst ohne erfundene Sternebewertungen (Platzhalter-Hinweis statt fingierter Testimonials). Ein Build-Fehler nach dem Hinzufügen der drei neuen Seiten (veraltete generierte Routentabelle) manuell behoben, danach lief der Deploy fehlerfrei durch, alle vier Seiten live verifiziert (HTTP 200).
+
+**Ausdrücklich kein nach außen wirkender Schritt:** kein Betrieb kontaktiert, nichts verschickt, kein Preis final entschieden. [[Handwerker-Chatbot Akquise]] und [[GMB-Angebot Akquise]] mit Verweis auf das neue Paket ergänzt.
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Aufgaben-Management/Einnahmequellen-Recherche.md` (neuer Abschnitt "Idee 2: Website-Komplettpaket", Ideen-Pool-Status, Log-Eintrag)
+- `03 Bereiche/Marketing & Kundenakquise/Handwerker-Chatbot Akquise.md` (Verweis auf Mehrseiten-Ausbau ergänzt)
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (Verweis auf neues Paket ergänzt)
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag)
+- Externes Jarvis/Higgsfield-Website-Projekt (website_id `01f874f1-05bb-46f4-bc50-f470e4154701`) — kein Vault-Code, drei neue Seiten plus geteilte Nav-/Footer-Komponenten
+
 ### 2026-09-25, interaktive Chat-Session, achte Fortsetzung (kein Subagent — 10 weitere Mails mit Gesamtpaket-Text verschickt)
 Auf Mikes Anweisung ("Anrufe erst ab Montag, schick gerne nochmal 10 neue emails raus") 10 der 19 noch unversendeten Kontakte aus [[GMB-Angebot Akquise]] Runde 2 angeschrieben — diesmal mit dem neuen Gesamtpaket-Text (299 EUR, GMB + Chatbot, Link zur Live-Demo) statt dem alten GMB-only-Text. Priorisiert: die 4 zuvor vom Sicherheits-Classifier blockierten (Elektro Lenzen, Elektrotechnik Kempkes, Göbel Manfred & Kompagnon, Elektrotechnik Heiner Hermans) als Retry, plus 6 weitere mit bereits bestätigter E-Mail-Adresse (Elektro Richter, Elektro Kamper, Malerbetrieb Neugebauer, Kreiten Sanitär/Heizung, Zanders Gartenbau, RZ Bedachungen). Erster Sendeversuch ging versehentlich an ein falsches/nicht existentes Tool (`mcp__Jarvis__send_message` statt `mcp__Gmail__send_message`), sofort bemerkt und korrigiert bevor irgendwas verschickt wurde. Danach alle 10 über Gmail erfolgreich raus, diesmal ohne Classifier-Block.
 

@@ -26,6 +26,8 @@ Vorbereitung für die Ansprache von Elektro-Handwerksbetrieben zum [[Einnahmeque
 
 **Für spätere Sessions:** Änderungen an der Seite laufen über die Jarvis-Website-Tools (`website_repo_access`, `deploy_website`), nicht über dieses Git-Repo — der Seiten-Code liegt in einem eigenen, von Higgsfield verwalteten Repo (website_id `01f874f1-05bb-46f4-bc50-f470e4154701`). Nach jeder Änderung erneut `deploy_website` nötig, sonst bleibt die alte Version live.
 
+**Update 25.09.2026, Mikes Auftrag ("Websites bauen, als Synergie zu meinem Bot und Google-Optimierung"):** dieselbe Website zu einer vollwertigen Mehrseiten-Website ausgebaut (Start, Leistungen, Bewertungen, Kontakt), nicht mehr nur eine Chatbot-Landingpage. Dient jetzt als Live-Beispiel für das neue **Website-Komplettpaket** (eigene Website + Chatbot + Google-Optimierung, Empfehlung 1.490-2.490 EUR), siehe [[Einnahmequellen-Recherche]], Abschnitt "Idee 2: Website-Komplettpaket". Der Chatbot bleibt unverändert auf der Startseite eingebettet.
+
 ## Update 25.09.2026, spät abends: zu Gesamtpaket zusammengelegt
 
 Mike hat entschieden, den Chatbot nicht mehr als eigenständiges Angebot zu führen, sondern zusammen mit dem GMB-Paket (siehe [[GMB-Angebot Akquise]]) als **ein Gesamtpaket für 299 EUR**. Details, Preis-Begründung und der neue, gemeinsame Angebotstext (E-Mail + Telefon) stehen in [[Einnahmequellen-Recherche]], Abschnitt "Idee 1 + 3 zusammengelegt". Die 30 hier recherchierten Betriebe bleiben die Zielkundenliste für beide Bausteine zusammen — keine neue Recherche nötig.
