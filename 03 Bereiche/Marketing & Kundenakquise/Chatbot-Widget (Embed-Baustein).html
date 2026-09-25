@@ -1,0 +1,223 @@
+<!--
+  ============================================================
+  CHATBOT-WIDGET – EINBETTBARER BAUSTEIN
+  ============================================================
+  So benutzt du das:
+
+  1. NUR den Block zwischen <!-- WIDGET START --> und <!-- WIDGET ENDE -->
+     kopieren (nicht diese Erklärung, nicht doctype/html/head/body drumherum).
+  2. In der Ziel-Website an einer Stelle einfügen, wo eigener Code erlaubt ist:
+     - WordPress: Plugin "Insert Headers and Footers", oder Theme-Editor vor </body>
+     - Wix: Element "HTML einbetten"
+     - Squarespace: Einstellungen -> Code-Injection (Footer)
+     - Eigene/einfache HTML-Seite: direkt vor </body> einfügen
+     - IONOS-Baukasten: im Zweifel prüfen, ob "eigener Code"/"HTML-Element"
+       verfügbar ist (nicht bei jedem IONOS-Paket der Fall)
+  3. Oben im <script>-Teil den CHATBOT_CONFIG-Block an den jeweiligen Kunden
+     anpassen (Name, Begrüßungstext, Beispiel-Fragen, Webhook-URL). Für einen
+     neuen Kunden: eigenes Make-Szenario klonen (siehe Vault-Notiz
+     [[Einnahmequellen-Recherche]]), dessen Webhook-URL hier eintragen.
+  4. Fertig. Kein Build-Schritt, kein npm, reines HTML/CSS/JS.
+
+  Diese Datei selbst ist auch eine gültige, öffnungsfähige HTML-Seite zum
+  schnellen lokalen Vorschauen (Doppelklick), falls nur der Baustein für
+  sich getestet werden soll.
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot-Widget Vorschau</title>
+<style>
+  body { margin: 0; padding: 40px 16px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; background: #f5f3ef; color: #333; }
+  .preview-hint { max-width: 640px; margin: 0 auto; font-size: 14px; color: #666; }
+</style>
+</head>
+<body>
+
+<p class="preview-hint">Vorschau des Widget-Bausteins (leerer Hintergrund simuliert eine beliebige Website). Für die echte Einbettung nur den Teil ab hier kopieren:</p>
+
+<!-- WIDGET START -->
+<div id="skcw-root">
+  <style>
+    #skcw-root {
+      --skcw-accent: #4a7c6e;
+      --skcw-accent-hover: #3a6459;
+      --skcw-accent-soft: #e4ede9;
+      --skcw-surface: #ffffff;
+      --skcw-bg: #faf7f2;
+      --skcw-text: #2b2a26;
+      --skcw-text-muted: #6d6a61;
+      --skcw-border: #e6e0d4;
+      --skcw-bubble-user: #4a7c6e;
+      --skcw-shadow: 0 12px 32px rgba(43, 42, 38, 0.12);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    #skcw-root * { box-sizing: border-box; }
+    #skcw-launcher {
+      position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px;
+      border-radius: 50%; background: var(--skcw-accent); color: #fff; border: none;
+      box-shadow: var(--skcw-shadow); cursor: pointer; display: flex;
+      align-items: center; justify-content: center; z-index: 2147483000;
+      transition: transform 0.15s ease;
+    }
+    #skcw-launcher:hover { background: var(--skcw-accent-hover); transform: scale(1.05); }
+    #skcw-launcher svg { width: 26px; height: 26px; }
+    #skcw-panel {
+      position: fixed; right: 20px; bottom: 90px; width: min(360px, calc(100vw - 32px));
+      max-height: min(560px, calc(100vh - 140px)); background: var(--skcw-surface);
+      border: 1px solid var(--skcw-border); border-radius: 16px; box-shadow: var(--skcw-shadow);
+      display: flex; flex-direction: column; overflow: hidden; z-index: 2147483000;
+      font-size: 14px; color: var(--skcw-text);
+    }
+    #skcw-panel[hidden] { display: none; }
+    .skcw-head { background: var(--skcw-accent); color: #fff; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .skcw-head .skcw-who { display: flex; flex-direction: column; gap: 2px; }
+    .skcw-head .skcw-who strong { font-size: 14.5px; }
+    .skcw-head .skcw-who span { font-size: 11.5px; opacity: 0.85; }
+    .skcw-head button { background: rgba(255,255,255,0.18); border: none; color: #fff; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 16px; line-height: 1; }
+    .skcw-head button:hover { background: rgba(255,255,255,0.3); }
+    .skcw-status { font-size: 11.5px; padding: 6px 16px; background: var(--skcw-accent-soft); color: var(--skcw-text-muted); border-bottom: 1px solid var(--skcw-border); }
+    .skcw-status.skcw-error { color: #a84343; }
+    .skcw-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-height: 220px; background: var(--skcw-surface); }
+    .skcw-msg { max-width: 84%; padding: 10px 13px; border-radius: 14px; font-size: 14px; line-height: 1.45; white-space: pre-wrap; }
+    .skcw-msg.skcw-bot { background: #f2ede3; color: var(--skcw-text); border-bottom-left-radius: 4px; align-self: flex-start; }
+    .skcw-msg.skcw-user { background: var(--skcw-bubble-user); color: #fff; border-bottom-right-radius: 4px; align-self: flex-end; }
+    .skcw-msg.skcw-typing { font-style: italic; color: var(--skcw-text-muted); background: #f2ede3; }
+    .skcw-quick { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 10px; background: var(--skcw-surface); }
+    .skcw-quick button { font-size: 12.5px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--skcw-border); background: var(--skcw-surface); color: var(--skcw-text); cursor: pointer; }
+    .skcw-quick button:hover { border-color: var(--skcw-accent); color: var(--skcw-accent); }
+    .skcw-inputrow { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--skcw-border); background: var(--skcw-surface); }
+    .skcw-inputrow input { flex: 1; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--skcw-border); background: var(--skcw-bg); color: var(--skcw-text); font-size: 14px; }
+    .skcw-inputrow input:focus { outline: 2px solid var(--skcw-accent); outline-offset: 1px; }
+    .skcw-inputrow button { background: var(--skcw-accent); color: #fff; border: none; border-radius: 10px; padding: 0 16px; font-weight: 600; cursor: pointer; font-size: 13.5px; }
+    .skcw-inputrow button:hover { background: var(--skcw-accent-hover); }
+    .skcw-inputrow button:disabled { opacity: 0.5; cursor: not-allowed; }
+  </style>
+
+  <button id="skcw-launcher" aria-label="Chat öffnen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  </button>
+
+  <div id="skcw-panel" hidden>
+    <div class="skcw-head">
+      <div class="skcw-who">
+        <strong id="skcw-title">Chatbot</strong>
+        <span id="skcw-subtitle">Antwortet meist sofort</span>
+      </div>
+      <button id="skcw-close" aria-label="Chat schließen">&times;</button>
+    </div>
+    <div class="skcw-status" id="skcw-status">Bereit.</div>
+    <div class="skcw-messages" id="skcw-messages"></div>
+    <div class="skcw-quick" id="skcw-quick"></div>
+    <div class="skcw-inputrow">
+      <input id="skcw-input" type="text" placeholder="Ihre Frage …" autocomplete="off" />
+      <button id="skcw-send">Senden</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    // ==========================================================
+    // KONFIGURATION – pro Kunde hier anpassen, sonst nichts im Code
+    // ==========================================================
+    var CHATBOT_CONFIG = {
+      webhookUrl: "https://hook.eu1.make.com/mgkwecwfb217vfpmq6v5mqnvtohb9ut6",
+      businessName: "Seniorendienst Klein",
+      subtitle: "Antwortet meist sofort",
+      welcomeMessage: "Hallo! Ich bin der digitale Assistent von Seniorendienst Klein. Stellen Sie mir gern eine Frage, oder wählen Sie ein Beispiel unten.",
+      quickReplies: [
+        "Was kostet die Pflege?",
+        "Seid ihr auch in Willich aktiv?",
+        "Ich hätte gern einen Beratungstermin, meine Nummer ist 0170 1234567."
+      ]
+    };
+    // ==========================================================
+
+    var root = document.getElementById("skcw-root");
+    var launcher = root.querySelector("#skcw-launcher");
+    var panel = root.querySelector("#skcw-panel");
+    var closeBtn = root.querySelector("#skcw-close");
+    var messages = root.querySelector("#skcw-messages");
+    var input = root.querySelector("#skcw-input");
+    var sendBtn = root.querySelector("#skcw-send");
+    var statusEl = root.querySelector("#skcw-status");
+    var quickWrap = root.querySelector("#skcw-quick");
+
+    root.querySelector("#skcw-title").textContent = CHATBOT_CONFIG.businessName;
+    root.querySelector("#skcw-subtitle").textContent = CHATBOT_CONFIG.subtitle;
+
+    function addMessage(text, who) {
+      var el = document.createElement("div");
+      el.className = "skcw-msg skcw-" + who;
+      el.textContent = text;
+      messages.appendChild(el);
+      messages.scrollTop = messages.scrollHeight;
+      return el;
+    }
+    addMessage(CHATBOT_CONFIG.welcomeMessage, "bot");
+
+    CHATBOT_CONFIG.quickReplies.forEach(function (q) {
+      var btn = document.createElement("button");
+      btn.textContent = q.length > 28 ? q.slice(0, 26) + "…" : q;
+      btn.title = q;
+      btn.addEventListener("click", function () { sendMessage(q); });
+      quickWrap.appendChild(btn);
+    });
+
+    launcher.addEventListener("click", function () {
+      panel.hidden = false;
+      launcher.style.display = "none";
+      input.focus();
+    });
+    closeBtn.addEventListener("click", function () {
+      panel.hidden = true;
+      launcher.style.display = "flex";
+    });
+
+    function sendMessage(text) {
+      if (!text.trim()) return;
+      addMessage(text, "user");
+      input.value = "";
+      sendBtn.disabled = true;
+      var typingEl = addMessage("tippt …", "bot skcw-typing");
+
+      fetch(CHATBOT_CONFIG.webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nachricht: text })
+      })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.text();
+        })
+        .then(function (answer) {
+          typingEl.remove();
+          addMessage(answer || "(keine Antwort erhalten)", "bot");
+          statusEl.textContent = "Bereit.";
+          statusEl.className = "skcw-status";
+        })
+        .catch(function (err) {
+          typingEl.remove();
+          addMessage("Entschuldigung, gerade nicht erreichbar. Bitte versuchen Sie es später erneut.", "bot");
+          statusEl.textContent = "Fehler: " + err.message;
+          statusEl.className = "skcw-status skcw-error";
+        })
+        .finally(function () {
+          sendBtn.disabled = false;
+        });
+    }
+
+    sendBtn.addEventListener("click", function () { sendMessage(input.value); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") sendMessage(input.value);
+    });
+  })();
+</script>
+<!-- WIDGET ENDE -->
+
+</body>
+</html>
