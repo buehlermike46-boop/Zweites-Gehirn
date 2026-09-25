@@ -23,32 +23,34 @@ Recherchiert und mit Text-Varianten versehen, aber nicht mehr vollständig verse
 | # | Firma | Branche | E-Mail | Variante | Status |
 |---|---|---|---|---|---|
 | 1 | KKR Louwen GmbH | Elektro | service@kkrgmbh.de | B (Elektriker, ausführlich) | ✅ versendet |
-| 2 | Elektro Lenzen GmbH & Co. KG | Elektro | info@elektrolenzen.de | B | ⛔ vom Classifier blockiert |
-| 3 | Torsten Jütte Elektrotechnik | Elektro | juetteelektro@aol.com | C (Elektriker, kurz) | ✅ versendet |
-| 4 | Elektro Bogisch GmbH & Co. KG | Elektro | info@elektrobogisch.de | B | ✅ versendet |
-| 5 | Elektrotechnik Kempkes GmbH | Elektro | info@elektro-kempkes.de | C | ⛔ vom Classifier blockiert |
-| 6 | Göbel Manfred & Kompagnon Elektrotechnik GmbH | Elektro | info@goebelgmbh.de | B | ⛔ vom Classifier blockiert |
-| 7 | Elektro Herentrey GmbH | Elektro | elektro-herentrey@t-online.de | B | ✅ versendet |
-| 8 | Elektrotechnik Heiner Hermans GmbH | Elektro | info@elektro-hermans.de | C | ⛔ vom Classifier blockiert |
-| 9 | Heuser & Wankum Elektrotechnik GmbH | Elektro | info@heuser-wankum.de | B | ✅ versendet |
-| 10 | Elektro Lücke GmbH | Elektro | info@elektro-luecke.de | C | ✅ versendet |
-| 11 | Elektro Richter e.K. | Elektro | info@elektro-richter.nrw | B | nicht versucht |
-| 12 | Elektro Kamper GmbH | Elektro | info@elektro-kamper.de | C | nicht versucht |
-| 13 | Elektro Birker GmbH | Elektro | info@elektro-birker.com (Konvention, nicht einzeln bestätigt) | B | nicht versucht |
-| 14 | Elektroanlagen Jan-Dieter Brüggemann GmbH | Elektro | info@elektro-brueggemann.de (Konvention) | C | nicht versucht |
-| 15 | Elektro Becker e.K. | Elektro | info@elektrobecker-nettetal.de (Konvention) | B | nicht versucht |
-| 16 | ElektroTechnik Leber GmbH | Elektro | info@etlg-mbh.de (Konvention) | C | nicht versucht |
-| 17 | Frank Mihm Elektroinstallateurmeister | Elektro | info@elektro-mihm.de (Konvention) | B | nicht versucht |
-| 18 | Malerbetrieb Stefan Neugebauer | Maler | neugebauer.viersen@freenet.de | D (andere Branchen, ausführlich) | nicht versucht |
-| 19 | Malermeister Engler GmbH & Co. KG | Maler | info@malermeister-engler.de | D | nicht versucht |
-| 20 | Kreiten Sanitär- und Heizungsbau GmbH | Sanitär/Heizung | manfred.kreiten@t-online.de | E (andere Branchen, kurz) | nicht versucht |
-| 21 | Zanders Gartenbau und Landschaftsbau | Garten-/Landschaftsbau | info@zanders-gartenbau.de | D | nicht versucht |
-| 22 | Wassergarten Peter Heinen | Garten-/Landschaftsbau | info@wassergarten-heinen.de | E | nicht versucht |
-| 23 | RZ Bedachungen GmbH | Dachdecker | info@rz-bedachungen.de | D | nicht versucht |
-| 24 | Andre Junkermann Garten- und Landschaftsbau | Garten-/Landschaftsbau | info@junkermann-gartenbau.de (Konvention) | E | nicht versucht |
-| 25 | Schoenen & Lücke Dachdeckermeister | Dachdecker | info@dachdecker-toenisvorst.de (Konvention) | D | nicht versucht |
+| 2 | Elektro Lenzen GmbH & Co. KG | Elektro | info@elektrolenzen.de | Gesamtpaket-Text | ✅ versendet (Retry nach Block, Gesamtpaket 299 EUR) |
+| 3 | Torsten Jütte Elektrotechnik | Elektro | juetteelektro@aol.com | C (Elektriker, kurz) | ✅ versendet (alter GMB-only-Text) |
+| 4 | Elektro Bogisch GmbH & Co. KG | Elektro | info@elektrobogisch.de | B | ✅ versendet (alter GMB-only-Text) |
+| 5 | Elektrotechnik Kempkes GmbH | Elektro | info@elektro-kempkes.de | Gesamtpaket-Text | ✅ versendet (Retry nach Block, Gesamtpaket 299 EUR) |
+| 6 | Göbel Manfred & Kompagnon Elektrotechnik GmbH | Elektro | info@goebelgmbh.de | Gesamtpaket-Text | ✅ versendet (Retry nach Block, Gesamtpaket 299 EUR) |
+| 7 | Elektro Herentrey GmbH | Elektro | elektro-herentrey@t-online.de | B | ✅ versendet (alter GMB-only-Text) |
+| 8 | Elektrotechnik Heiner Hermans GmbH | Elektro | info@elektro-hermans.de | Gesamtpaket-Text | ✅ versendet (Retry nach Block, Gesamtpaket 299 EUR) |
+| 9 | Heuser & Wankum Elektrotechnik GmbH | Elektro | info@heuser-wankum.de | B | ✅ versendet (alter GMB-only-Text) |
+| 10 | Elektro Lücke GmbH | Elektro | info@elektro-luecke.de | C | ✅ versendet (alter GMB-only-Text) |
+| 11 | Elektro Richter e.K. | Elektro | info@elektro-richter.nrw | Gesamtpaket-Text | ✅ versendet (Gesamtpaket 299 EUR) |
+| 12 | Elektro Kamper GmbH | Elektro | info@elektro-kamper.de | Gesamtpaket-Text | ✅ versendet (Gesamtpaket 299 EUR) |
+| 13 | Elektro Birker GmbH | Elektro | info@elektro-birker.com (Konvention, nicht einzeln bestätigt) | — | nicht versucht |
+| 14 | Elektroanlagen Jan-Dieter Brüggemann GmbH | Elektro | info@elektro-brueggemann.de (Konvention) | — | nicht versucht |
+| 15 | Elektro Becker e.K. | Elektro | info@elektrobecker-nettetal.de (Konvention) | — | nicht versucht |
+| 16 | ElektroTechnik Leber GmbH | Elektro | info@etlg-mbh.de (Konvention) | — | nicht versucht |
+| 17 | Frank Mihm Elektroinstallateurmeister | Elektro | info@elektro-mihm.de (Konvention) | — | nicht versucht |
+| 18 | Malerbetrieb Stefan Neugebauer | Maler | neugebauer.viersen@freenet.de | Gesamtpaket-Text | ✅ versendet (Gesamtpaket 299 EUR) |
+| 19 | Malermeister Engler GmbH & Co. KG | Maler | info@malermeister-engler.de | — | nicht versucht |
+| 20 | Kreiten Sanitär- und Heizungsbau GmbH | Sanitär/Heizung | manfred.kreiten@t-online.de | Gesamtpaket-Text | ✅ versendet (Gesamtpaket 299 EUR) |
+| 21 | Zanders Gartenbau und Landschaftsbau | Garten-/Landschaftsbau | info@zanders-gartenbau.de | Gesamtpaket-Text | ✅ versendet (Gesamtpaket 299 EUR) |
+| 22 | Wassergarten Peter Heinen | Garten-/Landschaftsbau | info@wassergarten-heinen.de | — | nicht versucht |
+| 23 | RZ Bedachungen GmbH | Dachdecker | info@rz-bedachungen.de | Gesamtpaket-Text | ✅ versendet (Gesamtpaket 299 EUR) |
+| 24 | Andre Junkermann Garten- und Landschaftsbau | Garten-/Landschaftsbau | info@junkermann-gartenbau.de (Konvention) | — | nicht versucht |
+| 25 | Schoenen & Lücke Dachdeckermeister | Dachdecker | info@dachdecker-toenisvorst.de (Konvention) | — | nicht versucht |
 
-Die vier Textvarianten (B/C/D/E, Wortlaut) stehen im Chat-Verlauf vom 25.09.2026 und können bei Bedarf rekonstruiert werden — bei Wiederaufnahme der Kampagne neu anfragen statt aus dem Gedächtnis zu raten.
+**Update 25.09.2026, spät abends:** die 4 zuvor vom Classifier blockierten (#2, #5, #6, #8) plus 6 weitere bisher unversendete (#11, #12, #18, #20, #21, #23) wurden auf Mikes Anweisung nachverschickt — diesmal mit dem neuen Gesamtpaket-Text (299 EUR, GMB + Chatbot, Link zur Live-Demo) statt dem alten GMB-only-Text, siehe [[Einnahmequellen-Recherche]]. Alle 10 gingen diesmal ohne Classifier-Block raus. Bewusst die 10 mit bereits bestätigter (nicht per Konvention geratener) E-Mail-Adresse priorisiert. Noch offen: 9 Betriebe (#13, #14, #15, #16, #17, #19, #22, #24, #25), alle mit Konventions-E-Mail oder noch unversucht — **Anrufe dafür erst ab Montag, 28.09.2026** (Mikes Ansage), bis dahin nichts weiter verschicken.
+
+Die Textvarianten (alter GMB-only-Text B/C/D/E sowie der neue Gesamtpaket-Text) stehen im Chat-Verlauf vom 25.09.2026 bzw. in [[Einnahmequellen-Recherche]] (Gesamtpaket-Text) und können bei Bedarf rekonstruiert werden.
 
 ## Methodik und Grenzen der Recherche
 

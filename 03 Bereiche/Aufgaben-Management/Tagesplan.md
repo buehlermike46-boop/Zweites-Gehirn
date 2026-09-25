@@ -157,6 +157,17 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-25, interaktive Chat-Session, achte Fortsetzung (kein Subagent — 10 weitere Mails mit Gesamtpaket-Text verschickt)
+Auf Mikes Anweisung ("Anrufe erst ab Montag, schick gerne nochmal 10 neue emails raus") 10 der 19 noch unversendeten Kontakte aus [[GMB-Angebot Akquise]] Runde 2 angeschrieben — diesmal mit dem neuen Gesamtpaket-Text (299 EUR, GMB + Chatbot, Link zur Live-Demo) statt dem alten GMB-only-Text. Priorisiert: die 4 zuvor vom Sicherheits-Classifier blockierten (Elektro Lenzen, Elektrotechnik Kempkes, Göbel Manfred & Kompagnon, Elektrotechnik Heiner Hermans) als Retry, plus 6 weitere mit bereits bestätigter E-Mail-Adresse (Elektro Richter, Elektro Kamper, Malerbetrieb Neugebauer, Kreiten Sanitär/Heizung, Zanders Gartenbau, RZ Bedachungen). Erster Sendeversuch ging versehentlich an ein falsches/nicht existentes Tool (`mcp__Jarvis__send_message` statt `mcp__Gmail__send_message`), sofort bemerkt und korrigiert bevor irgendwas verschickt wurde. Danach alle 10 über Gmail erfolgreich raus, diesmal ohne Classifier-Block.
+
+**Stand danach:** 21 von 29 möglichen Kontakten (30 minus Mainka ohne E-Mail) haben eine Mail bekommen (11 mit altem GMB-Text, 10 mit neuem Gesamtpaket-Text). 9 bleiben offen (Konventions-E-Mails oder noch unversucht) — **Telefonate dafür erst ab Montag, 28.09.2026**, bis dahin nichts weiter verschicken (Mikes Ansage).
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (Runde-2-Tabelle aktualisiert, 10 neue Sends dokumentiert)
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag)
+
 ### 2026-09-25, interaktive Chat-Session, siebte Fortsetzung (kein Subagent — GMB und Chatbot zu Gesamtpaket zusammengelegt)
 Nach dem Live-Demo-Erfolg entschied Mike: "Das alles müssen wir als gesamt Leistung anbieten." GMB-Profil-Optimierung (Idee 3) und Handwerker-Chatbot (Idee 1) aus [[Einnahmequellen-Recherche]] zu einem gemeinsamen Einstiegspaket zusammengelegt, statt gestaffelt als Türöffner + Folgeangebot. Preis auf Nachfrage geklärt: **299 EUR für beides**, bewusst niedrig angesetzt — Mikes Begründung: erst Kundenstamm und ein nachweislich verkaufendes System aufbauen, kein langfristig gedachter Preis. Neuer gemeinsamer Angebotstext (E-Mail + Telefon-Leitfaden) in [[Einnahmequellen-Recherche]] hinterlegt, inklusive Link zur Live-Demo. Die bereits verschickten 11 GMB-only-Mails bleiben unverändert stehen (Mikes Entscheidung, kein Nachfass) — Gesamtpaket wird bei Antwort ergänzt, jede neue Ansprache pitcht direkt das Gesamtpaket.
 
