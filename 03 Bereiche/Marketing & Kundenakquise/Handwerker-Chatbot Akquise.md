@@ -16,6 +16,16 @@ Vorbereitung für die Ansprache von Elektro-Handwerksbetrieben zum [[Einnahmeque
 
 **Strategische Neubewertung (25.09.2026, Mikes Entscheidung im Chat):** Mike hält den Chatbot für das stärkere, schwerer kopierbare Angebot im Vergleich zum GMB-Bewertungspaket (siehe [[GMB-Angebot Akquise]]) — eine echte funktionierende Automatisierung statt einer Text-/Design-Vorlage. Die parallel laufende GMB-Mailkampagne wurde deshalb pausiert (Stand: 11 von 30 raus, siehe [[GMB-Angebot Akquise]]), der Fokus liegt jetzt auf dem Chatbot als Hauptangebot.
 
+## Live-Demo-Seite (25.09.2026, abends)
+
+**https://handwerker-chatbot.higgsfield.app** — echte, live erreichbare Landingpage für die Chatbot-Demo, gebaut über den Jarvis/Higgsfield-Website-Builder (eigenes Cloudflare-Worker-Projekt, kein Vault-Code). Löst das ursprüngliche Problem ("nichts live vorführbares", siehe Log 24.09.) und den akuten Bug vom selben Abend: das erste lokale Embed-Widget (`Chatbot-Widget (Embed-Baustein).html`) funktionierte beim lokalen Öffnen per Doppelklick nicht (`file://`-Ursprung, Browser blockt Netzwerk-Anfragen von lokalen Dateien an externe Server — nicht der Server/CORS, das war schon korrekt konfiguriert).
+
+**Aufbau:** Hero, "So funktioniert's" (3 Schritte), eingebettete echte Live-Chat-Demo (ruft denselben Make-Webhook wie das lokale Widget auf), Verfügbarkeits-Abschnitt, Kontakt-CTA. Eigenes generiertes Bildkonzept (Kobalt-Blau auf warmem Off-White, Elektro-Handwerk-Motiv), keine Higgsfield-Marke sichtbar. Demo-Firmenname "Musterbetrieb Elektrotechnik" ist als Platzhalter im Text auf der Seite selbst gekennzeichnet, um keine Verwechslung mit einer echten Firma zu erzeugen.
+
+**Wichtige Nebenentscheidung während des Baus:** Higgsfield-Websites sind ohne "Publish" nicht öffentlich erreichbar (401 "unauthenticated" beim ersten Deploy) — Publish listet die Seite aber zusätzlich in der öffentlichen Higgsfield-Community-Galerie, was ursprünglich explizit abgelehnt war (reines Geschäfts-Tool, kein Showcase). Mike hat im Chat nachträglich zugestimmt, das in Kauf zu nehmen, damit der Link überhaupt funktioniert — Marketplace-Listing ist ihm nicht wichtig. Marketplace-Link (nicht weiter genutzt): https://higgsfield.ai/supercomputer/apps/8d9774f2-4a30-434f-90c7-13ca3bec32d9/view
+
+**Für spätere Sessions:** Änderungen an der Seite laufen über die Jarvis-Website-Tools (`website_repo_access`, `deploy_website`), nicht über dieses Git-Repo — der Seiten-Code liegt in einem eigenen, von Higgsfield verwalteten Repo (website_id `01f874f1-05bb-46f4-bc50-f470e4154701`). Nach jeder Änderung erneut `deploy_website` nötig, sonst bleibt die alte Version live.
+
 ## Teil 1: 30 Elektro-Handwerksbetriebe
 
 **Quellen:** ausschließlich öffentlich zugängliche Daten — hauptsächlich `dashandwerk.de`, das offizielle Verzeichnis "E-Handwerke Niederrhein-Kreis Viersen" (Innungsbetriebe), ergänzt um die jeweilige eigene Firmenwebsite, Gelbe Seiten und Das Örtliche. Keine privaten oder nicht-öffentlichen Daten gesammelt — nur was auf der eigenen Firmenwebsite oder in öffentlichen Branchenverzeichnissen sowieso steht. Regionaler Schwerpunkt Kreis Viersen (Mikes eigener Wohnraum Süchteln/Viersen), erweitert auf Willich, Tönisvorst, Nettetal, Kempen, Grefrath und Mönchengladbach, um auf 30 zu kommen.

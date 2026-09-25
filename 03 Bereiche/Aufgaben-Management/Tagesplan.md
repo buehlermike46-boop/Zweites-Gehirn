@@ -157,6 +157,22 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-25, interaktive Chat-Session, sechste Fortsetzung (kein Subagent — echte Live-Demo-Website gebaut)
+Ausgangspunkt: das lokale Chatbot-Widget funktionierte beim Testen durch Mike nicht ("funktioniert nicht", Screenshot zeigte "Failed to fetch"). Root Cause identifiziert: `file://`-Ursprung beim lokalen Öffnen, Browser blockt dort grundsätzlich Netzwerk-Anfragen an externe Server, unabhängig vom Server. Nicht der Make-Webhook oder CORS (per curl verifiziert, beides korrekt).
+
+Mike wollte daraufhin eine echte, dauerhaft erreichbare Demo-Website statt eines Workarounds — über den Jarvis/Higgsfield-Website-Builder gebaut (eigenes Cloudflare-Worker-Projekt, non-animated/editorial, kein Marketplace-Publish anfangs gewünscht). Kompletter Pipeline-Durchlauf: Design-Brief, 5 generierte Referenz-Boards, generiertes Asset-Kit (Hero-Foto, Workshop-Textur, 3-Icon-Set, Monogram, OG-Bild, komplettes Favicon-Set), React/TanStack-Seite mit 5 Sektionen inkl. echtem eingebetteten Chat-Widget (ruft denselben Make-Webhook wie das lokale Widget), mechanischer Abnahme-Check (mehrere Regeln erfüllt, ein gebannter Hintergrundfarb-Hex korrigiert), Deploy erfolgreich beim ersten Versuch.
+
+**Nachtrag, unerwartetes Problem:** Deploy lief technisch fehlerfrei, aber die Seite antwortete öffentlich mit 401 "unauthenticated" — kein Fehler in eigenem Code (Server-Handler geprüft), sondern offenbar eine Higgsfield-Plattform-Regel: unveröffentlichte Websites sind nicht öffentlich erreichbar. Einziger bekannter Fix laut Doku: `publish_website`, das aber zusätzlich auf der öffentlichen Higgsfield-Community-Galerie listet — das hatte Mike beim Start ausdrücklich abgelehnt (reines Geschäftstool, kein Showcase). Vor dem Publish-Aufruf explizit nachgefragt statt eigenmächtig zu entscheiden; Mike hat zugestimmt, das Community-Listing in Kauf zu nehmen, damit der Link funktioniert. Nach Publish verifiziert: Seite lädt (200), Bilder/Manifest erreichbar.
+
+**Ergebnis:** https://handwerker-chatbot.higgsfield.app — echte Live-Demo, Details siehe [[Handwerker-Chatbot Akquise]], Abschnitt "Live-Demo-Seite".
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Marketing & Kundenakquise/Handwerker-Chatbot Akquise.md` (neuer Abschnitt "Live-Demo-Seite")
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag)
+- Externes Jarvis/Higgsfield-Website-Projekt (website_id 01f874f1-05bb-46f4-bc50-f470e4154701) — kein Vault-Code, separat verwaltet
+
 ### 2026-09-25, interaktive Chat-Session, fünfte Fortsetzung (kein Subagent — Runde 2 gestoppt, Chatbot-Inhalt korrigiert statt GMB-Paket weiter verschickt)
 Auf Mikes Anweisung ("25 weiter verschicken, auch andere Branchen und kleinere Firmen") 25 weitere Kontakte branchenübergreifend recherchiert (17 weitere Elektrobetriebe + 8 aus Maler/Dachdecker/Sanitär-Heizung/Garten-Landschaftsbau) und in 4 unterschiedlichen Text-Varianten (Struktur/Länge/Ansprache, nicht nur Aufhänger) vorbereitet, auf Mikes Wunsch ("wir müssen herausfinden was gut funktioniert"). Von den ersten 10 versuchten Sends gingen 6 raus, 4 wurden vom Claude-Code-Sicherheits-Classifier automatisch verweigert ("Real-World Transactions") — nicht umgangen, Mike wurde informiert und um Entscheidung gebeten.
 
