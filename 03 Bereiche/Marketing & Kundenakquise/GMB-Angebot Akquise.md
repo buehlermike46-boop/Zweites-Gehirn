@@ -10,7 +10,7 @@ Vorbereitung für die Ansprache der 30 Elektro-Handwerksbetriebe aus [[Handwerke
 
 **Positionierung: Türöffner vor dem Chatbot-Angebot.** Dieselben 30 Betriebe sind bereits für die Chatbot-Ansprache recherchiert. Statt zwei getrennte Kaltakquise-Wellen zu fahren, ist die GMB-Optimierung der niedrigschwelligere erste Kontakt — günstiger, schneller nachvollziehbarer Nutzen, kein Verweis auf eine unfertige Technik-Demo nötig. Läuft der erste Kontakt gut, ist der Chatbot ein naheliegender Folge-Pitch bei bestehendem Vertrauen, sobald das Make-Plan-Limit geklärt ist.
 
-**Status: reine Vorbereitung.** Nichts wurde verschickt, kein Betrieb wurde kontaktiert. Wartet auf Mikes Durchsicht und Freigabe, siehe Eintrag unter `## Freigabe nötig: Einnahmequellen` in [[Tagesplan]].
+**Status (Update 25.09.2026, abends):** 5 der 6 Testkontakte per E-Mail versendet (Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges, Georg Lerchner) — auf Mikes direkte Anweisung im Chat, über das verbundene Gmail-Konto (buehlermike46@gmail.com). Mainka Elektroanlagen fehlt weiterhin die Empfänger-Adresse, noch nicht verschickt. Die übrigen 24 Betriebe sowie das Chatbot-Angebot: unverändert reine Vorbereitung, nichts verschickt.
 
 ## Methodik und Grenzen der Recherche
 
@@ -57,7 +57,7 @@ Alle 30 Betriebe waren über mindestens ein öffentliches Verzeichnis mit Adress
 
 ## Personalisierte Angebote (6 von 30)
 
-Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Aufhänger-Satz durch den echten Befund ersetzt. Preis auf 249 EUR gesetzt (unteres Ende des Preis-Rahmens 249-349 EUR), weil es sich in allen sechs Fällen um ein bereits bestehendes, größtenteils gepflegtes Profil handelt, das primär beim Bewertungsaufbau Unterstützung braucht — keine Neueinrichtung von Grund auf. Mikes Kontakt (0152 04553210, buehler.mike@gmx.de) ist eingetragen.
+Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Aufhänger-Satz durch den echten Befund ersetzt. Preis auf 249 EUR gesetzt (unteres Ende des Preis-Rahmens 249-349 EUR), weil es sich in allen sechs Fällen um ein bereits bestehendes, größtenteils gepflegtes Profil handelt, das primär beim Bewertungsaufbau Unterstützung braucht — keine Neueinrichtung von Grund auf. Mikes Kontakt (0152 04553210, buehlermike46@gmail.com) ist eingetragen — Gmail statt der ursprünglich genannten gmx.de-Adresse, weil der tatsächliche Versand über das verbundene Gmail-Konto läuft (siehe Teil 4).
 
 ### 8. Georg Lerchner Elektro-Installationen GmbH & Co. KG (Viersen)
 
@@ -71,7 +71,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 14. Mainka Elektroanlagen GmbH (Willich)
 
@@ -85,7 +85,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
 
@@ -99,7 +99,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 24. Elektroanlagen Göbel GmbH (Kempen)
 
@@ -113,7 +113,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
 
@@ -127,7 +127,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 **Hinweis zu diesem Text:** Die genaue Bewertungsanzahl war je nach Quelle uneinheitlich (2 bis 4), deshalb bewusst vage als "eine Handvoll Bewertungen" formuliert statt eine möglicherweise falsche Zahl zu nennen — Mike sollte das Profil vor dem tatsächlichen Versenden kurz selbst gegenchecken.
 
@@ -143,7 +143,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ## Teil 3: Telefon-Leitfaden für die Testgruppe (6 Betriebe)
 
@@ -191,6 +191,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 
 ### 8. Georg Lerchner Elektro-Installationen GmbH & Co. KG (Viersen)
 **An:** info@lerchner.team (von Mike selbst mitgeteilt, 25.09.2026)
+**Status:** versendet 25.09.2026, über Gmail (buehlermike46@gmail.com)
 **Betreff:** Kurze Frage von einem Kollegen vom Fach an Georg Lerchner Elektro-Installationen
 
 > Hallo Team von Georg Lerchner Elektro-Installationen,
@@ -203,7 +204,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 14. Mainka Elektroanlagen GmbH (Willich)
 **An:** [E-Mail-Adresse nicht auffindbar — bitte auf elektro-mainka.de/Impressum prüfen oder Kontaktformular nutzen. Alternativ Tel. 02154 412750]
@@ -219,10 +220,11 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
 **An:** info@elektro-baumanns.de
+**Status:** versendet 25.09.2026, über Gmail (buehlermike46@gmail.com)
 **Betreff:** Kurze Frage von einem Kollegen vom Fach an Elektro Baumanns
 
 > Hallo Team von Elektro Baumanns,
@@ -235,10 +237,11 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 24. Elektroanlagen Göbel GmbH (Kempen)
 **An:** info@elektroanlagen-goebel.de
+**Status:** versendet 25.09.2026, über Gmail (buehlermike46@gmail.com)
 **Betreff:** Kurze Frage von einem Kollegen vom Fach an Elektroanlagen Göbel
 
 > Hallo Team von Elektroanlagen Göbel,
@@ -251,10 +254,11 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 ### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
 **An:** kontakt@eka-tebyl.de
+**Status:** versendet 25.09.2026, über Gmail (buehlermike46@gmail.com)
 **Betreff:** Kurze Frage von einem Kollegen vom Fach an EKA Elektroanlagen
 
 > Hallo Team von EKA Elektroanlagen,
@@ -267,12 +271,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 >
 > *(Bewertungsanzahl bewusst vage gehalten, siehe Hinweis in Teil 2 — vor dem Versand kurz selbst gegenchecken.)*
 
 ### 30. Elektro Bremges / Starkstrom-Bremges GmbH & Co. KG (Mönchengladbach)
 **An:** info@starkstrom-bremges.de
+**Status:** versendet 25.09.2026, über Gmail (buehlermike46@gmail.com)
 **Betreff:** Kurze Frage von einem Kollegen vom Fach an Starkstrom-Bremges
 
 > Hallo Team von Starkstrom-Bremges,
@@ -285,7 +290,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > Viele Grüße
 > Mike Bühler
-> 0152 04553210 · buehler.mike@gmx.de
+> 0152 04553210 · buehlermike46@gmail.com
 
 **Mikes Kontakt ist in allen sechs Mails eingetragen** (0152 04553210 · buehler.mike@gmx.de, 25.09.2026 im Chat mitgeteilt). 5 von 6 Empfänger-Adressen jetzt vollständig (Lerchner am 25.09. von Mike selbst ergänzt: info@lerchner.team). Noch offen: Mainka Elektroanlagen — Website blockierte den automatisierten Abruf, siehe Hinweis oben.
 

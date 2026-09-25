@@ -53,7 +53,9 @@ Auf direkten Auftrag von Mike im Chat ("lass uns bitte eins davon erstmal zu end
 
 **Präzisiert, selber Tag:** Kanal doch gemischt statt nur Telefon — die 6 Testkontakte heute per E-Mail, ab Montag zusätzlich Telefon für weitere Kontakte. [[GMB-Angebot Akquise]] um Teil 4 ergänzt: alle 6 Texte als versandfertige E-Mail (Betreff + Empfänger-Adresse). Bei 4 von 6 Betrieben Empfänger-E-Mail verifiziert (2 davon per Websuche bereits bekannt, 2 weitere neu gefunden: Elektroanlagen Göbel, Starkstrom-Bremges), bei 2 Betrieben (Lerchner, Mainka) blockierte die Firmenwebsite den automatisierten Abruf (HTTP 503) — dort bewusst keine E-Mail erfunden, offen als fehlend markiert, Mike prüft selbst oder nutzt für diese zwei das Telefon.
 
-**Nächster Schritt ist Mike-only, nicht Executor:** weder E-Mail-Versand noch Anrufe kann ein Agent übernehmen (kein E-Mail-/Telefon-Connector). Zählt als offener Punkt für den Mike-only-Zähler unten, bis die 6 Mails raus sind bzw. die Montags-Anrufe geführt wurden und das Ergebnis hier vermerkt ist. Danach: Reaktionen auswerten, bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden.
+**Update 25.09.2026, abends — auf Mikes direkte Anweisung im Chat verschickt:** 5 der 6 Testkontakte per E-Mail raus (Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges, Georg Lerchner), über das verbundene Gmail-Konto (buehlermike46@gmail.com — Signatur in [[GMB-Angebot Akquise]] entsprechend von der ursprünglich genannten gmx.de-Adresse umgestellt, damit Antworten dort ankommen). Mainka Elektroanlagen fehlt weiterhin die Empfänger-Adresse, noch nicht verschickt — Telefonnummer 02154 412750 liegt als Alternative bereit. Anrufe (Telefon-Leitfaden Teil 3) weiterhin für Montag geplant, kein Telefon-Connector vorhanden, bleibt Mike-only.
+
+**Nächster Schritt:** Reaktionen auf die 5 versendeten Mails abwarten/auswerten (Postfach buehlermike46@gmail.com beobachten), bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden.
 
 ### Handwerker-Chatbot: 30 Kontakte recherchiert + Angebotstext fertig (24.09.2026, aufgaben-executor, direkter Chat-Auftrag)
 
@@ -154,6 +156,19 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
+
+### 2026-09-25, interaktive Chat-Session, vierte Fortsetzung (kein Subagent — erster echter Versand: 5 GMB-Mails raus)
+Mike hat direkt im Chat angewiesen, die 5 versandfertigen GMB-Mails (Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges, Georg Lerchner) zu verschicken. Vor dem Versand geprüft: das verbundene Gmail-Konto (buehlermike46@gmail.com) sendet unter seiner eigenen Adresse, nicht unter der in der Signatur stehenden gmx.de-Adresse — Mismatch Mike vorgelegt und geklärt: über Gmail senden, Signatur entsprechend anpassen (statt selbst über gmx.de zu verschicken). Signatur in allen 12 betroffenen Textstellen in [[GMB-Angebot Akquise]] von buehler.mike@gmx.de auf buehlermike46@gmail.com umgestellt, danach alle 5 Mails über `mcp__Gmail__send_message` verschickt (Message-IDs im Gmail-Konto vorhanden).
+
+**Das ist der erste tatsächlich nach außen wirkende Schritt in der gesamten Einnahmequellen-Explorer-Baustelle** — bisher ausschließlich Recherche/Entwürfe. Lief nicht über die Standing-Freigabe, sondern über Mikes direkte, explizite Anweisung im Chat ("Schick die 5 bitte raus").
+
+Mainka Elektroanlagen weiterhin offen (keine E-Mail-Adresse verifiziert), nicht verschickt. [[GMB-Angebot Akquise]] und der Eintrag unter `## Freigabe nötig: Einnahmequellen` oben entsprechend aktualisiert (Status pro Betrieb vermerkt).
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (Status pro versendeter Mail vermerkt, Signatur-Adresse korrigiert)
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag, GMB-Eintrag unter "Freigabe nötig: Einnahmequellen" aktualisiert)
 
 ### 2026-09-25, interaktive Chat-Session, dritte Fortsetzung (kein Subagent — Kontaktdaten eingetragen + Text-Fokus korrigiert)
 Mike hat seine eigenen Kontaktdaten mitgeteilt (0152 04553210, buehler.mike@gmx.de) — in allen sechs E-Mails in [[GMB-Angebot Akquise]] eingetragen (Teil 2 und Teil 4).
