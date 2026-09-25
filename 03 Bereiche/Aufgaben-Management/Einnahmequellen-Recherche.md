@@ -32,9 +32,56 @@ Details siehe `.claude/agents/aufgaben-manager.md` (Abschnitt "Einnahmequellen-E
 |---|---|---|---|---|---|
 | **KI-Terminbuchungs-/FAQ-Chatbot für Handwerksbetriebe** (per Make.com + Jarvis, als Website-Widget oder WhatsApp-Bot) | Dienstleistung | Stufe 1, guter Kandidat fürs Erstprojekt (1.500-3.000 EUR) | Aufwendig — einmaliges Template bauen (ca. 1-2 Tage), danach pro Kunde wenige Stunden Anpassung | Mike kennt Make.com bereits aus dem eigenen Telegram-Bot, kein neues Werkzeug nötig. Marktpreise laut Recherche 3.000-5.000 EUR je Projekt (Prozessmeister) bzw. ab 1.490 EUR/Monat im Abo — deckt sich mit dem Stufe-1-Zielkorridor. Elektro-Handwerk als Zielgruppe passt zu seinem Vertrauensvorsprung im eigenen Netzwerk (siehe [[Kontaktliste - 20 Namen aus dem Umfeld]], [[Pflegedienst]]-Umfeld). **Update 24.09.2026:** Demo-Version gebaut (Webhook + KI-Intent-Erkennung + FAQ-Antwort per Make-AI-Tools + Terminanfrage-Meldung per Telegram-DM), technisch fertig aber nicht aktivierbar — Make-Konto erlaubt nur eine begrenzte Zahl aktiver Szenarien, beide Plätze belegt. Siehe [[Tagesplan]], "Technisch blockiert". | technisch fertig, Aktivierung blockiert (Make-Plan-Limit) |
 | **Website-Baukasten-Service für kleine Handwerks-/Dienstleistungsbetriebe** (No-Code, über Jarvis' `website-builder-flow`-Workflow) | Dienstleistung | Stufe 1 — direkter Treffer auf die im MasterPlan genannte Erstprojekt-Bedingung ("Webseite oder Chatbot, 1.500-3.000 EUR") | Komplex — Standard-Template einmal bauen, dann mehrere Tage Anpassung pro Kunde | Jarvis bietet laut eigener Tool-Dokumentation einen dedizierten Workflow für Websites, den Mike ohne Entwickler-Kenntnisse bedienen kann. **Update 24.09.2026:** Der Pflegedienst-Fall ist konkreter geworden als reines Portfolio-Stück — die bestehende Seite läuft aktuell über IONOS für ca. 50 EUR/Monat, Mike will das selbst günstiger ersetzen (siehe [[Pflegedienst]]). Erste Text-/Strukturentwürfe stehen und sind von Mike inhaltlich freigegeben, das Thema ist aber bewusst **pausiert bis Sonntag, 27.09.2026** (gemeinsame Besprechung mit seiner Mutter) — kein Agenten-Schritt bis dahin. | pausiert bis 27.09.2026, Entwürfe fertig und freigegeben, aber noch nichts verschickt |
-| **Google-Unternehmensprofil-Optimierung als Einstiegspaket für lokale Betriebe** (Ersteinrichtung, Fotos, Beschreibung, Bewertungsmanagement) | Dienstleistung | Kein eigenständiges Stufe-1-Projekt (Preis zu niedrig für 1.500-3.000 EUR), aber guter Türöffner vor größeren Aufträgen | Sofort bis Aufwendig — wenige Stunden pro Kunde | Sehr niedrige Einstiegshürde: das Profil selbst ist für den Kunden kostenlos, Agenturen verlangen laut Recherche ab ca. 299 EUR für die Optimierung. Technisch schon ein Werkzeug vorhanden — der bestehende Windsor.ai-Connector unterstützt laut eigener Doku bereits Schreibzugriff auf Google Business Profile (Posts/Reviews/Listing-Änderungen), sobald ein Kundenaccount verbunden ist. Guter Kombi-/Upsell-Baustein zu den beiden Ideen oben. | offen |
+| **Google-Unternehmensprofil-Optimierung als Einstiegspaket für lokale Betriebe** (Ersteinrichtung, Fotos, Beschreibung, Bewertungsmanagement) | Dienstleistung | Kein eigenständiges Stufe-1-Projekt (Preis zu niedrig für 1.500-3.000 EUR), aber guter Türöffner vor größeren Aufträgen | Sofort bis Aufwendig — wenige Stunden pro Kunde | Sehr niedrige Einstiegshürde: das Profil selbst ist für den Kunden kostenlos, Agenturen verlangen laut Recherche ab ca. 299 EUR für die Optimierung. Technisch schon ein Werkzeug vorhanden — der bestehende Windsor.ai-Connector unterstützt laut eigener Doku bereits Schreibzugriff auf Google Business Profile (Posts/Reviews/Listing-Änderungen), sobald ein Kundenaccount verbunden ist. Guter Kombi-/Upsell-Baustein zu den beiden Ideen oben. **Update 25.09.2026:** Angebotspaket komplett ausgearbeitet (Leistungsumfang, Preis-Rahmen, Angebotstext), siehe Abschnitt "Ausgearbeitete Angebote" unten. | Angebotspaket entworfen, wartet auf Priorisierung/Freigabe zur Ansprache |
 | **KI-Automatisierungspakete für Admin-Prozesse kleiner Betriebe** (Rechnungserfassung, Lead-Erfassung/-Routing, Terminerinnerungen via Make.com) | Dienstleistung | Stufe 1, mit Potenzial für ein wiederkehrendes Abo-Modell | Komplex — pro Kunde eigene Prozessanalyse nötig, mehrere Tage bis Wochen | Baut auf Mikes eigenem, bereits geplantem Rechnungs-Automatik-Vorhaben auf (siehe [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], "Komplex", Stufe 2/3 im eigenen IB-Business) — dieselbe Technik ließe sich als Dienstleistung verkaufen. Marktpreise laut Recherche ab 1.490 EUR/Monat (Abo) oder ab 2.500 EUR (Einmalprojekt), für den Kunden teils über BAFA/"go-digital" bis zu 50 % förderfähig (Verkaufsargument). Höherer Aufwand pro Kunde als der Chatbot oben, deshalb eher zweiter Schritt nach dem ersten Projekt. | offen |
 | **Digitale Lern-/Prüfungsvorbereitungs-Templates für angehende Elektroniker** (PDF-Checklisten, Übungsblätter, kleines Bundle für die Gesellenprüfung) | Produkt | Kein Stufe-1-Ersatz (zu kleinteilig für 1.500-3.000 EUR), aber risikoarmer erster Test für die "Digitale Produkte"-Kategorie | Sofort bis Aufwendig — Content selbst erstellen, kein technisches Setup außer einfacher Verkaufsseite/Marktplatz-Listing | Nutzt zwei echte Vorerfahrungen: Elektromeister-Fachwissen plus frühere Tätigkeit als Dozent für technische/mathematische Fächer (siehe [[Über mich]]). Templates/Checklisten verkaufen sich laut Recherche aktuell gut (Einstiegspreise 9-29 EUR, Bundles bis ca. 197 EUR), spezifisch fürs Elektrohandwerk aber eine Nische ohne direkt gefundene Vergleichsangebote — Chance auf wenig Konkurrenz, aber auch unklare Nachfrage, deshalb eher kleiner Test als große Wette. Passiv nach Ersterstellung. | offen |
+
+## Ausgearbeitete Angebote
+
+### Idee 3: Google-Unternehmensprofil-Optimierung — Angebotspaket (ausgearbeitet 25.09.2026)
+
+Reiner Text-/Preisentwurf, gedeckt durch die Einnahmequellen-Standing-Freigabe. **Kein Kundenkontakt, kein Angebot verschickt, keine konkrete Zielkunden-Recherche** — das folgt erst nach einer bewussten Priorisierungs-Entscheidung, analog zur bereits vorbereiteten Handwerker-Chatbot-Kontaktliste (siehe [[Handwerker-Chatbot Akquise]]).
+
+**Positionierung:** bewusst kein eigenständiges Stufe-1-Projekt, sondern ein günstiger, schnell umsetzbarer Türöffner vor größeren Aufträgen (Website, Chatbot) — passt zum selben Zielgruppen-Vertrauensvorsprung wie beim Chatbot (Mike als gelernter Elektroniker/Elektromeister, kein anonymer Agentur-Pitch), lässt sich aber auch branchenübergreifend an andere lokale Handwerks-/Dienstleistungsbetriebe im eigenen Umfeld anbieten, nicht nur an Elektrobetriebe.
+
+#### Leistungsumfang (Einstiegspaket, einmalig)
+
+- **Kategorie:** Hauptkategorie prüfen und ggf. korrigieren (so spezifisch wie möglich), sinnvolle Zusatzkategorien ergänzen — nur für Leistungen, die der Betrieb tatsächlich anbietet, um das Relevanzsignal nicht zu verwässern.
+- **Beschreibung:** Unternehmensbeschreibung neu formuliert bzw. überarbeitet, mit den Suchbegriffen, nach denen echte Kunden lokal suchen (Leistung + Ort), statt reiner Werbefloskeln.
+- **Öffnungszeiten:** reguläre Öffnungszeiten und Sonderöffnungszeiten (Feiertage, Betriebsurlaub) vollständig und korrekt gepflegt.
+- **Fotos-Bereich:** bestehende Fotos sichten, nach Kategorien sortiert (Team, ausgeführte Arbeiten, Außenansicht/Standort, Logo) neu einordnen bzw. konkret benennen, welche Motive fehlen — Betriebe mit Fotos bekommen laut Recherche deutlich mehr Anfragen als ohne.
+- **Rahmen für laufendes Bewertungsmanagement** (kein laufendes Abo, Teil des Einstiegspakets ist nur der Rahmen dafür): eine kurze Vorlage, mit der der Betrieb zufriedene Kunden aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen (positive und negative Bewertung) — der Betrieb führt das danach selbst weiter, keine dauerhafte Betreuung durch Mike in diesem Paket.
+
+Bewusst **kein** Bestandteil des Einstiegspakets: laufende monatliche Pflege/Reporting (das wäre ein separates, späteres Abo-Angebot, kein Teil dieses Türöffner-Pakets) und keine bezahlten Google-Ads-Kampagnen.
+
+#### Preis-Rahmen
+
+Markt-Check (WebSearch, 25.09.2026, zusätzlich zur bereits vorhandenen "ab 299 EUR"-Einschätzung vom 24.09.2026):
+- Einmalige Ersteinrichtung/Neugestaltung bei einer Agentur: ca. 545 EUR (diedesigner.net)
+- Einmalige Einrichtung bei einem laufenden Paket-Anbieter: 379 EUR (zzgl. eines danach folgenden Monatspakets ab 279 EUR/Monat, lokalbesucher.de) — für Mikes Einstiegspaket nicht relevant, weil ohne laufende Betreuung
+- SEO/GEO-Optimierungspaket (Bewertungs-Setup, Leistungsseiten, Kategorien, Beschreibung, Fotos) einmalig: 399 EUR
+
+Mikes Einstiegspaket deckt bewusst weniger ab als diese Vergleichsangebote (keine Leistungsseiten/kein SEO-Unterbau, keine laufende Betreuung), daher bewusst unter dem recherchierten Marktkorridor angesetzt, um als echter Türöffner zu funktionieren: **249 bis 349 EUR, einmalig**, je nach Ausgangszustand des Profils (komplett neu einrichten liegt eher am oberen Ende, ein bestehendes Profil nur optimieren eher am unteren Ende). Realistischer Zeitaufwand pro Kunde: wenige Stunden, keine mehrtägige Arbeit.
+
+#### Angebotstext (kurz, wiederverwendbar)
+
+Stil nach `00 Kontext/Schreibstil.md` (duzen, locker aber professionell, keine Gedankenstriche, keine erfundenen Referenzen/Erfolge) und `00 Kontext/Über mich.md`.
+
+> Hallo [Ansprechpartner / Team von [Firmenname]],
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie kleine Betriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen [konkreter, individueller Punkt einsetzen, z. B. fehlende Fotos / unvollständige Öffnungszeiten / keine aktuelle Beschreibung — vor dem Versenden je Betrieb kurz das echte Profil prüfen, kein Textbaustein raten].
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für [249 bis 349 EUR, je nach Ausgangslage].
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+**Platzhalter-Hinweis:** `[Firmenname]`, `[Ansprechpartner]`, der individuelle Aufhänger-Satz, `[Telefonnummer]`, `[E-Mail-Adresse]` vor Verwendung pro Betrieb ausfüllen — der individuelle Aufhänger-Satz braucht einen echten Blick auf das jeweilige Google-Profil, sonst wirkt der Text austauschbar/nach Massenmail.
+
+**Ausdrücklich nicht Teil dieser Ausarbeitung:** keine Zielkunden-Liste (anders als beim Chatbot noch nicht recherchiert), kein Betrieb kontaktiert, kein Angebot verschickt. Wartet auf Mikes Priorisierungs-Entscheidung (siehe [[Tagesplan]]), ob und wann diese Idee vor oder nach den anderen vier verfolgt wird.
 
 ## Entschieden / verworfen
 
@@ -43,6 +90,15 @@ Details siehe `.claude/agents/aufgaben-manager.md` (Abschnitt "Einnahmequellen-E
 ## Log
 
 *(jeder Recherche-Lauf mit Datum: was wurde geprüft, was kam neu dazu, was wurde verworfen und warum)*
+
+### 2026-09-25, aufgaben-executor-Lauf (Scheduled Cloud Routine, `## Bestätigt für 2026-09-25 (Einnahmequellen-Explorer: GMB-Angebotspaket)`)
+Auftrag aus [[Tagesplan]] abgearbeitet: Idee 3 (Google-Unternehmensprofil-Optimierung) vom bloßen Ideen-Pool-Eintrag zu einem konkreten Angebotspaket ausgearbeitet, siehe neuer Abschnitt "Ausgearbeitete Angebote" oben. Per WebSearch die bereits vorhandene "ab 299 EUR"-Einschätzung vom 24.09.2026 mit drei zusätzlichen, konkreten Vergleichsangeboten unterlegt (545 EUR Ersteinrichtung, 379 EUR + Monatspaket, 399 EUR SEO/GEO-Paket) und daraus einen eigenen, bewusst darunterliegenden Türöffner-Preis von 249-349 EUR einmalig abgeleitet, weil Mikes Einstiegspaket weniger Leistung enthält als diese Vergleichsangebote (kein SEO-Unterbau, keine laufende Betreuung). Leistungsumfang (Kategorie, Beschreibung, Öffnungszeiten, Fotos-Bereich, Rahmen für Bewertungsmanagement) und ein kurzer, wiederverwendbarer Angebotstext nach `00 Kontext/Schreibstil.md` stehen fertig. Status der Idee 3 in der Ideen-Pool-Tabelle von "offen" auf "Angebotspaket entworfen, wartet auf Priorisierung/Freigabe zur Ansprache" geändert.
+
+**Ausdrücklich kein nach außen wirkender Schritt:** keine Zielkunden recherchiert, kein Betrieb kontaktiert, kein Angebot verschickt — Auftrag hat das auch explizit ausgeschlossen. Deshalb kein neuer Eintrag unter `## Freigabe nötig: Einnahmequellen` in [[Tagesplan]] nötig, die Standing-Freigabe für Recherche/Entwurf deckt diese Runde vollständig ab.
+
+**Domain-Check:** kein Content-/Instagram-/Telegram-Bezug, kein YouTube-Bezug. Gehört ausschließlich zum Einnahmequellen-Explorer-Track.
+
+Geänderte Datei: `03 Bereiche/Aufgaben-Management/Einnahmequellen-Recherche.md` (dieser Log-Eintrag, Ideen-Pool-Status, neuer Abschnitt "Ausgearbeitete Angebote").
 
 ### 2026-09-24, Abend (Chat mit Mike, kein Subagent)
 Pflegedienst-Text-Entwürfe von Mike inhaltlich freigegeben ("Passt so"), aber explizit gestoppt: seine Mutter zahlt aktuell ~50 EUR/Monat bei IONOS für die bestehende Website, Ziel ist eine selbst gebaute, günstigere Lösung statt nur ein Portfolio-Stück. Thema **pausiert bis Sonntag, 27.09.2026** — wird dann gemeinsam mit seiner Mutter weiterbesprochen. Idee 2 oben entsprechend aktualisiert, kein weiterer Agenten-Schritt zu diesem Punkt bis dahin.
