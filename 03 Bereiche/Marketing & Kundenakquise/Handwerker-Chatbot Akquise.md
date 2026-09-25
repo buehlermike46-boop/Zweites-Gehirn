@@ -26,6 +26,10 @@ Vorbereitung für die Ansprache von Elektro-Handwerksbetrieben zum [[Einnahmeque
 
 **Für spätere Sessions:** Änderungen an der Seite laufen über die Jarvis-Website-Tools (`website_repo_access`, `deploy_website`), nicht über dieses Git-Repo — der Seiten-Code liegt in einem eigenen, von Higgsfield verwalteten Repo (website_id `01f874f1-05bb-46f4-bc50-f470e4154701`). Nach jeder Änderung erneut `deploy_website` nötig, sonst bleibt die alte Version live.
 
+## Update 25.09.2026, spät abends: zu Gesamtpaket zusammengelegt
+
+Mike hat entschieden, den Chatbot nicht mehr als eigenständiges Angebot zu führen, sondern zusammen mit dem GMB-Paket (siehe [[GMB-Angebot Akquise]]) als **ein Gesamtpaket für 299 EUR**. Details, Preis-Begründung und der neue, gemeinsame Angebotstext (E-Mail + Telefon) stehen in [[Einnahmequellen-Recherche]], Abschnitt "Idee 1 + 3 zusammengelegt". Die 30 hier recherchierten Betriebe bleiben die Zielkundenliste für beide Bausteine zusammen — keine neue Recherche nötig.
+
 ## Teil 1: 30 Elektro-Handwerksbetriebe
 
 **Quellen:** ausschließlich öffentlich zugängliche Daten — hauptsächlich `dashandwerk.de`, das offizielle Verzeichnis "E-Handwerke Niederrhein-Kreis Viersen" (Innungsbetriebe), ergänzt um die jeweilige eigene Firmenwebsite, Gelbe Seiten und Das Örtliche. Keine privaten oder nicht-öffentlichen Daten gesammelt — nur was auf der eigenen Firmenwebsite oder in öffentlichen Branchenverzeichnissen sowieso steht. Regionaler Schwerpunkt Kreis Viersen (Mikes eigener Wohnraum Süchteln/Viersen), erweitert auf Willich, Tönisvorst, Nettetal, Kempen, Grefrath und Mönchengladbach, um auf 30 zu kommen.

@@ -157,6 +157,19 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-25, interaktive Chat-Session, siebte Fortsetzung (kein Subagent — GMB und Chatbot zu Gesamtpaket zusammengelegt)
+Nach dem Live-Demo-Erfolg entschied Mike: "Das alles müssen wir als gesamt Leistung anbieten." GMB-Profil-Optimierung (Idee 3) und Handwerker-Chatbot (Idee 1) aus [[Einnahmequellen-Recherche]] zu einem gemeinsamen Einstiegspaket zusammengelegt, statt gestaffelt als Türöffner + Folgeangebot. Preis auf Nachfrage geklärt: **299 EUR für beides**, bewusst niedrig angesetzt — Mikes Begründung: erst Kundenstamm und ein nachweislich verkaufendes System aufbauen, kein langfristig gedachter Preis. Neuer gemeinsamer Angebotstext (E-Mail + Telefon-Leitfaden) in [[Einnahmequellen-Recherche]] hinterlegt, inklusive Link zur Live-Demo. Die bereits verschickten 11 GMB-only-Mails bleiben unverändert stehen (Mikes Entscheidung, kein Nachfass) — Gesamtpaket wird bei Antwort ergänzt, jede neue Ansprache pitcht direkt das Gesamtpaket.
+
+**Ausdrücklich kein nach außen wirkender Schritt:** nichts verschickt, keine neue Zielkunden-Recherche (bestehende Listen aus [[Handwerker-Chatbot Akquise]]/[[GMB-Angebot Akquise]] gelten weiter für beide Bausteine).
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Aufgaben-Management/Einnahmequellen-Recherche.md` (neuer Abschnitt "Idee 1 + 3 zusammengelegt", Ideen-Pool-Status aktualisiert)
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (Verweis auf Gesamtpaket ergänzt)
+- `03 Bereiche/Marketing & Kundenakquise/Handwerker-Chatbot Akquise.md` (Verweis auf Gesamtpaket ergänzt)
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag)
+
 ### 2026-09-25, interaktive Chat-Session, sechste Fortsetzung (kein Subagent — echte Live-Demo-Website gebaut)
 Ausgangspunkt: das lokale Chatbot-Widget funktionierte beim Testen durch Mike nicht ("funktioniert nicht", Screenshot zeigte "Failed to fetch"). Root Cause identifiziert: `file://`-Ursprung beim lokalen Öffnen, Browser blockt dort grundsätzlich Netzwerk-Anfragen an externe Server, unabhängig vom Server. Nicht der Make-Webhook oder CORS (per curl verifiziert, beides korrekt).
 
