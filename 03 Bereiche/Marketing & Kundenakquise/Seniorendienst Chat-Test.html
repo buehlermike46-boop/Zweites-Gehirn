@@ -296,22 +296,10 @@
       return el;
     }
 
-    function pingWebhook() {
-      setStatus("Verbinde mit dem Test-Bot …");
-      fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ nachricht: "Systemcheck" }) })
-        .then(function (r) {
-          if (r.ok) { setStatus("Bot ist aktiv, bereit zum Testen.", "ok"); }
-          else { setStatus("Bot antwortet mit Fehler (" + r.status + ").", "error"); }
-        })
-        .catch(function (err) {
-          setStatus("Bot nicht erreichbar: " + err.message, "error");
-        });
-    }
-
     launcher.addEventListener("click", function () {
       panel.hidden = false;
       launcher.style.display = "none";
-      if (!opened) { opened = true; pingWebhook(); }
+      if (!opened) { opened = true; setStatus("Bereit zum Testen.", "ok"); }
       input.focus();
     });
     closeBtn.addEventListener("click", function () {
