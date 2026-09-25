@@ -57,7 +57,7 @@ Alle 30 Betriebe waren über mindestens ein öffentliches Verzeichnis mit Adress
 
 ## Personalisierte Angebote (6 von 30)
 
-Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Aufhänger-Satz durch den echten Befund ersetzt. Preis auf 249 EUR gesetzt (unteres Ende des Preis-Rahmens 249-349 EUR), weil es sich in allen sechs Fällen um ein bereits bestehendes, größtenteils gepflegtes Profil handelt, das primär beim Bewertungsaufbau Unterstützung braucht — keine Neueinrichtung von Grund auf. `[Telefonnummer]` und `[E-Mail-Adresse]` bleiben Platzhalter, die trägt Mike selbst ein.
+Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Aufhänger-Satz durch den echten Befund ersetzt. Preis auf 249 EUR gesetzt (unteres Ende des Preis-Rahmens 249-349 EUR), weil es sich in allen sechs Fällen um ein bereits bestehendes, größtenteils gepflegtes Profil handelt, das primär beim Bewertungsaufbau Unterstützung braucht — keine Neueinrichtung von Grund auf. Mikes Kontakt (0152 04553210, buehler.mike@gmx.de) ist eingetragen.
 
 ### 8. Georg Lerchner Elektro-Installationen GmbH & Co. KG (Viersen)
 
@@ -65,13 +65,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil zwar die volle Punktzahl hat, mit 5,0 von 5, aber bisher nur 2 Bewertungen zeigt. Bei einem Betrieb, der seit 1962 am Markt ist, wirkt das fast zu wenig für das, was ihr eigentlich leistet.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 14. Mainka Elektroanlagen GmbH (Willich)
 
@@ -79,13 +79,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil aktuell bei 3,7 von 5 Sternen aus nur 3 Bewertungen steht. Das drückt den ersten Eindruck runter, obwohl ihr als Innungsfachbetrieb sicher regelmäßig zufriedene Kunden habt, die bisher einfach nie gefragt wurden.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
 
@@ -93,13 +93,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 4 Bewertungen zeigt. Für einen Ausbildungsbetrieb mit E-Check und Gebäudesystemtechnik im Programm ist das ziemlich wenig Sichtbarkeit für das, was ihr anbietet.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 24. Elektroanlagen Göbel GmbH (Kempen)
 
@@ -107,13 +107,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil trotz eurer Größe, rund 60 Mitarbeiter und seit 1976 am Markt, bisher nur 4 Bewertungen zeigt. Da ist deutlich mehr drin, wenn man bedenkt wie viele Kunden ihr über die Jahre schon betreut habt.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
 
@@ -121,13 +121,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur eine Handvoll Bewertungen zeigt. Für einen Betrieb mit Elektroinstallation und Solaranlagen im Programm ist da noch Luft nach oben, gerade weil Solarkunden online oft aktiv nach Erfahrungsberichten suchen bevor sie sich melden.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 **Hinweis zu diesem Text:** Die genaue Bewertungsanzahl war je nach Quelle uneinheitlich (2 bis 4), deshalb bewusst vage als "eine Handvoll Bewertungen" formuliert statt eine möglicherweise falsche Zahl zu nennen — Mike sollte das Profil vor dem tatsächlichen Versenden kurz selbst gegenchecken.
 
@@ -137,13 +137,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 5 Bewertungen zeigt. Für einen Meisterfachbetrieb, der seit 1934 existiert, ist das ziemlich wenig Sichtbarkeit für die Erfahrung, die eigentlich dahintersteckt.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ## Teil 3: Telefon-Leitfaden für die Testgruppe (6 Betriebe)
 
@@ -163,21 +163,21 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 
 ### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
 **Tel. 02156 7075**
-> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur 4 Bewertungen zeigt — für einen Ausbildungsbetrieb mit E-Check und Gebäudesystemtechnik im Programm ist das wenig Sichtbarkeit für das, was ihr anbietet. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro, kein Abo. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur 4 Bewertungen zeigt — für einen Ausbildungsbetrieb mit E-Check und Gebäudesystemtechnik im Programm ist das wenig Sichtbarkeit für das, was ihr anbietet. Ich biete gerade ein kleines Einstiegspaket an, mit dem ihr systematisch mehr echte Bewertungen bekommt, plus ich schau mir dabei kurz euer Profil mit an, einmalig 249 Euro, kein Abo. Hättest du kurz Zeit für einen unverbindlichen Blick?"
 
 ### 24. Elektroanlagen Göbel GmbH (Kempen)
 **Tel. 02152 89472-0**
-> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil trotz eurer Größe, rund 60 Mitarbeiter, seit 1976 am Markt, bisher nur 4 Bewertungen zeigt — da ist deutlich mehr drin bei den vielen Kunden, die ihr über die Jahre schon betreut habt. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil trotz eurer Größe, rund 60 Mitarbeiter, seit 1976 am Markt, bisher nur 4 Bewertungen zeigt — da ist deutlich mehr drin bei den vielen Kunden, die ihr über die Jahre schon betreut habt. Ich biete gerade ein kleines Einstiegspaket an, mit dem ihr systematisch mehr echte Bewertungen bekommt, plus ich schau mir dabei kurz euer Profil mit an, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
 
 ### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
 **Tel. 02158 951957**
-> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur eine Handvoll Bewertungen zeigt — bei Elektroinstallation und Solaranlagen im Programm ist da noch Luft nach oben, gerade weil Solarkunden online oft aktiv nach Erfahrungsberichten suchen. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur eine Handvoll Bewertungen zeigt — bei Elektroinstallation und Solaranlagen im Programm ist da noch Luft nach oben, gerade weil Solarkunden online oft aktiv nach Erfahrungsberichten suchen. Ich biete gerade ein kleines Einstiegspaket an, mit dem ihr systematisch mehr echte Bewertungen bekommt, plus ich schau mir dabei kurz euer Profil mit an, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
 >
 > *(Bewertungsanzahl bewusst vage gehalten, siehe Hinweis oben — vor dem Anruf kurz selbst gegenchecken.)*
 
 ### 30. Elektro Bremges / Starkstrom-Bremges GmbH & Co. KG (Mönchengladbach)
 **Tel. 02166 43424**
-> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur 5 Bewertungen zeigt — für einen Meisterfachbetrieb seit 1934 ist das wenig Sichtbarkeit für die Erfahrung, die dahintersteckt. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur 5 Bewertungen zeigt — für einen Meisterfachbetrieb seit 1934 ist das wenig Sichtbarkeit für die Erfahrung, die dahintersteckt. Ich biete gerade ein kleines Einstiegspaket an, mit dem ihr systematisch mehr echte Bewertungen bekommt, plus ich schau mir dabei kurz euer Profil mit an, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
 
 **Nach dem Testlauf:** Reaktionen der 6 Anrufe festhalten (Interesse ja/nein, Einwände, was gut/schlecht ankam), bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden — genau dafür ist die Testgruppe da.
 
@@ -197,13 +197,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil zwar die volle Punktzahl hat, mit 5,0 von 5, aber bisher nur 2 Bewertungen zeigt. Bei einem Betrieb, der seit 1962 am Markt ist, wirkt das fast zu wenig für das, was ihr eigentlich leistet.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 14. Mainka Elektroanlagen GmbH (Willich)
 **An:** [E-Mail-Adresse nicht auffindbar — bitte auf elektro-mainka.de/Impressum prüfen oder Kontaktformular nutzen. Alternativ Tel. 02154 412750]
@@ -213,13 +213,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil aktuell bei 3,7 von 5 Sternen aus nur 3 Bewertungen steht. Das drückt den ersten Eindruck runter, obwohl ihr als Innungsfachbetrieb sicher regelmäßig zufriedene Kunden habt, die bisher einfach nie gefragt wurden.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
 **An:** info@elektro-baumanns.de
@@ -229,13 +229,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 4 Bewertungen zeigt. Für einen Ausbildungsbetrieb mit E-Check und Gebäudesystemtechnik im Programm ist das ziemlich wenig Sichtbarkeit für das, was ihr anbietet.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 24. Elektroanlagen Göbel GmbH (Kempen)
 **An:** info@elektroanlagen-goebel.de
@@ -245,13 +245,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil trotz eurer Größe, rund 60 Mitarbeiter, seit 1976 am Markt, bisher nur 4 Bewertungen zeigt. Da ist deutlich mehr drin, wenn man bedenkt wie viele Kunden ihr über die Jahre schon betreut habt.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
 ### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
 **An:** kontakt@eka-tebyl.de
@@ -261,13 +261,13 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur eine Handvoll Bewertungen zeigt. Für einen Betrieb mit Elektroinstallation und Solaranlagen im Programm ist da noch Luft nach oben, gerade weil Solarkunden online oft aktiv nach Erfahrungsberichten suchen bevor sie sich melden.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 >
 > *(Bewertungsanzahl bewusst vage gehalten, siehe Hinweis in Teil 2 — vor dem Versand kurz selbst gegenchecken.)*
 
@@ -279,15 +279,15 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 >
 > ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 5 Bewertungen zeigt. Für einen Meisterfachbetrieb, der seit 1934 existiert, ist das ziemlich wenig Sichtbarkeit für die Erfahrung, die eigentlich dahintersteckt.
 >
-> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euch genau dabei helfe: eine fertige Vorlage, mit der ihr nach jedem Auftrag aktiv um eine Bewertung bittet, plus zwei Antwortvorlagen für Rückmeldungen. Euer Profil selbst (Kategorie, Beschreibung, Fotos) schau ich mir dabei auch kurz mit an, falls da noch was optimierbar ist. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
 >
-> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter 0152 04553210.
 >
 > Viele Grüße
 > Mike Bühler
-> [Telefonnummer] · [E-Mail-Adresse]
+> 0152 04553210 · buehler.mike@gmx.de
 
-**Noch von dir auszufüllen, bevor du versendest:** `[Telefonnummer]` und `[E-Mail-Adresse]` (dein eigener Kontakt, nicht recherchiert — stand nirgends im Vault als fester Business-Kontakt) in allen sechs Mails, plus die zwei fehlenden Empfänger-Adressen (Lerchner, Mainka).
+**Mikes Kontakt ist in allen sechs Mails eingetragen** (0152 04553210 · buehler.mike@gmx.de, 25.09.2026 im Chat mitgeteilt). Noch offen: die zwei fehlenden Empfänger-Adressen (Lerchner, Mainka).
 
 ## Betriebe ohne konkreten Befund (24 von 30)
 

@@ -155,6 +155,17 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-25, interaktive Chat-Session, dritte Fortsetzung (kein Subagent — Kontaktdaten eingetragen + Text-Fokus korrigiert)
+Mike hat seine eigenen Kontaktdaten mitgeteilt (0152 04553210, buehler.mike@gmx.de) — in allen sechs E-Mails in [[GMB-Angebot Akquise]] eingetragen (Teil 2 und Teil 4).
+
+**Wichtige inhaltliche Korrektur, von Mike selbst durch eigene Prüfung der 6 Profile aufgedeckt:** alle sechs Betriebe haben laut Mikes eigenem Blick auf die Profile bereits gute Fotos, korrekte Öffnungszeiten usw. — der eigentliche Engpass ist wirklich nur die Bewertungsanzahl. Mikes Nachfrage ("was gewinnen sie dann dadurch, schreiben wir Bewertungen?") explizit beantwortet: **nein**, keine geschriebenen/gefälschten Bewertungen — das wäre seit 2022 als Wettbewerbsverstoß nach § 5 UWG geregelt und würde Googles Nutzungsbedingungen verletzen (Profile werden dafür gesperrt). Das Paket liefert stattdessen ein System, mit dem der Betrieb echte Kunden aktiv um Bewertungen bittet (Vorlage + zwei Antwortvorlagen), Profilcheck nur als Zugabe. Alle 16 betroffenen Textstellen (6× Teil 2, 6× Teil 4, 4× Teil 3 Telefon-Leitfaden) entsprechend umformuliert — Fokus jetzt auf "wir helfen euch, systematisch echte Bewertungen zu sammeln" statt "wir gehen das komplette Profil durch". Mike hat die Anpassung im Chat per Rückfrage bestätigt.
+
+**Ausdrücklich kein nach außen wirkender Schritt:** nichts verschickt. Reine Textkorrektur.
+
+Geänderte Dateien:
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (Kontaktdaten eingetragen, Angebots-Absatz in allen 16 Textstellen umformuliert)
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag)
+
 ### 2026-09-25, interaktive Chat-Session, Fortsetzung (kein Subagent — E-Mail-Versionen für den heutigen Versand)
 Mike präzisiert die Kanal-Entscheidung: die 6 Testkontakte gehen heute per E-Mail raus, ab Montag zusätzlich telefonisch weitere Kontakte ansprechen. [[GMB-Angebot Akquise]] um "Teil 4: E-Mail-Versionen für den Versand" ergänzt — alle 6 bereits vorhandenen personalisierten Texte als versandfertige E-Mail formatiert (Betreff-Zeile + Empfänger-Adresse). Für 4 von 6 Empfänger-Adressen verifiziert (2 standen bereits fest, 2 weitere per Websuche gefunden: info@elektroanlagen-goebel.de, info@starkstrom-bremges.de). Bei 2 Betrieben (Georg Lerchner, Mainka Elektroanlagen) lieferte die jeweilige Firmenwebsite bei mehreren Versuchen HTTP 503 — keine E-Mail-Adresse erfunden, stattdessen offen markiert, Mike soll selbst nachsehen oder für diese zwei direkt zum Telefon greifen.
 
