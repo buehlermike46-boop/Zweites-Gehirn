@@ -1150,3 +1150,48 @@ Mike-only-Zähler: **1 von 20** (nur WhatsApp-Test). Unverändert weit unter dem
 
 ### Domain-Check
 Keine Verschiebung nötig. Nichts in dieser Runde gehört ins Content-Gebiet (`content-manager`/`content-executor`/[[Posting-Warteschlange]]) oder ins YouTube-Gebiet (`youtube-manager`/`youtube-executor`/[[Video-Warteschlange]]).
+
+---
+
+## Bestätigt für 2026-09-25 (Einnahmequellen-Explorer: GMB-Angebotspaket)
+*(Vom aufgaben-manager direkt eingetragen, keine Mike-Einzelbestätigung nötig — gedeckt durch die Einnahmequellen-Standing-Freigabe vom 24.09.2026, siehe [[Einnahmequellen-Recherche]] Abschnitt "Freigabe-Modell". Reiner Angebots-/Textentwurf, kein Kundenkontakt, kein Kauf, keine Registrierung. Grund für diese Priorisierung: die beiden bisher wichtigeren Ideen sind aktuell beide blockiert — Pflegedienst pausiert bis Sonntag 27.09.2026, Handwerker-Chatbot hängt am Make-Plan-Limit und an Mikes offener Ja/Nein-Entscheidung zur Ansprache. Statt Stillstand wird die dritte, bisher unbearbeitete Idee aus dem Ideen-Pool einen Schritt vorangebracht.)*
+
+### Google-Unternehmensprofil-Optimierung: Angebotspaket ausarbeiten
+- [ ] Auf Basis der bereits vorliegenden Bewertung in [[Einnahmequellen-Recherche]] (Idee 3, Status "offen") ein konkretes Einstiegspaket ausarbeiten: Leistungsumfang (Ersteinrichtung oder Optimierung eines bestehenden Google-Unternehmensprofils — Kategorie, Beschreibung, Öffnungszeiten, Fotos-Bereich, Rahmen für laufendes Bewertungsmanagement), realistischer Preis-Rahmen auf Basis der bereits recherchierten Marktpreise (Agenturen ab ca. 299 EUR), und ein kurzer, wiederverwendbarer Angebotstext (Stil nach `00 Kontext/Schreibstil.md`, `00 Kontext/Angebot.md`, `00 Kontext/ICP.md` — duzen, ehrlich, keine erfundenen Referenzen). Klar als eigenständiges Einstiegs-/Türöffner-Angebot einordnen, nicht als Ersatz für das Chatbot- oder Website-Projekt. Ergebnis in [[Einnahmequellen-Recherche]] bei Idee 3 ergänzen (Status von "offen" auf "Angebotspaket entworfen, wartet auf Priorisierung/Freigabe zur Ansprache" ändern) plus Log-Eintrag mit Datum.
+
+**Ausdrücklich nicht Teil dieses Auftrags:** kein Kundenkontakt, kein Angebot verschicken, keine Recherche nach konkreten Zielkunden (das käme erst nach einer bewussten Priorisierungs-Entscheidung, analog zur Handwerker-Chatbot-Kontaktliste). Stößt die Arbeit auf einen nach außen wirkenden Schritt, gehört der unter `## Freigabe nötig: Einnahmequellen` oben, nicht direkt ausgeführt.
+
+## Vorschlag für 2026-09-25
+*(Vom aufgaben-manager erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine. Wartet auf Mikes Bestätigung/Reaktion zu den offenen Fragen unten — die Bauarbeit selbst läuft bereits über den Bestätigt-Abschnitt direkt oberhalb und braucht keine Reaktion von dir.)*
+
+**Kontrolle vorab:** Letzter Executor-Lauf bleibt der vom 24.09.2026 (Pflegedienst-Entwürfe + Link-Klick-Tracking-Konzept), beide Punkte im `## Bestätigt für 2026-09-24 (Stufe 1 Auftakt...)`-Abschnitt mit Beleg erledigt (Checkboxen gesetzt, Log-Eintrag vorhanden). Seitdem kein neuer Commit, keine neue Daily Note. [[Kontaktliste - 20 Namen aus dem Umfeld]] unverändert (20/20 angeschrieben, 0 Reaktionen), [[Lot-Tracking]] unverändert 0 Accounts/0 Lots. [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen: keine neuen offenen Punkte (Jarvis Aufgaben weiterhin nur alte, bereits erledigte Test-Einträge von Anfang September). Mike-only-Zähler unverändert bei **0 von 20**. Keine neuen Häkchen, kein Beleg für eine Erledigung, die nicht schon dokumentiert war.
+
+**Aktive Baustelle (Stufe 1, siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]]):** 5-9 aktive Kunden, ~94 Lots/Monat, erstes Dienstleistungsprojekt verkauft (1.500-3.000 EUR), erste Content-Automatisierung. "Weiter, wenn": 3 Monate in Folge mind. 1.000 EUR und wachsende Kundenzahl. Aktuell 0 Accounts/0 Lots — der eigentliche Fortschritt läuft gerade über den Einnahmequellen-Explorer-Track, nicht über neue Kontaktrunden (die 20er-Runde ist ohne Kunden abgeschlossen).
+
+### Drei Entscheidungen, die seit dem 24.09.2026 abends unverändert auf dich warten
+1. **Make-Plan-Limit klären** (`## Technisch blockiert` oben): der Handwerker-Chatbot-Demo (Szenario 7597709) ist technisch fertig, aber nicht aktivierbar, weil das Make-Konto nur eine begrenzte Zahl aktiver Szenarien erlaubt und beide Plätze von den laufenden Limitless-Bot-Szenarien belegt sind. Entweder Plan upgraden oder eines der zwei bestehenden Szenarien vorübergehend Platz machen lassen — echte Business-Entscheidung, nicht eigenmächtig getroffen.
+2. **Ja/Nein zur Ansprache der 30 recherchierten Elektro-Handwerksbetriebe** (`## Freigabe nötig: Einnahmequellen` oben, siehe [[Handwerker-Chatbot Akquise]]): Angebotstext liegt fertig, nichts verschickt. Offene Detailfragen dort: Telefon vs. E-Mail (rechtlicher Hinweis zur B2B-Kaltakquise-Grauzone in der Datei), Testgruppe zuerst oder alle 30, und ob erst die Chatbot-Aktivierung (Punkt 1) geklärt sein sollte, bevor "15 Minuten live zeigen" versprochen wird.
+3. **Pflegedienst-Thema**: bewusst pausiert bis Sonntag, 27.09.2026 (gemeinsame Besprechung mit deiner Mutter). Kein Agenten-Schritt bis dahin, nur zur Erinnerung, falls der Termin verschoben wird.
+
+### Neu: Einnahmequellen-Explorer arbeitet an der dritten Idee weiter
+Weil die beiden Top-Prioritäten (Pflegedienst, Chatbot) gerade beide auf deine Entscheidung warten, wird direkt per Standing-Freigabe die dritte Idee aus [[Einnahmequellen-Recherche]] vorangebracht: ein Angebotspaket "Google-Unternehmensprofil-Optimierung" (siehe `## Bestätigt für 2026-09-25` oben). Reiner Text-/Angebotsentwurf, keine Kundenansprache. Ergebnis nächste Runde.
+
+### Komplex — regulärer Stufe-1-Kreislauf, weiterhin bewusst zurückgestellt
+Unverändert: Website, Zugangs-Gate, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik. Admin-Automatisierungspakete und Lern-Templates für Azubis (Einnahmequellen-Ideen 4 und 5) bleiben ebenfalls zurückgestellt — höherer Aufwand pro Kunde bzw. kein direkter Stufe-1-Treffer, siehe [[Einnahmequellen-Recherche]].
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Unverändert: Fixkosten-/Business-Kosten-Listen, Buchhaltungs-Frage, Gmail-/GMX-/Dashboard-Punkte, `whatsapp`-Knoten in `jarvis-voice-assistant`. Zur Kenntnis, kein Handlungsbedarf: [[ATAS Trading Bot (NQ-Abpraller-Setup)]] und [[YouTube Kinder-Kanäle (DE & EN)]] laufen als eigene, selbst deklarierte Ausnahmen.
+
+### Domain-Check
+Keine Verschiebung nötig. Nichts in dieser Runde gehört ins Content-Gebiet (`content-manager`/`content-executor`/[[Posting-Warteschlange]]) oder ins YouTube-Gebiet (`youtube-manager`/`youtube-executor`/[[Video-Warteschlange]]).
+
+### Aufgaben-Nachschub bis Deckel 20 — Zähler-Stand
+Mike-only-Zähler: **0 von 20**. Kein Nachschub aus der regulären Triage in dieser Runde — die verbleibenden Punkte dort sind weiterhin entweder ohne Stufe-Bezug (Fixkosten/Buchhaltung), außerhalb der Reichweite dieses Agentenpaars (separates Repo) oder laut MasterPlan Punkt 8 bewusst als Komplex zurückgestellt. Kein künstliches Auffüllen.
+
+### Für den Executor tatsächlich offen
+Der neue `## Bestätigt für 2026-09-25 (Einnahmequellen-Explorer: GMB-Angebotspaket)`-Auftrag oben — arbeitet der Executor im nächsten Lauf ab, keine weitere Bestätigung nötig.
+
+### Offene Fragen an Mike
+1. Die drei Entscheidungen oben (Make-Plan, Chatbot-Ansprache, Pflegedienst-Timing) — unverändert seit 24.09.2026 abends, keine davon eigenmächtig getroffen.
+2. Passt die Reihenfolge, jetzt zusätzlich das GMB-Angebotspaket parallel als Entwurf vorzubereiten, während 1 und 2 auf deine Entscheidung warten — oder lieber abwarten, bis die Reihenfolge Pflegedienst → Chatbot geklärt ist, bevor eine vierte Baustelle (auch nur als Entwurf) angefasst wird?
+3. Für heute existiert noch keine Daily Note [[2026-09-25]] — wird laut eigenem Vermerk nicht ungefragt angelegt.
