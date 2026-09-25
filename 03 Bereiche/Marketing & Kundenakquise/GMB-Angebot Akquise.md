@@ -1,0 +1,164 @@
+---
+tags: [bereich, marketing, einnahmequellen, akquise]
+status: aktiv
+date: 2026-09-25
+---
+
+# GMB-Angebot Akquise
+
+Vorbereitung für die Ansprache der 30 Elektro-Handwerksbetriebe aus [[Handwerker-Chatbot Akquise]] mit dem Google-Unternehmensprofil-Einstiegspaket aus [[Einnahmequellen-Recherche]] (Idee 3, Abschnitt "Ausgearbeitete Angebote"). Entstanden aus Mikes direktem Auftrag im Chat vom 25.09.2026: eine der drei offenen Einnahmequellen-Baustellen fertigmachen, bevor die nächste angegangen wird — Entscheidung fiel auf das GMB-Paket, weil es als einziges keinen externen Blocker hat (Pflegedienst pausiert bis 27.09., Chatbot hängt am Make-Plan-Limit).
+
+**Positionierung: Türöffner vor dem Chatbot-Angebot.** Dieselben 30 Betriebe sind bereits für die Chatbot-Ansprache recherchiert. Statt zwei getrennte Kaltakquise-Wellen zu fahren, ist die GMB-Optimierung der niedrigschwelligere erste Kontakt — günstiger, schneller nachvollziehbarer Nutzen, kein Verweis auf eine unfertige Technik-Demo nötig. Läuft der erste Kontakt gut, ist der Chatbot ein naheliegender Folge-Pitch bei bestehendem Vertrauen, sobald das Make-Plan-Limit geklärt ist.
+
+**Status: reine Vorbereitung.** Nichts wurde verschickt, kein Betrieb wurde kontaktiert. Wartet auf Mikes Durchsicht und Freigabe, siehe Eintrag unter `## Freigabe nötig: Einnahmequellen` in [[Tagesplan]].
+
+## Methodik und Grenzen der Recherche
+
+Für jeden der 30 Betriebe wurde per WebSearch geprüft, was öffentlich zu Google-Bewertungen/-Rating auffindbar ist (Suchmuster "`<Firma> <Ort> Google Bewertungen`"). Das ist ausdrücklich **keine echte Google-Business-Profil-Prüfung** — dafür gibt es keinen direkten Maps-/API-Zugriff in dieser Recherche. Konkret nicht zuverlässig über Websuche feststellbar: Anzahl/Art der hinterlegten Fotos, Vollständigkeit der Öffnungszeiten (Sonderzeiten, Feiertage), ob der Betrieb aktiv auf Bewertungen antwortet, korrekte/fehlende Kategorien. Was über Websuche teilweise sichtbar wird: die von Drittanbietern (meist Das Örtliche, golocal, Trustlocal) aggregierte Bewertungsanzahl und -note, wenn diese explizit als "Google"-Wert ausgewiesen ist.
+
+**Deshalb strenger Maßstab für einen "echten Befund":** Nur wenn eine Zahl in den Suchergebnissen ausdrücklich als Google-Bewertung/-Rating benannt war, wurde sie als Ansatzpunkt verwendet — reine Drittportal-Werte (golocal, 11880, MyHammer, ProvenExpert etc.) ohne klaren Google-Bezug wurden NICHT als "Google-Profil-Befund" verwendet, auch wenn sie dünn waren, um keine falsche Zuordnung zu behaupten. Bei mehreren Betrieben gab es zwar Hinweise auf ein insgesamt dünnes Online-Bewertungsbild, aber ohne eindeutigen Google-Bezug — die sind unten bewusst als "kein konkreter Befund" markiert statt spekulativ verwertet.
+
+Alle 30 Betriebe waren über mindestens ein öffentliches Verzeichnis mit Adresse/Telefonnummer auffindbar — kein Fall von "kein Profil/kein Online-Auftritt überhaupt auffindbar" in dieser Stichprobe.
+
+## Übersicht: alle 30 Betriebe
+
+| # | Firmenname | Ort | Was zu Google gefunden wurde | Status |
+|---|---|---|---|---|
+| 1 | Edmund Rohde Elektromeister | Viersen-Süchteln | Vereinzelte Bewertungen auf Drittportalen (5,0 golocal, "befriedigend" Meinungsmeister), kein expliziter Google-Wert auffindbar | kein konkreter Befund |
+| 2 | Elektro Birker GmbH | Viersen-Süchteln | Google 4,8/5 bei 10 Bewertungen — solides, gepflegtes Profil | kein konkreter Befund (kein Schwachpunkt, Profil wirkt bereits gut) |
+| 3 | Elektroanlagen Jan-Dieter Brüggemann GmbH | Viersen | Kein Google-spezifischer Wert auffindbar, nur vereinzelte Drittportal-Erwähnung | kein konkreter Befund |
+| 4 | Elektro Herentrey GmbH | Viersen-Dülken | Google 4,9/5 bei 16 Bewertungen — starkes Profil | kein konkreter Befund (kein Schwachpunkt) |
+| 5 | Elektrotechnik Heiner Hermans GmbH | Viersen | Google 5,0/5 (30 Bew.) bzw. 4,9/5 (44 Bew.) je nach Quelle — sehr starkes Profil | kein konkreter Befund (kein Schwachpunkt) |
+| 6 | KKR Louwen GmbH | Viersen-Süchteln | 22 Bewertungen "auf Google" laut einer Quelle, kein zugehöriger Notenwert auffindbar; auf ProvenExpert 4,70/5 (16 Bew.) | kein konkreter Befund (Anzahl wirkt bereits solide) |
+| 7 | Elektro Lenzen GmbH & Co. KG | Viersen-Dülken | Kein Google-spezifischer Wert auffindbar | kein konkreter Befund |
+| 8 | Georg Lerchner Elektro-Installationen GmbH & Co. KG | Viersen | **Google 5,0/5, aber nur 2 Bewertungen** trotz Betrieb seit 1962 | **Personalisierter Text siehe unten** |
+| 9 | Frank Mihm Elektroinstallateurmeister | Viersen | Kein Google-spezifischer Wert auffindbar, gemischtes Bild auf Drittportalen (u.a. eine Klage über fehlende Rückmeldung auf einem Drittportal, nicht Google) | kein konkreter Befund |
+| 10 | Torsten Jütte Elektrotechnik | Viersen | "4,7/5" ohne eindeutigen Google-Bezug, golocal zeigt 2 Bewertungen | kein konkreter Befund |
+| 11 | Elektro Bogisch GmbH & Co. KG | Willich | Kein Google-spezifischer Wert auffindbar | kein konkreter Befund |
+| 12 | Heuser & Wankum Elektrotechnik GmbH | Willich | Google 4,5/5 bei 57-62 Bewertungen — sehr starkes, aktives Profil | kein konkreter Befund (kein Schwachpunkt) |
+| 13 | Elektro Lücke GmbH | Willich | Kein Google-spezifischer Wert auffindbar (golocal 5,0/5 bei 2 Bew., 11880 1 Bew.) | kein konkreter Befund |
+| 14 | Mainka Elektroanlagen GmbH | Willich | **Google 3,7/5 bei nur 3 Bewertungen** — unterdurchschnittliche Note UND sehr wenige Bewertungen | **Personalisierter Text siehe unten** |
+| 15 | Franz Tillmanns (Tillmanns Haustechnik) | Willich | Kein Google-spezifischer Wert auffindbar, auf 11880 "noch keine Bewertungen" | kein konkreter Befund |
+| 16 | Fabian Gietmann (FG Energie- und Gebäudetechnik) | Willich | Nur MyHammer-Bewertungen (4,5-4,6/5) gefunden, kein Google-Wert | kein konkreter Befund |
+| 17 | Elektro Baumanns Installations GmbH | Tönisvorst | **Google-Wert mit nur 4 Bewertungen** (5,0/5 laut aggregierter Anzeige) | **Personalisierter Text siehe unten** |
+| 18 | Elektro Richter e.K. | Tönisvorst | Google 4,8/5 bei 14 Bewertungen — solides Profil | kein konkreter Befund (kein Schwachpunkt) |
+| 19 | Wolfram Hahn Elektrotechnikerbetrieb & Handel | Tönisvorst | Kein Google-spezifischer Wert auffindbar, mehrere Drittportale zeigen "noch keine Bewertungen" | kein konkreter Befund |
+| 20 | Elektrotechnik Bergmann GmbH | Nettetal | Nur vage "5,0 Sterne"-Erwähnung ohne klaren Google-Bezug | kein konkreter Befund |
+| 21 | Elektrotechnik Kempkes GmbH | Nettetal-Lobberich | Kein eindeutiger Google-Wert auffindbar (nur generische Suchmaschinen-Floskel + 4,6/5 bei 5 Bew. auf unklarer Quelle) | kein konkreter Befund |
+| 22 | Elektro Becker e.K. | Nettetal-Kaldenkirchen | Nur 1 Bewertung gefunden, Quelle nicht eindeutig Google (vermutlich golocal) | kein konkreter Befund |
+| 23 | Elektro Klinkertz GmbH | Nettetal | Widersprüchliche/unklare Quellenangabe ("Das Örtliche, welches Google-Bewertungen einschließt" — nicht plausibel verifizierbar) | kein konkreter Befund |
+| 24 | Elektroanlagen Göbel GmbH | Kempen | **Google 4,8/5, aber nur 4 Bewertungen** trotz ca. 60 Mitarbeitern und Betrieb seit 1976 | **Personalisierter Text siehe unten** |
+| 25 | Elektro Kranen GmbH | Kempen-St. Hubert | Kein Google-spezifischer Wert auffindbar | kein konkreter Befund |
+| 26 | ElektroTechnik Leber GmbH | Kempen-St. Hubert | Kein eindeutiger Google-Wert auffindbar (nur generische Suchmaschinen-Floskel) | kein konkreter Befund |
+| 27 | EKA Elektroanlagen GmbH & Co. KG | Grefrath | **Google-Wert mit nur 2-4 Bewertungen** (5,0/5, Quellen uneinheitlich in der genauen Anzahl) | **Personalisierter Text siehe unten** (Zahl bewusst vorsichtig formuliert) |
+| 28 | Göbel Manfred & Kompagnon Elektrotechnik GmbH | Grefrath | "(Keine Bewertungen)" auf einem Drittportal vermerkt, kein eindeutiger Google-Wert | kein konkreter Befund |
+| 29 | Elektro Kamper GmbH | Mönchengladbach | "8 Bewertungen, 5,0/5" ohne klaren Google-Bezug in der Quelle | kein konkreter Befund |
+| 30 | Elektro Bremges (Starkstrom-Bremges GmbH & Co. KG) | Mönchengladbach | **"5 Bewertungen auf Google"** ausdrücklich benannt — wenig für einen Betrieb seit 1934 | **Personalisierter Text siehe unten** |
+
+## Personalisierte Angebote (6 von 30)
+
+Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Aufhänger-Satz durch den echten Befund ersetzt. Preis auf 249 EUR gesetzt (unteres Ende des Preis-Rahmens 249-349 EUR), weil es sich in allen sechs Fällen um ein bereits bestehendes, größtenteils gepflegtes Profil handelt, das primär beim Bewertungsaufbau Unterstützung braucht — keine Neueinrichtung von Grund auf. `[Telefonnummer]` und `[E-Mail-Adresse]` bleiben Platzhalter, die trägt Mike selbst ein.
+
+### 8. Georg Lerchner Elektro-Installationen GmbH & Co. KG (Viersen)
+
+> Hallo Team von Georg Lerchner Elektro-Installationen,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil zwar die volle Punktzahl hat, mit 5,0 von 5, aber bisher nur 2 Bewertungen zeigt. Bei einem Betrieb, der seit 1962 am Markt ist, wirkt das fast zu wenig für das, was ihr eigentlich leistet.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 14. Mainka Elektroanlagen GmbH (Willich)
+
+> Hallo Team von Mainka Elektroanlagen,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil aktuell bei 3,7 von 5 Sternen aus nur 3 Bewertungen steht. Das drückt den ersten Eindruck runter, obwohl ihr als Innungsfachbetrieb sicher regelmäßig zufriedene Kunden habt, die bisher einfach nie gefragt wurden.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
+
+> Hallo Team von Elektro Baumanns,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 4 Bewertungen zeigt. Für einen Ausbildungsbetrieb mit E-Check und Gebäudesystemtechnik im Programm ist das ziemlich wenig Sichtbarkeit für das, was ihr anbietet.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 24. Elektroanlagen Göbel GmbH (Kempen)
+
+> Hallo Team von Elektroanlagen Göbel,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil trotz eurer Größe, rund 60 Mitarbeiter und seit 1976 am Markt, bisher nur 4 Bewertungen zeigt. Da ist deutlich mehr drin, wenn man bedenkt wie viele Kunden ihr über die Jahre schon betreut habt.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
+
+> Hallo Team von EKA Elektroanlagen,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur eine Handvoll Bewertungen zeigt. Für einen Betrieb mit Elektroinstallation und Solaranlagen im Programm ist da noch Luft nach oben, gerade weil Solarkunden online oft aktiv nach Erfahrungsberichten suchen bevor sie sich melden.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+**Hinweis zu diesem Text:** Die genaue Bewertungsanzahl war je nach Quelle uneinheitlich (2 bis 4), deshalb bewusst vage als "eine Handvoll Bewertungen" formuliert statt eine möglicherweise falsche Zahl zu nennen — Mike sollte das Profil vor dem tatsächlichen Versenden kurz selbst gegenchecken.
+
+### 30. Elektro Bremges / Starkstrom-Bremges GmbH & Co. KG (Mönchengladbach)
+
+> Hallo Team von Starkstrom-Bremges,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 5 Bewertungen zeigt. Für einen Meisterfachbetrieb, der seit 1934 existiert, ist das ziemlich wenig Sichtbarkeit für die Erfahrung, die eigentlich dahintersteckt.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+## Betriebe ohne konkreten Befund (24 von 30)
+
+Für diese Betriebe gilt: entweder kein Google-spezifischer Wert per Websuche auffindbar, oder das gefundene Profil ist bereits erkennbar gut gepflegt (viele Bewertungen, gute Note) und liefert damit keinen echten Ansatzpunkt für ein Verbesserungsangebot. Details siehe Übersichtstabelle oben, Spalte "Was zu Google gefunden wurde". Betroffen: Edmund Rohde Elektromeister, Elektro Birker GmbH, Elektroanlagen Jan-Dieter Brüggemann GmbH, Elektro Herentrey GmbH, Elektrotechnik Heiner Hermans GmbH, KKR Louwen GmbH, Elektro Lenzen GmbH & Co. KG, Frank Mihm Elektroinstallateurmeister, Torsten Jütte Elektrotechnik, Elektro Bogisch GmbH & Co. KG, Heuser & Wankum Elektrotechnik GmbH, Elektro Lücke GmbH, Franz Tillmanns (Tillmanns Haustechnik), Fabian Gietmann (FG Energie- und Gebäudetechnik), Elektro Richter e.K., Wolfram Hahn Elektrotechnikerbetrieb & Handel, Elektrotechnik Bergmann GmbH, Elektrotechnik Kempkes GmbH, Elektro Becker e.K., Elektro Klinkertz GmbH, Elektro Kranen GmbH, ElektroTechnik Leber GmbH, Göbel Manfred & Kompagnon Elektrotechnik GmbH, Elektro Kamper GmbH.
+
+**Für diese Betriebe:** entweder eigene, echte Prüfung des Google-Profils vor Ansprache (falls doch ein Ansatzpunkt sichtbar wird, den die Websuche nicht zeigen konnte, z.B. fehlende Fotos oder unvollständige Öffnungszeiten — beides über Websuche kaum verlässlich prüfbar), oder generischer Text mit Platzhalter für den individuellen Aufhänger-Satz aus [[Einnahmequellen-Recherche]], oder ganz aus der ersten Ansprachewelle raus und stattdessen direkt mit dem Chatbot-Angebot ansprechen (sobald das möglich ist).
+
+## Übersicht
+
+**6 von 30 Betrieben** haben einen echten, personalisierten Angebotstext auf Basis eines per Websuche verifizierten Google-Bewertungsbefunds bekommen (Georg Lerchner, Mainka Elektroanlagen, Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges).
+
+**24 von 30 Betrieben** haben keinen per Websuche verifizierbaren, konkreten Ansatzpunkt bekommen — entweder weil das Google-Profil bereits erkennbar gut aussieht, oder weil kein eindeutig Google-zugeordneter Wert auffindbar war. Für sie bräuchte es entweder eine echte Profilprüfung vor Ansprache oder den generischen Text aus [[Einnahmequellen-Recherche]].
+
+**Nichts verschickt, kein Betrieb kontaktiert.** Wartet auf Mikes Freigabe, siehe [[Tagesplan]], Abschnitt "Freigabe nötig: Einnahmequellen".
+
+---
+
+Verknüpft: [[Handwerker-Chatbot Akquise]] · [[Einnahmequellen-Recherche]] · [[Tagesplan]] · [[Über mich]] · [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]]
