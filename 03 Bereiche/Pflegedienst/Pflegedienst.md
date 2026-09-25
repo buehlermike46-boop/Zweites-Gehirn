@@ -109,5 +109,11 @@ Mike im Chat: **"Passt so aber schick das nicht raus, meine Mutter macht das bei
 
 **Status: pausiert bis Sonntag, 27.09.2026.** Die Text-Entwürfe oben sind inhaltlich freigegeben, gehen aber **an niemanden raus** — weder an die Mutter noch live auf die Seite. Mike bespricht das Thema am Sonntag gemeinsam mit ihr (Kapazität, IONOS-Ablösung, die Entwürfe). Bis dahin kein weiterer Agenten-Schritt zu diesem Thema, auch nicht unter der Einnahmequellen-Standing-Freigabe — das ist eine bewusste Pause, keine technische Blockade.
 
+## Update 25.09.2026: als Testfall für den Chatbot genutzt (kein Widerspruch zur Pause)
+
+Mike im Chat: "Lass uns so tun als wäre seniorendienst klein unser erste kunde und wir bauen es für die website als test. wenn das alles super klappt, können wir angebote raus schicken." Wichtige Abgrenzung zur Pause oben: das ist **kein Fortsetzen des eigentlichen Pflegedienst-Themas** vor Sonntag, sondern ein rein technischer Test des Handwerker-Chatbots (siehe [[Einnahmequellen-Recherche]]) an einem realistischen Beispiel — Seniorendienst Klein liefert nur den Inhalt (Leistungen, Einsatzgebiet, Kosten-Hinweis, alles bereits oben dokumentiert und von Mike freigegeben), nichts geht an die Mutter oder live auf die echte Website.
+
+Umgesetzt: Make-Szenario 7597709 umbenannt/inhaltlich angepasst auf "Chatbot TEST: Seniorendienst Klein", KI-Prompt nutzt jetzt die echten (freigegebenen) Fakten von oben statt des Platzhalters "Musterbetrieb Elektro". Dazu ein Demo-Website mit eingebettetem Chat-Widget gebaut (Artifact, Link bei Mike im Chat). Hängt weiterhin am selben Blocker wie der Handwerker-Chatbot: Aktivierung des Make-Szenarios steht noch aus, siehe [[Tagesplan]], "Technisch blockiert".
+
 ## Referenzen
 - Siehe auch [[VT Markets Affiliate-Strategie & Content-Plan]] (gleicher Chat, dort primär zum Trading/Affiliate-Teil)
