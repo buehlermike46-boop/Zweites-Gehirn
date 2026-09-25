@@ -181,6 +181,114 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 
 **Nach dem Testlauf:** Reaktionen der 6 Anrufe festhalten (Interesse ja/nein, Einwände, was gut/schlecht ankam), bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden — genau dafür ist die Testgruppe da.
 
+## Teil 4: E-Mail-Versionen für den Versand (Testgruppe, 6 Betriebe)
+
+**Entscheidung von Mike im Chat (25.09.2026):** die 6 personalisierten Kontakte heute per E-Mail anschreiben (nicht Telefon wie ursprünglich empfohlen), ab Montag zusätzlich telefonisch weitere Kontakte ansprechen. Fertig zum Kopieren, nichts verschickt.
+
+**Empfänger-Adressen:** bei 4 von 6 Betrieben aus dem Verzeichniseintrag in [[Handwerker-Chatbot Akquise]] bzw. per Websuche verifiziert. Bei 2 Betrieben (Lerchner, Mainka) blockierte die jeweilige Firmenwebsite den automatisierten Abruf (HTTP 503) — dort keine E-Mail-Adresse erfunden, sondern offen als fehlend markiert. Vor dem Versand kurz selbst auf der Website/im Impressum nachsehen oder das dortige Kontaktformular nutzen; alternativ bei diesen beiden direkt zum Telefon greifen (Nummern siehe Teil 3).
+
+**Rechtlicher Hinweis unverändert gültig** (siehe [[Handwerker-Chatbot Akquise]], Abschnitt "Rechtlicher Hinweis"): E-Mail-Kaltakquise an Unternehmen ohne bestehende Geschäftsbeziehung ist in Deutschland rechtlich eine Grauzone (UWG §7). Mikes bewusste eigene Entscheidung, hier trotzdem per E-Mail zu starten.
+
+### 8. Georg Lerchner Elektro-Installationen GmbH & Co. KG (Viersen)
+**An:** [E-Mail-Adresse nicht auffindbar — bitte auf elektro-lerchner.de/Impressum prüfen oder Kontaktformular nutzen. Alternativ Tel. 02162 450653]
+**Betreff:** Kurze Frage von einem Kollegen vom Fach an Georg Lerchner Elektro-Installationen
+
+> Hallo Team von Georg Lerchner Elektro-Installationen,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil zwar die volle Punktzahl hat, mit 5,0 von 5, aber bisher nur 2 Bewertungen zeigt. Bei einem Betrieb, der seit 1962 am Markt ist, wirkt das fast zu wenig für das, was ihr eigentlich leistet.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 14. Mainka Elektroanlagen GmbH (Willich)
+**An:** [E-Mail-Adresse nicht auffindbar — bitte auf elektro-mainka.de/Impressum prüfen oder Kontaktformular nutzen. Alternativ Tel. 02154 412750]
+**Betreff:** Kurze Frage von einem Kollegen vom Fach an Mainka Elektroanlagen
+
+> Hallo Team von Mainka Elektroanlagen,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil aktuell bei 3,7 von 5 Sternen aus nur 3 Bewertungen steht. Das drückt den ersten Eindruck runter, obwohl ihr als Innungsfachbetrieb sicher regelmäßig zufriedene Kunden habt, die bisher einfach nie gefragt wurden.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
+**An:** info@elektro-baumanns.de
+**Betreff:** Kurze Frage von einem Kollegen vom Fach an Elektro Baumanns
+
+> Hallo Team von Elektro Baumanns,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 4 Bewertungen zeigt. Für einen Ausbildungsbetrieb mit E-Check und Gebäudesystemtechnik im Programm ist das ziemlich wenig Sichtbarkeit für das, was ihr anbietet.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 24. Elektroanlagen Göbel GmbH (Kempen)
+**An:** info@elektroanlagen-goebel.de
+**Betreff:** Kurze Frage von einem Kollegen vom Fach an Elektroanlagen Göbel
+
+> Hallo Team von Elektroanlagen Göbel,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil trotz eurer Größe, rund 60 Mitarbeiter, seit 1976 am Markt, bisher nur 4 Bewertungen zeigt. Da ist deutlich mehr drin, wenn man bedenkt wie viele Kunden ihr über die Jahre schon betreut habt.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
+**An:** kontakt@eka-tebyl.de
+**Betreff:** Kurze Frage von einem Kollegen vom Fach an EKA Elektroanlagen
+
+> Hallo Team von EKA Elektroanlagen,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur eine Handvoll Bewertungen zeigt. Für einen Betrieb mit Elektroinstallation und Solaranlagen im Programm ist da noch Luft nach oben, gerade weil Solarkunden online oft aktiv nach Erfahrungsberichten suchen bevor sie sich melden.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+>
+> *(Bewertungsanzahl bewusst vage gehalten, siehe Hinweis in Teil 2 — vor dem Versand kurz selbst gegenchecken.)*
+
+### 30. Elektro Bremges / Starkstrom-Bremges GmbH & Co. KG (Mönchengladbach)
+**An:** info@starkstrom-bremges.de
+**Betreff:** Kurze Frage von einem Kollegen vom Fach an Starkstrom-Bremges
+
+> Hallo Team von Starkstrom-Bremges,
+>
+> ich bin Mike, gelernter Elektroniker und Elektromeister, baue nebenbei etwas im Digitalen auf und schau mir dafür gerade öfter an, wie Elektrobetriebe bei Google auffindbar sind. Bei euch ist mir aufgefallen, dass euer Google-Profil bisher nur 5 Bewertungen zeigt. Für einen Meisterfachbetrieb, der seit 1934 existiert, ist das ziemlich wenig Sichtbarkeit für die Erfahrung, die eigentlich dahintersteckt.
+>
+> Ich biete gerade ein kleines Einstiegspaket an, mit dem ich euer Google-Unternehmensprofil einmal komplett durchgehe: Kategorie, Beschreibung, Öffnungszeiten, Fotos sauber einsortiert, plus eine einfache Vorlage, mit der ihr künftig leichter an gute Bewertungen kommt. Kein Abo, keine laufenden Kosten, einmalig für 249 EUR.
+>
+> Wenn du magst, schau ich mir euer Profil kurz an und sag dir unverbindlich, was sich am meisten lohnen würde. Meld dich gern hier zurück oder ruf mich an unter [Telefonnummer].
+>
+> Viele Grüße
+> Mike Bühler
+> [Telefonnummer] · [E-Mail-Adresse]
+
+**Noch von dir auszufüllen, bevor du versendest:** `[Telefonnummer]` und `[E-Mail-Adresse]` (dein eigener Kontakt, nicht recherchiert — stand nirgends im Vault als fester Business-Kontakt) in allen sechs Mails, plus die zwei fehlenden Empfänger-Adressen (Lerchner, Mainka).
+
 ## Betriebe ohne konkreten Befund (24 von 30)
 
 Für diese Betriebe gilt: entweder kein Google-spezifischer Wert per Websuche auffindbar, oder das gefundene Profil ist bereits erkennbar gut gepflegt (viele Bewertungen, gute Note) und liefert damit keinen echten Ansatzpunkt für ein Verbesserungsangebot. Details siehe Übersichtstabelle oben, Spalte "Was zu Google gefunden wurde". Betroffen: Edmund Rohde Elektromeister, Elektro Birker GmbH, Elektroanlagen Jan-Dieter Brüggemann GmbH, Elektro Herentrey GmbH, Elektrotechnik Heiner Hermans GmbH, KKR Louwen GmbH, Elektro Lenzen GmbH & Co. KG, Frank Mihm Elektroinstallateurmeister, Torsten Jütte Elektrotechnik, Elektro Bogisch GmbH & Co. KG, Heuser & Wankum Elektrotechnik GmbH, Elektro Lücke GmbH, Franz Tillmanns (Tillmanns Haustechnik), Fabian Gietmann (FG Energie- und Gebäudetechnik), Elektro Richter e.K., Wolfram Hahn Elektrotechnikerbetrieb & Handel, Elektrotechnik Bergmann GmbH, Elektrotechnik Kempkes GmbH, Elektro Becker e.K., Elektro Klinkertz GmbH, Elektro Kranen GmbH, ElektroTechnik Leber GmbH, Göbel Manfred & Kompagnon Elektrotechnik GmbH, Elektro Kamper GmbH.

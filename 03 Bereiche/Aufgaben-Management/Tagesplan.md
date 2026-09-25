@@ -49,9 +49,11 @@ Auf direkten Auftrag von Mike im Chat ("lass uns bitte eins davon erstmal zu end
 
 **Fertig zur Durchsicht in [[GMB-Angebot Akquise]]. Nichts verschickt, kein Betrieb kontaktiert, kein Kontaktformular ausgefüllt.** Positionierung: Türöffner vor dem Chatbot-Angebot, gleiche 30 Betriebe, niedrigschwelligerer erster Kontakt ohne Verweis auf die noch nicht aktivierbare Chatbot-Demo.
 
-**Entscheidung gefallen (25.09.2026, Chat mit Mike):** GMB-Kontakte zuerst (Türöffner vor dem Chatbot), Kanal Telefon, erst die Testgruppe (die 6 bereits personalisierten Betriebe) statt alle 30 auf einmal. Daraufhin [[GMB-Angebot Akquise]] um Teil 3 ergänzt: personalisierter Telefon-Leitfaden je Betrieb inkl. recherchierter Telefonnummern (2 von 6 waren bereits in [[Handwerker-Chatbot Akquise]] notiert, die übrigen 4 per Websuche nachrecherchiert).
+**Entscheidung gefallen (25.09.2026, Chat mit Mike):** GMB-Kontakte zuerst (Türöffner vor dem Chatbot), erst die Testgruppe (die 6 bereits personalisierten Betriebe) statt alle 30 auf einmal. Daraufhin [[GMB-Angebot Akquise]] um Teil 3 ergänzt: personalisierter Telefon-Leitfaden je Betrieb inkl. recherchierter Telefonnummern (2 von 6 waren bereits in [[Handwerker-Chatbot Akquise]] notiert, die übrigen 4 per Websuche nachrecherchiert).
 
-**Nächster Schritt ist Mike-only, nicht Executor:** die eigentlichen Anrufe kann kein Agent führen (kein Telefon-Connector). Zählt als offener Punkt für den Mike-only-Zähler unten, bis die 6 Anrufe geführt und ihr Ergebnis hier vermerkt sind. Danach: Reaktionen auswerten, bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden.
+**Präzisiert, selber Tag:** Kanal doch gemischt statt nur Telefon — die 6 Testkontakte heute per E-Mail, ab Montag zusätzlich Telefon für weitere Kontakte. [[GMB-Angebot Akquise]] um Teil 4 ergänzt: alle 6 Texte als versandfertige E-Mail (Betreff + Empfänger-Adresse). Bei 4 von 6 Betrieben Empfänger-E-Mail verifiziert (2 davon per Websuche bereits bekannt, 2 weitere neu gefunden: Elektroanlagen Göbel, Starkstrom-Bremges), bei 2 Betrieben (Lerchner, Mainka) blockierte die Firmenwebsite den automatisierten Abruf (HTTP 503) — dort bewusst keine E-Mail erfunden, offen als fehlend markiert, Mike prüft selbst oder nutzt für diese zwei das Telefon.
+
+**Nächster Schritt ist Mike-only, nicht Executor:** weder E-Mail-Versand noch Anrufe kann ein Agent übernehmen (kein E-Mail-/Telefon-Connector). Zählt als offener Punkt für den Mike-only-Zähler unten, bis die 6 Mails raus sind bzw. die Montags-Anrufe geführt wurden und das Ergebnis hier vermerkt ist. Danach: Reaktionen auswerten, bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden.
 
 ### Handwerker-Chatbot: 30 Kontakte recherchiert + Angebotstext fertig (24.09.2026, aufgaben-executor, direkter Chat-Auftrag)
 
@@ -152,6 +154,17 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
+
+### 2026-09-25, interaktive Chat-Session, Fortsetzung (kein Subagent — E-Mail-Versionen für den heutigen Versand)
+Mike präzisiert die Kanal-Entscheidung: die 6 Testkontakte gehen heute per E-Mail raus, ab Montag zusätzlich telefonisch weitere Kontakte ansprechen. [[GMB-Angebot Akquise]] um "Teil 4: E-Mail-Versionen für den Versand" ergänzt — alle 6 bereits vorhandenen personalisierten Texte als versandfertige E-Mail formatiert (Betreff-Zeile + Empfänger-Adresse). Für 4 von 6 Empfänger-Adressen verifiziert (2 standen bereits fest, 2 weitere per Websuche gefunden: info@elektroanlagen-goebel.de, info@starkstrom-bremges.de). Bei 2 Betrieben (Georg Lerchner, Mainka Elektroanlagen) lieferte die jeweilige Firmenwebsite bei mehreren Versuchen HTTP 503 — keine E-Mail-Adresse erfunden, stattdessen offen markiert, Mike soll selbst nachsehen oder für diese zwei direkt zum Telefon greifen.
+
+**Ausdrücklich kein nach außen wirkender Schritt:** nichts verschickt. Reine Textarbeit, fällt unter die Auto-Bestätigungs-Logik.
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (neuer Abschnitt "Teil 4: E-Mail-Versionen für den Versand")
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag, GMB-Eintrag unter "Freigabe nötig: Einnahmequellen" präzisiert)
 
 ### 2026-09-25, interaktive Chat-Session (kein Subagent — Entscheidung zur Kundenansprache + Telefon-Leitfaden)
 Mike wollte einen Überblick über den aktuellen Stand (Briefing aus [[2026-09-25]], [[2026-09-24]], [[Handwerker-Chatbot Akquise]], [[GMB-Angebot Akquise]]) und danach die offene Entscheidung zur Kundenansprache treffen. Per drei Fragen im Chat geklärt: **GMB-Kontakte zuerst als Türöffner** (statt direkt Chatbot-Kontakte oder gemischt), **Kanal Telefon** (statt E-Mail/Kontaktformular), **erst die Testgruppe** (die 6 bereits personalisierten Betriebe, statt alle auf einmal).
