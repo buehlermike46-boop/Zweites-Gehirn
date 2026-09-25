@@ -76,6 +76,19 @@ Operative Liste für die Auto-Posting-Automatisierung (siehe
 
 **Update (Mike per Chat, 24.09.2026):** Mike wird zusätzlich ab und zu weitere echte Ergebnisse schicken, die dann ebenfalls nach den Regeln dieses Abschnitts (echte Zahlen, Pflicht-Disclaimer, korrekte Attribution, keine Tages-/Heute-Angabe) verarbeitet werden — nicht zwingend täglich, sondern unregelmäßig.
 
+#### Freitag, 25.09.2026 (Quelle: Screenshot "Thursday's Results", von Mike per Chat geschickt)
+- **Quelle:** Screenshot "Limitless Signals ATM", Thursday's Results (Daten vom Vortag, Donnerstag 24.09., am Freitag 25.09. von Mike geschickt)
+- **Rohdaten:** GOLD BUY 100+PIPS ✅ (R,T) · GOLD BUY 160+PIPS ✅ · GOLD BUY 70+PIPS ✅ (BE HIT) · GOLD BUY 140+PIPS ✅ · GOLD BUY 120+PIPS ✅ · GOLD BUY 420+PIPS ✅ · GOLD BUY 80+PIPS ✅ — Today We Win 1090+PIPS, Loss -00PIPS, Overall +1090 PIPS
+- **Asset (über Jarvis `gpt_image_2_5` erstellt, gleicher Look wie die korrigierte Version vom 24.09., TP/SL/GESAMT statt Tagesangabe):** https://d8j0ntlcm91z4.cloudfront.net/user_3IxIbY4gft5U53G8n41lsTQUh7a/hf_20260925_173448_b7f135e9-0c9a-4603-b52d-f392ebd8a1b5.png
+- **Text-Check (Bild heruntergeladen + visuell geprüft):** alle 7 Werte korrekt (100/160/70/140/120/420/80 Pips), Summe TP +1090/SL -0/GESAMT +1090 stimmt, Kopfzeile "THURSDAY'S RESULTS" nennt korrekt den Tag der Rohdaten (nicht den Posting-Tag), Attribution und Disclaimer vollständig. Bestanden.
+- **Status: gepostet (25.09.2026, ca. 17:36 UTC).** Media-ID 18169895479458519.
+
+#### Samstag, 26.09.2026 (Quelle: Screenshot "Friday's Results", von Mike per Chat am 25.09. geschickt — bewusst verzögertes Posten)
+- **Quelle:** Screenshot "Limitless Signals ATM", Friday's Results (Daten von heute, Freitag 25.09., am selben Tag von Mike geschickt, aber auf Mikes ausdrücklichen Wunsch erst morgen gepostet)
+- **Rohdaten:** GOLD BUY 320+PIPS ✅ (R,T) · GOLD BUY 400+PIPS ✅ · GOLD Sell 420+PIPS ✅ · GOLD BUY 460+PIPS ✅ — Today We Win 1600+PIPS, Loss -00PIPS, Overall +1600 PIPS
+- **Auftrag (Mike per Chat, 25.09.2026):** "poste das morgen um die gleiche Zeit" — geplant für Samstag, 26.09.2026, ca. 17:36 UTC (gleiche Uhrzeit wie der heutige Post). Kopfzeile der Grafik muss trotzdem "FRIDAY'S RESULTS" heißen (Tag der Rohdaten), nicht "Samstag"/"Heute" — gleiche Regel wie bei den vorherigen Einträgen.
+- **Status:** geplant, noch nicht erstellt/gepostet. Wake-up für ca. 26.09.2026 17:36 UTC in dieser Session eingerichtet.
+
 ## Facebook Cross-Posting (Auftrag 14.09.2026, Mike per Chat)
 
 **Auftrag:** "Poste ab sofort alles auch auf Facebook, das du auf Instagram postet, zusammen." Gilt für alle künftigen Posts dieser Warteschlange (Limitless-Account), nicht rückwirkend.
@@ -262,6 +275,10 @@ Ein `/schedule`-Cloud-Agent lief isoliert ohne Zugriff auf Vault/lokale Dateien,
 
 ## Executor-Log
 *(Append-only Protokoll jedes content-executor-Laufs, mit Zeitstempel. Angelegt beim ersten echten Lauf.)*
+
+### 2026-09-25, ca. 17:34-17:36 UTC, zweite tägliche Trade-Story — glatt durchgelaufen
+
+Mike hat per Chat die Thursday's-Results-Zahlen geschickt (7 Trades: 100/160/70/140/120/420/80 Pips, Summe +1090, Verlust -0). Grafik direkt im korrigierten TP/SL/GESAMT-Format (siehe Regel-Ergänzung vom 24.09.) über Jarvis `gpt_image_2_5` erstellt, keine Tages-/Heute-Falle diesmal, da die Kopfzeile korrekt "THURSDAY'S RESULTS" (Tag der Rohdaten) statt eines "Heute"-Labels zeigt. Bild heruntergeladen und visuell gegen die Rohdaten geprüft (Text-Check bestanden, alle 7 Werte + Summe korrekt). Über `create_story` auf `mike_bueh` gepostet: Media-ID 18169895479458519. Kein Fehler, keine Rückfrage nötig, Freigabe-Phase weiterhin automatisch.
 
 ### 2026-09-24, ca. 16:52 UTC, ad-hoc-Lauf: erste tägliche Trade-Story — nicht gepostet, Text-Check technisch blockiert
 
