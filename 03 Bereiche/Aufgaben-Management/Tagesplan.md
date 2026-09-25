@@ -47,12 +47,11 @@ Die "Offene Frage an Mike" zum Start-Button-Weg im Kanal (siehe Vorschlag unten)
 
 Auf direkten Auftrag von Mike im Chat ("lass uns bitte eins davon erstmal zu ende machen, so das wir es dem kunden zeigen/verkaufen könnten und dann die nächste sache" — Entscheidung für das GMB-Angebotspaket, weil es als einzige der drei offenen Einnahmequellen-Baustellen keinen externen Blocker hat): für alle 30 Betriebe aus [[Handwerker-Chatbot Akquise]] per WebSearch geprüft, was öffentlich zum Google-Unternehmensprofil auffindbar ist (Bewertungsanzahl/-note, sofern explizit als Google-Wert ausgewiesen). Für 6 Betriebe mit einem echten, konkreten Ansatzpunkt (auffällig wenige Google-Bewertungen bzw. unterdurchschnittliche Note trotz Google-Bezug: Georg Lerchner, Mainka Elektroanlagen, Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges) den Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3) mit echtem, individuellem Aufhänger-Satz fertig ausgeschrieben, Preis auf 249 EUR gesetzt (Optimierung eines bestehenden Profils, keine Neueinrichtung). Für die übrigen 24 Betriebe kein per Websuche verifizierbarer, konkreter Befund — entweder weil das Profil bereits gut aussieht oder kein eindeutig Google-zugeordneter Wert auffindbar war, dort bewusst nichts erfunden.
 
-**Fertig zur Durchsicht in [[GMB-Angebot Akquise]]. Nichts verschickt, kein Betrieb kontaktiert, kein Kontaktformular ausgefüllt — wartet auf Mikes Freigabe.** Positionierung: Türöffner vor dem Chatbot-Angebot, gleiche 30 Betriebe, niedrigschwelligerer erster Kontakt ohne Verweis auf die noch nicht aktivierbare Chatbot-Demo.
+**Fertig zur Durchsicht in [[GMB-Angebot Akquise]]. Nichts verschickt, kein Betrieb kontaktiert, kein Kontaktformular ausgefüllt.** Positionierung: Türöffner vor dem Chatbot-Angebot, gleiche 30 Betriebe, niedrigschwelligerer erster Kontakt ohne Verweis auf die noch nicht aktivierbare Chatbot-Demo.
 
-Offene Entscheidungen für Mike:
-1. Grundsätzliches Ja/Nein zur Ansprache der 6 personalisierten Betriebe (und ob die übrigen 24 mit generischem Text/eigener Prüfung trotzdem angesprochen werden sollen).
-2. Reihenfolge gegenüber dem Chatbot-Angebot: erst GMB als Türöffner, dann später Chatbot nachschieben — oder unabhängig voneinander?
-3. Gleicher rechtlicher Hinweis wie beim Chatbot-Angebot gilt sinngemäß (siehe [[Handwerker-Chatbot Akquise]], Abschnitt "Rechtlicher Hinweis") — keine eigene Rechtsberatung, nur Einordnung.
+**Entscheidung gefallen (25.09.2026, Chat mit Mike):** GMB-Kontakte zuerst (Türöffner vor dem Chatbot), Kanal Telefon, erst die Testgruppe (die 6 bereits personalisierten Betriebe) statt alle 30 auf einmal. Daraufhin [[GMB-Angebot Akquise]] um Teil 3 ergänzt: personalisierter Telefon-Leitfaden je Betrieb inkl. recherchierter Telefonnummern (2 von 6 waren bereits in [[Handwerker-Chatbot Akquise]] notiert, die übrigen 4 per Websuche nachrecherchiert).
+
+**Nächster Schritt ist Mike-only, nicht Executor:** die eigentlichen Anrufe kann kein Agent führen (kein Telefon-Connector). Zählt als offener Punkt für den Mike-only-Zähler unten, bis die 6 Anrufe geführt und ihr Ergebnis hier vermerkt sind. Danach: Reaktionen auswerten, bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden.
 
 ### Handwerker-Chatbot: 30 Kontakte recherchiert + Angebotstext fertig (24.09.2026, aufgaben-executor, direkter Chat-Auftrag)
 
@@ -153,6 +152,21 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
+
+### 2026-09-25, interaktive Chat-Session (kein Subagent — Entscheidung zur Kundenansprache + Telefon-Leitfaden)
+Mike wollte einen Überblick über den aktuellen Stand (Briefing aus [[2026-09-25]], [[2026-09-24]], [[Handwerker-Chatbot Akquise]], [[GMB-Angebot Akquise]]) und danach die offene Entscheidung zur Kundenansprache treffen. Per drei Fragen im Chat geklärt: **GMB-Kontakte zuerst als Türöffner** (statt direkt Chatbot-Kontakte oder gemischt), **Kanal Telefon** (statt E-Mail/Kontaktformular), **erst die Testgruppe** (die 6 bereits personalisierten Betriebe, statt alle auf einmal).
+
+Direkt umgesetzt, da reine Textarbeit (kein Kundenkontakt, keine Registrierung, keine strategische Weichenstellung — fällt unter die Auto-Bestätigungs-Logik für reine Recherche/Textentwurf): [[GMB-Angebot Akquise]] um "Teil 3: Telefon-Leitfaden für die Testgruppe" ergänzt — personalisierter Gesprächsanker je Betrieb (Aufbau: Vorstellung → individueller Google-Befund als Aufhänger → Angebot in einem Satz → niedrigschwelliger nächster Schritt) plus Telefonnummern. Für 2 der 6 Betriebe (Mainka, EKA) stand die Nummer bereits in [[Handwerker-Chatbot Akquise]], für die übrigen 4 (Georg Lerchner, Elektro Baumanns, Elektroanlagen Göbel, Starkstrom-Bremges) per WebSearch gegen die jeweilige Firmenwebsite/das Impressum nachrecherchiert.
+
+`Tagesplan.md` aktualisiert: Entscheidung im GMB-Eintrag unter "Freigabe nötig: Einnahmequellen" vermerkt, offene Frage 2 aus dem heutigen `## Vorschlag für 2026-09-25` damit beantwortet.
+
+**Ausdrücklich kein nach außen wirkender Schritt:** keine Anrufe getätigt, nichts verschickt. Die eigentlichen 6 Testanrufe sind Mike-only (kein Telefon-Connector vorhanden) — nicht an den Executor delegierbar, bleibt als offener Punkt stehen bis Mike sie geführt und das Ergebnis hier vermerkt hat.
+
+**Domain-Check:** kein Content-/YouTube-Bezug, gehört zum Einnahmequellen-Explorer-Track.
+
+Geänderte Dateien:
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (neuer Abschnitt "Teil 3: Telefon-Leitfaden für die Testgruppe")
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag, GMB-Eintrag unter "Freigabe nötig: Einnahmequellen" aktualisiert)
 
 ### 2026-09-25, aufgaben-executor-Lauf (direkter Chat-Auftrag, GMB-Angebot Akquise)
 Direkter Auftrag von Mike im Chat, kein regulärer Bestätigt-Kreislauf: eine der drei offenen Einnahmequellen-Baustellen fertigmachen, Entscheidung fiel auf das GMB-Angebotspaket (einziges ohne externen Blocker). Für alle 30 Betriebe aus [[Handwerker-Chatbot Akquise]] per WebSearch geprüft, was öffentlich zum jeweiligen Google-Unternehmensprofil auffindbar ist. Strenger Maßstab angelegt: nur Werte, die in den Suchergebnissen ausdrücklich als Google-Bewertung/-Rating ausgewiesen waren, zählten als Befund — reine Drittportal-Werte (golocal, 11880, MyHammer etc.) ohne klaren Google-Bezug wurden nicht verwertet, um keine falsche Zuordnung zu behaupten. Ergebnis: 6 von 30 Betrieben mit einem echten, konkreten Ansatzpunkt (auffällig wenige Google-Bewertungen bzw. unterdurchschnittliche Note trotz explizitem Google-Bezug: Georg Lerchner 2 Bew., Mainka Elektroanlagen 3,7/5 bei 3 Bew., Elektro Baumanns 4 Bew., Elektroanlagen Göbel 4 Bew. trotz ~60 Mitarbeitern, EKA Elektroanlagen 2-4 Bew. je nach Quelle, Starkstrom-Bremges 5 Bew. trotz Betrieb seit 1934) — dafür den Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3) mit echtem, individuellem Aufhänger-Satz fertig ausgeschrieben, Preis auf 249 EUR gesetzt. Für die übrigen 24 Betriebe kein verifizierbarer konkreter Befund (entweder Profil bereits erkennbar gut, oder kein eindeutig Google-zugeordneter Wert auffindbar) — dort bewusst nichts erfunden, Vermerk "kein konkreter Befund" gesetzt statt Fake-Befund.

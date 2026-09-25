@@ -145,6 +145,42 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 > Mike Bühler
 > [Telefonnummer] · [E-Mail-Adresse]
 
+## Teil 3: Telefon-Leitfaden für die Testgruppe (6 Betriebe)
+
+**Entscheidung von Mike im Chat (25.09.2026):** GMB-Kontakte zuerst als Türöffner, Kanal Telefon (nicht E-Mail), Testgruppe zuerst statt alle 30 auf einmal ansprechen. Die Testgruppe sind genau diese bereits personalisierten 6 Betriebe — für sie liegt bereits ein verifizierter, konkreter Aufhänger vor, zusätzliche Betriebe für den Testlauf auszuwählen würde nur unnötig weitere Recherche ohne Mehrwert bedeuten.
+
+**Aufbau je Anruf:** kurze Vorstellung (Elektroniker/Elektromeister vom Fach, kein Verkäufer) → der individuelle Google-Befund als Aufhänger → das Angebot in einem Satz (Einstiegspaket, 249 EUR, einmalig) → niedrigschwelliger nächster Schritt (unverbindlicher Blick aufs Profil). Kein Skript zum Ablesen, eher Gesprächsanker — natürlich sprechen, auf Reaktion eingehen.
+
+**Telefonnummern:** aus dem Verzeichniseintrag in [[Handwerker-Chatbot Akquise]] übernommen bzw. (wo dort keine notiert war) per Websuche gegen die jeweilige Firmenwebsite/das Impressum nachrecherchiert (25.09.2026) — vor dem tatsächlichen Anruf lohnt sich trotzdem ein kurzer Blick, ob sich etwas geändert hat.
+
+### 8. Georg Lerchner Elektro-Installationen GmbH & Co. KG (Viersen)
+**Tel. 02162 450653**
+> "Hallo, mein Name ist Mike Bühler, ich bin selbst gelernter Elektroniker und Elektromeister, melde mich kurz als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil zwar die volle Punktzahl hat, 5,0 von 5, aber bisher nur 2 Bewertungen zeigt — bei einem Betrieb seit 1962 wirkt das fast zu wenig für das, was ihr leistet. Ich biete gerade ein kleines Einstiegspaket an, mit dem ich das Profil einmal komplett durchgehe, einmalig 249 Euro, kein Abo. Hättest du kurz Zeit, dass ich mir das unverbindlich anschaue und dir sage was sich lohnen würde?"
+
+### 14. Mainka Elektroanlagen GmbH (Willich)
+**Tel. 02154 412750**
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil aktuell bei 3,7 von 5 Sternen aus nur 3 Bewertungen steht — als Innungsfachbetrieb habt ihr sicher regelmäßig zufriedene Kunden, die bisher einfach nie gefragt wurden. Ich biete gerade ein kleines Einstiegspaket an, das Profil einmal komplett durchzugehen und eine Vorlage fürs Bewertungsmanagement mitzugeben, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+
+### 17. Elektro Baumanns Installations GmbH (Tönisvorst)
+**Tel. 02156 7075**
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur 4 Bewertungen zeigt — für einen Ausbildungsbetrieb mit E-Check und Gebäudesystemtechnik im Programm ist das wenig Sichtbarkeit für das, was ihr anbietet. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro, kein Abo. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+
+### 24. Elektroanlagen Göbel GmbH (Kempen)
+**Tel. 02152 89472-0**
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil trotz eurer Größe, rund 60 Mitarbeiter, seit 1976 am Markt, bisher nur 4 Bewertungen zeigt — da ist deutlich mehr drin bei den vielen Kunden, die ihr über die Jahre schon betreut habt. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+
+### 27. EKA Elektroanlagen GmbH & Co. KG (Grefrath)
+**Tel. 02158 951957**
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur eine Handvoll Bewertungen zeigt — bei Elektroinstallation und Solaranlagen im Programm ist da noch Luft nach oben, gerade weil Solarkunden online oft aktiv nach Erfahrungsberichten suchen. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+>
+> *(Bewertungsanzahl bewusst vage gehalten, siehe Hinweis oben — vor dem Anruf kurz selbst gegenchecken.)*
+
+### 30. Elektro Bremges / Starkstrom-Bremges GmbH & Co. KG (Mönchengladbach)
+**Tel. 02166 43424**
+> "Hallo, mein Name ist Mike Bühler, gelernter Elektroniker und Elektromeister, melde mich als Kollege vom Fach. Mir ist aufgefallen, dass euer Google-Profil bisher nur 5 Bewertungen zeigt — für einen Meisterfachbetrieb seit 1934 ist das wenig Sichtbarkeit für die Erfahrung, die dahintersteckt. Ich biete gerade ein kleines Einstiegspaket an, das Profil komplett durchzugehen, einmalig 249 Euro. Hättest du kurz Zeit für einen unverbindlichen Blick?"
+
+**Nach dem Testlauf:** Reaktionen der 6 Anrufe festhalten (Interesse ja/nein, Einwände, was gut/schlecht ankam), bevor die übrigen 24 Betriebe oder das Chatbot-Angebot angegangen werden — genau dafür ist die Testgruppe da.
+
 ## Betriebe ohne konkreten Befund (24 von 30)
 
 Für diese Betriebe gilt: entweder kein Google-spezifischer Wert per Websuche auffindbar, oder das gefundene Profil ist bereits erkennbar gut gepflegt (viele Bewertungen, gute Note) und liefert damit keinen echten Ansatzpunkt für ein Verbesserungsangebot. Details siehe Übersichtstabelle oben, Spalte "Was zu Google gefunden wurde". Betroffen: Edmund Rohde Elektromeister, Elektro Birker GmbH, Elektroanlagen Jan-Dieter Brüggemann GmbH, Elektro Herentrey GmbH, Elektrotechnik Heiner Hermans GmbH, KKR Louwen GmbH, Elektro Lenzen GmbH & Co. KG, Frank Mihm Elektroinstallateurmeister, Torsten Jütte Elektrotechnik, Elektro Bogisch GmbH & Co. KG, Heuser & Wankum Elektrotechnik GmbH, Elektro Lücke GmbH, Franz Tillmanns (Tillmanns Haustechnik), Fabian Gietmann (FG Energie- und Gebäudetechnik), Elektro Richter e.K., Wolfram Hahn Elektrotechnikerbetrieb & Handel, Elektrotechnik Bergmann GmbH, Elektrotechnik Kempkes GmbH, Elektro Becker e.K., Elektro Klinkertz GmbH, Elektro Kranen GmbH, ElektroTechnik Leber GmbH, Göbel Manfred & Kompagnon Elektrotechnik GmbH, Elektro Kamper GmbH.
