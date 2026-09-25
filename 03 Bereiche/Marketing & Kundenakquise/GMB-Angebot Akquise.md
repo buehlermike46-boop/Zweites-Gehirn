@@ -190,7 +190,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 **Rechtlicher Hinweis unverändert gültig** (siehe [[Handwerker-Chatbot Akquise]], Abschnitt "Rechtlicher Hinweis"): E-Mail-Kaltakquise an Unternehmen ohne bestehende Geschäftsbeziehung ist in Deutschland rechtlich eine Grauzone (UWG §7). Mikes bewusste eigene Entscheidung, hier trotzdem per E-Mail zu starten.
 
 ### 8. Georg Lerchner Elektro-Installationen GmbH & Co. KG (Viersen)
-**An:** [E-Mail-Adresse nicht auffindbar — bitte auf elektro-lerchner.de/Impressum prüfen oder Kontaktformular nutzen. Alternativ Tel. 02162 450653]
+**An:** info@lerchner.team (von Mike selbst mitgeteilt, 25.09.2026)
 **Betreff:** Kurze Frage von einem Kollegen vom Fach an Georg Lerchner Elektro-Installationen
 
 > Hallo Team von Georg Lerchner Elektro-Installationen,
@@ -287,7 +287,7 @@ Basis: Angebotstext aus [[Einnahmequellen-Recherche]] (Idee 3), individueller Au
 > Mike Bühler
 > 0152 04553210 · buehler.mike@gmx.de
 
-**Mikes Kontakt ist in allen sechs Mails eingetragen** (0152 04553210 · buehler.mike@gmx.de, 25.09.2026 im Chat mitgeteilt). Noch offen: die zwei fehlenden Empfänger-Adressen (Lerchner, Mainka).
+**Mikes Kontakt ist in allen sechs Mails eingetragen** (0152 04553210 · buehler.mike@gmx.de, 25.09.2026 im Chat mitgeteilt). 5 von 6 Empfänger-Adressen jetzt vollständig (Lerchner am 25.09. von Mike selbst ergänzt: info@lerchner.team). Noch offen: Mainka Elektroanlagen — Website blockierte den automatisierten Abruf, siehe Hinweis oben.
 
 ## Betriebe ohne konkreten Befund (24 von 30)
 
