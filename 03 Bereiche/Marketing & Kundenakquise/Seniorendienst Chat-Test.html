@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seniorendienst Chat-Test</title>
+<style>
+  :root {
+    --bg: #faf7f2;
+    --surface: #ffffff;
+    --surface-2: #f2ede3;
+    --text: #2b2a26;
+    --text-muted: #6d6a61;
+    --accent: #4a7c6e;
+    --accent-hover: #3a6459;
+    --accent-soft: #e4ede9;
+    --border: #e6e0d4;
+    --bubble-bot: #f2ede3;
+    --bubble-user: #4a7c6e;
+    --bubble-user-text: #ffffff;
+    --shadow: 0 12px 32px rgba(43, 42, 38, 0.12);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    padding: 24px 16px;
+  }
+  h1, h2, h3 { font-family: Georgia, serif; margin: 0; }
+
+  .test-banner {
+    max-width: 860px;
+    margin: 0 auto 24px;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .test-banner strong { color: var(--accent); }
+
+  .site {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .site header {
+    padding: 40px 32px 32px;
+    background: linear-gradient(180deg, var(--surface-2), var(--surface));
+    border-bottom: 1px solid var(--border);
+  }
+  .site header .eyebrow {
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .site header h1 { font-size: clamp(26px, 4vw, 34px); margin-top: 8px; }
+  .site header p { color: var(--text-muted); margin-top: 10px; max-width: 46ch; line-height: 1.55; }
+
+  .site .content { padding: 32px; display: grid; gap: 24px; }
+  .leistungen { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+  .leistung {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    background: var(--surface);
+  }
+  .leistung h3 { font-size: 15.5px; font-family: -apple-system, sans-serif; font-weight: 700; }
+  .leistung p { font-size: 13.5px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+
+  .kontakt-zeile { font-size: 14px; color: var(--text-muted); border-top: 1px solid var(--border); padding-top: 20px; }
+  .kontakt-zeile strong { color: var(--text); }
+
+  .chat-launcher {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+    transition: transform 0.15s ease;
+  }
+  .chat-launcher:hover { background: var(--accent-hover); transform: scale(1.05); }
+  .chat-launcher svg { width: 26px; height: 26px; }
+
+  .chat-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: min(360px, calc(100vw - 32px));
+    max-height: min(560px, calc(100vh - 140px));
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 41;
+  }
+  .chat-panel[hidden] { display: none; }
+
+  .chat-head {
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .chat-head .who { display: flex; flex-direction: column; gap: 2px; }
+  .chat-head .who strong { font-size: 14.5px; }
+  .chat-head .who span { font-size: 11.5px; opacity: 0.85; }
+  .chat-head button {
+    background: rgba(255,255,255,0.18);
+    border: none;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+  }
+  .chat-head button:hover { background: rgba(255,255,255,0.3); }
+
+  .chat-status {
+    font-size: 11.5px;
+    padding: 6px 16px;
+    background: var(--accent-soft);
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .chat-status.error { color: #a84343; }
+  .chat-status.ok { color: var(--accent); }
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 220px;
+  }
+  .msg { max-width: 84%; padding: 10px 13px; border-radius: 14px; font-size: 14px; line-height: 1.45; white-space: pre-wrap; }
+  .msg.bot { background: var(--bubble-bot); color: var(--text); border-bottom-left-radius: 4px; align-self: flex-start; }
+  .msg.user { background: var(--bubble-user); color: var(--bubble-user-text); border-bottom-right-radius: 4px; align-self: flex-end; }
+  .msg.typing { font-style: italic; color: var(--text-muted); background: var(--bubble-bot); }
+
+  .quick-replies { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 10px; }
+  .quick-replies button {
+    font-size: 12.5px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .quick-replies button:hover { border-color: var(--accent); color: var(--accent); }
+
+  .chat-input { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); }
+  .chat-input input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+  }
+  .chat-input input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .chat-input button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0 16px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13.5px;
+  }
+  .chat-input button:hover { background: var(--accent-hover); }
+  .chat-input button:disabled { opacity: 0.5; cursor: not-allowed; }
+</style>
+</head>
+<body>
+
+<div class="test-banner">
+  <span>&#9888;&#65039;</span>
+  <div><strong>Interner Test.</strong> Diese Seite simuliert, wie der Chatbot auf der Website von Seniorendienst Klein aussehen könnte. Nicht live, nicht öffentlich, keine echte Kundenkommunikation. Lokale Datei, öffne sie direkt im Browser (Doppelklick).</div>
+</div>
+
+<div class="site">
+  <header>
+    <div class="eyebrow">Seniorendienst Klein</div>
+    <h1>Pflege und Alltagshilfe in Süchteln und Viersen</h1>
+    <p>Individuelle Pflegepläne, Unterstützung bei Pflegegeldanträgen und Alltagshilfen, persönlich und zuverlässig.</p>
+  </header>
+  <div class="content">
+    <div class="leistungen">
+      <div class="leistung">
+        <h3>Individuelle Pflegepläne</h3>
+        <p>Maßgeschneiderte Betreuung, abgestimmt auf die jeweilige Situation.</p>
+      </div>
+      <div class="leistung">
+        <h3>Pflegegeld &amp; Anträge</h3>
+        <p>Unterstützung bei Anträgen und Fragen zur Kostenübernahme.</p>
+      </div>
+      <div class="leistung">
+        <h3>Alltagshilfen</h3>
+        <p>Haushalt, Arztbesuche und Begleitung zu sozialen Aktivitäten.</p>
+      </div>
+    </div>
+    <div class="kontakt-zeile">
+      <strong>Einsatzgebiet:</strong> Süchteln, Viersen und die nähere Umgebung. Fragen? Unten rechts steht ein kleiner Assistent bereit.
+    </div>
+  </div>
+</div>
+
+<button class="chat-launcher" id="launcher" aria-label="Chat öffnen">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+</button>
+
+<div class="chat-panel" id="panel" hidden>
+  <div class="chat-head">
+    <div class="who">
+      <strong>Seniorendienst Klein</strong>
+      <span>Antwortet meist sofort &middot; Test-Modus</span>
+    </div>
+    <button id="closeBtn" aria-label="Chat schließen">&times;</button>
+  </div>
+  <div class="chat-status" id="status">Verbinde mit dem Test-Bot &hellip;</div>
+  <div class="chat-messages" id="messages">
+    <div class="msg bot">Hallo! Ich bin der digitale Assistent von Seniorendienst Klein (Testversion). Stellen Sie mir gern eine Frage, oder wählen Sie ein Beispiel unten.</div>
+  </div>
+  <div class="quick-replies" id="quickReplies">
+    <button data-q="Was kostet die Pflege?">Was kostet die Pflege?</button>
+    <button data-q="Seid ihr auch in Willich aktiv?">Auch in Willich aktiv?</button>
+    <button data-q="Ich hätte gern einen Beratungstermin, meine Nummer ist 0170 1234567.">Termin vereinbaren</button>
+  </div>
+  <div class="chat-input">
+    <input id="input" type="text" placeholder="Ihre Frage …" autocomplete="off" />
+    <button id="sendBtn">Senden</button>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var WEBHOOK_URL = "https://hook.eu1.make.com/mgkwecwfb217vfpmq6v5mqnvtohb9ut6";
+
+    var launcher = document.getElementById("launcher");
+    var panel = document.getElementById("panel");
+    var closeBtn = document.getElementById("closeBtn");
+    var messages = document.getElementById("messages");
+    var input = document.getElementById("input");
+    var sendBtn = document.getElementById("sendBtn");
+    var statusEl = document.getElementById("status");
+    var quickReplies = document.getElementById("quickReplies");
+    var opened = false;
+
+    function setStatus(text, kind) {
+      statusEl.textContent = text;
+      statusEl.className = "chat-status" + (kind ? " " + kind : "");
+    }
+
+    function addMessage(text, who) {
+      var el = document.createElement("div");
+      el.className = "msg " + who;
+      el.textContent = text;
+      messages.appendChild(el);
+      messages.scrollTop = messages.scrollHeight;
+      return el;
+    }
+
+    function pingWebhook() {
+      setStatus("Verbinde mit dem Test-Bot …");
+      fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ nachricht: "Systemcheck" }) })
+        .then(function (r) {
+          if (r.ok) { setStatus("Bot ist aktiv, bereit zum Testen.", "ok"); }
+          else { setStatus("Bot antwortet mit Fehler (" + r.status + ").", "error"); }
+        })
+        .catch(function (err) {
+          setStatus("Bot nicht erreichbar: " + err.message, "error");
+        });
+    }
+
+    launcher.addEventListener("click", function () {
+      panel.hidden = false;
+      launcher.style.display = "none";
+      if (!opened) { opened = true; pingWebhook(); }
+      input.focus();
+    });
+    closeBtn.addEventListener("click", function () {
+      panel.hidden = true;
+      launcher.style.display = "flex";
+    });
+
+    function sendMessage(text) {
+      if (!text.trim()) return;
+      addMessage(text, "user");
+      input.value = "";
+      sendBtn.disabled = true;
+      var typingEl = addMessage("tippt …", "bot typing");
+
+      fetch(WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nachricht: text })
+      })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.text();
+        })
+        .then(function (answer) {
+          typingEl.remove();
+          addMessage(answer || "(keine Antwort erhalten)", "bot");
+          setStatus("Bot ist aktiv, bereit zum Testen.", "ok");
+        })
+        .catch(function (err) {
+          typingEl.remove();
+          addMessage("Der Bot ist gerade nicht erreichbar: " + err.message, "bot");
+          setStatus("Fehler: " + err.message, "error");
+        })
+        .finally(function () {
+          sendBtn.disabled = false;
+        });
+    }
+
+    sendBtn.addEventListener("click", function () { sendMessage(input.value); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") sendMessage(input.value);
+    });
+    quickReplies.addEventListener("click", function (e) {
+      var btn = e.target.closest("button[data-q]");
+      if (btn) sendMessage(btn.getAttribute("data-q"));
+    });
+  })();
+</script>
+
+</body>
+</html>
