@@ -208,7 +208,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #limitless
 
 ### 13. Freitag, 25.09.2026, 19:35 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** gepostet (25.09.2026, ca. 16:38 UTC). Media-ID 18137006953619472
 - **Format:** Carousel (4 Bilder)
 - **Thema/Hook (20.09.2026 überarbeitet — ursprünglich komplett um "laut Anbieter" herum gebaut, siehe neue Regel unten "Content-Regel: nie 'laut Anbieter'"):** Community-Zahlen. Hook: "8.119 aktive Mitglieder in 40+ Ländern, was heißt das für dich als Einsteiger?"
 - **Fakt/Nutzwert (Angebot.md):** PrimeVerse zählt aktuell 8.119 aktive Mitglieder in 40+ Ländern (Marketing-Angabe der Website, hier ohne Attributions-Hinweis im Text übernommen, siehe neue Content-Regel — bei Bedarf vor dem Posten nochmal auf Aktualität prüfen).
@@ -313,6 +313,12 @@ Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09
 
 ### 2026-09-13, 16:36 UTC, planmäßiger täglicher Lauf
 Zur Kenntnis genommen: Freigabe-Phase wurde heute von Mike auf **Phase 2 (automatisch)** umgestellt, siehe Abschnitt oben. Nichts fällig zum Posten in diesem Lauf (Eintrag Nr. 2, Montag 14.09. 18:50 Uhr, liegt mit ca. 26h noch knapp außerhalb des 24h-Fensters, ist bereits `freigegeben` und wird morgen fällig). Post Nr. 1 bereits ausgewertet (12.09.), noch keine neuen Rohzahlen fällig. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme. Content-Manager läuft heute 17:00 UTC turnusmäßig selbst (Sonntag), keine Überschneidung mit diesem Lauf.
+
+### 2026-09-25, ca. 16:36-16:38 UTC, planmäßiger täglicher Lauf — Post #13 live
+
+Post Nr. 13 (Community-Zahlen Carousel, planmäßig 19:35 Uhr) fällig. 4 Slides über `nano_banana_2` erstellt (ca. 6 Credits), alle einzeln heruntergeladen und text-geprüft — keine Abweichung. Gepostet: **Media-ID 18137006953619472**. Erster Post seit Einführung der Content-Regel vom 20.09., der die "8.119 Mitglieder"-Zahl ganz ohne "laut Anbieter"/Attributions-Floskel verwendet.
+
+Guthaben nach diesem Lauf: 48,88 Credits. Post #11 (Risikomanagement-Reel) bleibt weiterhin aus Credit-Gründen offen (braucht 105 Credits für ein Reel). Leerlauf-Check: offene Instagram-Einträge #11, #14, #15 = 3, Telegram (gestoppt, siehe eigenes Executor-Log) hat mehrere offene Einträge — zusammen deutlich über der Schwelle von 3, keine `LEERLAUF`-Zeile nötig.
 
 ### 2026-09-23/24, Credit-Engpass bei Post #11, Story #12 planmäßig live
 
