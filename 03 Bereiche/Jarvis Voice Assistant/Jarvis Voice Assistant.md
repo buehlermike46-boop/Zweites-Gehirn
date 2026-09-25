@@ -90,7 +90,34 @@ bei "Jarvis activate" mit. Details/technische Umsetzung: `jarvis-voice-assistant
 von vor dem WhatsApp-Endpoint), `/whatsapp/status` gab deshalb 404 zurück. Neu gestartet
 — läuft jetzt mit aktuellem Code, WhatsApp-Endpoint antwortet normal.
 
+## Handy-Zugriff per Tailscale (seit 25.09.2026)
+
+Bisher war der `handy`-Knoten im Wissensgraph (STIMME-Ast) rein geplant/gedimmt — keine
+Verbindung von unterwegs möglich. Mike hat entschieden: Zugriff über **Tailscale** (privates
+VPN nur zwischen seinen eigenen Geräten, erreichbar von überall, nicht offen im Internet), mit
+**voller Sprachsteuerung** (Mikro, Wake-Word, Cockpit, Seiten-Panels — nicht nur Dashboard-Ansicht).
+
+**Warum Tailscale statt einfach die PC-IP im WLAN:** `server.py` läuft zwar schon auf
+`0.0.0.0:8340`, aber zwei Probleme bleiben ungelöst — erstens nur im selben WLAN, zweitens (der
+eigentliche Blocker) verweigern Chrome/Safari das Mikrofon ohne HTTPS (Web Speech API braucht
+einen "secure context"). Tailscale löst beides: eigenes privates Netz + `tailscale serve` stellt
+dafür automatisch ein echtes HTTPS-Zertifikat aus.
+
+**Code-seitig fertig:** kein Eingriff in Server/WebSocket-Logik nötig (band schon auf `0.0.0.0`,
+WebSocket-URL war schon dynamisch über `location.host`). Einzige Änderung: Mobil-Breakpoint in
+`style.css`, damit die 5 Cockpit-Kacheln auf Telefonbreite nicht auf unlesbare Slivern
+zusammenschrumpfen. Volle technische Details und Schritt-für-Schritt-Anleitung:
+[[jarvis-voice-assistant]]/`HANDY-ZUGRIFF.md` bzw. `CLAUDE.md` dort.
+
+**Technisch blockiert, seit 25.09.2026:** Der eigentliche Login (Tailscale auf PC und Handy
+installieren, gleiches Konto, HTTPS-Zertifikate im Tailnet aktivieren, einmalig `tailscale
+serve` auf dem PC ausführen) sind interaktive Schritte auf Mikes echten Geräten — genau wie bei
+den anderen "Mike selbst"-Logins (WhatsApp, Broker, Social), kann keine Cloud-Session für ihn
+erledigen. Sobald erledigt: `handy`-Knoten in `frontend/main.js` von `plannedNode` auf
+`liveNode` umstellen.
+
 ## Offen
+- **Handy-Zugriff (Tailscale):** Setup auf PC + Handy noch von Mike selbst zu machen, siehe Abschnitt oben und `HANDY-ZUGRIFF.md` im Jarvis-Repo. Danach `handy`-Knoten auf live umstellen.
 - Content-Plan fürs IB-Business/Limitless (diese Woche) neu beauftragen, ursprünglicher Auftrag ging beim Bridge-Bau verloren, siehe oben.
 - Persönlichen Telegram-Userbot einmal end-to-end testen (echte Nachricht → Entwurf → Freigabe → Versand), siehe [[Jarvis Hand - Agenten Ausbau]].
 - Echtzeit-Vault-Zugriff (`[ACTION:VAULT]`) einmal live per Sprache testen (bisher nur isoliert im Code getestet, nicht durch den echten Sprachassistenten durchgesprochen).
