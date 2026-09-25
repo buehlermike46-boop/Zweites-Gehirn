@@ -157,6 +157,23 @@ Beide offenen Fragen oben gelten als mit Ja beantwortet. Konkret umgesetzt:
 ## Log
 *(Append-only Protokoll jedes Executor-Laufs, mit Zeitstempel)*
 
+### 2026-09-25, interaktive Chat-Session, fünfte Fortsetzung (kein Subagent — Runde 2 gestoppt, Chatbot-Inhalt korrigiert statt GMB-Paket weiter verschickt)
+Auf Mikes Anweisung ("25 weiter verschicken, auch andere Branchen und kleinere Firmen") 25 weitere Kontakte branchenübergreifend recherchiert (17 weitere Elektrobetriebe + 8 aus Maler/Dachdecker/Sanitär-Heizung/Garten-Landschaftsbau) und in 4 unterschiedlichen Text-Varianten (Struktur/Länge/Ansprache, nicht nur Aufhänger) vorbereitet, auf Mikes Wunsch ("wir müssen herausfinden was gut funktioniert"). Von den ersten 10 versuchten Sends gingen 6 raus, 4 wurden vom Claude-Code-Sicherheits-Classifier automatisch verweigert ("Real-World Transactions") — nicht umgangen, Mike wurde informiert und um Entscheidung gebeten.
+
+**Strategischer Kurswechsel:** Mike äußerte danach grundsätzlichen Zweifel am GMB-Paket selbst ("so wie wir da rausgeschickt haben kauft das keiner"). Diagnose gemeinsam durchgesprochen (Cold-Email-Grundproblem: keine Referenzen, schwacher CTA, falscher Erstkontakt-Kanal — nicht primär der Paketinhalt). Mike präzisierte: der Chatbot sei das stärkere Angebot, sobald er "besser läuft" — konkret: echter Inhalt statt Platzhalter-Firmenprofil.
+
+**Fund:** Das Chatbot-Testszenario 7597709 lief inhaltlich komplett auf dem ursprünglichen technischen Testfall "Seniorendienst Klein" (Pflegedienst) — nicht nur unfertig, sondern für eine Elektrobetrieb-Demo komplett falscher Inhalt (Pflegeleistungen statt Elektro-Leistungen). Per `mcp__Make__scenarios_update` korrigiert: Szenario umbenannt in "Chatbot TEST: Handwerker-Demo (Elektrobetrieb)", System-Prompt auf ein echtes Elektrobetrieb-Musterprofil umgestellt (Elektroinstallation, PV, Wallbox, Smart Home, E-Check, Notdienst; Einsatzgebiet Kreis Viersen — deckungsgleich mit den tatsächlich recherchierten Zielkunden), Telegram-Terminanfrage-Text entsprechend angepasst. Live gegen den Webhook getestet (curl, beide Routen: FAQ-Antwort zu Wallbox-Kosten korrekt und ehrlich ohne erfundene Preise, Terminanfrage mit Namenserkennung funktioniert). Die Modify-Shared-Resources-Bremse, die am 24.09. die Aktivierung blockiert hatte, griff bei dieser inhaltlichen Bearbeitung (kein Aktivieren, nur Blueprint-Update) nicht.
+
+**GMB-Kampagne pausiert, nicht abgebrochen:** die bereits verschickten 11 Mails (5 + 6) bleiben stehen, die restlichen 19 vorbereiteten Kontakte aus Runde 2 liegen fertig recherchiert in [[GMB-Angebot Akquise]] falls die Kampagne später wieder aufgenommen wird. Fokus liegt jetzt auf dem Chatbot als Hauptangebot.
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Marketing & Kundenakquise/GMB-Angebot Akquise.md` (Status Runde 2, vollständige Kontaktliste mit Varianten/Status)
+- `03 Bereiche/Marketing & Kundenakquise/Handwerker-Chatbot Akquise.md` (Chatbot-Inhalt korrigiert, strategische Neubewertung dokumentiert)
+- `03 Bereiche/Aufgaben-Management/Tagesplan.md` (dieser Log-Eintrag)
+- Make-Szenario 7597709 (Blueprint aktualisiert, live — kein Vault-Datei, aber wesentliche Änderung)
+
 ### 2026-09-25, interaktive Chat-Session, vierte Fortsetzung (kein Subagent — erster echter Versand: 5 GMB-Mails raus)
 Mike hat direkt im Chat angewiesen, die 5 versandfertigen GMB-Mails (Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges, Georg Lerchner) zu verschicken. Vor dem Versand geprüft: das verbundene Gmail-Konto (buehlermike46@gmail.com) sendet unter seiner eigenen Adresse, nicht unter der in der Signatur stehenden gmx.de-Adresse — Mismatch Mike vorgelegt und geklärt: über Gmail senden, Signatur entsprechend anpassen (statt selbst über gmx.de zu verschicken). Signatur in allen 12 betroffenen Textstellen in [[GMB-Angebot Akquise]] von buehler.mike@gmx.de auf buehlermike46@gmail.com umgestellt, danach alle 5 Mails über `mcp__Gmail__send_message` verschickt (Message-IDs im Gmail-Konto vorhanden).
 

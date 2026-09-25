@@ -12,7 +12,9 @@ Vorbereitung für die Ansprache von Elektro-Handwerksbetrieben zum [[Einnahmeque
 
 **Zielgruppen-Begründung:** bewusst Elektro-Handwerksbetriebe statt Handwerk allgemein, weil Mike selbst gelernter Elektroniker für Betriebstechnik und Elektromeister ist (siehe [[Über mich]]) — das ist ein echter Vertrauensvorsprung ("ich bin selbst vom Fach"), kein anonymer Kaltakquise-Pitch.
 
-**Wichtiger Zusammenhang mit dem Chatbot selbst:** Die Demo ist technisch fertig, aber aktuell nicht aktivierbar (Make-Plan-Limit, siehe [[Tagesplan]] Abschnitt "Technisch blockiert"). Es gibt also aktuell nichts live Vorführbares — das ist eine der offenen Fragen an Mike unten, nicht eigenmächtig entschieden.
+**Wichtiger Zusammenhang mit dem Chatbot selbst:** Die Demo lief seit 24./25.09.2026 technisch fertig und getestet, aber inhaltlich mit einem Pflegedienst-Platzhalter (Seniorendienst Klein, der ursprüngliche technische Testfall). Am 25.09.2026, abends, auf Mikes Wunsch ("echter Inhalt statt Platzhalter-Firmenprofil") durch ein echtes Elektrobetrieb-Musterprofil ersetzt (Leistungen: Elektroinstallation, PV, Wallbox, Smart Home, E-Check, Notdienst; Einsatzgebiet Kreis Viersen — passend zu den tatsächlich recherchierten Zielkunden), Szenario umbenannt in "Chatbot TEST: Handwerker-Demo (Elektrobetrieb)", live gegen den Webhook getestet (beide Routen: FAQ-Antwort und Terminanfrage). Die Demo ist damit inhaltlich jetzt tatsächlich passend zur Zielgruppe, nicht nur technisch funktionsfähig. Details siehe [[Tagesplan]] Log-Eintrag vom 25.09.2026.
+
+**Strategische Neubewertung (25.09.2026, Mikes Entscheidung im Chat):** Mike hält den Chatbot für das stärkere, schwerer kopierbare Angebot im Vergleich zum GMB-Bewertungspaket (siehe [[GMB-Angebot Akquise]]) — eine echte funktionierende Automatisierung statt einer Text-/Design-Vorlage. Die parallel laufende GMB-Mailkampagne wurde deshalb pausiert (Stand: 11 von 30 raus, siehe [[GMB-Angebot Akquise]]), der Fokus liegt jetzt auf dem Chatbot als Hauptangebot.
 
 ## Teil 1: 30 Elektro-Handwerksbetriebe
 

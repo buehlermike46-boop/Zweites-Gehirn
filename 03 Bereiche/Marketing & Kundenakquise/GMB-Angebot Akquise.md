@@ -10,7 +10,43 @@ Vorbereitung für die Ansprache der 30 Elektro-Handwerksbetriebe aus [[Handwerke
 
 **Positionierung: Türöffner vor dem Chatbot-Angebot.** Dieselben 30 Betriebe sind bereits für die Chatbot-Ansprache recherchiert. Statt zwei getrennte Kaltakquise-Wellen zu fahren, ist die GMB-Optimierung der niedrigschwelligere erste Kontakt — günstiger, schneller nachvollziehbarer Nutzen, kein Verweis auf eine unfertige Technik-Demo nötig. Läuft der erste Kontakt gut, ist der Chatbot ein naheliegender Folge-Pitch bei bestehendem Vertrauen, sobald das Make-Plan-Limit geklärt ist.
 
-**Status (Update 25.09.2026, abends):** 5 der 6 Testkontakte per E-Mail versendet (Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges, Georg Lerchner) — auf Mikes direkte Anweisung im Chat, über das verbundene Gmail-Konto (buehlermike46@gmail.com). Mainka Elektroanlagen fehlt weiterhin die Empfänger-Adresse, noch nicht verschickt. Die übrigen 24 Betriebe sowie das Chatbot-Angebot: unverändert reine Vorbereitung, nichts verschickt.
+**Status (Update 25.09.2026, abends):** 5 der 6 Testkontakte per E-Mail versendet (Elektro Baumanns, Elektroanlagen Göbel, EKA Elektroanlagen, Starkstrom-Bremges, Georg Lerchner) — auf Mikes direkte Anweisung im Chat, über das verbundene Gmail-Konto (buehlermike46@gmail.com). Mainka Elektroanlagen fehlt weiterhin die Empfänger-Adresse, noch nicht verschickt.
+
+**Runde 2 (branchenübergreifend, 25.09.2026, abends) — pausiert bei 6 von 25 weiteren Versendungen.** Auf Mikes Wunsch ("25 weiter verschicken, auch andere Branchen und kleinere Firmen") 25 weitere Kontakte vorbereitet: 17 weitere Elektrobetriebe aus der bestehenden Liste plus 8 Betriebe aus vier anderen Branchen (Maler, Dachdecker, Sanitär/Heizung, Garten-/Landschaftsbau) — Details siehe `## Freigabe nötig: Einnahmequellen` in [[Tagesplan]]. In vier Text-Varianten mit unterschiedlicher Struktur/Länge/Ansprache verfasst (nicht nur andere Aufhänger), um später Rückschlüsse zu ziehen was funktioniert. Von den ersten 10 versuchten Sends gingen 6 raus, 4 wurden vom Claude-Code-Sicherheits-Classifier automatisch blockiert ("Real-World Transactions", vermutlich weil viele fast identische Mails kurz hintereinander wie eine automatisierte Massenkampagne wirken) — nicht umgangen. **Danach von Mike selbst gestoppt:** Mike bezweifelte, dass das Angebot in der aktuellen Form überhaupt konvertiert ("so wie wir da rausgeschickt haben kauft das keiner") und entschied sich, stattdessen auf den Chatbot als stärkeres Angebot zu fokussieren (siehe [[Handwerker-Chatbot Akquise]], Abschnitt "Strategische Neubewertung"). Die restlichen 19 vorbereiteten Kontakte (7 Elektriker + 8 andere Branchen, minus der 4 blockierten die noch offen sind) wurden nicht verschickt, liegen aber fertig vor falls die GMB-Kampagne später wieder aufgenommen wird.
+
+### Runde 2: vorbereitete Kontaktliste (branchenübergreifend)
+
+Recherchiert und mit Text-Varianten versehen, aber nicht mehr vollständig versendet (siehe Status oben). Aufhänger sind echte, recherchierte Fakten (Gründungsjahr/Größe/Spezialisierung), keine Google-Bewertungszahlen — für diese Betriebe wurde keine strikte Google-Bewertungsverifikation wie bei den ersten 6 durchgeführt.
+
+| # | Firma | Branche | E-Mail | Variante | Status |
+|---|---|---|---|---|---|
+| 1 | KKR Louwen GmbH | Elektro | service@kkrgmbh.de | B (Elektriker, ausführlich) | ✅ versendet |
+| 2 | Elektro Lenzen GmbH & Co. KG | Elektro | info@elektrolenzen.de | B | ⛔ vom Classifier blockiert |
+| 3 | Torsten Jütte Elektrotechnik | Elektro | juetteelektro@aol.com | C (Elektriker, kurz) | ✅ versendet |
+| 4 | Elektro Bogisch GmbH & Co. KG | Elektro | info@elektrobogisch.de | B | ✅ versendet |
+| 5 | Elektrotechnik Kempkes GmbH | Elektro | info@elektro-kempkes.de | C | ⛔ vom Classifier blockiert |
+| 6 | Göbel Manfred & Kompagnon Elektrotechnik GmbH | Elektro | info@goebelgmbh.de | B | ⛔ vom Classifier blockiert |
+| 7 | Elektro Herentrey GmbH | Elektro | elektro-herentrey@t-online.de | B | ✅ versendet |
+| 8 | Elektrotechnik Heiner Hermans GmbH | Elektro | info@elektro-hermans.de | C | ⛔ vom Classifier blockiert |
+| 9 | Heuser & Wankum Elektrotechnik GmbH | Elektro | info@heuser-wankum.de | B | ✅ versendet |
+| 10 | Elektro Lücke GmbH | Elektro | info@elektro-luecke.de | C | ✅ versendet |
+| 11 | Elektro Richter e.K. | Elektro | info@elektro-richter.nrw | B | nicht versucht |
+| 12 | Elektro Kamper GmbH | Elektro | info@elektro-kamper.de | C | nicht versucht |
+| 13 | Elektro Birker GmbH | Elektro | info@elektro-birker.com (Konvention, nicht einzeln bestätigt) | B | nicht versucht |
+| 14 | Elektroanlagen Jan-Dieter Brüggemann GmbH | Elektro | info@elektro-brueggemann.de (Konvention) | C | nicht versucht |
+| 15 | Elektro Becker e.K. | Elektro | info@elektrobecker-nettetal.de (Konvention) | B | nicht versucht |
+| 16 | ElektroTechnik Leber GmbH | Elektro | info@etlg-mbh.de (Konvention) | C | nicht versucht |
+| 17 | Frank Mihm Elektroinstallateurmeister | Elektro | info@elektro-mihm.de (Konvention) | B | nicht versucht |
+| 18 | Malerbetrieb Stefan Neugebauer | Maler | neugebauer.viersen@freenet.de | D (andere Branchen, ausführlich) | nicht versucht |
+| 19 | Malermeister Engler GmbH & Co. KG | Maler | info@malermeister-engler.de | D | nicht versucht |
+| 20 | Kreiten Sanitär- und Heizungsbau GmbH | Sanitär/Heizung | manfred.kreiten@t-online.de | E (andere Branchen, kurz) | nicht versucht |
+| 21 | Zanders Gartenbau und Landschaftsbau | Garten-/Landschaftsbau | info@zanders-gartenbau.de | D | nicht versucht |
+| 22 | Wassergarten Peter Heinen | Garten-/Landschaftsbau | info@wassergarten-heinen.de | E | nicht versucht |
+| 23 | RZ Bedachungen GmbH | Dachdecker | info@rz-bedachungen.de | D | nicht versucht |
+| 24 | Andre Junkermann Garten- und Landschaftsbau | Garten-/Landschaftsbau | info@junkermann-gartenbau.de (Konvention) | E | nicht versucht |
+| 25 | Schoenen & Lücke Dachdeckermeister | Dachdecker | info@dachdecker-toenisvorst.de (Konvention) | D | nicht versucht |
+
+Die vier Textvarianten (B/C/D/E, Wortlaut) stehen im Chat-Verlauf vom 25.09.2026 und können bei Bedarf rekonstruiert werden — bei Wiederaufnahme der Kampagne neu anfragen statt aus dem Gedächtnis zu raten.
 
 ## Methodik und Grenzen der Recherche
 
