@@ -20,6 +20,12 @@
 // haette trotz gueltiger Bedingungen nicht gehandelt. Ohne die Bremse baut sich der Zustand sofort
 // beim Laden korrekt aus der Historie auf, danach reagiert er wie bisher live weiter. Setzen
 // derselben statischen Werte mehrfach pro Kerze (bei jedem Tick) ist unschaedlich, da idempotent.
+//
+// NEU 22.09.2026: TageskontextState.Richtung wird zusaetzlich als Plot sichtbar gemacht (-1 Short/
+// 0 Neutral/1 Long). Grund: dieser Indikator lief bisher komplett unsichtbar im Hintergrund - Mike
+// hatte am Chart keine Moeglichkeit zu sehen, was der Bot gerade als Tageskontext-Richtung
+// annimmt, als er sich fragte warum NqTestStrategy.cs nicht ausgeloest hat. Gleiches Plot-Muster
+// wie in NqDemandIndex.cs/NqFootprintDelta.cs bereits bestaetigt funktionierend.
 
 using ATAS.Indicators;
 using OFT.Attributes;
@@ -29,6 +35,8 @@ namespace RgTrading.Indicators
     [DisplayName("RG Tageskontext (ES)")]
     public class EsTageskontext : Indicator
     {
+        private readonly ValueDataSeries _richtungPlot = new ValueDataSeries("Tageskontext-Richtung");
+
         private decimal _previousDayHigh;
         private decimal _previousDayLow;
         private decimal _currentDayHigh;
@@ -37,6 +45,7 @@ namespace RgTrading.Indicators
 
         public EsTageskontext() : base(true)
         {
+            DataSeries[0] = _richtungPlot;
         }
 
         protected override void OnCalculate(int bar, decimal value)
@@ -55,6 +64,7 @@ namespace RgTrading.Indicators
                 _currentDayHigh = candle.High;
                 _currentDayLow = candle.Low;
                 TageskontextState.Richtung = TagesRichtung.Neutral;
+                _richtungPlot[bar] = 0;
                 return;
             }
 
@@ -64,7 +74,10 @@ namespace RgTrading.Indicators
                 _currentDayLow = candle.Low;
 
             if (!_hasPreviousDay)
+            {
+                _richtungPlot[bar] = 0;
                 return;
+            }
 
             // Regel 1: Vortageshoch angetestet, aber Kerze schliesst wieder darunter -> Ablehnung -> bearish
             if (candle.High > _previousDayHigh && candle.Close < _previousDayHigh)
@@ -86,6 +99,10 @@ namespace RgTrading.Indicators
             {
                 TageskontextState.Richtung = TagesRichtung.Short;
             }
+
+            _richtungPlot[bar] = TageskontextState.Richtung == TagesRichtung.Long ? 1
+                : TageskontextState.Richtung == TagesRichtung.Short ? -1
+                : 0;
         }
     }
 }
