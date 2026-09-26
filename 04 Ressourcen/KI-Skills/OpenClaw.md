@@ -6,6 +6,9 @@ status: aktiv
 
 # OpenClaw
 
+> [!warning] Wiederhergestellt aus einem verwaisten Branch (26.09.2026)
+> Diese Notiz stammt aus einer Session vom 10.09.2026, die nie nach `master` gepusht wurde und dadurch bisher im Vault fehlte. Inhalt unten unverändert übernommen, Stand ist also **10.09.2026**, seitdem nicht aktualisiert. Vor Weiterarbeit mit Mike prüfen, ob der Setup-Stand und die offenen Punkte noch aktuell sind.
+
 Wird seit 10.09.2026 auf dem Windows-Rechner installiert. Repo: https://github.com/openclaw/openclaw
 
 ## Was es ist
