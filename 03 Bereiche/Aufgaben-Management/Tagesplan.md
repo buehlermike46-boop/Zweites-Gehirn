@@ -1361,3 +1361,40 @@ Der neue `## Bestätigt für 2026-09-25 (Einnahmequellen-Explorer: GMB-Angebotsp
 1. Die drei Entscheidungen oben (Make-Plan, Chatbot-Ansprache, Pflegedienst-Timing) — unverändert seit 24.09.2026 abends, keine davon eigenmächtig getroffen.
 2. Passt die Reihenfolge, jetzt zusätzlich das GMB-Angebotspaket parallel als Entwurf vorzubereiten, während 1 und 2 auf deine Entscheidung warten — oder lieber abwarten, bis die Reihenfolge Pflegedienst → Chatbot geklärt ist, bevor eine vierte Baustelle (auch nur als Entwurf) angefasst wird?
 3. Für heute existiert noch keine Daily Note [[2026-09-25]] — wird laut eigenem Vermerk nicht ungefragt angelegt.
+
+## Vorschlag für 2026-09-26
+*(Vom aufgaben-manager erzeugt, turnusmäßiger Planungslauf per Scheduled Cloud Routine.)*
+
+**Kontrolle vorab:** Der `## Bestätigt für 2026-09-25 (Einnahmequellen-Explorer: GMB-Angebotspaket)`-Auftrag ist mit Beleg erledigt (Checkbox gesetzt, Angebotspaket in [[Einnahmequellen-Recherche]] ausgearbeitet). Seitdem ist aber sehr viel passiert — nicht über diesen Bestätigt-Kreislauf, sondern direkt in interaktiven Chat-Sessions mit Mike am 25.09.2026 (siehe [[Tagesplan]]-Log, acht bis neun Fortsetzungen, und [[2026-09-25]]): der Handwerker-Chatbot wurde vom Konzept zur voll funktionsfähigen, echten Live-Demo gebracht (https://handwerker-chatbot.higgsfield.app, mehrseitig ausgebaut), GMB- und Chatbot-Angebot zu einem Gesamtpaket (299 EUR) zusammengelegt, davon 21 von 29 möglichen Kontakten tatsächlich per E-Mail angeschrieben (11 mit altem GMB-Text, 10 mit dem neuen Gesamtpaket-Text — auf Mikes ausdrückliche Anweisung im Chat verschickt), und eine neue vierte Idee entworfen (Website-Komplettpaket, 1.490-2.490 EUR, positioniert als das eigentliche Stufe-1-Dienstleistungsprojekt). Alles sauber mit Beleg dokumentiert, nichts davon widerspricht dieser Kontrolle — nur zur Einordnung, weil der Fortschritt diesmal nicht aus einem Bestätigt-Abschnitt kam. Seit dem letzten Commit (`cfd9dc5`, 25.09.2026 abends) kein weiterer Commit außer einem Content-Post (`53acfe3`, klar Content-Domain, kein Fehlrouting). [[Kontaktliste - 20 Namen aus dem Umfeld]] unverändert 20/20 angeschrieben/0 Reaktionen, [[Lot-Tracking]] unverändert 0 Accounts/0 Lots. [[Brain Dump]] und [[Jarvis Aufgaben]] erneut komplett gelesen: keine neuen offenen Punkte. Mike-only-Zähler unverändert bei **0 von 20**, kein Nachschub nötig (verbleibende Triage-Punkte weiterhin ohne Stufe-Bezug bzw. außerhalb der Reichweite dieses Agentenpaars). Keine neuen Häkchen in der Triage, keine inhaltliche Änderung nötig.
+
+**Aktive Baustelle (Stufe 1, siehe [[MasterPlan - Teilziele und Zeitplan bis 50.000 EUR]]):** 5-9 aktive Kunden, ~94 Lots/Monat, erstes Dienstleistungsprojekt verkauft (1.500-3.000 EUR), erste Content-Automatisierung. "Weiter, wenn": 3 Monate in Folge mind. 1.000 EUR und wachsende Kundenzahl.
+
+### Kein neuer Bestätigt-Abschnitt in dieser Runde
+Bewusst kein neuer Auftrag: die Standing-Freigabe deckt nur Recherche/Bewertung/Entwürfe, und an dieser Front ist aktuell alles fertig entworfen, was ohne Kundenkontakt/Kauf geht (Chatbot-Demo steht, Gesamtpaket-Text steht, GMB-Einzeltexte stehen). Ein weiteres Angebot oder eine fünfte Idee jetzt zu bauen wäre reines Auffüllen ohne echten Bedarf, solange die eigentlichen nächsten Schritte bei dir liegen (siehe unten). Kein künstliches Auffüllen.
+
+### Drei echte nächste Schritte, die auf dich warten
+1. **Telefonate ab Montag, 28.09.2026** (laut deiner eigenen Ansage am 25.09.): die restlichen unbeantworteten Kontakte aus [[GMB-Angebot Akquise]]/[[Handwerker-Chatbot Akquise]] anrufen, Telefon-Leitfaden liegt fertig. Kein Agenten-Schritt vor Montag nötig.
+2. **Pflegedienst-Termin mit deiner Mutter, Sonntag 27.09.2026**: Optimierungs-Entwürfe aus [[Pflegedienst]] zeigen, IONOS-Ablösung besprechen. Ruht bis dahin, kein Agenten-Schritt.
+3. **Reaktionen auf die 21 verschickten Mails beobachten** (Postfach buehlermike46@gmail.com) — sobald jemand antwortet, kann der Executor beim Formulieren einer Antwort helfen, das ist aber dein Trigger, nicht automatisch planbar.
+
+### Neu zur Kenntnis, keine Entscheidung nötig
+Das neue **Website-Komplettpaket** (1.490-2.490 EUR, [[Einnahmequellen-Recherche]] Abschnitt "Idee 2") ist bisher nur Konzept + technische Live-Demo, noch niemandem angeboten und noch nicht final bepreist. Passt gut als eigentliches Stufe-1-Kernangebot (1.500-3.000 EUR-Zielspanne), aber wird erst relevant, sobald aus den aktuellen 21 Kontakten echtes Interesse zurückkommt — keine vierte Baustelle parallel öffnen, solange die erste Antwortrunde noch offen ist (MasterPlan Punkt 8).
+
+### Komplex — weiterhin bewusst zurückgestellt
+Unverändert: Zugangs-Gate, Sprachauswahl im Bot, Meta Graph API, Jarvis-Interface-Ausbau, Monitoring-App, Rechnungs-Automatik, Einnahmequellen-Ideen 4 und 5 (Admin-Automatisierung, Lern-Templates Azubis).
+
+### Passt zu keiner aktiven Stufe — zurückgestellt
+Unverändert: Fixkosten-/Business-Kosten-Listen, Buchhaltungs-Frage, Gmail-/GMX-/Dashboard-Punkte, `whatsapp`-Knoten in `jarvis-voice-assistant`. Zur Kenntnis, kein Handlungsbedarf: [[ATAS Trading Bot (NQ-Abpraller-Setup)]] und [[YouTube Kinder-Kanäle (DE & EN)]] laufen als eigene, selbst deklarierte Ausnahmen.
+
+### Domain-Check
+Keine Verschiebung nötig. Der einzige fremde Commit seit der letzten Kontrolle (`53acfe3`, Content-Executor Post #13) ist sauber Content-Domain, kein Fehlrouting hierher.
+
+### Aufgaben-Nachschub bis Deckel 20 — Zähler-Stand
+Mike-only-Zähler: **0 von 20**. Kein Nachschub, siehe Kontrolle oben.
+
+### Für den Executor tatsächlich offen
+Kein neuer Punkt in dieser Runde — siehe "Kein neuer Bestätigt-Abschnitt" oben.
+
+### Offene Fragen an Mike
+1. Passt die Priorisierung, das Website-Komplettpaket erst anzusprechen, sobald aus den aktuellen 21 Kontakten Interesse kommt, statt es jetzt schon parallel aktiv zu bewerben?
+2. Für heute existiert noch keine Daily Note [[2026-09-26]] — wird nicht ungefragt angelegt.
