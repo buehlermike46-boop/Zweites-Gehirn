@@ -18,8 +18,8 @@ Zentrale Übersicht über alle Nachrichtenkanäle, die Jarvis kennt. Fasst zusam
 | Telegram Persönlich (Userbot) | ✅ läuft alle 10 Min | 0 offen (4 Einträge total, alle beantwortet/ignoriert) | 08.09.2026, siehe [[Telegram Persönlich]] |
 | WhatsApp (eigene Bridge) | 🔵 gebaut + eingeloggt (`whatsapp_bridge.py`, eigenes Profil, laeuft alle 10 Min mit), wartet auf den ersten echten Entwurf zur Bestaetigung | 0 (noch kein Entwurf durchgekommen) | läuft, aber noch ohne Treffer |
 | WhatsApp (via Claude in Chrome) | 🔵 erreichbar, solange eine interaktive Session offen ist — geprüft 09.09.2026, eingeloggt, Chats laden | nicht ausgezählt | 09.09.2026 |
-| Gmail (buehlermike46@gmail.com) | 🔵 kein automatischer 10-Min-Abruf, nur „auf Zuruf" durch eine interaktive Session (Connector) | 201 ungelesen, davon 20 aus den letzten 24 h | 09.09.2026, frisch geprüft |
-| GMX E-Mail | ❌ **nicht eingeloggt** — in Mikes echtem Chrome (Claude in Chrome) geprüft 09.09.2026, zeigt die Login-Seite. Ohne Login kein Zugriff möglich, Passwort wird von Claude nie eingegeben. | unbekannt | nie |
+| Gmail (buehlermike46@gmail.com) | 🟡 seit 26.09.2026 gebaut (`mail_bridge.py`, IMAP, alle 10 Min), wartet auf App-Passwort von Mike in `config.json` — siehe [[Jarvis Hand - Agenten Ausbau]] | 201 ungelesen (Stand 09.09.2026, vor dem Umbau) | 09.09.2026, wird nach dem Setup wieder live |
+| GMX E-Mail | 🟡 seit 26.09.2026 gebaut (`mail_bridge.py`, IMAP statt Browser-Login — der alte SSO-Block betraf nur den Browser-Weg), wartet auf App-Passwort von Mike in `config.json` | unbekannt | nie |
 | ChatGPT | 🔵 erreichbar über Claude in Chrome, eingeloggt als Mike Buehler — geprüft 09.09.2026 | n/a | 09.09.2026 |
 | Instagram | 🔵 erreichbar über Claude in Chrome, eingeloggt — noch kein automatisierter Check der Nachrichten | unbekannt | nicht geprüft |
 | Facebook | 🔵 erreichbar über Claude in Chrome, eingeloggt — noch kein automatisierter Check der Nachrichten | unbekannt | nicht geprüft |
@@ -35,8 +35,8 @@ offen ist, nicht rund um die Uhr.
 
 Ein echtes 10-Minuten-Monitoring über **alle** genannten Kanäle bräuchte für jeden Kanal, der noch nicht angebunden ist, eine eigene technische Anbindung in `task_agent.py` (dem Bridge-Agenten, der alle 10 Minuten läuft):
 
-1. **Gmail:** Es gibt einen Gmail-Connector in der interaktiven Claude-Session, aber `task_agent.py` (der unbeaufsichtigt alle 10 Min läuft) hat diesen Zugriff nicht. Bräuchte ein eigenes Google-Cloud-Projekt + OAuth/Service-Account, fest in `task_agent.py` eingebaut — **Mikes Entscheidung**, ob sich der Aufwand lohnt.
-2. **GMX:** Mike ist aktuell **nicht** eingeloggt (geprüft 09.09.2026, auch nicht in seinem echten Chrome). Erster Schritt waere, dass er sich einmal selbst einloggt (Claude in Chrome oder normaler Browser) — danach kann eine interaktive Session wenigstens auf Zuruf nachsehen. Fuer echte 10-Min-Automatisierung braeuchte es zusaetzlich IMAP-Zugangsdaten (App-Passwort), die **Mike selbst** in `config.json` eintragen muesste — Claude gibt nie Passwoerter ein.
+1. **Gmail — gelöst 26.09.2026:** Die Annahme "braucht eigenes Google-Cloud-Projekt + OAuth" war zu pessimistisch. `scripts/mail_bridge.py` nutzt IMAP mit einem App-Passwort (2FA im Google-Konto vorausgesetzt) und läuft damit alle 10 Min mit `task_agent.py` mit, ganz ohne OAuth. Fehlt nur noch: Mike trägt `gmail_address`/`gmail_app_password` in `config.json` ein.
+2. **GMX — gelöst 26.09.2026:** Gleicher IMAP-Weg wie Gmail, umgeht den früheren SSO-Redirect-Block komplett (der betraf nur die Browser-Variante in `broker_bridge.py`, die deshalb entfernt wurde). Fehlt nur noch: Mike aktiviert POP3/IMAP in den GMX-Einstellungen, erzeugt ein App-Passwort, trägt `gmx_address`/`gmx_app_password` in `config.json` ein. Details: `jarvis-voice-assistant/CLAUDE.md`, Abschnitt "Mail-Bruecke: Gmail + GMX per IMAP".
 3. **WhatsApp:** Login ist bereits erledigt, die eigene Bridge (`whatsapp_bridge.py`) läuft seit 08.09.2026 alle 10 Min mit, wartet aber weiterhin auf ihren ersten echten Entwurf zur Bestätigung. Zusätzlich seit 09.09.2026 bekannt: auch über Claude in Chrome erreichbar (separater Pfad, nicht automatisiert).
 4. **Instagram/Facebook:** seit 09.09.2026 ueber Claude in Chrome erreichbar (Mike ist eingeloggt), aber noch keine automatisierte Pruefung der Nachrichten gebaut, plus weiterhin offene ToS-Risiko-Abwägung fuer eine echte Bridge (Browser-Automatisierung wie bei WhatsApp vs. offizielle Meta-API).
 5. **PU Prime (Kunden-Dashboard) / Limitless (Referrals):** seit 09.09.2026 ueber Claude in Chrome erreichbar und geprueft (siehe [[Kunden]]), aber ebenfalls keine automatisierte 10-Min-Bridge — die Dashboards sind moderne React-Seiten ohne stabile, einfach zu scrapende Struktur, eine eigene Bridge (eigenes Profil + einmaliger Login durch Mike, aehnlich wie bei WhatsApp) waere noetig und noch nicht gebaut.
@@ -46,4 +46,4 @@ Das ist alles **Code-Arbeit** (neue Python-Module, Zugangsdaten in `config.json`
 
 ## Verwandt
 
-[[Jarvis Voice Assistant]], [[Jarvis Hand - Agenten Ausbau]], [[Telegram Nachrichten]], [[Telegram Persönlich]], [[Mails]], [[Termine]]
+[[Jarvis Voice Assistant]], [[Jarvis Hand - Agenten Ausbau]], [[Telegram Nachrichten]], [[Telegram Persönlich]], [[Mails]], [[Mail-Löschungen]], [[Termine]]
