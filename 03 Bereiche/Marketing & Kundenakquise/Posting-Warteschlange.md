@@ -230,7 +230,7 @@ dieser automatisierten Warteschlange, siehe "Wartet auf dich" unten.
 - **Hashtags:** #trading #tradingcommunity #primeverse #limitless
 
 ### 14. Samstag, 26.09.2026, 19:20 Uhr
-- **Status:** bereit (wartet auf Freigabe)
+- **Status:** gepostet (26.09.2026, ca. 16:39 UTC, im zweiten Anlauf — Slide 3 hatte beim ersten Versuch eine doppelte "FEHLER 3:"-Zeile, vom Text-Check gefangen, siehe Executor-Log). Media-ID 18393455143165447
 - **Format:** Carousel (4 Bilder), erster Post nach der neuen Recherche-Erkenntnis vom 20.09. — bewusst DM-share-optimiert (Tag-a-Friend-Format), siehe [[Recherche - Was funktioniert auf Instagram (Trading-Content)]]
 - **Thema/Hook:** Anfängerfehler-Checkliste, explizit teilbar. Hook: "3 Anfängerfehler, die fast jeder am Anfang macht. Tag jemanden, der gerade erst anfängt."
 - **Fakt/Nutzwert (ICP.md/Angebot.md):** Klassische Einsteigerfehler (kein Risikomanagement, kein Trading-Journal, nach Verlust größer nachlegen) — direkt verbunden mit dem, was die kostenfreie Limitless Academy vermittelt, bevor überhaupt ein Trade läuft.
@@ -330,6 +330,14 @@ Nichts fällig zum Posten (nächster Queue-Eintrag weiterhin Nr. 2, Montag 14.09
 
 ### 2026-09-13, 16:36 UTC, planmäßiger täglicher Lauf
 Zur Kenntnis genommen: Freigabe-Phase wurde heute von Mike auf **Phase 2 (automatisch)** umgestellt, siehe Abschnitt oben. Nichts fällig zum Posten in diesem Lauf (Eintrag Nr. 2, Montag 14.09. 18:50 Uhr, liegt mit ca. 26h noch knapp außerhalb des 24h-Fensters, ist bereits `freigegeben` und wird morgen fällig). Post Nr. 1 bereits ausgewertet (12.09.), noch keine neuen Rohzahlen fällig. Nichts erstellt, nichts gepostet, keine Freigabe- oder Credit-Probleme. Content-Manager läuft heute 17:00 UTC turnusmäßig selbst (Sonntag), keine Überschneidung mit diesem Lauf.
+
+### 2026-09-26, ca. 16:36-16:39 UTC, planmäßiger täglicher Lauf — Post #14 live, Text-Check fängt zweiten echten Fehler
+
+Post Nr. 14 (Anfängerfehler-Checkliste, planmäßig 19:20 Uhr) fällig. 4 Slides über `nano_banana_2` erstellt, beim Text-Check fiel Slide 3 durch: die Zeile "FEHLER 3:" stand doppelt untereinander ("FEHLER 3: / FEHLER 3: NACH VERLUST NACHLEGEN"). Nicht gepostet, Slide 3 mit präzisiertem Prompt (explizit "each line appearing only ONCE") neu erstellt — zweiter Versuch sauber. Alle 4 Slides gepostet: **Media-ID 18393455143165447**.
+
+Performance-Nachtrag Post #13 (25.09., Community-Zahlen): 8 Reichweite/21 Views, weiterhin 0 Interaktionen.
+
+Guthaben: 48,63 Credits vor diesem Lauf, nach den 5 Bild-Generierungen (4 + 1 Nachbesserung) entsprechend weniger. Post #11 (Reel) bleibt weiter aus Credit-Gründen offen.
 
 ### 2026-09-25, ca. 16:36-16:38 UTC, planmäßiger täglicher Lauf — Post #13 live
 

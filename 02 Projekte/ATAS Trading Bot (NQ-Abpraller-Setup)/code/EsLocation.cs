@@ -46,6 +46,22 @@
 // mehrfach ins Profil zu zaehlen, wird eine Kerze erst dann einmalig verarbeitet, wenn die
 // naechste Kerze zu laufen beginnt (also garantiert abgeschlossen ist) - das gilt jetzt auch fuer
 // Tageshoch/-tief und die Reaktionspruefung, damit alles im selben Takt bleibt.
+//
+// NEU 22.09.2026: LocationState.Richtung wird zusaetzlich als Plot sichtbar gemacht (-1 Short/
+// 0 Neutral/1 Long), gleicher Grund und gleiches Muster wie in EsTageskontext.cs - war bisher
+// komplett unsichtbar am Chart.
+//
+// UEBERARBEITET 22.09.2026 (Mikes Klarstellung per Sprachnachricht, siehe Projekt-Notiz
+// "Einstiegslogik neu..." und LocationState.cs): eine Location ist inhaltlich eine Preis-ZONE
+// (z.B. "3000-3010"), nicht ein einzelner Punkt - strukturell deckt das die bestehende
+// Zwei-Seiten-Pruefung pro Level (von oben getestet -> Ablehnung nach unten ODER von unten
+// getestet -> Ablehnung nach oben) schon ab: VAH und VAL wirken dadurch zusammen bereits wie
+// die zwei Kanten EINER Zone, ein Volumenberg-Paar (FindVolumeClusterEdges) ist ohnehin schon
+// eine Zone, und ein Einzel-Level (POC/Vortag/Tag) ist einfach eine Zone der Breite 0 - keine
+// Strukturaenderung noetig. Was sich aendert: "Preis verlaesst die Zone in Kontext-Richtung"
+// setzt LocationState.Richtung jetzt auf "scharf" (armed) statt nur fuer eine Kerze zu gelten -
+// bleibt bestehen bis verbraucht/ueberschrieben/Sessionwechsel (siehe CheckReaction unten und
+// LocationState.cs).
 
 using System.Collections.Generic;
 using ATAS.Indicators;
@@ -63,6 +79,8 @@ namespace RgTrading.Indicators
         // nicht an echten Setups kalibriert - bei zu vielen/zu wenigen Kanten anpassen.
         private const decimal VolumeClusterThreshold = 0.40m;
 
+        private readonly ValueDataSeries _richtungPlot = new ValueDataSeries("Location-Richtung");
+
         private readonly Dictionary<decimal, decimal> _volumeByPrice = new Dictionary<decimal, decimal>();
         private int _lastAddedBar = -1;
 
@@ -74,6 +92,7 @@ namespace RgTrading.Indicators
 
         public EsLocation() : base(true)
         {
+            DataSeries[0] = _richtungPlot;
         }
 
         protected override void OnCalculate(int bar, decimal value)
@@ -269,6 +288,7 @@ namespace RgTrading.Indicators
             if (!LocationState.HasProfile)
             {
                 LocationState.Richtung = TagesRichtung.Neutral;
+                _richtungPlot[completedBar] = 0;
                 return;
             }
 
@@ -292,8 +312,14 @@ namespace RgTrading.Indicators
                 LocationState.Richtung = TagesRichtung.Long;
             else if (shortFound && !longFound)
                 LocationState.Richtung = TagesRichtung.Short;
-            else
-                LocationState.Richtung = TagesRichtung.Neutral;
+            // sonst: keine (eindeutige) Reaktion auf dieser Kerze -> vorherigen "scharfen"
+            // Zustand NICHT zuruecksetzen (Redesign 22.09.2026, siehe Kommentar oben) - Location
+            // bleibt armed bis eine neue Reaktion sie ueberschreibt oder die naechste Session sie
+            // zuruecksetzt (siehe IsNewSession-Block oben).
+
+            _richtungPlot[completedBar] = LocationState.Richtung == TagesRichtung.Long ? 1
+                : LocationState.Richtung == TagesRichtung.Short ? -1
+                : 0;
         }
     }
 }

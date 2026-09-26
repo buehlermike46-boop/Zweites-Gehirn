@@ -5,10 +5,15 @@ tags: [mail, cockpit]
 # Mails
 
 Datenquelle für die Cockpit-Kachel "Mails" im Jarvis-Interface (`/cockpit/status`).
-Anders als Telegram/WhatsApp läuft hier (noch) keine automatische 10-Minuten-Bridge —
-`task_agent.py` hat keinen Mail-Zugriff (siehe [[Jarvis Hand - Agenten Ausbau]]). Diese
-Notiz wird bislang von der großen Claude-Session auf Zuruf aktualisiert (gleiches Prinzip
-wie [[Termine]]), zeigt also den Stand vom letzten Abruf, nicht Echtzeit.
+
+**Update 26.09.2026:** Läuft jetzt genau wie Telegram/WhatsApp automatisch alle 10 Minuten
+über `task_agent.py` — neu `scripts/mail_bridge.py`, per IMAP mit App-Passwort (kein
+Browser, kein OAuth), siehe [[Jarvis Hand - Agenten Ausbau]] und
+`jarvis-voice-assistant/CLAUDE.md`. Werbung wird automatisch in den Papierkorb verschoben
+(Protokoll in [[Mail-Löschungen]]), bei Wichtigem schickt Jarvis zusätzlich eine
+Telegram-Nachricht. **Setup durch Mike noch nicht erledigt** (Google-App-Passwort +
+`gmail_address`/`gmail_app_password` in `config.json`) — bis dahin zeigt diese Notiz noch
+den letzten manuellen Stand von unten, keine Echtzeit-Daten.
 
 **Kopfwert:**
 
@@ -40,10 +45,11 @@ Bescheid, dann übernehme ich das.
 
 ## Wie es weitergeht
 
-Für "Mails checken" als echten HAND-Baustein (automatische Entwürfe, wie bei Telegram)
-bräuchte `task_agent.py` eine eigene Google-API-Anbindung (eigenes Google-Cloud-Projekt +
-OAuth). Bisher ungeklärt, ob/wann das gebaut wird — siehe [[Jarvis Hand - Agenten Ausbau]].
-Bis dahin bleibt Mail auf "Wissen"-Ebene: Jarvis kennt den Stand (diese Notiz), beantwortet
-aber nichts automatisch.
+Erledigt (26.09.2026, siehe Update oben) — die frühere Annahme, dass es ein eigenes
+Google-Cloud-Projekt + OAuth bräuchte, war zu pessimistisch, ein IMAP-App-Passwort reicht.
+Offen ist nur noch das einmalige Setup durch Mike selbst (siehe [[Jarvis Hand - Agenten Ausbau]],
+Baustein 1). Mail bleibt bewusst bei "lesen + einordnen", kein automatisches Antworten wie
+bei Telegram — dafür gibt es keinen Anwendungsfall (Kunden/Leads laufen über Telegram, nicht
+Mail).
 
-Verwandt: [[Kunden]], [[Einnahmen]], [[Termine]], [[Jarvis Hand - Agenten Ausbau]]
+Verwandt: [[Kunden]], [[Einnahmen]], [[Termine]], [[Mail-Löschungen]], [[Jarvis Hand - Agenten Ausbau]]
