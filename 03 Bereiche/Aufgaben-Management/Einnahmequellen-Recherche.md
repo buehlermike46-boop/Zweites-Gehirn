@@ -156,6 +156,52 @@ Die bestehende Chatbot-Demo (https://handwerker-chatbot.higgsfield.app) zu einer
 
 Empfehlung, angelehnt an den unteren bis mittleren Marktkorridor und bewusst innerhalb der MasterPlan-Stufe-1-Zielspanne: **1.490 bis 2.490 EUR, einmalig, je nach Umfang** (Standard-Website mit 4 Seiten am unteren Ende, mehr Individualisierung/Seiten am oberen Ende). Anders als beim 299-EUR-Einstiegspaket bewusst kein einheitlicher Festpreis, weil der Aufwand pro Website stärker variiert als bei der reinen GMB+Chatbot-Kombination. Kein Hosting-Abo für den Kunden nötig, solange die higgsfield.app-Infrastruktur genutzt wird (siehe offene technische Frage oben). Preis ist eine Empfehlung, keine Entscheidung, wartet auf Mikes Priorisierung.
 
+#### Premium-Stufe mit Animation/3D-Optik (ausgearbeitet 26.09.2026, Mikes Auftrag im Chat)
+
+Ausloeser: Mike zeigte zwei Instagram-Reels (ein KI-Website-Tool "Webild"/"Astra"
+sowie ein Account, das per Claude Code + einer Prompt-Library aufwendig animierte
+Three.js-Websites baut) und wollte diesen Animations-/3D-Stil fuer sein eigenes
+Angebot. Nach kurzer Abstimmung im Chat eingeordnet als **Upgrade fuer das
+bestehende Website-Komplettpaket** (nicht als neue Baustelle), und bewusst ohne
+KI-Video-Rendering umgesetzt (Mikes Entscheidung angesichts des damaligen
+Guthabenstands von 48,63 Credits) — stattdessen ein rein code-basierter
+Tier-1-Effekt.
+
+**Live-Beispiel gebaut:** zweite, eigenstaendige Demo-Website neben der
+bestehenden Standard-Demo (handwerker-chatbot.higgsfield.app bleibt unveraendert),
+damit beide Stufen im Kundenpitch nebeneinander gezeigt werden koennen:
+**https://handwerker-premium.higgsfield.app** (oeffentlich im Higgsfield-Feed
+gelistet, mit Mikes Zustimmung im Chat).
+
+- Gleiches Demo-Firmenprofil (Musterbetrieb Elektrotechnik), aber bewusst
+  andere Farbwelt als die Standard-Demo (Kobaltblau/Bone dort vs. Graphit/Chrome
+  + gedaemptes Signalrot hier), damit der Unterschied sofort sichtbar ist.
+- Tier-1-Effekt: der Hero setzt sich beim Laden aus tausenden Canvas-Partikeln
+  zum Elektromeister-Foto zusammen und reagiert leicht auf die Maus. Reines
+  2D-Canvas, kein Video, kein zusaetzlicher Credit-Verbrauch ueber die
+  Bild-Generierung hinaus.
+- Sechs Leistungen (Elektroinstallation, Photovoltaik, Wallbox, Smart Home,
+  E-Check, Notdienst) als asymmetrisches Bento-Grid mit eigens generierten
+  Icons, eigener Prozess-Ablauf, eigener Standard-vs-Premium-Vergleichsblock
+  direkt auf der Seite (dient Mike als eingebautes Upsell-Argument im Pitch).
+- Vier bewusst unterschiedliche CTA-Stile (Magnetic-Hover, Underline, Hover-
+  Flood-Fill, Framed-Pill) statt einem Wiederholungs-Button, plus
+  Scroll-Reveal per IntersectionObserver (dependency-frei gehalten, siehe
+  Log-Eintrag unten zum GSAP-Fehlversuch).
+- Eigenes Favicon-/Icon-Set als handgebautes SVG-Monogramm (kein KI-Rendering
+  noetig), keine Higgsfield-Marke sichtbar (mechanischer Gate-Check
+  durchlaufen: keine Platzhalter, kein Gedankenstrich, kein `h-screen`, kein
+  Quanta-Branding in den eigenen Dateien).
+- Credit-Verbrauch: rund 9,5 Credits fuer 5 Bildgenerierungen (Hero, Werkstatt,
+  Icon-Sheet, 2x Cover-Kandidat) plus einen Hintergrund-Entfernen-Call fuer das
+  Cover. Kein Video generiert. Guthaben danach: 39,14 Credits.
+
+**Noch offen, kein nach aussen wirkender Schritt:** ob und wie dieser
+Premium-Stil ins Preismodell einfliesst (eigener Aufpreis auf die 1.490-2.490
+EUR-Spanne, oder als oberes Ende der bestehenden Spanne), ist noch nicht
+entschieden, wartet auf Mikes Einschaetzung nach Ansicht der Demo. Kein Kunde
+kontaktiert, kein Angebot verschickt, kein Preis final festgelegt.
+
 #### Cross-Sell-Logik zum bestehenden Einstiegspaket
 
 Kunden, die bereits das 299-EUR-Einstiegspaket (GMB + Chatbot) gekauft haben, bekommen die 299 EUR bei einem späteren Upgrade auf das Website-Komplettpaket angerechnet, echter Türöffner-Mechanismus statt zwei getrennter Verkäufe. Kunden ganz ohne bestehende Website können auch direkt mit dem Komplettpaket starten.
@@ -187,6 +233,57 @@ Stil nach `00 Kontext/Schreibstil.md` (duzen, locker aber professionell, keine G
 ## Log
 
 *(jeder Recherche-Lauf mit Datum: was wurde geprüft, was kam neu dazu, was wurde verworfen und warum)*
+
+### 2026-09-26, interaktive Chat-Session (kein Subagent — Premium-Design-Stufe geplant und Demo gebaut)
+
+Direkter Auftrag von Mike im Chat, ausgeloest durch zwei geteilte Instagram-Reels
+("guck dir diese 2 videos an, solche websiten möchte ich auch bauen"). Nach
+Rueckfrage eingeordnet als Upgrade fuers bestehende Website-Komplettpaket (nicht
+als neue Baustelle) und wegen des damaligen Guthabens von 48,63 Credits bewusst
+ohne KI-Video-Rendering umgesetzt. Umgesetzt:
+
+1. Jarvis-Workflow `website-builder-flow` gelesen (website-flow.md, design-recipe.md,
+   wow-catalog.md, review-rubric.md, app-cover.md) und bewusst vom Standard-Pfad
+   abgewichen: `Animation mode: non-animated` mit Tier-1-Technik **C2 Particle
+   Dissolve** aus dem wow-catalog statt der Standard-Scroll-Scrub-Video-Variante,
+   um Credits zu sparen (Mikes ausdrueckliche Wahl in der Rueckfrage).
+2. Neue, eigenstaendige Demo-Website gebaut und live geschaltet:
+   **https://handwerker-premium.higgsfield.app** (Jarvis website_id
+   `27949520-5fcb-46f7-9bd1-2f3de8c93fa5`), oeffentlich im Higgsfield-Feed gelistet
+   (Mikes Zustimmung im Chat). Bestehende Standard-Demo (handwerker-chatbot) blieb
+   unangetastet, damit beide Stufen im Pitch nebeneinander stehen. Details zum
+   Aufbau siehe neuer Abschnitt "Premium-Stufe mit Animation/3D-Optik" oben.
+3. 5 Bildgenerierungen (Hero, Werkstatt-Flatlay, Icon-Sheet, 2x Cover-Kandidat)
+   plus 1 Hintergrund-Entfernen-Call fuer den Cover-Cutout, zusammen rund 9,5
+   Credits (Guthaben danach 39,14 von 48,63). Kein Video generiert.
+4. Technischer Fehlversuch unterwegs: GSAP als Scroll-Animations-Bibliothek zu
+   `package.json` hinzugefuegt, aber kein `bun` im Editier-Sandbox verfuegbar, um
+   `bun.lock` passend zu aktualisieren — der erste Deploy scheiterte am
+   CI-Schritt `bun install --frozen-lockfile` (Lockfile passte nicht mehr zu
+   `package.json`). Korrigiert, indem GSAP wieder entfernt und der Scroll-Reveal
+   stattdessen dependency-frei per `IntersectionObserver` + CSS-Transitions
+   gebaut wurde (transform/blur, nie opacity-0, bleibt damit auch
+   screenshot-sicher). Zweiter Deploy erfolgreich.
+5. Mechanischen mechanical-gate-Check (review-rubric.md §A) selbst per grep
+   durchlaufen: keine Platzhalter, keine Gedankenstriche in eigenem Code, keine
+   gesperrte Standard-Palette, Eyebrow-Budget eingehalten (3 von max. 3), kein
+   `h-screen` und kein Higgsfield/Quanta-Branding in den selbst geschriebenen
+   Dateien (nur in ungenutzten, nicht importierten Scaffold-Altdateien, die
+   deshalb nicht mitgebaut werden).
+
+**Ausdruecklich kein nach aussen wirkender Schritt** ausser der oeffentlichen
+Demo selbst (wie schon bei der Standard-Demo mit Mikes Zustimmung): kein Kunde
+kontaktiert, kein Angebot verschickt, kein Preis fuer die Premium-Stufe final
+entschieden.
+
+**Domain-Check:** Einnahmequellen-Explorer-Track, kein Content-/YouTube-Bezug.
+
+Geänderte Dateien:
+- `03 Bereiche/Aufgaben-Management/Einnahmequellen-Recherche.md` (dieser
+  Log-Eintrag, neuer Abschnitt "Premium-Stufe mit Animation/3D-Optik")
+- Externes Jarvis/Higgsfield-Website-Projekt (website_id
+  `27949520-5fcb-46f7-9bd1-2f3de8c93fa5`, Subdomain `handwerker-premium`) — kein
+  Vault-Code, separat verwaltet.
 
 ### 2026-09-25, interaktive Chat-Session (kein Subagent — Website-Komplettpaket geplant und Demo gebaut)
 
