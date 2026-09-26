@@ -49,8 +49,18 @@ Es gibt **zwei unterschiedliche "Claude"-Umgebungen**, die leicht verwechselt we
 
 ## Die Bausteine — Ausgangslage je Baustein
 
-### 1. Mails
-Interaktive Session hat bereits einen Gmail-Connector — lesen/entwerfen/antworten geht technisch schon, ohne etwas Neues anzubinden. Offene Frage: automatisch (braucht eigene Anbindung in `task_agent.py`, also eigenes Google-API-Projekt + OAuth/Service-Account) oder vorerst nur "on demand" über die Bridge?
+### 1. Mails — ✅ Code gebaut 26.09.2026, wartet auf Zugangsdaten
+
+**Update 26.09.2026:** Mike wollte einen echten Wach-Agenten (Gmail + GMX überwachen, Werbung automatisch löschen, bei Wichtigem Bescheid geben) — nicht mehr nur "on demand" über die interaktive Session. Die ursprüngliche Annahme oben ("Gmail braucht eigenes Google-API-Projekt + OAuth") war zu pessimistisch: ein **IMAP-App-Passwort** (Google-Konto mit 2FA vorausgesetzt) reicht für automatischen, unbeaufsichtigten Zugriff völlig aus — kein OAuth-Flow nötig. Gleicher Weg funktioniert auch für GMX und ist dort sogar die Lösung für ein zweites, älteres Problem: die GMX-Browser-Automatisierung in `broker_bridge.py` (siehe Baustein 7 unten) scheiterte zuverlässig am SSO-Redirect im headless-Modus — IMAP umgeht das Problem komplett, weil kein Browser mehr im Spiel ist.
+
+Neu: `jarvis-voice-assistant/scripts/mail_bridge.py`, eingehängt in `task_agent.py`, läuft alle 10 Minuten wie die anderen Bridges. Werbung (Newsletter, Rabattaktionen, Jobagent-Digests etc.) wird automatisch in den Papierkorb verschoben (reversibel, ~30 Tage, Protokoll in [[03 Bereiche/Jarvis Voice Assistant/Mail-Löschungen]]), Wichtiges landet zusätzlich in [[Mails]]/[[GMX Mails]] UND löst eine Telegram-Nachricht an Mike selbst aus (über den bestehenden Business-Bot `@Mikebubot`). Im Zweifel klassifiziert der Filter bewusst als "neutral" statt "werbung" — nichts wird gelöscht wenn nicht sicher. Details: `jarvis-voice-assistant/CLAUDE.md`, Abschnitt "Mail-Bruecke: Gmail + GMX per IMAP".
+
+**Noch offen, bevor es live läuft (Mike selbst, kein Werkzeug kann das für ihn):**
+- [ ] Google-Konto: 2-Faktor-Bestätigung aktivieren, App-Passwort unter myaccount.google.com/apppasswords erzeugen, `gmail_address`/`gmail_app_password` in `config.json` eintragen
+- [ ] GMX: "POP3/IMAP-Abruf" in den GMX-Einstellungen aktivieren, App-/Programm-Passwort erzeugen, `gmx_address`/`gmx_app_password` in `config.json` eintragen
+- [ ] Einmalig eine Nachricht an `@Mikebubot` schicken, eigene chat_id aus dem entstehenden Block in [[03 Bereiche/Jarvis Voice Assistant/Telegram Nachrichten]] ablesen, als `mike_telegram_chat_id` in `config.json` eintragen (danach den Test-Block auf `status: ignorieren` setzen)
+
+Bis dahin bleibt der Baustein inaktiv (kein Fehler, gleiches Prinzip wie bei WhatsApp/Broker vor dem jeweiligen Login).
 
 ### 2. Instagram
 Kein offizieller API-Connector vorhanden. Mike ist sowohl in einer Browser-Session im eigenen Claude-Browser-Tool als auch (bestätigt 08.09.2026) über die **Claude in Chrome**-Erweiterung in seinem echten Chrome bei Instagram eingeloggt (Account "Mike Bühler") — darüber liest/schreibt man technisch per Browser-Automatisierung, was aber gegen Instagrams Nutzungsbedingungen verstößt und das Konto gefährden kann. **Vor dem Bauen mit Mike klären**, ob Browser-Automatisierung das gewünschte Risiko ist, oder ob z.B. die offizielle Instagram-Graph-API (Meta Business, deutlich eingeschränkter aber ToS-konform) der bessere Weg ist. Noch nicht gebaut — laut Reihenfolge unten nach WhatsApp dran.
@@ -210,10 +220,10 @@ PU-Prime-Zahlen kommen ab jetzt auf Zuruf über Claude in Chrome. Erster manuell
 **Noch offen, bevor es wirklich live läuft:**
 - [ ] Mike führt `python scripts/broker_login.py` einmal selbst aus (jetzt 3 Schritte: PU Prime IB-Dashboard, Limitless, GMX — alle in einem eigenen, separaten Browser-Fenster, NICHT dasselbe wie in Chrome eingeloggt zu sein)
 - [x] Login am 10.09.2026 erneut durchgefuehrt (jetzt nur noch Limitless und GMX). Limitless liefert Werte, PU Prime ist deaktiviert.
-**GMX bleibt offen, zurueckgestellt (Mike, 10.09.2026: "kann etwas dauern").** Stand nach dem Login: Die Startseite wird als eingeloggt erkannt, aber nach dem Klick auf "Zum Postfach" findet die Bruecke die Ungelesen-Zahl nicht. Das ist der bekannte SSO-Redirect: `auth.gmx.net` erkennt die Session im headless-Profil nicht, im sichtbaren Fenster schon. Kein Regex-Problem, sondern Session-Handling zwischen den GMX-Subdomains. GMX-Mails laufen bis auf Weiteres auf Zuruf. Die eigentliche Aufgabe (GMX per IMAP anbinden) läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nur Status-Notiz.
+**GMX war offen, jetzt gelöst (26.09.2026): per IMAP statt Browser.** Der SSO-Redirect-Block (`auth.gmx.net` erkennt die Session im headless-Profil nicht) betraf nur den Browser-Weg. GMX ist deshalb komplett aus `broker_bridge.py`/`broker_login.py` entfernt und läuft seit 26.09.2026 stattdessen über `scripts/mail_bridge.py` (IMAP + App-Passwort) — siehe Baustein 1 oben.
 
 **Weiterhin offen, jeweils Mikes eigene Entscheidung, damit ALLE genannten Kanäle wirklich automatisch laufen:**
-- **Gmail für `task_agent.py` selbst:** bräuchte ein neues Google-Cloud-Projekt + OAuth-Zustimmung durch Mike (die Session hat schon einen Connector, aber `task_agent.py` läuft unbeaufsichtigt und hat den nicht). Aufgabe läuft über [[Aufgaben-Triage (Sofort, Aufwendig, Komplex)]], hier nicht doppelt tracken
+- ~~**Gmail für `task_agent.py` selbst:** bräuchte ein neues Google-Cloud-Projekt + OAuth-Zustimmung durch Mike~~ — **gelöst 26.09.2026:** ein IMAP-App-Passwort reicht, kein OAuth-Projekt nötig, siehe Baustein 1 oben (`scripts/mail_bridge.py`).
 
 ### 8. Instagram/Facebook — Content-Reichweite ✅ live, Nachrichten-Bridge ⛔ blockiert (09.09.2026)
 
@@ -344,17 +354,20 @@ automatisiert).
 **Nicht Teil dieses Bausteins:** keine neue Fähigkeit, nur Sichtbarkeit/Monitoring im
 Interface. Die Agenten selbst bleiben unverändert im `Zweites-Gehirn`-Repo.
 
-## Offener Punkt (09.09.2026): Zentrales Nachrichten-Dashboard + GMX gewünscht
+## Offener Punkt (09.09.2026): Zentrales Nachrichten-Dashboard + GMX gewünscht — Mail-Teil gelöst 26.09.2026
 
 Mike hat ein automatisiertes Monitoring-System für WhatsApp, Gmail, GMX, Telegram und
 weitere Kanäle angefragt (alle 10 Min abrufen, zentrale Zusammenfassung im Vault:
 Kanal, Anzahl neuer Nachrichten, wichtige Meldungen, Zeitstempel). Als erster Schritt
-gibt es jetzt [[Nachrichten-Dashboard]] als manuellen Snapshot-Aggregator über die
-bestehenden Kanal-Notizen. Die Bridge-Instanz (dieser Agent hier, `task_agent.py`) hat
-aber nur Vault- und Web-Lesezugriff, keinen E-Mail-/API-Zugriff — echtes Live-Polling
-für Mail (Gmail UND GMX) bleibt daher offen und braucht eine eigene Code-Anbindung
-(siehe Baustein 1 oben) plus, neu, eine GMX-IMAP-Anbindung, die es bisher gar nicht gibt.
-**Für die nächste interaktive Session:** klären ob GMX überhaupt automatisiert werden
-soll (App-Passwort nötig), und ob ein zentrales Dashboard-Update in `task_agent.py`
-eingebaut wird, das nach jedem Bridge-Lauf automatisch [[Nachrichten-Dashboard]]
-aktualisiert (statt nur auf Zuruf).
+gibt es [[Nachrichten-Dashboard]] als manuellen Snapshot-Aggregator über die
+bestehenden Kanal-Notizen (weiterhin manuell, siehe dort).
+
+**Update 26.09.2026:** Der Mail-Teil (Gmail UND GMX per echtem Live-Polling, inkl. GMX-
+IMAP-Anbindung) ist jetzt gelöst — siehe Baustein 1 oben (`scripts/mail_bridge.py`).
+Zusätzlich zum reinen Abrufen wurde direkt Mikes weitergehender Wunsch mit umgesetzt:
+Werbung wird automatisch aussortiert (Papierkorb, nicht nur gezählt) und bei Wichtigem
+bekommt Mike aktiv eine Telegram-Nachricht, nicht nur einen passiven Zähler im Cockpit.
+Ein zentrales Dashboard-Update in `task_agent.py`, das nach jedem Lauf automatisch
+[[Nachrichten-Dashboard]] mitschreibt (statt nur Mail separat), bleibt für die anderen
+Kanäle (WhatsApp/Telegram) weiterhin offen — eigene Entscheidung/Aufgabe, hier nur
+Status-Notiz.
